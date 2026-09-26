@@ -524,3 +524,6 @@ body {
 .piece--3d { display: block; width: 100%; height: auto; margin-inline: auto; touch-action: pan-y; cursor: grab; border-radius: 14px; }
 .piece--3d:active { cursor: grabbing; }
 .builder__hint { margin: .7rem auto 0; max-width: 46ch; text-align: center; font-size: .86rem; line-height: 1.5; color: var(--muted, #9a9288); }
+
+/* hidden не работает там, где у элемента свой display — правим явно */
+.piece[hidden], .piece--3d[hidden], .builder__hint[hidden] { display: none !important; }

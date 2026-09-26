@@ -414,7 +414,7 @@
 
     /* кадр под размер изделия */
     var fit = Math.max(spread, Math.abs(groundY) + 0.6, 2.2);
-    camDist = fit * 1.62 / zoom;
+    camDist = fit * 1.42 / zoom;
     if (key) {
       key.position.set(fit * 0.5, fit * 1.6, fit * 0.9);
       var sc = key.shadow.camera;
