@@ -50,6 +50,7 @@
   var canvasEl = null, getState = null, raf = 0;
   var yaw = 0, pitch = 0.22, zoom = 1, dragging = false, lastX = 0, lastY = 0, idle = true, idleTimer = 0;
   var camDist = 4.3;
+  var camTarget = null;      /* куда смотрит камера: центр изделия */
   var roughMap = null, shadowTex = null, plateTex = null, plateMesh = null;
   var pieceRoot = null;                 /* всё изделие, кроме пола и отражения */
   var stoneMesh = null, stoneKind = null, stoneHost = null;
@@ -413,8 +414,18 @@
     group.add(mirrorGroup);
 
     /* кадр под размер изделия */
-    var fit = Math.max(spread, Math.abs(groundY) + 0.6, 2.2);
-    camDist = fit * 1.42 / zoom;
+    /* Габариты изделия вместе с полом: кадр должен вмещать вещь целиком */
+    var box = new THREE.Box3().setFromObject(pieceRoot);
+    var size = box.getSize(new THREE.Vector3());
+    var center = box.getCenter(new THREE.Vector3());
+    center.y = Math.min(center.y, (center.y + groundY) / 2 + 0.1);   /* чуть опускаем: пол в кадре */
+    camTarget = center;
+    var halfW = Math.max(size.x, size.z) * 0.5;
+    var halfH = Math.max(size.y, Math.abs(center.y - groundY)) * 0.5;
+    var vFov = camera.fov * Math.PI / 180;
+    var needH = (Math.max(halfH, halfW * 0.72) * 1.35) / Math.tan(vFov / 2);
+    var needW = (halfW * 1.35) / (Math.tan(vFov / 2) * camera.aspect);
+    camDist = Math.max(needH, needW, 1.6) / zoom;
     if (key) {
       key.position.set(fit * 0.5, fit * 1.6, fit * 0.9);
       var sc = key.shadow.camera;
@@ -441,8 +452,9 @@
     if (!running) return;
     if (idle && !dragging) group.rotation.y += 0.0032;          /* вещь сама поворачивается на полу */
     var cp = Math.cos(pitch), sp = Math.sin(pitch);
-    camera.position.set(Math.sin(yaw) * cp * camDist, sp * camDist + 0.18, Math.cos(yaw) * cp * camDist);
-    camera.lookAt(0, 0, 0);
+    var t = camTarget || { x: 0, y: 0, z: 0 };
+    camera.position.set(t.x + Math.sin(yaw) * cp * camDist, t.y + sp * camDist, t.z + Math.cos(yaw) * cp * camDist);
+    camera.lookAt(t.x, t.y, t.z);
     renderer.render(scene, camera);
     raf = requestAnimationFrame(render);
   }
@@ -455,6 +467,7 @@
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
+    if (getState) rebuild(getState());
   }
 
   function bind() {
