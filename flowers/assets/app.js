@@ -28,6 +28,47 @@
 
   var BUILDER_IMG = 'assets/img/hero.jpg';
 
+  /* ============================ свой набор иконок ============================ */
+  /* Тонкий контур: viewBox 24, штрих 1.2, круглые окончания, без заливки.
+     Набор авторский — корзина это плетёное лукошко с дужкой, меню это две линии
+     разной длины. Иконки не пересекаются с другими демо-сайтами серии. */
+  var ICONS = {
+    basket: '<path d="M3.6 9.4h16.8l-1.7 8.6a1.7 1.7 0 0 1-1.7 1.4H6.9a1.7 1.7 0 0 1-1.7-1.4Z"/><path d="M8.6 9.4a3.4 3.4 0 0 1 6.8 0"/><path d="M4.5 13.2h15"/><path d="M9.8 12.9v4.4"/><path d="M12 12.9v4.4"/><path d="M14.2 12.9v4.4"/>',
+    menu: '<path d="M3.6 8.6h16.8"/><path d="M3.6 15.4h10"/>',
+    search: '<circle cx="10.6" cy="10.6" r="6.1"/><path d="m15.2 15.2 4.4 4.4"/>',
+    sort: '<path d="M3.6 6.8h9.8"/><path d="M3.6 11.8h6.6"/><path d="M3.6 16.8h3.4"/><path d="M18 4.6v13.6"/><path d="m15.4 15.6 2.6 2.7 2.6-2.7"/>',
+    reset: '<path d="M4.4 4.8v5.4h5.4"/><path d="M4.9 10.2a7.3 7.3 0 1 1 1.8 6.1"/>',
+    delivery: '<circle cx="6.4" cy="17.4" r="2.2"/><circle cx="17.4" cy="17.4" r="2.2"/><path d="M8.6 17.4h6.6"/><path d="M3.8 15.2V10.6h5.5l1.9 6.8"/><path d="M11.2 10.6h3.5l2.7 6.8"/><path d="M14.7 6.4c1.7.4 2.6 2 2.9 4.2"/>',
+    clock: '<circle cx="12" cy="12" r="8.1"/><path d="M12 7.4V12l3.3 2"/>',
+    shield: '<path d="M12 3.6c1.9 1.5 3.9 2.2 6 2.3v5.5c0 4.2-2.6 6.9-6 8.5-3.4-1.6-6-4.3-6-8.5V5.9c2.1-.1 4.1-.8 6-2.3Z"/><path d="m9.4 12 1.8 1.9 3.5-3.7"/>',
+    drop: '<path d="M12 3.8c2.6 3.1 5.3 5.9 5.3 9a5.3 5.3 0 0 1-10.6 0c0-3.1 2.7-5.9 5.3-9Z"/><path d="M9.7 13.4a2.3 2.3 0 0 0 2.3 2.3"/>',
+    envelope: '<rect x="3.4" y="6.3" width="17.2" height="11.4" rx="1.6"/><path d="m4.6 7.8 7.4 5.2 7.4-5.2"/>',
+    plus: '<path d="M12 5.4v13.2"/><path d="M5.4 12h13.2"/>',
+    minus: '<path d="M5.4 12h13.2"/>',
+    trash: '<path d="M4.4 6.8h15.2"/><path d="M9.4 6.8V4.9h5.2v1.9"/><path d="M6.6 6.8l.9 12.3h9l.9-12.3"/><path d="M10.4 10.4v6"/><path d="M13.6 10.4v6"/>',
+    check: '<path d="m5.4 12.6 4.2 4.3 9-9.4"/>',
+    arrowRight: '<path d="M4.6 12h14.8"/><path d="m13.4 6.2 5.8 5.8-5.8 5.8"/>',
+    arrowLeft: '<path d="M19.4 12H4.6"/><path d="m10.6 6.2-5.8 5.8 5.8 5.8"/>',
+    phone: '<path d="M9 3.6H6.3A2.2 2.2 0 0 0 4.1 5.9c.4 7 6.2 12.8 13.2 13.2a2.2 2.2 0 0 0 2.3-2.2v-2.7a12 12 0 0 1-3.5-1l-1.9 1.9a14.6 14.6 0 0 1-4.3-4.3l1.9-1.9a12 12 0 0 1-1-3.5Z"/>',
+    pin: '<path d="M12 3.6a5.9 5.9 0 0 1 5.9 5.9c0 4.2-5.9 10.9-5.9 10.9S6.1 13.7 6.1 9.5A5.9 5.9 0 0 1 12 3.6Z"/><circle cx="12" cy="9.5" r="2.2"/>',
+    instagram: '<rect x="3.6" y="3.6" width="16.8" height="16.8" rx="4.6"/><circle cx="12" cy="12" r="4"/><path d="M16.9 7.1h.01"/>',
+    scissors: '<circle cx="6.4" cy="6.4" r="2.6"/><circle cx="6.4" cy="17.6" r="2.6"/><path d="M8.5 8.2 19.4 19"/><path d="M19.4 5 8.5 15.8"/>',
+    palette: '<path d="M12 3.5a8.5 8.5 0 1 0 0 17c1 0 1.6-.7 1.6-1.5 0-.4-.2-.8-.4-1.1a1.5 1.5 0 0 1 1.2-2.4h1.9a3.2 3.2 0 0 0 3.2-3.2c0-4.8-3.9-8.8-8.5-8.8Z"/><circle cx="8.3" cy="9.4" r=".9"/><circle cx="12" cy="7.6" r=".9"/><circle cx="15.6" cy="9.4" r=".9"/><circle cx="7.6" cy="13.4" r=".9"/>',
+    package: '<path d="M12 3.6 20.2 8v8L12 20.4 3.8 16V8Z"/><path d="m3.8 8 8.2 4.4L20.2 8"/><path d="M12 20.4v-8"/>',
+    gift: '<rect x="3.4" y="8.4" width="17.2" height="4" rx="1"/><path d="M4.8 12.4v6.2a1.6 1.6 0 0 0 1.6 1.6h11.2a1.6 1.6 0 0 0 1.6-1.6v-6.2"/><path d="M12 8.4v11.8"/><path d="M8.2 8.4a2.3 2.3 0 0 1 0-4.6C10 3.8 12 8.4 12 8.4"/><path d="M15.8 8.4a2.3 2.3 0 0 0 0-4.6C14 3.8 12 8.4 12 8.4"/>',
+    calendar: '<rect x="3.6" y="5.4" width="16.8" height="15" rx="1.8"/><path d="M8 3.6v3.6"/><path d="M16 3.6v3.6"/><path d="M3.6 10.6h16.8"/>',
+    heart: '<path d="M12 19.6 4.9 12.5a4.2 4.2 0 0 1 5.9-5.9l1.2 1.2 1.2-1.2a4.2 4.2 0 0 1 5.9 5.9Z"/>',
+    document: '<path d="M13.6 3.6H6.8a1.8 1.8 0 0 0-1.8 1.8v13.2a1.8 1.8 0 0 0 1.8 1.8h10.4a1.8 1.8 0 0 0 1.8-1.8V8.6Z"/><path d="M13.6 3.6v5h5.4"/><path d="M8.8 13h6.4"/><path d="M8.8 16.4h4.2"/>',
+    download: '<path d="M12 3.6v12.2"/><path d="m7.2 11 4.8 4.8L16.8 11"/><path d="M4.8 20.4h14.4"/>',
+    sparkles: '<path d="M12 3.6 13.6 9 19 10.6 13.6 12.2 12 17.6 10.4 12.2 5 10.6 10.4 9Z"/><path d="M18.4 16.2 19 18l1.8.6-1.8.6-.6 1.8-.6-1.8-1.8-.6 1.8-.6Z"/>'
+  };
+
+  function icon(name, extraClass) {
+    var body = ICONS[name] || ICONS.sparkles;
+    return '<svg class="icon' + (extraClass ? ' ' + extraClass : '') + '" viewBox="0 0 24 24" stroke="currentColor"' +
+      ' stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + body + '</svg>';
+  }
+
   /* ============================ утилиты ============================ */
 
   function $(sel, root) { return (root || document).querySelector(sel); }
@@ -218,6 +259,13 @@
 
   function saveOrders(list) { lsSet(ORDERS_KEY, list); }
 
+  function pad4(n) {
+    var s = String(n);
+    while (s.length < 4) { s = '0' + s; }
+    return s;
+  }
+
+  /* Номер заказа — последние четыре цифры времени оформления, всегда четыре знака */
   function nextOrderNumber() {
     var list = readOrders();
     var used = {};
@@ -225,8 +273,11 @@
     var base = Number(String(Date.now()).slice(-4));
     var candidate = base;
     var guard = 0;
-    while (used[String(candidate)] && guard < 60) { candidate = candidate + 1 > 9999 ? 1000 : candidate + 1; guard++; }
-    return candidate;
+    while (used[pad4(candidate)] && guard < 60) {
+      candidate = candidate + 1 > 9999 ? 0 : candidate + 1;
+      guard++;
+    }
+    return pad4(candidate);
   }
 
   function createOrder(payload) {
@@ -319,25 +370,59 @@
       (className ? ' class="' + className + '"' : '') + '>';
   }
 
-  function productCard(product) {
+  /* Карточка без рамок и теней: фото 4:5, название и цена с точечным заполнителем.
+     Подробности показываем только на крупной карточке витрины. */
+  function productCard(product, opts) {
+    opts = opts || {};
+    var feature = !!opts.feature;
+    var index = opts.index || 0;
     var badge = product.badge
-      ? '<span class="badge card__badge">' + esc(product.badge) + '</span>'
+      ? '<span class="badge">' + esc(product.badge) + '</span>'
       : '';
-    var tagLine = tagTitles(product.tags).slice(0, 2).join(' · ');
+    var tagLine = tagTitles(product.tags).join(' · ');
+
+    if (!feature) {
+      return '' +
+        '<article class="card reveal" data-product="' + esc(product.id) + '">' +
+          '<div class="card__media">' +
+            badge +
+            imageMarkup(product.img, product.alt) +
+            '<span class="card__index num" aria-hidden="true">' + pad(index) + '</span>' +
+          '</div>' +
+          '<div class="card__body">' +
+            '<h3 class="card__title">' + esc(product.name) + '</h3>' +
+            '<div class="card__foot">' +
+              '<div class="price-line">' +
+                '<span class="price">' + byn(product.price) + '</span>' +
+                '<span class="leader" aria-hidden="true"></span>' +
+                '<button class="add-btn" type="button" data-action="add" data-id="' + esc(product.id) + '"' +
+                  ' aria-label="В корзину: ' + esc(product.name) + '">' + icon('plus') + '</button>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</article>';
+    }
+
     return '' +
-      '<article class="card reveal" data-product="' + esc(product.id) + '">' +
-        '<div class="card__media">' + badge + imageMarkup(product.img, product.alt) + '</div>' +
+      '<article class="card card--feature reveal" data-product="' + esc(product.id) + '">' +
+        '<div class="card__media">' +
+          badge +
+          imageMarkup(product.img, product.alt) +
+          '<span class="card__index num" aria-hidden="true">' + pad(index) + '</span>' +
+        '</div>' +
         '<div class="card__body">' +
-          '<p class="tiny muted">' + esc(catTitle(product.cat)) + '</p>' +
-          '<h3>' + esc(product.name) + '</h3>' +
-          '<p class="small muted">' + esc(product.short) + '</p>' +
-          '<p class="tiny muted">' + esc(product.size) + (tagLine ? ' · ' + esc(tagLine) : '') + '</p>' +
+          '<p class="card__kicker">' + esc(catTitle(product.cat)) + '</p>' +
+          '<h3 class="card__title">' + esc(product.name) + '</h3>' +
+          '<p class="card__text">' + esc(product.short) + '</p>' +
+          '<p class="card__spec">' + esc(product.size) + (tagLine ? ' · ' + esc(tagLine) : '') + '</p>' +
           '<div class="card__foot">' +
-            '<span class="price">' + byn(product.price) + '</span>' +
-            '<button class="btn btn--sm" type="button" data-action="add" data-id="' + esc(product.id) + '">' +
-              '<svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>' +
-              'В корзину' +
-            '</button>' +
+            '<div class="price-line">' +
+              '<span class="price">' + byn(product.price) + '</span>' +
+              '<span class="leader" aria-hidden="true"></span>' +
+              '<button class="btn btn--sm" type="button" data-action="add" data-id="' + esc(product.id) + '">' +
+                icon('basket') + 'В корзину' +
+              '</button>' +
+            '</div>' +
           '</div>' +
         '</div>' +
       '</article>';
@@ -360,17 +445,24 @@
     var burger = $('[data-action="menu"]');
     var panel = $('#mobile-nav');
     if (!burger || !panel) { return; }
-    burger.addEventListener('click', function () {
-      var open = panel.classList.toggle('is-open');
+
+    function setOpen(open) {
+      panel.classList.toggle('is-open', open);
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+      if (document.body && document.body.classList) {
+        document.body.classList.toggle('nav-open', open);
+      }
+    }
+
+    burger.addEventListener('click', function () {
+      setOpen(!panel.classList.contains('is-open'));
     });
     $$('a', panel).forEach(function (link) {
-      link.addEventListener('click', function () {
-        panel.classList.remove('is-open');
-        burger.setAttribute('aria-expanded', 'false');
-        panel.setAttribute('aria-hidden', 'true');
-      });
+      link.addEventListener('click', function () { setOpen(false); });
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && panel.classList.contains('is-open')) { setOpen(false); }
     });
   }
 
@@ -418,7 +510,7 @@
         note: product.size
       }, 1);
       updateCartBadges();
-      toast('«' + product.name + '» в корзине — ' + count + ' ' + plural(count, 'позиция', 'позиции', 'позиций'));
+      toast('«' + product.name + '» в корзине · ' + count + ' ' + plural(count, 'позиция', 'позиции', 'позиций'));
     });
   }
 
@@ -448,7 +540,7 @@
     ],
     packs: [
       { id: 'craft', title: 'Крафт и лента', add: 0, hint: 'Классика, ничего лишнего' },
-      { id: 'box', title: 'Шляпная коробка', add: 25, hint: 'С влажной губкой — не нужна ваза' },
+      { id: 'box', title: 'Шляпная коробка', add: 25, hint: 'С влажной губкой, ваза не понадобится' },
       { id: 'vase', title: 'Стеклянная ваза', add: 35, hint: 'Можно подарить сразу с водой' }
     ]
   };
@@ -510,8 +602,9 @@
       $('#builder-summary').textContent = 'Букет ' + size.title + ' · ' + occ.title + ' · ' + pal.title.toLowerCase() +
         ' палитра · ' + pack.title.toLowerCase();
       $('#builder-note').textContent = sum >= FREE_FROM
-        ? 'Доставка по Минску — бесплатно, сегодня за 2 часа.'
-        : 'Доставка по Минску 12 BYN, сегодня за 2 часа. До бесплатной доставки — ' + byn(FREE_FROM - sum) + '.';
+        ? 'Доставка по Минску бесплатная: заказ перевалил за ' + byn(FREE_FROM) + '.'
+        : 'До бесплатной доставки не хватает ' + byn(FREE_FROM - sum) + '. По Минску возим за ' +
+          byn(DELIVERY_FEE) + ', обычно за два часа.';
     }
 
     groups.forEach(function (group) {
@@ -547,7 +640,7 @@
           note: note
         }, 1);
         updateCartBadges();
-        toast('Букет ' + size.title + ' в корзине — ' + count + ' ' + plural(count, 'позиция', 'позиции', 'позиций'));
+        toast('Букет ' + size.title + ' уехал в корзину · ' + count + ' ' + plural(count, 'позиция', 'позиции', 'позиций'));
       });
     }
 
@@ -558,36 +651,24 @@
     var grid = $('#featured');
     if (!grid) { return; }
     var picked = PRODUCTS.slice().sort(function (a, b) { return (b.pop || 0) - (a.pop || 0); }).slice(0, 4);
-    grid.innerHTML = picked.map(productCard).join('');
+    grid.innerHTML = picked.map(function (product, i) {
+      return productCard(product, { index: i + 1, feature: i === 0 });
+    }).join('');
     initReveal();
   }
 
   function initServices() {
     var host = $('#services');
     if (!host) { return; }
-    var icons = {
-      scissors: '<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88"/><path d="M14.47 14.48 20 20"/><path d="M8.12 8.12 12 12"/>',
-      palette: '<circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2a10 10 0 1 0 0 20 1 1 0 0 0 1-1v-1a2 2 0 0 1 2-2h2a3 3 0 0 0 3-3 10 10 0 0 0-10-10z"/>',
-      package: '<path d="M11 21.7a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/>',
-      gift: '<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/>',
-      calendar: '<path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/>',
-      heart: '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
-      truck: '<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.6a1 1 0 0 0-.2-.6l-3.5-4.4A1 1 0 0 0 17.5 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>',
-      clock: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
-      shield: '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
-      sparkles: '<path d="M9.9 15.5a2 2 0 0 0-1.4-1.44L2.36 12.5a.5.5 0 0 1 0-.96l6.14-1.6A2 2 0 0 0 9.9 8.5l1.58-6.14a.5.5 0 0 1 .96 0L14.06 8.5a2 2 0 0 0 1.44 1.44l6.14 1.58a.5.5 0 0 1 0 .96l-6.14 1.58a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"/>'
-    };
-    host.innerHTML = SERVICES.map(function (service) {
-      var icon = icons[service.icon] || icons.sparkles;
+    host.innerHTML = SERVICES.map(function (service, i) {
       return '' +
         '<article class="feature reveal">' +
-          '<span class="feature__icon" aria-hidden="true">' +
-            '<svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none">' + icon + '</svg>' +
-          '</span>' +
+          '<span class="feature__icon" aria-hidden="true">' + icon(service.icon, 'icon--lg') + '</span>' +
           '<div>' +
             '<h3>' + esc(service.title) + '</h3>' +
-            '<p class="small muted">' + esc(service.text) + '</p>' +
+            '<p>' + esc(service.text) + '</p>' +
           '</div>' +
+          '<span class="feature__index num" aria-hidden="true">' + pad(i + 1) + '</span>' +
         '</article>';
     }).join('');
     initReveal();
@@ -649,22 +730,24 @@
       var counter = $('#catalog-count');
       if (counter) {
         counter.textContent = found.length
-          ? 'Найдено ' + found.length + ' ' + plural(found.length, 'работа', 'работы', 'работ') + ' из ' + PRODUCTS.length
-          : 'Ничего не найдено';
+          ? 'Нашлось ' + found.length + ' ' + plural(found.length, 'работа', 'работы', 'работ') + ' из ' + PRODUCTS.length
+          : 'Ничего не нашлось';
       }
       if (!found.length) {
         grid.innerHTML = '' +
           '<div class="empty grid-empty">' +
-            '<svg class="icon icon--xl" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">' +
-              '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>' +
-            '</svg>' +
-            '<h3>Ничего не найдено</h3>' +
-            '<p class="small">Попробуйте другой повод, цену или сбросьте фильтры — в мастерской всегда есть что собрать.</p>' +
-            '<button class="btn btn--sm" type="button" data-action="reset-filters">Сбросить фильтры</button>' +
+            icon('search', 'icon--xl') +
+            '<h3>Под эти условия ничего не нашлось</h3>' +
+            '<p class="small">Снимите пару фильтров или напишите короче: например, «пион» или «подписка».</p>' +
+            '<button class="btn btn--sm" type="button" data-action="reset-filters">' +
+              icon('reset') + 'Сбросить фильтры' +
+            '</button>' +
           '</div>';
         return;
       }
-      grid.innerHTML = found.map(productCard).join('');
+      grid.innerHTML = found.map(function (product, i) {
+        return productCard(product, { index: i + 1, feature: found.length >= 4 && i === 0 });
+      }).join('');
       initReveal();
     }
 
@@ -762,16 +845,16 @@
               '</div>' +
               '<div class="cart-line__qty">' +
                 '<button class="icon-btn icon-btn--sm" type="button" data-action="dec" data-id="' + esc(item.id) + '" aria-label="Убрать одну">' +
-                  '<svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true"><path d="M5 12h14"/></svg>' +
+                  icon('minus') +
                 '</button>' +
                 '<span class="qty" aria-live="polite">' + item.qty + '</span>' +
                 '<button class="icon-btn icon-btn--sm" type="button" data-action="inc" data-id="' + esc(item.id) + '" aria-label="Добавить одну">' +
-                  '<svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>' +
+                  icon('plus') +
                 '</button>' +
               '</div>' +
               '<div class="cart-line__sum">' + byn(item.price * item.qty) + '</div>' +
               '<button class="icon-btn icon-btn--sm cart-line__del" type="button" data-action="remove" data-id="' + esc(item.id) + '" aria-label="Удалить ' + esc(item.name) + '">' +
-                '<svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>' +
+                icon('trash') +
               '</button>' +
             '</li>';
         }).join('');
@@ -787,9 +870,9 @@
       var hint = $('#delivery-hint');
       if (hint) {
         hint.textContent = fee === 0
-          ? 'Доставка по Минску бесплатная — заказ от ' + byn(FREE_FROM) + '.'
-          : 'До бесплатной доставки осталось ' + byn(FREE_FROM - sub) + '. Доставка по Минску — ' +
-            byn(DELIVERY_FEE) + ', обычно за 2 часа.';
+          ? 'Доставка бесплатная: заказ от ' + byn(FREE_FROM) + '.'
+          : 'До бесплатной доставки осталось ' + byn(FREE_FROM - sub) + '. По Минску возим за ' +
+            byn(DELIVERY_FEE) + ', обычно за два часа.';
       }
       var bar = $('#delivery-bar');
       if (bar) {
@@ -817,11 +900,11 @@
       } else if (action === 'remove') {
         removeFromCart(id);
         render();
-        toast('Позиция удалена из корзины');
+        toast('Убрали позицию из корзины');
       } else if (action === 'clear-cart') {
         clearCart();
         render();
-        toast('Корзина очищена');
+        toast('Корзина пустая');
       }
     });
 
@@ -855,7 +938,7 @@
         event.preventDefault();
         var items = readCart();
         if (!items.length) {
-          toast('Сначала добавьте букет в корзину');
+          toast('Сначала выберите букет в каталоге');
           return;
         }
         var name = ($('#field-name') || {}).value || '';
@@ -867,19 +950,19 @@
 
         var ok = true;
         name = name.trim();
-        if (name.length < 2) { showError('name', 'Напишите, как к вам обращаться'); ok = false; } else { showError('name', ''); }
+        if (name.length < 2) { showError('name', 'Напишите имя, хотя бы пару букв'); ok = false; } else { showError('name', ''); }
 
         var digits = phone.replace(/[^\d]/g, '');
         if (!/^375(17|25|29|33|44)\d{7}$/.test(digits)) {
-          showError('phone', 'Телефон в формате +375 (29) 123-45-67'); ok = false;
+          showError('phone', 'Не похоже на номер. Формат: +375 (29) 123-45-67'); ok = false;
         } else { showError('phone', ''); }
 
         if (method === 'delivery') {
-          if (address.trim().length < 5) { showError('address', 'Улица, дом и квартира — чтобы курьер не искал'); ok = false; } else { showError('address', ''); }
+          if (address.trim().length < 5) { showError('address', 'Нужны улица, дом и квартира, иначе курьер будет звонить из машины'); ok = false; } else { showError('address', ''); }
         } else {
           showError('address', '');
         }
-        if (!date) { showError('date', 'Выберите дату'); ok = false; } else { showError('date', ''); }
+        if (!date) { showError('date', 'Без даты не поймём, когда везти'); ok = false; } else { showError('date', ''); }
         if (!ok) { return; }
 
         var sub = cartSubtotal();
@@ -915,7 +998,7 @@
             '<li><span>Дата</span><strong>' + esc(order.date) + (order.slot ? ', ' + esc(order.slot) : '') + '</strong></li>';
           success.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        toast('Заказ №' + order.number + ' принят — мы позвоним в течение 15 минут');
+        toast('Заказ №' + order.number + ' у нас. Позвоним в течение 15 минут.');
         render();
       });
     }
@@ -963,8 +1046,7 @@
       if (empty) { empty.hidden = true; }
 
       if (!shown.length) {
-        host.innerHTML = '<div class="empty"><p class="small">Заказов с этим статусом пока нет. Выберите другой статус ' +
-          'или «Все заказы».</p></div>';
+        host.innerHTML = '<div class="empty"><p class="small">В этом статусе пока пусто. Посмотрите другой или вернитесь ко всем заказам.</p></div>';
         return;
       }
 
@@ -996,7 +1078,7 @@
             '<div class="order__meta">' +
               '<p><strong>' + esc(order.name) + '</strong> · ' + esc(order.phone) + '</p>' +
               '<p class="small muted">' + (order.method === 'pickup'
-                ? 'Самовывоз из мастерской на Немиге'
+                ? 'Самовывоз с Немиги, 12'
                 : 'Доставка: ' + esc(order.address || 'адрес не указан')) + '</p>' +
               '<p class="small muted">Дата: ' + esc(order.date || '—') + (order.slot ? ', ' + esc(order.slot) : '') + '</p>' +
               (order.comment ? '<p class="small muted">Комментарий: ' + esc(order.comment) + '</p>' : '') +
@@ -1021,7 +1103,7 @@
       var counter = $('#admin-count');
       if (counter) {
         counter.textContent = orders.length
-          ? 'Всего ' + orders.length + ' ' + plural(orders.length, 'заказ', 'заказа', 'заказов')
+          ? 'В списке ' + orders.length + ' ' + plural(orders.length, 'заказ', 'заказа', 'заказов')
           : 'Заказов пока нет';
       }
     }
@@ -1033,7 +1115,7 @@
       var status = btn.getAttribute('data-status');
       updateOrderStatus(number, status);
       render();
-      toast('Заказ №' + number + ' — ' + statusTitle(status).toLowerCase());
+      toast('Заказ №' + number + ': ' + statusTitle(status).toLowerCase());
     });
 
     $$('[data-status-filter]').forEach(function (chip) {
@@ -1050,7 +1132,7 @@
     if (exportBtn) {
       exportBtn.addEventListener('click', function () {
         var orders = readOrders();
-        if (!orders.length) { toast('Пока нечего экспортировать'); return; }
+        if (!orders.length) { toast('В списке пусто, выгружать нечего'); return; }
         var csv = '\ufeff' + ordersToCsv(orders);
         var blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
         var url = URL.createObjectURL(blob);
@@ -1061,18 +1143,18 @@
         link.click();
         document.body.removeChild(link);
         URL.revokeObjectURL(url);
-        toast('Экспортировали ' + orders.length + ' ' + plural(orders.length, 'заказ', 'заказа', 'заказов') + ' в CSV');
+        toast('Выгрузили ' + orders.length + ' ' + plural(orders.length, 'заказ', 'заказа', 'заказов') + ' в CSV');
       });
     }
 
     var wipe = $('#clear-orders');
     if (wipe) {
       wipe.addEventListener('click', function () {
-        if (!readOrders().length) { toast('Список уже пустой'); return; }
-        if (!window.confirm('Удалить все заказы из демо-панели? Это только локальные данные в браузере.')) { return; }
+        if (!readOrders().length) { toast('Тут и так пусто'); return; }
+        if (!window.confirm('Стереть все заказы? Это данные только в этом браузере, вернуть их будет нельзя.')) { return; }
         saveOrders([]);
         render();
-        toast('Панель очищена — оформите тестовый заказ на сайте');
+        toast('Панель чистая. Оформите тестовый заказ, чтобы проверить снова.');
       });
     }
 

@@ -54,44 +54,46 @@
     return PRODUCTS.filter(function (p) { return p.id === id; })[0] || null;
   }
 
-  function prepWord(n) { return n + ' ' + (n % 10 === 1 && n % 100 !== 11 ? 'дня' : 'дней'); }
-
-  /* ---------- иконки: inline SVG, стиль Lucide (viewBox 0 0 24 24, stroke currentColor) ---------- */
+  /* ---------- иконки «Мельницы»: округлый плотный контур, штрих 1.8,
+     viewBox 0 0 24 24. Корзина — коробка для торта с бантом, а не сумка. ---------- */
   var ICONS = {
-    'truck': '<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>',
-    'clock': '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
-    'shield-check': '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
-    'credit-card': '<rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/>',
-    'heart': '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
-    'gift': '<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/>',
-    'search': '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
-    'filter': '<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>',
-    'plus': '<path d="M5 12h14"/><path d="M12 5v14"/>',
-    'minus': '<path d="M5 12h14"/>',
-    'trash-2': '<path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/>',
-    'shopping-bag': '<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>',
-    'check': '<path d="M20 6 9 17l-5-5"/>',
-    'chevron-right': '<path d="m9 18 6-6-6-6"/>',
-    'star': '<path d="M11.5 2.3a.53.53 0 0 1 .95 0l2.31 4.68a2.12 2.12 0 0 0 1.6 1.16l5.16.76a.53.53 0 0 1 .3.9l-3.74 3.64a2.12 2.12 0 0 0-.61 1.88l.88 5.14a.53.53 0 0 1-.77.56l-4.62-2.43a2.12 2.12 0 0 0-1.97 0L6.4 21.01a.53.53 0 0 1-.77-.56l.88-5.14a2.12 2.12 0 0 0-.61-1.88L2.16 9.79a.53.53 0 0 1 .3-.9l5.16-.76a2.12 2.12 0 0 0 1.6-1.16z"/>',
-    'map-pin': '<path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>',
-    'phone': '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
-    'mail': '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
-    'instagram': '<rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>',
-    'scissors': '<circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/>',
-    'ruler': '<path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/>',
-    'palette': '<path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>',
-    'sparkles': '<path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0l1.58 6.14a2 2 0 0 0 1.44 1.44l6.14 1.58a.5.5 0 0 1 0 .96l-6.14 1.58a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/>',
-    'package': '<path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/>',
-    'calendar': '<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>',
-    'user': '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
-    'settings': '<path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/>',
-    'arrow-right': '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
-    'x': '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
-    'menu': '<line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>'
+    'cake-box': '<path d="M5.2 8.6h13.6a1.2 1.2 0 0 1 1.2 1.2v1.6a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 11.4v-1.6a1.2 1.2 0 0 1 1.2-1.2Z"/><path d="M5.8 12.6v5.5a1.4 1.4 0 0 0 1.4 1.4h9.6a1.4 1.4 0 0 0 1.4-1.4v-5.5"/><path d="M12 8.6V7.4"/><path d="M12 7.7c-.7-1.8-3.5-1.9-3.5-.2 0 1.2 1.9 1.6 3.5.2Z"/><path d="M12 7.7c.7-1.8 3.5-1.9 3.5-.2 0 1.2-1.9 1.6-3.5.2Z"/>',
+    'menu': '<path d="M5 7h14"/><path d="M5 12h14"/><path d="M5 17h9"/>',
+    'search': '<circle cx="10.8" cy="10.8" r="6.6"/><path d="m20 20-4.4-4.4"/>',
+    'clock': '<circle cx="12" cy="12" r="8.8"/><path d="M12 7.2V12l3.4 2"/>',
+    'calendar': '<rect x="3.2" y="5" width="17.6" height="15.8" rx="3.4"/><path d="M3.2 9.8h17.6"/><path d="M8 3v3.6"/><path d="M16 3v3.6"/>',
+    'candle': '<path d="M9.4 21h5.2"/><rect x="10.2" y="10.4" width="3.6" height="10.6" rx="1.3"/><path d="M12 10.4V8.6"/><path d="M12 8.6c1.7-1.2 1.7-3.2 0-4.7-1.7 1.5-1.7 3.5 0 4.7Z"/>',
+    'whisk': '<path d="M20.6 3.4 15 9"/><path d="M15 9c-3.9-2.6-7.6-.4-8.4 3.5-.8 3.9 1 6.5 3.3 6.5 3 0 5.4-3.2 5.1-10Z"/><path d="M14.2 12.4c-2.3-1.2-4.3-.2-4.9 2"/>',
+    'scales': '<path d="M12 3.2v17"/><path d="M8.4 20.8h7.2"/><path d="M12 5.6H5.6"/><path d="M12 5.6h6.4"/><path d="M3.4 12.2a2.2 2.2 0 0 0 4.4 0L5.6 5.6 3.4 12.2Z"/><path d="M16.2 12.2a2.2 2.2 0 0 0 4.4 0L18.4 5.6 16.2 12.2Z"/>',
+    'truck': '<path d="M15.4 17.2V6.4a1.8 1.8 0 0 0-1.8-1.8H5.2a1.8 1.8 0 0 0-1.8 1.8v10.8"/><path d="M9.6 17.2h4.6"/><path d="M15.4 9.2h2.7a1.8 1.8 0 0 1 1.5.8l1.7 2.5c.2.3.3.6.3 1v1.9a1.8 1.8 0 0 1-1.8 1.8h-1.2"/><circle cx="7.4" cy="17.6" r="2.2"/><circle cx="17.6" cy="17.6" r="2.2"/>',
+    'heart': '<path d="M12 20.8 4.6 13.4a4.9 4.9 0 0 1 7-6.9l.4.4.4-.4a4.9 4.9 0 0 1 7 6.9Z"/>',
+    'phone': '<path d="M6.6 3.4h2.6a1.8 1.8 0 0 1 1.7 1.3l.7 2.3a1.8 1.8 0 0 1-.5 1.8L9.6 10a13 13 0 0 0 4.4 4.4l1.2-1.5a1.8 1.8 0 0 1 1.8-.5l2.3.7a1.8 1.8 0 0 1 1.3 1.7v2.6a1.8 1.8 0 0 1-2 1.8C11.9 18.5 5.5 12.1 4.8 5.4a1.8 1.8 0 0 1 1.8-2Z"/>',
+    'mail': '<rect x="3" y="5.2" width="18" height="13.6" rx="3"/><path d="m4.6 8.4 6.2 4.1a2.2 2.2 0 0 0 2.4 0l6.2-4.1"/>',
+    'map-pin': '<path d="M12 21.2c4-3.6 6.6-6.9 6.6-10a6.6 6.6 0 1 0-13.2 0c0 3.1 2.6 6.4 6.6 10Z"/><circle cx="12" cy="11" r="2.6"/>',
+    'instagram': '<rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.4"/><circle cx="12" cy="12" r="4.2"/><path d="M17.2 6.9h.01"/>',
+    'check': '<path d="M4.8 12.4 9.6 17.2 19.2 6.8"/>',
+    'chevron-right': '<path d="m9.6 5.6 6.4 6.4-6.4 6.4"/>',
+    'arrow-right': '<path d="M4.4 12h15.2"/><path d="m13.6 6 6 6-6 6"/>',
+    'x': '<path d="m6.4 6.4 11.2 11.2"/><path d="m17.6 6.4-11.2 11.2"/>',
+    'plus': '<path d="M12 5.2v13.6"/><path d="M5.2 12h13.6"/>',
+    'minus': '<path d="M5.2 12h13.6"/>',
+    'trash-2': '<path d="M4 7h16"/><path d="M9.2 7V5.4A1.4 1.4 0 0 1 10.6 4h2.8a1.4 1.4 0 0 1 1.4 1.4V7"/><path d="M6.4 7v11.6A1.4 1.4 0 0 0 7.8 20h8.4a1.4 1.4 0 0 0 1.4-1.4V7"/><path d="M10.4 11v5.2"/><path d="M13.6 11v5.2"/>',
+    'user': '<circle cx="12" cy="8" r="3.8"/><path d="M4.8 20.4a7.2 7.2 0 0 1 14.4 0"/>',
+    'settings': '<circle cx="12" cy="12" r="2.9"/><path d="M12 3.4v2.2"/><path d="M12 18.4v2.2"/><path d="M4.3 7.7 6.2 8.8"/><path d="m17.8 15.2 1.9 1.1"/><path d="M4.3 16.3l1.9-1.1"/><path d="m17.8 8.8 1.9-1.1"/>',
+    'star': '<path d="M12 3.6l2.5 5.1 5.6.8-4.1 4 1 5.6-5-2.6-5 2.6 1-5.6-4.1-4 5.6-.8Z"/>',
+    'gift': '<rect x="3.2" y="8.4" width="17.6" height="4.2" rx="1.2"/><path d="M4.8 12.6v5.8a1.6 1.6 0 0 0 1.6 1.6h11.2a1.6 1.6 0 0 0 1.6-1.6v-5.8"/><path d="M12 8.4v11.6"/><path d="M12 8.4c-1.2-2.4-5-2.6-5-.6 0 1.7 2.9 2.2 5 .6Z"/><path d="M12 8.4c1.2-2.4 5-2.6 5-.6 0 1.7-2.9 2.2-5 .6Z"/>',
+    'sparkles': '<path d="M12 3.6c.5 4.3 2.5 6.3 6.8 6.8-4.3.5-6.3 2.5-6.8 6.8-.5-4.3-2.5-6.3-6.8-6.8 4.3-.5 6.3-2.5 6.8-6.8Z"/><path d="M18.4 15.6c.2 1.9 1.1 2.8 3 3-1.9.2-2.8 1.1-3 3-.2-1.9-1.1-2.8-3-3 1.9-.2 2.8-1.1 3-3Z"/>',
+    'filter': '<path d="M20.4 4.4 13.6 12v6.2l-3.2 2V12L3.6 4.4A.8.8 0 0 1 4.2 3h15.6a.8.8 0 0 1 .6 1.4Z"/>',
+    'credit-card': '<rect x="2.8" y="5.6" width="18.4" height="12.8" rx="3"/><path d="M2.8 10.2h18.4"/><path d="M6.4 14.6h3.2"/>',
+    'shield-check': '<path d="M12 3.2 5 5.9v5.6c0 4.2 2.9 7.4 7 9.3 4.1-1.9 7-5.1 7-9.3V5.9Z"/><path d="m9.2 11.8 2 2 3.6-3.8"/>',
+    'package': '<path d="M3.6 8.4 12 4.4l8.4 4v7.2L12 19.6l-8.4-4Z"/><path d="M3.6 8.4 12 12.4l8.4-4"/><path d="M12 12.4v7.2"/>',
+    'ruler': '<path d="M20.6 15.4a2 2 0 0 1 0 2.8l-2.4 2.4a2 2 0 0 1-2.8 0L3.4 8.6a2 2 0 0 1 0-2.8l2.4-2.4a2 2 0 0 1 2.8 0Z"/><path d="m13.6 11.8 1.8-1.8"/><path d="m11 9.2 1.8-1.8"/><path d="m8.4 6.6 1.8-1.8"/><path d="m16.2 14.4 1.8-1.8"/>',
+    'palette': '<path d="M12 21.4a9.4 9.4 0 1 1 9.4-9.4c0 2.6-2 4.6-4.6 4.6h-2a2 2 0 0 0-1.6 3.2l.2.3a1.9 1.9 0 0 1-1.4 2.9Z"/><circle cx="13.4" cy="7.6" r="1"/><circle cx="17" cy="11" r="1"/><circle cx="8.2" cy="13" r="1"/><circle cx="9.8" cy="8.4" r="1"/>',
+    'scissors': '<circle cx="6.4" cy="6.4" r="2.6"/><circle cx="6.4" cy="17.6" r="2.6"/><path d="M8.3 8.2 20 20"/><path d="M20 4 8.3 15.8"/>'
   };
   function icon(name, cls) {
     var body = ICONS[name] || '';
-    return '<svg class="' + (cls || 'icon') + '" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' + body + '</svg>';
+    return '<svg class="' + (cls || 'icon') + '" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' + body + '</svg>';
   }
 
   /* ============================================================
@@ -158,7 +160,7 @@
     return {
       id: item.id, qty: item.qty,
       title: item.title || 'Торт на заказ',
-      meta: item.meta || 'собран в калькуляторе',
+      meta: item.meta || 'собрали в калькуляторе',
       price: item.price || 0,
       img: item.img || 'assets/img/hero.jpg',
       alt: 'Торт на заказ'
@@ -272,13 +274,13 @@
         '</div>' +
         '<div class="card__body">' +
           '<h3 class="product__name">' + esc(p.name) + '</h3>' +
-          '<p class="product__format small muted">' + esc(p.format) + '</p>' +
+          '<p class="product__format">' + esc(p.format) + '</p>' +
           '<p class="product__desc small">' + esc(p.desc) + '</p>' +
-          '<p class="product__prep small muted">' + icon('clock', 'icon icon--sm') + 'готов от ' + prepWord(p.prep) + '</p>' +
+          '<p class="product__prep small muted">' + icon('clock', 'icon icon--sm') + 'испечём за ' + p.prep + ' ' + plural(p.prep, 'день', 'дня', 'дней') + '</p>' +
           '<div class="tags">' + feats + '</div>' +
           '<div class="card__foot">' +
             '<span class="price">' + money(p.price) + '</span>' +
-            '<button class="btn btn--sm" type="button" data-add="' + esc(p.id) + '">' + icon('shopping-bag', 'icon icon--sm') + 'В корзину</button>' +
+            '<button class="btn btn--sm" type="button" data-add="' + esc(p.id) + '">' + icon('cake-box', 'icon icon--sm') + 'В корзину</button>' +
           '</div>' +
         '</div>' +
       '</article>';
@@ -334,7 +336,7 @@
       var list = filtered();
       grid.innerHTML = list.map(cardHTML).join('');
       if (countEl) {
-        countEl.innerHTML = 'Найдено <strong>' + list.length + '</strong> ' + plural(list.length, 'торт', 'торта', 'тортов') + ' из ' + PRODUCTS.length;
+        countEl.innerHTML = 'Нашли <strong>' + list.length + '</strong> ' + plural(list.length, 'торт', 'торта', 'тортов') + ' из ' + PRODUCTS.length;
       }
       if (emptyBox) emptyBox.hidden = list.length !== 0;
       grid.hidden = list.length === 0;
@@ -373,7 +375,7 @@
         if (searchInput) searchInput.value = '';
         renderControls();
         render();
-        toast('Фильтры сброшены');
+        toast('Фильтры убрали, показываем всё');
       });
       var resetEmpty = $('#reset-filters-empty');
       if (resetEmpty) resetEmpty.addEventListener('click', function () { resetBtn.click(); });
@@ -384,7 +386,7 @@
       var p = productById(btn.getAttribute('data-add'));
       if (!p) return;
       addToCart({ id: p.id }, 1);
-      toast('«' + p.name + '» в корзине');
+      toast('Положили «' + p.name + '» в корзину');
     });
 
     renderControls();
@@ -413,7 +415,7 @@
       var p = productById(btn.getAttribute('data-add'));
       if (!p) return;
       addToCart({ id: p.id }, 1);
-      toast('«' + p.name + '» в корзине');
+      toast('Положили «' + p.name + '» в корзину');
     });
     initReveal();
   }
@@ -477,6 +479,13 @@
 
     function minDate() { return addDays(todayISO(), calcPrep(state.weight, state.decor)); }
 
+    /* вес и декор меняют срок: если дата стала слишком ранней, ставим ближайшую возможную
+       и не показываем предупреждение — человек его не заслужил, он просто выбрал торт побольше */
+    function resetDate() {
+      state.date = '';
+      if (dateInput) dateInput.value = '';
+    }
+
     function render() {
       $$('[data-kg]', weightBox).forEach(function (b) {
         b.setAttribute('aria-pressed', String(Number(b.getAttribute('data-kg')) === state.weight));
@@ -497,7 +506,7 @@
       }
       if (outPrice) outPrice.textContent = money(calcPrice(state.weight, state.flavor, state.decor));
       if (outTerms) {
-        outTerms.innerHTML = 'Готово к <strong>' + esc(dateRu(min)) + '</strong> · срок ' + prep + ' ' + plural(prep, 'день', 'дня', 'дней');
+        outTerms.innerHTML = 'К <strong>' + esc(dateRu(min)) + '</strong> успеваем: работы на ' + prep + ' ' + plural(prep, 'день', 'дня', 'дней');
       }
       if (outList) {
         var perKg = PRICE_PER_KG[state.weight];
@@ -516,7 +525,7 @@
       if (warn) {
         warn.hidden = !tooEarly;
         warn.textContent = tooEarly
-          ? 'Ближайшая дата с таким декором — ' + dateRu(min) + '. Выберите её или упростите декор.'
+          ? 'С таким декором раньше ' + dateRu(min) + ' не получится. Возьмите эту дату или декор попроще.'
           : '';
       }
       if (addBtn) addBtn.disabled = tooEarly;
@@ -526,6 +535,7 @@
       var b = e.target.closest ? e.target.closest('[data-kg]') : null;
       if (!b) return;
       state.weight = Number(b.getAttribute('data-kg'));
+      resetDate();
       render();
     });
     if (flavorBox) flavorBox.addEventListener('click', function (e) {
@@ -540,6 +550,7 @@
       if (!b) return;
       var id = b.getAttribute('data-decor');
       state.decor = DECORS.filter(function (d) { return d.id === id; })[0] || state.decor;
+      resetDate();
       render();
     });
     if (dateInput) dateInput.addEventListener('change', function () { state.date = dateInput.value; render(); });
@@ -554,7 +565,7 @@
         meta: 'готов к ' + dateRu(state.date || minDate()),
         img: 'assets/img/berry.jpg'
       }, 1);
-      toast('Торт на заказ добавлен в корзину — ' + money(price));
+      toast('Торт на заказ в корзине: ' + money(price));
     });
 
     render();
@@ -634,8 +645,8 @@
       if (shipNote) {
         var left = SHOP.freeFrom - subtotal;
         shipNote.textContent = left > 0
-          ? 'До бесплатной доставки осталось ' + money(left)
-          : 'Доставка по Минску бесплатная';
+          ? 'До бесплатной доставки не хватает ' + money(left)
+          : 'Доставим по Минску бесплатно';
       }
       if (shipBar) {
         var pct = Math.max(0, Math.min(100, (subtotal / SHOP.freeFrom) * 100));
@@ -663,7 +674,7 @@
         }
       } else if (del) {
         removeFromCart(del.getAttribute('data-del'));
-        toast('Удалено из корзины');
+        toast('Убрали из корзины');
         render();
       }
     });
@@ -702,14 +713,14 @@
       var name = $('#f-name');
       ok = setError('f-name', name.value.trim().length < 2 ? 'Как к вам обращаться?' : '') && ok;
       var digits = phoneInput.value.replace(/\D/g, '');
-      ok = setError('f-phone', digits.length < 12 ? 'Телефон в формате +375 (29) 123-45-67' : '') && ok;
+      ok = setError('f-phone', digits.length < 12 ? 'Наберите номер целиком: +375 (29) 123-45-67' : '') && ok;
       if (method() === 'delivery') {
-        ok = setError('f-address', addrInput.value.trim().length < 5 ? 'Куда привезти торт?' : '') && ok;
+        ok = setError('f-address', addrInput.value.trim().length < 5 ? 'Напишите адрес: улица, дом, квартира' : '') && ok;
       } else {
         setError('f-address', '');
       }
       var d = $('#f-date').value;
-      ok = setError('f-date', !d ? 'Выберите дату' : (d < addDays(todayISO(), 1) ? 'Дата уже прошла — выберите другую' : '')) && ok;
+      ok = setError('f-date', !d ? 'Без даты не испечём: выберите день' : (d < addDays(todayISO(), 1) ? 'Эта дата уже прошла, возьмите другую' : '')) && ok;
       return ok;
     }
 
@@ -730,8 +741,8 @@
         '<div class="success">' +
           '<div class="success__icon">' + icon('check', 'icon icon--xl') + '</div>' +
           '<p class="eyebrow">заказ принят</p>' +
-          '<h2>Заказ №' + esc(order.no) + ' принят</h2>' +
-          '<p class="lead">' + esc(order.name) + ', мы позвоним по номеру ' + esc(order.phone) + ' в течение рабочего дня, чтобы подтвердить детали.</p>' +
+          '<h2>Заказ №' + esc(order.no) + ' записан</h2>' +
+          '<p class="lead">' + esc(order.name) + ', позвоним на ' + esc(order.phone) + ' в течение рабочего дня и уточним детали.</p>' +
           '<ul class="success__list">' + items + '</ul>' +
           '<div class="success__rows">' +
             '<div class="calc__row"><span>Получение</span><span>' + (order.method === 'delivery' ? 'доставка · ' + esc(order.address) : 'самовывоз · ' + esc(SHOP.address)) + '</span></div>' +
@@ -740,10 +751,10 @@
             '<div class="calc__row calc__row--total"><span>Итого</span><span>' + money(order.total) + '</span></div>' +
           '</div>' +
           '<div class="row">' +
-            '<a class="btn" href="catalog.html">' + icon('shopping-bag', 'icon icon--sm') + 'Вернуться в каталог</a>' +
+            '<a class="btn" href="catalog.html">' + icon('cake-box', 'icon icon--sm') + 'Вернуться в каталог</a>' +
             '<a class="btn btn--ghost" href="admin.html">Посмотреть в панели владельца' + icon('arrow-right', 'icon icon--sm') + '</a>' +
           '</div>' +
-          '<p class="small muted">Это демо-сайт: заказ сохранён только в этом браузере (localStorage, ключ <code>igdemo_cakes_orders_v1</code>), никуда не отправляется.</p>' +
+          '<p class="small muted">Это демо-сайт. Заказ остался в вашем браузере (localStorage, ключ <code>igdemo_cakes_orders_v1</code>) и никуда не ушёл.</p>' +
         '</div>';
       updateCartBadges();
     }
@@ -752,7 +763,7 @@
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         if (!validate()) {
-          toast('Проверьте выделенные поля');
+          toast('Подсветили поля, которые надо поправить');
           var bad = $('.is-invalid', form);
           if (bad) bad.focus();
           return;
@@ -779,7 +790,7 @@
         saveOrders(orders);
         clearCart();
         renderSuccess(order);
-        toast('Заказ №' + order.no + ' принят');
+        toast('Заказ №' + order.no + ' записан');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
@@ -875,8 +886,8 @@
 
       if (toolbarNote) {
         toolbarNote.textContent = all.length
-          ? 'Всего заказов: ' + all.length + ' · показано ' + list.length
-          : 'Заказов пока нет';
+          ? 'Всего заказов: ' + all.length + ', сейчас видно ' + list.length
+          : 'Пока ни одного заказа';
       }
 
       listBox.innerHTML = list.map(orderHTML).join('');
@@ -901,7 +912,7 @@
       });
       saveOrders(orders);
       render();
-      toast('Заказ №' + no + ' — ' + statusInfo(status).label);
+      toast('Заказ №' + no + ' теперь «' + statusInfo(status).label + '»');
     });
 
     if (filterBox) {
@@ -946,7 +957,7 @@
         a.click();
         document.body.removeChild(a);
         setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
-        toast('CSV выгружен: ' + orders.length + ' ' + plural(orders.length, 'заказ', 'заказа', 'заказов'));
+        toast('Файл CSV готов, внутри ' + orders.length + ' ' + plural(orders.length, 'заказ', 'заказа', 'заказов'));
       });
     }
 
@@ -968,7 +979,7 @@
           method: 'pickup',
           address: '',
           date: addDays(todayISO(), 2),
-          comment: 'Создан кнопкой в панели — для демонстрации',
+          comment: 'Нажали кнопку в панели — это образец, а не настоящий заказ',
           items: [{ title: p.name, qty: 1, price: p.price, meta: p.format }],
           subtotal: p.price,
           delivery: 0,
@@ -979,7 +990,7 @@
         orders.unshift(order);
         saveOrders(orders);
         render();
-        toast('Тестовый заказ №' + no + ' добавлен');
+        toast('Добавили образец заказа №' + no);
       });
     }
 
@@ -990,7 +1001,7 @@
       clearBtn.addEventListener('click', function () {
         if (!armed) {
           armed = true;
-          clearBtn.textContent = 'Точно очистить?';
+          clearBtn.textContent = 'Точно стираем?';
           clearBtn.classList.add('btn--danger');
           armTimer = setTimeout(function () {
             armed = false;
@@ -1005,7 +1016,7 @@
         clearBtn.classList.remove('btn--danger');
         saveOrders([]);
         render();
-        toast('Список заказов очищен');
+        toast('Список пустой');
       });
     }
 

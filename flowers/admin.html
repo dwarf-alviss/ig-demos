@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Панель владельца — заказы мастерской «Пион»</title>
-<meta name="description" content="Демонстрационная панель владельца: заказы, оформленные на сайте мастерской «Пион», статусы, счётчики и экспорт в CSV.">
+<meta name="description" content="Демонстрационная панель владельца: заказы, оформленные на сайте мастерской «Пион», статусы, счётчики и выгрузка в CSV.">
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/site.css">
@@ -15,7 +15,15 @@
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="logo" href="index.html">
-      <span class="logo__mark display" aria-hidden="true">П</span>
+      <span class="logo__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M12 13c-1.7 0-3-1.3-3-3 0-1 .5-1.9 1.3-2.4.4.9 1 1.6 1.7 2 .7-.4 1.3-1.1 1.7-2 .8.5 1.3 1.4 1.3 2.4 0 1.7-1.3 3-3 3Z"/>
+          <path d="M9.2 9.6C7.6 9.4 6.5 8 6.7 6.4c.1-.7.4-1.4 1-1.8.5.9 1.2 1.5 2 1.8"/>
+          <path d="M14.8 9.6c1.6-.2 2.7-1.6 2.5-3.2-.1-.7-.4-1.4-1-1.8-.5.9-1.2 1.5-2 1.8"/>
+          <path d="M12 13v8"/>
+          <path d="M12 17.6c1.8-.3 3-1.6 3.2-3.3-1.8-.2-3.1.8-3.2 2.1"/>
+        </svg>
+      </span>
       <span class="logo__text">Пион<small>панель владельца</small></span>
     </a>
 
@@ -28,15 +36,18 @@
 
     <div class="header-actions">
       <a class="btn btn--ghost btn--sm admin-top-link" href="index.html">На сайт</a>
-      <a class="icon-btn" href="cart.html" data-cart-button aria-label="Корзина">
-        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+      <a class="icon-btn" href="cart.html" data-cart-button aria-label="Корзина: 0 позиций">
+        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3.6 9.4h16.8l-1.7 8.6a1.7 1.7 0 0 1-1.7 1.4H6.9a1.7 1.7 0 0 1-1.7-1.4Z"/>
+          <path d="M8.6 9.4a3.4 3.4 0 0 1 6.8 0"/>
+          <path d="M4.5 13.2h15"/>
+          <path d="M9.8 12.9v4.4"/><path d="M12 12.9v4.4"/><path d="M14.2 12.9v4.4"/>
         </svg>
         <span class="icon-btn__count" data-cart-count hidden>0</span>
       </a>
       <button class="icon-btn burger" type="button" data-action="menu" aria-expanded="false" aria-controls="mobile-nav" aria-label="Меню">
-        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-          <path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/>
+        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3.6 8.6h16.8"/><path d="M3.6 15.4h10"/>
         </svg>
       </button>
     </div>
@@ -44,13 +55,13 @@
 </header>
 
 <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-  <a href="index.html">Главная</a>
-  <a href="catalog.html">Каталог</a>
-  <a href="index.html#delivery">Доставка</a>
-  <a href="index.html#contacts">Контакты</a>
-  <a href="cart.html">Корзина</a>
-  <a href="admin.html">Панель владельца</a>
-  <a class="btn btn--block" href="catalog.html">Смотреть каталог</a>
+  <a href="index.html"><span class="num" aria-hidden="true">01</span>Главная</a>
+  <a href="catalog.html"><span class="num" aria-hidden="true">02</span>Каталог</a>
+  <a href="index.html#delivery"><span class="num" aria-hidden="true">03</span>Доставка</a>
+  <a href="index.html#contacts"><span class="num" aria-hidden="true">04</span>Контакты</a>
+  <a href="cart.html"><span class="num" aria-hidden="true">05</span>Корзина</a>
+  <a href="admin.html"><span class="num" aria-hidden="true">06</span>Панель владельца</a>
+  <a class="btn" href="catalog.html">Смотреть каталог</a>
 </div>
 
 <main id="main">
@@ -62,9 +73,9 @@
           <span aria-hidden="true">/</span>
           <span>Панель владельца</span>
         </nav>
-        <h1 class="display">Заказы мастерской</h1>
-        <p class="lead" style="max-width:62ch;margin-top:.75rem">Здесь видно всё, что заказали на сайте: состав букета, контакт, способ получения и сумму. Статус заказа меняется одним нажатием и сохраняется в браузере — можно спокойно закрыть страницу.</p>
-        <p class="badge" style="margin-top:1rem">Демо-панель: данные лежат в localStorage браузера</p>
+        <h1>Заказы мастерской</h1>
+        <p class="lead">Заказы с сайта попадают сюда сразу: состав букета, контакт, способ получения, сумма. Статус переключается одним нажатием и остаётся в браузере, страницу можно закрыть.</p>
+        <p class="badge badge--note">Демо-режим: заказы хранятся в localStorage этого браузера</p>
       </div>
     </section>
 
@@ -77,7 +88,7 @@
             <span class="stat__value" id="stat-today">0</span>
           </div>
           <div class="stat-card">
-            <span class="stat__label">Сумма за сегодня</span>
+            <span class="stat__label">Выручка за сегодня</span>
             <span class="stat__value" id="stat-revenue">0 BYN</span>
           </div>
           <div class="stat-card">
@@ -85,47 +96,48 @@
             <span class="stat__value" id="stat-active">0</span>
           </div>
           <div class="stat-card">
-            <span class="stat__label">Всего заказов</span>
+            <span class="stat__label">Всего в списке</span>
             <span class="stat__value" id="stat-total">0</span>
           </div>
         </div>
 
         <div class="admin-toolbar">
           <div class="chips" role="group" aria-label="Фильтр по статусу">
-            <button class="chip" type="button" data-status-filter="all" aria-pressed="true">Все заказы</button>
-            <button class="chip" type="button" data-status-filter="new" aria-pressed="false">Новые</button>
-            <button class="chip" type="button" data-status-filter="accepted" aria-pressed="false">Принятые</button>
-            <button class="chip" type="button" data-status-filter="done" aria-pressed="false">Выполненные</button>
-            <button class="chip" type="button" data-status-filter="canceled" aria-pressed="false">Отменённые</button>
+            <button class="chip chip--status" type="button" data-status-filter="all" aria-pressed="true">Все заказы</button>
+            <button class="chip chip--status" type="button" data-status-filter="new" aria-pressed="false">Новые</button>
+            <button class="chip chip--status" type="button" data-status-filter="accepted" aria-pressed="false">Принятые</button>
+            <button class="chip chip--status" type="button" data-status-filter="done" aria-pressed="false">Выполненные</button>
+            <button class="chip chip--status" type="button" data-status-filter="canceled" aria-pressed="false">Отменённые</button>
           </div>
 
           <p class="small muted" id="admin-count" aria-live="polite">Заказов пока нет</p>
 
           <button class="btn btn--ghost btn--sm" type="button" id="export-csv">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-              <path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3.6v12.2"/><path d="m7.2 11 4.8 4.8L16.8 11"/><path d="M4.8 20.4h14.4"/>
             </svg>
-            Экспорт CSV
+            Выгрузить CSV
           </button>
           <button class="btn btn--ghost btn--sm" type="button" id="clear-orders">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-              <path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4.4 6.8h15.2"/><path d="M9.4 6.8V4.9h5.2v1.9"/>
+              <path d="M6.6 6.8l.9 12.3h9l.9-12.3"/>
+              <path d="M10.4 10.4v6"/><path d="M13.6 10.4v6"/>
             </svg>
-            Очистить панель
+            Стереть заказы
           </button>
         </div>
 
         <div class="orders" id="orders-list"></div>
 
         <div class="empty" id="orders-empty" hidden>
-          <svg class="icon icon--xl" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-            <path d="M8 2h8a1 1 0 0 1 1 1v2H7V3a1 1 0 0 1 1-1z"/>
-            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
-            <path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/>
+          <svg class="icon icon--xl" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M13.6 3.6H6.8a1.8 1.8 0 0 0-1.8 1.8v13.2a1.8 1.8 0 0 0 1.8 1.8h10.4a1.8 1.8 0 0 0 1.8-1.8V8.6Z"/>
+            <path d="M13.6 3.6v5h5.4"/><path d="M8.8 13h6.4"/><path d="M8.8 16.4h4.2"/>
           </svg>
-          <h2 class="display" style="margin-top:1rem">Заказов пока нет</h2>
-          <p class="small" style="margin-top:.5rem;max-width:44ch;margin-inline:auto">Оформите тестовый заказ на сайте — он появится на этой странице сразу после отправки формы. Так удобно проверить весь путь: каталог → корзина → панель.</p>
-          <div class="row" style="justify-content:center;margin-top:1.5rem">
+          <h2>Заказов пока нет</h2>
+          <p class="small empty__note">Оформите тестовый заказ, и он появится здесь сразу после отправки формы. Так удобно проверить весь путь: каталог, корзина, панель.</p>
+          <div class="row row--center">
             <a class="btn" href="catalog.html">Перейти в каталог</a>
             <a class="btn btn--ghost" href="cart.html">Открыть корзину</a>
           </div>
@@ -133,8 +145,8 @@
 
         <div class="cta-band admin-hint">
           <div>
-            <h2 class="display">Как это работает</h2>
-            <p>Заказ с сайта попадает в панель автоматически: номер вида №1042 — это последние четыре цифры времени оформления. Статусы «принят», «выполнен» и «отменён» сохраняются в браузере, а кнопка «Экспорт CSV» выгружает список заказов для таблицы или бухгалтерии.</p>
+            <h2>Откуда берётся номер заказа</h2>
+            <p>Номер вроде №1042 складывается из последних четырёх цифр времени оформления. Статусы «принят», «выполнен» и «отменён» остаются в браузере, а кнопка «Выгрузить CSV» отдаёт список для таблицы или бухгалтерии.</p>
           </div>
           <div class="cta-band__actions">
             <a class="btn btn--light" href="index.html#builder">Собрать тестовый букет</a>
@@ -151,10 +163,18 @@
     <div class="footer-grid">
       <div>
         <a class="logo" href="index.html">
-          <span class="logo__mark display" aria-hidden="true">П</span>
+          <span class="logo__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M12 13c-1.7 0-3-1.3-3-3 0-1 .5-1.9 1.3-2.4.4.9 1 1.6 1.7 2 .7-.4 1.3-1.1 1.7-2 .8.5 1.3 1.4 1.3 2.4 0 1.7-1.3 3-3 3Z"/>
+              <path d="M9.2 9.6C7.6 9.4 6.5 8 6.7 6.4c.1-.7.4-1.4 1-1.8.5.9 1.2 1.5 2 1.8"/>
+              <path d="M14.8 9.6c1.6-.2 2.7-1.6 2.5-3.2-.1-.7-.4-1.4-1-1.8-.5.9-1.2 1.5-2 1.8"/>
+              <path d="M12 13v8"/>
+              <path d="M12 17.6c1.8-.3 3-1.6 3.2-3.3-1.8-.2-3.1.8-3.2 2.1"/>
+            </svg>
+          </span>
           <span class="logo__text">Пион</span>
         </a>
-        <p class="small muted" style="max-width:32ch">Цветочная мастерская в Минске: монобукеты, авторские композиции, свадебные букеты и подписка на цветы.</p>
+        <p class="small muted footer__blurb">Мастерская в Минске. Монобукеты, композиции в керамике, свадебные букеты, подписка.</p>
       </div>
       <div>
         <h4>Разделы</h4>
@@ -176,13 +196,13 @@
       <div>
         <h4>Связаться</h4>
         <div class="footer-links">
-          <a href="tel:+375291234567">+375 (29) 123-45-67</a>
+          <a href="tel:+375****4567">+375 (29) 123-45-67</a>
           <a href="mailto:hello@example.by">hello@example.by</a>
           <span class="small muted">Немига, 12 · 9:00–21:00</span>
         </div>
       </div>
     </div>
-    <p class="footer-note">Демонстрационный сайт мастерской «Пион» (бренд и контакты вымышлены) — показывает, как может выглядеть витрина рядом с Instagram. Фотографии — из открытых источников, авторы указаны в CREDITS.md. © <span data-year>2026</span> «Пион».</p>
+    <p class="footer-note">Демо-сайт мастерской «Пион»: бренд и контакты придуманы, чтобы показать, как витрина может выглядеть рядом с Instagram. Фотографии взяты из открытых источников, авторы перечислены в CREDITS.md. © <span data-year>2026</span> «Пион».</p>
   </div>
 </footer>
 

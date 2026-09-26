@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>«Пион» — цветочная мастерская в Минске: букеты и авторские композиции</title>
-<meta name="description" content="Цветочная мастерская «Пион» в Минске: монобукеты, авторские композиции, свадебные букеты и подписка на цветы. Доставка по Минску за 2 часа, бесплатно от 150 BYN.">
+<title>«Пион» — цветочная мастерская в Минске: букеты, композиции, подписка</title>
+<meta name="description" content="Мастерская «Пион» на Немиге: монобукеты, композиции в керамике, свадебные букеты и подписка на цветы. Доставка по Минску за 2 часа, 12 BYN, бесплатно от 150 BYN.">
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/site.css">
@@ -15,7 +15,15 @@
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="logo" href="index.html">
-      <span class="logo__mark display" aria-hidden="true">П</span>
+      <span class="logo__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M12 13c-1.7 0-3-1.3-3-3 0-1 .5-1.9 1.3-2.4.4.9 1 1.6 1.7 2 .7-.4 1.3-1.1 1.7-2 .8.5 1.3 1.4 1.3 2.4 0 1.7-1.3 3-3 3Z"/>
+          <path d="M9.2 9.6C7.6 9.4 6.5 8 6.7 6.4c.1-.7.4-1.4 1-1.8.5.9 1.2 1.5 2 1.8"/>
+          <path d="M14.8 9.6c1.6-.2 2.7-1.6 2.5-3.2-.1-.7-.4-1.4-1-1.8-.5.9-1.2 1.5-2 1.8"/>
+          <path d="M12 13v8"/>
+          <path d="M12 17.6c1.8-.3 3-1.6 3.2-3.3-1.8-.2-3.1.8-3.2 2.1"/>
+        </svg>
+      </span>
       <span class="logo__text">Пион<small>мастерская в Минске</small></span>
     </a>
 
@@ -27,15 +35,18 @@
     </nav>
 
     <div class="header-actions">
-      <a class="icon-btn" href="cart.html" data-cart-button aria-label="Корзина">
-        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+      <a class="icon-btn" href="cart.html" data-cart-button aria-label="Корзина: 0 позиций">
+        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3.6 9.4h16.8l-1.7 8.6a1.7 1.7 0 0 1-1.7 1.4H6.9a1.7 1.7 0 0 1-1.7-1.4Z"/>
+          <path d="M8.6 9.4a3.4 3.4 0 0 1 6.8 0"/>
+          <path d="M4.5 13.2h15"/>
+          <path d="M9.8 12.9v4.4"/><path d="M12 12.9v4.4"/><path d="M14.2 12.9v4.4"/>
         </svg>
         <span class="icon-btn__count" data-cart-count hidden>0</span>
       </a>
       <button class="icon-btn burger" type="button" data-action="menu" aria-expanded="false" aria-controls="mobile-nav" aria-label="Меню">
-        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-          <path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/>
+        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3.6 8.6h16.8"/><path d="M3.6 15.4h10"/>
         </svg>
       </button>
     </div>
@@ -43,73 +54,59 @@
 </header>
 
 <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-  <a href="index.html">Главная</a>
-  <a href="catalog.html">Каталог</a>
-  <a href="#delivery">Доставка</a>
-  <a href="#contacts">Контакты</a>
-  <a href="cart.html">Корзина</a>
-  <a href="admin.html">Панель владельца</a>
-  <a class="btn btn--block" href="catalog.html">Смотреть каталог</a>
+  <a href="index.html"><span class="num" aria-hidden="true">01</span>Главная</a>
+  <a href="catalog.html"><span class="num" aria-hidden="true">02</span>Каталог</a>
+  <a href="#delivery"><span class="num" aria-hidden="true">03</span>Доставка</a>
+  <a href="#contacts"><span class="num" aria-hidden="true">04</span>Контакты</a>
+  <a href="cart.html"><span class="num" aria-hidden="true">05</span>Корзина</a>
+  <a href="admin.html"><span class="num" aria-hidden="true">06</span>Панель владельца</a>
+  <a class="btn" href="catalog.html">Смотреть каталог</a>
 </div>
 
 <main id="main">
 
-  <!-- ============ hero ============ -->
+  <!-- ============ hero: фото выходит за границу контейнера ============ -->
   <section class="hero">
-    <div class="container hero__grid">
-      <div>
-        <p class="eyebrow">
-          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-            <path d="M12 3v3"/><path d="M12 18v3"/><path d="M3 12h3"/><path d="M18 12h3"/>
-            <circle cx="12" cy="12" r="4"/>
-          </svg>
-          Цветочная мастерская «Пион» · Минск
-        </p>
-        <h1 class="display" style="margin-top:1rem">Цветы, собранные вручную, — привезём сегодня за два часа</h1>
-        <p class="lead hero__lead">Собираем букеты в мастерской на Немиге: пионы, сезонные цветы, авторские композиции в керамике. Доставляем по Минску и присылаем фото букета перед отправкой.</p>
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow">Мастерская на Немиге · с 2019 года</p>
+        <h1 class="hero__title">Букеты, которые собирают руками</h1>
+        <span class="hero__kicker">Минск · Немига, 12 · сегодня есть свободный слот</span>
+        <p class="lead hero__lead">Пионы, сезонные цветы, композиции в керамике. Собираем в мастерской во дворе и привозим по Минску за два часа: пока букет не уехал, пришлём вам его фото.</p>
         <div class="hero__actions">
           <a class="btn" href="#builder">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-              <circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/>
-              <path d="M12 2a10 10 0 1 0 0 20 1 1 0 0 0 1-1v-1a2 2 0 0 1 2-2h2a3 3 0 0 0 3-3 10 10 0 0 0-10-10z"/>
-            </svg>
             Собрать букет
-          </a>
-          <a class="btn btn--ghost" href="catalog.html">
-            Смотреть каталог
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4.6 12h14.8"/><path d="m13.4 6.2 5.8 5.8-5.8 5.8"/>
             </svg>
           </a>
+          <a class="btn btn--ghost" href="catalog.html">Смотреть каталог</a>
         </div>
         <ul class="hero__aside">
           <li>
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-              <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/>
-              <path d="M19 18h2a1 1 0 0 0 1-1v-3.6a1 1 0 0 0-.2-.6l-3.5-4.4A1 1 0 0 0 17.5 8H14"/>
-              <circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="6.4" cy="17.4" r="2.2"/><circle cx="17.4" cy="17.4" r="2.2"/>
+              <path d="M8.6 17.4h6.6"/><path d="M3.8 15.2V10.6h5.5l1.9 6.8"/>
+              <path d="M11.2 10.6h3.5l2.7 6.8"/><path d="M14.7 6.4c1.7.4 2.6 2 2.9 4.2"/>
             </svg>
-            Доставка по Минску — 2 часа, 12 BYN, бесплатно от 150 BYN
+            Доставка по Минску 12 BYN, от 150 BYN не берём
           </li>
           <li>
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.1"/><path d="M12 7.4V12l3.3 2"/>
             </svg>
-            Каждый день с 9:00 до 21:00, заказы принимаем до 20:00
+            Каждый день с 9:00 до 21:00, заказы на сегодня принимаем до 20:00
           </li>
         </ul>
       </div>
 
       <figure class="hero__figure">
         <img src="assets/img/hero.jpg" alt="Плотный букет весенних цветов на светлом фоне: оранжевые тюльпаны, жёлтые каллы и ранункулюсы, персиковая роза, сиреневые дельфиниумы и зелень" width="1200" height="1500">
-        <figcaption class="hero__badge">
-          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
-            <path d="m9 12 2 2 4-4"/>
-          </svg>
+        <figcaption class="hero__label">
+          <span class="hero__label-num num" aria-hidden="true">01</span>
           <span>
-            <strong>Ближайший слот — сегодня</strong>
-            <span>фото букета перед отправкой</span>
+            <strong>Соберём и покажем</strong>
+            <span>фото букета до отправки</span>
           </span>
         </figcaption>
       </figure>
@@ -118,30 +115,29 @@
     <div class="container">
       <ul class="facts">
         <li>
-          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="8.1"/><path d="M12 7.4V12l3.3 2"/>
           </svg>
-          Сборка и доставка — в среднем 2 часа
+          Собираем и привозим в среднем за два часа
         </li>
         <li>
-          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-            <path d="M11 21.7a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7z"/>
-            <path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/>
+          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3.6 20.2 8v8L12 20.4 3.8 16V8Z"/><path d="m3.8 8 8.2 4.4L20.2 8"/><path d="M12 20.4v-8"/>
           </svg>
-          Доставка 12 BYN, от 150 BYN — бесплатно
+          Доставка 12 BYN, от 150 BYN за наш счёт
         </li>
         <li>
-          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
-            <path d="m9 12 2 2 4-4"/>
+          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3.6c1.9 1.5 3.9 2.2 6 2.3v5.5c0 4.2-2.6 6.9-6 8.5-3.4-1.6-6-4.3-6-8.5V5.9c2.1-.1 4.1-.8 6-2.3Z"/>
+            <path d="m9.4 12 1.8 1.9 3.5-3.7"/>
           </svg>
-          Свежесть: если букет завял за 5 дней — пересоберём
+          Пересоберём, если букет поник за пять дней
         </li>
         <li>
-          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3.4" y="6.3" width="17.2" height="11.4" rx="1.6"/><path d="m4.6 7.8 7.4 5.2 7.4-5.2"/>
           </svg>
-          Подпишем открытку вашим текстом
+          Ваш текст на открытке напишем от руки
         </li>
       </ul>
     </div>
@@ -151,30 +147,30 @@
   <section class="section section--tight" id="builder">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">Конструктор букета</p>
-        <h2 class="display" style="margin-top:.75rem">Соберите букет за минуту</h2>
-        <p class="lead">Выберите повод, размер, палитру и упаковку — цена пересчитывается сразу. Дальше флорист собирает букет по вашему выбору и присылает фото.</p>
+        <p class="eyebrow">Конструктор</p>
+        <h2>Букет можно собрать самому</h2>
+        <p class="lead">Выберите повод, размер, палитру и упаковку. Цена пересчитывается сразу, дальше флорист собирает букет и присылает фото.</p>
       </div>
 
       <div class="builder">
         <div>
           <div class="builder__group">
-            <p class="builder__legend">1. Повод <small id="builder-occasion-hint">Просто потому что хочется</small></p>
+            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">01</span>Повод <small id="builder-occasion-hint">Просто потому что хочется</small></p>
             <div class="chips" data-options="occasion" role="group" aria-label="Повод"></div>
           </div>
 
           <div class="builder__group">
-            <p class="builder__legend">2. Размер <small id="builder-size-hint">11–15 бутонов · M</small></p>
+            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">02</span>Размер <small id="builder-size-hint">11–15 бутонов · M</small></p>
             <div class="chips" data-options="size" role="group" aria-label="Размер букета"></div>
           </div>
 
           <div class="builder__group">
-            <p class="builder__legend">3. Палитра <small>оттенки цветов</small></p>
+            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">03</span>Палитра <small>оттенки цветов</small></p>
             <div class="chips" data-options="palette" role="group" aria-label="Палитра букета"></div>
           </div>
 
           <div class="builder__group">
-            <p class="builder__legend">4. Упаковка <small id="builder-pack-hint">Классика, ничего лишнего</small></p>
+            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">04</span>Упаковка <small id="builder-pack-hint">Классика, ничего лишнего</small></p>
             <div class="chips" data-options="pack" role="group" aria-label="Упаковка"></div>
           </div>
         </div>
@@ -183,35 +179,37 @@
           <p class="builder__panel-label">Цена букета</p>
           <p class="builder__price" id="builder-price" aria-live="polite">95 BYN</p>
           <p class="builder__summary" id="builder-summary">Букет M · Без повода · пудровая палитра · крафт и лента</p>
-          <p class="builder__note" id="builder-note">Доставка по Минску 12 BYN, сегодня за 2 часа. До бесплатной доставки — 55 BYN.</p>
+          <p class="builder__note" id="builder-note">До бесплатной доставки не хватает 55 BYN. По Минску возим за 12 BYN, обычно за два часа.</p>
           <button class="btn btn--block" type="button" id="builder-add">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3.6 9.4h16.8l-1.7 8.6a1.7 1.7 0 0 1-1.7 1.4H6.9a1.7 1.7 0 0 1-1.7-1.4Z"/>
+              <path d="M8.6 9.4a3.4 3.4 0 0 1 6.8 0"/>
+              <path d="M4.5 13.2h15"/>
             </svg>
             Добавить в корзину
           </button>
           <div class="builder__tags">
-            <span class="badge">Доставим сегодня</span>
-            <span class="badge badge--ok">Фото перед отправкой</span>
+            <span class="badge">Успеем сегодня</span>
+            <span class="badge badge--ok">Фото до отправки</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ работы недели ============ -->
+  <!-- ============ витрина недели ============ -->
   <section class="section section--surface">
     <div class="container">
       <div class="section-title reveal">
         <div>
           <p class="eyebrow">Витрина</p>
-          <h2 class="display" style="margin-top:.75rem">Работы этой недели</h2>
-          <p class="lead">Цены — за букет целиком, без «от» и доплат на месте. Собрать похожий можно и в конструкторе.</p>
+          <h2>Что стоит в мастерской на этой неделе</h2>
+          <p class="lead">В цену входят упаковка и лента. Доплат при встрече не будет, а собрать похожий букет можно в конструкторе.</p>
         </div>
         <a class="btn btn--ghost" href="catalog.html">
           Весь каталог
-          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4.6 12h14.8"/><path d="m13.4 6.2 5.8 5.8-5.8 5.8"/>
           </svg>
         </a>
       </div>
@@ -219,13 +217,13 @@
     </div>
   </section>
 
-  <!-- ============ форматы работы ============ -->
+  <!-- ============ чем занимается мастерская ============ -->
   <section class="section">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">Форматы</p>
-        <h2 class="display" style="margin-top:.75rem">Что можно заказать в мастерской</h2>
-        <p class="lead">Мы небольшая мастерская: работаем без конвейера, поэтому одинаковых букетов почти не бывает.</p>
+        <p class="eyebrow">Что мы делаем</p>
+        <h2>Заказы, с которыми к нам приходят</h2>
+        <p class="lead">Нас трое, конвейера нет: два букета по одному фото всё равно выйдут разными.</p>
       </div>
       <div class="formats" id="services"></div>
     </div>
@@ -236,24 +234,24 @@
     <div class="container band">
       <div class="reveal">
         <p class="eyebrow">Подписка</p>
-        <h2 class="display" style="margin-top:.75rem">Цветы каждую неделю</h2>
-        <p class="lead" style="margin-top:1rem">Четыре букета в месяц — каждую пятницу, к одному и тому же времени. Состав меняется по сезону: весной пионы и ранункулюсы, осенью хризантемы и эвкалипт. Можно поставить на паузу или отменить одним сообщением.</p>
+        <h2>Букет по пятницам</h2>
+        <p class="lead lead--after-title">Четыре букета в месяц, всегда в один и тот же день и час. Состав зависит от поставки: в конце весны это пионы с ранункулюсами, в сентябре хризантемы с эвкалиптом. Пропустить неделю или закрыть подписку можно одним сообщением.</p>
         <div class="band__price">
           <span class="price">240 BYN / месяц</span>
-          <span class="muted small"><s>260 BYN</s> — при подписке дешевле на 20 BYN</span>
+          <span class="muted small"><s>260 BYN</s> по подписке на 20 BYN меньше</span>
         </div>
-        <div class="row" style="margin-top:1.5rem">
+        <div class="row">
           <button class="btn" type="button" data-action="add" data-id="week">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-              <path d="M5 12h14"/><path d="M12 5v14"/>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 5.4v13.2"/><path d="M5.4 12h13.2"/>
             </svg>
-            Добавить подписку
+            Оформить подписку
           </button>
-          <a class="btn btn--ghost" href="catalog.html">Как это устроено</a>
+          <a class="btn btn--ghost" href="catalog.html">Посмотреть, что входит</a>
         </div>
       </div>
       <div class="media reveal">
-        <img src="assets/img/subscription.jpg" alt="Свежая роза в вазе — букет недели по подписке «Цветы каждую неделю»" width="1200" height="800" loading="lazy" decoding="async">
+        <img src="assets/img/subscription.jpg" alt="Свежая роза в вазе — букет недели по подписке" width="1200" height="800" loading="lazy" decoding="async">
       </div>
     </div>
   </section>
@@ -263,38 +261,38 @@
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Доставка и самовывоз</p>
-        <h2 class="display" style="margin-top:.75rem">Как это происходит</h2>
-        <p class="lead">Минск — за 2 часа после подтверждения заказа. За МКАД тоже возим, стоимость считаем по адресу.</p>
+        <h2>Что происходит после заказа</h2>
+        <p class="lead">По Минску везём в среднем за два часа. За МКАД тоже ездим, цену считаем по адресу.</p>
       </div>
 
       <ol class="steps">
         <li class="step reveal">
-          <span class="step__num" aria-hidden="true">1</span>
+          <span class="step__num num" aria-hidden="true">01</span>
           <h3>Выбираете букет</h3>
-          <p class="small muted">Из каталога или собираете свой в конструкторе: повод, размер, палитра, упаковка.</p>
+          <p>Из каталога или сами в конструкторе: повод, размер, палитра, упаковка.</p>
         </li>
         <li class="step reveal">
-          <span class="step__num" aria-hidden="true">2</span>
-          <h3>Подтверждаем заказ</h3>
-          <p class="small muted">Звоним в течение 15 минут, уточняем адрес, время и подпись на открытке.</p>
+          <span class="step__num num" aria-hidden="true">02</span>
+          <h3>Звоним и уточняем</h3>
+          <p>Созвонимся в течение пятнадцати минут: сверим адрес, время и текст для открытки.</p>
         </li>
         <li class="step reveal">
-          <span class="step__num" aria-hidden="true">3</span>
-          <h3>Собираем и фотографируем</h3>
-          <p class="small muted">Цветы берём из свежей поставки, фото букета присылаем до отправки курьера.</p>
+          <span class="step__num num" aria-hidden="true">03</span>
+          <h3>Собираем букет</h3>
+          <p>Цветы берём из утренней поставки. Фото отправим до того, как курьер выйдет из мастерской.</p>
         </li>
         <li class="step reveal">
-          <span class="step__num" aria-hidden="true">4</span>
-          <h3>Привозим и отдаём</h3>
-          <p class="small muted">По Минску — в среднем 2 часа. Если получателя нет дома, согласуем по телефону.</p>
+          <span class="step__num num" aria-hidden="true">04</span>
+          <h3>Везём по адресу</h3>
+          <p>По городу это в среднем два часа. Если получателя нет на месте, позвоним и договоримся.</p>
         </li>
       </ol>
 
-      <div class="terms" style="margin-top:2.5rem">
-        <div class="term"><strong>2 часа</strong><span>среднее время доставки по Минску</span></div>
-        <div class="term"><strong>12 BYN</strong><span>доставка по городу, за МКАД — по адресу</span></div>
-        <div class="term"><strong>0 BYN</strong><span>доставка бесплатная от 150 BYN</span></div>
-        <div class="term"><strong>Самовывоз</strong><span>Немига, 12 — бесплатно, каждый день до 21:00</span></div>
+      <div class="terms">
+        <div class="term"><strong>2 часа</strong><span>средний срок по городу</span></div>
+        <div class="term"><strong>12 BYN</strong><span>доставка по городу, за МКАД считаем по адресу</span></div>
+        <div class="term"><strong>0 BYN</strong><span>доставка, если заказ от 150 BYN</span></div>
+        <div class="term"><strong>Самовывоз</strong><span>Немига, 12; бесплатно и каждый день до 21:00</span></div>
       </div>
     </div>
   </section>
@@ -304,17 +302,17 @@
     <div class="container">
       <div class="cta-band reveal">
         <div>
-          <h2 class="display">Букет нужен сегодня?</h2>
-          <p>Позвоните — скажем, что есть в мастерской прямо сейчас, и во сколько сможем привезти. Цветы по фото из Instagram часто можно повторить в тот же день.</p>
+          <h2>Нужен букет к вечеру?</h2>
+          <p>Позвоните: скажем, что стоит в мастерской прямо сейчас и когда сможем привезти. Букет с фото из Instagram обычно повторяем в тот же день.</p>
         </div>
         <div class="cta-band__actions">
-          <a class="btn btn--light" href="tel:+375291234567">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.9z"/>
+          <a class="btn btn--light" href="tel:+375****4567">
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 3.6H6.3A2.2 2.2 0 0 0 4.1 5.9c.4 7 6.2 12.8 13.2 13.2a2.2 2.2 0 0 0 2.3-2.2v-2.7a12 12 0 0 1-3.5-1l-1.9 1.9a14.6 14.6 0 0 1-4.3-4.3l1.9-1.9a12 12 0 0 1-1-3.5Z"/>
             </svg>
             +375 (29) 123-45-67
           </a>
-          <a class="btn btn--light" href="catalog.html">Выбрать в каталоге</a>
+          <a class="btn btn--ghost" href="catalog.html">Выбрать в каталоге</a>
         </div>
       </div>
     </div>
@@ -325,36 +323,36 @@
     <div class="container split">
       <div>
         <p class="eyebrow">Контакты</p>
-        <h2 class="display" style="margin-top:.75rem">Мастерская на Немиге</h2>
-        <p class="lead" style="margin-top:1rem">Мы работаем в мастерской, а не в витрине магазина: букеты собираем под заказ и отдаём с 9:00 до 21:00. Заехать за самовывозом можно в любой день.</p>
-        <ul class="contact-list" style="margin-top:1.5rem">
+        <h2>Мастерская во дворе на Немиге</h2>
+        <p class="lead lead--after-title">Витрины у нас нет: собираем под заказ и отдаём с 9:00 до 21:00. За самовывозом приезжайте в любой день.</p>
+        <ul class="contact-list">
           <li class="contact-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-              <path d="M20 10c0 5-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3.6a5.9 5.9 0 0 1 5.9 5.9c0 4.2-5.9 10.9-5.9 10.9S6.1 13.7 6.1 9.5A5.9 5.9 0 0 1 12 3.6Z"/><circle cx="12" cy="9.5" r="2.2"/>
             </svg>
             <span>г. Минск, ул. Немига, 12 — мастерская 3, вход со двора</span>
           </li>
           <li class="contact-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.9z"/>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 3.6H6.3A2.2 2.2 0 0 0 4.1 5.9c.4 7 6.2 12.8 13.2 13.2a2.2 2.2 0 0 0 2.3-2.2v-2.7a12 12 0 0 1-3.5-1l-1.9 1.9a14.6 14.6 0 0 1-4.3-4.3l1.9-1.9a12 12 0 0 1-1-3.5Z"/>
             </svg>
-            <a href="tel:+375291234567">+375 (29) 123-45-67</a>
+            <a href="tel:+375****4567">+375 (29) 123-45-67</a>
           </li>
           <li class="contact-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3.4" y="6.3" width="17.2" height="11.4" rx="1.6"/><path d="m4.6 7.8 7.4 5.2 7.4-5.2"/>
             </svg>
             <a href="mailto:hello@example.by">hello@example.by</a>
           </li>
           <li class="contact-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-              <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3.6" y="3.6" width="16.8" height="16.8" rx="4.6"/><circle cx="12" cy="12" r="4"/><path d="M16.9 7.1h.01"/>
             </svg>
-            <span>Instagram: @pion.minsk</span>
+            <span>Мы в Instagram: @pion.minsk</span>
           </li>
           <li class="contact-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.1"/><path d="M12 7.4V12l3.3 2"/>
             </svg>
             <span>Каждый день, 9:00–21:00. Заказы на сегодня принимаем до 20:00</span>
           </li>
@@ -362,9 +360,7 @@
       </div>
 
       <div class="reveal">
-        <div class="map-hint">
-          <p><strong>Как найти:</strong> две минуты от метро «Немига», во дворе жилого дома — зелёная дверь с вывеской «Пион». Курьер забирает букеты отсюда же, поэтому самовывоз обычно быстрее доставки.</p>
-        </div>
+        <p class="map-hint">Две минуты от метро «Немига», во дворе жилого дома: зелёная дверь с вывеской «Пион». Курьер забирает букеты здесь же, так что самовывоз выходит быстрее доставки.</p>
       </div>
     </div>
   </section>
@@ -376,10 +372,18 @@
     <div class="footer-grid">
       <div>
         <a class="logo" href="index.html">
-          <span class="logo__mark display" aria-hidden="true">П</span>
+          <span class="logo__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M12 13c-1.7 0-3-1.3-3-3 0-1 .5-1.9 1.3-2.4.4.9 1 1.6 1.7 2 .7-.4 1.3-1.1 1.7-2 .8.5 1.3 1.4 1.3 2.4 0 1.7-1.3 3-3 3Z"/>
+              <path d="M9.2 9.6C7.6 9.4 6.5 8 6.7 6.4c.1-.7.4-1.4 1-1.8.5.9 1.2 1.5 2 1.8"/>
+              <path d="M14.8 9.6c1.6-.2 2.7-1.6 2.5-3.2-.1-.7-.4-1.4-1-1.8-.5.9-1.2 1.5-2 1.8"/>
+              <path d="M12 13v8"/>
+              <path d="M12 17.6c1.8-.3 3-1.6 3.2-3.3-1.8-.2-3.1.8-3.2 2.1"/>
+            </svg>
+          </span>
           <span class="logo__text">Пион</span>
         </a>
-        <p class="small muted" style="max-width:32ch">Цветочная мастерская в Минске: монобукеты, авторские композиции, свадебные букеты и подписка на цветы.</p>
+        <p class="small muted footer__blurb">Мастерская в Минске. Монобукеты, композиции в керамике, свадебные букеты, подписка.</p>
       </div>
       <div>
         <h4>Разделы</h4>
@@ -401,13 +405,13 @@
       <div>
         <h4>Связаться</h4>
         <div class="footer-links">
-          <a href="tel:+375291234567">+375 (29) 123-45-67</a>
+          <a href="tel:+375****4567">+375 (29) 123-45-67</a>
           <a href="mailto:hello@example.by">hello@example.by</a>
           <span class="small muted">Немига, 12 · 9:00–21:00</span>
         </div>
       </div>
     </div>
-    <p class="footer-note">Демонстрационный сайт мастерской «Пион» (бренд и контакты вымышлены) — показывает, как может выглядеть витрина рядом с Instagram. Фотографии — из открытых источников, авторы указаны в CREDITS.md. © <span data-year>2026</span> «Пион».</p>
+    <p class="footer-note">Демо-сайт мастерской «Пион»: бренд и контакты придуманы, чтобы показать, как витрина может выглядеть рядом с Instagram. Фотографии взяты из открытых источников, авторы перечислены в CREDITS.md. © <span data-year>2026</span> «Пион».</p>
   </div>
 </footer>
 

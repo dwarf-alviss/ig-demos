@@ -14,5 +14,7 @@
 - **cupcakes.jpg** — «Happy Birthday cupcake box», kgroovy (BY-SA 2.0) — https://www.flickr.com/photos/89056228@N00/2962329550 — источник: flickr — набор капкейков
 - **about.jpg** — «baking ingredients», Andrea Goh (BY 2.0) — https://www.flickr.com/photos/47845458@N08/7308566078 — источник: flickr — блок «домашняя кухня»
 
-Шрифты: Manrope (OFL) — локальная копия `_shared/fonts/`, внешних запросов нет.
-Иконки: inline SVG в стиле Lucide (ISC), нарисованы прямо в HTML.
+Шрифты: Manrope, Comfortaa, Caveat (все OFL) — локальные копии в `assets/fonts/`,
+внешних запросов нет.
+Иконки и логотип: собственный набор в `assets/app.js` (`ICONS`) и inline SVG в разметке,
+нарисованы для этого сайта. Сторонние иконочные наборы не подключены.

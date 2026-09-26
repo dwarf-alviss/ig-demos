@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Корзина и оформление заказа — «Пион», цветочная мастерская</title>
-<meta name="description" content="Корзина мастерской «Пион»: проверьте состав букета, выберите доставку по Минску или самовывоз и оформите заказ. Доставка 12 BYN, бесплатно от 150 BYN.">
+<meta name="description" content="Корзина мастерской «Пион»: проверьте состав букета, выберите доставку по Минску или самовывоз и оформите заказ. Доставка 12 BYN, от 150 BYN бесплатно.">
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/site.css">
@@ -15,7 +15,15 @@
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="logo" href="index.html">
-      <span class="logo__mark display" aria-hidden="true">П</span>
+      <span class="logo__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M12 13c-1.7 0-3-1.3-3-3 0-1 .5-1.9 1.3-2.4.4.9 1 1.6 1.7 2 .7-.4 1.3-1.1 1.7-2 .8.5 1.3 1.4 1.3 2.4 0 1.7-1.3 3-3 3Z"/>
+          <path d="M9.2 9.6C7.6 9.4 6.5 8 6.7 6.4c.1-.7.4-1.4 1-1.8.5.9 1.2 1.5 2 1.8"/>
+          <path d="M14.8 9.6c1.6-.2 2.7-1.6 2.5-3.2-.1-.7-.4-1.4-1-1.8-.5.9-1.2 1.5-2 1.8"/>
+          <path d="M12 13v8"/>
+          <path d="M12 17.6c1.8-.3 3-1.6 3.2-3.3-1.8-.2-3.1.8-3.2 2.1"/>
+        </svg>
+      </span>
       <span class="logo__text">Пион<small>мастерская в Минске</small></span>
     </a>
 
@@ -27,15 +35,18 @@
     </nav>
 
     <div class="header-actions">
-      <a class="icon-btn" href="cart.html" data-cart-button aria-label="Корзина" aria-current="page">
-        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+      <a class="icon-btn" href="cart.html" data-cart-button aria-label="Корзина: 0 позиций" aria-current="page">
+        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3.6 9.4h16.8l-1.7 8.6a1.7 1.7 0 0 1-1.7 1.4H6.9a1.7 1.7 0 0 1-1.7-1.4Z"/>
+          <path d="M8.6 9.4a3.4 3.4 0 0 1 6.8 0"/>
+          <path d="M4.5 13.2h15"/>
+          <path d="M9.8 12.9v4.4"/><path d="M12 12.9v4.4"/><path d="M14.2 12.9v4.4"/>
         </svg>
         <span class="icon-btn__count" data-cart-count hidden>0</span>
       </a>
       <button class="icon-btn burger" type="button" data-action="menu" aria-expanded="false" aria-controls="mobile-nav" aria-label="Меню">
-        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-          <path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/>
+        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3.6 8.6h16.8"/><path d="M3.6 15.4h10"/>
         </svg>
       </button>
     </div>
@@ -43,13 +54,13 @@
 </header>
 
 <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-  <a href="index.html">Главная</a>
-  <a href="catalog.html">Каталог</a>
-  <a href="index.html#delivery">Доставка</a>
-  <a href="index.html#contacts">Контакты</a>
-  <a href="cart.html">Корзина</a>
-  <a href="admin.html">Панель владельца</a>
-  <a class="btn btn--block" href="catalog.html">Вернуться в каталог</a>
+  <a href="index.html"><span class="num" aria-hidden="true">01</span>Главная</a>
+  <a href="catalog.html"><span class="num" aria-hidden="true">02</span>Каталог</a>
+  <a href="index.html#delivery"><span class="num" aria-hidden="true">03</span>Доставка</a>
+  <a href="index.html#contacts"><span class="num" aria-hidden="true">04</span>Контакты</a>
+  <a href="cart.html"><span class="num" aria-hidden="true">05</span>Корзина</a>
+  <a href="admin.html"><span class="num" aria-hidden="true">06</span>Панель владельца</a>
+  <a class="btn" href="catalog.html">Вернуться в каталог</a>
 </div>
 
 <main id="main">
@@ -63,8 +74,8 @@
           <span aria-hidden="true">/</span>
           <span>Корзина</span>
         </nav>
-        <h1 class="display">Корзина</h1>
-        <p class="lead" style="max-width:58ch;margin-top:.75rem">Проверьте состав, выберите доставку или самовывоз. Заказ подтверждаем звонком в течение 15 минут — если что-то не сходится, поправим на месте.</p>
+        <h1>Корзина</h1>
+        <p class="lead">Проверьте состав и выберите, как удобнее получить букет. Заказ подтвердим звонком в течение пятнадцати минут.</p>
       </div>
     </section>
 
@@ -74,13 +85,13 @@
         <div class="order-success">
           <div class="order-success__head">
             <span class="success-check" aria-hidden="true">
-              <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-                <path d="M20 6 9 17l-5-5"/>
+              <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m5.4 12.6 4.2 4.3 9-9.4"/>
               </svg>
             </span>
             <div>
-              <h2 class="display">Заказ <span id="success-number">№1042</span> принят</h2>
-              <p class="small muted">Мы позвоним в течение 15 минут, чтобы подтвердить адрес и время. Фото букета пришлём перед отправкой курьера.</p>
+              <h2>Заказ <span id="success-number">№1042</span> принят</h2>
+              <p class="small muted">Позвоним в течение пятнадцати минут, сверим адрес и время. Фото букета отправим до выхода курьера.</p>
             </div>
           </div>
           <ul class="success-list" id="success-summary"></ul>
@@ -96,12 +107,15 @@
     <section class="section section--tight" id="cart-empty" hidden>
       <div class="container container--narrow">
         <div class="empty">
-          <svg class="icon icon--xl" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          <svg class="icon icon--xl" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3.6 9.4h16.8l-1.7 8.6a1.7 1.7 0 0 1-1.7 1.4H6.9a1.7 1.7 0 0 1-1.7-1.4Z"/>
+            <path d="M8.6 9.4a3.4 3.4 0 0 1 6.8 0"/>
+            <path d="M4.5 13.2h15"/>
+            <path d="M9.8 12.9v4.4"/><path d="M12 12.9v4.4"/><path d="M14.2 12.9v4.4"/>
           </svg>
-          <h2 class="display" style="margin-top:1rem">В корзине пока пусто</h2>
-          <p class="small" style="margin-top:.5rem">Выберите букет в каталоге или соберите свой в конструкторе — доставим по Минску сегодня.</p>
-          <div class="row" style="justify-content:center;margin-top:1.5rem">
+          <h2>В корзине пока пусто</h2>
+          <p class="small">Выберите букет в каталоге или соберите свой в конструкторе. По Минску доставим сегодня.</p>
+          <div class="row row--center">
             <a class="btn" href="catalog.html">Перейти в каталог</a>
             <a class="btn btn--ghost" href="index.html#builder">Собрать букет</a>
           </div>
@@ -113,18 +127,20 @@
     <section class="section section--tight" id="cart-layout">
       <div class="container cart-layout">
         <div>
-          <h2 style="margin-bottom:1rem">Ваши букеты</h2>
+          <h2 class="cart-heading">Что уже в корзине</h2>
           <ul class="cart-items" id="cart-items"></ul>
-          <div class="between" style="margin-top:1.25rem">
+          <div class="between between--roomy">
             <a class="btn btn--ghost btn--sm" href="catalog.html">
-              <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-                <path d="M5 12h14"/><path d="m12 5-7 7 7 7"/>
+              <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M19.4 12H4.6"/><path d="m10.6 6.2-5.8 5.8 5.8 5.8"/>
               </svg>
               Продолжить выбор
             </a>
             <button class="btn btn--ghost btn--sm" type="button" data-action="clear-cart">
-              <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-                <path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+              <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4.4 6.8h15.2"/><path d="M9.4 6.8V4.9h5.2v1.9"/>
+                <path d="M6.6 6.8l.9 12.3h9l.9-12.3"/>
+                <path d="M10.4 10.4v6"/><path d="M13.6 10.4v6"/>
               </svg>
               Очистить корзину
             </button>
@@ -132,16 +148,16 @@
         </div>
 
         <aside class="summary" aria-label="Итог заказа">
-          <h2 style="font-size:1.2rem;margin-bottom:.75rem">Итог</h2>
+          <h2>Итог</h2>
           <div class="summary__row"><span>Букеты</span><strong id="sum-subtotal">0 BYN</strong></div>
           <div class="summary__row"><span>Доставка по Минску</span><strong id="sum-delivery">12 BYN</strong></div>
           <div class="progress" aria-hidden="true"><span class="progress__bar" id="delivery-bar"></span></div>
-          <p class="tiny muted" id="delivery-hint" style="margin-top:.6rem">До бесплатной доставки осталось 150 BYN.</p>
+          <p class="tiny muted summary__hint" id="delivery-hint">До бесплатной доставки осталось 150 BYN.</p>
           <div class="summary__row summary__total"><span>Итого</span><strong id="sum-total">0 BYN</strong></div>
           <button class="btn btn--block" type="submit" form="checkout-form" id="checkout-submit">
             <span data-submit-label>Оформить заказ</span>
           </button>
-          <p class="tiny muted" style="margin-top:.9rem">Оформляя заказ, вы оставляете имя и телефон — только чтобы подтвердить доставку. Заказ появится в панели владельца мастерской.</p>
+          <p class="tiny muted summary__note">Имя и телефон нужны, чтобы подтвердить доставку и позвонить получателю. Заказ сразу появится в панели владельца.</p>
         </aside>
       </div>
     </section>
@@ -150,12 +166,12 @@
     <section class="section" id="checkout">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Оформление заказа</p>
-          <h2 class="display" style="margin-top:.75rem">Куда привезти букет</h2>
-          <p class="lead">Заполните три поля — остальное согласуем по телефону. Дата по умолчанию сегодня: по Минску собираем и доставляем в среднем за 2 часа.</p>
+          <p class="eyebrow">Оформление</p>
+          <h2>Куда привезти букет</h2>
+          <p class="lead">Заполните три поля, остальное уточним по телефону. Дата по умолчанию сегодня: по Минску собираем и везём в среднем за два часа.</p>
         </div>
 
-        <form class="form-grid checkout-form" id="checkout-form" novalidate>
+        <form class="form-grid" id="checkout-form" novalidate>
           <div class="field">
             <label for="field-name">Как к вам обращаться</label>
             <input class="input" id="field-name" name="name" type="text" autocomplete="name" placeholder="Анна" aria-describedby="error-name">
@@ -165,25 +181,25 @@
           <div class="field">
             <label for="field-phone">Телефон</label>
             <input class="input" id="field-phone" name="phone" type="tel" autocomplete="tel" placeholder="+375 (29) 123-45-67" aria-describedby="error-phone hint-phone">
-            <p class="hint" id="hint-phone">Формат: +375 (29) 123-45-67 — позвоним в течение 15 минут.</p>
+            <p class="hint" id="hint-phone">Формат: +375 (29) 123-45-67. Позвоним в течение пятнадцати минут.</p>
             <p class="error" id="error-phone" hidden></p>
           </div>
 
           <div class="field field--wide">
-            <span class="small" style="font-weight:700">Как получить</span>
+            <span class="small strong">Как получить</span>
             <div class="radio-row">
               <label class="radio">
                 <input type="radio" name="method" value="delivery" checked>
                 <span>
-                  <strong>Доставка по Минску — 12 BYN</strong>
-                  <span>Бесплатно от 150 BYN, в среднем 2 часа</span>
+                  <strong>Доставка по Минску, 12 BYN</strong>
+                  <span>От 150 BYN бесплатно, в среднем два часа</span>
                 </span>
               </label>
               <label class="radio">
                 <input type="radio" name="method" value="pickup">
                 <span>
-                  <strong>Самовывоз из мастерской — 0 BYN</strong>
-                  <span>Немига, 12, каждый день до 21:00</span>
+                  <strong>Самовывоз с Немиги, 0 BYN</strong>
+                  <span>Немига, 12; каждый день до 21:00</span>
                 </span>
               </label>
             </div>
@@ -192,7 +208,7 @@
           <div class="field field--wide" id="field-address">
             <label for="field-address-input">Адрес доставки</label>
             <input class="input" id="field-address-input" name="address" type="text" autocomplete="street-address" placeholder="ул. Веры Хоружей, 12, кв. 45" aria-describedby="error-address">
-            <p class="hint">Если получатель другой человек — напишите его имя в комментарии, а телефон мы уточним звонком.</p>
+            <p class="hint">Если букет получает другой человек, напишите его имя в комментарии: телефон уточним звонком.</p>
             <p class="error" id="error-address" hidden></p>
           </div>
 
@@ -220,12 +236,12 @@
 
           <div class="field field--wide form-actions">
             <button class="btn" type="submit">
-              <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
-                <path d="M20 6 9 17l-5-5"/>
+              <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m5.4 12.6 4.2 4.3 9-9.4"/>
               </svg>
               Оформить заказ
             </button>
-            <p class="hint">Оплата — при получении: наличными или картой курьеру. Предоплата нужна только для свадебного оформления.</p>
+            <p class="hint">Платите при получении: наличными или картой курьеру. Предоплата нужна только под свадебное оформление.</p>
           </div>
         </form>
       </div>
@@ -238,10 +254,18 @@
     <div class="footer-grid">
       <div>
         <a class="logo" href="index.html">
-          <span class="logo__mark display" aria-hidden="true">П</span>
+          <span class="logo__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M12 13c-1.7 0-3-1.3-3-3 0-1 .5-1.9 1.3-2.4.4.9 1 1.6 1.7 2 .7-.4 1.3-1.1 1.7-2 .8.5 1.3 1.4 1.3 2.4 0 1.7-1.3 3-3 3Z"/>
+              <path d="M9.2 9.6C7.6 9.4 6.5 8 6.7 6.4c.1-.7.4-1.4 1-1.8.5.9 1.2 1.5 2 1.8"/>
+              <path d="M14.8 9.6c1.6-.2 2.7-1.6 2.5-3.2-.1-.7-.4-1.4-1-1.8-.5.9-1.2 1.5-2 1.8"/>
+              <path d="M12 13v8"/>
+              <path d="M12 17.6c1.8-.3 3-1.6 3.2-3.3-1.8-.2-3.1.8-3.2 2.1"/>
+            </svg>
+          </span>
           <span class="logo__text">Пион</span>
         </a>
-        <p class="small muted" style="max-width:32ch">Цветочная мастерская в Минске: монобукеты, авторские композиции, свадебные букеты и подписка на цветы.</p>
+        <p class="small muted footer__blurb">Мастерская в Минске. Монобукеты, композиции в керамике, свадебные букеты, подписка.</p>
       </div>
       <div>
         <h4>Разделы</h4>
@@ -263,13 +287,13 @@
       <div>
         <h4>Связаться</h4>
         <div class="footer-links">
-          <a href="tel:+375291234567">+375 (29) 123-45-67</a>
+          <a href="tel:+375****4567">+375 (29) 123-45-67</a>
           <a href="mailto:hello@example.by">hello@example.by</a>
           <span class="small muted">Немига, 12 · 9:00–21:00</span>
         </div>
       </div>
     </div>
-    <p class="footer-note">Демонстрационный сайт мастерской «Пион» (бренд и контакты вымышлены) — показывает, как может выглядеть витрина рядом с Instagram. Фотографии — из открытых источников, авторы указаны в CREDITS.md. © <span data-year>2026</span> «Пион».</p>
+    <p class="footer-note">Демо-сайт мастерской «Пион»: бренд и контакты придуманы, чтобы показать, как витрина может выглядеть рядом с Instagram. Фотографии взяты из открытых источников, авторы перечислены в CREDITS.md. © <span data-year>2026</span> «Пион».</p>
   </div>
 </footer>
 
