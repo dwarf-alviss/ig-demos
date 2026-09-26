@@ -924,6 +924,11 @@
     if (!root || !RING) { return; }
 
     var svg = $('#piece');
+    var canvas3d = $('#piece3d');
+    var hint3d = $('#builder-3d-hint');
+    var R3 = window.LATUN_RING3D;
+    var use3d = !!(R3 && canvas3d && R3.supported());
+    var mounted3d = false;
     var input = $('#builder-graving');
     var state = {
       form: RING.DEFAULT.form, metal: RING.DEFAULT.metal, stone: RING.DEFAULT.stone,
@@ -960,21 +965,45 @@
       });
     }
 
+    /* Поднимаем 3D, когда витрина подъехала к экрану: до этого страница лёгкая */
+    function mount3d() {
+      if (!use3d || mounted3d) { return; }
+      mounted3d = true;
+      if (svg) { svg.hidden = true; }
+      canvas3d.hidden = false;
+      if (hint3d) { hint3d.hidden = false; }
+      R3.mount(canvas3d, function () { return state; });
+      R3.update(state);
+    }
+
+    if (use3d && 'IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) { mount3d(); io.disconnect(); }
+        }
+      }, { rootMargin: '240px 0px' });
+      io.observe(root);
+    } else if (use3d) {
+      mount3d();
+    }
+
     /* Витрину перерисовываем, только когда меняется сам рисунок */
     function draw(force) {
       if (!svg) { return; }
       var k = key();
       if (!force && k === drawn) { return; }
       drawn = k;
-      RING.render(svg, state, { animate: true });
+      if (mounted3d) { R3.update(state); } else { RING.render(svg, state, { animate: true }); }
       svg.setAttribute('aria-label', 'Модель: ' + RING.summary(state));
+      if (canvas3d) { canvas3d.setAttribute('aria-label', 'Модель в 3D: ' + RING.summary(state)); }
     }
 
     /* Гравировка: буквы проступают по одной, поэтому меняем только пластинку */
     function drawGraving() {
       if (!svg) { return; }
       drawn = key();
-      RING.render(svg, state, { only: 'graving' });
+      if (mounted3d) { R3.update(state, { only: 'graving' }); }
+      else { RING.render(svg, state, { only: 'graving' }); }
       svg.setAttribute('aria-label', 'Модель: ' + RING.summary(state));
     }
 
@@ -1062,7 +1091,8 @@
         for (var i = 0; i < cart.length; i++) {
           if (cart[i].key !== [id, st.metal, text || ''].join('|')) { continue; }
           cart[i].title = title;
-          cart[i].img = RING.dataUrl(st, 480);
+          var shot = mounted3d ? R3.snapshot(480) : '';
+          cart[i].img = shot || RING.dataUrl(st, 480);
           cart[i].alt = 'Модель: ' + summary;
           cart[i].note = summary;
         }

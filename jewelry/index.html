@@ -163,12 +163,14 @@
       <div class="section-head">
         <p class="eyebrow">Конструктор</p>
         <h2>Соберите вещь и посмотрите, как она выйдет</h2>
-        <p class="lead">Моделька нарисована кодом, а не сфотографирована: форма, металл, камень, гравировка и размер меняют и рисунок, и цену. Числа те же, что в витрине. Собрали — кладите в корзину: туда уедет и картинка вещи, и её состав.</p>
+        <p class="lead">Моделька собрана кодом, а не сфотографирована: форма, металл, камень, гравировка и размер меняют и саму вещь, и цену. Модель объёмная — её можно повернуть. Числа те же, что в витрине. Собрали — кладите в корзину: туда уедет и картинка вещи, и её состав.</p>
       </div>
 
       <div class="builder">
         <div class="builder__stage ticks">
           <svg id="piece" class="piece" viewBox="0 0 600 660" role="img" aria-label="Украшение, которое вы собираете"><title>Ваше украшение</title></svg>
+          <canvas id="piece3d" class="piece piece--3d" width="620" height="533" hidden aria-label="Украшение в 3D: потяните, чтобы повернуть"></canvas>
+          <p class="builder__hint" id="builder-3d-hint" hidden>Настоящий объём: потяните модель, чтобы повернуть, и покрутите колесо для приближения.</p>
           <p class="builder__stage-note" id="builder-stage-note">Кольцо, латунь, бирюза, размер 17. Так выглядит форма: в жизни металл и камень лягут иначе.</p>
         </div>
 
@@ -419,6 +421,7 @@
 
 <script src="assets/data.js"></script>
 <script src="assets/ring.js"></script>
+<script src="assets/ring3d.js"></script>
 <script src="assets/app.js"></script>
 <script src="assets/motion.js"></script>
 </body>

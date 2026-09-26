@@ -519,3 +519,8 @@ body {
   .builder__legend small { margin-left: 0; flex-basis: 100%; }
   .chips--icons .chip { width: 100%; justify-content: flex-start; }
 }
+
+/* --- холст 3D в конструкторе: та же витрина, только объёмная --- */
+.piece--3d { display: block; width: 100%; height: auto; margin-inline: auto; touch-action: pan-y; cursor: grab; border-radius: 14px; }
+.piece--3d:active { cursor: grabbing; }
+.builder__hint { margin: .7rem auto 0; max-width: 46ch; text-align: center; font-size: .86rem; line-height: 1.5; color: var(--muted, #9a9288); }
