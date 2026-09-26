@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Корзина и оформление заказа — мастерская «Латунь», Минск</title>
-<meta name="description" content="Корзина «Латуни»: выбранный материал, текст гравировки, количество и оформление заказа с самовывозом, курьером по Минску или Европочтой.">
+<title>Корзина и оформление заказа: мастерская «Латунь», Минск</title>
+<meta name="description" content="Корзина «Латуни»: выбранный металл, текст гравировки, количество и заказ с самовывозом, курьером по Минску или Европочтой.">
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/motion.css">
 <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
 </head>
 <body data-page="cart">
@@ -58,14 +59,14 @@
       </nav>
       <div class="page-head">
         <h1>Корзина и заказ</h1>
-        <p class="lead">Сверьте материал и текст гравировки. Заказ уходит в панель мастерской, мы перезвоним в течение дня и назовём точный день готовности.</p>
+        <p class="lead">Сверьте металл и текст гравировки. Заказ уходит в панель мастерской, я перезвоню в течение дня и назову день готовности. Заметили ошибку в буквах, звоните до пайки, после будет поздно.</p>
       </div>
 
       <!-- Пустая корзина -->
       <div class="empty" data-cart-empty hidden style="margin-top:1.75rem">
         <svg class="icon icon--xl" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.35" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.4 7.8h13.2l.9 11.4a1.6 1.6 0 0 1-1.6 1.7H6.1a1.6 1.6 0 0 1-1.6-1.7Z"/><path d="M8.8 7.8V6.3a3.2 3.2 0 0 1 6.4 0v1.5"/><path d="M9.6 12.4h4.8L12 17.4Z"/></svg>
         <h2 class="display">В корзине пусто</h2>
-        <p class="small empty__note">Выберите украшение в витрине: материал и гравировку задают прямо в бирке лота, там же видно цену.</p>
+        <p class="small empty__note">Выберите вещь в витрине: металл и гравировку задают прямо в бирке лота, там же видна цена. Если сомневаетесь в размере, впишите вопрос в комментарий, разберусь по телефону.</p>
         <p style="margin-top:1.25rem"><a class="btn" href="catalog.html">Открыть витрину</a></p>
       </div>
 
@@ -73,8 +74,8 @@
       <div class="success-card ticks" data-success hidden style="margin-top:1.75rem">
         <p class="eyebrow">Заказ принят</p>
         <p class="success-card__no num" data-order-no>№0000</p>
-        <h2 style="margin-top:.6rem">Спасибо, заказ у нас</h2>
-        <p class="lead" style="margin-top:.7rem">Перезвоним в течение дня: сверим размер, подтвердим срок и договоримся о получении. Заказ уже лежит в панели мастерской.</p>
+        <h2 style="margin-top:.6rem">Заказ у меня, спасибо</h2>
+        <p class="lead" style="margin-top:.7rem">Перезвоню в течение дня: сверим размер, подтвержу срок, договоримся о получении. Заказ уже лежит в панели мастерской, статус там меняется по ходу работы.</p>
         <hr class="divider" style="margin:1.5rem 0">
         <h3>Состав заказа</h3>
         <ul class="success-list" style="margin-top:.85rem" data-order-list></ul>
@@ -125,7 +126,7 @@
                   <span><strong>Европочта по стране</strong><br><span>12 BYN · 2–3 дня после готовности</span></span>
                 </label>
               </div>
-              <p class="hint" style="margin-top:.7rem" data-method-note>Минск, ул. Революционная, 12 — вход со двора, с торца</p>
+              <p class="hint" style="margin-top:.7rem" data-method-note>Минск, ул. Революционная, 12, вход со двора, с торца</p>
             </fieldset>
 
             <div class="form-grid" style="margin-top:1.25rem">
@@ -137,17 +138,17 @@
               <div class="field">
                 <label for="date">К какой дате нужно</label>
                 <input class="input" id="date" name="date" type="date">
-                <p class="hint">Изготовление 3–5 дней. Если дата близкая, позвоним и честно скажем, успеваем или нет.</p>
+                <p class="hint">Изготовление 3–5 дней. Если дата близкая, позвоню и скажу прямо: успеваю или нет. Обещать и не успеть не люблю.</p>
               </div>
               <div class="field">
                 <label for="comment">Комментарий</label>
-                <textarea class="textarea" id="comment" name="comment" placeholder="Размер кольца, пожелания к упаковке, текст открытки"></textarea>
+                <textarea class="textarea" id="comment" name="comment" placeholder="Размер кольца и на какой палец, пожелания к упаковке, текст открытки"></textarea>
               </div>
             </div>
 
             <div class="pay-note" style="margin-top:1.25rem">
               <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.35" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v12H3Z"/><path d="M3 10.6h18"/><path d="M6.6 14.8h3.4"/></svg>
-              <span>Оплата при получении или переводом. Предоплату не просим: сначала подтверждаем размер и срок, потом делаем.</span>
+              <span>Оплата при получении или переводом. Предоплату не беру: сначала подтвердим размер и срок, и только потом я режу металл.</span>
             </div>
 
             <div class="form-actions" style="margin-top:1.25rem">
@@ -170,8 +171,8 @@
           </div>
           <hr class="divider" style="margin:.4rem 0">
           <ul class="stack small muted" style="gap:.5rem">
-            <li>Упаковка в подарок — бесплатно</li>
-            <li>Гравировка — 15 BYN к позиции, до 16 знаков</li>
+            <li>Упаковка в подарок, бесплатно</li>
+            <li>Гравировка 15 BYN к позиции, до 16 знаков</li>
             <li>Год на изделие и замок</li>
             <li>Изготовление 3–5 дней</li>
           </ul>
@@ -191,7 +192,7 @@
           <span class="logo__mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.2 8.6V3.2h5.4M23.4 3.2h5.4v5.4M28.8 23.4v5.4h-5.4M8.6 28.8H3.2v-5.4"/><path d="M16 6.2 25 11.2v9.6L16 25.8 7 20.8v-9.6Z"/><path d="M7 11.2 16 16.2 25 11.2"/><path d="M16 16.2v9.6"/><path d="M16 6.2 20.4 11.2 16 16.2 11.6 11.2Z"/><g fill="currentColor" stroke="none"><circle cx="16" cy="6.2" r="1.5"/><circle cx="25" cy="16" r="1.5"/><circle cx="16" cy="25.8" r="1.5"/><circle cx="7" cy="16" r="1.5"/></g></svg></span>
           <span class="logo__text">Латунь</span>
         </a>
-        <p class="small muted footer__blurb">Ювелирное ателье в Минске. Латунь, серебро 925, натуральные камни. Отправляем по всей стране.</p>
+        <p class="small muted footer__blurb">Ателье «Латунь» на Революционной: латунь, серебро 925, натуральные камни. Отправляю Европочтой по всей стране.</p>
       </div>
       <div>
         <h4>Покупателю</h4>
@@ -218,15 +219,16 @@
         </div>
       </div>
     </div>
-    <p class="footer-note">Демо-сайт мастерской «Латунь»: бренд и контакты вымышленные, чтобы показать, как витрина работает рядом с Instagram. Фотографии взяты из открытых источников, авторы и лицензии перечислены в CREDITS.md.</p>
+    <p class="footer-note">Демо-сайт мастерской «Латунь»: бренд, адрес и телефон вымышленные. Показываем, как витрина работает рядом с Instagram. Фотографии взяты из открытых источников, авторы и лицензии перечислены в CREDITS.md.</p>
     <div class="footer-bottom">
       <span>© <span data-year>2026</span> «Латунь» · демонстрационный сайт</span>
-      <span>Работает по file:// — без сети и без внешних запросов</span>
+      <span>Работает по file://, без сети и без внешних запросов</span>
     </div>
   </div>
 </footer>
 
 <script src="assets/data.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/motion.js"></script>
 </body>
 </html>

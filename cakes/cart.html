@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Корзина и заказ — «Мельница», домашняя кондитерская</title>
+<title>Корзина и заказ: «Мельница», домашняя кондитерская</title>
 <meta name="description" content="Корзина «Мельницы»: количество, итог, бесплатная доставка от 200 BYN, оформление заказа с самовывозом или доставкой по Минску.">
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/motion.css">
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
@@ -83,7 +84,7 @@
     <div class="container">
       <p class="eyebrow"><span class="accent-line"></span>корзина</p>
       <h1>Что в корзине</h1>
-      <p class="lead" style="margin-top:var(--s3);max-width:62ch">Проверьте состав, оставьте контакты и выберите, как заберёте. Заказ сразу появится в панели владельца — она на отдельной странице.</p>
+      <p class="lead" style="margin-top:var(--s3);max-width:62ch">Проверьте состав, оставьте контакты и выберите, как заберёте. Заказ сразу попадёт ко мне в панель, и я перезвоню. Хотите поменять начинку, напишите в комментарий, обсудим.</p>
     </div>
   </section>
 
@@ -93,7 +94,7 @@
       <div class="empty" id="cart-empty" hidden>
         <svg class="icon icon--xl" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.2 8.6h13.6a1.2 1.2 0 0 1 1.2 1.2v1.6a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 11.4v-1.6a1.2 1.2 0 0 1 1.2-1.2Z"/><path d="M5.8 12.6v5.5a1.4 1.4 0 0 0 1.4 1.4h9.6a1.4 1.4 0 0 0 1.4-1.4v-5.5"/><path d="M12 8.6V7.4"/><path d="M12 7.7c-.7-1.8-3.5-1.9-3.5-.2 0 1.2 1.9 1.6 3.5.2Z"/><path d="M12 7.7c.7-1.8 3.5-1.9 3.5-.2 0 1.2-1.9 1.6-3.5.2Z"/></svg>
         <h3>В корзине пока пусто</h3>
-        <p>Загляните в каталог или соберите торт в калькуляторе: вес, начинка, декор — и цена сразу.</p>
+        <p>Загляните в каталог или соберите торт в калькуляторе. Вес, начинка, декор, и цена сразу.</p>
         <div class="row" style="justify-content:center;margin-top:var(--s4)">
           <a class="btn" href="catalog.html">В каталог</a>
           <a class="btn btn--ghost" href="index.html#calc">Собрать торт в калькуляторе</a>
@@ -106,26 +107,26 @@
             <h2 style="margin-bottom:var(--s4)">Состав заказа</h2>
             <ul class="cart-lines" id="cart-lines"></ul>
             <div class="divider-soft"></div>
-            <p class="small muted">Количество меняется кнопками «плюс» и «минус», сумма пересчитывается сразу. Удаление — иконкой корзины.</p>
+            <p class="small muted">Количество меняется кнопками «плюс» и «минус», сумма пересчитывается сразу. Удалить строку можно корзинкой справа.</p>
           </div>
           <aside class="summary" aria-label="Итог заказа">
             <h2>Итого</h2>
             <div class="summary__row"><span>Товары</span><span id="sum-subtotal">0 BYN</span></div>
-            <div class="summary__row"><span>Доставка</span><span id="sum-delivery">самовывоз — 0 BYN</span></div>
+            <div class="summary__row"><span>Доставка</span><span id="sum-delivery">самовывоз 0 BYN</span></div>
             <div class="summary__row summary__row--total"><span>К оплате</span><span id="sum-total">0 BYN</span></div>
             <div class="ship">
               <div class="ship__bar"><span id="ship-bar" style="width:0"></span></div>
               <p class="small muted" id="ship-note"></p>
             </div>
-            <p class="hint" style="margin-top:var(--s4)">Оплата при получении: картой, переводом или наличными. Для свадебных заказов — предоплата 30% на продукты.</p>
+            <p class="hint" style="margin-top:var(--s4)">Оплата при получении: картой, переводом или наличными. На свадебные беру предоплату 30%: продукты для ярусов закупаю под дату, и стоят они дорого.</p>
           </aside>
         </div>
 
         <div id="checkout" style="margin-top:var(--s7)">
           <div class="section-head">
             <p class="eyebrow">последний шаг</p>
-            <h2>Кому печём и когда</h2>
-            <p class="lead">Телефон нужен, чтобы подтвердить детали и время получения. Никаких рассылок не делаем.</p>
+            <h2>Кому пеку и когда</h2>
+            <p class="lead">Телефон нужен, чтобы подтвердить детали и время получения. Рассылок не делаю и номер никому не передаю.</p>
           </div>
 
           <form class="form-grid" id="order-form" novalidate>
@@ -180,7 +181,7 @@
             <div class="field">
               <label for="f-comment">Комментарий</label>
               <textarea class="textarea" id="f-comment" name="comment" placeholder="Повод, надпись на торте, аллергии, удобное время получения"></textarea>
-              <p class="hint">Например: «Надпись "С днём рождения, Маша", без орехов, заберу в субботу после 14:00».</p>
+              <p class="hint">Например: «Надпись "С днём рождения, Маша", без орехов, заберу в субботу после 14:00». Если торт нужен к утру, напишите тоже, поставлю его в сборку первым.</p>
             </div>
 
             <div class="row">
@@ -189,7 +190,7 @@
               </button>
               <a class="btn btn--ghost" href="catalog.html">Вернуться в каталог</a>
             </div>
-            <p class="hint">Это демо-сайт: заказ не уходит на сервер, а сохраняется в браузере (localStorage) и появляется в панели владельца.</p>
+            <p class="hint">Это демо-сайт: заказ никуда не уходит, он сохраняется в браузере (localStorage) и появляется в панели владельца.</p>
           </form>
         </div>
       </div>
@@ -209,7 +210,7 @@
           <span class="logo__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20.6h16"/><path d="M5.2 20.6v-4.3c0-.9.7-1.6 1.6-1.6h10.4c.9 0 1.6.7 1.6 1.6v4.3"/><path d="M5.6 14.7c1.6 1.2 3.2 1.2 4.8 0s3.2-1.2 4.8 0 2.8 1.1 3.2.2"/><path d="M12 10.3V7.9"/><circle cx="12" cy="6.3" r="1.6"/></svg></span>
           <span class="logo__text">Мельница<small>домашняя кондитерская</small></span>
         </span>
-        <p class="small muted" style="margin-top:var(--s3)">Домашняя кондитерская в Минске с 2016 года: бенто, торты на заказ, свадебные и детские, капкейки. Печём маленькими партиями и строго под дату.</p>
+        <p class="small muted" style="margin-top:var(--s3)">Домашняя кондитерская в Минске с 2016 года: бенто, торты на заказ, свадебные, детские, капкейки. Пеку маленькими партиями и только под дату. Торт, собранный вчера, уже не торт.</p>
       </div>
       <div>
         <h4>Разделы</h4>
@@ -257,7 +258,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© <span class="js-year">2026</span> «Мельница» — демонстрационный сайт. Бренд, адрес и контакты вымышлены, фото — из открытых источников (см. CREDITS.md). Заказы сохраняются только в вашем браузере.</p>
+      <p>© <span class="js-year">2026</span> «Мельница», демонстрационный сайт. Бренд, адрес и контакты вымышлены, фото взяты из открытых источников (см. CREDITS.md). Заказы сохраняются только в вашем браузере.</p>
     </div>
   </div>
 </footer>
@@ -266,5 +267,6 @@
 
 <script src="assets/data.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/motion.js"></script>
 </body>
 </html>

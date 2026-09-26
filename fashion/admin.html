@@ -4,10 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Панель владельца — заказы «Линии»</title>
-<meta name="description" content="Демо-панель владельца магазина «Линия»: заказы с сайта, состав с размерами, статусы и экспорт в CSV.">
+<meta name="description" content="Демо-панель владельца «Линии»: заказы с сайта, состав с размерами, статусы и выгрузка в CSV. Данные живут в браузере.">
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/motion.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -55,7 +56,7 @@
     <div class="mobile-nav__side">
       <div class="mobile-nav__block">
         <h4>Панель владельца</h4>
-        <p>Заказы с сайта, статусы, экспорт в CSV. Данные лежат в браузере и никуда не уходят.</p>
+        <p>Заказы с сайта, статусы, выгрузка в CSV. Данные лежат в браузере и никуда не уходят.</p>
       </div>
       <a class="btn btn--block" href="catalog.html">Оформить тестовый заказ</a>
     </div>
@@ -69,8 +70,9 @@
         <div class="catalog-head" style="border-bottom: 0; padding-bottom: 0">
           <p class="eyebrow">Панель владельца · демо</p>
           <h1 style="margin-top: var(--s3)">Заказы «Линии»</h1>
-          <p class="lead" style="margin-top: var(--s3)">Заказ, оформленный на сайте, появляется здесь сразу: состав с размерами,
-            способ получения, контакт и статус. Это демо-панель, данные живут в браузере.</p>
+          <p class="lead" style="margin-top: var(--s3)">Заказ с сайта падает сюда сразу: состав с размерами, способ получения,
+            телефон и статус. Утром я открываю панель первой, до кофе: пока зал не открылся, разбираю вчерашнее.
+            Это демонстрационная версия, данные живут в браузере и никуда не уходят.</p>
         </div>
         <div class="row">
           <button class="btn btn--ghost btn--sm" type="button" id="export-csv">
@@ -84,19 +86,19 @@
 
       <div class="admin-stats" style="margin-top: var(--s6)">
         <div class="admin-stat">
-          <p class="stat__label">Заказов сегодня</p>
+          <p class="stat__label">Заказов за сегодня</p>
           <p class="stat__value" id="stat-today">0</p>
         </div>
         <div class="admin-stat">
-          <p class="stat__label">Сумма за сегодня</p>
+          <p class="stat__label">Сумма за сегодня, без отменённых</p>
           <p class="stat__value" id="stat-revenue">0 BYN</p>
         </div>
         <div class="admin-stat">
-          <p class="stat__label">В работе</p>
+          <p class="stat__label">В работе, новые и принятые</p>
           <p class="stat__value" id="stat-active">0</p>
         </div>
         <div class="admin-stat">
-          <p class="stat__label">Всего заказов</p>
+          <p class="stat__label">Всего в панели</p>
           <p class="stat__value" id="stat-total">0</p>
         </div>
       </div>
@@ -117,8 +119,9 @@
       <div class="empty orders-empty" id="orders-empty" hidden>
         <svg class="icon icon--xl" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 2.5 21 7v10l-9 4.5L3 17V7z"/><path d="M3 7l9 4.5L21 7"/><path d="M12 11.5V21.5"/></svg>
         <h3>Заказов пока нет</h3>
-        <p class="small">Оформите тестовый заказ на сайте: добавьте вещь в корзину, отметьте размер и выберите способ получения.
-          Заказ появится здесь со статусом «Новый».</p>
+        <p class="small">Сделайте тестовый заказ: положите вещь в корзину, отметьте размер, выберите получение. Он появится
+          здесь со статусом «Новый», дальше его можно двигать по статусам руками. Пустая панель бывает только до первого
+          заказа, в пятницу вечером тут обычно строк десять.</p>
         <a class="btn btn--sm" href="catalog.html">Открыть каталог</a>
       </div>
 
@@ -130,8 +133,9 @@
           <li><span>Статусы</span><strong>новый → принят → выполнен → отменён</strong></li>
           <li><span>Экспорт</span><strong>CSV с составом, размерами и адресом</strong></li>
         </ul>
-        <p class="hint">У настоящего магазина эта панель подключена к базе: заказы приходят с сайта, менеджер меняет статус,
-          а клиенту уходит сообщение в Instagram или SMS.</p>
+        <p class="hint">У настоящего магазина эта панель сидит на базе: заказы приходят с сайта, продавец двигает статус,
+          клиенту уходит сообщение в Instagram или SMS. Без такой панели утром не понять, что продано вчера, а что
+          до сих пор висит в зале. У нас в Призме до неё была общая тетрадь, честно говоря, я по ней до сих пор скучаю.</p>
       </div>
     </div>
   </section>
@@ -151,8 +155,8 @@
           </span>
           <span class="logo__text">Линия<small>магазин женской одежды · Минск</small></span>
         </a>
-        <p class="small muted" style="margin-top: var(--s4)">Демо-панель: заказы с сайта, статусы и экспорт в CSV.
-          Данные лежат в браузере и не уходят в сеть.</p>
+        <p class="small muted" style="margin-top: var(--s4)">Демонстрационная панель «Линии»: заказы с сайта, статусы
+          и выгрузка в CSV. Данные лежат в браузере и в сеть не уходят.</p>
       </div>
       <div>
         <h4>Каталог</h4>
@@ -180,7 +184,7 @@
       </div>
     </div>
     <div class="footer-bottom between">
-      <span>© <span data-year>2026</span> «Линия» — демо-магазин. Бренд и контакты вымышлены</span>
+      <span>© <span data-year>2026</span> «Линия», демонстрационный магазин. Бренд и контакты вымышлены</span>
       <a href="index.html">На главную</a>
     </div>
   </div>
@@ -198,7 +202,7 @@
       </button>
     </div>
     <div class="modal__body" id="size-modal-body">
-      <p class="small muted">Таблица размеров загрузится вместе со страницей.</p>
+      <p class="small muted">Открываю сетку, секунду.</p>
     </div>
     <div class="modal__foot">
       <a class="btn btn--block" href="catalog.html">Открыть каталог</a>
@@ -208,5 +212,6 @@
 
 <script src="assets/data.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/motion.js"></script>
 </body>
 </html>

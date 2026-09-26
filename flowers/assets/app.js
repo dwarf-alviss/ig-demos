@@ -516,32 +516,20 @@
 
   /* ============================ главная: конструктор букета ============================ */
 
+  /* ============================ конструктор: живой букет ============================
+     Модельки, раскладка и цены живут в assets/bouquet.js. Отсюда — только состояние,
+     чипы управления, перерисовка витрины и добавление в корзину. */
+
+  var BQ = window.PION_BOUQUET || null;
+
   var BUILDER = {
     occasions: [
       { id: 'none', title: 'Без повода', add: 0, hint: 'Просто потому что хочется' },
-      { id: 'birthday', title: 'День рождения', add: 10, hint: 'Добавим ярких акцентов' },
-      { id: 'anniversary', title: 'Годовщина', add: 15, hint: 'Больше бутонов и лента в тон' },
-      { id: 'wedding', title: 'Свадьба', add: 40, hint: 'Плотная сборка, стойкие сорта' },
-      { id: 'thanks', title: 'Сказать спасибо', add: 0, hint: 'Аккуратный небольшой букет' },
+      { id: 'birthday', title: 'День рождения', add: 10, hint: 'Подберу ярких акцентов' },
+      { id: 'anniversary', title: 'Годовщина', add: 15, hint: 'Соберу плотнее, лента в тон' },
+      { id: 'wedding', title: 'Свадьба', add: 40, hint: 'Стойкие сорта, плотная сборка' },
+      { id: 'thanks', title: 'Сказать спасибо', add: 0, hint: 'Небольшой и аккуратный' },
       { id: 'newhome', title: 'Новоселье', add: 5, hint: 'Композиция, которая долго стоит' }
-    ],
-    sizes: [
-      { id: 's', title: 'S', add: 65, hint: 'до 9 бутонов' },
-      { id: 'm', title: 'M', add: 95, hint: '11–15 бутонов' },
-      { id: 'l', title: 'L', add: 135, hint: '17–25 бутонов' },
-      { id: 'xl', title: 'XL', add: 180, hint: '25+ бутонов' }
-    ],
-    palettes: [
-      { id: 'pudra', title: 'Пудровая', add: 0, swatch: '#e6c3c6' },
-      { id: 'white', title: 'Белая', add: 10, swatch: '#f2ece0' },
-      { id: 'green', title: 'Зелёная', add: 0, swatch: '#3f7d5d' },
-      { id: 'terra', title: 'Терракотовая', add: 15, swatch: '#c97a4a' },
-      { id: 'bright', title: 'Яркая', add: 10, swatch: '#e5b23c' }
-    ],
-    packs: [
-      { id: 'craft', title: 'Крафт и лента', add: 0, hint: 'Классика, ничего лишнего' },
-      { id: 'box', title: 'Шляпная коробка', add: 25, hint: 'С влажной губкой, ваза не понадобится' },
-      { id: 'vase', title: 'Стеклянная ваза', add: 35, hint: 'Можно подарить сразу с водой' }
     ]
   };
 
@@ -550,69 +538,85 @@
     return list[0];
   }
 
-  /* Цена конструктора: размер + повод + палитра + упаковка. Чистая функция — её же проверяют тесты. */
+  /* Цена букета: работа + бутоны + палитра + упаковка + лента + повод */
   function builderPrice(state) {
-    return findOption(BUILDER.sizes, state.size).add +
-      findOption(BUILDER.occasions, state.occasion).add +
-      findOption(BUILDER.palettes, state.palette).add +
-      findOption(BUILDER.packs, state.pack).add;
+    if (!BQ) { return 0; }
+    return BQ.priceOf(state) + findOption(BUILDER.occasions, state.occasion).add;
   }
 
   function initBuilder() {
     var root = $('#builder');
-    if (!root) { return; }
+    if (!root || !BQ) { return; }
 
-    var state = { occasion: 'none', size: 'm', palette: 'pudra', pack: 'craft' };
+    var state = { occasion: 'none', flower: 'peony', count: 15, palette: 'pudra', pack: 'craft', ribbon: 'cream' };
+    var svg = $('#bouquet');
+    var drawn = '';
 
     var groups = [
-      { key: 'occasion', field: 'occasion', list: BUILDER.occasions },
-      { key: 'size', field: 'size', list: BUILDER.sizes },
-      { key: 'palette', field: 'palette', list: BUILDER.palettes },
-      { key: 'pack', field: 'pack', list: BUILDER.packs }
+      { field: 'flower', list: BQ.FLOWERS, art: true },
+      { field: 'count', list: BQ.COUNTS.map(function (n) { return { id: String(n), title: String(n) }; }) },
+      { field: 'palette', list: BQ.PALETTES },
+      { field: 'pack', list: BQ.PACKS },
+      { field: 'ribbon', list: BQ.RIBBONS },
+      { field: 'occasion', list: BUILDER.occasions }
     ];
 
-    function price() {
-      return builderPrice(state);
+    function chip(group, option) {
+      var active = String(state[group.field]) === String(option.id);
+      var lead = '';
+      if (group.art) {
+        lead = '<span class="chip__art" aria-hidden="true">' + BQ.icon(option.id, 30) + '</span>';
+      } else if (option.swatch) {
+        lead = '<span class="swatch" style="background:' + esc(option.swatch) + '"></span>';
+      }
+      return '<button class="chip" type="button" data-group="' + esc(group.field) + '" data-value="' +
+        esc(String(option.id)) + '" aria-pressed="' + (active ? 'true' : 'false') + '">' + lead + esc(option.title) + '</button>';
     }
 
-    function chip(group, option) {
-      var active = state[group.field] === option.id;
-      var swatch = option.swatch
-        ? '<span class="swatch" style="background:' + esc(option.swatch) + '"></span>'
-        : '';
-      return '<button class="chip" type="button" data-group="' + esc(group.field) + '" data-value="' + esc(option.id) +
-        '" aria-pressed="' + (active ? 'true' : 'false') + '">' + swatch + esc(option.title) + '</button>';
+    /* Витрину перерисовываем только когда меняется сам рисунок: повод на букет не влияет */
+    function draw() {
+      if (!svg) { return; }
+      var key = [state.flower, state.count, state.palette, state.pack, state.ribbon].join('|');
+      if (key === drawn) { return; }
+      drawn = key;
+      BQ.render(svg, state, { animate: true });
+      svg.setAttribute('aria-label', 'Букет: ' + BQ.summary(state));
     }
 
     function render() {
+      var flower = BQ.find(BQ.FLOWERS, state.flower);
+      var pal = BQ.find(BQ.PALETTES, state.palette);
+      var pack = BQ.find(BQ.PACKS, state.pack);
+      var ribbon = BQ.find(BQ.RIBBONS, state.ribbon);
       var occ = findOption(BUILDER.occasions, state.occasion);
-      var size = findOption(BUILDER.sizes, state.size);
-      var pal = findOption(BUILDER.palettes, state.palette);
-      var pack = findOption(BUILDER.packs, state.pack);
-      var sum = price();
+      var sum = builderPrice(state);
 
       root.querySelectorAll('[data-group]').forEach(function (el) {
-        el.setAttribute('aria-pressed', el.getAttribute('data-value') === state[el.getAttribute('data-group')] ? 'true' : 'false');
+        var field = el.getAttribute('data-group');
+        el.setAttribute('aria-pressed', String(el.getAttribute('data-value')) === String(state[field]) ? 'true' : 'false');
       });
 
-      $('#builder-occasion-hint').textContent = occ.hint;
-      $('#builder-size-hint').textContent = size.hint + ' · ' + size.title;
+      $('#builder-flower-hint').textContent = flower.hint;
+      $('#builder-count-hint').textContent = state.count + ' × ' + flower.stem + ' BYN за бутон и ' + BQ.BASE + ' BYN за работу';
+      $('#builder-count-aside').textContent = state.count <= BQ.COUNTS[0] ? BQ.COVER.min
+        : (state.count >= BQ.COUNTS[BQ.COUNTS.length - 1] ? BQ.COVER.max : 'Чаще всего берут 15 или 21.');
       $('#builder-pack-hint').textContent = pack.hint;
+      $('#builder-occasion-hint').textContent = occ.hint;
       $('#builder-price').textContent = byn(sum);
-      $('#builder-summary').textContent = 'Букет ' + size.title + ' · ' + occ.title + ' · ' + pal.title.toLowerCase() +
-        ' палитра · ' + pack.title.toLowerCase();
+      $('#builder-summary').textContent = BQ.summary(state) + ' · ' + occ.title.toLowerCase();
+      $('#builder-stage-note').textContent = flower.title + ' × ' + state.count + ' · ' + pack.title.toLowerCase() +
+        ' · лента ' + ribbon.title.toLowerCase() + '. В жизни головы крупнее.';
       $('#builder-note').textContent = sum >= FREE_FROM
         ? 'Доставка по Минску бесплатная: заказ перевалил за ' + byn(FREE_FROM) + '.'
         : 'До бесплатной доставки не хватает ' + byn(FREE_FROM - sum) + '. По Минску возим за ' +
           byn(DELIVERY_FEE) + ', обычно за два часа.';
+      draw();
     }
 
     groups.forEach(function (group) {
       var host = root.querySelector('[data-options="' + group.field + '"]');
       if (!host) { return; }
-      host.innerHTML = group.list.map(function (option) {
-        return chip(group, option);
-      }).join('');
+      host.innerHTML = group.list.map(function (option) { return chip(group, option); }).join('');
     });
 
     root.addEventListener('click', function (event) {
@@ -620,27 +624,29 @@
       if (!btn) { return; }
       var field = btn.getAttribute('data-group');
       if (!(field in state)) { return; }
-      state[field] = btn.getAttribute('data-value');
+      var raw = btn.getAttribute('data-value');
+      state[field] = field === 'count' ? parseInt(raw, 10) : raw;
       render();
     });
 
     var add = $('#builder-add');
     if (add) {
       add.addEventListener('click', function () {
-        var size = findOption(BUILDER.sizes, state.size);
+        var flower = BQ.find(BQ.FLOWERS, state.flower);
         var occ = findOption(BUILDER.occasions, state.occasion);
-        var pal = findOption(BUILDER.palettes, state.palette);
-        var pack = findOption(BUILDER.packs, state.pack);
-        var note = [size.title, occ.title, pal.title, pack.title].join(' · ');
+        var price = builderPrice(state);
+        var title = state.count + ' ' + plural(state.count, flower.title.toLowerCase(),
+          flower.title.toLowerCase() + 'а', flower.title.toLowerCase() + 'ов');
         var count = addToCart({
-          id: 'bouquet-' + size.id + '-' + occ.id + '-' + pal.id + '-' + pack.id,
-          name: 'Букет по конструктору',
-          price: price(),
-          img: BUILDER_IMG,
-          note: note
+          id: 'bouquet-' + [state.flower, state.count, state.palette, state.pack, state.ribbon].join('-'),
+          name: 'Букет по конструктору: ' + title,
+          price: price,
+          img: BQ.dataUrl(state, 480),
+          note: BQ.summary(state) + ' · ' + occ.title.toLowerCase(),
+          bouquet: { flower: state.flower, count: state.count, palette: state.palette, pack: state.pack, ribbon: state.ribbon }
         }, 1);
         updateCartBadges();
-        toast('Букет ' + size.title + ' уехал в корзину · ' + count + ' ' + plural(count, 'позиция', 'позиции', 'позиций'));
+        toast('Собрали букет за ' + byn(price) + '. В корзине ' + count + ' ' + plural(count, 'позиция', 'позиции', 'позиций'));
       });
     }
 

@@ -1,0 +1,167 @@
+/* motion.css — слой движения и мелких дизайнерских решений для серии демо-сайтов.
+   Подключается после base.css и site.css. Работает на общих переменных серии
+   (--line, --fg, --muted, --surface), поэтому не спорит с палитрой каждого сайта.
+   Всё выключается при prefers-reduced-motion. */
+
+/* ============================ появление секций ============================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s var(--ease, cubic-bezier(.22,.61,.36,1)),
+              transform .7s var(--ease, cubic-bezier(.22,.61,.36,1));
+  transition-delay: calc(var(--i, 0) * 65ms);
+  will-change: opacity, transform;
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+.reveal--left { transform: translateX(-22px); }
+.reveal--right { transform: translateX(22px); }
+.reveal--scale { transform: scale(.965); }
+.reveal--soft { transform: translateY(10px); }
+
+/* ============================ приезд первого экрана ============================ */
+.hero__copy > *,
+.hero__figure, .hero__stage, .hero__media, .hero__aside, .hero__plate, .hero__grid > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .8s var(--ease, cubic-bezier(.22,.61,.36,1)),
+              transform .8s var(--ease, cubic-bezier(.22,.61,.36,1));
+}
+html.is-ready .hero__copy > *,
+html.is-ready .hero__figure, html.is-ready .hero__stage, html.is-ready .hero__media,
+html.is-ready .hero__aside, html.is-ready .hero__plate, html.is-ready .hero__grid > * {
+  opacity: 1; transform: none;
+}
+html.is-ready .hero__copy > *:nth-child(1) { transition-delay: .05s; }
+html.is-ready .hero__copy > *:nth-child(2) { transition-delay: .13s; }
+html.is-ready .hero__copy > *:nth-child(3) { transition-delay: .21s; }
+html.is-ready .hero__copy > *:nth-child(4) { transition-delay: .29s; }
+html.is-ready .hero__copy > *:nth-child(5) { transition-delay: .37s; }
+html.is-ready .hero__figure, html.is-ready .hero__stage, html.is-ready .hero__media, html.is-ready .hero__plate { transition-delay: .18s; }
+html.is-ready .hero__grid > *:nth-child(1) { transition-delay: .1s; }
+html.is-ready .hero__grid > *:nth-child(2) { transition-delay: .2s; }
+html.is-ready .hero__grid > *:nth-child(3) { transition-delay: .3s; }
+html.is-ready .hero__grid > *:nth-child(4) { transition-delay: .4s; }
+
+/* Медленное дыхание фотографии на первом экране */
+.hero__figure img, .hero__media img, .hero__stage img {
+  animation: kenburns 26s ease-in-out infinite alternate;
+  transform-origin: 60% 40%;
+}
+@keyframes kenburns {
+  from { transform: scale(1) translateY(0); }
+  to { transform: scale(1.06) translateY(-1.2%); }
+}
+
+/* ============================ полоса прогресса чтения ============================ */
+.scroll-progress {
+  position: fixed; inset: 0 auto auto 0; z-index: 60;
+  height: 2px; width: 0;
+  background: var(--accent, var(--brass, var(--olive-deep, #6d7a4c)));
+  transition: width .12s linear, opacity .3s ease;
+  opacity: 0;
+}
+.scroll-progress.is-active { opacity: 1; }
+
+/* ============================ шапка при прокрутке ============================ */
+.site-header, header.site-header, .header { transition: box-shadow .35s ease, backdrop-filter .35s ease, background-color .35s ease; }
+.is-scrolled .site-header, .site-header.is-scrolled, .header.is-scrolled {
+  box-shadow: 0 1px 0 var(--line), 0 14px 34px -26px rgba(20, 16, 14, .5);
+  backdrop-filter: saturate(1.2) blur(8px);
+}
+
+/* ============================ кнопки: заливка и стрелка ============================ */
+.btn { position: relative; overflow: hidden; isolation: isolate; }
+.btn::after {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: currentColor; opacity: .1;
+  transform: translateY(101%);
+  transition: transform .45s var(--ease, cubic-bezier(.22,.61,.36,1));
+}
+.btn:hover::after, .btn:focus-visible::after { transform: translateY(0); }
+.btn svg { transition: transform .35s var(--ease, cubic-bezier(.22,.61,.36,1)); }
+.btn:hover svg { transform: translateX(3px); }
+.btn:active { transform: translateY(1px); }
+
+/* ============================ карточки: подъём, зум фото, быстрая кнопка ============================ */
+.card, .product, article.card {
+  transition: transform .45s var(--ease, cubic-bezier(.22,.61,.36,1)),
+              box-shadow .45s var(--ease, cubic-bezier(.22,.61,.36,1));
+}
+.card:hover, .product:hover { transform: translateY(-4px); }
+.card img, .product img, .hero__figure img { transition: transform .8s var(--ease, cubic-bezier(.22,.61,.36,1)); }
+.card:hover img, .product:hover img { transform: scale(1.045); }
+.card__add, .js-add, [data-add] { transition: opacity .3s ease, transform .3s var(--ease, cubic-bezier(.22,.61,.36,1)); }
+.card:hover .card__add, .card:hover .js-add { transform: translateY(-2px); }
+.card.is-out { opacity: 0; transform: scale(.97); }
+
+/* Чипы фильтров: пружина при выборе */
+.chip { transition: transform .28s cubic-bezier(.2, 1.5, .4, 1), background-color .25s ease, color .25s ease, border-color .25s ease; }
+.chip:active { transform: scale(.94); }
+.chip[aria-pressed="true"], .chip.is-active { transform: translateY(-1px); }
+
+/* ============================ счётчики цифр ============================ */
+[data-count] { font-variant-numeric: tabular-nums; }
+[data-count].is-counting { color: var(--accent, var(--brass, var(--olive-deep, inherit))); }
+
+/* ============================ полёт в корзину ============================ */
+.fly-item {
+  position: fixed; z-index: 80; pointer-events: none;
+  width: 56px; height: 56px; border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 18px 34px -18px rgba(20, 16, 14, .6);
+  will-change: transform, opacity;
+}
+.cart-badge, .header-actions .badge, [data-cart-count] { transition: transform .3s cubic-bezier(.2, 1.6, .4, 1); }
+.is-bumped { animation: bump .5s cubic-bezier(.2, 1.6, .4, 1); }
+@keyframes bump { 0%, 100% { transform: scale(1); } 35% { transform: scale(1.32); } 70% { transform: scale(.94); } }
+
+/* ============================ бегущая строка ============================ */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  padding-block: 1.05rem;
+  background: var(--surface);
+  /* мягкие края вместо резкого обреза */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6.5%, #000 93.5%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 6.5%, #000 93.5%, transparent 100%);
+  padding-inline: 1.2rem;
+}
+.marquee__track {
+  display: flex; align-items: center; gap: 2.8rem; width: max-content;
+  animation: marquee 42s linear infinite;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee__item {
+  display: inline-flex; align-items: center; gap: .8rem; white-space: nowrap;
+  font-size: .92rem; letter-spacing: .012em; color: var(--fg); opacity: .88;
+}
+.marquee__item::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent, var(--brass, var(--olive-deep, currentColor)));
+  flex: 0 0 auto;
+}
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ============================ переходы между страницами ============================ */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: vt-out .22s ease both; }
+::view-transition-new(root) { animation: vt-in .3s cubic-bezier(.22,.61,.36,1) both; }
+@keyframes vt-out { to { opacity: 0; transform: translateY(-6px); } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(8px); } }
+
+/* ============================ тосты и служебные появления ============================ */
+.toast { transition: opacity .3s ease, transform .45s cubic-bezier(.2, 1.5, .4, 1); }
+.tile-pop { animation: tilePop .5s cubic-bezier(.2, 1.5, .4, 1); }
+@keyframes tilePop { from { transform: scale(.92); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* ============================ уважение к настройке «меньше движения» ============================ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .hero__copy > *, .hero__figure, .hero__stage, .hero__media, .hero__aside, .hero__plate, .hero__grid > * {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+  .hero__figure img, .hero__media img, .hero__stage img, .marquee__track { animation: none !important; }
+  .card:hover, .product:hover, .btn:active { transform: none !important; }
+  .scroll-progress { display: none; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
+}

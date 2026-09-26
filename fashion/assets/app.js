@@ -357,7 +357,7 @@
   }
 
   function methodLabel(order) {
-    if (order.method === 'pickup') { return 'Самовывоз · ' + pointShort(order.point); }
+    if (order.method === 'pickup') { return 'Самовывоз, ' + pointShort(order.point); }
     return 'Доставка: ' + (order.address || 'адрес не указан');
   }
 
@@ -577,7 +577,7 @@
         color: color,
         img: product.img
       }, 1);
-      toast(product.name + ' · размер ' + size + ' — в корзине: ' + count + ' ' +
+      toast(product.name + ', размер ' + size + '. В корзине ' + count + ' ' +
         plural(count, 'позиция', 'позиции', 'позиций'));
     });
   }
@@ -737,7 +737,7 @@
     }));
 
     var sortOptions = [
-      { id: 'pop', title: 'Популярные' },
+      { id: 'pop', title: 'Что уходит первым' },
       { id: 'cheap', title: 'Сначала недорогие' },
       { id: 'expensive', title: 'Сначала дорогие' },
       { id: 'name', title: 'По названию' }
@@ -835,10 +835,10 @@
       if (counter) {
         counter.textContent = found.length
           ? (found.length === PRODUCTS.length
-              ? 'Весь зал: ' + PRODUCTS.length + ' моделей'
-              : 'Показано ' + found.length + ' из ' + PRODUCTS.length + ' · ' +
+              ? 'В зале все ' + PRODUCTS.length + ' моделей'
+              : 'Под фильтры подошло ' + found.length + ' из ' + PRODUCTS.length + ' ' +
                 plural(found.length, 'модель', 'модели', 'моделей'))
-          : 'Ничего не подошло';
+          : 'Ничего не нашлось';
       }
 
       var summary = $('#active-filters');
@@ -849,15 +849,15 @@
               return '<span class="badge">' + esc(part) + '</span>';
             }).join('') +
             '<button class="filter-reset" type="button" data-action="reset-filters">Снять всё</button>'
-          : '<span class="tiny muted">Показан весь каталог.</span>';
+          : '<span class="tiny muted">Фильтры сняты, показываю весь зал.</span>';
       }
 
       if (!found.length) {
         grid.innerHTML = '' +
           '<div class="empty grid-empty lookbook-empty">' +
             icon('filter', 'icon--xl') +
-            '<h3>Под такие фильтры ничего не подошло</h3>' +
-            '<p class="small">Снимите размер или точку: в зале обычно висит больше, чем попало в подборку.</p>' +
+            '<h3>С такими фильтрами пусто</h3>' +
+            '<p class="small">Снимите размер или точку. В зале висит больше, чем попало в подборку: часть размеров я держу в подсобке.</p>' +
             '<button class="btn btn--sm" type="button" data-action="reset-filters">Снять фильтры</button>' +
           '</div>';
         return;
@@ -955,10 +955,10 @@
       var pointObj = getPoint(point) || { short: 'точке', prep: 'точке', hours: '', address: '' };
       if (info.ok) {
         host.innerHTML = '<p class="small">' + icon('check') + ' ' + esc(pointObj.short || 'Точка') +
-          ': все позиции в наличии. Соберём за 2 часа, ' + esc(pointObj.address) + '.</p>';
+          ': все позиции в наличии. Соберу за 2 часа, ' + esc(pointObj.address) + '.</p>';
       } else {
         host.innerHTML = '<p class="small">' + icon('clock') + ' В ' + esc(pointPrep(point)) + ' нет: ' +
-          esc(info.missing.join(', ')) + '. Привезём из второй точки за день и напишем перед доставкой.</p>';
+          esc(info.missing.join(', ')) + '. Привезу из второй за день и напишу перед отправкой.</p>';
       }
     }
 
@@ -1013,17 +1013,17 @@
       var feeEl = $('#sum-delivery');
       var totalEl = $('#sum-total');
       if (subEl) { subEl.textContent = byn(sub); }
-      if (feeEl) { feeEl.textContent = method !== 'delivery' ? 'самовывоз — бесплатно' : (fee === 0 ? 'бесплатно' : byn(fee)); }
+      if (feeEl) { feeEl.textContent = method !== 'delivery' ? 'самовывоз, бесплатно' : (fee === 0 ? 'бесплатно' : byn(fee)); }
       if (totalEl) { totalEl.textContent = byn(sub + fee); }
 
       var hint = $('#delivery-hint');
       if (hint) {
         if (method !== 'delivery') {
-          hint.textContent = 'Самовывоз из точки: собираем за 2 часа и пишем, когда забирать.';
+          hint.textContent = 'Самовывоз из точки: собираю за 2 часа и пишу, когда забирать.';
         } else if (fee === 0) {
-          hint.textContent = 'Доставка по Минску бесплатная: заказ от ' + byn(FREE_FROM) + '.';
+          hint.textContent = 'Доставка бесплатная, заказ от ' + byn(FREE_FROM) + '. Толя приедет на второй день.';
         } else {
-          hint.textContent = 'До бесплатной доставки не хватает ' + byn(FREE_FROM - sub) + '. Курьер берёт ' +
+          hint.textContent = 'До бесплатной доставки не хватает ' + byn(FREE_FROM - sub) + '. Толя берёт ' +
             byn(DELIVERY_FEE) + ' и везёт ' + (DATA.delivery && DATA.delivery.time ? DATA.delivery.time : '1–2 дня') + '.';
         }
       }
@@ -1051,11 +1051,11 @@
       } else if (action === 'remove') {
         removeFromCart(key);
         render();
-        toast('Позиция убрана из корзины');
+        toast('Убрала позицию из корзины');
       } else if (action === 'clear-cart') {
         clearCart();
         render();
-        toast('Корзина очищена');
+        toast('Корзину очистила');
       }
     });
 
@@ -1072,7 +1072,7 @@
       POINTS.forEach(function (item) {
         var option = document.createElement('option');
         option.value = item.id;
-        option.textContent = item.title + ' — ' + item.address;
+        option.textContent = item.title + ', ' + item.address;
         pointSelect.appendChild(option);
       });
       pointSelect.value = point;
@@ -1101,7 +1101,7 @@
         event.preventDefault();
         var items = readCart();
         if (!items.length) {
-          toast('Сначала добавьте товар в корзину');
+          toast('В корзине пусто, сначала отметьте вещь в каталоге');
           return;
         }
         var name = (($('#field-name') || {}).value || '').trim();
@@ -1112,19 +1112,19 @@
         var comment = (($('#field-comment') || {}).value || '').trim();
 
         var ok = true;
-        if (name.length < 2) { showError('name', 'Напишите, как к вам обращаться'); ok = false; }
+        if (name.length < 2) { showError('name', 'Напишите имя: мне нужно знать, кому звонить'); ok = false; }
         else { showError('name', ''); }
 
         var digits = phone.replace(/[^\d]/g, '');
         if (!/^375(17|25|29|33|44)\d{7}$/.test(digits)) {
-          showError('phone', 'Телефон в формате +375 (29) 123-45-67'); ok = false;
+          showError('phone', 'Телефон нужен в формате +375 (29) 123-45-67, иначе не дозвонюсь'); ok = false;
         } else { showError('phone', ''); }
 
         if (method === 'delivery' && address.length < 5) {
-          showError('address', 'Укажите улицу, дом и квартиру'); ok = false;
+          showError('address', 'Улицу, дом и квартиру: Толя поедет по этому адресу'); ok = false;
         } else { showError('address', ''); }
 
-        if (!date) { showError('date', 'Выберите дату'); ok = false; } else { showError('date', ''); }
+        if (!date) { showError('date', 'Выберите дату, раньше сегодняшней не смогу'); ok = false; } else { showError('date', ''); }
         if (!ok) { return; }
 
         var sub = cartSubtotal();
@@ -1169,7 +1169,7 @@
           }
           success.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        toast('Заказ №' + order.number + ' принят. Позвоним в течение 15 минут и подтвердим размер');
+        toast('Заказ №' + order.number + ' принят. Позвоню в течение пятнадцати минут и подтвержу размер');
         render();
       });
     }
@@ -1282,7 +1282,7 @@
       var counter = $('#admin-count');
       if (counter) {
         counter.textContent = orders.length
-          ? 'Всего ' + orders.length + ' ' + plural(orders.length, 'заказ', 'заказа', 'заказов')
+          ? 'Всего в панели ' + orders.length + ' ' + plural(orders.length, 'заказ', 'заказа', 'заказов')
           : 'Заказов пока нет';
       }
     }
@@ -1311,7 +1311,7 @@
     if (exportBtn) {
       exportBtn.addEventListener('click', function () {
         var orders = readOrders();
-        if (!orders.length) { toast('Пока нечего экспортировать'); return; }
+        if (!orders.length) { toast('Выгружать пока нечего'); return; }
         var csv = '\ufeff' + ordersToCsv(orders);
         var blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
         var url = URL.createObjectURL(blob);
@@ -1322,18 +1322,19 @@
         link.click();
         document.body.removeChild(link);
         URL.revokeObjectURL(url);
-        toast('Экспортировали ' + orders.length + ' ' + plural(orders.length, 'заказ', 'заказа', 'заказов') + ' в CSV');
+        toast('Выгрузила ' + orders.length + ' ' + plural(orders.length, 'заказ', 'заказа', 'заказов') + ' в CSV, файл ушёл в загрузки');
       });
     }
 
     var wipe = $('#clear-orders');
     if (wipe) {
       wipe.addEventListener('click', function () {
-        if (!readOrders().length) { toast('Список уже пустой'); return; }
-        if (!window.confirm('Удалить все заказы из демо-панели? Это только локальные данные в браузере.')) { return; }
+        if (!readOrders().length) { toast('Список и так пустой'); return; }
+        if (!window.confirm('Удалить все заказы из демонстрационной панели? Это только локальные данные в браузере, ' +
+          'на сайте они не сохраняются.')) { return; }
         saveOrders([]);
         render();
-        toast('Панель очищена — оформите тестовый заказ на сайте');
+        toast('Панель очищена. Сделайте тестовый заказ на сайте.');
       });
     }
 

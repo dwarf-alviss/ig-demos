@@ -4,10 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Корзина и заказ — «Линия»</title>
-<meta name="description" content="Корзина «Линии»: отметьте размеры, выберите самовывоз из точки Призма или МОМО либо доставку по Минску за 8 BYN. Заказ виден в панели владельца.">
+<meta name="description" content="Корзина «Линии»: отметьте размеры, выберите самовывоз из Призмы или МОМО либо доставку по Минску за 8 BYN. Заказ появляется в панели владельца.">
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/motion.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -73,8 +74,9 @@
       <div class="catalog-head">
         <p class="eyebrow">Заказ · шаг 2 из 2</p>
         <h1 style="margin-top: var(--s3)">Корзина</h1>
-        <p class="lead" style="margin-top: var(--s3)">Проверьте размеры и выберите, как получить заказ: забрать в точке через два часа
-          или получить курьером на следующий день.</p>
+        <p class="lead" style="margin-top: var(--s3)">Проверьте размеры, здесь ошибка стоит дороже всего. Дальше выберите,
+          как забрать заказ: через два часа в точке или курьером на следующий день. Передумаете, позвоните, поменяю
+          до отправки.</p>
       </div>
 
       <div class="cart-layout" id="cart-layout" hidden style="margin-top: var(--s6)">
@@ -92,15 +94,17 @@
               <label class="method__item">
                 <input type="radio" name="method" value="pickup" checked>
                 <span>
-                  <span class="method__title">Самовывоз из точки — бесплатно</span>
-                  <span class="method__text">Собираем за два часа и пишем, когда забирать. Примерочные на месте, обмен размера — там же.</span>
+                  <span class="method__title">Самовывоз из точки, бесплатно</span>
+                  <span class="method__text">Соберу за два часа и напишу, когда забирать. Примерочные на месте, тут же
+                    поменяем размер, если не сядет.</span>
                 </span>
               </label>
               <label class="method__item">
                 <input type="radio" name="method" value="delivery">
                 <span>
-                  <span class="method__title">Курьер по Минску — 8 BYN</span>
-                  <span class="method__text">Один-два дня, от 200 BYN бесплатно. Курьер везёт 2–3 размера одной модели.</span>
+                  <span class="method__title">Курьер по Минску, 8 BYN</span>
+                  <span class="method__text">Один-два дня, от 200 BYN бесплатно. Толя торопится: у него в машине
+                    ещё три адреса, поэтому звонит за полчаса.</span>
                 </span>
               </label>
             </div>
@@ -125,7 +129,7 @@
             <div class="field" id="field-point">
               <label for="field-point-select">Точка самовывоза</label>
               <select class="select" id="field-point-select"></select>
-              <p class="hint">Чего нет в выбранной точке — привезём из второй за день.</p>
+              <p class="hint">Чего нет в выбранной точке, привезу из второй за день.</p>
             </div>
 
             <div class="field" id="field-address" hidden>
@@ -153,14 +157,15 @@
 
             <div class="field">
               <label for="field-comment">Комментарий</label>
-              <textarea class="textarea" id="field-comment" name="comment" placeholder="Например: нужны размеры M и L на примерку"></textarea>
+              <textarea class="textarea" id="field-comment" name="comment" placeholder="Например: нужны M и L на примерку, буду после шести"></textarea>
             </div>
 
             <button class="btn btn--block" id="checkout-submit" type="submit">
               <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
               <span data-submit-label>Оформить заказ</span>
             </button>
-            <p class="hint">Телефон и имя нужны только для связи по этому заказу. Данные остаются в вашем браузере.</p>
+            <p class="hint">Телефон и имя нужны, чтобы я позвонила по этому заказу. Дальше они остаются в вашем браузере
+              и никуда не уходят.</p>
           </div>
         </form>
 
@@ -169,17 +174,17 @@
             <h2>Итого</h2>
             <ul class="summary">
               <li><span>Товары</span><strong id="sum-subtotal">0 BYN</strong></li>
-              <li><span>Доставка</span><strong id="sum-delivery">—</strong></li>
+              <li><span>Доставка</span><strong id="sum-delivery">0 BYN</strong></li>
               <li class="summary-total"><span>К оплате</span><strong id="sum-total">0 BYN</strong></li>
             </ul>
             <div class="progress" aria-hidden="true"><div class="progress__bar" id="delivery-bar"></div></div>
-            <p class="hint" id="delivery-hint">Самовывоз из точки: собираем за 2 часа и пишем, когда забирать.</p>
+            <p class="hint" id="delivery-hint">Самовывоз из точки: собираю за 2 часа и пишу, когда забирать.</p>
             <div class="divider"></div>
             <ul class="summary small muted">
               <li><span>Призма</span><strong>10:00–21:00</strong></li>
               <li><span>МОМО</span><strong>10:00–22:00</strong></li>
             </ul>
-            <p class="hint">Позвоним в течение 15 минут и подтвердим наличие размера.</p>
+            <p class="hint">Позвоню в течение пятнадцати минут и подтвержу размер.</p>
           </div>
         </aside>
       </div>
@@ -187,15 +192,16 @@
       <div class="empty" id="cart-empty" hidden>
         <svg class="icon icon--xl" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M2.5 8h19l-2.2 12.5H4.7z"/><path d="M8.5 8 11 2.5"/><path d="M15.5 8 13 2.5"/><path d="M9 12v5"/><path d="M12 12v5"/><path d="M15 12v5"/></svg>
         <h3>В корзине пока пусто</h3>
-        <p class="small">Отметьте размер в строке модели и нажмите «В корзину» — наличие по точкам видно там же, под ценой.</p>
+        <p class="small">Отметьте размер в строке модели и нажмите «В корзину». Наличие по точкам видно там же, под ценой.
+          Если сомневаетесь между двумя размерами, берите оба, лишнее вернёте в зале.</p>
         <a class="btn btn--sm" href="catalog.html">Открыть каталог</a>
       </div>
 
       <div class="panel success" id="order-success" hidden>
         <p class="eyebrow">Заказ принят</p>
         <p class="success__num" id="success-number">№0000</p>
-        <p class="lead">Позвоним в течение 15 минут, подтвердим наличие размера и время получения. Заказ уже виден
-          в панели владельца.</p>
+        <p class="lead">Позвоню в течение пятнадцати минут, подтвержу размер и время получения. Трубку не возьму,
+          значит стою в примерочной, перезвоню сама. Заказ уже виден в панели владельца.</p>
         <ul class="summary" id="success-summary"></ul>
         <div class="row">
           <a class="btn" href="catalog.html">Вернуться в каталог</a>
@@ -220,8 +226,8 @@
           </span>
           <span class="logo__text">Линия<small>магазин женской одежды · Минск</small></span>
         </a>
-        <p class="small muted" style="margin-top: var(--s4)">Тринадцать моделей базового гардероба, размеры XS–XL,
-          две точки в Минске, доставка 1–2 дня.</p>
+        <p class="small muted" style="margin-top: var(--s4)">Тринадцать моделей, размеры XS–XL, Призма и МОМО.
+          Доставка по Минску 1–2 дня, самовывоз за два часа.</p>
       </div>
       <div>
         <h4>Каталог</h4>
@@ -252,7 +258,7 @@
       </div>
     </div>
     <div class="footer-bottom between">
-      <span>© <span data-year>2026</span> «Линия» — демо-магазин. Бренд и контакты вымышлены</span>
+      <span>© <span data-year>2026</span> «Линия», демонстрационный магазин. Бренд и контакты вымышлены</span>
       <a href="admin.html">Панель владельца</a>
     </div>
   </div>
@@ -270,7 +276,7 @@
       </button>
     </div>
     <div class="modal__body" id="size-modal-body">
-      <p class="small muted">Таблица размеров загрузится вместе со страницей.</p>
+      <p class="small muted">Открываю сетку, секунду.</p>
     </div>
     <div class="modal__foot">
       <a class="btn btn--block" href="catalog.html">Открыть каталог</a>
@@ -280,5 +286,6 @@
 
 <script src="assets/data.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/motion.js"></script>
 </body>
 </html>

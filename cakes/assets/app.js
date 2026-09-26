@@ -160,7 +160,7 @@
     return {
       id: item.id, qty: item.qty,
       title: item.title || 'Торт на заказ',
-      meta: item.meta || 'собрали в калькуляторе',
+      meta: item.meta || 'собран в калькуляторе',
       price: item.price || 0,
       img: item.img || 'assets/img/hero.jpg',
       alt: 'Торт на заказ'
@@ -276,7 +276,7 @@
           '<h3 class="product__name">' + esc(p.name) + '</h3>' +
           '<p class="product__format">' + esc(p.format) + '</p>' +
           '<p class="product__desc small">' + esc(p.desc) + '</p>' +
-          '<p class="product__prep small muted">' + icon('clock', 'icon icon--sm') + 'испечём за ' + p.prep + ' ' + plural(p.prep, 'день', 'дня', 'дней') + '</p>' +
+          '<p class="product__prep small muted">' + icon('clock', 'icon icon--sm') + 'испеку за ' + p.prep + ' ' + plural(p.prep, 'день', 'дня', 'дней') + '</p>' +
           '<div class="tags">' + feats + '</div>' +
           '<div class="card__foot">' +
             '<span class="price">' + money(p.price) + '</span>' +
@@ -336,7 +336,7 @@
       var list = filtered();
       grid.innerHTML = list.map(cardHTML).join('');
       if (countEl) {
-        countEl.innerHTML = 'Нашли <strong>' + list.length + '</strong> ' + plural(list.length, 'торт', 'торта', 'тортов') + ' из ' + PRODUCTS.length;
+        countEl.innerHTML = 'Нашлось <strong>' + list.length + '</strong> ' + plural(list.length, 'торт', 'торта', 'тортов') + ' из ' + PRODUCTS.length;
       }
       if (emptyBox) emptyBox.hidden = list.length !== 0;
       grid.hidden = list.length === 0;
@@ -375,7 +375,7 @@
         if (searchInput) searchInput.value = '';
         renderControls();
         render();
-        toast('Фильтры убрали, показываем всё');
+        toast('Фильтры сняла, показываю всё');
       });
       var resetEmpty = $('#reset-filters-empty');
       if (resetEmpty) resetEmpty.addEventListener('click', function () { resetBtn.click(); });
@@ -386,7 +386,7 @@
       var p = productById(btn.getAttribute('data-add'));
       if (!p) return;
       addToCart({ id: p.id }, 1);
-      toast('Положили «' + p.name + '» в корзину');
+      toast('Сложила в корзину: ' + p.name);
     });
 
     renderControls();
@@ -415,7 +415,7 @@
       var p = productById(btn.getAttribute('data-add'));
       if (!p) return;
       addToCart({ id: p.id }, 1);
-      toast('Положили «' + p.name + '» в корзину');
+      toast('Сложила в корзину: ' + p.name);
     });
     initReveal();
   }
@@ -506,7 +506,7 @@
       }
       if (outPrice) outPrice.textContent = money(calcPrice(state.weight, state.flavor, state.decor));
       if (outTerms) {
-        outTerms.innerHTML = 'К <strong>' + esc(dateRu(min)) + '</strong> успеваем: работы на ' + prep + ' ' + plural(prep, 'день', 'дня', 'дней');
+        outTerms.innerHTML = 'К <strong>' + esc(dateRu(min)) + '</strong> успеваю: работы на ' + prep + ' ' + plural(prep, 'день', 'дня', 'дней');
       }
       if (outList) {
         var perKg = PRICE_PER_KG[state.weight];
@@ -525,7 +525,7 @@
       if (warn) {
         warn.hidden = !tooEarly;
         warn.textContent = tooEarly
-          ? 'С таким декором раньше ' + dateRu(min) + ' не получится. Возьмите эту дату или декор попроще.'
+          ? 'Раньше ' + dateRu(min) + ' с этим декором не выйдет. Сдвиньте дату или возьмите декор попроще.'
           : '';
       }
       if (addBtn) addBtn.disabled = tooEarly;
@@ -565,7 +565,7 @@
         meta: 'готов к ' + dateRu(state.date || minDate()),
         img: 'assets/img/berry.jpg'
       }, 1);
-      toast('Торт на заказ в корзине: ' + money(price));
+      toast('Торт на заказ в корзине, ' + money(price));
     });
 
     render();
@@ -638,7 +638,7 @@
       if (sumSub) sumSub.textContent = money(subtotal);
       if (sumDelivery) {
         sumDelivery.textContent = method() === 'pickup'
-          ? 'самовывоз — 0 BYN'
+          ? 'самовывоз 0 BYN'
           : (del === 0 ? 'бесплатно' : money(del));
       }
       if (sumTotal) sumTotal.textContent = money(subtotal + del);
@@ -674,7 +674,7 @@
         }
       } else if (del) {
         removeFromCart(del.getAttribute('data-del'));
-        toast('Убрали из корзины');
+        toast('Убрала из корзины');
         render();
       }
     });
@@ -711,16 +711,16 @@
     function validate() {
       var ok = true;
       var name = $('#f-name');
-      ok = setError('f-name', name.value.trim().length < 2 ? 'Как к вам обращаться?' : '') && ok;
+      ok = setError('f-name', name.value.trim().length < 2 ? 'Напишите, как вас зовут' : '') && ok;
       var digits = phoneInput.value.replace(/\D/g, '');
-      ok = setError('f-phone', digits.length < 12 ? 'Наберите номер целиком: +375 (29) 123-45-67' : '') && ok;
+      ok = setError('f-phone', digits.length < 12 ? 'Номер целиком, иначе не перезвоню: +375 (29) 123-45-67' : '') && ok;
       if (method() === 'delivery') {
-        ok = setError('f-address', addrInput.value.trim().length < 5 ? 'Напишите адрес: улица, дом, квартира' : '') && ok;
+        ok = setError('f-address', addrInput.value.trim().length < 5 ? 'Улица, дом, квартира. Курьер без этого не поедет' : '') && ok;
       } else {
         setError('f-address', '');
       }
       var d = $('#f-date').value;
-      ok = setError('f-date', !d ? 'Без даты не испечём: выберите день' : (d < addDays(todayISO(), 1) ? 'Эта дата уже прошла, возьмите другую' : '')) && ok;
+      ok = setError('f-date', !d ? 'Без даты не испеку, выберите день' : (d < addDays(todayISO(), 1) ? 'Эта дата уже прошла, выберите другую' : '')) && ok;
       return ok;
     }
 
@@ -742,7 +742,7 @@
           '<div class="success__icon">' + icon('check', 'icon icon--xl') + '</div>' +
           '<p class="eyebrow">заказ принят</p>' +
           '<h2>Заказ №' + esc(order.no) + ' записан</h2>' +
-          '<p class="lead">' + esc(order.name) + ', позвоним на ' + esc(order.phone) + ' в течение рабочего дня и уточним детали.</p>' +
+          '<p class="lead">' + esc(order.name) + ', это Надя, позвоню на ' + esc(order.phone) + ' в течение рабочего дня, обсудим надпись и время.</p>' +
           '<ul class="success__list">' + items + '</ul>' +
           '<div class="success__rows">' +
             '<div class="calc__row"><span>Получение</span><span>' + (order.method === 'delivery' ? 'доставка · ' + esc(order.address) : 'самовывоз · ' + esc(SHOP.address)) + '</span></div>' +
@@ -763,7 +763,7 @@
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         if (!validate()) {
-          toast('Подсветили поля, которые надо поправить');
+          toast('Подсветила поля, которые надо поправить');
           var bad = $('.is-invalid', form);
           if (bad) bad.focus();
           return;
@@ -886,7 +886,7 @@
 
       if (toolbarNote) {
         toolbarNote.textContent = all.length
-          ? 'Всего заказов: ' + all.length + ', сейчас видно ' + list.length
+          ? 'Всего заказов ' + all.length + ', в фильтре ' + list.length
           : 'Пока ни одного заказа';
       }
 
@@ -912,7 +912,7 @@
       });
       saveOrders(orders);
       render();
-      toast('Заказ №' + no + ' теперь «' + statusInfo(status).label + '»');
+      toast('Заказ №' + no + ' переставила в «' + statusInfo(status).label + '»');
     });
 
     if (filterBox) {
@@ -957,7 +957,7 @@
         a.click();
         document.body.removeChild(a);
         setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
-        toast('Файл CSV готов, внутри ' + orders.length + ' ' + plural(orders.length, 'заказ', 'заказа', 'заказов'));
+        toast('CSV готов, внутри ' + orders.length + ' ' + plural(orders.length, 'заказ', 'заказа', 'заказов'));
       });
     }
 
@@ -979,7 +979,7 @@
           method: 'pickup',
           address: '',
           date: addDays(todayISO(), 2),
-          comment: 'Нажали кнопку в панели — это образец, а не настоящий заказ',
+          comment: 'Нажали кнопку в панели, это образец, а не настоящий заказ',
           items: [{ title: p.name, qty: 1, price: p.price, meta: p.format }],
           subtotal: p.price,
           delivery: 0,
@@ -990,7 +990,7 @@
         orders.unshift(order);
         saveOrders(orders);
         render();
-        toast('Добавили образец заказа №' + no);
+        toast('Добавила образец заказа №' + no);
       });
     }
 
@@ -1001,7 +1001,7 @@
       clearBtn.addEventListener('click', function () {
         if (!armed) {
           armed = true;
-          clearBtn.textContent = 'Точно стираем?';
+          clearBtn.textContent = 'Точно стираю?';
           clearBtn.classList.add('btn--danger');
           armTimer = setTimeout(function () {
             armed = false;
@@ -1016,7 +1016,7 @@
         clearBtn.classList.remove('btn--danger');
         saveOrders([]);
         render();
-        toast('Список пустой');
+        toast('Список очистила');
       });
     }
 

@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Панель владельца — заказы мастерской «Латунь»</title>
+<title>Панель владельца: заказы мастерской «Латунь»</title>
 <meta name="description" content="Демонстрационная панель владельца: заказы с сайта, счётчики, смена статуса и выгрузка в CSV. Данные хранятся в браузере.">
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/motion.css">
 <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
 </head>
 <body data-page="admin">
@@ -54,7 +55,7 @@
         <div>
           <p class="eyebrow">Панель владельца · демо</p>
           <h1 style="margin-top:.6rem">Заказы мастерской</h1>
-          <p class="lead" style="margin-top:.7rem">Заказ с сайта появляется здесь сразу: состав, материал, текст гравировки, контакт и способ получения. Статус меняется кнопкой и остаётся в браузере.</p>
+          <p class="lead" style="margin-top:.7rem">Заказ с сайта появляется здесь сразу: состав, металл, текст гравировки, контакт, способ получения. Статус меняется кнопкой и держится в браузере. Отмечаю здесь, что уже спаяно, иначе к пятнице в заказах не разобраться.</p>
         </div>
         <div class="row">
           <button class="btn btn--ghost btn--sm" type="button" data-clear-demo>
@@ -113,7 +114,7 @@
       <p class="admin-note" style="margin-top:2rem">
         Заказы и корзина лежат локально, в этом браузере: ключи <code>igdemo_jewelry_orders_v1</code>
         и <code>igdemo_jewelry_cart_v1</code>. Поэтому панель работает и без интернета. У настоящего клиента
-        заказы уходят в CRM, на почту или в Telegram — это демонстрация механики.
+        заказы уходят в CRM, на почту или в Telegram, это демонстрация механики.
       </p>
     </div>
   </section>
@@ -142,8 +143,8 @@
         <h4>Панель</h4>
         <div class="footer-links">
           <a href="admin.html">Заказы</a>
-          <span>Экспорт CSV — кнопкой сверху</span>
-          <span>Смена статуса — на карточке заказа</span>
+          <span>Экспорт CSV: кнопка сверху</span>
+          <span>Смена статуса: кнопка на карточке заказа</span>
         </div>
       </div>
       <div>
@@ -154,15 +155,16 @@
         </div>
       </div>
     </div>
-    <p class="footer-note">Демо-сайт мастерской «Латунь»: бренд и контакты вымышленные, чтобы показать, как витрина работает рядом с Instagram. Фотографии взяты из открытых источников, авторы и лицензии перечислены в CREDITS.md.</p>
+    <p class="footer-note">Демо-сайт мастерской «Латунь»: бренд, адрес и телефон вымышленные. Показываем, как витрина работает рядом с Instagram. Фотографии взяты из открытых источников, авторы и лицензии перечислены в CREDITS.md.</p>
     <div class="footer-bottom">
       <span>© <span data-year>2026</span> «Латунь» · демонстрационный сайт</span>
-      <span>Работает по file:// — без сети и без внешних запросов</span>
+      <span>Работает по file://, без сети и без внешних запросов</span>
     </div>
   </div>
 </footer>
 
 <script src="assets/data.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/motion.js"></script>
 </body>
 </html>

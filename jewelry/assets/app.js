@@ -138,7 +138,7 @@
 
   var DELIVERY = {
     pickup:  { id: 'pickup',  name: 'Самовывоз из мастерской', cost: 0, note: SHOP.address },
-    minsk:   { id: 'minsk',   name: 'Курьер по Минску',        cost: SHOP.deliveryMinsk,   note: '1–2 дня после готовности, курьер позвонит' },
+    minsk:   { id: 'minsk',   name: 'Курьер по Минску',        cost: SHOP.deliveryMinsk,   note: '1–2 дня после готовности, курьер позвонит заранее' },
     belarus: { id: 'belarus', name: 'Почта по Беларуси',       cost: SHOP.deliveryBelarus, note: 'Европочта, 2–3 дня после готовности' }
   };
   function deliveryCost(methodId, subtotal) {
@@ -310,7 +310,7 @@
     setCart(cart);
     var parts = [p.title, materialInfo(matId).name];
     if (engraving) parts.push('гравировка «' + engraving + '»');
-    toast(parts.join(' · ') + ' — лежит в корзине');
+    toast(parts.join(' · ') + ': лежит в корзине');
   }
 
   function addFromCard(card, p) {
@@ -320,7 +320,7 @@
     if (check && check.checked) {
       engraving = sanitizeEngraving(input ? input.value : '');
       if (!engraving) {
-        toast('Впишите текст гравировки или снимите галочку');
+        toast('Букв нет: впишите текст или снимите галочку');
         if (input) input.focus();
         return;
       }
@@ -453,8 +453,8 @@
   function emptyCatalogHTML() {
     return '<div class="empty grid-empty">' +
       icon('loupe', 'icon icon--xl') +
-      '<h2 class="display">Под такие условия ничего нет</h2>' +
-      '<p class="small empty__note">Часть вещей делаем на заказ и в витрину не выставляем. Сбросьте фильтры или спросите напрямую — повторим похожую форму.</p>' +
+      '<h2 class="display">Под такие условия у меня ничего нет</h2>' +
+      '<p class="small empty__note">Часть вещей делаю на заказ и в витрину не выставляю. Сбросьте фильтры или позвоните: повторю похожую форму, если камень найдётся.</p>' +
       '<p style="margin-top:1.25rem"><button class="btn btn--ghost btn--sm" type="button" data-reset-filters>' +
       icon('x') + 'Сбросить фильтры</button></p></div>';
   }
@@ -466,8 +466,8 @@
     var countEl = $('[data-result-count]');
     if (countEl) {
       countEl.textContent = list.length
-        ? 'В витрине ' + list.length + ' ' + plural(list.length, 'лот', 'лота', 'лотов')
-        : 'Ни одной позиции';
+        ? 'Показываю ' + list.length + ' ' + plural(list.length, 'лот', 'лота', 'лотов')
+        : 'Пусто, меняйте условия';
     }
     grid.innerHTML = list.length ? cardsHTML(list) : emptyCatalogHTML();
     bindGrid(grid);
@@ -523,7 +523,7 @@
         cstate.cat = 'all'; cstate.price = 'all'; cstate.tags = []; cstate.stone = false; cstate.q = '';
         if (search) search.value = '';
         renderCatalog();
-        toast('Фильтры сброшены');
+        toast('Фильтры сбросил, показываю всё');
       }
     });
 
@@ -599,7 +599,7 @@
           ? 'Доставка бесплатная от ' + SHOP.freeDeliveryFrom + ' BYN'
           : (left > 0
             ? 'До бесплатной доставки ещё ' + money(left)
-            : 'Доставка за наш счёт, упаковка в подарок уже внутри');
+            : 'Доставка за мой счёт, упаковка в подарок уже внутри');
       }
       var addrWrap = $('[data-address-wrap]');
       if (addrWrap) addrWrap.hidden = method === 'pickup';
@@ -628,13 +628,13 @@
         cart.splice(i, 1);
         setCart(cart);
         renderCart();
-        toast('Позиция удалена');
+        toast('Убрала позицию из корзины');
         return;
       }
       var qBtn = e.target.closest('[data-qty]');
       if (qBtn) {
         var next = (cart[i].qty || 1) + parseInt(qBtn.getAttribute('data-qty'), 10);
-        if (next <= 0) { cart.splice(i, 1); toast('Позиция удалена'); }
+        if (next <= 0) { cart.splice(i, 1); toast('Убрала позицию из корзины'); }
         else cart[i].qty = next;
         setCart(cart);
         renderCart();
@@ -648,7 +648,7 @@
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         var cart = getCart();
-        if (!cart.length) { toast('В корзине пусто'); return; }
+        if (!cart.length) { toast('Корзина пустая, выберите вещь в витрине'); return; }
         var errs = [];
         var name = ($('[name="name"]', form).value || '').trim();
         var phoneRaw = ($('[name="phone"]', form).value || '').trim();
@@ -670,7 +670,7 @@
             var fld = $('[name="' + pair[0] + '"]', form);
             if (fld && pair === errs[0]) fld.focus();
           });
-          toast('Посмотрите выделенные поля');
+          toast('Поля ниже подсвечены, посмотрите');
           return;
         }
 
@@ -724,7 +724,7 @@
           form.hidden = true;
           box.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-        toast('Заказ №' + order.no + ' принят — он уже в панели мастерской');
+        toast('Заказ №' + order.no + ' принят, он уже в панели мастерской');
       });
     }
 
@@ -807,9 +807,9 @@
       if (!shown.length) {
         listEl.innerHTML = '<div class="empty">' +
           (orders.length
-            ? icon('funnel', 'icon icon--xl') + '<h3 class="display">С этим статусом заказов нет</h3><p class="small empty__note">Выберите другой фильтр — заказы никуда не делись.</p>'
+            ? icon('funnel', 'icon icon--xl') + '<h3 class="display">С этим статусом заказов нет</h3><p class="small empty__note">Выберите другой фильтр, заказы никуда не делись.</p>'
             : icon('bag', 'icon icon--xl') + '<h3 class="display">Заказов пока нет</h3>' +
-              '<p class="small empty__note">Оформите тестовый заказ на сайте: он появится здесь сам, в этой же вкладке. Так удобно показать механику заказчику.</p>' +
+              '<p class="small empty__note">Оформите тестовый заказ на сайте: он появится здесь сам, в этой же вкладке. Так механика и показывается.</p>' +
               '<p style="margin-top:1.25rem"><a class="btn btn--sm" href="catalog.html">' + icon('bag') + 'Открыть витрину</a></p>') +
           '</div>';
         return;
@@ -829,7 +829,7 @@
       setOrders(orders);
       renderOrders();
       paintStats();
-      toast('Заказ №' + no + ' — ' + STATUSES[status].toLowerCase());
+      toast('Заказ №' + no + ': ' + STATUSES[status].toLowerCase());
     });
 
     $$('[data-status-chip]').forEach(function (b) {
@@ -840,7 +840,7 @@
     if (exp) {
       exp.addEventListener('click', function () {
         var orders = getOrders();
-        if (!orders.length) { toast('Выгружать пока нечего'); return; }
+        if (!orders.length) { toast('Выгружать нечего, заказов пока нет'); return; }
         function cell(v) {
           var s = String(v == null ? '' : v);
           return /[";\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
@@ -882,7 +882,7 @@
     if (clear) {
       clear.addEventListener('click', function () {
         if (!getOrders().length) { toast('Список и так пустой'); return; }
-        if (!window.confirm('Удалить все заказы из этого браузера? Вернуть их будет нельзя.')) return;
+        if (!window.confirm('Удалить все заказы из этого браузера? Обратно их не вернуть.')) return;
         setOrders([]);
         renderOrders();
         paintStats();
