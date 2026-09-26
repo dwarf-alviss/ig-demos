@@ -971,7 +971,7 @@
       mounted3d = true;
       R3.mount(canvas3d, function () { return state; }).then(function (ok) {
         if (!ok) { mounted3d = false; return; }          /* не поднялось — остаётся векторная моделька */
-        if (svg) { svg.hidden = true; }
+        if (svg) { svg.style.display = 'none'; }
         canvas3d.hidden = false;
         if (hint3d) { hint3d.hidden = false; }
         R3.update(state);
