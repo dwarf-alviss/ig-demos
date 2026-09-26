@@ -155,6 +155,29 @@ html.is-ready .hero__grid > *:nth-child(4) { transition-delay: .4s; }
 .tile-pop { animation: tilePop .5s cubic-bezier(.2, 1.5, .4, 1); }
 @keyframes tilePop { from { transform: scale(.92); opacity: 0; } to { transform: none; opacity: 1; } }
 
+/* ============================ конструктор украшений ============================
+   Живёт только на главной «Латуни»: SVG собирает assets/ring.js, классы rg-* —
+   его же. Ничего не дублирует: .reveal, .chip, .btn и тосты уже выше. */
+
+/* Покачивание изделия. transform-box: view-box обязателен, иначе SVG поворачивается
+   вокруг угла кадра, а не вокруг центра витрины. */
+.piece .rg-piece { transform-box: view-box; transform-origin: 300px 330px; animation: rg-sway 7.4s ease-in-out infinite; }
+@keyframes rg-sway { 0%, 100% { transform: rotate(-.7deg); } 50% { transform: rotate(.8deg); } }
+
+/* Блик металла: короткая яркая дуга проезжает по ободу. Длина штриха
+   рассчитана на дугу обода (52 из 572), поэтому смещение берём с запасом. */
+.piece .rg-glint { animation: rg-glint 6.4s ease-in-out infinite; }
+@keyframes rg-glint {
+  0%, 54% { stroke-dashoffset: 0; opacity: 0; }
+  64% { opacity: .8; }
+  94%, 100% { stroke-dashoffset: -572; opacity: 0; }
+}
+
+/* Искра в камне: две звезды мигают вразнобой, вторая — со своей задержкой */
+.piece .rg-spark { animation: rg-spark 3.8s ease-in-out infinite; }
+@keyframes rg-spark { 0%, 100% { opacity: .4; } 40% { opacity: 1; } 66% { opacity: .55; } }
+.piece .rg-spark path + path { animation: rg-spark 2.6s ease-in-out infinite .9s; }
+
 /* ============================ уважение к настройке «меньше движения» ============================ */
 @media (prefers-reduced-motion: reduce) {
   .reveal, .hero__copy > *, .hero__figure, .hero__stage, .hero__media, .hero__aside, .hero__plate, .hero__grid > * {
@@ -163,5 +186,6 @@ html.is-ready .hero__grid > *:nth-child(4) { transition-delay: .4s; }
   .hero__figure img, .hero__media img, .hero__stage img, .marquee__track { animation: none !important; }
   .card:hover, .product:hover, .btn:active { transform: none !important; }
   .scroll-progress { display: none; }
+  .piece .rg-piece, .piece .rg-glint, .piece .rg-spark, .piece .rg-spark path + path { animation: none !important; }
   ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
 }

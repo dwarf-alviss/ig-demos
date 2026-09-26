@@ -413,6 +413,7 @@
           '<span class="hall__meta">' + n + ' ' + plural(n, 'модель', 'модели', 'моделей') + '</span></a>';
       }).join('');
     }
+    initBuilder();
   }
 
   /* ============================ 9. Каталог ============================ */
@@ -534,9 +535,10 @@
 
   function cartLineHTML(it, i) {
     var p = findProduct(it.id);
-    var title = p ? p.title : it.id;
-    var img = p ? p.img : (PRODUCTS[0] ? PRODUCTS[0].img : '');
-    var alt = p ? p.alt : '';
+    /* У позиции из конструктора своё название, снимок модельки и состав — они и главнее */
+    var title = it.title || (p ? p.title : it.id);
+    var img = it.img || (p ? p.img : (PRODUCTS[0] ? PRODUCTS[0].img : ''));
+    var alt = it.alt || (p ? p.alt : '');
     var price = itemPrice(it);
     return '' +
       '<div class="cart-line" data-i="' + i + '">' +
@@ -545,6 +547,7 @@
           '<div class="cart-line__title">' + esc(title) + '</div>' +
           '<div class="cart-line__meta">' + esc(materialInfo(it.material).name) +
             (p ? ' · ' + esc(p.size) : '') + '</div>' +
+          (it.note ? '<div class="cart-line__meta">' + esc(it.note) + '</div>' : '') +
           (it.engraving ? '<div class="cart-line__engrave">Гравировка: «' + esc(it.engraving) + '» (+' + SHOP.engravingPrice + ' BYN)</div>' : '') +
           '<div class="cart-line__meta">' + money(price) + ' / шт.</div>' +
           '<div class="row" style="margin-top:.6rem">' +
@@ -680,10 +683,11 @@
           var p = findProduct(it.id);
           return {
             id: it.id,
-            title: p ? p.title : it.id,
+            title: it.title || (p ? p.title : it.id),
             material: it.material,
             materialName: materialInfo(it.material).name,
             engraving: it.engraving || '',
+            note: it.note || '',
             price: itemPrice(it),
             qty: it.qty || 1
           };
@@ -739,7 +743,8 @@
     var items = (o.items || []).map(function (it) {
       return '<div class="order__item"><span>' + esc(it.title) +
         ' <small>· ' + esc(it.materialName || materialInfo(it.material).name) +
-        (it.engraving ? ' · гравировка «' + esc(it.engraving) + '»' : '') + ' × ' + (it.qty || 1) + '</small></span>' +
+        (it.engraving ? ' · гравировка «' + esc(it.engraving) + '»' : '') + ' × ' + (it.qty || 1) +
+        (it.note ? '<br>' + esc(it.note) : '') + '</small></span>' +
         '<span class="num">' + money((it.price || 0) * (it.qty || 1)) + '</span></div>';
     }).join('');
     var d = DELIVERY[o.delivery && o.delivery.method] || DELIVERY.pickup;
@@ -894,7 +899,185 @@
     renderOrders();
   }
 
-  /* ============================ 12. Старт ============================ */
+  /* ============================ 12. Конструктор: живое украшение ============================
+     Модельки, камни и цены живут в assets/ring.js. Отсюда — только состояние,
+     чипы выбора, перерисовка витрины и снимок собранной вещи в корзину. */
+
+  var RING = window.LATUN_RING || null;
+
+  /* Подсказки под шагами и приписка к размеру — словами с витрины, не новыми */
+  var SIZE_HINTS = {
+    ring: 'Размеры от 15 до 21, меньше не беру',
+    studs: 'В витрине длина 3,5 см',
+    pendant: 'В витрине цепочка 45 см',
+    bracelet: 'Обхват 16–19 см, регулируется'
+  };
+  var SIZE_ASIDES = {
+    ring: 'Мерить палец лучше вечером: к вечеру он на полразмера толще.',
+    studs: 'Подвеска почти не чувствуется на мочке, дужка гнётся по уху.',
+    pendant: 'Камень как есть, без огранки и подкраски.',
+    bracelet: 'Обхват правлю бесплатно: растянуть или подтянуть можно в любой момент.'
+  };
+
+  function initBuilder() {
+    var root = $('#builder');
+    if (!root || !RING) { return; }
+
+    var svg = $('#piece');
+    var input = $('#builder-graving');
+    var state = {
+      form: RING.DEFAULT.form, metal: RING.DEFAULT.metal, stone: RING.DEFAULT.stone,
+      size: RING.DEFAULT.size, graving: ''
+    };
+    var drawn = '', graveTimer = null;
+
+    function key() {
+      return [state.form, state.metal, state.stone, state.size, state.graving].join('|');
+    }
+
+    function chip(group, option) {
+      var active = String(state[group.field]) === String(option.id);
+      var lead = group.art ? '<span class="chip__art" aria-hidden="true">' + RING.icon(option.id, group.art) + '</span>' : '';
+      return '<button class="chip" type="button" data-group="' + esc(group.field) + '" data-value="' + esc(String(option.id)) +
+        '" aria-pressed="' + (active ? 'true' : 'false') + '">' + lead + esc(option.title) + '</button>';
+    }
+
+    function groups() {
+      return [
+        { field: 'form', list: RING.FORMS, art: 32 },
+        { field: 'metal', list: RING.METALS, art: 28 },
+        { field: 'stone', list: RING.STONES, art: 28 },
+        { field: 'size', list: RING.sizesOf(state.form) }
+      ];
+    }
+
+    /* У каждой формы свой набор размеров, поэтому чипы размера перерисовываем */
+    function paintOptions() {
+      groups().forEach(function (group) {
+        var host = root.querySelector('[data-options="' + group.field + '"]');
+        if (!host) { return; }
+        host.innerHTML = group.list.map(function (option) { return chip(group, option); }).join('');
+      });
+    }
+
+    /* Витрину перерисовываем, только когда меняется сам рисунок */
+    function draw(force) {
+      if (!svg) { return; }
+      var k = key();
+      if (!force && k === drawn) { return; }
+      drawn = k;
+      RING.render(svg, state, { animate: true });
+      svg.setAttribute('aria-label', 'Модель: ' + RING.summary(state));
+    }
+
+    /* Гравировка: буквы проступают по одной, поэтому меняем только пластинку */
+    function drawGraving() {
+      if (!svg) { return; }
+      drawn = key();
+      RING.render(svg, state, { only: 'graving' });
+      svg.setAttribute('aria-label', 'Модель: ' + RING.summary(state));
+    }
+
+    function render() {
+      var form = RING.find(RING.FORMS, state.form);
+      var metal = RING.find(RING.METALS, state.metal);
+      var stone = RING.find(RING.STONES, state.stone);
+      var size = RING.find(RING.sizesOf(state.form), state.size);
+      var sum = RING.priceOf(state);
+      var text = state.graving;
+
+      $$('[data-group]', root).forEach(function (el) {
+        var field = el.getAttribute('data-group');
+        el.setAttribute('aria-pressed', String(el.getAttribute('data-value')) === String(state[field]) ? 'true' : 'false');
+      });
+
+      $('#builder-form-hint').textContent = form.hint;
+      $('#builder-metal-hint').textContent = metal.note;
+      $('#builder-stone-hint').textContent = stone.note;
+      $('#builder-size-hint').textContent = SIZE_HINTS[form.id] || '';
+      $('#builder-size-aside').textContent = (SIZE_ASIDES[form.id] || '') + ' ' +
+        form.word.charAt(0).toUpperCase() + form.word.slice(1) + ' ' + size.title + ' — подгоняю по мерке.';
+      $('#builder-price').textContent = money(sum);
+      $('#builder-summary').textContent = RING.summary(state);
+      $('#builder-formula').innerHTML = RING.lines(state).map(function (line) {
+        return '<li' + (line.total ? ' class="is-total"' : '') + '><span>' + esc(line.label) + '</span>' +
+          '<i class="builder__rule" aria-hidden="true"></i><b class="num">' + esc(line.value) + '</b></li>';
+      }).join('');
+      $('#builder-note').textContent = sum >= SHOP.freeDeliveryFrom
+        ? 'Доставка за мой счёт: заказ перевалил за ' + money(SHOP.freeDeliveryFrom) + '. Упаковка и открытка уже в цене.'
+        : 'До бесплатной доставки не хватает ' + money(SHOP.freeDeliveryFrom - sum) + '. Курьер по Минску — ' + money(SHOP.deliveryMinsk) + '.';
+      $('#builder-stage-note').textContent = RING.summary(state) + '. Так выглядит форма: в жизни металл и камень лягут иначе.';
+      $('#builder-graving-count').textContent = text
+        ? text.length + ' из ' + RING.GRAVING.max + ' знаков · гравировка ' + money(RING.GRAVING.price)
+        : 'Пока пусто. Буквы, цифры, точки, дефис, амперсанд.';
+    }
+
+    paintOptions();
+
+    root.addEventListener('click', function (event) {
+      var btn = event.target.closest ? event.target.closest('[data-group]') : null;
+      if (!btn) { return; }
+      var field = btn.getAttribute('data-group');
+      if (!(field in state)) { return; }
+      var value = btn.getAttribute('data-value');
+      if (field === 'form') {
+        state.form = value;
+        state.size = RING.find(RING.FORMS, value).def;
+        paintOptions();
+      } else {
+        state[field] = value;
+      }
+      draw(true);
+      render();
+    });
+
+    if (input) {
+      input.addEventListener('input', function () {
+        state.graving = RING.normalize({ graving: input.value }).graving;
+        if (graveTimer) { clearTimeout(graveTimer); }
+        graveTimer = setTimeout(drawGraving, 160);
+        render();
+      });
+      input.addEventListener('blur', function () {
+        input.value = state.graving;
+        if (graveTimer) { clearTimeout(graveTimer); }
+        drawGraving();
+      });
+    }
+
+    var add = $('#builder-add');
+    if (add) {
+      add.addEventListener('click', function () {
+        var st = RING.normalize(state);
+        var price = RING.priceOf(st);
+        var form = RING.find(RING.FORMS, st.form);
+        var text = st.graving;
+        var id = ['builder', st.form, st.metal, st.stone, st.size].join('-');
+        var title = form.title + ' по конструктору';
+        var summary = RING.summary(st);
+        /* В позицию кладём цену без гравировки: её прибавит itemPrice, как в бирке лота */
+        addToCart({ id: id, title: title, materials: [{ id: st.metal, price: price - (text ? SHOP.engravingPrice : 0) }] },
+          st.metal, text);
+        var cart = getCart();
+        for (var i = 0; i < cart.length; i++) {
+          if (cart[i].key !== [id, st.metal, text || ''].join('|')) { continue; }
+          cart[i].title = title;
+          cart[i].img = RING.dataUrl(st, 480);
+          cart[i].alt = 'Модель: ' + summary;
+          cart[i].note = summary;
+        }
+        setCart(cart);
+        if (input) { input.value = text; }
+        toast('Собрали: ' + summary + ' — ' + money(price) + '. В корзине ' + getCart().length + ' ' +
+          plural(getCart().length, 'позиция', 'позиции', 'позиций'));
+      });
+    }
+
+    draw(true);
+    render();
+  }
+
+  /* ============================ 13. Старт ============================ */
 
   function boot() {
     paintBadges();

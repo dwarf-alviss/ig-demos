@@ -6,6 +6,7 @@
   /* ============================================================
      1. Мелкие утилиты
      ============================================================ */
+  function TORT() { return (typeof window !== 'undefined' ? window.MELNITSA_TORT : null) || (typeof MELNITSA_TORT !== 'undefined' ? MELNITSA_TORT : null); }
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
   var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
 
@@ -457,6 +458,8 @@
     var outList = $('#calc-list');
     var warn = $('#calc-warning');
     var addBtn = $('#calc-add');
+    var tortSvg = $('#calc-tort');
+    var tortNote = $('#calc-portions');
 
     if (weightBox) {
       weightBox.innerHTML = WEIGHTS.map(function (w) {
@@ -520,8 +523,15 @@
         outList.innerHTML = rows.map(function (r) {
           return '<div class="calc__row"><span>' + esc(r[0]) + '</span><span>' + esc(r[1]) + '</span></div>';
         }).join('');
+        if (tortNote) {
+          var portions = TORT() ? TORT().portionsOf(state.weight) : '';
+          tortNote.textContent = (portions ? portions + ' · ' : '') + (TORT() ? TORT().summary(state) : '');
+        }
       }
       var tooEarly = !!(state.date && state.date < min);
+      if (TORT()) {
+        TORT().render(tortSvg, state);
+      }
       if (warn) {
         warn.hidden = !tooEarly;
         warn.textContent = tooEarly
@@ -563,7 +573,7 @@
         title: title,
         price: price,
         meta: 'готов к ' + dateRu(state.date || minDate()),
-        img: 'assets/img/berry.jpg'
+        img: (TORT() ? TORT().dataUrl(state, 520) : 'assets/img/berry.jpg')
       }, 1);
       toast('Торт на заказ в корзине, ' + money(price));
     });

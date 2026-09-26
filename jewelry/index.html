@@ -157,6 +157,72 @@
     </div>
   </section>
 
+  <!-- ==================== КОНСТРУКТОР: ЖИВОЕ УКРАШЕНИЕ ==================== -->
+  <section class="section section--tight section--line reveal" id="builder">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Конструктор</p>
+        <h2>Соберите вещь и посмотрите, как она выйдет</h2>
+        <p class="lead">Моделька нарисована кодом, а не сфотографирована: форма, металл, камень, гравировка и размер меняют и рисунок, и цену. Числа те же, что в витрине. Собрали — кладите в корзину: туда уедет и картинка вещи, и её состав.</p>
+      </div>
+
+      <div class="builder">
+        <div class="builder__stage ticks">
+          <svg id="piece" class="piece" viewBox="0 0 600 660" role="img" aria-label="Украшение, которое вы собираете"><title>Ваше украшение</title></svg>
+          <p class="builder__stage-note" id="builder-stage-note">Кольцо, латунь, бирюза, размер 17. Так выглядит форма: в жизни металл и камень лягут иначе.</p>
+        </div>
+
+        <div class="builder__controls">
+          <div class="builder__group">
+            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">01</span>Изделие <small id="builder-form-hint">Обод с рантом и камнем, размеры 15–21</small></p>
+            <div class="chips chips--icons" data-options="form" role="group" aria-label="Изделие"></div>
+          </div>
+
+          <div class="builder__group">
+            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">02</span>Металл <small id="builder-metal-hint">тёплый золотистый тон, лак держит цвет</small></p>
+            <div class="chips chips--icons" data-options="metal" role="group" aria-label="Металл"></div>
+          </div>
+
+          <div class="builder__group">
+            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">03</span>Камень <small id="builder-stone-hint">матовый сине-зелёный, камень как есть</small></p>
+            <div class="chips chips--icons" data-options="stone" role="group" aria-label="Камень"></div>
+          </div>
+
+          <div class="builder__group">
+            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">04</span>Гравировка <small id="builder-graving-hint">до 16 знаков, +15 BYN</small></p>
+            <label class="field">
+              <span class="label sr-only">Текст гравировки</span>
+              <input class="input" type="text" id="builder-graving" maxlength="16" placeholder="Например: А&amp;К 12.09.26" autocomplete="off">
+            </label>
+            <p class="builder__aside" id="builder-graving-count">Пока пусто. Буквы, цифры, точки, дефис, амперсанд.</p>
+          </div>
+
+          <div class="builder__group">
+            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">05</span>Размер <small id="builder-size-hint">размеры 15–21, меньше не беру</small></p>
+            <div class="chips" data-options="size" role="group" aria-label="Размер"></div>
+            <p class="builder__aside" id="builder-size-aside">Подгоняю по мерке, доплаты нет.</p>
+          </div>
+
+          <div class="builder__panel ticks">
+            <p class="builder__panel-label">Цена конструктора</p>
+            <p class="builder__price num" id="builder-price" aria-live="polite">62 BYN</p>
+            <p class="builder__summary" id="builder-summary">Кольцо · латунь · бирюза · размер 17</p>
+            <ul class="builder__formula" id="builder-formula"></ul>
+            <p class="builder__note" id="builder-note">До бесплатной доставки не хватает 88 BYN. Курьер по Минску — 8 BYN.</p>
+            <button class="btn btn--block" type="button" id="builder-add">
+              <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.35" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.4 7.8h13.2l.9 11.4a1.6 1.6 0 0 1-1.6 1.7H6.1a1.6 1.6 0 0 1-1.6-1.7Z"/><path d="M8.8 7.8V6.3a3.2 3.2 0 0 1 6.4 0v1.5"/><path d="M9.6 12.4h4.8L12 17.4Z"/></svg>
+              Добавить в корзину
+            </button>
+            <div class="builder__tags">
+              <span class="stamp stamp--brass">Гравирую до сборки</span>
+              <span class="stamp">Упаковка в подарок</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ==================== ПРОЦЕСС ==================== -->
   <section class="section reveal" id="how">
     <div class="container">
@@ -328,6 +394,7 @@
         <h4>Мастерская</h4>
         <div class="footer-links">
           <a href="#how">Как мы работаем</a>
+          <a href="#builder">Конструктор украшения</a>
           <a href="#delivery">Доставка и оплата</a>
           <a href="#contacts">Контакты</a>
           <a href="admin.html">Панель владельца</a>
@@ -351,6 +418,7 @@
 </footer>
 
 <script src="assets/data.js"></script>
+<script src="assets/ring.js"></script>
 <script src="assets/app.js"></script>
 <script src="assets/motion.js"></script>
 </body>

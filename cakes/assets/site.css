@@ -457,3 +457,26 @@ h1, h2, h3, h4 { text-wrap: pretty; }
   .hero__title { font-size: clamp(1.85rem, 8.5vw, 2.6rem); }
   .calc__sum { font-size: clamp(2.1rem, 12vw, 2.8rem); }
 }
+
+/* ---------- живой торт в калькуляторе ---------- */
+.calc__stage {
+  background: var(--surface);
+  border: 2px dashed var(--line-2);
+  border-radius: var(--radius-lg);
+  padding: clamp(1rem, 2.4vw, 1.9rem);
+  box-shadow: var(--shadow);
+}
+.calc__stage-figure { display: grid; place-items: center; }
+.calc__tort { width: 100%; max-width: 620px; height: auto; display: block; }
+.calc__stage-note { font-family: var(--font-script); font-weight: 700; font-size: clamp(1.1rem, 1.6vw, 1.35rem); color: var(--fg); margin-top: .35rem; }
+.calc__stage-side .hint { margin-top: .7rem; }
+.calc__tort .tort-label { fill: var(--muted); font-size: 20px; font-weight: 700; letter-spacing: .01em; }
+@media (max-width: 760px) { .calc__tort .tort-labels { display: none; } }
+@media (min-width: 1080px) {
+  .calc__grid { grid-template-columns: minmax(0, 1.06fr) minmax(330px, .94fr); align-items: start; }
+  .calc__grid > .calc__stage { grid-column: 1 / -1; grid-row: 1; }
+  .calc__grid > .reveal:not(.calc__panel):not(.calc__stage) { grid-column: 1; grid-row: 2; }
+  .calc__grid > .calc__panel { grid-column: 2; grid-row: 2; }
+  .calc__stage { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(1rem, 2.5vw, 2.2rem); align-items: center; }
+  .calc__tort { max-width: 100%; }
+}
