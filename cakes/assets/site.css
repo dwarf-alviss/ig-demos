@@ -468,6 +468,10 @@ h1, h2, h3, h4 { text-wrap: pretty; }
 }
 .calc__stage-figure { display: grid; place-items: center; }
 .calc__tort { width: 100%; max-width: 620px; height: auto; display: block; }
+/* объёмный торт: тот же кадр, что у вектора; тянется мышью, как модель в витрине */
+.calc__tort3d { width: 100%; max-width: 620px; height: auto; display: block; margin-inline: auto; touch-action: pan-y; cursor: grab; border-radius: 16px; }
+.calc__tort3d:active { cursor: grabbing; }
+.calc__tort3d[hidden] { display: none !important; }
 .calc__stage-note { font-family: var(--font-script); font-weight: 700; font-size: clamp(1.1rem, 1.6vw, 1.35rem); color: var(--fg); margin-top: .35rem; }
 .calc__stage-side .hint { margin-top: .7rem; }
 .calc__tort .tort-label { fill: var(--muted); font-size: 20px; font-weight: 700; letter-spacing: .01em; }
@@ -479,4 +483,5 @@ h1, h2, h3, h4 { text-wrap: pretty; }
   .calc__grid > .calc__panel { grid-column: 2; grid-row: 2; }
   .calc__stage { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(1rem, 2.5vw, 2.2rem); align-items: center; }
   .calc__tort { max-width: 100%; }
+  .calc__tort3d { max-width: 100%; }
 }

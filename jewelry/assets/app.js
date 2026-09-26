@@ -978,7 +978,14 @@
       });
     }
 
-    if (use3d && 'IntersectionObserver' in window) {
+    /* Если витрина уже в кадре (переход по якорю), поднимаем сразу, не дожидаясь наблюдателя */
+    if (use3d) {
+      var r0 = root.getBoundingClientRect();
+      var vh = window.innerHeight || 800;
+      if (r0.top < vh + 240 && r0.bottom > -240) { mount3d(); }
+    }
+
+    if (use3d && !mounted3d && 'IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {
         for (var i = 0; i < entries.length; i++) {
           if (entries[i].isIntersecting) { mount3d(); io.disconnect(); }

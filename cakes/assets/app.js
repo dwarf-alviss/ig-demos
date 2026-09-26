@@ -461,6 +461,55 @@
     var tortSvg = $('#calc-tort');
     var tortNote = $('#calc-portions');
 
+    /* ---------- объёмный торт ----------
+       Векторный разрез остаётся на месте, пока 3D не поднялось: прячем его
+       только после удачного mount, и только через style.display (у SVGElement
+       нет свойства hidden). Поднимаем лениво — когда витрина подъехала к экрану */
+    var tortCanvas = $('#calc-3d');
+    var T3 = window.MELNICA_TORT3D;
+    var use3d = !!(T3 && tortCanvas && T3.supported());
+    var mounted3d = false;
+    var drawn3d = '';
+    var body3d = '';
+
+    function mount3d() {
+      if (!use3d || mounted3d) return;
+      mounted3d = true;
+      T3.mount(tortCanvas, function () { return state; }).then(function (ok) {
+        if (!ok) { mounted3d = false; return; }          /* не поднялось — остаётся векторный разрез */
+        if (tortSvg) tortSvg.style.display = 'none';
+        tortCanvas.hidden = false;
+        drawn3d = ''; body3d = '';
+        draw3d();
+      });
+    }
+
+    /* Модель пересобираем, только когда меняется сам состав. Смена одного
+       декора — дешёвый путь: тело торта не пересобираем */
+    function draw3d() {
+      var body = state.weight + '|' + state.flavor.id;
+      var key = body + '|' + state.decor.id;
+      if (key === drawn3d) return;
+      var only = (body === body3d) ? { only: 'decor' } : null;
+      body3d = body;
+      drawn3d = key;
+      T3.update(state, only);
+      tortCanvas.setAttribute('aria-label',
+        'Торт в 3D: ' + state.weight + ' кг, ' + state.flavor.name + ', ' + state.decor.name +
+        '. Потяните, чтобы повернуть, колесо — приблизить');
+    }
+
+    if (use3d && 'IntersectionObserver' in window) {
+      var io3d = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) { mount3d(); io3d.disconnect(); }
+        }
+      }, { rootMargin: '240px 0px' });
+      io3d.observe(root);
+    } else if (use3d) {
+      mount3d();
+    }
+
     if (weightBox) {
       weightBox.innerHTML = WEIGHTS.map(function (w) {
         return '<button class="chip chip--lg" type="button" data-kg="' + w.kg + '" aria-pressed="' + (state.weight === w.kg ? 'true' : 'false') + '">' +
@@ -529,9 +578,10 @@
         }
       }
       var tooEarly = !!(state.date && state.date < min);
-      if (TORT()) {
+      if (TORT() && !mounted3d) {
         TORT().render(tortSvg, state);
       }
+      if (mounted3d) draw3d();
       if (warn) {
         warn.hidden = !tooEarly;
         warn.textContent = tooEarly
@@ -573,7 +623,7 @@
         title: title,
         price: price,
         meta: 'готов к ' + dateRu(state.date || minDate()),
-        img: (TORT() ? TORT().dataUrl(state, 520) : 'assets/img/berry.jpg')
+        img: (mounted3d ? T3.snapshot(480) : '') || (TORT() ? TORT().dataUrl(state, 520) : 'assets/img/berry.jpg')
       }, 1);
       toast('Торт на заказ в корзине, ' + money(price));
     });
