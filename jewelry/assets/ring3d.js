@@ -541,11 +541,13 @@
         render();
         return true;
       };
+      try {
       if (THREE) return ready(THREE);
       var dyn = null;
       try { dyn = new Function('u', 'return import(u);'); } catch (e) { dyn = null; }
-      if (dyn) return dyn(VENDOR).then(ready).catch(function () { return false; });
+      if (dyn) return dyn(VENDOR).then(ready).catch(function (e) { api.lastError = 'import: ' + (e && e.message); return false; });
       return false;
+      } catch (e) { api.lastError = 'mount: ' + e.name + ': ' + e.message; return false; }
     },
 
     /* update(state, {only:'graving'}) — при наборе букв перерисовываем только пластинку */
@@ -574,7 +576,7 @@
         ctx.fillRect(0, 0, w, h);
         ctx.drawImage(canvasEl, 0, 0, w, h);
         return off.toDataURL('image/jpeg', 0.86);
-      } catch (e) { return ''; }
+      } catch (e) { api.lastError = 'snapshot: ' + e.name + ': ' + e.message; return ''; }
     },
 
     dispose: function () {
