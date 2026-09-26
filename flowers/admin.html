@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Панель владельца — заказы мастерской «Пион»</title>
+<meta name="description" content="Демонстрационная панель владельца: заказы, оформленные на сайте мастерской «Пион», статусы, счётчики и экспорт в CSV.">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-page="admin">
+<a class="skip-link" href="#main">К основному содержанию</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="index.html">
+      <span class="logo__mark display" aria-hidden="true">П</span>
+      <span class="logo__text">Пион<small>панель владельца</small></span>
+    </a>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="index.html">Главная</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="index.html#delivery">Доставка</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn--ghost btn--sm admin-top-link" href="index.html">На сайт</a>
+      <a class="icon-btn" href="cart.html" data-cart-button aria-label="Корзина">
+        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="icon-btn__count" data-cart-count hidden>0</span>
+      </a>
+      <button class="icon-btn burger" type="button" data-action="menu" aria-expanded="false" aria-controls="mobile-nav" aria-label="Меню">
+        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
+          <path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <a href="index.html">Главная</a>
+  <a href="catalog.html">Каталог</a>
+  <a href="index.html#delivery">Доставка</a>
+  <a href="index.html#contacts">Контакты</a>
+  <a href="cart.html">Корзина</a>
+  <a href="admin.html">Панель владельца</a>
+  <a class="btn btn--block" href="catalog.html">Смотреть каталог</a>
+</div>
+
+<main id="main">
+  <div id="admin-page">
+    <section class="page-head">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a href="index.html">Главная</a>
+          <span aria-hidden="true">/</span>
+          <span>Панель владельца</span>
+        </nav>
+        <h1 class="display">Заказы мастерской</h1>
+        <p class="lead" style="max-width:62ch;margin-top:.75rem">Здесь видно всё, что заказали на сайте: состав букета, контакт, способ получения и сумму. Статус заказа меняется одним нажатием и сохраняется в браузере — можно спокойно закрыть страницу.</p>
+        <p class="badge" style="margin-top:1rem">Демо-панель: данные лежат в localStorage браузера</p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+
+        <div class="admin-stats">
+          <div class="stat-card">
+            <span class="stat__label">Заказов сегодня</span>
+            <span class="stat__value" id="stat-today">0</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat__label">Сумма за сегодня</span>
+            <span class="stat__value" id="stat-revenue">0 BYN</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat__label">В работе</span>
+            <span class="stat__value" id="stat-active">0</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat__label">Всего заказов</span>
+            <span class="stat__value" id="stat-total">0</span>
+          </div>
+        </div>
+
+        <div class="admin-toolbar">
+          <div class="chips" role="group" aria-label="Фильтр по статусу">
+            <button class="chip" type="button" data-status-filter="all" aria-pressed="true">Все заказы</button>
+            <button class="chip" type="button" data-status-filter="new" aria-pressed="false">Новые</button>
+            <button class="chip" type="button" data-status-filter="accepted" aria-pressed="false">Принятые</button>
+            <button class="chip" type="button" data-status-filter="done" aria-pressed="false">Выполненные</button>
+            <button class="chip" type="button" data-status-filter="canceled" aria-pressed="false">Отменённые</button>
+          </div>
+
+          <p class="small muted" id="admin-count" aria-live="polite">Заказов пока нет</p>
+
+          <button class="btn btn--ghost btn--sm" type="button" id="export-csv">
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
+              <path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>
+            </svg>
+            Экспорт CSV
+          </button>
+          <button class="btn btn--ghost btn--sm" type="button" id="clear-orders">
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
+              <path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+            </svg>
+            Очистить панель
+          </button>
+        </div>
+
+        <div class="orders" id="orders-list"></div>
+
+        <div class="empty" id="orders-empty" hidden>
+          <svg class="icon icon--xl" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
+            <path d="M8 2h8a1 1 0 0 1 1 1v2H7V3a1 1 0 0 1 1-1z"/>
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+            <path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/>
+          </svg>
+          <h2 class="display" style="margin-top:1rem">Заказов пока нет</h2>
+          <p class="small" style="margin-top:.5rem;max-width:44ch;margin-inline:auto">Оформите тестовый заказ на сайте — он появится на этой странице сразу после отправки формы. Так удобно проверить весь путь: каталог → корзина → панель.</p>
+          <div class="row" style="justify-content:center;margin-top:1.5rem">
+            <a class="btn" href="catalog.html">Перейти в каталог</a>
+            <a class="btn btn--ghost" href="cart.html">Открыть корзину</a>
+          </div>
+        </div>
+
+        <div class="cta-band admin-hint">
+          <div>
+            <h2 class="display">Как это работает</h2>
+            <p>Заказ с сайта попадает в панель автоматически: номер вида №1042 — это последние четыре цифры времени оформления. Статусы «принят», «выполнен» и «отменён» сохраняются в браузере, а кнопка «Экспорт CSV» выгружает список заказов для таблицы или бухгалтерии.</p>
+          </div>
+          <div class="cta-band__actions">
+            <a class="btn btn--light" href="index.html#builder">Собрать тестовый букет</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html">
+          <span class="logo__mark display" aria-hidden="true">П</span>
+          <span class="logo__text">Пион</span>
+        </a>
+        <p class="small muted" style="max-width:32ch">Цветочная мастерская в Минске: монобукеты, авторские композиции, свадебные букеты и подписка на цветы.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <div class="footer-links">
+          <a href="index.html">Главная</a>
+          <a href="catalog.html">Каталог</a>
+          <a href="cart.html">Корзина</a>
+          <a href="admin.html">Панель владельца</a>
+        </div>
+      </div>
+      <div>
+        <h4>Мастерская</h4>
+        <div class="footer-links">
+          <a href="index.html#delivery">Доставка и самовывоз</a>
+          <a href="index.html#builder">Конструктор букета</a>
+          <a href="index.html#contacts">Контакты</a>
+        </div>
+      </div>
+      <div>
+        <h4>Связаться</h4>
+        <div class="footer-links">
+          <a href="tel:+375291234567">+375 (29) 123-45-67</a>
+          <a href="mailto:hello@example.by">hello@example.by</a>
+          <span class="small muted">Немига, 12 · 9:00–21:00</span>
+        </div>
+      </div>
+    </div>
+    <p class="footer-note">Демонстрационный сайт мастерской «Пион» (бренд и контакты вымышлены) — показывает, как может выглядеть витрина рядом с Instagram. Фотографии — из открытых источников, авторы указаны в CREDITS.md. © <span data-year>2026</span> «Пион».</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

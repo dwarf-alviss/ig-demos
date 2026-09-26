@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Каталог — «Пион», цветочная мастерская в Минске</title>
+<meta name="description" content="Каталог мастерской «Пион»: монобукеты, авторские композиции, свадебные букеты, подписка на цветы и открытки ручной работы. Цены в BYN, доставка по Минску за 2 часа.">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-page="catalog">
+<a class="skip-link" href="#main">К основному содержанию</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="index.html">
+      <span class="logo__mark display" aria-hidden="true">П</span>
+      <span class="logo__text">Пион<small>мастерская в Минске</small></span>
+    </a>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="index.html">Главная</a>
+      <a href="catalog.html" aria-current="page">Каталог</a>
+      <a href="index.html#delivery">Доставка</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="icon-btn" href="cart.html" data-cart-button aria-label="Корзина">
+        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="icon-btn__count" data-cart-count hidden>0</span>
+      </a>
+      <button class="icon-btn burger" type="button" data-action="menu" aria-expanded="false" aria-controls="mobile-nav" aria-label="Меню">
+        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
+          <path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <a href="index.html">Главная</a>
+  <a href="catalog.html">Каталог</a>
+  <a href="index.html#delivery">Доставка</a>
+  <a href="index.html#contacts">Контакты</a>
+  <a href="cart.html">Корзина</a>
+  <a href="admin.html">Панель владельца</a>
+  <a class="btn btn--block" href="cart.html">Перейти в корзину</a>
+</div>
+
+<main id="main">
+
+  <section class="page-head">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="index.html">Главная</a>
+        <span aria-hidden="true">/</span>
+        <span>Каталог</span>
+      </nav>
+      <h1 class="display">Каталог мастерской</h1>
+      <p class="lead" style="max-width:60ch;margin-top:.75rem">Восемь работ, которые можно забрать сегодня: монобукеты, композиции в керамике, свадебные букеты, подписка и открытки. Цена указана за букет целиком — без доплат на месте.</p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+
+      <div class="toolbar">
+        <div class="field search-field">
+          <label for="catalog-search">Поиск по названию</label>
+          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+          <input class="input" id="catalog-search" type="search" placeholder="Например: пион, коробка, подписка" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="catalog-sort">Сортировка</label>
+          <select class="select" id="catalog-sort">
+            <option value="pop">Сначала популярные</option>
+            <option value="cheap">Сначала дешёвые</option>
+            <option value="expensive">Сначала дорогие</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <span class="filter-label" aria-hidden="true">&nbsp;</span>
+          <button class="btn btn--ghost" type="button" id="catalog-reset">
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true">
+              <path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/>
+            </svg>
+            Сбросить фильтры
+          </button>
+        </div>
+      </div>
+
+      <div class="filters">
+        <div class="filter-row">
+          <span class="filter-label" id="label-cat">Категория</span>
+          <div class="chips" id="filter-cat" role="group" aria-labelledby="label-cat"></div>
+        </div>
+        <div class="filter-row">
+          <span class="filter-label" id="label-price">Цена</span>
+          <div class="chips" id="filter-price" role="group" aria-labelledby="label-price"></div>
+        </div>
+        <div class="filter-row">
+          <span class="filter-label" id="label-tag">Особенности</span>
+          <div class="chips" id="filter-tag" role="group" aria-labelledby="label-tag"></div>
+        </div>
+      </div>
+
+      <div class="filters__foot">
+        <p class="small muted" id="catalog-count" aria-live="polite">Найдено 8 работ из 8</p>
+        <p class="small muted">Доставка 12 BYN, бесплатно от 150 BYN · самовывоз с Немиги</p>
+      </div>
+
+      <div class="grid grid--3 catalog-grid" id="catalog-grid"></div>
+
+      <div class="cta-band" style="margin-top:3rem">
+        <div>
+          <h2 class="display">Нужен другой состав?</h2>
+          <p>Соберите букет в конструкторе: повод, размер, палитра и упаковка — цена видна сразу. Или позвоните, если нужен состав как на фото из Instagram.</p>
+        </div>
+        <div class="cta-band__actions">
+          <a class="btn btn--light" href="index.html#builder">Конструктор букета</a>
+          <a class="btn btn--light" href="tel:+375291234567">+375 (29) 123-45-67</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html">
+          <span class="logo__mark display" aria-hidden="true">П</span>
+          <span class="logo__text">Пион</span>
+        </a>
+        <p class="small muted" style="max-width:32ch">Цветочная мастерская в Минске: монобукеты, авторские композиции, свадебные букеты и подписка на цветы.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <div class="footer-links">
+          <a href="index.html">Главная</a>
+          <a href="catalog.html">Каталог</a>
+          <a href="cart.html">Корзина</a>
+          <a href="admin.html">Панель владельца</a>
+        </div>
+      </div>
+      <div>
+        <h4>Мастерская</h4>
+        <div class="footer-links">
+          <a href="index.html#delivery">Доставка и самовывоз</a>
+          <a href="index.html#builder">Конструктор букета</a>
+          <a href="index.html#contacts">Контакты</a>
+        </div>
+      </div>
+      <div>
+        <h4>Связаться</h4>
+        <div class="footer-links">
+          <a href="tel:+375291234567">+375 (29) 123-45-67</a>
+          <a href="mailto:hello@example.by">hello@example.by</a>
+          <span class="small muted">Немига, 12 · 9:00–21:00</span>
+        </div>
+      </div>
+    </div>
+    <p class="footer-note">Демонстрационный сайт мастерской «Пион» (бренд и контакты вымышлены) — показывает, как может выглядеть витрина рядом с Instagram. Фотографии — из открытых источников, авторы указаны в CREDITS.md. © <span data-year>2026</span> «Пион».</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

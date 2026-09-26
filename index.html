@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Демо-сайты: цветы, торты, одежда, украшения</title>
+<style>
+  :root { --bg:#fffdf9; --fg:#1b1917; --muted:#6e6862; --line:#e8e2d9; --accent:#2f6b4f; }
+  * { box-sizing:border-box; margin:0; }
+  body { background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+         padding:clamp(1.5rem,5vw,4rem) clamp(1rem,5vw,2rem); }
+  .wrap { max-width:900px; margin:0 auto; }
+  h1 { font-size:clamp(1.6rem,4vw,2.4rem); letter-spacing:-.02em; margin-bottom:.6rem; }
+  p.lead { color:var(--muted); margin-bottom:2.2rem; max-width:60ch; }
+  ul { list-style:none; padding:0; display:grid; gap:.75rem; }
+  a.card { display:flex; align-items:center; justify-content:space-between; gap:1rem;
+           padding:1.1rem 1.3rem; border:1px solid var(--line); border-radius:16px;
+           background:#fff; text-decoration:none; color:inherit; transition:transform .18s ease, box-shadow .18s ease; }
+  a.card:hover { transform:translateY(-2px); box-shadow:0 10px 30px rgba(27,25,23,.09); }
+  .t { font-weight:700; }
+  .s { color:var(--muted); font-size:.9rem; }
+  footer { margin-top:2.5rem; color:var(--muted); font-size:.85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Демо-сайты</h1>
+  <p class="lead">Четыре витрины, собранные на чистом HTML/CSS/JS: каталог, корзина, оформление заказа
+  и панель владельца. Всё демонстрационное — названия и контакты вымышленные, заказы сохраняются
+  только в вашем браузере.</p>
+  <ul>
+    <li><a class="card" href="flowers/"><span><span class="t">Цветочная мастерская</span><br>
+      <span class="s">каталог букетов, конструктор букета, доставка за 2 часа</span></span><span>→</span></a></li>
+    <li><a class="card" href="cakes/"><span><span class="t">Домашняя кондитерская</span><br>
+      <span class="s">калькулятор заказа: вес, начинка, декор, дата</span></span><span>→</span></a></li>
+    <li><a class="card" href="fashion/"><span><span class="t">Магазин женской одежды</span><br>
+      <span class="s">фильтры по размерам, наличие по точкам, самовывоз</span></span><span>→</span></a></li>
+    <li><a class="card" href="jewelry/"><span><span class="t">Украшения ручной работы</span><br>
+      <span class="s">выбор материала и гравировка, цена пересчитывается</span></span><span>→</span></a></li>
+  </ul>
+  <footer>Панель владельца — по ссылке «Кабинет владельца» в подвале каждого сайта.</footer>
+</div>
+</body>
+</html>

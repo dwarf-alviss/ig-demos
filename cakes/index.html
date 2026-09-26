@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мельница — домашняя кондитерская в Минске: торты на заказ</title>
+<meta name="description" content="Домашняя кондитерская «Мельница» в Минске: бенто 12 см, торты 1,5–3 кг, свадебные, детские и безглютеновые. Калькулятор заказа, срок от 2 дней, самовывоз или доставка 15 BYN.">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/site.css">
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<div class="topline">
+  <div class="container topline__inner">
+    <span class="topline__item">
+      <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+      Доставка по Минску 15 BYN, бесплатно от 200 BYN
+    </span>
+    <span class="topline__item topline__item--wide">
+      <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Заказы принимаем минимум за 2 дня
+    </span>
+    <span class="topline__item">
+      <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      +375 (29) 123-45-67
+    </span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="index.html">
+      <span class="logo__mark">М</span>
+      <span class="logo__text">Мельница<small>домашняя кондитерская</small></span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="index.html" aria-current="page">Главная</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="index.html#delivery">Доставка</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <span class="js-cart-total-mini muted" aria-hidden="true"></span>
+      <a class="icon-btn" href="cart.html" aria-label="Корзина">
+        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="icon-btn__count js-cart-count" hidden>0</span>
+      </a>
+      <button class="icon-btn burger js-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="drawer">
+        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer-backdrop" id="drawer-backdrop"></div>
+<aside class="drawer" id="drawer" aria-label="Мобильное меню">
+  <div class="drawer__head">
+    <span class="logo__text">Мельница<small>домашняя кондитерская</small></span>
+    <button class="icon-btn js-drawer-close" type="button" aria-label="Закрыть меню">
+      <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </div>
+  <nav class="drawer__nav" aria-label="Меню">
+    <a href="index.html">Главная</a>
+    <a href="catalog.html">Каталог</a>
+    <a href="cart.html">Корзина</a>
+    <a href="index.html#delivery">Доставка и оплата</a>
+    <a href="index.html#contacts">Контакты</a>
+    <a href="admin.html">Панель владельца</a>
+  </nav>
+  <div class="drawer__foot">
+    <a class="link-arrow" href="tel:+375291234567">+375 (29) 123-45-67</a>
+    <span class="muted small">Пн–Сб 9:00–20:00, Вс 10:00–18:00</span>
+    <span class="muted small">Минск, ул. Кальварийская, 17</span>
+  </div>
+</aside>
+
+<main id="main">
+
+  <!-- ---------- hero ---------- -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <p class="eyebrow">
+          <span class="accent-line"></span>
+          Минск · домашняя кондитерская
+        </p>
+        <h1 class="hero__title">Торты, которые<br>пекутся <em>дома</em>,<br>а не на потоке</h1>
+        <p class="lead hero__lead">Небольшая кухня, пять начинок и один кондитер. Собираем торт под ваш повод: от бенто на двоих до свадебного на четырёх ярусах. Заказ — минимум за два дня.</p>
+        <div class="hero__actions">
+          <a class="btn" href="catalog.html">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            Смотреть каталог
+          </a>
+          <a class="btn btn--ghost" href="#calc">
+            Собрать торт в калькуляторе
+            <svg class="icon icon--sm" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero__media">
+        <img src="assets/img/hero.jpg" alt="Кусок домашнего торта со взбитыми сливками, клубникой и пудрой на тарелке, рядом чашка кофе" width="1600" height="1000">
+        <div class="hero__card">
+          <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+          <span>
+            <strong>Срок от 2 дней</strong>
+            <span class="small muted">самовывоз или доставка 15 BYN</span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero__stats">
+        <div class="stat">
+          <span class="stat__value">от 2 дней</span>
+          <span class="stat__label">минимальный срок заказа</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value">от 78 BYN</span>
+          <span class="stat__label">бенто 12 см и небольшие торты</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value">15 BYN</span>
+          <span class="stat__label">доставка по Минску,<br>бесплатно от 200 BYN</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value">5 + 5</span>
+          <span class="stat__label">начинок и вариантов декора</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- что можно заказать ---------- -->
+  <section class="section section--warm">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <p class="eyebrow">что можно заказать</p>
+        <h2>Четыре формата — под любой повод</h2>
+        <p class="lead">Считаем порции честно: если гостей десять, вам нужен торт на 2 кг, а не на 3,5. Подскажем вес, когда уточним повод.</p>
+      </div>
+      <div class="grid grid--4">
+        <article class="feature-card reveal">
+          <div class="feature__icon">
+            <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg>
+          </div>
+          <h3>Бенто 12 см</h3>
+          <p>Маленький торт на двоих-четверых. В коробке, со свечами и топпером — 78 BYN.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature__icon">
+            <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          </div>
+          <h3>Торты 1,5–3 кг</h3>
+          <p>День рождения, корпоратив, «просто так в пятницу». Три бисквита и пять начинок.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature__icon">
+            <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          </div>
+          <h3>Свадебные и детские</h3>
+          <p>Ярусы, живые цветы, мастичные фигурки. До заказа — дегустация начинок.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature__icon">
+            <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0l1.58 6.14a2 2 0 0 0 1.44 1.44l6.14 1.58a.5.5 0 0 1 0 .96l-6.14 1.58a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+          </div>
+          <h3>Капкейки и без глютена</h3>
+          <p>Наборы по 12 штук, топперы под повод. Часть начинок делаем безглютеновыми.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- популярное ---------- -->
+  <section class="section">
+    <div class="container">
+      <div class="between reveal">
+        <div class="section-head" style="margin-bottom:0">
+          <p class="eyebrow">чаще всего заказывают</p>
+          <h2>Популярное с этой недели</h2>
+        </div>
+        <a class="link-arrow" href="catalog.html">
+          Весь каталог
+          <svg class="icon icon--sm" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+      <div class="grid grid--3" id="popular" style="margin-top:var(--s6)"></div>
+    </div>
+  </section>
+
+  <!-- ---------- калькулятор ---------- -->
+  <section class="section section--warm" id="calc">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">
+          <span class="accent-line"></span>
+          калькулятор заказа
+        </p>
+        <h2>Соберите торт: вес, начинка, декор, дата</h2>
+        <p class="lead">Мы показываем цену сразу — без «уточним позже». Меняйте параметры и смотрите, как двигается сумма и срок.</p>
+      </div>
+
+      <div class="calc__grid">
+        <div class="reveal">
+          <div class="calc__block">
+            <p class="calc__label"><span class="calc__num">1</span> Вес торта</p>
+            <div class="chips" id="calc-weight" role="group" aria-label="Вес торта"></div>
+          </div>
+
+          <div class="calc__block">
+            <p class="calc__label"><span class="calc__num">2</span> Начинка</p>
+            <div class="chips" id="calc-flavor" role="group" aria-label="Начинка"></div>
+          </div>
+
+          <div class="calc__block">
+            <p class="calc__label"><span class="calc__num">3</span> Декор</p>
+            <div class="chips" id="calc-decor" role="group" aria-label="Декор"></div>
+          </div>
+
+          <div class="calc__block">
+            <p class="calc__label">
+              <span class="calc__num">4</span>
+              <label for="calc-date">Дата, к которой нужен торт</label>
+            </p>
+            <div class="field" style="max-width:320px">
+              <input class="input" type="date" id="calc-date" aria-describedby="calc-warning">
+              <p class="hint">Считаем от сегодняшнего дня: чем сложнее декор, тем больше дней нужно.</p>
+              <p class="error" id="calc-warning" hidden></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc__panel reveal" aria-live="polite">
+          <p class="eyebrow">итог</p>
+          <p class="calc__sum" id="calc-price">0 BYN</p>
+          <p class="calc__terms" id="calc-terms"></p>
+          <div class="calc__rows" id="calc-list"></div>
+          <button class="btn btn--block" type="button" id="calc-add">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            Добавить в корзину
+          </button>
+          <p class="hint calc__hint">Дальше в корзине укажете контакты и способ получения. Оплата — при получении, картой или наличными.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- как это работает ---------- -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">как это работает</p>
+        <h2>От идеи до коробки — четыре шага</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <h3>Собираете заказ</h3>
+          <p>В калькуляторе или каталоге: вес, начинка, декор, дата. Цена видна сразу.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Мы созваниваемся</h3>
+          <p>Уточняем повод, надпись, аллергии и удобное время. Если есть сомнения по весу — подскажем.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Печём и собираем</h3>
+          <p>Бисквит — за день до сборки, крем — в день выдачи. Фото готового торта присылаем до отдачи.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Самовывоз или доставка</h3>
+          <p>Забираете со двора на Кальварийской или привозим в термобоксе за 15 BYN.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- о кухне ---------- -->
+  <section class="section section--soft" id="about">
+    <div class="container split">
+      <div class="reveal">
+        <p class="eyebrow">
+          <span class="accent-line"></span>
+          кто печёт
+        </p>
+        <h2>Одна кухня, один кондитер, никакого конвейера</h2>
+        <p class="lead">«Мельница» — это домашняя кухня в Минске, где за один день делают 2–3 торта. Мы не работаем на поток: у каждого заказа свой список продуктов и своя дата выпечки.</p>
+        <ul class="check-list">
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><strong>Свежие продукты</strong> — масло, сливки и шоколад покупаем под конкретный заказ.</span>
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><strong>Меньше сахара</strong> — крем-чиз вместо масляного, ягоды вместо варенья.</span>
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><strong>Можно без глютена</strong> — отдельная начинка на миндальной муке, без «соседства» с пшеницей.</span>
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><strong>Дегустация перед свадьбой</strong> — собираем мини-торт с двумя начинками и привозим к вам.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="media about__media reveal">
+        <img src="assets/img/about.jpg" alt="Ингредиенты для домашней выпечки: мука, яйца, масло и мерные ложки на столе" width="1200" height="800">
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- доставка ---------- -->
+  <section class="section" id="delivery">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">доставка и получение</p>
+        <h2>Как торт попадёт к вам</h2>
+        <p class="lead">Торты едут в термобоксе, по Минску — в течение дня в согласованное окно. Крупные ярусы собираем на месте у вас.</p>
+      </div>
+      <div class="split">
+        <div class="info-list reveal">
+          <div class="info-item">
+            <div class="feature__icon">
+              <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h3>Самовывоз — 0 BYN</h3>
+              <p>Минск, ул. Кальварийская, 17. Скажем точное время, когда торт будет собран и остынет.</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="feature__icon">
+              <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+            </div>
+            <div>
+              <h3>Доставка по Минску — 15 BYN</h3>
+              <p>Бесплатно при заказе от 200 BYN. Везём в термобоксе, за город — обсуждаем отдельно.</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="feature__icon">
+              <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+            </div>
+            <div>
+              <h3>Оплата</h3>
+              <p>При получении: картой, переводом или наличными. Для свадебных заказов — предоплата 30% на продукты.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq reveal">
+          <details open>
+            <summary>Сколько торта нужно на 10 гостей?</summary>
+            <p>Ориентируйтесь на 150–200 г на человека, если после торта есть чай. На 10 гостей — торт 2 кг, если хочется добавки — 2,5 кг.</p>
+          </details>
+          <details>
+            <summary>Насколько заранее заказывать?</summary>
+            <p>Минимум 2 дня. Свадебные и ярусные — от 5 дней, чтобы была возможность собрать дегустационный набор и обсудить декор.</p>
+          </details>
+          <details>
+            <summary>Можно ли без глютена или без сахара?</summary>
+            <p>Без глютена — да, начинка «Миндаль и груша» на миндальной муке. Полностью без сахара пока не делаем: от сахарозаменителей страдает вкус.</p>
+          </details>
+          <details>
+            <summary>Что если торт не понравился?</summary>
+            <p>Скажите в день получения — вернём деньги за торт или испечём другой. Решение всегда за вами, а мы разберёмся, что пошло не так.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- контакты ---------- -->
+  <section class="section section--soft" id="contacts">
+    <div class="container">
+      <div class="split">
+        <div class="reveal">
+          <p class="eyebrow">
+            <span class="accent-line"></span>
+            контакты
+          </p>
+          <h2>Напишите или позвоните</h2>
+          <p class="lead">Проще всего — оставить заказ на сайте, а детали мы обсудим по телефону. Отвечаем в течение рабочего дня, в Instagram — быстрее.</p>
+          <div class="row" style="margin-top:var(--s5)">
+            <a class="btn" href="tel:+375291234567">
+              <svg class="icon icon--sm" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +375 (29) 123-45-67
+            </a>
+            <a class="btn btn--ghost" href="mailto:zakaz@example.by">
+              <svg class="icon icon--sm" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              zakaz@example.by
+            </a>
+          </div>
+        </div>
+        <div class="info-list reveal">
+          <div class="info-item">
+            <div class="feature__icon">
+              <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h3>Кухня и самовывоз</h3>
+              <p>Минск, ул. Кальварийская, 17 — вход со двора, вторая дверь. Курьерская доставка по городу.</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="feature__icon">
+              <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h3>Когда мы на связи</h3>
+              <p>Пн–Сб 9:00–20:00, Вс 10:00–18:00. Заказы на выходные принимаем до четверга.</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="feature__icon">
+              <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </div>
+            <div>
+              <h3>Instagram</h3>
+              <p>@melnitsa.cake — там свежие фото тортов и свободные даты на неделю.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo">
+          <span class="logo__mark">М</span>
+          <span class="logo__text">Мельница<small>домашняя кондитерская</small></span>
+        </span>
+        <p class="small muted" style="margin-top:var(--s3)">Домашняя кондитерская в Минске с 2016 года: бенто, торты на заказ, свадебные и детские, капкейки. Печём небольшими партиями, под конкретную дату.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul class="stack" style="gap:var(--s2)">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="cart.html">Корзина и заказ</a></li>
+          <li><a href="index.html#delivery">Доставка и оплата</a></li>
+          <li><a href="admin.html">Панель владельца</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <div class="footer-contact">
+          <a href="tel:+375291234567">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +375 (29) 123-45-67
+          </a>
+          <a href="mailto:zakaz@example.by">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            zakaz@example.by
+          </a>
+          <span class="row" style="gap:8px">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Минск, ул. Кальварийская, 17
+          </span>
+          <span class="row" style="gap:8px">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Пн–Сб 9:00–20:00, Вс 10:00–18:00
+          </span>
+          <span class="row" style="gap:8px">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            @melnitsa.cake
+          </span>
+        </div>
+      </div>
+      <div>
+        <h4>Ассортимент</h4>
+        <ul class="stack" style="gap:var(--s2)">
+          <li><a href="catalog.html#bento">Бенто 12 см</a></li>
+          <li><a href="catalog.html#cake">Торты 1,5–3 кг</a></li>
+          <li><a href="catalog.html#kids">Детские</a></li>
+          <li><a href="catalog.html#wedding">Свадебные</a></li>
+          <li><a href="catalog.html#cupcakes">Капкейки</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="js-year">2026</span> «Мельница» — демонстрационный сайт. Бренд, адрес и контакты вымышлены, фото — из открытых источников (см. CREDITS.md). Заказы сохраняются только в вашем браузере.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
