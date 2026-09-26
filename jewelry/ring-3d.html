@@ -123,8 +123,8 @@ const ENGRAVING = 15, ENGRAVING_MAX = 16;
 const state = { metal: 'brass', stone: 'turquoise', size: 17, graving: '' };
 
 const METALS = {
-  brass:  { name: 'Латунь',     color: 0xc9a227, roughness: .30, clearcoat: .35, dark: 0x4a3712, plate: 0x5c4517 },
-  silver: { name: 'Серебро 925', color: 0xdedede, roughness: .16, clearcoat: .25, dark: 0x3a3a3a, plate: 0x4a4a4a }
+  brass:  { name: 'Латунь',     color: 0xc08f2e, roughness: .26, clearcoat: .5, dark: 0x4a3712, plate: 0x5c4517 },
+  silver: { name: 'Серебро 925', color: 0xdcd8d2, roughness: .21, clearcoat: .35, dark: 0x3a3a3a, plate: 0x4a4a4a }
 };
 
 const STONES = {
@@ -156,25 +156,41 @@ camera.position.set(0, 0.34, 4.3);
 /* карта окружения: свой софтбокс-риг, чтобы металл и камень отражали свет, а не выглядели матовыми */
 function envTexture() {
   const env = new THREE.Scene();
-  env.background = new THREE.Color(0x1a1512);
-  const box = new THREE.Mesh(
-    new THREE.BoxGeometry(12, 8, 12),
-    new THREE.MeshBasicMaterial({ color: 0x2a231d, side: THREE.BackSide })
+  /* градиентный купол: сверху свет, снизу тёмный стол — металлу нужно что отражать */
+  const dome = new THREE.Mesh(
+    new THREE.SphereGeometry(14, 32, 24),
+    new THREE.ShaderMaterial({
+      side: THREE.BackSide,
+      uniforms: {
+        top: { value: new THREE.Color(0x6f6a63) },
+        mid: { value: new THREE.Color(0x35302b) },
+        bot: { value: new THREE.Color(0x0e0c0a) }
+      },
+      vertexShader: 'varying vec3 vP; void main(){ vP = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }',
+      fragmentShader: 'varying vec3 vP; uniform vec3 top; uniform vec3 mid; uniform vec3 bot;' +
+        'void main(){ float h = normalize(vP).y;' +
+        ' vec3 c = h > 0.0 ? mix(mid, top, pow(h, 0.7)) : mix(mid, bot, pow(-h, 0.6));' +
+        ' gl_FragColor = vec4(c, 1.0); }'
+    })
   );
-  env.add(box);
-  const soft = (w, h, x, y, z, ry, intensity) => {
+  env.add(dome);
+  /* софтбоксы: яркость за 1.0 даёт настоящие блики, а не ровную заливку */
+  const soft = (w, h, x, y, z, rx, ry, lum) => {
     const m = new THREE.Mesh(
       new THREE.PlaneGeometry(w, h),
-      new THREE.MeshBasicMaterial({ color: new THREE.Color(intensity, intensity, intensity) })
+      new THREE.MeshBasicMaterial({ color: new THREE.Color(lum, lum, lum) })
     );
-    m.position.set(x, y, z); m.rotation.y = ry; env.add(m);
+    m.position.set(x, y, z);
+    m.rotation.set(rx, ry, 0);
+    env.add(m);
   };
-  soft(7, 5, 0, 3.4, 0, 0, 3.4);            // верхний софтбокс
-  soft(5, 6, -4.6, 1.2, 1.6, Math.PI / 2.4, 1.5);
-  soft(4, 6, 4.6, 0.6, -1.2, -Math.PI / 2.4, 1.1);
-  soft(6, 3, 0, 0.4, -5, 0, 0.5);
+  soft(9, 6, 0, 6.4, 0.4, Math.PI / 2, 0, 7.5);          // верхний софтбокс
+  soft(4.6, 7, -5.6, 1.6, 2.2, 0, Math.PI / 2.1, 4.2);   // левая панель
+  soft(3.6, 6, 5.6, 1.0, -1.4, 0, -Math.PI / 2.1, 2.6);  // правая панель
+  soft(5.5, 2.6, 0, 1.2, -6.2, 0, 0, 1.4);               // задняя полоса
+  soft(5, 3, 0, -1.2, 6.4, 0, Math.PI, 0.5);             // подсветка снизу-спереди
   const pmrem = new THREE.PMREMGenerator(renderer);
-  const tex = pmrem.fromScene(env, 0.03).texture;
+  const tex = pmrem.fromScene(env, 0.02).texture;
   pmrem.dispose();
   return tex;
 }
@@ -199,14 +215,14 @@ const group = new THREE.Group();
 scene.add(group);
 
 const BAND_R = 1.0, BAND_TUBE = 0.155;
-const bandGeo = new THREE.TorusGeometry(BAND_R, BAND_TUBE, 40, 128);
-const bandMat = new THREE.MeshPhysicalMaterial({ color: METALS.brass.color, metalness: 1, roughness: METALS.brass.roughness, clearcoat: METALS.brass.clearcoat });
+const bandGeo = new THREE.TorusGeometry(BAND_R, BAND_TUBE, 32, 112);
+const bandMat = new THREE.MeshPhysicalMaterial({ color: METALS.brass.color, metalness: 1, roughness: METALS.brass.roughness, clearcoat: METALS.brass.clearcoat, envMapIntensity: 1.9 });
 const band = new THREE.Mesh(bandGeo, bandMat);
 band.castShadow = true;
 group.add(band);
 
 /* рант-волосок по обоим краям обода */
-const rimMat = new THREE.MeshPhysicalMaterial({ color: 0xf0dcb4, metalness: 1, roughness: .22 });
+const rimMat = new THREE.MeshPhysicalMaterial({ color: 0xf0dcb4, metalness: 1, roughness: .22, envMapIntensity: 2.1 });
 [-1, 1].forEach((s) => {
   const rim = new THREE.Mesh(new THREE.TorusGeometry(BAND_R, BAND_TUBE * 0.16, 12, 96), rimMat);
   rim.position.z = s * BAND_TUBE * 0.92;
@@ -219,7 +235,7 @@ seat.position.set(0, BAND_R + 0.02, 0);
 group.add(seat);
 
 /* площадка-каст */
-const castMat = new THREE.MeshPhysicalMaterial({ color: 0xd9b273, metalness: 1, roughness: .24 });
+const castMat = new THREE.MeshPhysicalMaterial({ color: 0xd9b273, metalness: 1, roughness: .24, envMapIntensity: 1.9 });
 const cast = new THREE.Mesh(new THREE.CylinderGeometry(0.19, 0.24, 0.09, 32), castMat);
 cast.position.y = -0.02; cast.castShadow = true;
 seat.add(cast);
@@ -238,17 +254,17 @@ function buildStone(kind) {
     geo = new THREE.SphereGeometry(0.205, 64, 48);
     mat = new THREE.MeshPhysicalMaterial({
       color: cfg.color, metalness: 0, roughness: .17, clearcoat: 1, clearcoatRoughness: .12,
-      iridescence: 1, iridescenceIOR: 1.35, iridescenceThicknessRange: [120, 420], sheen: .6, sheenColor: 0xfff0dd
+      iridescence: 1, iridescenceIOR: 1.42, iridescenceThicknessRange: [90, 520], sheen: 1, sheenColor: 0xffe9d0, envMapIntensity: 2.4, thickness: .3, transmission: .06
     });
   } else if (kind === 'cabochon') {
     geo = new THREE.SphereGeometry(0.2, 48, 32, 0, Math.PI * 2, 0, Math.PI * 0.55);
     geo.scale(1, 0.82, 1);
-    mat = new THREE.MeshPhysicalMaterial({ color: cfg.color, metalness: 0, roughness: cfg.rough, clearcoat: .7, clearcoatRoughness: .35 });
+    mat = new THREE.MeshPhysicalMaterial({ color: cfg.color, metalness: 0, roughness: cfg.rough, clearcoat: .55, clearcoatRoughness: .4, sheen: .5, sheenColor: 0x9fe4dd, envMapIntensity: 1.2 });
   } else {
     geo = new THREE.IcosahedronGeometry(0.205, 0);
     mat = new THREE.MeshPhysicalMaterial({
       color: cfg.color, metalness: 0, roughness: cfg.rough, flatShading: true,
-      clearcoat: 1, clearcoatRoughness: .04, envMapIntensity: 1.6
+      clearcoat: 1, clearcoatRoughness: .04, envMapIntensity: 2.1
     });
   }
   stoneMesh = new THREE.Mesh(geo, mat);
@@ -265,10 +281,10 @@ const plateCtx = plateCanvas.getContext('2d');
 const plateTex = new THREE.CanvasTexture(plateCanvas);
 plateTex.colorSpace = THREE.SRGBColorSpace;
 plateTex.anisotropy = 4;
-const plateMat = new THREE.MeshPhysicalMaterial({ map: plateTex, metalness: .85, roughness: .34 });
-const plateGeo = new THREE.BoxGeometry(0.62, 0.2, 0.035);
+const plateMat = new THREE.MeshPhysicalMaterial({ map: plateTex, metalness: .8, roughness: .38, envMapIntensity: 1.2 });
+const plateGeo = new THREE.BoxGeometry(0.66, 0.22, 0.04);
 const plateMesh = new THREE.Mesh(plateGeo, plateMat);
-plateMesh.position.set(0, -BAND_R + 0.06, 0);
+plateMesh.position.set(0, -BAND_R + BAND_TUBE + 0.085, 0.012);
 plateMesh.visible = false;
 group.add(plateMesh);
 
@@ -307,6 +323,16 @@ const blob = new THREE.Mesh(
 blob.rotation.x = -Math.PI / 2;
 blob.position.set(0, -BAND_R - 0.42, 0.1);
 group.add(blob);
+
+/* контактная тень под камнем: без неё камень «висит» над кастом */
+const contact = new THREE.Mesh(
+  new THREE.PlaneGeometry(0.62, 0.62),
+  new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, opacity: .55, depthWrite: false })
+);
+contact.rotation.x = -Math.PI / 2;
+contact.position.y = -0.045;
+seat.add(contact);
+
 
 /* ---------- материалы под металл ---------- */
 function applyMetal() {
