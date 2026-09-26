@@ -427,9 +427,10 @@
     var needW = (halfW * 1.35) / (Math.tan(vFov / 2) * camera.aspect);
     camDist = Math.max(needH, needW, 1.6) / zoom;
     if (key) {
-      key.position.set(fit * 0.5, fit * 1.6, fit * 0.9);
+      var lightFit = Math.max(2.2, camDist * 0.8);
+      key.position.set(lightFit * 0.5, lightFit * 1.7, lightFit * 0.9);
       var sc = key.shadow.camera;
-      sc.left = -fit; sc.right = fit; sc.top = fit; sc.bottom = -fit;
+      sc.left = -lightFit; sc.right = lightFit; sc.top = lightFit; sc.bottom = -lightFit;
       sc.updateProjectionMatrix();
     }
     return built;
