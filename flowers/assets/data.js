@@ -7,7 +7,7 @@ window.PION_DATA = {
     name: 'Пион',
     tagline: 'Мастерская в Минске',
     phone: '+375 (29) 123-45-67',
-    phoneHref: 'tel:+375****4567',
+    phoneHref: 'tel:+375-29-123-45-67',
     email: 'hello@example.by',
     address: 'г. Минск, ул. Немига, 12 — мастерская 3, вход со двора',
     hours: 'Каждый день, 9:00–21:00',

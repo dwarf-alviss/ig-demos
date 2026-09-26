@@ -761,7 +761,7 @@
         '<div class="order__grid">' +
           '<div><div class="order__label">Клиент</div><div class="order__val">' + esc(o.customer && o.customer.name ? o.customer.name : '—') + '</div></div>' +
           '<div><div class="order__label">Телефон</div><div class="order__val num">' +
-            (o.customer && o.customer.phone ? '<a href="tel:' + esc(String(o.customer.phone).replace(/[^\d+]/g, '')) + '">' + esc(o.customer.phone) + '</a>' : '—') + '</div></div>' +
+            (o.customer && o.customer.phone ? '<a href="tel:+375-29-123-45-67' + esc(String(o.customer.phone).replace(/[^\d+]/g, '')) + '">' + esc(o.customer.phone) + '</a>' : '—') + '</div></div>' +
           '<div><div class="order__label">Получение</div><div class="order__val">' + esc(d.name) + '</div>' +
             (addr ? '<div class="small muted">' + esc(addr) + '</div>' : '') + '</div>' +
           '<div><div class="order__label">Желаемая дата</div><div class="order__val num">' + esc(when) + '</div></div>' +

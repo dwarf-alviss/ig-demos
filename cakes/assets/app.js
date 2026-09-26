@@ -683,7 +683,7 @@
       $$('input[name="method"]', form).forEach(function (r) { r.addEventListener('change', render); });
     }
 
-    /* маска телефона +375 (29) 123-45-67 */
+    /* маска телефона +375 (29) 123-45-67*/
     if (phoneInput) {
       phoneInput.addEventListener('input', function () {
         var digits = phoneInput.value.replace(/\D/g, '');

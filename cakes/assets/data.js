@@ -7,7 +7,7 @@ const SHOP = {
   tagline: 'домашняя кондитерская',
   city: 'Минск',
   phone: '+375 (29) 123-45-67',
-  phoneHref: 'tel:+375291234567',
+  phoneHref: 'tel:+375-29-123-45-67',
   mail: 'zakaz@example.by',
   instagram: '@melnitsa.cake',
   address: 'Минск, ул. Кальварийская, 17 — самовывоз со двора',

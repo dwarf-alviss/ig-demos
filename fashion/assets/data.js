@@ -7,7 +7,7 @@ window.LINIA_DATA = {
     name: 'Линия',
     tagline: 'Магазин женской одежды в Минске',
     phone: '+375 (29) 123-45-67',
-    phoneHref: 'tel:+375****4567',
+    phoneHref: 'tel:+375-29-123-45-67',
     email: 'hello@example.by',
     instagram: '@linia.minsk',
     site: 'example.by',
