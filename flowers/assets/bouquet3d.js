@@ -1144,7 +1144,7 @@
     root.addEventListener('resize', resize);
     if (root.ResizeObserver) {
       try {
-        ro = new root.ResizeObserver(function () { resize(); });
+        ro = new root.ResizeObserver(function () { root.requestAnimationFrame(resize); });
         ro.observe(canvasEl);
       } catch (err) { ro = null; }
     }

@@ -792,7 +792,9 @@
     }, { passive: false });
     root.addEventListener('resize', resize);
     if (root.ResizeObserver) {
-      try { new root.ResizeObserver(function () { resize(); }).observe(canvasEl); } catch (e) {}
+      try {
+        new root.ResizeObserver(function () { root.requestAnimationFrame(resize); }).observe(canvasEl);
+      } catch (e) {}
     }
   }
 
