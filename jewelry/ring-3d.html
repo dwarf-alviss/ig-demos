@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кольцо в 3D — проба · Латунь</title>
+<style>
+  :root {
+    --bg: #14110f; --panel: #1c1815; --line: #3a3129; --fg: #f2e7d6; --muted: #a08f7c;
+    --brass: #d9b273; --brass-deep: #8a6a2f; --accent: #d9b273;
+    --radius: 14px;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: radial-gradient(120% 90% at 50% 0%, #221c17 0%, var(--bg) 60%); color: var(--fg); min-height: 100vh; }
+  a { color: var(--brass); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: clamp(1rem, 3vw, 2.2rem); }
+  .top { display: flex; align-items: baseline; gap: .8rem; flex-wrap: wrap; margin-bottom: clamp(1rem, 2.5vw, 1.8rem); }
+  .top h1 { font-size: clamp(1.2rem, 2.4vw, 1.7rem); margin: 0; letter-spacing: -.01em; }
+  .top p { margin: 0; color: var(--muted); font-size: .92rem; }
+  .grid { display: grid; gap: clamp(1rem, 2.5vw, 2rem); align-items: start; }
+  @media (min-width: 900px) { .grid { grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr); } }
+  .stage {
+    position: relative; border: 1px solid var(--line); border-radius: var(--radius);
+    background: linear-gradient(180deg, #1d1915 0%, #131010 78%, #0f0d0b 100%);
+    overflow: hidden; box-shadow: 0 30px 60px -30px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.03);
+  }
+  .stage canvas { display: block; width: 100%; height: auto; cursor: grab; touch-action: none; }
+  .stage canvas:active { cursor: grabbing; }
+  .stage__note {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: .7rem clamp(.8rem, 2vw, 1.2rem);
+    font-size: .82rem; color: var(--muted); background: linear-gradient(180deg, rgba(15,13,11,0), rgba(15,13,11,.86));
+    display: flex; justify-content: space-between; gap: 1rem;
+  }
+  .stage__badge {
+    position: absolute; top: .8rem; left: .8rem; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--brass); border: 1px solid var(--brass-deep); border-radius: 999px; padding: .28rem .6rem;
+    background: rgba(20,17,15,.7);
+  }
+  .panel { display: grid; gap: 1.1rem; }
+  .block > p.label { margin: 0 0 .5rem; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: .45rem; }
+  .chip {
+    border: 1px solid var(--line); background: #1b1714; color: var(--fg); border-radius: 999px;
+    padding: .42rem .8rem; font-size: .86rem; cursor: pointer; transition: .18s border-color, .18s color, .18s background;
+  }
+  .chip:hover { border-color: var(--brass-deep); }
+  .chip[aria-pressed="true"] { border-color: var(--brass); color: #1b1714; background: var(--brass); font-weight: 600; }
+  input[type="text"] {
+    width: 100%; padding: .55rem .7rem; border-radius: 10px; border: 1px solid var(--line);
+    background: #15120f; color: var(--fg); font-size: .95rem;
+  }
+  .price { display: flex; align-items: baseline; gap: .6rem; }
+  .price strong { font-size: clamp(1.6rem, 4vw, 2.1rem); color: var(--brass); }
+  .price span { color: var(--muted); font-size: .9rem; }
+  .lines { display: grid; gap: .35rem; font-size: .88rem; color: var(--muted); }
+  .lines b { color: var(--fg); font-weight: 600; }
+  .hint { font-size: .8rem; color: var(--muted); margin: 0; }
+  .fallback { display: none; padding: 2rem 1rem; text-align: center; color: var(--muted); }
+  .fallback.on { display: block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>Кольцо «Грань» в 3D — проба</h1>
+    <p>three.js r180 · вся геометрия считается кодом, ни одной внешней модели и ни одного запроса наружу</p>
+  </div>
+
+  <div class="grid">
+    <div class="stage">
+      <span class="stage__badge">3D · WebGL</span>
+      <canvas id="view" width="1100" height="760" aria-label="Трёхмерная модель кольца"></canvas>
+      <div class="fallback" id="fallback">
+        <p>Браузер не дал WebGL — трёхмерную пробу показать нечем.</p>
+        <p><a href="index.html#builder">Открыть векторную версию конструктора</a></p>
+      </div>
+      <div class="stage__note">
+        <span>Тяни мышью — кольцо поворачивается, колесо — приближает</span>
+        <span id="fps">—</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="block">
+        <p class="label">Металл</p>
+        <div class="chips" id="metal" role="group" aria-label="Металл"></div>
+      </div>
+      <div class="block">
+        <p class="label">Камень</p>
+        <div class="chips" id="stone" role="group" aria-label="Камень"></div>
+      </div>
+      <div class="block">
+        <p class="label">Размер</p>
+        <div class="chips" id="size" role="group" aria-label="Размер"></div>
+      </div>
+      <div class="block">
+        <p class="label">Гравировка</p>
+        <input type="text" id="graving" maxlength="16" placeholder="И&А 12.09" aria-label="Текст гравировки">
+        <p class="hint" id="graving-note">До 16 знаков. Буквы проступают на пластинке внутри обода.</p>
+      </div>
+      <div class="block">
+        <p class="label">Итог</p>
+        <div class="price"><strong id="price">0 BYN</strong><span id="terms"></span></div>
+        <div class="lines" id="lines"></div>
+      </div>
+      <p class="hint">Цены — те же, что в прайсе мастерской: латунь от 62 BYN, серебро 925 от 165 BYN, гравировка 15 BYN.</p>
+    </div>
+  </div>
+</div>
+
+<script type="importmap">
+{ "imports": { "three": "./assets/vendor/three.module.min.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+
+/* ---------- прайс: те же числа, что в data.js сайта ---------- */
+const LOT = { ring: { brass: 62, silver: 165 } };
+const ENGRAVING = 15, ENGRAVING_MAX = 16;
+
+/* ---------- состояние ---------- */
+const state = { metal: 'brass', stone: 'turquoise', size: 17, graving: '' };
+
+const METALS = {
+  brass:  { name: 'Латунь',     color: 0xc9a227, roughness: .30, clearcoat: .35, dark: 0x4a3712, plate: 0x5c4517 },
+  silver: { name: 'Серебро 925', color: 0xdedede, roughness: .16, clearcoat: .25, dark: 0x3a3a3a, plate: 0x4a4a4a }
+};
+
+const STONES = {
+  none:      { name: 'Без камня',    kind: 'dome' },
+  pearl:     { name: 'Речной жемчуг', kind: 'pearl', color: 0xf3ecdc },
+  turquoise: { name: 'Бирюза',       kind: 'cabochon', color: 0x2f9c98, rough: .42 },
+  garnet:    { name: 'Гранат',       kind: 'facet', color: 0x7d1224, rough: .08 },
+  amethyst:  { name: 'Аметист',      kind: 'facet', color: 0x5b3a86, rough: .08 }
+};
+
+/* ---------- сцена ---------- */
+const canvas = document.getElementById('view');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+if (!renderer.getContext()) {
+  document.getElementById('fallback').classList.add('on');
+  canvas.style.display = 'none';
+  throw new Error('no webgl');
+}
+renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(36, 1100 / 760, 0.1, 60);
+camera.position.set(0, 0.34, 4.3);
+
+/* карта окружения: свой софтбокс-риг, чтобы металл и камень отражали свет, а не выглядели матовыми */
+function envTexture() {
+  const env = new THREE.Scene();
+  env.background = new THREE.Color(0x1a1512);
+  const box = new THREE.Mesh(
+    new THREE.BoxGeometry(12, 8, 12),
+    new THREE.MeshBasicMaterial({ color: 0x2a231d, side: THREE.BackSide })
+  );
+  env.add(box);
+  const soft = (w, h, x, y, z, ry, intensity) => {
+    const m = new THREE.Mesh(
+      new THREE.PlaneGeometry(w, h),
+      new THREE.MeshBasicMaterial({ color: new THREE.Color(intensity, intensity, intensity) })
+    );
+    m.position.set(x, y, z); m.rotation.y = ry; env.add(m);
+  };
+  soft(7, 5, 0, 3.4, 0, 0, 3.4);            // верхний софтбокс
+  soft(5, 6, -4.6, 1.2, 1.6, Math.PI / 2.4, 1.5);
+  soft(4, 6, 4.6, 0.6, -1.2, -Math.PI / 2.4, 1.1);
+  soft(6, 3, 0, 0.4, -5, 0, 0.5);
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  const tex = pmrem.fromScene(env, 0.03).texture;
+  pmrem.dispose();
+  return tex;
+}
+scene.environment = envTexture();
+
+/* свет: одна жёсткая лампа с тенью и мягкая заливка */
+const key = new THREE.DirectionalLight(0xfff4e2, 2.1);
+key.position.set(2.4, 3.6, 3.2);
+key.castShadow = true;
+key.shadow.mapSize.set(1024, 1024);
+key.shadow.radius = 6;
+key.shadow.bias = -0.0012;
+const sc = key.shadow.camera;
+sc.left = -3; sc.right = 3; sc.top = 3; sc.bottom = -3; sc.near = 0.5; sc.far = 14;
+scene.add(key);
+const fill = new THREE.DirectionalLight(0xbfd4ff, 0.55);
+fill.position.set(-3, 1.4, 2.2);
+scene.add(fill);
+
+/* ---------- геометрия кольца ---------- */
+const group = new THREE.Group();
+scene.add(group);
+
+const BAND_R = 1.0, BAND_TUBE = 0.155;
+const bandGeo = new THREE.TorusGeometry(BAND_R, BAND_TUBE, 40, 128);
+const bandMat = new THREE.MeshPhysicalMaterial({ color: METALS.brass.color, metalness: 1, roughness: METALS.brass.roughness, clearcoat: METALS.brass.clearcoat });
+const band = new THREE.Mesh(bandGeo, bandMat);
+band.castShadow = true;
+group.add(band);
+
+/* рант-волосок по обоим краям обода */
+const rimMat = new THREE.MeshPhysicalMaterial({ color: 0xf0dcb4, metalness: 1, roughness: .22 });
+[-1, 1].forEach((s) => {
+  const rim = new THREE.Mesh(new THREE.TorusGeometry(BAND_R, BAND_TUBE * 0.16, 12, 96), rimMat);
+  rim.position.z = s * BAND_TUBE * 0.92;
+  group.add(rim);
+});
+
+/* каст: седло под камень сверху */
+const seat = new THREE.Group();
+seat.position.set(0, BAND_R + 0.02, 0);
+group.add(seat);
+
+/* площадка-каст */
+const castMat = new THREE.MeshPhysicalMaterial({ color: 0xd9b273, metalness: 1, roughness: .24 });
+const cast = new THREE.Mesh(new THREE.CylinderGeometry(0.19, 0.24, 0.09, 32), castMat);
+cast.position.y = -0.02; cast.castShadow = true;
+seat.add(cast);
+
+/* камень: свой меш на каждый тип */
+let stoneMesh = null, stoneKind = null;
+function buildStone(kind) {
+  if (stoneMesh) { seat.remove(stoneMesh); stoneMesh.geometry.dispose(); stoneMesh.material.dispose(); stoneMesh = null; }
+  stoneKind = kind;
+  const cfg = STONES[state.stone];
+  let geo, mat;
+  if (kind === 'dome') {
+    geo = new THREE.SphereGeometry(0.2, 48, 32, 0, Math.PI * 2, 0, Math.PI * 0.52);
+    mat = new THREE.MeshPhysicalMaterial({ color: METALS[state.metal].color, metalness: 1, roughness: .22, clearcoat: .5 });
+  } else if (kind === 'pearl') {
+    geo = new THREE.SphereGeometry(0.205, 64, 48);
+    mat = new THREE.MeshPhysicalMaterial({
+      color: cfg.color, metalness: 0, roughness: .17, clearcoat: 1, clearcoatRoughness: .12,
+      iridescence: 1, iridescenceIOR: 1.35, iridescenceThicknessRange: [120, 420], sheen: .6, sheenColor: 0xfff0dd
+    });
+  } else if (kind === 'cabochon') {
+    geo = new THREE.SphereGeometry(0.2, 48, 32, 0, Math.PI * 2, 0, Math.PI * 0.55);
+    geo.scale(1, 0.82, 1);
+    mat = new THREE.MeshPhysicalMaterial({ color: cfg.color, metalness: 0, roughness: cfg.rough, clearcoat: .7, clearcoatRoughness: .35 });
+  } else {
+    geo = new THREE.IcosahedronGeometry(0.205, 0);
+    mat = new THREE.MeshPhysicalMaterial({
+      color: cfg.color, metalness: 0, roughness: cfg.rough, flatShading: true,
+      clearcoat: 1, clearcoatRoughness: .04, envMapIntensity: 1.6
+    });
+  }
+  stoneMesh = new THREE.Mesh(geo, mat);
+  stoneMesh.position.y = 0.16;
+  stoneMesh.castShadow = true;
+  seat.add(stoneMesh);
+  seat.position.y = BAND_R + (kind === 'facet' ? -0.02 : 0.02);
+}
+
+/* пластинка с гравировкой: текст рисуется на canvas и уходит в текстуру */
+const plateCanvas = document.createElement('canvas');
+plateCanvas.width = 512; plateCanvas.height = 160;
+const plateCtx = plateCanvas.getContext('2d');
+const plateTex = new THREE.CanvasTexture(plateCanvas);
+plateTex.colorSpace = THREE.SRGBColorSpace;
+plateTex.anisotropy = 4;
+const plateMat = new THREE.MeshPhysicalMaterial({ map: plateTex, metalness: .85, roughness: .34 });
+const plateGeo = new THREE.BoxGeometry(0.62, 0.2, 0.035);
+const plateMesh = new THREE.Mesh(plateGeo, plateMat);
+plateMesh.position.set(0, -BAND_R + 0.06, 0);
+plateMesh.visible = false;
+group.add(plateMesh);
+
+function drawPlate(text) {
+  const w = plateCanvas.width, h = plateCanvas.height;
+  plateCtx.clearRect(0, 0, w, h);
+  plateCtx.fillStyle = '#' + new THREE.Color(METALS[state.metal].plate).getHexString();
+  plateCtx.fillRect(0, 0, w, h);
+  plateCtx.fillStyle = 'rgba(0,0,0,.35)';
+  plateCtx.fillRect(0, 0, w, 8); plateCtx.fillRect(0, h - 8, w, 8);
+  plateCtx.fillStyle = '#fff8e8';
+  plateCtx.textAlign = 'center';
+  plateCtx.textBaseline = 'middle';
+  const size = Math.max(46, Math.min(96, 620 / Math.max(4, text.length)));
+  plateCtx.font = '600 ' + size + 'px Georgia, "Times New Roman", serif';
+  plateCtx.fillText(text, w / 2, h / 2 + 4);
+  plateTex.needsUpdate = true;
+}
+
+/* тень на «столе»: мягкое пятно под изделием */
+const shadowTex = (() => {
+  const c = document.createElement('canvas');
+  c.width = c.height = 256;
+  const x = c.getContext('2d');
+  const g = x.createRadialGradient(128, 128, 8, 128, 128, 124);
+  g.addColorStop(0, 'rgba(0,0,0,.85)');
+  g.addColorStop(.55, 'rgba(0,0,0,.32)');
+  g.addColorStop(1, 'rgba(0,0,0,0)');
+  x.fillStyle = g; x.fillRect(0, 0, 256, 256);
+  return new THREE.CanvasTexture(c);
+})();
+const blob = new THREE.Mesh(
+  new THREE.PlaneGeometry(2.9, 1.1),
+  new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, opacity: .85, depthWrite: false })
+);
+blob.rotation.x = -Math.PI / 2;
+blob.position.set(0, -BAND_R - 0.42, 0.1);
+group.add(blob);
+
+/* ---------- материалы под металл ---------- */
+function applyMetal() {
+  const m = METALS[state.metal];
+  bandMat.color.setHex(m.color);
+  bandMat.roughness = m.roughness;
+  bandMat.clearcoat = m.clearcoat;
+  castMat.color.setHex(state.metal === 'silver' ? 0xe6e6e6 : 0xd9b273);
+  rimMat.color.setHex(state.metal === 'silver' ? 0xf4f4f4 : 0xf0dcb4);
+  if (stoneKind === 'dome') buildStone('dome');
+  drawPlate(state.graving);
+}
+
+/* ---------- состояние и перерисовка ---------- */
+function applySize() {
+  const k = 0.94 + (state.size - 15) * 0.03;   /* 15 → 0.94, 21 → 1.12 */
+  group.scale.setScalar(k);
+}
+
+function redraw() {
+  applyMetal();
+  buildStone(STONES[state.stone].kind);
+  applySize();
+  plateMesh.visible = !!state.graving;
+  drawPlate(state.graving);
+  updatePanel();
+}
+
+/* ---------- панель ---------- */
+function chips(host, list, current, onPick, label) {
+  host.innerHTML = '';
+  list.forEach((item) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'chip';
+    b.textContent = item.label;
+    b.setAttribute('aria-pressed', String(item.value === current));
+    b.addEventListener('click', () => onPick(item.value));
+    host.appendChild(b);
+  });
+}
+function updatePanel() {
+  chips(document.getElementById('metal'), [
+    { value: 'brass', label: 'Латунь' }, { value: 'silver', label: 'Серебро 925' }
+  ], state.metal, (v) => { state.metal = v; redraw(); });
+  chips(document.getElementById('stone'), Object.keys(STONES).map((k) => ({ value: k, label: STONES[k].name })),
+    state.stone, (v) => { state.stone = v; redraw(); });
+  chips(document.getElementById('size'), Array.from({ length: 7 }, (_, i) => ({ value: 15 + i, label: String(15 + i) })),
+    state.size, (v) => { state.size = v; redraw(); });
+
+  const base = LOT.ring[state.metal];
+  const price = base + (state.graving ? ENGRAVING : 0);
+  document.getElementById('price').textContent = price + ' BYN';
+  document.getElementById('terms').textContent = 'лот «Грань» в ' + METALS[state.metal].name.toLowerCase() + (state.graving ? ' + гравировка' : '');
+  document.getElementById('lines').innerHTML = [
+    ['Металл', METALS[state.metal].name],
+    ['Камень', STONES[state.stone].name],
+    ['Размер', state.size + ' — подгоняю по мерке, бесплатно'],
+    ['Гравировка', state.graving ? '«' + state.graving + '» · ' + ENGRAVING + ' BYN' : 'нет'],
+    ['Цена лота', base + ' BYN']
+  ].map((r) => '<div><span>' + r[0] + ':</span> <b>' + r[1] + '</b></div>').join('');
+}
+
+const gravInput = document.getElementById('graving');
+gravInput.addEventListener('input', () => {
+  state.graving = gravInput.value.slice(0, ENGRAVING_MAX);
+  if (gravInput.value !== state.graving) gravInput.value = state.graving;
+  plateMesh.visible = !!state.graving;
+  drawPlate(state.graving);
+  updatePanel();
+});
+
+/* ---------- поворот мышью и колесо ---------- */
+let dragging = false, lastX = 0, lastY = 0, yaw = -0.35, pitch = 0.12, idle = true, zoom = 1;
+canvas.addEventListener('pointerdown', (e) => { dragging = true; idle = false; lastX = e.clientX; lastY = e.clientY; canvas.setPointerCapture(e.pointerId); });
+canvas.addEventListener('pointerup', () => { dragging = false; setTimeout(() => { idle = true; }, 2500); });
+canvas.addEventListener('pointermove', (e) => {
+  if (!dragging) return;
+  yaw += (e.clientX - lastX) * 0.008;
+  pitch = Math.max(-0.6, Math.min(0.6, pitch + (e.clientY - lastY) * 0.006));
+  lastX = e.clientX; lastY = e.clientY;
+});
+canvas.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  zoom = Math.max(0.75, Math.min(1.45, zoom - e.deltaY * 0.0011));
+}, { passive: false });
+
+/* ---------- кадр ---------- */
+function resize() {
+  const rect = canvas.getBoundingClientRect();
+  const w = Math.max(320, Math.round(rect.width));
+  const h = Math.round(w * 0.69);
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+}
+addEventListener('resize', resize);
+
+let t0 = performance.now(), frames = 0;
+function frame(now) {
+  if (idle && !dragging) yaw += 0.0028;
+  group.rotation.set(pitch, yaw, 0);
+  camera.position.z = 4.3 / zoom;
+  camera.lookAt(0, 0.05, 0);
+  renderer.render(scene, camera);
+  frames++;
+  if (now - t0 > 1000) {
+    document.getElementById('fps').textContent = frames + ' fps';
+    frames = 0; t0 = now;
+  }
+  requestAnimationFrame(frame);
+}
+
+resize();
+redraw();
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
