@@ -969,11 +969,13 @@
     function mount3d() {
       if (!use3d || mounted3d) { return; }
       mounted3d = true;
-      if (svg) { svg.hidden = true; }
-      canvas3d.hidden = false;
-      if (hint3d) { hint3d.hidden = false; }
-      R3.mount(canvas3d, function () { return state; });
-      R3.update(state);
+      R3.mount(canvas3d, function () { return state; }).then(function (ok) {
+        if (!ok) { mounted3d = false; return; }          /* не поднялось — остаётся векторная моделька */
+        if (svg) { svg.hidden = true; }
+        canvas3d.hidden = false;
+        if (hint3d) { hint3d.hidden = false; }
+        R3.update(state);
+      });
     }
 
     if (use3d && 'IntersectionObserver' in window) {

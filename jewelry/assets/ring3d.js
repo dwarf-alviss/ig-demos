@@ -20,8 +20,11 @@
   'use strict';
 
   var THREE = null;
-  var VENDOR = './assets/vendor/three.module.min.js';
-  var ENV_JPG = './assets/vendor/studio-env.jpg';
+  /* путь считаем от самого файла модуля: динамический import в обычном скрипте
+     разрешается относительно скрипта, а не страницы */
+  var SELF = (document.currentScript && document.currentScript.src) || root.location.href;
+  var VENDOR = new URL('vendor/three.module.min.js', SELF).href;
+  var ENV_JPG = new URL('vendor/studio-env.jpg', SELF).href;
 
   /* ---------- палитры: числа и цвета те же, что в ring.js ---------- */
   var METALS = {
@@ -492,7 +495,8 @@
     },
 
     mount: function (canvas, stateGetter) {
-      if (!canvas || renderer) return !!renderer;
+      if (!canvas) return Promise.resolve(false);
+      if (renderer) return Promise.resolve(true);
       canvasEl = canvas;
       getState = stateGetter;
       var ready = function (mod) {
@@ -542,12 +546,12 @@
         return true;
       };
       try {
-      if (THREE) return ready(THREE);
+      if (THREE) return Promise.resolve(ready(THREE));
       var dyn = null;
       try { dyn = new Function('u', 'return import(u);'); } catch (e) { dyn = null; }
       if (dyn) return dyn(VENDOR).then(ready).catch(function (e) { api.lastError = 'import: ' + (e && e.message); return false; });
-      return false;
-      } catch (e) { api.lastError = 'mount: ' + e.name + ': ' + e.message; return false; }
+      return Promise.resolve(false);
+      } catch (e) { api.lastError = 'mount: ' + e.name + ': ' + e.message; return Promise.resolve(false); }
     },
 
     /* update(state, {only:'graving'}) — при наборе букв перерисовываем только пластинку */
