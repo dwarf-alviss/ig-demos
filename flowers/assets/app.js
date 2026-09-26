@@ -550,6 +550,13 @@
 
     var state = { occasion: 'none', flower: 'peony', count: 15, palette: 'pudra', pack: 'craft', ribbon: 'cream' };
     var svg = $('#bouquet');
+    var canvas3d = $('#bouquet3d');
+    var hint3d = $('#builder-3d-hint');
+    /* Объёмный букет: если WebGL есть, витрина станет настоящей 3D-моделью.
+       Поднимаем её лениво и только после успеха прячем векторную — откат остаётся. */
+    var BQ3D = window.PION_BOUQUET3D || null;
+    var use3d = !!(BQ3D && canvas3d && BQ3D.supported());
+    var mounted3d = false;
     var drawn = '';
 
     var groups = [
@@ -573,14 +580,48 @@
         esc(String(option.id)) + '" aria-pressed="' + (active ? 'true' : 'false') + '">' + lead + esc(option.title) + '</button>';
     }
 
+    /* Поднимаем 3D, когда витрина подъехала к экрану: до этого страница лёгкая.
+       Векторную прячем только после успешного Promise — у SVG нет свойства hidden. */
+    function mount3d() {
+      if (!use3d || mounted3d) { return; }
+      mounted3d = true;
+      BQ3D.mount(canvas3d, function () { return state; }).then(function (ok) {
+        if (!ok) { mounted3d = false; return; }
+        if (svg) { svg.style.display = 'none'; }
+        canvas3d.hidden = false;
+        if (hint3d) { hint3d.hidden = false; }
+        canvas3d.setAttribute('aria-label', 'Букет в 3D: ' + BQ.summary(state));
+        BQ3D.update(state);
+      });
+    }
+
+    /* Витрина уже в кадре (переход по якорю) — поднимаем сразу */
+    if (use3d) {
+      var r0 = root.getBoundingClientRect();
+      var vh = window.innerHeight || 800;
+      if (r0.top < vh + 240 && r0.bottom > -240) { mount3d(); }
+    }
+
+    if (use3d && !mounted3d && 'IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) { mount3d(); io.disconnect(); }
+        }
+      }, { rootMargin: '240px 0px' });
+      io.observe(root);
+    } else if (use3d) {
+      mount3d();
+    }
+
     /* Витрину перерисовываем только когда меняется сам рисунок: повод на букет не влияет */
     function draw() {
       if (!svg) { return; }
       var key = [state.flower, state.count, state.palette, state.pack, state.ribbon].join('|');
       if (key === drawn) { return; }
       drawn = key;
-      BQ.render(svg, state, { animate: true });
+      if (mounted3d) { BQ3D.update(state); } else { BQ.render(svg, state, { animate: true }); }
       svg.setAttribute('aria-label', 'Букет: ' + BQ.summary(state));
+      if (canvas3d) { canvas3d.setAttribute('aria-label', 'Букет в 3D: ' + BQ.summary(state)); }
     }
 
     function render() {
@@ -641,7 +682,8 @@
           id: 'bouquet-' + [state.flower, state.count, state.palette, state.pack, state.ribbon].join('-'),
           name: 'Букет по конструктору: ' + title,
           price: price,
-          img: BQ.dataUrl(state, 480),
+          /* снимок объёмного букета; если 3D не поднялся — прежняя векторная картинка */
+          img: (mounted3d ? BQ3D.snapshot(480) : '') || BQ.dataUrl(state, 480),
           note: BQ.summary(state) + ' · ' + occ.title.toLowerCase(),
           bouquet: { flower: state.flower, count: state.count, palette: state.palette, pack: state.pack, ribbon: state.ribbon }
         }, 1);

@@ -65,6 +65,8 @@
   var canvasEl = null, getState = null, raf = 0, key = null;
   var yaw = 0, pitch = 0.20, zoom = 1, dragging = false, lastX = 0, lastY = 0, idle = true, idleTimer = 0;
   var camDist = 5.0, lastW = 0, lastH = 0;
+  var viewTY = 0;                        /* куда смотрит камера: центр букета */
+  var halfH = 1.4, halfW = 1.3, groundY = -1.4;
   var roughTex = null, blobTex = null, floorTex = null;
   var matCache = {}, liveMats = [];
   var geoCache = {};
@@ -350,21 +352,21 @@
     peony: {
       petal: { len: 1.00, width: 1.06, baseW: .34, shoulder: .58, tipPow: .46, cup: .23, dish: .05, bend: -.05, tipCurl: -.16, ruffle: .95, ruffleFreq: 2.6, wave: .55, segU: 9, segV: 7 },
       layers: [
-        { n: 4, p: 14, s: .52, w: .86, ph: 0 },
-        { n: 5, p: 30, s: .60, w: .96, ph: 26 },
-        { n: 6, p: 48, s: .72, w: 1.06, ph: 12 },
-        { n: 5, p: 66, s: .86, w: 1.14, ph: 40 },
-        { n: 6, p: 82, s: .98, w: 1.20, ph: 6 }
+        { n: 4, p: 10, s: .76, w: .84, ph: 0 },
+        { n: 5, p: 26, s: .86, w: .96, ph: 26 },
+        { n: 6, p: 44, s: .92, w: 1.06, ph: 12 },
+        { n: 5, p: 60, s: .96, w: 1.14, ph: 40 },
+        { n: 6, p: 74, s: 1.00, w: 1.20, ph: 6 }
       ],
       core: 'cluster'
     },
     rose: {
       petal: { len: .96, width: .90, baseW: .38, shoulder: .7, tipPow: .95, cup: .34, dish: .02, bend: .07, tipCurl: .13, ruffle: .35, ruffleFreq: 2.1, wave: .35, segU: 9, segV: 7 },
       layers: [
-        { n: 3, p: 11, s: .42, w: .92, ph: 0, spiral: 1 },
-        { n: 4, p: 26, s: .56, w: 1.02, ph: 0, spiral: 1 },
-        { n: 5, p: 44, s: .74, w: 1.26, ph: 0, spiral: 1 },
-        { n: 5, p: 64, s: .90, w: 1.48, ph: 0, spiral: 1 }
+        { n: 3, p: 11, s: .46, w: .92, ph: 0, spiral: 1 },
+        { n: 4, p: 26, s: .60, w: 1.02, ph: 0, spiral: 1 },
+        { n: 5, p: 44, s: .76, w: 1.26, ph: 0, spiral: 1 },
+        { n: 5, p: 62, s: .90, w: 1.48, ph: 0, spiral: 1 }
       ],
       core: 'rose'
     },
@@ -379,89 +381,88 @@
     ranunculus: {
       petal: { len: .86, width: .92, baseW: .34, shoulder: .62, tipPow: .60, cup: .28, dish: .03, bend: .02, tipCurl: .06, ruffle: .42, ruffleFreq: 2.3, wave: .40, segU: 8, segV: 6 },
       layers: [
-        { n: 5, p: 15, s: .40, w: .90, ph: 0 },
-        { n: 6, p: 30, s: .52, w: .96, ph: 18 },
-        { n: 7, p: 44, s: .64, w: 1.00, ph: 34 },
-        { n: 8, p: 58, s: .76, w: 1.04, ph: 8 },
-        { n: 7, p: 73, s: .88, w: 1.08, ph: 46 }
+        { n: 5, p: 13, s: .62, w: .90, ph: 0 },
+        { n: 6, p: 28, s: .72, w: .96, ph: 18 },
+        { n: 7, p: 42, s: .80, w: 1.00, ph: 34 },
+        { n: 8, p: 55, s: .88, w: 1.04, ph: 8 },
+        { n: 7, p: 68, s: .94, w: 1.08, ph: 46 }
       ],
       core: 'dot'
     },
     evas: {
-      petal: { len: .95, width: 1.30, baseW: .40, shoulder: .55, tipPow: .50, cup: .11, dish: .04, bend: -.05, tipCurl: -.10, ruffle: .58, ruffleFreq: 2.4, wave: .48, segU: 9, segV: 7 },
+      petal: { len: .95, width: 1.30, baseW: .40, shoulder: .55, tipPow: .50, cup: .17, dish: .04, bend: -.05, tipCurl: -.10, ruffle: .58, ruffleFreq: 2.4, wave: .48, segU: 9, segV: 7 },
       layers: [
-        { n: 6, p: 78, s: 1.00, w: 1.20, ph: 0 },
-        { n: 5, p: 46, s: .46, w: .86, ph: 30 }
+        { n: 6, p: 72, s: 1.00, w: 1.20, ph: 0 },
+        { n: 5, p: 42, s: .55, w: .86, ph: 30 }
       ],
       core: 'evas'
     }
   };
 
+  /* Середина цветка: она мельче лепестков, но именно она не даёт головке
+     читаться шариком. Держим её отдельной сеткой — у неё свой цвет палитры. */
   function buildCoreGeometry(THREE, kind, rnd) {
     var gb = new GeoBuilder(THREE);
     var m = new THREE.Matrix4();
     var i, a;
-    if (kind === 'cluster') {
-      var ball = new THREE.SphereGeometry(0.115, 14, 10);
-      ball.scale(1, .82, 1);
-      m.identity(); m.setPosition(0, 0.20, 0);
+    if (kind === 'cluster') {                    /* пион: смятая середина в мелких лепестках */
+      var ball = new THREE.SphereGeometry(0.13, 14, 10);
+      ball.scale(1, .78, 1);
+      m.identity(); m.setPosition(0, 0.42, 0);
       gb.add(ball, m);
       ball.dispose();
-      for (i = 0; i < 6; i++) {
-        a = i * 1.05;
-        var bead = new THREE.SphereGeometry(0.034, 8, 6);
-        m.identity(); m.setPosition(Math.cos(a) * 0.10, 0.22 + (i % 2) * 0.04, Math.sin(a) * 0.10);
-        gb.add(bead, m);
+      for (i = 0; i < 7; i++) {
+        a = i * 0.9;
+        var bead = new THREE.SphereGeometry(0.040, 8, 6);
+        m.identity(); m.setPosition(Math.cos(a) * 0.115, 0.45 + (i % 2) * 0.05, Math.sin(a) * 0.115);
+        gb.add(bead, m, [1.18, 1.10, 1.02]);
         bead.dispose();
       }
-    } else if (kind === 'rose') {
-      var bud = new THREE.SphereGeometry(0.10, 14, 10);
+    } else if (kind === 'rose') {                /* роза: плотный свиток в середине */
+      var bud = new THREE.SphereGeometry(0.115, 14, 10);
       bud.scale(1, 1.25, 1);
-      m.identity(); m.setPosition(0, 0.16, 0);
+      m.identity(); m.setPosition(0, 0.26, 0);
       gb.add(bud, m);
       bud.dispose();
-    } else if (kind === 'tulip') {
-      var disc = new THREE.SphereGeometry(0.17, 14, 10);
-      disc.scale(1, .42, 1);
-      m.identity(); m.setPosition(0, 0.16, 0);
+    } else if (kind === 'tulip') {               /* тюльпан: тёмное дно чашки и пыльники */
+      var disc = new THREE.SphereGeometry(0.20, 16, 10);
+      disc.scale(1, .34, 1);
+      m.identity(); m.setPosition(0, 0.30, 0);
       gb.add(disc, m);
       disc.dispose();
       for (i = 0; i < 3; i++) {
         a = i * 2.1 + 0.4;
-        var anther = new THREE.CylinderGeometry(0.014, 0.02, 0.16, 6);
+        var anther = new THREE.CylinderGeometry(0.016, 0.022, 0.20, 6);
         m.identity();
-        m.makeRotationZ((i - 1) * 0.22);
-        m.setPosition(Math.cos(a) * 0.045, 0.30, Math.sin(a) * 0.045);
-        gb.add(anther, m);
+        m.makeRotationZ((i - 1) * 0.26);
+        m.setPosition(Math.cos(a) * 0.05, 0.48, Math.sin(a) * 0.05);
+        gb.add(anther, m, [0.86, 0.82, 0.70]);
         anther.dispose();
       }
-    } else if (kind === 'dot') {
-      var dot = new THREE.SphereGeometry(0.07, 12, 8);
+    } else if (kind === 'dot') {                 /* ранункулюс: мелкая тёмная точка */
+      var dot = new THREE.SphereGeometry(0.085, 12, 8);
       dot.scale(1, .8, 1);
-      m.identity(); m.setPosition(0, 0.15, 0);
+      m.identity(); m.setPosition(0, 0.24, 0);
       gb.add(dot, m);
       dot.dispose();
-    } else { /* evas: пестик и тычинки */
-      var pistil = new THREE.CylinderGeometry(0.035, 0.05, 0.20, 10);
-      m.identity(); m.setPosition(0, 0.16, 0);
+    } else {                                     /* эустома: пестик и тычинки на нитях */
+      var pistil = new THREE.SphereGeometry(0.20, 16, 12);
+      pistil.scale(1, .5, 1);
+      m.identity(); m.setPosition(0, 0.24, 0);
       gb.add(pistil, m);
       pistil.dispose();
-      var head = new THREE.SphereGeometry(0.05, 10, 8);
-      m.identity(); m.setPosition(0, 0.27, 0);
-      gb.add(head, m);
-      head.dispose();
       for (i = 0; i < 7; i++) {
         a = (i / 7) * Math.PI * 2;
-        var fil = new THREE.CylinderGeometry(0.008, 0.010, 0.15, 5);
+        var fil = new THREE.CylinderGeometry(0.009, 0.012, 0.22, 5);
         m.identity();
-        m.makeRotationZ(Math.cos(a) * 0.5);
-        m.multiply(new THREE.Matrix4().makeRotationX(Math.sin(a) * 0.5));
-        m.setPosition(Math.cos(a) * 0.05, 0.19, Math.sin(a) * 0.05);
-        gb.add(fil, m);
+        m.makeRotationZ(Math.cos(a) * 0.55);
+        m.multiply(new THREE.Matrix4().makeRotationX(Math.sin(a) * 0.55));
+        m.setPosition(Math.cos(a) * 0.10, 0.36, Math.sin(a) * 0.10);
+        gb.add(fil, m, [0.95, 0.92, 0.80]);
         fil.dispose();
-        var tip = new THREE.SphereGeometry(0.018, 6, 5);
-        m.identity(); m.setPosition(Math.cos(a) * 0.10, 0.27, Math.sin(a) * 0.10);
-        gb.add(tip, m);
+        var tip = new THREE.SphereGeometry(0.022, 6, 5);
+        m.identity(); m.setPosition(Math.cos(a) * 0.20, 0.47, Math.sin(a) * 0.20);
+        gb.add(tip, m, [1.10, 1.05, 0.90]);
         tip.dispose();
       }
     }
@@ -495,14 +496,21 @@
       }
     }
     petal.dispose();
-    var core = buildCoreGeometry(THREE, cfg.core, rnd);
-    m.identity();
-    gb.add(core, m, [1.35, 1.25, 1.05]);
-    core.dispose();
     var geo = gb.build();
     geo.__keep = true;
     geoCache[key2] = { geo: geo, radius: Math.max(0.5, radius * 1.08) };
     return geoCache[key2];
+  }
+
+  /* Середину цветка собираем один раз на вид: она одинакова у всех головок */
+  function coreGeometry(type, seed) {
+    var k = type + '|core';
+    if (!geoCache[k]) {
+      var g = buildCoreGeometry(THREE, (HEAD[type] || HEAD.peony).core, rng(seed));
+      g.__keep = true;
+      geoCache[k] = g;
+    }
+    return geoCache[k];
   }
 
   /* ============================ раскладка куполом ============================
@@ -628,7 +636,9 @@
       roughnessMap: roughTex, envMapIntensity: .75
     });
     liveMats.push(mat);
+    /* цилиндр отмеряем от середины, поэтому край куля ставим ровно на линию сборки */
     var body = new THREE.Mesh(geo, mat);
+    body.position.y = -ctx.wrapH / 2;
     body.castShadow = true; body.receiveShadow = true;
     g.add(body);
     /* отворот по краю */
@@ -638,7 +648,7 @@
     });
     liveMats.push(foldMat);
     var fold = new THREE.Mesh(foldGeo, foldMat);
-    fold.position.y = ctx.wrapH / 2 - ctx.wrapH * 0.037;
+    fold.position.y = -ctx.wrapH * 0.0375;
     fold.castShadow = true;
     g.add(fold);
     return g;
@@ -655,11 +665,12 @@
     /* лист бумаги заходит вокруг с зазором: thetaLength меньше полного круга */
     var sheetGeo = new THREE.CylinderGeometry(ctx.topR * 1.02, ctx.botR * 1.06, ctx.wrapH, 40, 3, true, 0.45, Math.PI * 1.62);
     var sheet = new THREE.Mesh(sheetGeo, mat);
+    sheet.position.y = -ctx.wrapH / 2;
     sheet.castShadow = true; sheet.receiveShadow = true;
     g.add(sheet);
     var backGeo = new THREE.CylinderGeometry(ctx.topR * 1.10, ctx.botR * 1.18, ctx.wrapH * 0.92, 40, 3, true, Math.PI * 1.18, Math.PI * 1.48);
     var back = new THREE.Mesh(backGeo, mat);
-    back.position.y = ctx.wrapH * 0.03;
+    back.position.y = -ctx.wrapH / 2 + ctx.wrapH * 0.03;
     back.castShadow = true;
     g.add(back);
     /* вторая, более тёмная подложка внутри — край читается слоем */
@@ -669,7 +680,7 @@
     liveMats.push(innerMat);
     var innerGeo = new THREE.CylinderGeometry(ctx.topR * 0.98, ctx.botR * 0.96, ctx.wrapH * 0.97, 40, 2, true);
     var innerMesh = new THREE.Mesh(innerGeo, innerMat);
-    innerMesh.position.y = -ctx.wrapH * 0.015;
+    innerMesh.position.y = -ctx.wrapH / 2 - ctx.wrapH * 0.015;
     g.add(innerMesh);
     return g;
   }
@@ -727,8 +738,8 @@
 
   function buildVase(THREE, ctx, palette, rnd) {
     var g = new THREE.Group();
-    var H = ctx.headR * 5.0;
-    var topR = ctx.headR * 1.55, bellyR = ctx.headR * 2.05, baseR = ctx.headR * 1.35;
+    var H = ctx.headR * 5.4;
+    var topR = ctx.headR * 1.75, bellyR = ctx.headR * 1.95, baseR = ctx.headR * 1.30;
     var pts = vaseProfile(THREE, H, topR, bellyR, baseR);
     var glass = new THREE.MeshPhysicalMaterial({
       color: 0xdfeef0, roughness: .05, metalness: 0, transmission: 1, thickness: .5, ior: 1.5,
@@ -777,16 +788,17 @@
 
   /* ============================ лента и бант ============================ */
 
-  function buildRibbonBand(THREE, y, r, h, mat, segs) {
+  function buildRibbonBand(THREE, y, r, h, mat, segs, square) {
     var geo = new THREE.CylinderGeometry(r, r * 0.995, h, segs || 64, 1, true);
     var band = new THREE.Mesh(geo, mat);
     band.position.y = y;
+    if (square) { band.rotation.y = Math.PI / 4; }   /* на коробке лента тоже четырёхгранная */
     band.castShadow = true;
     return band;
   }
 
   function buildBow(THREE, ribbon, scale, px, py, pz, gb) {
-    var main = lin(ribbon.main), ink = lin(ribbon.ink);
+    var main = lin(ribbon.main);
     var mat = new THREE.MeshPhysicalMaterial({
       color: main, roughness: .42, metalness: 0, side: THREE.DoubleSide,
       sheen: 1.0, sheenColor: new THREE.Color(0xffffff), sheenRoughness: .35, clearcoat: .2, envMapIntensity: 1.1
@@ -807,19 +819,18 @@
     knot.scale.set(1, .9, .72);
     knot.castShadow = true;
     g.add(knot);
-    /* хвосты: две ленты, согнутые по длине */
+    /* хвосты: две ленты, согнутые по длине, кладём в общую геометрию букета */
     var tailO = { len: 1.5, width: .22, baseW: 1.0, shoulder: 1, tipPow: .18, cup: .05, dish: 0, bend: -.16, tipCurl: -.34, ruffle: .10, ruffleFreq: 1.4, wave: .9, segU: 9, segV: 3 };
     var tail = petalGeometry(THREE, tailO);
     var m = new THREE.Matrix4();
     [-1, 1].forEach(function (s) {
       var dir = [s * 0.30, -1, 0.06];
-      placePlane(THREE, m, dir, [0, 0, 1], 0.30 * scale, 0.34 * scale, s * 0.25, s * 0.10 * scale, -0.10 * scale, 0.02 * scale);
-      gb.add(tail, m, main.toArray());
+      placePlane(THREE, m, dir, [0, 0, 1], 0.30 * scale, 0.34 * scale, s * 0.25,
+        px + s * 0.10 * scale, py - 0.10 * scale, pz + 0.02 * scale);
+      gb.add(tail, m);
     });
     tail.dispose();
-    g.add(new THREE.Mesh(new THREE.BufferGeometry(), mat));   /* пустышка не нужна — убираем ниже */
-    g.children.pop();
-    return { group: g, mat: mat, ink: ink };
+    return { group: g, mat: mat };
   }
 
   /* ============================ сборка букета ============================ */
@@ -851,14 +862,8 @@
       mat = new THREE.MeshPhysicalMaterial({ color: c, vertexColors: true, roughness: .6, metalness: 0, side: THREE.DoubleSide, envMapIntensity: .9 });
     }
     mat.__keep = true;
-    liveMats.push(mat);
     matCache[k] = mat;
     return mat;
-  }
-
-  function disposeMats() {
-    for (var i = 0; i < liveMats.length; i++) { if (liveMats[i] && !liveMats[i].__keep) { liveMats[i].dispose(); } }
-    liveMats = [];
   }
 
   function clearGroup(g) {
@@ -879,10 +884,9 @@
     state = state || {};
     clearGroup(piece);
     clearGroup(stage);
-    matCache = {};
-    /* материалы прошлой сборки: кэшированные оставляем, разовые — освобождаем */
+    /* материалы прошлой сборки: кэшированные лежат в matCache, разовые освобождаем */
     for (var mi = 0; mi < liveMats.length; mi++) {
-      if (liveMats[mi] && !liveMats[mi].__keep) { liveMats[mi].dispose(); }
+      if (liveMats[mi]) { liveMats[mi].dispose(); }
     }
     liveMats = [];
 
@@ -896,20 +900,13 @@
     var lay = layout3D(count);
     var headR = lay.headR;
     var head = headGeometry(type, 11 + type.length * 7);
+    var coreGeo = coreGeometry(type, 3 + type.length * 5);
 
-    /* ---- головки ---- */
+    /* ---- головки: лепестки одной сеткой, середина — своей ---- */
     var petalMatBack = materialFor(palette.petal[2], 'petal');
     var petalMatMid = materialFor(palette.petal[1], 'petal');
     var petalMatLight = materialFor(palette.petal[0], 'petal');
     var heartMat = materialFor(palette.heart, 'heart');
-    var coreGeo = null;
-    var coreCacheKey = type + '|core';
-    if (!geoCache[coreCacheKey]) {
-      var cg = buildCoreGeometry(THREE, (HEAD[type] || HEAD.peony).core, rng(seed + 3));
-      cg.__keep = true;
-      geoCache[coreCacheKey] = cg;
-    }
-    coreGeo = geoCache[coreCacheKey];
 
     var i, it;
     for (i = 0; i < lay.items.length; i++) {
@@ -943,11 +940,12 @@
     }
     var topR = Math.max(ringOuter * 0.98, headR * 2.0);
     var botR = topR * 0.38;
-    var wrapH = topR * 1.85;
-    var vaseH = headR * 5.0;
+    var wrapH = topR * 2.5;
+    var vaseH = headR * 5.4;
     var ctx = {
       headR: headR, ringOuter: ringOuter, topR: topR, botR: botR, wrapH: wrapH,
-      vaseTop: headR * 0.50, bindY: 0, waterTop: 0
+      /* у вазы горло ниже линии сборки: головки ложатся на край, стебли уходят в воду */
+      vaseTop: -headR * 0.55, bindY: 0, waterTop: 0
     };
     ctx.bindY = packId === 'vase' ? (ctx.vaseTop - vaseH + vaseH * 0.72 - vaseH * 0.30)
       : -wrapH * 0.42;
@@ -968,7 +966,8 @@
       var to = new THREE.Vector3(bindX, ctx.bindY, bindZ);
       var ctrl;
       if (packId === 'vase') {
-        ctrl = new THREE.Vector3(it.x * 0.72 + bindX * 0.28, it.y * 0.45 + ctx.bindY * 0.55, it.z * 0.72 + bindZ * 0.28);
+        /* в вазе стебли собираются в пучок сразу под головкой, иначе они прошли бы сквозь стекло */
+        ctrl = new THREE.Vector3(it.x * 0.22 + bindX * 0.78, it.y * 0.22 + ctx.bindY * 0.78, it.z * 0.22 + bindZ * 0.78);
       } else {
         ctrl = new THREE.Vector3(bindX + (it.x - bindX) * 0.32, ctx.bindY + (it.y - ctx.bindY) * 0.56, bindZ + (it.z - bindZ) * 0.32);
       }
@@ -990,7 +989,7 @@
     var sprigCount = 3 + (count >= 15 ? 1 : 0) + (count >= 21 ? 1 : 0);
     for (i = 0; i < sprigCount; i++) {
       var sa = (i / sprigCount) * Math.PI * 2 + 0.9;
-      addSprig(gb, palette, rnd, sa, headR * (3.2 + rnd() * 1.1), headR * 1.5);
+      addSprig(gb, palette, rnd, sa, headR * (2.7 + rnd() * 0.9), headR * 1.5);
     }
     var greenMesh = new THREE.Mesh(gb.build(), materialFor('green', 'green'));
     greenMesh.castShadow = true;
@@ -1007,42 +1006,48 @@
       sheen: 1.0, sheenColor: new THREE.Color(0xffffff), sheenRoughness: .35, clearcoat: .2, envMapIntensity: 1.1
     });
     liveMats.push(ribMat);
-    var bowScale = Math.max(0.5, topR * 0.62);
+    var bowScale = Math.max(0.5, topR * 0.78);
+    var bowGeo = new GeoBuilder(THREE);
+    var bow;
     if (packId === 'vase') {
-      var neckY = ctx.vaseTop - vaseH * 0.055;
-      var neckR = headR * 1.62;
-      var band = buildRibbonBand(THREE, neckY, neckR, headR * 0.42, ribMat, 48);
-      piece.add(band);
-      var bowGroup = buildBow(THREE, ribbon, bowScale, neckR * 0.95, neckY + headR * 0.30, 0, new GeoBuilder(THREE));
-      piece.add(bowGroup.group);
+      /* пояс идёт по самому горлу: там ваза уже всего, значит лента ложится на стекло */
+      var neckY = ctx.vaseTop - vaseH * 0.02;
+      var neckR = headR * 1.82;
+      piece.add(buildRibbonBand(THREE, neckY, neckR, headR * 0.42, ribMat, 48));
+      bow = buildBow(THREE, ribbon, bowScale, neckR * 0.30, neckY + headR * 0.30, neckR * 0.98, bowGeo);
+    } else if (packId === 'box') {
+      /* у коробки лента идёт по стенке: пояс четырёхгранный, по грани, а не по кругу */
+      var boxHalf = topR * 1.34;
+      var wallH2 = wrapH * 0.88;
+      var boxBandY = wrapH * 0.02 - wallH2 * 0.46;
+      piece.add(buildRibbonBand(THREE, boxBandY, boxHalf * 1.05, headR * 0.46, ribMat, 4, true));
+      bow = buildBow(THREE, ribbon, bowScale, 0, boxBandY + headR * 0.16, boxHalf * 0.76, bowGeo);
     } else {
       var bandY = ctx.bindY + wrapH * 0.05;
-      var bandR = coneRadius(topR, botR, bandY, wrapH) * (packId === 'box' ? 1.02 : 1.012);
+      var bandR = coneRadius(topR, botR, bandY, wrapH) * 1.012;
       piece.add(buildRibbonBand(THREE, bandY, bandR, headR * 0.46, ribMat, 64));
-      var bg2 = new GeoBuilder(THREE);
-      var bow2 = buildBow(THREE, ribbon, bowScale, 0, bandY + headR * 0.10, bandR * 0.99, bg2);
-      piece.add(bow2.group);
-      var tailMesh = new THREE.Mesh(bg2.build(), materialFor(ribbon.main, 'ribbon'));
-      tailMesh.castShadow = true;
-      piece.add(tailMesh);
+      bow = buildBow(THREE, ribbon, bowScale, 0, bandY + headR * 0.14, bandR * 0.99, bowGeo);
     }
+    piece.add(bow.group);
+    var tails = new THREE.Mesh(bowGeo.build(), materialFor(ribbon.main, 'ribbon'));
+    tails.castShadow = true;
+    piece.add(tails);
 
     /* ---- ставим букет по центру и подбираем кадр ---- */
+    var keepRot = group ? group.rotation.y : 0;
+    if (group) { group.rotation.y = 0; }            /* габарит считаем без поворота */
     piece.position.set(0, 0, 0);
     piece.updateMatrixWorld(true);
-    var box = new THREE.Box3().setFromObject(piece);
-    var minY = box.min.y, maxY2 = box.max.y;
-    var halfH = Math.max(0.8, (maxY2 - minY) / 2);
-    var halfW = Math.max(box.max.x, box.max.z, -box.min.x, -box.min.z);
+    var bbox = new THREE.Box3().setFromObject(piece);
+    var minY = bbox.min.y, maxY2 = bbox.max.y;
+    halfH = Math.max(0.8, (maxY2 - minY) / 2);
+    halfW = Math.max(bbox.max.x, bbox.max.z, -bbox.min.x, -bbox.min.z);
     piece.position.y = -(minY + maxY2) / 2;
-
-    var aspect = lastW && lastH ? lastW / lastH : 620 / 700;
-    var tanV = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-    var need = Math.max(halfH / tanV, halfW / (tanV * aspect));
-    camDist = (need * 1.14) / zoom;
+    groundY = minY + piece.position.y;
+    if (group) { group.rotation.y = keepRot; }
+    fitCamera();
 
     /* ---- пол и мягкая тень ---- */
-    var groundY = minY + piece.position.y;
     var floorSize = Math.max(4.0, halfW * 5.2);
     var floor = new THREE.Mesh(
       new THREE.PlaneGeometry(floorSize, floorSize),
@@ -1075,12 +1080,22 @@
 
   /* ============================ кадр ============================ */
 
+  /* Дистанцию считаем от габарита букета и пропорции холста:
+     букет высокий, поэтому по высоте он и упирается в кадр */
+  function fitCamera() {
+    if (!camera || !THREE) { return; }
+    var aspect = (lastW && lastH) ? lastW / lastH : 620 / 700;
+    var tanV = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+    var need = Math.max(halfH / tanV, halfW / (tanV * aspect));
+    camDist = (need * 1.14) / zoom;
+  }
+
   function render() {
     if (!running) { return; }
     if (idle && !dragging && group) { group.rotation.y += 0.0030; }
     var cp = Math.cos(pitch), sp = Math.sin(pitch);
     camera.position.set(Math.sin(yaw) * cp * camDist, sp * camDist + camDist * 0.06, Math.cos(yaw) * cp * camDist);
-    camera.lookAt(0, 0, 0);
+    camera.lookAt(0, viewTY, 0);
     renderer.render(scene, camera);
     raf = requestAnimationFrame(render);
   }
@@ -1096,7 +1111,7 @@
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
-    if (piece && getState) { rebuild(getState()); }
+    fitCamera();
   }
 
   function bind() {
@@ -1295,7 +1310,41 @@
       rowsFor: rowsFor,
       layout3D: layout3D,
       vaseProfile: function (H, t, b, base) { return vaseProfile(THREE, H, t, b, base); },
-      GeoBuilder: function () { return new GeoBuilder(THREE); }
+      GeoBuilder: function () { return new GeoBuilder(THREE); },
+      /* Полная сборка букета без рендера: сцены хватает, чтобы проверить,
+         что упаковка, стебли, зелень и лента собираются и ничего не роняют. */
+      rebuildWith: function (mod, deps, state) {
+        THREE = mod;
+        group = deps.group; piece = deps.piece; stage = deps.stage;
+        camera = deps.camera; key = deps.key;
+        roughTex = deps.roughTex; blobTex = deps.blobTex; floorTex = deps.floorTex;
+        lastW = deps.w || 620; lastH = deps.h || 700;
+        return rebuild(state);
+      },
+      stats: function () {
+        var meshes = 0, tris = 0;
+        if (piece) {
+          piece.traverse(function (n) {
+            if (n.isMesh) {
+              meshes++;
+              var g = n.geometry;
+              tris += (g.index ? g.index.count : g.attributes.position.count) / 3;
+            }
+          });
+        }
+        return { meshes: meshes, tris: Math.round(tris), camDist: camDist, halfH: halfH, halfW: halfW, groundY: groundY };
+      },
+      /* Ручка камеры: в обычной работе не нужна, ею рассматривают головку вблизи.
+         viewTY — точка, на которую смотрит камера (0 — центр букета). */
+      view: function (v) {
+        if (!v) { return { yaw: yaw, pitch: pitch, zoom: zoom, viewTY: viewTY, camDist: camDist }; }
+        if (typeof v.yaw === 'number') { yaw = v.yaw; }
+        if (typeof v.pitch === 'number') { pitch = v.pitch; }
+        if (typeof v.zoom === 'number') { zoom = v.zoom; }
+        if (typeof v.viewTY === 'number') { viewTY = v.viewTY; }
+        fitCamera();
+        return { yaw: yaw, pitch: pitch, zoom: zoom, viewTY: viewTY, camDist: camDist };
+      }
     };
   }
 

@@ -157,6 +157,9 @@
         <div class="builder__stage">
           <svg id="bouquet" class="bouquet" viewBox="0 0 600 660" role="img"
                aria-label="Букет, который вы собираете"><title>Ваш букет</title></svg>
+          <canvas id="bouquet3d" class="bouquet bouquet--3d" width="620" height="700" hidden
+                  aria-label="Букет в 3D: потяните, чтобы повернуть"></canvas>
+          <p class="builder__hint" id="builder-3d-hint" hidden>Настоящий объём: потяните букет, чтобы повернуть, и покрутите колесо для приближения.</p>
           <p class="builder__stage-note" id="builder-stage-note">Пятнадцать пионов, пудровая палитра, крафт и кремовая лента.</p>
         </div>
 
@@ -440,6 +443,7 @@
 
 <script src="assets/data.js"></script>
 <script src="assets/bouquet.js"></script>
+<script src="assets/bouquet3d.js"></script>
 <script src="assets/app.js"></script>
 <script src="assets/motion.js"></script>
 </body>

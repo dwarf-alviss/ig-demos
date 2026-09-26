@@ -104,7 +104,11 @@
   var shadowTex = null, sliceTex = null, printTex = null;
   var topTier = null, lookNow = LOOKS.vanilla, builtKey = '';
   var bound = false, running = false, lastW = 0, lastH = 0;
-  var FRAME = { w: 1.6, h: 0.9 };   /* полуширина и полувысота сцены, в единицах */
+  var calm = false;                 /* «меньше движения»: торт не крутится сам */
+  try { calm = !!(root.matchMedia && root.matchMedia('(prefers-reduced-motion: reduce)').matches); } catch (e) {}
+  /* кадр: pts — пары (высота, радиус) по вершинам торта, rh/top/bot — те же
+     габариты покрупнее, для кадра теневой карты */
+  var FRAME = { pts: [[-0.9, 1.4], [0.9, 1.4]], rh: 1.4, top: 0.9, bot: 0.9 };
 
   /* ---------- текстуры ---------- */
 
@@ -538,15 +542,54 @@
     decorRoot = buildDecor(state, topTier, look);
     g.add(decorRoot);
 
-    return {
-      group: g,
-      topY: topY,
-      maxR: maxR,
-      reach: Math.max(sliceReach(off, sr, WEDGE), boardR)
-    };
+    return { group: g, reach: Math.max(sliceReach(off, sr, WEDGE), boardR) };
   }
 
   /* ---------- сборка ---------- */
+
+  /* Кадр считаем по самим вершинам торта, а не по коробке: коробка врут
+     в диагонали и торт получается вдвое мельче, чем может быть.
+     Из всех вершин оставляем пары (высота, радиус от оси) — по самой широкой
+     и самой узкой вершине в каждой полосе по высоте. Этого хватает, чтобы
+     посчитать кадр точно и для любого наклона камеры */
+  var BINS = 24;
+
+  function frameOf(obj) {
+    obj.updateWorldMatrix(false, true);
+    var v = new THREE.Vector3();
+    var ys = [], rs = [], i, k, r;
+    obj.traverse(function (n) {
+      if (!n.isMesh || !n.geometry) return;
+      var pos = n.geometry.attributes.position;
+      if (!pos) return;
+      for (k = 0; k < pos.count; k++) {
+        v.fromBufferAttribute(pos, k).applyMatrix4(n.matrixWorld);
+        ys.push(v.y);
+        rs.push(Math.sqrt(v.x * v.x + v.z * v.z));
+      }
+    });
+    if (!ys.length) return null;
+    var yMin = ys[0], yMax = ys[0], maxR = rs[0];
+    for (i = 0; i < ys.length; i++) {
+      if (ys[i] < yMin) yMin = ys[i];
+      if (ys[i] > yMax) yMax = ys[i];
+      if (rs[i] > maxR) maxR = rs[i];
+    }
+    var yc = (yMin + yMax) / 2;
+    var span = Math.max(yMax - yMin, 1e-6);
+    var wide = new Array(BINS), narrow = new Array(BINS);
+    for (i = 0; i < ys.length; i++) {
+      var b = Math.min(BINS - 1, Math.floor((ys[i] - yMin) / span * BINS));
+      if (!wide[b] || rs[i] > wide[b][1]) wide[b] = [ys[i] - yc, rs[i]];
+      if (!narrow[b] || rs[i] < narrow[b][1]) narrow[b] = [ys[i] - yc, rs[i]];
+    }
+    var pts = [];
+    for (i = 0; i < BINS; i++) {
+      if (wide[i]) pts.push(wide[i]);
+      if (narrow[i]) pts.push(narrow[i]);
+    }
+    return { pts: pts, maxR: maxR, yc: yc, top: yMax - yc, bot: yc - yMin };
+  }
 
   function rebuild(state) {
     if (!THREE || !group) return;
@@ -561,6 +604,9 @@
 
     var built = buildCake(state);
     pieceRoot = built.group;
+    /* габариты снимаем ДО того, как торт попал в группу: иначе в них
+       подмешается прошлый сдвиг группы и кадр уедет с каждым пересбором */
+    var fr = frameOf(pieceRoot);
     group.add(pieceRoot);
 
     /* пол: одна большая плоскость — её края всегда за кадром.
@@ -608,14 +654,18 @@
     mirrorGroup.add(copy);
     group.add(mirrorGroup);
 
-    /* кадр: считаем по габаритам торта вместе с ломтиком */
-    group.position.y = -built.topY / 2;
-    FRAME.w = Math.max(built.reach, built.maxR + 0.3, 0.9) * 1.04;
-    FRAME.h = Math.max(built.topY / 2, 0.45);
-    applyCamera();
+    /* кадр: настоящие габариты торта вместе с декором и ломтиком */
+    if (fr) {
+      FRAME.pts = fr.pts;
+      FRAME.rh = fr.maxR;
+      FRAME.top = Math.max(fr.top, 0.4);
+      FRAME.bot = Math.max(fr.bot, 0.4);
+      group.position.y = -fr.yc;      /* центр вращения — середина торта */
+      applyCamera();
+    }
 
     if (key) {
-      var fit = Math.max(FRAME.w, FRAME.h) * 1.8;
+      var fit = Math.max(FRAME.rh, FRAME.top, FRAME.bot) * 1.8;
       key.position.set(fit * 0.55, fit * 1.9, fit * 1.1);
       var sc = key.shadow.camera;
       sc.left = -fit; sc.right = fit; sc.top = fit; sc.bottom = -fit;
@@ -629,10 +679,11 @@
     if (!decorRoot || !decorRoot.parent || !topTier) return false;
     var body = weightOf(state) + '|' + flavorIdOf(state);
     if (body !== builtKey) return false;
-    decorRoot.parent.remove(decorRoot);
+    var host = decorRoot.parent;
+    host.remove(decorRoot);
     disposeTree(decorRoot);
     decorRoot = buildDecor(state, topTier, lookNow);
-    decorRoot.parent.add(decorRoot);
+    host.add(decorRoot);
     return true;
   }
 
@@ -653,15 +704,30 @@
   /* ---------- кадр ---------- */
 
   function applyCamera() {
-    var tan = Math.tan((camera.fov * Math.PI / 180) / 2);
+    var tanY = Math.tan((camera.fov * Math.PI / 180) / 2);
     var aspect = camera.aspect || 1.22;
-    var need = Math.max(FRAME.w / (tan * aspect), FRAME.h / tan);
-    camDist = need * 1.08 / zoom;
+    var tanX = tanY * aspect;
+    var sp = Math.sin(pitch), cp = Math.cos(pitch);
+    var C = Math.sqrt(1 / (tanX * tanX) + cp * cp);
+    /* торт крутится вокруг вертикальной оси, поэтому для каждой точки габарита
+       берём худший азимут: точка может быть и широкой, и ближней — перспектива
+       раздувает её сильнее, чем следует из одного радиуса */
+    var need = 0.4, pts = FRAME.pts, i, y, r, f;
+    for (i = 0; i < pts.length; i++) {
+      y = pts[i][0]; r = pts[i][1];
+      f = sp * y + C * r;
+      if (f > need) need = f;
+      f = Math.abs(cp * y - sp * r) / tanY + sp * y + cp * r;
+      if (f > need) need = f;
+      f = Math.abs(cp * y + sp * r) / tanY + sp * y - cp * r;
+      if (f > need) need = f;
+    }
+    camDist = need * 1.02 / zoom;
   }
 
   function render() {
     if (!running) return;
-    if (idle && !dragging) group.rotation.y += 0.0032;          /* торт сам поворачивается на столе */
+    if (idle && !dragging && !calm) group.rotation.y += 0.0032;   /* торт сам поворачивается на столе */
     var cp = Math.cos(pitch), sp = Math.sin(pitch);
     camera.position.set(Math.sin(yaw) * cp * camDist, sp * camDist + 0.12, Math.cos(yaw) * cp * camDist);
     camera.lookAt(0, 0, 0);
@@ -703,6 +769,7 @@
       group.rotation.y -= (e.clientX - lastX) * 0.008;
       pitch = Math.max(-0.12, Math.min(0.9, pitch + (e.clientY - lastY) * 0.006));
       lastX = e.clientX; lastY = e.clientY;
+      applyCamera();                       /* наклон меняет кадр — держим торт целиком */
     });
     canvasEl.addEventListener('wheel', function (e) {
       e.preventDefault();

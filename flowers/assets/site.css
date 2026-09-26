@@ -194,6 +194,29 @@ body.nav-open { overflow: hidden; }
   .bouquet .bq-bloom, .bouquet .bq-greenery { animation: none; }
 }
 
+/* --- объёмный букет: тот же холст, только настоящая 3D-модель --- */
+.bouquet--3d {
+  display: block;
+  /* Ширину ограничиваем по всем трём осям сразу: колонка, 560px и высота экрана.
+     Высоту выводим из пропорции холста 620×700 и снимаем max-height —
+     если клампить высоту при заданной ширине, картинка сплющится. */
+  width: min(100%, 560px, calc(64vh * 620 / 700));
+  height: auto;
+  aspect-ratio: 620 / 700;
+  max-height: none;
+  margin-inline: auto;
+  touch-action: pan-y;
+  cursor: grab;
+  border-radius: 14px;
+}
+.bouquet--3d:active { cursor: grabbing; }
+.builder__hint {
+  margin: .7rem auto 0; max-width: 46ch; text-align: center;
+  font-size: var(--step--1); line-height: 1.5; color: var(--muted);
+}
+/* у canvas и абзаца свой display, поэтому hidden сам по себе их не спрячет */
+.bouquet--3d[hidden], .builder__hint[hidden] { display: none !important; }
+
 .builder__controls { display: grid; gap: clamp(1.05rem, 2.4vw, 1.6rem); }
 .builder__legend {
   display: flex; align-items: baseline; flex-wrap: wrap; gap: .55rem; width: 100%;

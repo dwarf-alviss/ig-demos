@@ -414,17 +414,17 @@
     group.add(mirrorGroup);
 
     /* кадр под размер изделия */
-    /* Габариты изделия вместе с полом: кадр должен вмещать вещь целиком */
+    /* Кадр по крайним точкам изделия и пола: ничего не обрезается */
     var box = new THREE.Box3().setFromObject(pieceRoot);
     var size = box.getSize(new THREE.Vector3());
-    var center = box.getCenter(new THREE.Vector3());
-    center.y = Math.min(center.y, (center.y + groundY) / 2 + 0.1);   /* чуть опускаем: пол в кадре */
-    camTarget = center;
-    var halfW = Math.max(size.x, size.z) * 0.5;
-    var halfH = Math.max(size.y, Math.abs(center.y - groundY)) * 0.5;
+    var top = box.max.y;
+    var bottom = Math.min(box.min.y, groundY);
+    camTarget = new THREE.Vector3(0, (top + bottom) / 2, 0);
+    var halfH = Math.max(0.2, (top - bottom) / 2);
+    var halfW = Math.max(0.2, Math.max(size.x, size.z) / 2);
     var vFov = camera.fov * Math.PI / 180;
-    var needH = (Math.max(halfH, halfW * 0.72) * 1.35) / Math.tan(vFov / 2);
-    var needW = (halfW * 1.35) / (Math.tan(vFov / 2) * camera.aspect);
+    var needH = (halfH * 1.25) / Math.tan(vFov / 2);
+    var needW = (halfW * 1.25) / (Math.tan(vFov / 2) * camera.aspect);
     camDist = Math.max(needH, needW, 1.6) / zoom;
     if (key) {
       var lightFit = Math.max(2.2, camDist * 0.8);
