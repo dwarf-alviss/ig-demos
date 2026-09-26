@@ -591,19 +591,19 @@
   function addSprig(gb, palette, rnd, a, len, scale) {
     var ox = Math.cos(a), oz = Math.sin(a);
     var s = new THREE.Vector3(ox * 0.42, -0.14, oz * 0.42);
-    var c = new THREE.Vector3(ox * (0.42 + len * 0.34), len * 0.40, oz * (0.42 + len * 0.34));
-    var e = new THREE.Vector3(ox * (0.42 + len * 0.66), len * 0.86, oz * (0.42 + len * 0.66));
+    var c = new THREE.Vector3(ox * (0.42 + len * 0.20), len * 0.42, oz * (0.42 + len * 0.20));
+    var e = new THREE.Vector3(ox * (0.42 + len * 0.38), len * 1.02, oz * (0.42 + len * 0.38));
     var curve = new THREE.CatmullRomCurve3([s, c, e]);
     addTube(gb, curve, 0.016 * scale, 12, lin(palette.leaf).toArray());
     var m = new THREE.Matrix4();
     var deep = lin(palette.leaf).toArray(), pale = lin(palette.leaf2).toArray();
     var leaf = petalGeometry(THREE, SPRIG_LEAF);
-    for (var i = 1; i <= 8; i++) {
-      var t = i / 9.4;
+    for (var i = 1; i <= 6; i++) {
+      var t = i / 7.4;
       var pt = curve.getPointAt(t);
       var side = (i % 2 ? 1 : -1);
       var dir = [pt.x + side * 0.30, 0.30 + (rnd() - 0.5) * 0.3, pt.z + side * 0.18];
-      var sc = (0.62 + rnd() * 0.35) * scale * (1 - t * 0.25);
+      var sc = (0.46 + rnd() * 0.28) * scale * (1 - t * 0.25);
       placePlane(THREE, m, dir, [0, 1, 0], sc, sc, (rnd() - 0.5) * 0.8, pt.x, pt.y, pt.z);
       gb.add(leaf, m, i % 2 ? pale : deep);
     }
@@ -980,16 +980,16 @@
     for (i = 0; i < 6; i++) {
       var la = (i / 6) * Math.PI * 2 + 0.4;
       var lx = Math.cos(la) * rimR, lz = Math.sin(la) * rimR;
-      var dir = [Math.cos(la), 0.34 + (rnd() - 0.5) * 0.3, Math.sin(la)];
-      var ls = headR * (1.5 + rnd() * 0.5);
-      placePlane(THREE, m, dir, [0, 1, 0], ls * 0.9, ls, (rnd() - 0.5) * 0.9, lx, -headR * 0.15 + (rnd() - 0.5) * 0.1, lz);
+      var dir = [Math.cos(la), 0.62 + (rnd() - 0.5) * 0.3, Math.sin(la)];
+      var ls = headR * (1.05 + rnd() * 0.3);
+      placePlane(THREE, m, dir, [0, 1, 0], ls * 0.85, ls, (rnd() - 0.5) * 0.7, lx * 0.92, headR * 0.05 + (rnd() - 0.5) * 0.1, lz * 0.92);
       gb.add(leafGeo, m, i % 2 ? pale : deep);
     }
     leafGeo.dispose();
     var sprigCount = 3 + (count >= 15 ? 1 : 0) + (count >= 21 ? 1 : 0);
     for (i = 0; i < sprigCount; i++) {
       var sa = (i / sprigCount) * Math.PI * 2 + 0.9;
-      addSprig(gb, palette, rnd, sa, headR * (2.7 + rnd() * 0.9), headR * 1.5);
+      addSprig(gb, palette, rnd, sa, headR * (1.45 + rnd() * 0.35), headR * 0.9);
     }
     var greenMesh = new THREE.Mesh(gb.build(), materialFor('green', 'green'));
     greenMesh.castShadow = true;

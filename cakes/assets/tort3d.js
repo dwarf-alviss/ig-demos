@@ -263,24 +263,27 @@
     return sh;
   }
 
-  /* кремовая розетка: ядро и два кольца лепестков — как три кольца в tort.js */
+  /* кремовая розетка: ядро и три кольца лепестков — как кольца в tort.js */
   function rosette(R, mat, petalGeo) {
     var g = new THREE.Group();
-    var core = new THREE.Mesh(new THREE.SphereGeometry(R, 18, 12), mat);
-    core.scale.set(1, .6, 1);
+    var core = new THREE.Mesh(new THREE.SphereGeometry(R * .42, 16, 12), mat);
+    core.scale.set(1, .58, 1);
+    core.position.y = R * .18;
     core.castShadow = true;
     g.add(core);
     var rings = [
-      { n: 6, rad: R * .84, pr: R * .5 },
-      { n: 4, rad: R * .5, pr: R * .34 }
+      { n: 7, rad: R * .74, pr: R * .46, y: R * .03, tilt: .24 },
+      { n: 5, rad: R * .46, pr: R * .34, y: R * .13, tilt: .44 },
+      { n: 3, rad: R * .22, pr: R * .25, y: R * .2, tilt: .68 }
     ];
     rings.forEach(function (ring, ri) {
       for (var i = 0; i < ring.n; i++) {
-        var a = (i / ring.n) * TAU + ri * 0.6;
+        var a = (i / ring.n) * TAU + ri * 0.55;
         var m = new THREE.Mesh(petalGeo, mat);
-        m.position.set(Math.cos(a) * ring.rad, R * .1 - ri * R * .05, Math.sin(a) * ring.rad);
-        m.scale.set(ring.pr, ring.pr * .78, ring.pr * .55);
-        m.rotation.y = -a;
+        m.position.set(Math.cos(a) * ring.rad, ring.y, Math.sin(a) * ring.rad);
+        m.scale.set(ring.pr, ring.pr * .52, ring.pr * .78);
+        m.rotation.order = 'YXZ';
+        m.rotation.set(ring.tilt, -a, 0);
         m.castShadow = true;
         g.add(m);
       }
@@ -309,12 +312,18 @@
         ro.position.set(Math.sin(a) * R * 0.6, y + R * 0.01, Math.cos(a) * R * 0.6);
         g.add(ro);
       }
-      /* две розы на боку яруса, как в векторе */
+      /* две розы на боку яруса: стоят на самой поверхности и смотрят наружу */
       [[-0.95, .44], [-1.35, .72]].forEach(function (sd, k) {
-        var side = rosette(R * (k ? 0.15 : 0.17), roseMat, petalGeo);
-        side.position.set(Math.sin(sd[0]) * (R + R * 0.1), tier.y0 + h * sd[1], Math.cos(sd[0]) * (R + R * 0.1));
-        side.rotation.z = Math.PI / 2 * 0.92;
-        g.add(side);
+        var a2 = sd[0];
+        var nx = Math.sin(a2), nz = Math.cos(a2);
+        var pivot = new THREE.Group();
+        pivot.position.set(nx * R * 0.99, tier.y0 + h * sd[1], nz * R * 0.99);
+        pivot.lookAt(pivot.position.x + nx, pivot.position.y, pivot.position.z + nz);
+        var side = rosette(R * (k ? 0.16 : 0.18), roseMat, petalGeo);
+        side.rotation.x = Math.PI / 2;
+        side.position.z = R * 0.06;
+        pivot.add(side);
+        g.add(pivot);
       });
 
     } else if (id === 'berries') {
@@ -533,9 +542,14 @@
       face.position.set(Math.sin(a) * sr / 2, sh / 2, Math.cos(a) * sr / 2);
       slice.add(face);
     });
-    slice.position.set(off, 0, 0);
-    slice.rotation.y = -0.16;
-    g.add(slice);
+    /* ломтик лежит на столе срезом вверх: так видно слои, а не торец */
+    slice.rotation.set(Math.PI / 2 - 0.22, 0, 0);
+    slice.position.y = sr * 0.98;
+    var sliceWrap = new THREE.Group();
+    sliceWrap.position.set(off + sh * 0.5, 0, 0);
+    sliceWrap.rotation.y = -Math.PI / 2 - 0.2;
+    sliceWrap.add(slice);
+    g.add(sliceWrap);
 
     /* декор — на верхнем ярусе */
     topTier = tops[tops.length - 1];
