@@ -204,8 +204,8 @@ new THREE.TextureLoader().load('./assets/vendor/studio-env.jpg', (tex) => {
 }, undefined, () => { /* нет файла — остаётся процедурная */ });
 
 /* свет: одна жёсткая лампа с тенью и мягкая заливка */
-const key = new THREE.DirectionalLight(0xfff4e2, 2.1);
-key.position.set(2.4, 3.6, 3.2);
+const key = new THREE.DirectionalLight(0xfff4e2, 3.1);
+key.position.set(1.6, 4.6, 2.4);
 key.castShadow = true;
 key.shadow.mapSize.set(1024, 1024);
 key.shadow.radius = 6;
@@ -324,11 +324,13 @@ function drawPlate(text) {
   plateCtx.fillRect(0, 0, w, h);
   plateCtx.fillStyle = 'rgba(0,0,0,.35)';
   plateCtx.fillRect(0, 0, w, 8); plateCtx.fillRect(0, h - 8, w, 8);
-  plateCtx.fillStyle = '#fff8e8';
   plateCtx.textAlign = 'center';
   plateCtx.textBaseline = 'middle';
   const size = Math.max(46, Math.min(96, 620 / Math.max(4, text.length)));
   plateCtx.font = '600 ' + size + 'px Georgia, "Times New Roman", serif';
+  plateCtx.fillStyle = 'rgba(0,0,0,.55)';          /* тень в углублении */
+  plateCtx.fillText(text, w / 2, h / 2 + 6);
+  plateCtx.fillStyle = '#fff8e8';                   /* светлая кромка буквы */
   plateCtx.fillText(text, w / 2, h / 2 + 4);
   plateTex.needsUpdate = true;
 }
@@ -347,10 +349,11 @@ const shadowTex = (() => {
 })();
 const blob = new THREE.Mesh(
   new THREE.PlaneGeometry(2.9, 1.1),
-  new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, opacity: .85, depthWrite: false })
+  new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, opacity: .95, depthWrite: false })
 );
 blob.rotation.x = -Math.PI / 2;
-blob.position.set(0, -BAND_R - 0.42, 0.1);
+blob.renderOrder = 2;
+blob.position.set(0, -BAND_R - 0.43, 0.1);
 group.add(blob);
 
 /* контактная тень под камнем: без неё камень «висит» над кастом */
@@ -362,6 +365,42 @@ contact.rotation.x = -Math.PI / 2;
 contact.position.y = -0.045;
 seat.add(contact);
 
+
+/* отражение на полу: копия изделия вниз зеркалом, приглушённая */
+const mirrorGroup = new THREE.Group();
+mirrorGroup.scale.set(1, -1, 1);
+mirrorGroup.position.y = -BAND_R - 0.44;
+mirrorGroup.visible = false;
+group.add(mirrorGroup);
+const floor = new THREE.Mesh(
+  new THREE.PlaneGeometry(7, 4),
+  new THREE.MeshPhysicalMaterial({ color: 0x0d0b0a, metalness: .55, roughness: .32, transparent: true, opacity: .92 })
+);
+floor.rotation.x = -Math.PI / 2;
+floor.position.y = -BAND_R - 0.44;
+floor.receiveShadow = true;
+group.add(floor);
+
+function buildMirror() {
+  mirrorGroup.clear();
+  group.children.forEach((child) => {
+    if (child === mirrorGroup || child === floor || child === blob) return;
+    if (!child.isMesh && !child.isGroup) return;
+    const copy = child.clone(true);
+    copy.traverse((n) => {
+      if (n.isMesh) {
+        n.material = n.material.clone();
+        n.material.transparent = true;
+        n.material.opacity = 0.16;
+        n.material.depthWrite = false;
+        n.castShadow = false;
+        n.receiveShadow = false;
+      }
+    });
+    mirrorGroup.add(copy);
+  });
+  mirrorGroup.visible = true;
+}
 
 /* ---------- материалы под металл ---------- */
 function applyMetal() {
@@ -387,6 +426,7 @@ function redraw() {
   applySize();
   plateMesh.visible = !!state.graving;
   drawPlate(state.graving);
+  buildMirror();
   updatePanel();
 }
 
@@ -431,6 +471,7 @@ gravInput.addEventListener('input', () => {
   if (gravInput.value !== state.graving) gravInput.value = state.graving;
   plateMesh.visible = !!state.graving;
   drawPlate(state.graving);
+  buildMirror();
   updatePanel();
 });
 
