@@ -115,6 +115,167 @@
     try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* приватный режим */ }
   }
 
+  /* ---------- снимки конструктора: не base64 в localStorage ---------- */
+  /* JPEG-кадр из 3D весит десятки килобайт: в строке корзины вместо base64
+     остаётся ключ «idb:…», а сам блоб лежит в IndexedDB. Если база не поднялась
+     (редкий приватный режим), работаем по-старому — data-URL. */
+  var PHOTOS_DB = 'igdemo_cakes_photos_v1';
+  var PHOTOS_STORE = 'shots';
+  var photoURLs = [];
+
+  function idbOpen() {
+    return new Promise(function (resolve) {
+      var req;
+      try {
+        if (!rootIndexedDB()) return resolve(null);
+        req = indexedDB.open(PHOTOS_DB, 1);
+      } catch (e) { return resolve(null); }
+      req.onupgradeneeded = function () { req.result.createObjectStore(PHOTOS_STORE); };
+      req.onsuccess = function () { resolve(req.result); };
+      req.onerror = function () { resolve(null); };
+      req.onblocked = function () { resolve(null); };
+    });
+  }
+  function rootIndexedDB() {
+    try { return typeof indexedDB !== 'undefined' && indexedDB ? indexedDB : null; }
+    catch (e) { return null; }
+  }
+  function idbRun(mode, fn) {
+    return idbOpen().then(function (db) {
+      if (!db) throw new Error('no idb');
+      return new Promise(function (resolve, reject) {
+        var tx = db.transaction(PHOTOS_STORE, mode);
+        var req = fn(tx.objectStore(PHOTOS_STORE));
+        req.onsuccess = function () { resolve(req.result); };
+        req.onerror = function () { reject(req.error); };
+      });
+    });
+  }
+  function idbSave(key, blob) { return idbRun('readwrite', function (s) { return s.put(blob, key); }); }
+  function idbGet(key) {
+    return idbRun('readonly', function (s) { return s.get(key); }).catch(function () { return null; });
+  }
+  function idbDelete(key) {
+    return idbRun('readwrite', function (s) { return s.delete(key); }).catch(function () { /* тихо */ });
+  }
+  function photoKey() { return 's' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+  function isPhotoRef(v) { return typeof v === 'string' && v.indexOf('idb:') === 0; }
+
+  function dataURLtoBlob(dataUrl) {
+    try {
+      var parts = dataUrl.split(',');
+      var mime = ((parts[0].match(/data:(.*?)[;,]/i) || [])[1] || 'image/jpeg');
+      var bin = atob(parts[1]);
+      var len = bin.length;
+      var arr = new Uint8Array(len);
+      for (var i = 0; i < len; i++) arr[i] = bin.charCodeAt(i);
+      return new Blob([arr], { type: mime });
+    } catch (e) { return null; }
+  }
+
+  /* data-URL → ключ в IndexedDB (или тот же data-URL, если база не поднялась) */
+  function saveSnapshot(dataUrl) {
+    if (!dataUrl || dataUrl.slice(0, 5) !== 'data:') return Promise.resolve(dataUrl);
+    return idbOpen().then(function (db) {
+      if (!db) return dataUrl;
+      var blob = dataURLtoBlob(dataUrl);
+      if (!blob) return dataUrl;
+      var key = photoKey();
+      return idbSave(key, blob).then(function () { return 'idb:' + key; }).catch(function () { return dataUrl; });
+    }, function () { return dataUrl; });
+  }
+
+  /* подсветка снимков в списке: прячем objectURL только на свой пересбор */
+  function photoSrc(l) {
+    return isPhotoRef(l.img) ? '' : (l.img || 'assets/img/hero.jpg');
+  }
+  function revokePhotoURLs() {
+    photoURLs.forEach(function (u) { try { URL.revokeObjectURL(u); } catch (e) {} });
+    photoURLs.length = 0;
+  }
+  function hydratePhotos(rootEl) {
+    revokePhotoURLs();
+    if (!rootEl) return;
+    $$('img[data-photo]', rootEl).forEach(function (img) {
+      var ref = img.getAttribute('data-photo') || '';
+      if (!isPhotoRef(ref)) return;
+      idbGet(ref.slice(4)).then(function (blob) {
+        if (!blob) return;
+        var url = URL.createObjectURL(blob);
+        photoURLs.push(url);
+        img.src = url;
+      }).catch(function () { /* остаётся запасная картинка */ });
+    });
+  }
+  /* снимки строк, которые уходят из корзины (удаление, оформленный заказ) */
+  function dropSnapshotRefs(lines) {
+    (lines || []).forEach(function (l) { if (isPhotoRef(l.img)) idbDelete(l.img.slice(4)); });
+  }
+  function packetFromSnapshot(raw) {
+    /* то, что кладём в карточку: снимок конструктора уезжает в IndexedDB */
+    if (!raw || raw.slice(0, 5) !== 'data:') return Promise.resolve(raw);
+    return saveSnapshot(raw);
+  }
+  /* лёгкий отклик: короткая вибрация на «добавлено в корзину» (день 3, п. 3.7) */
+  function buzz() {
+    try { if (navigator.vibrate) navigator.vibrate(10); } catch (e) { /* нет — нет */ }
+  }
+
+  /* ---------- липкая плашка «Итого N BYN → …» (только на мобиле) ---------- */
+  var stickyRefresh = null;
+  function ensureStickyBar() {
+    var bar = $('#stickybar');
+    if (bar) return { bar: bar, sum: $('#stickybar-sum'), go: $('#stickybar-go') };
+    var wrap = document.createElement('div');
+    wrap.className = 'stickybar';
+    wrap.id = 'stickybar';
+    wrap.hidden = true;
+    wrap.setAttribute('role', 'region');
+    wrap.setAttribute('aria-label', 'Итог и быстрый переход');
+    wrap.innerHTML = '<span class="stickybar__sum" id="stickybar-sum"></span>' +
+      '<button class="btn stickybar__btn" type="button" id="stickybar-go">В корзину</button>';
+    document.body.appendChild(wrap);
+    return { bar: wrap, sum: $('#stickybar-sum'), go: $('#stickybar-go') };
+  }
+  function bindSticky(section, actionBtn, sumFn, onGo, label) {
+    var ui = ensureStickyBar();
+    if (!ui) return null;
+    if (label) ui.go.textContent = label;
+    var act = onGo;
+    ui.go.addEventListener('click', function () { if (act) act(); });
+    var ticking = false;
+    function evalBar() {
+      ticking = false;
+      if (!section || !actionBtn || section.hidden || !sumFn()) {
+        ui.bar.hidden = true;
+        document.body.classList.remove('has-stickybar');
+        return;
+      }
+      var s = section.getBoundingClientRect();
+      var b = actionBtn.getBoundingClientRect();
+      var inView = s.top < window.innerHeight && s.bottom > 0;
+      var btnVisible = b.top < (window.innerHeight - 60) && b.bottom > 0;
+      var sum = sumFn();
+      if (inView && !btnVisible && sum) {
+        ui.sum.textContent = sum;
+        ui.go.setAttribute('aria-label', label + ', итого ' + sum);
+        ui.bar.hidden = false;
+        document.body.classList.add('has-stickybar');
+      } else {
+        ui.bar.hidden = true;
+        document.body.classList.remove('has-stickybar');
+      }
+    }
+    var onScroll = function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(evalBar); }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    stickyRefresh = evalBar;
+    evalBar();
+    return { refresh: evalBar };
+  }
+
   function getCart() {
     var raw = readJSON(CART_KEY, []);
     if (!Array.isArray(raw)) return [];
@@ -129,6 +290,7 @@
     var cart = getCart();
     var same = cart.filter(function (i) { return i.id === item.id; })[0];
     if (same) {
+      if (item.img) same.img = item.img;
       same.qty += qty;
     } else {
       var copy = { id: item.id, qty: qty };
@@ -387,6 +549,7 @@
       var p = productById(btn.getAttribute('data-add'));
       if (!p) return;
       addToCart({ id: p.id }, 1);
+      buzz();
       toast('Сложила в корзину: ' + p.name);
     });
 
@@ -430,12 +593,13 @@
     if (weight >= 3) return 3;
     return 2;
   }
-  function calcPrice(weight, flavor, decor) {
+  function calcPrice(weight, flavor, decor, drip) {
     var perKg = PRICE_PER_KG[weight] !== undefined ? PRICE_PER_KG[weight] : 84;
     var base = perKg * weight;
     var flavorExtra = flavor ? flavor.extra * weight : 0;
     var decorExtra = decor ? decor.extra : 0;
-    return Math.round(base + flavorExtra + decorExtra);
+    var dripExtra = drip ? drip.extra : 0;
+    return Math.round(base + flavorExtra + decorExtra + dripExtra);
   }
 
   function initCalculator() {
@@ -443,6 +607,7 @@
     if (!root) return;
 
     var state = {
+      drip: DRIPS[0],
       weight: 2,
       flavor: FLAVORS[0],
       decor: DECORS[0],
@@ -452,6 +617,7 @@
     var weightBox = $('#calc-weight');
     var flavorBox = $('#calc-flavor');
     var decorBox = $('#calc-decor');
+    var dripBox = $('#calc-drip');
     var dateInput = $('#calc-date');
     var outPrice = $('#calc-price');
     var outTerms = $('#calc-terms');
@@ -488,12 +654,15 @@
        декора — дешёвый путь: тело торта не пересобираем */
     function draw3d() {
       var body = state.weight + '|' + state.flavor.id;
-      var key = body + '|' + state.decor.id;
+      var key = body + '|' + state.decor.id + '|' + state.drip.id;
       if (key === drawn3d) return;
       var only = (body === body3d) ? { only: 'decor' } : null;
       body3d = body;
       drawn3d = key;
-      T3.update(state, only);
+      var s3 = {};
+      for (var k in state) { if (Object.prototype.hasOwnProperty.call(state, k)) s3[k] = state[k]; }
+      s3.drip = state.drip.id === 'drip';            /* в модуле это флаг, как в присланном демо */
+      T3.update(s3, only);
       tortCanvas.setAttribute('aria-label',
         'Торт в 3D: ' + state.weight + ' кг, ' + state.flavor.name + ', ' + state.decor.name +
         '. Потяните, чтобы повернуть, колесо — приблизить');
@@ -520,6 +689,12 @@
       flavorBox.innerHTML = FLAVORS.map(function (f) {
         return '<button class="chip chip--lg" type="button" data-flavor="' + esc(f.id) + '" aria-pressed="' + (state.flavor.id === f.id ? 'true' : 'false') + '">' +
           '<span class="chip__title">' + esc(f.name) + '</span><span class="chip__note">' + esc(f.note) + (f.extra ? ' · +' + f.extra + ' BYN/кг' : '') + '</span></button>';
+      }).join('');
+    }
+    if (dripBox) {
+      dripBox.innerHTML = DRIPS.map(function (d) {
+        return '<button class="chip chip--lg" type="button" data-drip="' + esc(d.id) + '" aria-pressed="' + (state.drip.id === d.id ? 'true' : 'false') + '">' +
+          '<span class="chip__title">' + esc(d.name) + '</span><span class="chip__note">' + esc(d.note) + (d.extra ? ' · +' + d.extra + ' BYN' : '') + '</span></button>';
       }).join('');
     }
     if (decorBox) {
@@ -556,7 +731,7 @@
         if (!dateInput.value) dateInput.value = min;
         state.date = dateInput.value;
       }
-      if (outPrice) outPrice.textContent = money(calcPrice(state.weight, state.flavor, state.decor));
+      if (outPrice) outPrice.textContent = money(calcPrice(state.weight, state.flavor, state.decor, state.drip));
       if (outTerms) {
         outTerms.innerHTML = 'К <strong>' + esc(dateRu(min)) + '</strong> успеваю: работы на ' + prep + ' ' + plural(prep, 'день', 'дня', 'дней');
       }
@@ -566,6 +741,7 @@
           ['Вес', state.weight + ' кг · ' + WEIGHTS.filter(function (w) { return w.kg === state.weight; })[0].note],
           ['Начинка', state.flavor.name + (state.flavor.extra ? ' (+' + state.flavor.extra + ' BYN/кг)' : '')],
           ['Декор', state.decor.name + (state.decor.extra ? ' (+' + state.decor.extra + ' BYN)' : '')],
+          ['Потёки', state.drip.name + (state.drip.extra ? ' (+' + state.drip.extra + ' BYN)' : '')],
           ['Цена за кг', money(perKg)],
           ['Дата', dateRu(state.date || min)]
         ];
@@ -591,6 +767,14 @@
       if (addBtn) addBtn.disabled = tooEarly;
     }
 
+    bindSticky(
+      document.getElementById('calc'),
+      addBtn,
+      function () { return money(calcPrice(state.weight, state.flavor, state.decor, state.drip)); },
+      function () { if (addBtn && !addBtn.disabled) addBtn.click(); },
+      'В корзину'
+    );
+
     if (weightBox) weightBox.addEventListener('click', function (e) {
       var b = e.target.closest ? e.target.closest('[data-kg]') : null;
       if (!b) return;
@@ -613,18 +797,37 @@
       resetDate();
       render();
     });
+    if (dripBox) dripBox.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('[data-drip]') : null;
+      if (!b) return;
+      var id = b.getAttribute('data-drip');
+      state.drip = DRIPS.filter(function (d) { return d.id === id; })[0] || state.drip;
+      render();
+    });
     if (dateInput) dateInput.addEventListener('change', function () { state.date = dateInput.value; render(); });
 
     if (addBtn) addBtn.addEventListener('click', function () {
-      var price = calcPrice(state.weight, state.flavor, state.decor);
-      var title = 'Торт на заказ · ' + state.weight + ' кг · ' + state.flavor.name + ' · ' + state.decor.name;
+      var price = calcPrice(state.weight, state.flavor, state.decor, state.drip);
+      var title = 'Торт на заказ · ' + state.weight + ' кг · ' + state.flavor.name + ' · ' + state.decor.name +
+        (state.drip.extra ? ' · потёки' : '');
+      var raw = (mounted3d ? T3.snapshot(480) : '') || (TORT() ? TORT().dataUrl(state, 520) : '');
       addToCart({
         id: 'custom-cake',
         title: title,
         price: price,
         meta: 'готов к ' + dateRu(state.date || minDate()),
-        img: (mounted3d ? T3.snapshot(480) : '') || (TORT() ? TORT().dataUrl(state, 520) : 'assets/img/berry.jpg')
+        img: ''
       }, 1);
+      if (raw) {
+        packetFromSnapshot(raw).then(function (img) {
+          addToCart({ id: 'custom-cake', img: img }, 0);
+          if (stickyRefresh) stickyRefresh();
+        });
+      } else {
+        /* ни 3D, ни вектор: остаётся запасное фото */
+        addToCart({ id: 'custom-cake', img: 'assets/img/berry.jpg' }, 0);
+      }
+      buzz();
       toast('Торт на заказ в корзине, ' + money(price));
     });
 
@@ -632,12 +835,138 @@
   }
 
   /* ============================================================
+     5б. Витрина в 3D: капкейк, макароны, пончики
+     ------------------------------------------------------------
+     Отдельный блок каталога. Модели собирает assets/tort3d.js — тот же
+     модуль, что и торт в калькуляторе: переключаем изделие через state.item,
+     верх — через state.topping. Поднимаем лениво, как в калькуляторе, и фото
+     из assets/img прячем только после удачного mount: без WebGL остаётся оно,
+     и оно же уходит в корзину вместо снимка. */
+  function initVitrine3D() {
+    var box = $('#vitrine');
+    if (!box) return;
+    var list = (typeof VITRINE_3D !== 'undefined' && VITRINE_3D) ? VITRINE_3D : [];
+    if (!list.length) return;
+
+    var canvas = $('#vitrine-3d');
+    var photo = $('#vitrine-photo');
+    var chips = $('#vitrine-chips');
+    var nameEl = $('#vitrine-name');
+    var formatEl = $('#vitrine-format');
+    var descEl = $('#vitrine-desc');
+    var priceEl = $('#vitrine-price');
+    var hintEl = $('#vitrine-hint');
+    var addBtn = $('#vitrine-add');
+
+    var now = list[0];
+    var state = { item: now.item, topping: now.topping, weight: 2, flavor: FLAVORS[0], decor: DECORS[0] };
+
+    var T3 = window.MELNICA_TORT3D;
+    var use3d = !!(T3 && canvas && T3.supported());
+    var mounted = false;
+
+    function renderChips() {
+      if (!chips) return;
+      chips.innerHTML = list.map(function (v) {
+        return '<button class="chip chip--lg" type="button" data-item="' + esc(v.item) + '" aria-pressed="' + (v.item === state.item ? 'true' : 'false') + '">' +
+          '<span class="chip__title">' + esc(v.name) + '</span><span class="chip__note">' + money(v.price) + '</span></button>';
+      }).join('');
+    }
+
+    function render() {
+      if (nameEl) nameEl.textContent = now.name;
+      if (formatEl) formatEl.textContent = now.format;
+      if (descEl) descEl.textContent = now.desc;
+      if (priceEl) priceEl.textContent = money(now.price);
+      if (photo && !mounted) {
+        photo.src = now.img;
+        photo.alt = now.alt;
+      }
+      if (chips) {
+        $$('[data-item]', chips).forEach(function (b) {
+          b.setAttribute('aria-pressed', String(b.getAttribute('data-item') === state.item));
+        });
+      }
+      if (mounted) {
+        T3.update(state);
+        if (canvas) {
+          canvas.setAttribute('aria-label', now.name + ' в 3D: потяните, чтобы повернуть, колесо — приблизить');
+        }
+      }
+    }
+
+    function mount3d() {
+      if (!use3d || mounted) return;
+      mounted = true;
+      T3.mount(canvas, function () { return state; }).then(function (ok) {
+        if (!ok) { mounted = false; return; }        /* не поднялось — остаётся фото */
+        if (photo) photo.hidden = true;
+        if (canvas) canvas.hidden = false;
+        T3.update(state);
+      });
+    }
+
+    if (chips) chips.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('[data-item]') : null;
+      if (!b) return;
+      var it = b.getAttribute('data-item');
+      now = list.filter(function (v) { return v.item === it; })[0] || now;
+      state.item = now.item;
+      state.topping = now.topping;
+      render();
+    });
+
+    if (addBtn) addBtn.addEventListener('click', function () {
+      var raw = mounted ? T3.snapshot(480) : '';
+      addToCart({
+        id: now.id,
+        title: now.name,
+        price: now.price,
+        meta: now.format,
+        img: ''
+      }, 1);
+      buzz();
+      toast('В корзине: ' + now.name + ', ' + money(now.price));
+      if (raw) {
+        packetFromSnapshot(raw).then(function (img) {
+          addToCart({ id: now.id, img: img }, 0);
+          if (stickyRefresh) stickyRefresh();
+        });
+      } else if (now.img) {
+        /* трёхмерки не было (file:// без сервера): остаётся фото изделия */
+        addToCart({ id: now.id, img: now.img }, 0);
+      }
+    });
+
+    if (hintEl && !use3d) {
+      hintEl.textContent = 'Объёмный просмотр в этом браузере не поднялся — в корзину уйдёт фото.';
+    }
+
+    renderChips();
+    render();
+
+    if (use3d && 'IntersectionObserver' in window) {
+      var io3d = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) { mount3d(); io3d.disconnect(); }
+        }
+      }, { rootMargin: '240px 0px' });
+      io3d.observe(box);
+    } else if (use3d) {
+      mount3d();
+    }
+  }
+
+  /* ============================================================
      6. Корзина и оформление заказа
      ============================================================ */
   function cartLineHTML(l, removable) {
+    /* снимок конструктора хранится в IndexedDB: src даёт hydratePhotos после вставки */
+    var src = isPhotoRef(l.img) ? '' : esc(l.img || 'assets/img/hero.jpg');
+    var photoAttr = isPhotoRef(l.img) ? ' data-photo="' + esc(l.img) + '"' : '';
     return '' +
       '<li class="cart-line" data-id="' + esc(l.id) + '">' +
-        '<div class="cart-line__media"><img src="' + esc(l.img) + '" alt="' + esc(l.alt) + '" width="160" height="120"></div>' +
+        '<div class="cart-line__media"><img src="' + src + '"' + photoAttr + ' alt="' + esc(l.alt || '') + '" width="160" height="120"></div>' +
         '<div class="cart-line__body">' +
           '<h3 class="cart-line__title">' + esc(l.title) + '</h3>' +
           '<p class="small muted">' + esc(l.meta) + '</p>' +
@@ -692,6 +1021,8 @@
       if (!has) return;
 
       listBox.innerHTML = lines.map(function (l) { return cartLineHTML(l, true); }).join('');
+      hydratePhotos(listBox);
+      if (stickyRefresh) stickyRefresh();
 
       var subtotal = cartSubtotal();
       var del = deliveryFor(subtotal, method());
@@ -733,7 +1064,10 @@
           render();
         }
       } else if (del) {
+        var removed = cartLines().filter(function (l) { return l.id === del.getAttribute('data-del'); });
         removeFromCart(del.getAttribute('data-del'));
+        dropSnapshotRefs(removed);
+        buzz();
         toast('Убрала из корзины');
         render();
       }
@@ -839,7 +1173,7 @@
           address: method() === 'delivery' ? addrInput.value.trim() : '',
           date: $('#f-date').value,
           comment: $('#f-comment').value.trim(),
-          items: cartLines().map(function (l) { return { title: l.title, qty: l.qty, price: l.price, meta: l.meta }; }),
+          items: cartLines().map(function (l) { return { title: l.title, qty: l.qty, price: l.price, meta: l.meta, img: l.img || '' }; }),
           subtotal: subtotal,
           delivery: del,
           total: subtotal + del,
@@ -848,14 +1182,33 @@
         var orders = getOrders();
         orders.unshift(order);
         saveOrders(orders);
+        dropSnapshotRefs(cartLines());
         clearCart();
         renderSuccess(order);
         toast('Заказ №' + order.no + ' записан');
+        buzz();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
 
     render();
+    bindSticky(
+      document.querySelector('#checkout'),
+      document.querySelector('#order-form button[type="submit"]'),
+      function () {
+        var s = cartSubtotal();
+        var m = $('#m-delivery');
+        var checked = form && form.querySelector('input[name="method"]:checked');
+        var del = deliveryFor(s, checked ? checked.value : 'pickup');
+        return s + del > 0 ? money(s + del) : '';
+      },
+      function () {
+        var t = $('#order-form button[type="submit"]');
+        if (t) t.click();
+        else window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+      'Оформить заказ'
+    );
   }
 
   /* ============================================================
@@ -866,9 +1219,15 @@
     if (!listBox) return;
 
     var state = { status: 'all' };
-    var counters = {
-      today: $('#c-today'), revenue: $('#c-revenue'), active: $('#c-active'), avg: $('#c-avg')
-    };
+    var heroValue = $('#c-hero');
+    var heroLabel = $('#c-hero-label');
+    var extraRow = $('#c-extra');
+    state.active = 0;
+    state.sumToday = 0;
+    function activeSum(list) {
+      return list.filter(function (o) { return o.status === 'new' || o.status === 'accepted'; })
+        .reduce(function (n, o) { return n + (o.total || 0); }, 0);
+    }
     var filterBox = $('#order-filters');
     var emptyBox = $('#admin-empty');
     var toolbarNote = $('#admin-note');
@@ -889,7 +1248,10 @@
     function orderHTML(o) {
       var st = statusInfo(o.status);
       var items = (o.items || []).map(function (i) {
-        return '<li><span>' + esc(i.title) + ' × ' + i.qty + '</span><span>' + money(i.price * i.qty) + '</span></li>';
+        var thumb = isPhotoRef(i.img)
+          ? '<img data-photo="' + esc(i.img) + '" src="assets/img/berry.jpg" alt="" width="52" height="40" style="border-radius:8px;vertical-align:-10px;margin-right:6px">'
+          : '';
+        return '<li>' + thumb + '<span>' + esc(i.title) + ' × ' + i.qty + '</span><span>' + money(i.price * i.qty) + '</span></li>';
       }).join('');
       var buttons = STATUSES.map(function (s) {
         return '<button class="btn btn--sm ' + (o.status === s.id ? '' : 'btn--ghost') + '" type="button" data-set="' + esc(o.no) + '" data-status="' + s.id + '"' +
@@ -939,11 +1301,24 @@
       var today = ordersToday(all);
       var sum = all.reduce(function (n, o) { return n + (o.total || 0); }, 0);
       var active = all.filter(function (o) { return o.status === 'new' || o.status === 'accepted'; }).length;
-      if (counters.today) counters.today.textContent = String(today.length);
-      if (counters.revenue) counters.revenue.textContent = money(sum);
-      if (counters.active) counters.active.textContent = String(active);
-      if (counters.avg) counters.avg.textContent = all.length ? money(sum / all.length) : '0 BYN';
-
+      if (heroValue) heroValue.textContent = money(activeSum(all));
+      if (heroLabel) {
+        heroLabel.textContent = active
+          ? 'в работе сейчас: ' + plural(active, 'заказ', 'заказа', 'заказов')
+          : 'в работе сейчас: ничего';
+      }
+      if (extraRow) {
+        extraRow.innerHTML = [
+          ['сегодня', String(today.length)],
+          ['всего заказов', String(all.length)],
+          ['сумма за всё время', money(sum)],
+          ['средний чек', all.length ? money(sum / all.length) : '0 BYN']
+        ].map(function (r) {
+          return '<div class="calc__row"><span>' + esc(r[0]) + '</span><span>' + esc(r[1]) + '</span></div>';
+        }).join('');
+      }
+      state.active = active;
+      state.sumToday = today.length;
       if (toolbarNote) {
         toolbarNote.textContent = all.length
           ? 'Всего заказов ' + all.length + ', в фильтре ' + list.length
@@ -951,6 +1326,7 @@
       }
 
       listBox.innerHTML = list.map(orderHTML).join('');
+      hydratePhotos(listBox);
       if (emptyBox) emptyBox.hidden = list.length !== 0;
       listBox.hidden = list.length === 0;
 
@@ -1063,6 +1439,7 @@
           armed = true;
           clearBtn.textContent = 'Точно стираю?';
           clearBtn.classList.add('btn--danger');
+          buzz();
           armTimer = setTimeout(function () {
             armed = false;
             clearBtn.textContent = 'Очистить список';
@@ -1096,6 +1473,7 @@
     initYear();
     initPopular();
     initCalculator();
+    initVitrine3D();
     initCatalog();
     initCartPage();
     initAdmin();

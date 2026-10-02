@@ -170,12 +170,113 @@
     toastTimer = setTimeout(function () { toastEl.classList.remove('is-visible'); }, 2800);
   }
 
+  /* Осязание: короткий отклик на «добавилось». Только там, где телефон умеет. */
+  function haptic() {
+    try { if (typeof navigator.vibrate === 'function') { navigator.vibrate(10); } } catch (e) {}
+  }
+
   function paintBadges() {
     var n = cartCount();
     $$('[data-cart-count]').forEach(function (el) {
       el.textContent = String(n);
       el.hidden = n === 0;
     });
+  }
+
+  /* ============================ снимки конструктора: не base64 в localStorage ============================ */
+  /* 3.5: JPEG-миниатюра 480px весит десятки килобайт, поэтому в строке корзины
+     вместо base64 лежит ключ «idb:…», а сам блоб — в IndexedDB. База не поднялась
+     (редкий приватный режим) — работаем по-старому, data-URL остаётся в строке. */
+  var PHOTOS_DB = 'igdemo_jewelry_photos_v1';
+  var PHOTOS_STORE = 'shots';
+  var photoURLs = [];
+
+  function idbOpen() {
+    return new Promise(function (resolve) {
+      var req;
+      try {
+        if (typeof indexedDB === 'undefined' || !indexedDB) { return resolve(null); }
+        req = indexedDB.open(PHOTOS_DB, 1);
+      } catch (e) { return resolve(null); }
+      req.onupgradeneeded = function () { req.result.createObjectStore(PHOTOS_STORE); };
+      req.onsuccess = function () { resolve(req.result); };
+      req.onerror = function () { resolve(null); };
+      req.onblocked = function () { resolve(null); };
+    });
+  }
+  function idbRun(mode, fn) {
+    return idbOpen().then(function (db) {
+      if (!db) { return Promise.reject(new Error('no idb')); }
+      return new Promise(function (resolve, reject) {
+        var tx = db.transaction(PHOTOS_STORE, mode);
+        var req = fn(tx.objectStore(PHOTOS_STORE));
+        req.onsuccess = function () { resolve(req.result); };
+        req.onerror = function () { reject(req.error); };
+      });
+    });
+  }
+  function idbSave(key, blob) { return idbRun('readwrite', function (s) { return s.put(blob, key); }); }
+  function idbGet(key) {
+    return idbRun('readonly', function (s) { return s.get(key); }).catch(function () { return null; });
+  }
+  function idbDelete(key) {
+    return idbRun('readwrite', function (s) { return s.delete(key); }).catch(function () { /* тихо */ });
+  }
+  function photoKey() { return 's' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+  function isPhotoRef(v) { return typeof v === 'string' && v.indexOf('idb:') === 0; }
+
+  function dataURLtoBlob(dataUrl) {
+    try {
+      var parts = dataUrl.split(',');
+      var mime = ((parts[0].match(/data:(.*?)[;,]/i) || [])[1] || 'image/jpeg');
+      var bin = atob(parts[1]);
+      var len = bin.length;
+      var arr = new Uint8Array(len);
+      for (var i = 0; i < len; i++) { arr[i] = bin.charCodeAt(i); }
+      return new Blob([arr], { type: mime });
+    } catch (e) { return null; }
+  }
+
+  /* блоб снимка → ключ в IndexedDB (или data-URL, если база не поднялась) */
+  function saveSnapshotBlob(blob) {
+    if (!blob) { return Promise.resolve(''); }
+    return idbOpen().then(function (db) {
+      if (!db) {
+        /* запасной путь: FileReader в data-URL, как раньше */
+        return new Promise(function (resolve) {
+          var fr = new FileReader();
+          fr.onload = function () { resolve(String(fr.result)); };
+          fr.onerror = function () { resolve(''); };
+          fr.readAsDataURL(blob);
+        });
+      }
+      var key = photoKey();
+      return idbSave(key, blob).then(function () { return 'idb:' + key; }).catch(function () { return ''; });
+    }, function () { return ''; });
+  }
+
+  /* строка с «idb:…» получает object-URL; revoke — на пересбор корзины */
+  function revokePhotoURLs() {
+    photoURLs.forEach(function (u) { try { URL.revokeObjectURL(u); } catch (e) {} });
+    photoURLs.length = 0;
+  }
+  function hydratePhotos(rootEl) {
+    revokePhotoURLs();
+    if (!rootEl) { return; }
+    $$('img[data-photo]', rootEl).forEach(function (img) {
+      var ref = img.getAttribute('data-photo') || '';
+      if (!isPhotoRef(ref)) { return; }
+      idbGet(ref.slice(4)).then(function (blob) {
+        if (!blob) { return; }
+        var url = URL.createObjectURL(blob);
+        photoURLs.push(url);
+        img.src = url;
+      }).catch(function () { /* остаётся запасная картинка */ });
+    });
+  }
+  /* снимки строк, которые уходят из корзины (удаление, оформленный заказ) */
+  function dropSnapshotRefs(lines) {
+    (lines || []).forEach(function (l) { if (isPhotoRef(l.img)) { idbDelete(l.img.slice(4)); } });
   }
 
   /* ============================ 6. Шапка: мобильное меню и появление блоков ============================ */
@@ -311,6 +412,8 @@
     var parts = [p.title, materialInfo(matId).name];
     if (engraving) parts.push('гравировка «' + engraving + '»');
     toast(parts.join(' · ') + ': лежит в корзине');
+    /* 3.7: короткий тактильный отклик «добавлено в корзину» */
+    haptic();
   }
 
   function addFromCard(card, p) {
@@ -540,9 +643,13 @@
     var img = it.img || (p ? p.img : (PRODUCTS[0] ? PRODUCTS[0].img : ''));
     var alt = it.alt || (p ? p.alt : '');
     var price = itemPrice(it);
+    /* «idb:…» — снимок из IndexedDB: src ставит hydratePhotos, до него остаётся запаска */
+    var imgTag = isPhotoRef(img)
+      ? '<div class="cart-line__img"><img data-photo="' + esc(img) + '" alt="' + esc(alt) + '" width="92" height="69" loading="lazy"></div>'
+      : '<div class="cart-line__img"><img src="' + esc(img) + '" alt="' + esc(alt) + '" width="92" height="69" loading="lazy"></div>';
     return '' +
       '<div class="cart-line" data-i="' + i + '">' +
-        '<div class="cart-line__img"><img src="' + esc(img) + '" alt="' + esc(alt) + '" width="92" height="69" loading="lazy"></div>' +
+        imgTag +
         '<div>' +
           '<div class="cart-line__title">' + esc(title) + '</div>' +
           '<div class="cart-line__meta">' + esc(materialInfo(it.material).name) +
@@ -619,6 +726,8 @@
       if (cartWrap) cartWrap.hidden = !hasItems;
       listEl.innerHTML = cart.map(cartLineHTML).join('');
       paintSummary();
+      /* снимки из IndexedDB: object-URL сразу после innerHTML, revoke на пересбор */
+      hydratePhotos(listEl);
     }
 
     listEl.addEventListener('click', function (e) {
@@ -628,6 +737,7 @@
       var cart = getCart();
       if (!cart[i]) return;
       if (e.target.closest('[data-remove]')) {
+        dropSnapshotRefs([cart[i]]);
         cart.splice(i, 1);
         setCart(cart);
         renderCart();
@@ -637,7 +747,7 @@
       var qBtn = e.target.closest('[data-qty]');
       if (qBtn) {
         var next = (cart[i].qty || 1) + parseInt(qBtn.getAttribute('data-qty'), 10);
-        if (next <= 0) { cart.splice(i, 1); toast('Убрала позицию из корзины'); }
+        if (next <= 0) { dropSnapshotRefs([cart[i]]); cart.splice(i, 1); toast('Убрала позицию из корзины'); }
         else cart[i].qty = next;
         setCart(cart);
         renderCart();
@@ -705,6 +815,7 @@
           delivery: { method: method, address: method === 'pickup' ? '' : address, date: date, comment: comment }
         };
         setOrders([order].concat(getOrders()));
+        dropSnapshotRefs(cart);
         setCart([]);
         renderCart();
 
@@ -932,12 +1043,13 @@
     var input = $('#builder-graving');
     var state = {
       form: RING.DEFAULT.form, metal: RING.DEFAULT.metal, stone: RING.DEFAULT.stone,
+      cut: RING.DEFAULT.cut, set: RING.DEFAULT.set, band: RING.DEFAULT.band,
       size: RING.DEFAULT.size, graving: ''
     };
     var drawn = '', graveTimer = null;
 
     function key() {
-      return [state.form, state.metal, state.stone, state.size, state.graving].join('|');
+      return [state.form, state.metal, state.stone, state.cut, state.set, state.band, state.size, state.graving].join('|');
     }
 
     function chip(group, option) {
@@ -947,11 +1059,15 @@
         '" aria-pressed="' + (active ? 'true' : 'false') + '">' + lead + esc(option.title) + '</button>';
     }
 
+    /* Огранка и оправа нужны только когда есть камень, шинка — только у кольца */
     function groups() {
       return [
         { field: 'form', list: RING.FORMS, art: 32 },
         { field: 'metal', list: RING.METALS, art: 28 },
         { field: 'stone', list: RING.STONES, art: 28 },
+        { field: 'cut', list: RING.CUTS, show: RING.facetable(state) },
+        { field: 'set', list: RING.SETTINGS, show: RING.hasStone(state) },
+        { field: 'band', list: RING.BANDS, show: state.form === 'ring' },
         { field: 'size', list: RING.sizesOf(state.form) }
       ];
     }
@@ -962,6 +1078,9 @@
         var host = root.querySelector('[data-options="' + group.field + '"]');
         if (!host) { return; }
         host.innerHTML = group.list.map(function (option) { return chip(group, option); }).join('');
+        /* группу, которой у этой формы нет, прячем целиком — вместе с заголовком */
+        var box = host.closest ? host.closest('.builder__group') : null;
+        if (box) { box.hidden = group.show === false; }
       });
     }
 
@@ -1032,6 +1151,9 @@
       $('#builder-form-hint').textContent = form.hint;
       $('#builder-metal-hint').textContent = metal.note;
       $('#builder-stone-hint').textContent = stone.note;
+      $('#builder-cut-hint').textContent = RING.find(RING.CUTS, state.cut).hint;
+      $('#builder-set-hint').textContent = RING.find(RING.SETTINGS, state.set).hint;
+      $('#builder-band-hint').textContent = RING.find(RING.BANDS, state.band).hint;
       $('#builder-size-hint').textContent = SIZE_HINTS[form.id] || '';
       $('#builder-size-aside').textContent = (SIZE_ASIDES[form.id] || '') + ' ' +
         form.word.charAt(0).toUpperCase() + form.word.slice(1) + ' ' + size.title + ' — подгоняю по мерке.';
@@ -1083,6 +1205,58 @@
       });
     }
 
+    /* Снимок в корзину: не как строка base64, а JPEG-миниатюра 480px.
+       3.5: миниатюра живёт в IndexedDB (igdemo_jewelry_photos_v1), в строке
+       корзины — короткий ключ «idb:…», а не base64-строка. Если база не
+       поднялась (редкий приватный режим), остаётся прежний data:JPEG.
+       До перерисовки позиция живёт без картинки: заливка не ломается. */
+    var shotQueue = [];
+    function markShot(i, src) { shotQueue.push({ i: i, src: src }); }
+    function flushShots() {
+      if (!shotQueue.length) { return; }
+      var items = shotQueue; shotQueue = [];
+      items.forEach(function (task) {
+        /* «idb:…» уже лежит в IndexedDB — просто ссылка в корзину;
+           data-URL конвертируем в блоб и кладём в базу (или оставляем как был) */
+        if (typeof task.src === 'string' && task.src.indexOf('idb:') === 0) {
+          var cr0 = getCart();
+          if (cr0[task.i]) { cr0[task.i].img = task.src; setCart(cr0); }
+          return;
+        }
+        rasterize(task.src, function (blob) {
+          if (!blob) { return; }
+          saveSnapshotBlob(blob).then(function (ref) {
+            if (!ref) { return; }
+            var cr = getCart();
+            if (cr[task.i]) { cr[task.i].img = ref; setCart(cr); }
+          });
+        });
+      });
+    }
+    function rasterize(src, done) {
+      var im = new Image();
+      im.onload = function () {
+        try {
+          var w = 480, h = Math.max(1, Math.round(w * (im.naturalHeight || 533) / (im.naturalWidth || 620)));
+          var off = document.createElement('canvas');
+          off.width = w; off.height = h;
+          var ctx = off.getContext('2d');
+          if (!ctx) { done(null); return; }
+          ctx.fillStyle = '#171412';
+          ctx.fillRect(0, 0, w, h);
+          ctx.drawImage(im, 0, 0, w, h);
+          if (off.toBlob) {
+            off.toBlob(function (blob) { done(blob || null); }, 'image/jpeg', 0.62);
+          } else {
+            /* совсем без toBlob: конвертируем data-URL в блоб сами */
+            done(dataURLtoBlob(off.toDataURL('image/jpeg', 0.62)));
+          }
+        } catch (e) { done(null); }
+      };
+      im.onerror = function () { done(null); };
+      im.src = src;
+    }
+
     var add = $('#builder-add');
     if (add) {
       add.addEventListener('click', function () {
@@ -1090,7 +1264,7 @@
         var price = RING.priceOf(st);
         var form = RING.find(RING.FORMS, st.form);
         var text = st.graving;
-        var id = ['builder', st.form, st.metal, st.stone, st.size].join('-');
+        var id = ['builder', st.form, st.metal, st.stone, st.cut, st.set, st.band, st.size].join('-');
         var title = form.title + ' по конструктору';
         var summary = RING.summary(st);
         /* В позицию кладём цену без гравировки: её прибавит itemPrice, как в бирке лота */
@@ -1100,16 +1274,56 @@
         for (var i = 0; i < cart.length; i++) {
           if (cart[i].key !== [id, st.metal, text || ''].join('|')) { continue; }
           cart[i].title = title;
-          var shot = mounted3d ? R3.snapshot(480) : '';
-          cart[i].img = shot || RING.dataUrl(st, 480);
           cart[i].alt = 'Модель: ' + summary;
           cart[i].note = summary;
+          /* 3.5: R3.snapshot теперь Promise с «idb:…» (или data-URL без базы) */
+          if (mounted3d) {
+            R3.snapshot(480).then(function (s) { markShot(i, s); flushShots(); });
+          } else {
+            markShot(i, RING.dataUrl(st, 480));
+          }
         }
         setCart(cart);
+        flushShots();
         if (input) { input.value = text; }
+        haptic();
         toast('Собрали: ' + summary + ' — ' + money(price) + '. В корзине ' + getCart().length + ' ' +
           plural(getCart().length, 'позиция', 'позиции', 'позиций'));
       });
+    }
+
+    /* Свет витрины: «студия» и «блики». Один переключатель на обе версии,
+       вектор и 3D держат одну схему. Состояние — только в этой вкладке. */
+    var LIGHT_KEY = 'igdemo_jewelry_light_v1';
+    function paintLights(kind) {
+      $$('[data-light]', root).forEach(function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-light') === kind ? 'true' : 'false');
+      });
+    }
+    function applyLight(kind, persist) {
+      kind = kind === 'glint' ? 'glint' : 'studio';
+      paintLights(kind);
+      if (mounted3d && R3.setLight) { R3.setLight(kind); }
+      if (persist) { try { localStorage.setItem(LIGHT_KEY, JSON.stringify(kind)); } catch (e) {} }
+    }
+    root.addEventListener('click', function (event) {
+      var btn = event.target.closest ? event.target.closest('[data-light]') : null;
+      if (!btn) { return; }
+      applyLight(btn.getAttribute('data-light'), true);
+    });
+    var savedLight = '';
+    try { savedLight = JSON.parse(localStorage.getItem(LIGHT_KEY) || '""'); } catch (e) {}
+    applyLight(savedLight, false);
+    /* если 3D поднялся позже — применяем сохранённый свет уверенно */
+    if (use3d && savedLight === 'glint') {
+      var prevMount = mount3d;
+      mount3d = function () {
+        prevMount();
+        var t = setInterval(function () {
+          if (mounted3d && R3.setLight) { R3.setLight('glint'); clearInterval(t); }
+        }, 120);
+        setTimeout(function () { clearInterval(t); }, 4000);
+      };
     }
 
     draw(true);

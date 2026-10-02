@@ -10,6 +10,15 @@
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/motion.css">
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Мельница">
+<meta property="og:title" content="Панель владельца: «Мельница», заказы с сайта">
+<meta property="og:description" content="Заказ с сайта падает сюда сразу: состав, телефон, способ получения, сумма. Статус меняется одним кликом.">
+<meta property="og:image" content="assets/img/og-hours.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -17,16 +26,12 @@
 <div class="topline">
   <div class="container topline__inner">
     <span class="topline__item">
-      <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.9"/><path d="M12 3.4v2.2"/><path d="M12 18.4v2.2"/><path d="M4.3 7.7 6.2 8.8"/><path d="m17.8 15.2 1.9 1.1"/><path d="M4.3 16.3l1.9-1.1"/><path d="m17.8 8.8 1.9-1.1"/></svg>
-      Демонстрационная панель: данные лежат в localStorage вашего браузера
-    </span>
-    <span class="topline__item topline__item--wide">
       <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.6 8.4 12 4.4l8.4 4v7.2L12 19.6l-8.4-4Z"/><path d="M3.6 8.4 12 12.4l8.4-4"/><path d="M12 12.4v7.2"/></svg>
-      Ключ igdemo_cakes_orders_v1
+      Заказы с сайта — здесь
     </span>
     <span class="topline__item">
-      <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 3.4h2.6a1.8 1.8 0 0 1 1.7 1.3l.7 2.3a1.8 1.8 0 0 1-.5 1.8L9.6 10a13 13 0 0 0 4.4 4.4l1.2-1.5a1.8 1.8 0 0 1 1.8-.5l2.3.7a1.8 1.8 0 0 1 1.3 1.7v2.6a1.8 1.8 0 0 1-2 1.8C11.9 18.5 5.5 12.1 4.8 5.4a1.8 1.8 0 0 1 1.8-2Z"/></svg>
-      +375 (29) 123-45-67</span>
+      <a class="topline__link" href="index.html">На сайт</a>
+    </span>
   </div>
 </div>
 
@@ -36,22 +41,8 @@
       <span class="logo__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20.6h16"/><path d="M5.2 20.6v-4.3c0-.9.7-1.6 1.6-1.6h10.4c.9 0 1.6.7 1.6 1.6v4.3"/><path d="M5.6 14.7c1.6 1.2 3.2 1.2 4.8 0s3.2-1.2 4.8 0 2.8 1.1 3.2.2"/><path d="M12 10.3V7.9"/><circle cx="12" cy="6.3" r="1.6"/></svg></span>
       <span class="logo__text">Мельница<small>панель владельца</small></span>
     </a>
-    <nav class="nav" aria-label="Основная навигация">
-      <a href="index.html">Главная</a>
-      <a href="catalog.html">Каталог</a>
-      <a href="index.html#delivery">Доставка</a>
-      <a href="index.html#contacts">Контакты</a>
-    </nav>
-    <div class="header-actions">
-      <span class="js-cart-total-mini" aria-hidden="true"></span>
-      <a class="icon-btn" href="cart.html" aria-label="Корзина">
-        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.2 8.6h13.6a1.2 1.2 0 0 1 1.2 1.2v1.6a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 11.4v-1.6a1.2 1.2 0 0 1 1.2-1.2Z"/><path d="M5.8 12.6v5.5a1.4 1.4 0 0 0 1.4 1.4h9.6a1.4 1.4 0 0 0 1.4-1.4v-5.5"/><path d="M12 8.6V7.4"/><path d="M12 7.7c-.7-1.8-3.5-1.9-3.5-.2 0 1.2 1.9 1.6 3.5.2Z"/><path d="M12 7.7c.7-1.8 3.5-1.9 3.5-.2 0 1.2-1.9 1.6-3.5.2Z"/></svg>
-        <span class="icon-btn__count js-cart-count" hidden>0</span>
-      </a>
-      <button class="icon-btn burger js-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="drawer">
-        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14"/><path d="M5 12h14"/><path d="M5 17h9"/></svg>
-      </button>
-    </div>
+    <nav class="nav" aria-label="Разделы панели"></nav>
+    <div class="header-actions"></div>
   </div>
 </header>
 
@@ -63,13 +54,10 @@
       <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6.4 6.4 11.2 11.2"/><path d="m17.6 6.4-11.2 11.2"/></svg>
     </button>
   </div>
-  <nav class="drawer__nav" aria-label="Меню">
-    <a href="index.html">Главная</a>
-    <a href="catalog.html">Каталог</a>
-    <a href="cart.html">Корзина</a>
-    <a href="index.html#delivery">Доставка и оплата</a>
-    <a href="index.html#contacts">Контакты</a>
-    <a href="admin.html">Панель владельца</a>
+  <nav class="drawer__nav" aria-label="Разделы панели">
+    <a href="index.html">На сайт</a>
+    <a href="catalog.html">Каталог сайта</a>
+    <a href="cart.html">Корзина сайта</a>
   </nav>
   <div class="drawer__foot">
     <a class="link-arrow" href="tel:+375-29-123-45-67">+375 (29) 123-45-67</a>
@@ -93,35 +81,21 @@
         <button class="btn btn--ghost" type="button" id="export-csv">
           <svg class="icon icon--sm" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.6 8.4 12 4.4l8.4 4v7.2L12 19.6l-8.4-4Z"/><path d="M3.6 8.4 12 12.4l8.4-4"/><path d="M12 12.4v7.2"/></svg>Экспорт CSV
         </button>
-        <button class="btn btn--ghost" type="button" id="clear-orders">Очистить список</button>
+        <button class="btn btn--ghost admin-bar__clear" type="button" id="clear-orders">Очистить список</button>
         <span class="small muted" id="admin-note" style="margin-left:auto"></span>
       </div>
+      <p class="hint" style="margin-top:var(--s3)">Это демо: заказы лежат в вашем браузере и никуда не уходят. Подробности — внизу страницы.</p>
     </div>
   </section>
 
   <section class="section section--tight">
     <div class="container">
-      <div class="admin-counters">
-        <div class="stat-card">
-          <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="5" width="17.6" height="15.8" rx="3.4"/><path d="M3.2 9.8h17.6"/><path d="M8 3v3.6"/><path d="M16 3v3.6"/></svg>
-          <span class="stat__value" id="c-today">0</span>
-          <span class="stat__label">заказов сегодня</span>
+      <div class="admin-hero">
+        <div class="stat-card admin-hero__card">
+          <span class="stat__value" id="c-hero">0 BYN</span>
+          <span class="stat__label" id="c-hero-label">в работе сейчас: ничего</span>
         </div>
-        <div class="stat-card">
-          <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.8" y="5.6" width="18.4" height="12.8" rx="3"/><path d="M2.8 10.2h18.4"/><path d="M6.4 14.6h3.2"/></svg>
-          <span class="stat__value" id="c-revenue">0 BYN</span>
-          <span class="stat__label">общая сумма заказов</span>
-        </div>
-        <div class="stat-card">
-          <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.8"/><path d="M12 7.2V12l3.4 2"/></svg>
-          <span class="stat__value" id="c-active">0</span>
-          <span class="stat__label">в работе: новые и принятые</span>
-        </div>
-        <div class="stat-card">
-          <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.6l2.5 5.1 5.6.8-4.1 4 1 5.6-5-2.6-5 2.6 1-5.6-4.1-4 5.6-.8Z"/></svg>
-          <span class="stat__value" id="c-avg">0 BYN</span>
-          <span class="stat__label">средний чек</span>
-        </div>
+        <div class="admin-hero__extra calc__rows" id="c-extra" style="margin-top:0"></div>
       </div>
     </div>
   </section>
@@ -148,10 +122,13 @@
 
   <section class="section section--tight">
     <div class="container">
-      <div class="admin-note">
-        <p><strong>Как это устроено в демо.</strong> Сайт статический и открывается по <code>file://</code>: заказы лежат в localStorage браузера (ключ <code>igdemo_cakes_orders_v1</code>), корзина в <code>igdemo_cakes_cart_v1</code>. Обновите страницу, заказы останутся. Откроете в другом браузере, панель будет пустой.</p>
-        <p style="margin-top:var(--s2)">У настоящего клиента панель подключается к базе или Google-таблице, а заказы приходят уведомлением в Telegram. Здесь показаны интерфейс и логика статусов, чтобы было видно, как это работает без программиста.</p>
-      </div>
+      <details class="faq details-tech">
+        <summary>Технические подробности о демо</summary>
+        <div class="admin-note" style="border:0;padding:var(--s3) 0 0">
+          <p><strong>Как это устроено в демо.</strong> Сайт статический и открывается по <code>file://</code>: заказы лежат в localStorage браузера (ключ <code>igdemo_cakes_orders_v1</code>), корзина в <code>igdemo_cakes_cart_v1</code>. Снимки тортов из конструктора хранятся в IndexedDB (<code>igdemo_cakes_photos_v1</code>), не в localStorage: пять мегабайт не занимают.</p>
+          <p style="margin-top:var(--s2)">У настоящего клиента панель подключается к базе или Google-таблице, а заказы приходят уведомлением в Telegram. Здесь показаны интерфейс и логика статусов, чтобы было видно, как это работает без программиста.</p>
+        </div>
+      </details>
     </div>
   </section>
 

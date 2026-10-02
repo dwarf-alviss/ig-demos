@@ -31,6 +31,7 @@
     choco: { sponge: '#7c5334', sponge2: '#6b4429', fill: '#c8284a', cream: '#f4e3cf', edge: '#3f2415' },
     straw: { sponge: '#f6e9cd', sponge2: '#efdcb5', fill: '#d13356', cream: '#fdf6e6', edge: '#bfa06a' },
     brulee: { sponge: '#f2d79e', sponge2: '#e9cb88', fill: '#a85f1c', cream: '#fbeed6', edge: '#bb9250' },
+    blue: { sponge: '#f0e9f7', sponge2: '#e4dbf1', fill: '#5b4a9a', cream: '#f8f4fb', edge: '#4a3f74' },
     gf: { sponge: '#ecdbba', sponge2: '#e2cfa4', fill: '#a97f1c', cream: '#faf1de', edge: '#b59b6a' }
   };
 
@@ -74,7 +75,7 @@
     { kind: 'sponge', share: 0.16 }
   ];
 
-  function tierMarkup(key, top, w, h, look, decor, labelBands, isTop) {
+  function tierMarkup(key, top, w, h, look, decor, labelBands, isTop, glaze) {
     var x = CX - w / 2;
     var half = w / 2;
     var out = [];
@@ -117,6 +118,27 @@
     /* верхняя плоскость: на неё ставится декор */
     if (isTop) {
       out.push('<ellipse cx="' + CX + '" cy="' + round1(top) + '" rx="' + round1(half) + '" ry="' + round1(Math.max(7, half * 0.13)) + '" fill="' + look.cream + '" stroke="' + look.edge + '" stroke-width="1.2"/>');
+    }
+
+    /* потёки глазури — приём из присланного 3D-демо, перенесённый на разрез:
+       шапка по верху яруса, капли по наружной стенке, слой глазури видно на срезе */
+    if (isTop && glaze) {
+      var gy = Math.max(5, Math.round(h * 0.1));
+      var ry = Math.max(7, half * 0.13);
+      out.push('<ellipse cx="' + CX + '" cy="' + round1(top) + '" rx="' + round1(half + 1.5) + '" ry="' + round1(ry + 1.5) + '" fill="' + look.edge + '" opacity=".94"/>');
+      /* слой глазури на срезе */
+      out.push('<rect x="' + CX + '" y="' + round1(top) + '" width="' + round1(half) + '" height="' + gy + '" fill="' + look.edge + '" opacity=".9"/>');
+      /* капли по наружной стенке: разной длины, с закруглённым концом */
+      var lens = [gy * 2.4, gy * 1.4, gy * 2.9, gy * 1.1];
+      for (var k = 0; k < lens.length; k++) {
+        var dx = round1(x + 6 + (half * 0.8) * (k + 0.5) / lens.length);
+        var dy = round1(top + ry * 0.6);
+        out.push('<path d="M' + (dx - 4) + ' ' + dy + ' h8 v' + round1(lens[k]) +
+          ' q0 4 -4 4 q-4 0 -4 -4 z" fill="' + look.edge + '" opacity=".95"/>');
+        out.push('<circle cx="' + dx + '" cy="' + round1(dy + lens[k] + 3) + '" r="3.1" fill="' + look.edge + '"/>');
+      }
+      /* блик на глазури */
+      out.push('<path d="M' + round1(x + 10) + ' ' + round1(top - 1) + ' h' + round1(half * 0.46) + '" stroke="#ffffff" stroke-width="2" opacity=".32" fill="none"/>');
     }
 
     /* бордюр из отсадки по низу яруса */
@@ -305,6 +327,9 @@
     var flavorId = (state.flavor && state.flavor.id) || state.flavorId || 'vanilla';
     var decorId = (state.decor && state.decor.id) || state.decorId || 'minimal';
     var look = looks(flavorId);
+    /* потёки: в состоянии это либо объект из списка, либо флаг */
+    var d = state.drip;
+    var glaze = d === true || d === 1 || d === 'drip' || !!(d && (d.id === 'drip' || d.drip === true));
     var tiers = tiersFor(weight);
     var s = scaleFor(weight);
     var out = [];
@@ -343,7 +368,7 @@
       y -= h;
       var isTop = (i === tiers.length - 1);
       var fn = isTop ? DECOR_FN[decorId] : null;
-      parts.push('<g class="tort-tier">' + tierMarkup(i, round1(y), w, h, look, fn || null, i === 0 ? pick : null, isTop) + '</g>');
+      parts.push('<g class="tort-tier">' + tierMarkup(i, round1(y), w, h, look, fn || null, i === 0 ? pick : null, isTop, glaze) + '</g>');
       y -= 14;
     }
     out.push('<g class="tort-tiers">' + parts.join('') + '</g>');

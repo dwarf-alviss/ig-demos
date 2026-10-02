@@ -10,7 +10,7 @@
    только то, что есть в прайсе.
 
    Публично: window.LATUN_RING = {
-     W, H, FORMS, METALS, STONES, GRAVING, DEFAULT, FREE_FROM,
+     W, H, FORMS, METALS, STONES, CUTS, SETTINGS, BANDS, GRAVING, DEFAULT, FREE_FROM,
      find, plural, normalize, sizesOf, priceOf(state), lines(state), summary(state),
      markup(state), render(svgEl, state, opts), icon(id, size),
      svgString(state, size), dataUrl(state, size)
@@ -87,9 +87,21 @@
       line: 'rgba(20,17,15,.55)', rim: '#fdf3da', spec: '#fff8e6'
     },
     {
+      id: 'rose', title: 'Латунь с розовым золочением', prep: 'латуни с розовым золочением', swatch: '#e2a08a',
+      note: 'тёплый розовый тон, лак держит цвет', extra: 15,
+      light: '#f8d6c6', main: '#e3ab95', mid: '#c98770', dark: '#8d5744', deep: '#5f3a2c',
+      line: 'rgba(30,18,14,.5)', rim: '#fff0e8', spec: '#fff6f2'
+    },
+    {
       id: 'silver', title: 'Серебро 925', prep: 'серебре 925', swatch: '#dedfe1', note: 'холодный белый блеск, проба 925',
       light: '#fbfbfa', main: '#dcdcda', mid: '#b4b4b2', dark: '#70706e', deep: '#4a4a49',
       line: 'rgba(16,16,18,.5)', rim: '#ffffff', spec: '#ffffff'
+    },
+    {
+      id: 'rhodium', title: 'Серебро с родированием', prep: 'серебре 925 с родированием', swatch: '#e9eaee',
+      note: 'белый холодный тон, как у платины, и не темнеет', extra: 25, from: 'silver',
+      light: '#ffffff', main: '#eef0f5', mid: '#c9cdd8', dark: '#8d93a3', deep: '#5f6674',
+      line: 'rgba(28,32,40,.5)', rim: '#ffffff', spec: '#ffffff'
     }
   ];
 
@@ -120,6 +132,36 @@
       vein: '#3d0f12', spark: '#ffe6d8', line: 'rgba(58,12,16,.6)'
     },
     {
+      id: 'zircon', title: 'Фианит', kind: 'facet', swatch: '#dfe7f8',
+      note: 'бесцветный, искра как у бриллианта',
+      body: '#dfe7f8', light: '#ffffff', mid: '#c8d4ee', dark: '#8b98b8',
+      vein: '#7b88a8', spark: '#ffffff', line: 'rgba(72,84,112,.55)'
+    },
+    {
+      id: 'sapphire', title: 'Выращенный сапфир', kind: 'facet', swatch: '#2a48d0',
+      note: 'синий, выращен в лаборатории — не природный',
+      body: '#2a48d0', light: '#6d86f0', mid: '#3a56d8', dark: '#1a2a72',
+      vein: '#152260', spark: '#dbe4ff', line: 'rgba(16,24,72,.6)'
+    },
+    {
+      id: 'emerald', title: 'Выращенный изумруд', kind: 'facet', swatch: '#14a862',
+      note: 'зелёный, тот же состав, что у природного',
+      body: '#14a862', light: '#5fd79b', mid: '#1dbb72', dark: '#0b5f38',
+      vein: '#084a2c', spark: '#dcffe9', line: 'rgba(6,48,30,.6)'
+    },
+    {
+      id: 'ruby', title: 'Рубин', kind: 'facet', swatch: '#d0203f',
+      note: 'красный, мелкий — беру по одному',
+      body: '#d0203f', light: '#f2708a', mid: '#dc3a55', dark: '#7a0f22',
+      vein: '#5e0b1a', spark: '#ffe0e6', line: 'rgba(64,8,18,.6)'
+    },
+    {
+      id: 'pinkzircon', title: 'Розовый фианит', kind: 'facet', swatch: '#f0a6b8',
+      note: 'розовый, выращенный — мягкий тон вместо морганита',
+      body: '#f0a6b8', light: '#ffd4de', mid: '#f2b3c2', dark: '#a8607a',
+      vein: '#8c4b63', spark: '#fff2f6', line: 'rgba(96,44,62,.5)'
+    },
+    {
       id: 'amethyst', title: 'Аметист', kind: 'facet', swatch: '#7a5aa8',
       note: 'сиреневый, грани держат свет',
       body: '#7a5aa8', light: '#b79cd8', mid: '#8f6cbb', dark: '#432c66',
@@ -127,8 +169,28 @@
     }
   ];
 
+  /* ---------- огранка: камень можно оставить как есть или огранить ---------- */
+  var CUTS = [
+    { id: 'round', title: 'Круг', add: 0, hint: 'Классика: гранат и аметист гранят кругом' },
+    { id: 'oval', title: 'Овал', add: 0, hint: 'Овал в касте смотрится крупнее того же камня' },
+    { id: 'princess', title: 'Квадрат', add: 12, hint: 'Огранка «принцесса»: четыре грани, работа дольше' },
+    { id: 'emerald', title: 'Изумруд', add: 18, hint: 'Ступенчатая огранка, камень выглядит строже' }
+  ];
+
+  /* ---------- оправа: как камень держится в изделии ---------- */
+  var SETTINGS = [
+    { id: 'prongs', title: 'Крапаны', add: 0, hint: 'Четыре когтя, камень видно со всех сторон' },
+    { id: 'halo', title: 'Halo', add: 25, hint: 'Венок мелких камней вокруг: сборка тонкая, делаю не каждый день' }
+  ];
+
+  /* ---------- шинка кольца: гладкая или с паве ---------- */
+  var BANDS = [
+    { id: 'smooth', title: 'Гладкая', add: 0, hint: 'Полирую до зеркала, как есть' },
+    { id: 'pave', title: 'Паве', add: 40, hint: 'Ряд мелких камней по бокам шинки — день работы' }
+  ];
+
   var GRAVING = { price: ENGRAVING, max: MAX, hint: 'до ' + MAX + ' знаков, +' + ENGRAVING + ' BYN' };
-  var DEFAULT = { form: 'ring', metal: 'brass', stone: 'turquoise', size: '17', graving: '' };
+  var DEFAULT = { form: 'ring', metal: 'brass', stone: 'turquoise', cut: 'round', set: 'prongs', band: 'smooth', size: '17', graving: '' };
 
   /* ============================ помощники ============================ */
 
@@ -193,19 +255,45 @@
     var form = find(FORMS, state.form == null ? DEFAULT.form : state.form);
     var metal = find(METALS, state.metal == null ? DEFAULT.metal : state.metal);
     var stone = find(STONES, state.stone == null ? DEFAULT.stone : state.stone);
+    var cut = find(CUTS, state.cut == null ? DEFAULT.cut : state.cut);
+    var set = find(SETTINGS, state.set == null ? DEFAULT.set : state.set);
+    /* шинка бывает только у кольца: у остальных форм опция не показывается */
+    var band = find(BANDS, state.band == null ? DEFAULT.band : state.band);
     var size = String(state.size == null ? form.def : state.size);
     var ok = false;
     for (var i = 0; i < form.sizes.length; i++) { if (form.sizes[i].id === size) { ok = true; } }
     if (!ok) { size = form.def; }
-    return { form: form.id, metal: metal.id, stone: stone.id, size: size, graving: clean(state.graving) };
+    if (stone.kind !== 'facet') { cut = find(CUTS, 'round'); }   /* жемчуг и бирюзу не гранят */
+    if (stone.id === 'none') { set = find(SETTINGS, 'prongs'); }
+    if (form.id !== 'ring') { band = find(BANDS, 'smooth'); }
+    return { form: form.id, metal: metal.id, stone: stone.id, cut: cut.id, set: set.id, band: band.id, size: size, graving: clean(state.graving) };
   }
+
+  /* Что у формы с камнем: у «без камня» ни огранка, ни оправа не показываются.
+     Огранка есть только у граната и аметиста — жемчуг и бирюзу не гранят. */
+  function hasStone(st) { return find(STONES, st.stone).kind !== 'none'; }
+  function facetable(st) { return find(STONES, st.stone).kind === 'facet'; }
+  function cutAdd(st) { return hasStone(st) ? find(CUTS, st.cut).add : 0; }
+  function setAdd(st) { return hasStone(st) ? find(SETTINGS, st.set).add : 0; }
+  function bandAdd(st) { return st.form === 'ring' ? find(BANDS, st.band).add : 0; }
 
   function sizeIndex(form, sizeId) {
     for (var i = 0; i < form.sizes.length; i++) { if (form.sizes[i].id === String(sizeId)) { return i; } }
     return 0;
   }
 
-  function basePrice(form, metalId) { return lotPrice(form.lot, metalId, form.base[metalId]); }
+  /* Цена лота в металле. У металла-варианта (золочение, родирование) своего лота нет:
+     берём цену основы — у розового золочения латунь, у родирования серебро —
+     а доплату считаем отдельной строкой. */
+  function basePrice(form, metalId) {
+    var own = form.base[metalId];
+    if (own != null) { return lotPrice(form.lot, metalId, own); }
+    var from = find(METALS, metalId).from || 'brass';
+    return lotPrice(form.lot, from, form.base[from]);
+  }
+
+  /* Доплата за металл-вариант (например, золочение) */
+  function metalExtra(metalId) { return find(METALS, metalId).extra || 0; }
 
   /* ============================ цена и слова ============================ */
 
@@ -214,7 +302,7 @@
   function priceOf(state) {
     var st = normalize(state);
     var form = find(FORMS, st.form);
-    return basePrice(form, st.metal) + (st.graving ? ENGRAVING : 0);
+    return basePrice(form, st.metal) + metalExtra(st.metal) + (st.graving ? ENGRAVING : 0) + cutAdd(st) + setAdd(st) + bandAdd(st);
   }
 
   function lines(state) {
@@ -228,6 +316,9 @@
       label: form.title + ' в ' + (metal.prep || metal.title.toLowerCase()) + ' · лот «' + form.lotTitle + '»',
       value: basePrice(form, st.metal) + ' BYN'
     });
+    if (metalExtra(st.metal)) {
+      out.push({ label: 'Золочение по латуни', value: '+' + metalExtra(st.metal) + ' BYN' });
+    }
     out.push({
       label: st.graving ? 'Гравировка «' + st.graving + '»' : 'Без гравировки',
       value: st.graving ? '+' + ENGRAVING + ' BYN' : '0 BYN'
@@ -240,6 +331,13 @@
       label: stone.id === 'none' ? 'Без камня — ничего не прибавляю' : stone.title + ' — камень уже в цене лота',
       value: '0 BYN'
     });
+    if (hasStone(st)) {
+      out.push({ label: 'Огранка: ' + find(CUTS, st.cut).title.toLowerCase(), value: (cutAdd(st) ? '+' + cutAdd(st) : '0') + ' BYN' });
+      out.push({ label: 'Оправа: ' + find(SETTINGS, st.set).title.toLowerCase(), value: (setAdd(st) ? '+' + setAdd(st) : '0') + ' BYN' });
+    }
+    if (st.form === 'ring') {
+      out.push({ label: 'Шинка: ' + find(BANDS, st.band).title.toLowerCase(), value: (bandAdd(st) ? '+' + bandAdd(st) : '0') + ' BYN' });
+    }
     out.push({ label: 'Итого', value: priceOf(st) + ' BYN', total: true });
     return out;
   }
@@ -250,7 +348,9 @@
     var metal = find(METALS, st.metal);
     var stone = find(STONES, st.stone);
     var size = find(form.sizes, st.size);
-    return form.title + ' · ' + metal.title.toLowerCase() + ' · ' + stone.title.toLowerCase() +
+    var extra = hasStone(st) ? ' · ' + find(CUTS, st.cut).title.toLowerCase() + ' ' + find(SETTINGS, st.set).title.toLowerCase() : '';
+    var bandWord = (st.form === 'ring' && st.band === 'pave') ? ' · шинка паве' : '';
+    return form.title + ' · ' + metal.title.toLowerCase() + ' · ' + stone.title.toLowerCase() + extra + bandWord +
       ' · ' + form.word + ' ' + size.title + (st.graving ? ' · гравировка «' + st.graving + '»' : '');
   }
 
@@ -275,8 +375,13 @@
       '<ellipse cx="300" cy="' + (y - 10) + '" rx="96" ry="10" fill="#0b0908" opacity=".4"/>';
   }
 
+  /* Свет витрины, единый с ring3d.js: ключ тёплый сверху-справа (направление
+     градиентов и блик слева-сверху у камня), холодная подсветка справа-снизу
+     (второй градиент, x1=1). В 3D ту же схему держат key/fill — обе версии
+     читаются одной съёмкой. */
   function defs(metal, stone) {
     var s = '<defs>' +
+      /* основной материал: блик слева-сверху → тень вправо-вниз, как key/fill в 3D */
       '<linearGradient id="rg-metal" x1="0" y1="0" x2=".85" y2="1">' +
         '<stop offset="0" stop-color="' + metal.light + '"/>' +
         '<stop offset=".45" stop-color="' + metal.main + '"/>' +
@@ -287,7 +392,7 @@
         '<stop offset="1" stop-color="' + metal.deep + '"/>' +
       '</linearGradient>' +
       '<radialGradient id="rg-light" cx=".5" cy=".5" r=".5">' +
-        '<stop offset="0" stop-color="' + metal.main + '" stop-opacity=".22"/>' +
+        '<stop offset="0" stop-color="' + metal.main + '" stop-opacity=".32"/>' +
         '<stop offset="1" stop-color="' + metal.main + '" stop-opacity="0"/>' +
       '</radialGradient>' +
       '<radialGradient id="rg-shadow" cx=".5" cy=".5" r=".5">' +
@@ -379,32 +484,69 @@
 
   /* Грань: огранка восьмиугольником, грани от площадки к кромке, искра */
   function facet(stone, r, seed, opt) {
+    var cut = (opt && opt.cut) || 'round';
     var rnd = rng(seed || 9), s = '', i;
+    /* силуэт: круг — восемь долей, квадрат — четыре грани, овал и изумруд растянуты */
+    var SHP = {
+      round:    { n: 8, rx: 1,    ry: 1,    rot: 0.2 },
+      oval:     { n: 8, rx: 1.3,  ry: 0.92, rot: 0.2 },
+      princess: { n: 4, rx: 1.02, ry: 1.02, rot: Math.PI / 4 },
+      emerald:  { n: 8, rx: 1.26, ry: 0.9,  rot: Math.PI / 8 }
+    }[cut] || { n: 8, rx: 1, ry: 1, rot: 0.2 };
     var pts = [], inner = [], off = { x: -r * .1, y: -r * .12 };
-    for (i = 0; i < 8; i++) {
-      var a = (Math.PI * 2 * i / 8) - Math.PI / 2 + 0.2;
-      pts.push([round(Math.cos(a) * r), round(Math.sin(a) * r)]);
-      inner.push([round(Math.cos(a) * r * .5 + off.x), round(Math.sin(a) * r * .5 + off.y)]);
+    for (i = 0; i < SHP.n; i++) {
+      var a = (Math.PI * 2 * i / SHP.n) - Math.PI / 2 + SHP.rot;
+      pts.push([round(Math.cos(a) * r * SHP.rx), round(Math.sin(a) * r * SHP.ry)]);
+      inner.push([round(Math.cos(a) * r * .5 + off.x), round(Math.sin(a) * r * .5 * (SHP.ry / SHP.rx) + off.y)]);
     }
     function poly(p) {
       var out = [];
       for (var j = 0; j < p.length; j++) { out.push(p[j][0] + ',' + p[j][1]); }
       return out.join(' ');
     }
+    function at(k) { return pts[k % SHP.n]; }
+    function inAt(k) { return inner[k % SHP.n]; }
     if (!(opt && opt.noShadow)) { s += shadowUnder(r); }
     s += '<polygon points="' + poly(pts) + '" fill="url(#rg-stone)" stroke="' + stone.line + '" stroke-width="1.6"/>';
-    for (i = 0; i < 8; i++) {
+    for (i = 0; i < SHP.n; i++) {
       s += '<line x1="' + inner[i][0] + '" y1="' + inner[i][1] + '" x2="' + pts[i][0] + '" y2="' + pts[i][1] +
         '" stroke="' + (i % 2 ? stone.light : stone.dark) + '" stroke-width="1" opacity=".5"/>';
     }
     s += '<polygon points="' + poly(inner) + '" fill="' + stone.light + '" opacity=".34" stroke="' + stone.light +
       '" stroke-width=".9" stroke-opacity=".55"/>';
-    s += '<polygon points="' + [pts[2], pts[3], inner[3], inner[2]].map(function (q) { return q[0] + ',' + q[1]; }).join(' ') +
-      '" fill="' + stone.dark + '" opacity=".4"/>';
-    s += '<polygon points="' + [pts[4], pts[5], inner[5], inner[4]].map(function (q) { return q[0] + ',' + q[1]; }).join(' ') +
-      '" fill="' + stone.dark + '" opacity=".28"/>';
+    [[1, 2], [3, 4]].forEach(function (pair, q) {
+      s += '<polygon points="' + [at(pair[0]), at(pair[1]), inAt(pair[1]), inAt(pair[0])].map(function (p) { return p[0] + ',' + p[1]; }).join(' ') +
+        '" fill="' + stone.dark + '" opacity="' + (q ? .28 : .4) + '"/>';
+    });
     s += '<g class="rg-spark">' + sparkle(round(-r * .34), round(-r * .38), round(r * .32), stone.spark, .8) +
       sparkle(round(r * .42), round(r * .3), round(r * .18), stone.spark, .5) + '</g>';
+    return s;
+  }
+
+  /* Halo: венок мелких камней вокруг основного — рисуется под камнем */
+  function haloMarkup(metal, stone, r) {
+    var s = '', i, n = 12;
+    for (i = 0; i < n; i++) {
+      var a = i / n * Math.PI * 2 - Math.PI / 2;
+      var x = round(Math.cos(a) * r * 1.42), y = round(Math.sin(a) * r * 1.42);
+      s += '<circle cx="' + x + '" cy="' + y + '" r="' + round(r * .25) + '" fill="' + stone.light + '" stroke="' + stone.line + '" stroke-width=".9"/>';
+      s += '<circle cx="' + round(x - r * .06) + '" cy="' + round(y - r * .06) + '" r="' + round(r * .09) + '" fill="#ffffff" opacity=".7"/>';
+    }
+    s += '<circle r="' + round(r * 1.42) + '" fill="none" stroke="' + metal.main + '" stroke-width="' + round(r * .11) + '" opacity=".8"/>';
+    return s;
+  }
+
+  /* Паве по шинке: ряд мелких камней по ободу, место камня не занимает */
+  function paveMarkup(metal, stone, R, bw, cx, cy) {
+    var s = '', i, n = 20;
+    for (i = 0; i < n; i++) {
+      var a = (i / n) * Math.PI * 2 + Math.PI * 0.12;
+      /* верхний сектор оставляем свободным: там седло и камень */
+      if (Math.abs(Math.atan2(Math.sin(a), Math.cos(a)) + Math.PI / 2 + 0.12) < 0.62) { continue; }
+      var x = round(cx + Math.cos(a) * R), y = round(cy + Math.sin(a) * R);
+      s += '<circle cx="' + x + '" cy="' + y + '" r="' + round(bw * .13) + '" fill="' + metal.rim + '" stroke="' + metal.line + '" stroke-width=".8" opacity=".9"/>';
+      s += '<circle cx="' + x + '" cy="' + y + '" r="' + round(bw * .085) + '" fill="' + stone.light + '" stroke="' + stone.dark + '" stroke-width=".5"/>';
+    }
     return s;
   }
 
@@ -481,6 +623,8 @@
       '" stroke-width="11" stroke-linecap="round" opacity=".5"/>';
     g += '<path class="rg-glint" d="' + arcPath(300, 300, R, 214, 336) + '" fill="none" stroke="' + metal.spec +
       '" stroke-width="6" stroke-linecap="round" stroke-dasharray="52 520" stroke-dashoffset="0" opacity=".45"/>';
+    /* паве по шинке: ряд мелких камней по ободу, кроме места под камень */
+    if (st.band === 'pave') { g += '<g class="rg-pave">' + paveMarkup(metal, stone, R, bw, 300, 300) + '</g>'; }
     /* каст: два когтя по краям камня и седло под ним */
     g += '<g class="rg-cast">' +
       '<path d="M 272 200 Q 266 178 276 162" fill="none" stroke="' + metal.main + '" stroke-width="7" stroke-linecap="round"/>' +
@@ -488,7 +632,8 @@
       el('ellipse', { cx: 300, cy: 206, rx: 30, ry: 11, fill: 'url(#rg-metal-2)', stroke: metal.line, 'stroke-width': 1.3 }) +
       '<path d="' + arcPath(300, 206, 30, 200, 340) + '" fill="none" stroke="' + metal.rim + '" stroke-opacity=".2" stroke-width="1"/>' +
       '</g>';
-    g += '<g class="rg-stone" transform="translate(300 190)">' + stoneBody(stone, metal, 26, 3 + k) + '</g>';
+    if (st.set === 'halo') { g += '<g class="rg-halo">' + haloMarkup(metal, stone, 26) + '</g>'; }
+    g += '<g class="rg-stone" transform="translate(300 190)">' + stoneBody(stone, metal, 26, 3 + k, { cut: st.cut, set: st.set }) + '</g>';
     g += '<g class="rg-grave">' + graveInner(st, form, metal) + '</g>';
     return {
       body: '<g transform="translate(300 300) scale(' + round(scale) + ') translate(-300 -300)">' + g + '</g>',
@@ -517,7 +662,8 @@
         '<circle cx="' + cx + '" cy="' + (cy + r) + '" r="' + round(rr + 6.4) + '" fill="none" stroke="' + metal.line + '" stroke-width="1.3" opacity=".75"/>' +
         '<path d="' + arcPath(cx, cy + r, round(rr + 5.2), 200, 340) + '" fill="none" stroke="' + metal.rim + '" stroke-width="1.6" opacity=".45"/>' +
         '</g>';
-      s += '<g class="rg-stone" transform="translate(' + cx + ' ' + (cy + r) + ')">' + stoneBody(stone, metal, rr, 7 + idx + k, { noShadow: true }) + '</g>';
+      if (st.set === 'halo') { s += '<g class="rg-halo">' + haloMarkup(metal, stone, rr) + '</g>'; }
+      s += '<g class="rg-stone" transform="translate(' + cx + ' ' + (cy + r) + ')">' + stoneBody(stone, metal, rr, 7 + idx + k, { noShadow: true, cut: st.cut, set: st.set }) + '</g>';
     });
     /* бирка мастера: два коротких звена от дуг и пластинка под парой */
     s += '<g class="rg-chain">' +
@@ -553,7 +699,8 @@
       '<circle cx="300" cy="' + (cy - 34) + '" r="40" fill="none" stroke="url(#rg-metal-2)" stroke-width="9"/>' +
       '<circle cx="300" cy="' + (cy - 34) + '" r="44" fill="none" stroke="' + metal.line + '" stroke-width="1.3" opacity=".75"/>' +
       '</g>';
-    s += '<g class="rg-stone" transform="translate(300 ' + (cy - 34) + ')">' + stoneBody(stone, metal, 30, 11 + k) + '</g>';
+    if (st.set === 'halo') { s += '<g class="rg-halo">' + haloMarkup(metal, stone, 30) + '</g>'; }
+    s += '<g class="rg-stone" transform="translate(300 ' + (cy - 34) + ')">' + stoneBody(stone, metal, 30, 11 + k, { cut: st.cut, set: st.set }) + '</g>';
     s += '<g class="rg-chain">' +
       '<circle cx="300" cy="' + (cy + 94) + '" r="6" fill="none" stroke="url(#rg-metal)" stroke-width="3.4"/>' +
       '</g>';
@@ -595,7 +742,8 @@
       '<circle cx="300" cy="' + (cy - ry) + '" r="27" fill="none" stroke="url(#rg-metal-2)" stroke-width="7"/>' +
       '<circle cx="300" cy="' + (cy - ry) + '" r="30.5" fill="none" stroke="' + metal.line + '" stroke-width="1.2" opacity=".75"/>' +
       '</g>';
-    s += '<g class="rg-stone" transform="translate(300 ' + (cy - ry) + ')">' + stoneBody(stone, metal, 21, 17 + k) + '</g>';
+    if (st.set === 'halo') { s += '<g class="rg-halo">' + haloMarkup(metal, stone, 21) + '</g>'; }
+    s += '<g class="rg-stone" transform="translate(300 ' + (cy - ry) + ')">' + stoneBody(stone, metal, 21, 17 + k, { cut: st.cut, set: st.set }) + '</g>';
     s += '<g class="rg-chain">' +
       '<circle cx="300" cy="' + (cy + ry + 8) + '" r="6" fill="none" stroke="url(#rg-metal)" stroke-width="3.4"/>' +
       '</g>';
@@ -822,7 +970,8 @@
   /* ============================ публично ============================ */
 
   root.LATUN_RING = {
-    W: W, H: H, FORMS: FORMS, METALS: METALS, STONES: STONES, GRAVING: GRAVING,
+    W: W, H: H, FORMS: FORMS, METALS: METALS, STONES: STONES, CUTS: CUTS, SETTINGS: SETTINGS, BANDS: BANDS, GRAVING: GRAVING,
+    hasStone: hasStone, facetable: facetable,
     DEFAULT: DEFAULT, FREE_FROM: FREE_FROM,
     find: find, plural: plural, normalize: normalize, sizesOf: sizesOf,
     priceOf: priceOf, lines: lines, summary: summary,

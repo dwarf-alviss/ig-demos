@@ -53,7 +53,9 @@
     instagram: '<path d="M3 3h18v18H3z"/><circle cx="12" cy="12" r="4.2"/><path d="M17.5 6.5h.01"/>',
     calendar: '<path d="M3 5h18v16H3z"/><path d="M3 10h18"/><path d="M8 2.5v4"/><path d="M16 2.5v4"/>',
     hanger: '<path d="M12 8 2 17h20L12 8Z"/><path d="M12 8V4.5h3"/>',
-    tag: '<path d="M3 3h9l9 9-9 9-9-9z"/><path d="M7.5 7.5h.01"/>'
+    tag: '<path d="M3 3h9l9 9-9 9-9-9z"/><path d="M7.5 7.5h.01"/>',
+    'arrow-right': '<path d="M2.5 12h18"/><path d="M15 6.5 20.5 12 15 17.5"/>',
+    'trash-2': '<path d="M4 6.5h16"/><path d="M6.5 6.5V21h11V6.5"/><path d="M9 3h6v3.5H9z"/><path d="M10 10.5V17"/><path d="M14 10.5V17"/><path d="M10.5 21v1"/><path d="M13.5 21v1"/>'
   };
 
   function icon(name, cls) {
@@ -579,6 +581,7 @@
       }, 1);
       toast(product.name + ', размер ' + size + '. В корзине ' + count + ' ' +
         plural(count, 'позиция', 'позиции', 'позиций'));
+      if (navigator.vibrate) { navigator.vibrate(10); }
     });
   }
 
@@ -925,6 +928,100 @@
     document.addEventListener('click', function (event) {
       var btn = event.target.closest ? event.target.closest('[data-action="reset-filters"]') : null;
       if (btn) { reset(); }
+    });
+  }
+
+  /* ============================ size-визуализатор (SVG-манекен) ============================ */
+
+  /* Размер меняет пропорции силуэта: грудь, талия, бёдра из data.sizeChart. Чистый SVG+JS. */
+  function initSizeFigure() {
+    var silhouette = $('#size-silhouette');
+    var label = $('#size-figure-label');
+    if (!silhouette || !label) { return; }
+    var chart = DATA.sizeChart || {};
+    var rows = chart.rows || [];
+    var head = chart.head || [];
+    var bustIdx = 2, waistIdx = 3, hipsIdx = 4;
+
+    /* базовые ширины (в координатах SVG 0–100) для среднего размера M */
+    var base = {
+      bust: 40, waist: 36, hips: 40,
+      torso: 1, shoulders: 1
+    };
+    var midIdx = rows.length > 2 ? 2 : 0;
+
+    function parseRange(text) {
+      var parts = String(text || '').split('\u2013');
+      var lo = parseFloat(parts[0]);
+      var hi = parseFloat(parts[1]);
+      if (isNaN(lo)) { return null; }
+      return isNaN(hi) ? lo : (lo + hi) / 2;
+    }
+
+    function scale(idx) {
+      var row = rows[idx];
+      if (!row) { return null; }
+      var bust = parseRange(row[bustIdx]);
+      var waist = parseRange(row[waistIdx]);
+      var hips = parseRange(row[hipsIdx]);
+      var mid = rows[midIdx];
+      var baseBust = parseRange(mid[bustIdx]);
+      var baseWaist = parseRange(mid[waistIdx]);
+      var baseHips = parseRange(mid[hipsIdx]);
+      return {
+        bust: bust && baseBust ? bust / baseBust : 1,
+        waist: waist && baseWaist ? waist / baseWaist : 1,
+        hips: hips && baseHips ? hips / baseHips : 1
+      };
+    }
+
+    function apply(idx) {
+      var row = rows[idx];
+      var k = scale(idx);
+      if (!k) { return; }
+      var torso = $('#s-torso', document) ? document.getElementById('s-torso') : null;
+      var arms = [document.getElementById('s-arm-l'), document.getElementById('s-arm-r')];
+      if (!torso) { return; }
+      /* переписываем контур туловища: те же опорные точки, ширины умножены на коэффициенты */
+      var d = 'M44 33 L50 36 L56 33 ' +
+        'C' + (60 * k.bust).toFixed(1) + ' ' + (40).toFixed(1) + ' ' + (62 * k.bust).toFixed(1) + ' 46 ' + (62 * k.bust).toFixed(1) + ' 54 ' +
+        'C' + (62 * k.bust).toFixed(1) + ' ' + (62 * (k.bust * .4 + k.waist * .6)).toFixed(1) + ' ' + (61 * k.waist).toFixed(1) + ' ' + (68).toFixed(1) + ' ' + (62 * k.waist).toFixed(1) + ' 74 ' +
+        'L' + (60 * k.waist).toFixed(1) + ' 96 ' +
+        'C' + (58 * k.hips).toFixed(1) + ' 104 ' + (56 * k.hips).toFixed(1) + ' 112 ' + (56 * k.hips).toFixed(1) + ' 120 ' +
+        'L' + (55 * k.hips).toFixed(1) + ' 140 L54 176 L46 176 L' + (45 * k.hips).toFixed(1) + ' 140 ' +
+        'L' + (44 * k.hips).toFixed(1) + ' 120 C' + (42 * k.hips).toFixed(1) + ' 112 ' + (40 * k.hips).toFixed(1) + ' 104 ' + (38 * k.hips).toFixed(1) + ' 96 ' +
+        'L' + (38 * k.waist).toFixed(1) + ' 74 C' + (39 * k.waist).toFixed(1) + ' ' + (68).toFixed(1) + ' ' + (38 * k.waist).toFixed(1) + ' ' + (62 * (k.bust * .4 + k.waist * .6)).toFixed(1) + ' ' + (38 * k.bust).toFixed(1) + ' 54 ' +
+        'C' + (38 * k.bust).toFixed(1) + ' 46 ' + (40 * k.bust).toFixed(1) + ' 40 ' + (44 * (k.bust * .7 + .3)).toFixed(1) + ' 33 Z';
+      torso.setAttribute('d', d);
+      arms.forEach(function (arm, side) {
+        if (!arm) { return; }
+        var dir = side === 0 ? -1 : 1;
+        var dd = 'M' + (50 + dir * 6) + ' 34 ' +
+          'C' + (50 + dir * 14 * (0.7 + k.bust * 0.3)) + ' 40 ' + (50 + dir * (18 * 0.5 + 18 * k.bust * 0.5)) + ' 52 ' + (50 + dir * (20 * (0.5 + k.bust * 0.5))) + ' 66 ' +
+          'C' + (50 + dir * 21) + ' 72 ' + (50 + dir * 22) + ' 80 ' + (50 + dir * 22) + ' 88';
+        arm.setAttribute('d', dd);
+      });
+      /* измерительные линии тоже по реальным ширинам */
+      var bustLine = document.getElementById('s-bust');
+      var waistLine = document.getElementById('s-waist');
+      var hipsLine = document.getElementById('s-hips');
+      if (bustLine) { bustLine.setAttribute('x1', String(50 - 20 * k.bust)); bustLine.setAttribute('x2', String(50 + 20 * k.bust)); }
+      if (waistLine) { waistLine.setAttribute('x1', String(50 - 18 * k.waist)); waistLine.setAttribute('x2', String(50 + 18 * k.waist)); }
+      if (hipsLine) { hipsLine.setAttribute('x1', String(50 - 20 * k.hips)); hipsLine.setAttribute('x2', String(50 + 20 * k.hips)); }
+      label.textContent = row[0];
+    }
+
+    apply(midIdx);
+
+    /* выбор размера из фильтра и из карточек меняет силуэт */
+    document.addEventListener('click', function (event) {
+      if (!event.target.closest) { return; }
+      var chip = event.target.closest('[data-filter="size"], [data-action="pick-size"]');
+      if (!chip) { return; }
+      var value = chip.getAttribute('data-value') || chip.getAttribute('data-size') || '';
+      for (var i = 0; i < rows.length; i++) {
+        if (rows[i][0] === value) { apply(i); return; }
+      }
     });
   }
 
@@ -1376,6 +1473,7 @@
     initFooterYear();
     initCardActions();
     initSizeModal();
+    initSizeFigure();
     initFeatured();
     initServices();
     initPoints();

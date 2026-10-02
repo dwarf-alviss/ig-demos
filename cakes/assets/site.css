@@ -485,3 +485,113 @@ h1, h2, h3, h4 { text-wrap: pretty; }
   .calc__tort { max-width: 100%; }
   .calc__tort3d { max-width: 100%; }
 }
+
+/* ---------- витрина в 3D (каталог) ---------- */
+.vitrine { display: grid; gap: clamp(1.5rem, 3.5vw, 3rem); align-items: start; }
+@media (min-width: 980px) { .vitrine { grid-template-columns: 1.15fr .85fr; } }
+.vitrine__stage {
+  background: var(--surface);
+  border: 2px dashed var(--line-2);
+  border-radius: var(--radius-lg);
+  padding: clamp(1rem, 2.4vw, 1.9rem);
+  box-shadow: var(--shadow);
+  display: grid;
+  place-items: center;
+}
+/* фото из assets/img показывается, пока 3D не поднялось: прячем его только
+   после удачного mount, поэтому без WebGL витрина остаётся с картинкой */
+.vitrine__photo { width: 100%; max-width: 620px; height: auto; display: block; border-radius: 16px; }
+.vitrine__photo[hidden] { display: none !important; }
+.vitrine__canvas { width: 100%; max-width: 620px; height: auto; display: block; margin-inline: auto; touch-action: pan-y; cursor: grab; border-radius: 16px; }
+.vitrine__canvas:active { cursor: grabbing; }
+.vitrine__canvas[hidden] { display: none !important; }
+.vitrine__side { display: flex; flex-direction: column; gap: var(--s3); }
+.vitrine__name { font-size: clamp(1.3rem, 2.6vw, 1.8rem); }
+.vitrine__format { margin-top: -.4rem; }
+.vitrine__desc { color: var(--fg); }
+.vitrine__foot { display: flex; align-items: center; justify-content: space-between; gap: var(--s4); flex-wrap: wrap; margin-top: var(--s2); }
+.vitrine__foot .price { font-family: var(--font-script); font-size: 1.7rem; line-height: 1; color: var(--choco); }
+@media (max-width: 760px) { .vitrine__photo, .vitrine__canvas { max-width: 100%; } }
+
+/* ============================ липкий итог и служебные места ============================ */
+/* липкая плашка итога (мобильная): «Итого N BYN + кнопка», всегда в кадре при скролле шагов */
+.stickybar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s3);
+  background: var(--surface);
+  border-top: 2px dashed var(--accent-2);
+  padding: .6rem clamp(.9rem, 4vw, 1.4rem) calc(.6rem + env(safe-area-inset-bottom, 0px));
+  box-shadow: 0 -8px 26px rgba(56, 32, 15, .14);
+}
+.stickybar[hidden] { display: none; }
+.stickybar__sum { font-family: var(--font-script); font-weight: 700; font-size: 1.5rem; color: var(--accent); line-height: 1; }
+.stickybar__btn { padding: .65rem 1.15rem; }
+body.has-stickybar { padding-bottom: 64px; }
+@media (min-width: 880px) {
+  .stickybar, body.has-stickybar body { display: none; }
+  body.has-stickybar { padding-bottom: 0; }
+}
+/* герой-метрика панели + компактная строка остальных */
+.admin-hero { display: grid; gap: var(--s4); }
+@media (min-width: 760px) { .admin-hero { grid-template-columns: 300px 1fr; align-items: start; } }
+.admin-hero__card { border-color: var(--accent); border-style: solid; }
+.admin-hero__card .stat__value {
+  font-family: var(--font-display); font-weight: 700; font-size: clamp(1.9rem, 4vw, 2.5rem); color: var(--accent);
+}
+/* «На сайт» в тёмной плашке панели */
+.topline__link { color: var(--cream-2); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.topline__link:hover { color: #fff; }
+/* деструктив в общем ряду кнопок: красная рамка и текст, а не ещё одна нейтральная кнопка */
+.admin-bar__clear { color: var(--danger); border-color: var(--danger); }
+.admin-bar__clear:hover { --btn-bg: var(--danger-soft); }
+/* якоря не уезжают под sticky-шапку */
+section[id] { scroll-margin-top: calc(var(--header-h) + 14px); }
+h2[id], h3[id] { scroll-margin-top: calc(var(--header-h) + 14px); }
+
+/* ============================ тёмная тема ============================ */
+/* своя ночная палитра в тех же токенах: тёмный шоколад, а не чёрный минимализм */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cream: #241a12;
+    --cream-2: #e8d6bd;
+    --bg: #211710;
+    --surface: #2b1f16;
+    --surface-2: #362818;
+    --choco: #f2e4d2;
+    --choco-2: #d8c2a8;
+    --fg: #f0e2d0;
+    --muted: #b39c85;
+    --muted-dark: #b39c85;
+    --line: #443123;
+    --line-2: #55402a;
+    --accent: #d96f42;
+    --accent-soft: #3c2418;
+    --accent-2: #e0a04c;
+    --on-accent: #1d130b;
+    --danger: #e06a55;
+    --danger-soft: #38201a;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4), 0 2px 8px rgba(0, 0, 0, .3);
+    --shadow: 0 12px 30px rgba(0, 0, 0, .45);
+    --shadow-lg: 0 26px 60px rgba(0, 0, 0, .55);
+  }
+  .site-footer { background: #170f08; color: var(--muted); }
+  .footer-bottom code { background: rgba(255, 248, 240, .1); color: var(--cream-2); }
+  .toast { background: #f2e4d2; color: #241a12; border-color: var(--accent); }
+  .input::placeholder, .textarea::placeholder { color: #8d7462; }
+  .status--new { background: #3c2c12; color: #eab86a; }
+  .status--accepted { background: #202c42; color: #9db9e4; }
+  .status--done { background: #1f2c1c; color: #93c48d; }
+  .status--cancelled { background: #33261f; color: #b99c8b; }
+  .badge--warn, .badge--warm { background: #3c2c12; color: #eab86a; }
+  .badge--ok { background: #1f2c1c; color: #93c48d; }
+  .polaroid { background: #f4ead9; }
+  .section--warm {
+    background-image: repeating-linear-gradient(to bottom, transparent 0 33px, rgba(224, 160, 76, .1) 33px 34px);
+  }
+  body {
+    background-image:
+      radial-gradient(900px 420px at 84% -8%, #352313 0%, rgba(53, 35, 19, 0) 64%),
+      radial-gradient(680px 380px at -10% 18%, #2c2012 0%, rgba(44, 32, 18, 0) 62%),
+      radial-gradient(520px 300px at 50% 108%, #302417 0%, rgba(48, 36, 23, 0) 70%);
+  }
+}

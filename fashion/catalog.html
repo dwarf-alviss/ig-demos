@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Каталог — «Линия», женская одежда в Минске</title>
 <meta name="description" content="Каталог «Линии»: платья, костюмы, трикотаж, джинсы, блузы и аксессуары. Фильтры по размеру XS–XL, цвету, цене и наличию в Призме и МОМО. Цены в BYN, размер отмечается в строке.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Витрина «Линии», Минск">
+<meta property="og:description" content="Тринадцать моделей базового гардероба: платья, костюмы, трикотаж. Размеры XS–XL, померить можно в зале.">
+<meta property="og:image" content="assets/img/og.jpg" width="1200" height="630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/site.css">
@@ -99,6 +105,20 @@
       <div class="catalog-layout" style="margin-top: var(--s5)">
         <aside class="filters__side" aria-label="Фильтры каталога">
           <div class="filters">
+            <div class="filter-group size-figure" aria-label="Силуэт выбранного размера">
+              <svg viewBox="0 0 100 220" role="img" aria-label="Контур манекена: пропорции меняются с размером" aria-hidden="false">
+                <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter" id="size-silhouette">
+                  <path id="s-body" d="M50 18 C46 18 44 21 44 24 C44 26 45 28 47 29 L44 33 L50 36 L56 33 C55 32 55 30 56 29 C55 28 56 26 56 24 C56 21 54 18 50 18 Z"/>
+                  <path id="s-torso" d="M44 33 L50 36 L56 33 C60 40 62 46 62 54 C62 62 61 68 62 74 L60 96 C58 104 56 112 56 120 L55 140 L54 176 L46 176 L45 140 L44 120 C42 112 40 104 38 96 L38 74 C39 68 38 62 38 54 C38 46 40 40 44 33 Z"/>
+                  <path id="s-arm-l" d="M44 34 C36 40 32 52 30 66 C29 72 28 80 28 88" />
+                  <path id="s-arm-r" d="M56 34 C64 40 68 52 70 66 C71 72 72 80 72 88" />
+                  <line id="s-bust" class="measure" x1="30" y1="54" x2="70" y2="54"/>
+                  <line id="s-waist" class="measure" x1="32" y1="78" x2="68" y2="78"/>
+                  <line id="s-hips" class="measure" x1="30" y1="112" x2="70" y2="112"/>
+                </g>
+              </svg>
+              <p class="size-figure__caption">Силуэт «Стеллы» в размере <b id="size-figure-label">1</b>: грудь, талия, бёдра</p>
+            </div>
             <div class="filter-group">
               <p class="filter-group__head"><span>Категория</span></p>
               <div class="filter-chips" id="filter-cat"></div>

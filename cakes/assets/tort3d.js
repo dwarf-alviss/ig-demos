@@ -14,11 +14,23 @@
    Публично: window.MELNICA_TORT3D
      supported()             — есть ли WebGL
      mount(canvas, getState) — поднять сцену (Promise)
-     update(state, opts)     — пересобрать торт; opts.only='decor'
-                               пересобирает только верх
+     update(state, opts)     — пересобрать; state.item ('cake'|'cupcake'|
+                               'macaron'|'donut') выбирает изделие, без него
+                               собирается торт, как раньше; opts.only='decor'
+                               пересобирает только верх торта; state.topping
+                               ('berries'|'sprinkles'|'swirl'|'none') задаёт
+                               верх витрины напрямую, минуя декор калькулятора
+     setItem(kind)           — переключить изделие и пересобрать
+     item()                  — какое изделие стоит сейчас
+     items()                 — какие изделия умеет модуль
      snapshot(width)         — снимок JPEG (data-URL) для корзины
      dispose()               — остановить
      lastError               — последняя ошибка
+
+   Витрина (капкейк, ряд макаронов, пончик) перенесена из присланного демо
+   на three r150 и переписана на r180: та же геометрия, тот же
+   детерминированный ГПСЧ, но материалы — PBR с clearcoat, посыпка —
+   InstancedMesh, а тень и пол общие с тортом.
    ============================================================ */
 (function (root) {
   'use strict';
@@ -49,6 +61,7 @@
     choco: { sponge: 0x7c5334, sponge2: 0x6b4429, fill: 0xc8284a, cream: 0xf4e3cf, edge: 0x3f2415 },
     straw: { sponge: 0xf6e9cd, sponge2: 0xefdcb5, fill: 0xd13356, cream: 0xfdf6e6, edge: 0xbfa06a },
     brulee: { sponge: 0xf2d79e, sponge2: 0xe9cb88, fill: 0xa85f1c, cream: 0xfbeed6, edge: 0xbb9250 },
+    blue: { sponge: 0xf0e9f7, sponge2: 0xe4dbf1, fill: 0x5b4a9a, cream: 0xf8f4fb, edge: 0x4a3f74 },
     gf: { sponge: 0xecdbba, sponge2: 0xe2cfa4, fill: 0xa97f1c, cream: 0xfaf1de, edge: 0xb59b6a }
   };
 
@@ -85,6 +98,11 @@
   function decorIdOf(state) {
     return (state && state.decor && state.decor.id) || (state && state.decorId) || 'minimal';
   }
+  /* Потёки: в демо это флаг drip, у нас — то же самое, только со значением по умолчанию */
+  function dripOn(state) {
+    var v = (state && state.drip !== undefined) ? state.drip : (state && state.dripId);
+    return v === true || v === 'drip' || v === 1 || v === '1';
+  }
 
   /* подмешать тёплый оттенок в крем: белым по белому розетки не видно (как в tort.js) */
   function tintHex(hex, k) {
@@ -99,10 +117,16 @@
   var renderer = null, scene = null, camera = null, group = null, pieceRoot = null;
   var floor = null, blob = null, mirrorGroup = null, key = null, decorRoot = null;
   var canvasEl = null, getState = null, raf = 0;
-  var yaw = 0, pitch = 0.34, zoom = 1, dragging = false, lastX = 0, lastY = 0, idle = true, idleTimer = 0;
+  var yaw = 0, pitch = 0.34, zoom = 1, dragging = false, lastX = 0, lastY = 0;
+
+  /* Инерция вращения, как в присланном 3D-демо: отпустил — торт едет дальше и плавно
+     возвращается к спокойному ходу (0.03 — доля приближения за кадр). */
+  var IDLE_SPIN = 0.0032;
+  var spinVel = IDLE_SPIN;
+  var onScreen = true;
   var camDist = 5;
-  var shadowTex = null, sliceTex = null, printTex = null;
-  var topTier = null, lookNow = LOOKS.vanilla, builtKey = '';
+  var shadowTex = null, sliceTex = null, printTex = null, noiseTex = null;
+  var topTier = null, lookNow = LOOKS.vanilla, builtKey = '', lastState = null;
   var bound = false, running = false, lastW = 0, lastH = 0;
   var calm = false;                 /* «меньше движения»: торт не крутится сам */
   try { calm = !!(root.matchMedia && root.matchMedia('(prefers-reduced-motion: reduce)').matches); } catch (e) {}
@@ -297,6 +321,40 @@
     var R = tier.r, y = tier.y, h = tier.h;
     var i, a, p;
     var choco = new THREE.MeshPhysicalMaterial({ color: 0x4a2a1d, metalness: 0, roughness: .6, clearcoat: .35, envMapIntensity: .55 });
+
+    /* Потёки глазури из присланного демо: шапка по верху яруса, капли по кромке
+       с шариком на конце. Сектор выреза оставляем свободным — иначе глазурь
+       повисла бы над пустотой. */
+    if (dripOn(state)) {
+      var glaze = new THREE.MeshPhysicalMaterial({
+        color: look.edge, metalness: 0, roughness: .16, clearcoat: 1, clearcoatRoughness: .08, envMapIntensity: 1.1
+      });
+      var cap = new THREE.Mesh(
+        new THREE.CylinderGeometry(R - 0.004, R - 0.004, 0.03, 72, 1, false, WEDGE / 2, TAU - WEDGE),
+        glaze
+      );
+      cap.position.y = y + 0.008;
+      cap.castShadow = true;
+      g.add(cap);
+      var drops = Math.max(10, Math.round(R * 16));
+      for (i = 0; i < drops; i++) {
+        a = (i + .5) / drops * TAU;
+        /* угол выреза: от -WEDGE/2 до +WEDGE/2 — там глазури нет */
+        var rel = Math.atan2(Math.sin(a), Math.cos(a));
+        if (Math.abs(rel) < WEDGE * 0.62) { continue; }
+        /* капля не длиннее стенки яруса — иначе глазурь повисла бы в воздухе */
+        var L = Math.min(0.045 + ((i * 7) % 5) / 5 * 0.16 * (0.4 + R), h * 0.6);
+        var dr = new THREE.Mesh(new THREE.CapsuleGeometry(0.03 + R * 0.012, L, 4, 10), glaze);
+        dr.position.set(Math.sin(a) * (R - 0.012), y - L / 2 + 0.004, Math.cos(a) * (R - 0.012));
+        dr.castShadow = true;
+        g.add(dr);
+        var tip = new THREE.Mesh(new THREE.SphereGeometry(0.032 + R * 0.014, 10, 8), glaze);
+        tip.position.set(dr.position.x, y - L - 0.004, dr.position.z);
+        tip.scale.y = 1.2;
+        tip.castShadow = true;
+        g.add(tip);
+      }
+    }
 
     if (id === 'roses') {
       var roseMat = new THREE.MeshPhysicalMaterial({
@@ -559,6 +617,369 @@
     return { group: g, reach: Math.max(sliceReach(off, sr, WEDGE), boardR) };
   }
 
+  /* ============================================================
+     Витрина: капкейк, ряд макаронов, пончик
+     ------------------------------------------------------------
+     Геометрия перенесена из присланного демо (three r150, глобальный THREE)
+     и переписана на ES5 и на r180: те же профили lathe, та же спираль крема,
+     тот же детерминированный ГПСЧ, та же посыпка через InstancedMesh.
+     Вкус берём из начинок калькулятора, поэтому витрина и торт говорят
+     на одном языке. Всё, что стоит на столе, стоит на y=0: пол, мягкая тень
+     и отражение у витрины те же, что у торта.
+     ============================================================ */
+
+  var ITEMS = ['cake', 'cupcake', 'macaron', 'donut'];
+  var itemNow = 'cake';                 /* без state.item работает по-старому — торт */
+
+  function itemOf(state) {
+    var k = (state && state.item) || itemNow;
+    return ITEMS.indexOf(k) > -1 ? k : 'cake';
+  }
+
+  /* детерминированный ГПСЧ из демо: посыпка и лепестки не должны дрожать
+     от каждого пересбора */
+  function rn(seed) {
+    var s = seed;
+    return function () {
+      s = s + 0x6D2B79F5 | 0;
+      var t = Math.imul(s ^ s >>> 15, 1 | s);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+
+  /* вкус витрины: крем, глазурь (ганаш) и тесто — цвета из демо,
+     привязанные к пяти начинкам калькулятора */
+  var PASTRY = {
+    vanilla: { cream: 0xf6ead0, glaze: 0xe0b878, dough: 0xd39a56 },
+    choco: { cream: 0x7a4a36, glaze: 0x4a2a1c, dough: 0x8a5a3a },
+    straw: { cream: 0xf3b9c4, glaze: 0xc23a5a, dough: 0xd39a56 },
+    brulee: { cream: 0xd9a35f, glaze: 0x9b5b23, dough: 0xd39a56 },
+    blue: { cream: 0xb9a5dc, glaze: 0x5b4a9a, dough: 0xcfb083 },
+    gf: { cream: 0xb8cf8c, glaze: 0x7d9a4d, dough: 0xcfb083 }
+  };
+  var FLAVOR_RING = ['vanilla', 'choco', 'straw', 'brulee', 'blue', 'gf'];
+  function pastryOf(flavorId) { return PASTRY[flavorId] || PASTRY.vanilla; }
+
+  /* декор калькулятора → верх витрины. state.topping задаёт верх напрямую
+     ('none'|'berries'|'sprinkles'|'swirl') и минует таблицу — так витрина
+     каталога показывает изделие с посыпкой, не притворяясь, что это печать.
+     Розетки из крема умеет только капкейк: остальным они ни к чему */
+  var TOPPING = { minimal: 'none', roses: 'swirl', berries: 'berries', print: 'sprinkles', figures: 'sprinkles' };
+  function toppingOf(state, item) {
+    var t = (state && state.topping) || TOPPING[decorIdOf(state)] || 'none';
+    if (item === 'cupcake') return t;
+    if (t === 'swirl') return 'none';
+    return t;
+  }
+
+  /* шероховатость теста: канва из демо, но одна на всю сцену */
+  function noiseTexture() {
+    var c = document.createElement('canvas');
+    c.width = c.height = 256;
+    var x = c.getContext('2d');
+    var rnd = rn(4);
+    x.fillStyle = '#888';
+    x.fillRect(0, 0, 256, 256);
+    for (var i = 0; i < 900; i++) {
+      var v = 90 + (rnd() * 110 | 0);
+      x.fillStyle = 'rgba(' + v + ',' + v + ',' + v + ',.5)';
+      x.beginPath();
+      x.arc(rnd() * 256, rnd() * 256, 1 + rnd() * 4, 0, TAU);
+      x.fill();
+    }
+    var t = new THREE.CanvasTexture(c);
+    t.wrapS = t.wrapT = THREE.RepeatWrapping;
+    t.repeat.set(3, 3);
+    return t;
+  }
+  /* карта шероховатости нужна и проверке, где mount() не зовут */
+  function noiseTexOf() {
+    if (!noiseTex) noiseTex = noiseTexture();
+    return noiseTex;
+  }
+
+  function doughMaterial(p) {
+    return new THREE.MeshPhysicalMaterial({
+      color: p.dough, metalness: 0, roughness: .72, envMapIntensity: .5,
+      bumpMap: noiseTexOf(), bumpScale: .9, side: THREE.DoubleSide
+    });
+  }
+  function glazeMaterial(p) {
+    return new THREE.MeshPhysicalMaterial({
+      color: p.glaze, metalness: 0, roughness: .16, clearcoat: 1, clearcoatRoughness: .06,
+      envMapIntensity: 1.05, side: THREE.DoubleSide
+    });
+  }
+  function pastryCreamMaterial(p) {
+    return new THREE.MeshPhysicalMaterial({
+      color: p.cream, metalness: 0, roughness: .5, sheen: .7, sheenColor: 0xfff4e2,
+      sheenRoughness: .6, clearcoat: .22, clearcoatRoughness: .5,
+      bumpMap: noiseTexOf(), bumpScale: .6, envMapIntensity: .8, side: THREE.DoubleSide
+    });
+  }
+
+  /* круглый корпус с мягкой фаской: профиль из демо */
+  function lathe(r, h, c) {
+    var p = [new THREE.Vector2(0, 0)];
+    var i, a;
+    for (i = 0; i <= 8; i++) {
+      a = i / 8 * Math.PI / 2;
+      p.push(new THREE.Vector2(r - c + Math.sin(a) * c, c - Math.cos(a) * c));
+    }
+    for (i = 0; i <= 8; i++) {
+      a = i / 8 * Math.PI / 2;
+      p.push(new THREE.Vector2(r - c + Math.cos(a) * c, h - c + Math.sin(a) * c));
+    }
+    p.push(new THREE.Vector2(0, h));
+    return new THREE.LatheGeometry(p, 96);
+  }
+
+  /* посыпка: один InstancedMesh, цвет каждой палочки — свой (как в демо) */
+  function sprinkles(pts, n, rnd) {
+    var im = new THREE.InstancedMesh(
+      new THREE.CapsuleGeometry(.014, .07, 3, 6),
+      new THREE.MeshPhysicalMaterial({ roughness: .35, clearcoat: .6, envMapIntensity: .9 }),
+      n
+    );
+    var o = new THREE.Object3D();
+    var col = new THREE.Color();
+    var C = [0xe63946, 0xf4a261, 0xffd166, 0x2a9d8f, 0x4361ee, 0xffffff, 0xf72585];
+    var up = new THREE.Vector3(0, 1, 0);
+    for (var i = 0; i < n; i++) {
+      var p = pts(i);
+      o.position.copy(p.p);
+      o.quaternion.setFromUnitVectors(up, p.n.clone().add(new THREE.Vector3(rnd() - .5, rnd() - .5, rnd() - .5).multiplyScalar(1.6)).normalize());
+      o.updateMatrix();
+      im.setMatrixAt(i, o.matrix);
+      im.setColorAt(i, col.setHex(C[i % 7]));
+    }
+    im.instanceMatrix.needsUpdate = true;
+    if (im.instanceColor) im.instanceColor.needsUpdate = true;
+    im.castShadow = true;
+    return im;
+  }
+
+  /* ягоды на верх: смородина и голубика, как в демо, только без листика */
+  function berryTopping(g, cx, cy, cz, rad, n, rnd) {
+    var geo = new THREE.SphereGeometry(1, 18, 12);
+    var red = new THREE.MeshPhysicalMaterial({ color: 0xb3122f, metalness: 0, roughness: .3, clearcoat: 1, clearcoatRoughness: .2, envMapIntensity: .9 });
+    var blue = new THREE.MeshPhysicalMaterial({ color: 0x2c3e91, metalness: 0, roughness: .25, clearcoat: 1, clearcoatRoughness: .2, envMapIntensity: .9 });
+    for (var i = 0; i < n; i++) {
+      var a = i * 2.4;
+      var r = i ? Math.sqrt(i / n) * rad : 0;
+      var s = .1 + rnd() * .03;
+      var b = new THREE.Mesh(geo, i % 3 ? red : blue);
+      b.scale.setScalar(s);
+      b.position.set(cx + Math.cos(a) * r, cy + s + (1 - (rad ? r / rad : 0)) * .06, cz + Math.sin(a) * r);
+      b.castShadow = true;
+      g.add(b);
+    }
+  }
+
+  /* изделие ставим на стол: пол, тень и отражение считают от y=0.
+     Посыпка (InstancedMesh) в расчёт не идёт: её сырые вершины лежат вокруг
+     нуля, а не там, где стоят сами палочки, — из-за них изделие всплывало бы
+     над столом на высоту палочки */
+  function groundPiece(piece) {
+    piece.updateWorldMatrix(false, true);
+    var v = new THREE.Vector3();
+    var minY = Infinity;
+    piece.traverse(function (n) {
+      if (!n.isMesh || n.isInstancedMesh || !n.geometry || !n.geometry.attributes.position) return;
+      var pos = n.geometry.attributes.position;
+      for (var k = 0; k < pos.count; k++) {
+        v.fromBufferAttribute(pos, k).applyMatrix4(n.matrixWorld);
+        if (v.y < minY) minY = v.y;
+      }
+    });
+    if (minY !== Infinity) piece.position.y = -minY;
+    return minY;
+  }
+
+  function buildCupcake(state, p) {
+    var g = new THREE.Group();
+    var rnd = rn(21);
+    var cr = pastryCreamMaterial(p);
+    var i, a, t, f;
+
+    /* бумажная гильза с рубчиком */
+    var wg = new THREE.CylinderGeometry(.95, .68, .85, 48, 8, true);
+    var pos = wg.attributes.position;
+    for (i = 0; i < pos.count; i++) {
+      a = Math.atan2(pos.getZ(i), pos.getX(i));
+      f = 1 + .045 * Math.sin(a * 14);
+      pos.setX(i, pos.getX(i) * f);
+      pos.setZ(i, pos.getZ(i) * f);
+    }
+    wg.computeVertexNormals();
+    var cup = new THREE.Mesh(wg, new THREE.MeshPhysicalMaterial({
+      color: 0xf0d6d0, metalness: 0, roughness: .7, envMapIntensity: .4,
+      bumpMap: noiseTexOf(), bumpScale: .8, side: THREE.DoubleSide
+    }));
+    cup.position.y = .43;
+    cup.castShadow = cup.receiveShadow = true;
+    g.add(cup);
+
+    /* бисквит шапкой поверх гильзы */
+    var sponge = new THREE.Mesh(new THREE.SphereGeometry(.92, 40, 20, 0, TAU, 0, Math.PI / 2.6), doughMaterial(p));
+    sponge.position.y = .66;
+    sponge.scale.y = .55;
+    sponge.castShadow = sponge.receiveShadow = true;
+    g.add(sponge);
+
+    /* крем: спираль от края к центру — трубка из демо */
+    var pts = [];
+    for (i = 0; i <= 90; i++) {
+      t = i / 90;
+      a = t * TAU * 3.2;
+      var rr = .85 * Math.pow(1 - t, .85) + .03;
+      pts.push(new THREE.Vector3(Math.cos(a) * rr, .9 + t * .85, Math.sin(a) * rr));
+    }
+    var swirl = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 240, .24, 20), cr);
+    swirl.castShadow = swirl.receiveShadow = true;
+    g.add(swirl);
+    var tip = new THREE.Mesh(new THREE.ConeGeometry(.12, .3, 20), cr);
+    tip.position.set(pts[90].x, 1.85, pts[90].z);
+    tip.castShadow = true;
+    g.add(tip);
+
+    var top = toppingOf(state, 'cupcake');
+    if (top === 'berries') {
+      berryTopping(g, 0, 1.9, 0, .05, 1, rnd);
+    } else if (top === 'sprinkles') {
+      g.add(sprinkles(function () {
+        var tt = .05 + rnd() * .85;
+        var P = pts[Math.floor(tt * 90)];
+        var n = new THREE.Vector3(P.x, .3, P.z).normalize();
+        return { p: P.clone().add(n.clone().multiplyScalar(.24)), n: n };
+      }, 70, rnd));
+    } else if (top === 'swirl') {
+      /* три мелких розетки поверх спирали — тот же крем, что в калькуляторе */
+      var petalGeo = new THREE.SphereGeometry(1, 12, 8);
+      for (i = 0; i < 3; i++) {
+        a = i / 3 * TAU + .4;
+        var ro = rosette(.16, cr, petalGeo);
+        ro.position.set(Math.cos(a) * .22, 1.86, Math.sin(a) * .22);
+        g.add(ro);
+      }
+    }
+    return { group: g };
+  }
+
+  /* профиль верхней половинки макарона: по нему считаем, куда сыпать посыпку */
+  var MAC_PROF = [[0, .3], [.5, .29], [.8, .23], [.95, .12], [1, .04]];
+  function macTop(r) {
+    for (var i = 1; i < MAC_PROF.length; i++) {
+      if (r <= MAC_PROF[i][0]) {
+        var a = MAC_PROF[i - 1], b = MAC_PROF[i];
+        return a[1] + (b[1] - a[1]) * (r - a[0]) / (b[0] - a[0]);
+      }
+    }
+    return MAC_PROF[MAC_PROF.length - 1][1];
+  }
+
+  function buildMacaron(state, p) {
+    var g = new THREE.Group();
+    var prof = [[0, .3], [.5, .29], [.8, .23], [.95, .12], [1, .04], [1, 0], [0, 0]].map(function (a) {
+      return new THREE.Vector2(a[0], a[1]);
+    });
+    var lg = new THREE.LatheGeometry(prof, 72);
+    var idx = FLAVOR_RING.indexOf(flavorIdOf(state));
+    if (idx < 0) idx = 0;
+    var middle = null;
+    for (var k = 0; k < 3; k++) {
+      var f = pastryOf(FLAVOR_RING[(idx + k) % FLAVOR_RING.length]);
+      var sm = new THREE.MeshPhysicalMaterial({
+        color: new THREE.Color(f.cream).lerp(new THREE.Color(f.glaze), .25),
+        metalness: 0, roughness: .55, sheen: .5, sheenColor: 0xfff4e2, sheenRoughness: .6,
+        bumpMap: noiseTexOf(), bumpScale: .6, envMapIntensity: .7
+      });
+      var m = new THREE.Group();
+      var up = new THREE.Mesh(lg, sm);
+      up.position.y = .2; up.castShadow = up.receiveShadow = true; m.add(up);
+      var dn = new THREE.Mesh(lg, sm);
+      dn.scale.y = -1; dn.position.y = .2; dn.castShadow = true; m.add(dn);
+      [.21, .19].forEach(function (y) {
+        var ft = new THREE.Mesh(new THREE.TorusGeometry(.985, .05, 10, 72), sm);
+        ft.rotation.x = Math.PI / 2;
+        ft.position.y = y;
+        ft.scale.set(1, 1, .7);
+        ft.castShadow = true;
+        m.add(ft);
+      });
+      var fl = new THREE.Mesh(new THREE.CylinderGeometry(.9, .9, .14, 64), new THREE.MeshPhysicalMaterial({
+        color: f.glaze, metalness: 0, roughness: .4, envMapIntensity: .6,
+        bumpMap: noiseTexOf(), bumpScale: .8
+      }));
+      fl.position.y = .2;
+      m.add(fl);
+      m.position.set((k - 1) * 2.25, .35, 0);
+      m.rotation.set(k === 1 ? .35 : 0, k * .6, k === 2 ? .3 : 0);
+      if (k === 1) { m.position.y = .75; middle = m; }
+      g.add(m);
+    }
+    var top = toppingOf(state, 'macaron');
+    if (top === 'sprinkles' && middle) {
+      var rnd = rn(43);
+      middle.add(sprinkles(function () {
+        var a = rnd() * TAU, rr = Math.sqrt(rnd()) * .82;
+        return { p: new THREE.Vector3(Math.cos(a) * rr, .2 + macTop(rr) + .012, Math.sin(a) * rr), n: new THREE.Vector3(0, 1, 0) };
+      }, 60, rnd));
+    } else if (top === 'berries' && middle) {
+      /* ягоду кладём на средний макарон: его локальные координаты — свои */
+      berryTopping(middle, 0, .5, 0, .04, 1, rn(44));
+    }
+    return { group: g };
+  }
+
+  function buildDonut(state, p) {
+    var g = new THREE.Group();
+    var dg = new THREE.Group();
+    var rnd = rn(31);
+    var Rr = .95, rr = .42;
+    var i, a;
+
+    /* тесто: профиль бублика вращением */
+    var pd = [];
+    for (i = 0; i <= 40; i++) {
+      a = i / 40 * TAU;
+      pd.push(new THREE.Vector2(Rr + Math.cos(a) * rr, rr + Math.sin(a) * rr * .95));
+    }
+    var dough = new THREE.Mesh(new THREE.LatheGeometry(pd, 96), doughMaterial(p));
+    dough.castShadow = dough.receiveShadow = true;
+    dg.add(dough);
+
+    /* глазурь: та же окружность, но чуть больше и не по всему кольцу */
+    var pz = [];
+    for (i = 0; i <= 30; i++) {
+      a = -.3 + i / 30 * (Math.PI + .6);
+      pz.push(new THREE.Vector2(Rr + Math.cos(a) * (rr + .03), rr + Math.sin(a) * (rr + .03) * .95));
+    }
+    var glaze = new THREE.Mesh(new THREE.LatheGeometry(pz, 96), glazeMaterial(p));
+    glaze.castShadow = true;
+    dg.add(glaze);
+
+    var top = toppingOf(state, 'donut');
+    if (top === 'sprinkles') {
+      dg.add(sprinkles(function () {
+        var a2 = rnd() * TAU, b = .15 + rnd() * (Math.PI - .3), rr2 = rr + .045;
+        return {
+          p: new THREE.Vector3((Rr + Math.cos(b) * rr2) * Math.cos(a2), rr + Math.sin(b) * rr2 * .95, (Rr + Math.cos(b) * rr2) * Math.sin(a2)),
+          n: new THREE.Vector3(Math.cos(b) * Math.cos(a2), Math.sin(b), Math.cos(b) * Math.sin(a2))
+        };
+      }, 260, rnd));
+    } else if (top === 'berries') {
+      for (i = 0; i < 3; i++) {
+        a = i / 3 * TAU + .5;
+        berryTopping(dg, Math.cos(a) * Rr, rr * 2, Math.sin(a) * Rr, .04, 1, rnd);
+      }
+    }
+    dg.rotation.x = -.5;
+    g.add(dg);
+    return { group: g };
+  }
+
   /* ---------- сборка ---------- */
 
   /* Кадр считаем по самим вершинам торта, а не по коробке: коробка врут
@@ -573,7 +994,7 @@
     var v = new THREE.Vector3();
     var ys = [], rs = [], i, k, r;
     obj.traverse(function (n) {
-      if (!n.isMesh || !n.geometry) return;
+      if (!n.isMesh || n.isInstancedMesh || !n.geometry) return;
       var pos = n.geometry.attributes.position;
       if (!pos) return;
       for (k = 0; k < pos.count; k++) {
@@ -607,25 +1028,40 @@
 
   function rebuild(state) {
     if (!THREE || !group) return;
+    lastState = state;
     if (pieceRoot) { group.remove(pieceRoot); disposeTree(pieceRoot); pieceRoot = null; }
     if (mirrorGroup) { group.remove(mirrorGroup); disposeTree(mirrorGroup); mirrorGroup = null; }
     if (floor) { group.remove(floor); floor.geometry.dispose(); floor.material.dispose(); floor = null; }
     if (blob) { group.remove(blob); blob.geometry.dispose(); blob = null; }
     decorRoot = null;
+    topTier = null;
 
+    var kind = itemOf(state);
     lookNow = looks(flavorIdOf(state));
-    builtKey = weightOf(state) + '|' + flavorIdOf(state);
 
-    var built = buildCake(state);
+    var built;
+    if (kind === 'cake') {
+      builtKey = weightOf(state) + '|' + flavorIdOf(state);
+      built = buildCake(state);
+    } else {
+      /* витрина: у каждого изделия свой верх, дешёвый путь «только декор»
+         для них не работает — пересобираем целиком */
+      builtKey = kind + '|' + flavorIdOf(state) + '|' + decorIdOf(state);
+      built = kind === 'cupcake' ? buildCupcake(state, pastryOf(flavorIdOf(state)))
+        : kind === 'macaron' ? buildMacaron(state, pastryOf(flavorIdOf(state)))
+          : buildDonut(state, pastryOf(flavorIdOf(state)));
+      groundPiece(built.group);
+    }
     pieceRoot = built.group;
     /* габариты снимаем ДО того, как торт попал в группу: иначе в них
        подмешается прошлый сдвиг группы и кадр уедет с каждым пересбором */
     var fr = frameOf(pieceRoot);
     group.add(pieceRoot);
+    var reach = built.reach || (fr && fr.maxR) || 1;
 
     /* пол: одна большая плоскость — её края всегда за кадром.
        Пол полупрозрачный, иначе он спрячет отражение, которое лежит под ним */
-    var floorR = Math.max(built.reach * 3.5, 40);
+    var floorR = Math.max(reach * 3.5, 40);
     floor = new THREE.Mesh(
       new THREE.PlaneGeometry(floorR * 2, floorR * 2),
       new THREE.MeshPhysicalMaterial({
@@ -641,7 +1077,7 @@
 
     /* мягкая контактная тень: торт не висит в воздухе */
     blob = new THREE.Mesh(
-      new THREE.PlaneGeometry(built.reach * 3, built.reach * 3),
+      new THREE.PlaneGeometry(reach * 3, reach * 3),
       new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, opacity: .55, depthWrite: false })
     );
     blob.rotation.x = -Math.PI / 2;
@@ -741,12 +1177,35 @@
 
   function render() {
     if (!running) return;
-    if (idle && !dragging && !calm) group.rotation.y += 0.0032;   /* торт сам поворачивается на столе */
+    if (root.document && root.document.hidden) { raf = requestAnimationFrame(render); return; }
+    if (onScreen) { stepSpin(); }                                /* торт сам поворачивается на столе */
     var cp = Math.cos(pitch), sp = Math.sin(pitch);
     camera.position.set(Math.sin(yaw) * cp * camDist, sp * camDist + 0.12, Math.cos(yaw) * cp * camDist);
     camera.lookAt(0, 0, 0);
     renderer.render(scene, camera);
     raf = requestAnimationFrame(render);
+  }
+
+  /* Шаг вращения: сдвиг угла и возврат хода к спокойному. Вынесено отдельно,
+     чтобы инерцию можно было проверить без рендера. */
+  function stepSpin() {
+    if (!group) { return; }
+    group.rotation.y += spinVel;
+    if (!dragging) { spinVel += ((calm ? 0 : IDLE_SPIN) - spinVel) * 0.03; }
+  }
+
+  /* Палец: поворот за рукой, скорость броска уходит в инерцию, наклон меняет кадр */
+  function dragBy(dx, dy) {
+    yaw += dx * 0.008;
+    spinVel = dx * 0.008;
+    group.rotation.y += dx * 0.008;
+    pitch = Math.max(-0.12, Math.min(0.9, pitch + dy * 0.006));
+  }
+
+  /* Стрелки: тот же поворот, только шагом */
+  function nudge(delta) {
+    yaw += delta;
+    group.rotation.y += delta;
   }
 
   function resize() {
@@ -768,23 +1227,33 @@
     if (bound || !canvasEl) return;
     bound = true;
     canvasEl.addEventListener('pointerdown', function (e) {
-      dragging = true; idle = false;
+      dragging = true;
       lastX = e.clientX; lastY = e.clientY;
       try { canvasEl.setPointerCapture(e.pointerId); } catch (err) {}
     });
-    canvasEl.addEventListener('pointerup', function () {
-      dragging = false;
-      clearTimeout(idleTimer);
-      idleTimer = setTimeout(function () { idle = true; }, 2200);
-    });
+    canvasEl.addEventListener('pointerup', function () { dragging = false; });
+    canvasEl.addEventListener('pointercancel', function () { dragging = false; });
     canvasEl.addEventListener('pointermove', function (e) {
       if (!dragging) return;
-      yaw += (e.clientX - lastX) * 0.008;
-      group.rotation.y -= (e.clientX - lastX) * 0.008;
-      pitch = Math.max(-0.12, Math.min(0.9, pitch + (e.clientY - lastY) * 0.006));
+      dragBy(e.clientX - lastX, e.clientY - lastY);
       lastX = e.clientX; lastY = e.clientY;
       applyCamera();                       /* наклон меняет кадр — держим торт целиком */
     });
+    /* стрелки поворачивают торт, как в демо */
+    canvasEl.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { nudge(-0.15); }
+      else if (e.key === 'ArrowRight') { nudge(0.15); }
+      else { return; }
+      e.preventDefault();
+    });
+    /* кадры считаем, только когда холст в кадре */
+    if (root.IntersectionObserver) {
+      try {
+        new root.IntersectionObserver(function (es) {
+          onScreen = !!(es[0] && es[0].isIntersecting);
+        }, { rootMargin: '120px' }).observe(canvasEl);
+      } catch (e) {}
+    }
     canvasEl.addEventListener('wheel', function (e) {
       e.preventDefault();
       zoom = Math.max(0.75, Math.min(1.6, zoom - e.deltaY * 0.0011));
@@ -873,15 +1342,35 @@
       } catch (e) { api.lastError = 'mount: ' + e.name + ': ' + e.message; return Promise.resolve(false); }
     },
 
-    /* update(state) — пересобрать торт целиком;
-       update(state, {only:'decor'}) — перебрать только верх, тело не трогаем */
+    /* update(state) — пересобрать целиком; state.item выбирает изделие;
+       update(state, {only:'decor'}) — перебрать только верх торта, тело не трогаем */
     update: function (state, opts) {
       if (!renderer) return false;
+      if (opts && opts.item) itemNow = itemOf({ item: opts.item });
       var only = opts && opts.only;
-      if ((only === 'decor' || only === 'print') && repaintDecor(state)) return true;
+      if ((only === 'decor' || only === 'print') && itemOf(state) === 'cake' && repaintDecor(state)) return true;
       rebuild(state);
       return true;
     },
+
+    /* витрина: переключить изделие и пересобрать тем же состоянием */
+    setItem: function (kind) {
+      itemNow = itemOf({ item: kind });
+      /* состояние витрины держит изделие внутри себя — иначе оно перебьёт
+         setItem при следующем пересборе */
+      if (lastState) {
+        var s = {}, k;
+        for (k in lastState) { if (Object.prototype.hasOwnProperty.call(lastState, k)) s[k] = lastState[k]; }
+        s.item = itemNow;
+        lastState = s;
+      }
+      if (renderer) rebuild(lastState);
+      return itemNow;
+    },
+
+    item: function () { return itemOf(lastState); },
+
+    items: function () { return ITEMS.slice(); },
 
     /* снимок для корзины: тот же торт, что на экране, только уменьшенный */
     snapshot: function (width) {
@@ -905,10 +1394,55 @@
       cancelAnimationFrame(raf);
       if (renderer) { renderer.dispose(); renderer = null; }
       if (scene) { disposeTree(scene); scene = null; }
+      if (noiseTex) { noiseTex.dispose(); noiseTex = null; }
       pieceRoot = decorRoot = mirrorGroup = floor = blob = null;
+      lastState = null;
       THREE = null;
     }
   };
+
+  /* Проверка геометрии без браузера: включается только вручную,
+     window.MELNICA_TORT3D_TEST = true до загрузки модуля.
+     Тот же блок стоит и в исходной версии файла — иначе числа до и после
+     правки не с чем сравнивать. */
+  if (root.MELNICA_TORT3D_TEST) {
+    api._test = {
+      setThree: function (mod) { THREE = mod; },
+      /* Проверка вращения без рендера: инерция, бросок пальцем, стрелки, «меньше движения» */
+      spin: function () { return spinVel; },
+      step: function (n) { for (var i = 0; i < n; i++) { stepSpin(); } return spinVel; },
+      drag: function (dx, dy) { dragBy(dx, dy); return spinVel; },
+      nudge: function (d) { nudge(d); return yaw; },
+      setCalm: function (v) { calm = !!v; },
+      setOnScreen: function (v) { onScreen = !!v; },
+      angles: function () { return { yaw: yaw, pitch: pitch, spin: spinVel, model: group ? group.rotation.y : null }; },
+      /* Полная сборка без рендера
+: сцены хватает, чтобы проверить, что торт
+         и витринные изделия собираются и ничего не роняют. */
+      rebuildWith: function (mod, deps, state) {
+        THREE = mod;
+        group = deps.group; pieceRoot = deps.piece;
+        camera = deps.camera; key = deps.key;
+        shadowTex = deps.shadowTex; printTex = deps.printTex; sliceTex = null;
+        lastW = deps.w || 620; lastH = deps.h || 700;
+        return rebuild(state);
+      },
+      /* дешёвый путь пересборки верха — тот самый opts.only='decor' */
+      repaint: function (state) { return repaintDecor(state); },
+      rig: function () {
+        return { group: group, piece: pieceRoot, camera: camera, key: key, floor: floor, blob: blob, mirror: mirrorGroup };
+      },
+      stats: function () {
+        return { camDist: camDist, frame: FRAME, builtKey: builtKey, topTier: topTier, look: lookNow };
+      },
+      view: function (v) {
+        if (typeof v.pitch === 'number') pitch = v.pitch;
+        if (typeof v.zoom === 'number') zoom = v.zoom;
+        applyCamera();
+        return { pitch: pitch, zoom: zoom, camDist: camDist };
+      }
+    };
+  }
 
   root.MELNICA_TORT3D = api;
 })(typeof window !== 'undefined' ? window : this);

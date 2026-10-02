@@ -34,6 +34,14 @@ body {
 
 /* ============================ шапка ============================ */
 
+/* тёмная верхняя строка панели владельца: «Заказы с сайта — здесь» */
+.topline { background: var(--olive-deep); color: var(--on-dark); font-size: .85rem; font-weight: 600; }
+.topline__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--s3); min-height: 40px; }
+.topline__item { display: inline-flex; align-items: center; gap: 7px; }
+.topline__item .icon { width: 17px; height: 17px; color: var(--powder); }
+.topline__link { color: var(--on-dark); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.topline__link:hover { color: var(--powder-soft); }
+
 .site-header { border-bottom: 1px solid var(--line); background: var(--bg); position: sticky; top: 0; z-index: 60; }
 .site-header__inner { display: flex; align-items: center; gap: clamp(.6rem, 2.2vw, 2rem); min-height: var(--header-h); }
 
@@ -230,6 +238,7 @@ body.nav-open { overflow: hidden; }
 .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
 .chips--icons .chip { padding-left: .38rem; gap: .55rem; }
 .chip__art { display: inline-flex; width: 30px; height: 30px; flex: 0 0 auto; }
+.chip__art .icon--chip { width: 30px; height: 30px; stroke-width: 1.1; }
 .swatch { width: 13px; height: 13px; border-radius: 50%; flex: 0 0 auto; box-shadow: inset 0 0 0 1px rgba(43, 36, 34, .22); }
 
 .builder__panel { background: var(--surface); border: 1px solid var(--line-strong); padding: clamp(1.1rem, 3vw, 1.7rem); }
@@ -485,3 +494,71 @@ body.nav-open { overflow: hidden; }
 .cta-band--roomy { margin-top: 3rem; }
 .badge--note { margin-top: 1rem; }
 .strong { font-weight: 700; }
+
+/* ============================ липкий итог и служебные места ============================ */
+/* липкая плашка итога (мобильная): «Итого N BYN + кнопка», всегда в кадре при скролле шагов */
+.stickybar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s3);
+  background: var(--surface);
+  border-top: 1px solid var(--line-strong);
+  padding: .55rem clamp(1.1rem, 4vw, 2rem) calc(.55rem + env(safe-area-inset-bottom, 0px));
+  box-shadow: 0 -8px 26px rgba(43, 36, 34, .14);
+}
+.stickybar[hidden] { display: none; }
+.faq .admin-note p { color: var(--muted); font-size: .93rem; }
+.faq details { background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--r-sm); padding: clamp(1rem, 2.4vw, 1.4rem) clamp(1.1rem, 3vw, 1.7rem); }
+.faq details[open] { border-color: var(--olive); }
+.faq summary { cursor: pointer; font-family: var(--font-display); font-weight: 700; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: var(--s3); font-size: 1.05rem; letter-spacing: -.02em; }
+.faq summary::-webkit-details-marker { display: none; }
+/* техподробности на панели: комментарии, стиль и подпись — как на витрине */
+.faq summary::after { content: "+"; font-size: 1.25rem; color: var(--olive); font-weight: 700; font-family: var(--font-sans); }
+.faq details[open] summary::after { content: "–"; }
+.faq code { font-family: var(--font-mono); font-size: .84em; background: var(--bg-2); padding: .1em .35em; border-radius: var(--r-xs); }
+.stickybar__sum { font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; letter-spacing: -.03em; color: var(--olive); line-height: 1; }
+.stickybar__btn { padding: .65rem 1.15rem; }
+body.has-stickybar { padding-bottom: 64px; }
+@media (min-width: 880px) {
+  .stickybar { display: none; }
+  body.has-stickybar { padding-bottom: 0; }
+}
+/* деструктив в общем ряду кнопок панели: красная рамка и текст, а не ещё одна нейтральная кнопка */
+.admin-toolbar .admin-bar__clear { color: var(--danger); border-color: var(--danger); background: transparent; }
+.admin-toolbar .admin-bar__clear:hover { background: var(--danger); color: var(--on-dark); border-color: var(--danger); }
+/* якоря не уезжают под sticky-шапку */
+section[id] { scroll-margin-top: calc(var(--header-h) + 14px); }
+h1[id], h2[id], h3[id] { scroll-margin-top: calc(var(--header-h) + 14px); }
+
+/* ============================ тёмная тема ============================ */
+/* своя ночная палитра в тех же токенах: тёмная олива и крафт, не чёрный минимализм */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171a12;
+    --bg-2: #1d2016;
+    --surface: #202417;
+    --fg: #ede4cf;
+    --muted: #a49a83;
+    --line: #323826;
+    --line-strong: #434d30;
+    --sand: #8a7a56;
+    --powder: #b98a90;
+    --powder-soft: #3a2b28;
+    --olive: #a3b877;
+    --olive-deep: #c2d29a;
+    --olive-soft: #2c331f;
+    --terracotta: #d09268;
+    --on-dark: #171a12;
+    --danger: #d98a6f;
+  }
+  body {
+    background-image:
+      radial-gradient(760px 420px at 88% -4%, rgba(185, 138, 144, .2), transparent 64%),
+      radial-gradient(620px 380px at 4% 12%, rgba(138, 122, 86, .18), transparent 60%);
+  }
+  .site-footer { background: #14170f; }
+  .toast { background: var(--on-dark); color: var(--fg); box-shadow: 0 18px 40px rgba(0, 0, 0, .5); }
+  .input::placeholder, .textarea::placeholder { color: #7d7461; }
+  .badge--warn { color: #d3a35c; }
+  .badge--ok { color: var(--olive); }
+  .order__meta { background: var(--bg-2); }
+}

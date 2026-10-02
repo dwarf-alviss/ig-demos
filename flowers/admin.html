@@ -9,9 +9,29 @@
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/motion.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Пион">
+<meta property="og:title" content="Панель владельца: «Пион», заказы с сайта">
+<meta property="og:description" content="Заказ с сайта падает сюда сразу: состав, телефон, время, сумма. Статус меняется одним кликом.">
+<meta property="og:image" content="assets/img/og.jpg" width="1200" height="630">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body data-page="admin">
 <a class="skip-link" href="#main">К основному содержанию</a>
+
+<div class="topline">
+  <div class="container topline__inner">
+    <span class="topline__item">
+      <svg class="icon icon--sm" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4.4 6.8h15.2"/><path d="M9.4 6.8V4.9h5.2v1.9"/>
+      </svg>
+      Заказы с сайта — здесь
+    </span>
+    <span class="topline__item">
+      <a class="topline__link" href="index.html">На сайт</a>
+    </span>
+  </div>
+</div>
 
 <header class="site-header">
   <div class="container site-header__inner">
@@ -102,7 +122,7 @@
           </div>
         </div>
 
-        <div class="admin-toolbar">
+        <div class="admin-bar admin-toolbar" id="admin-bar" style="margin-top:var(--s5)">
           <div class="chips" role="group" aria-label="Фильтр по статусу">
             <button class="chip chip--status" type="button" data-status-filter="all" aria-pressed="true">Все заказы</button>
             <button class="chip chip--status" type="button" data-status-filter="new" aria-pressed="false">Новые</button>
@@ -119,7 +139,7 @@
             </svg>
             Выгрузить CSV
           </button>
-          <button class="btn btn--ghost btn--sm" type="button" id="clear-orders">
+          <button class="btn btn--ghost btn--sm admin-bar__clear" type="button" id="clear-orders">
             <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M4.4 6.8h15.2"/><path d="M9.4 6.8V4.9h5.2v1.9"/>
               <path d="M6.6 6.8l.9 12.3h9l.9-12.3"/>
@@ -153,6 +173,14 @@
             <a class="btn btn--light" href="index.html#builder">Собрать тестовый букет</a>
           </div>
         </div>
+
+        <details class="faq details-tech">
+          <summary>Технические подробности о демо</summary>
+          <div class="admin-note" style="border:0;padding:var(--s3) 0 0">
+            <p><strong>Как это устроено в демо.</strong> Сайт статический и открывается по <code>file://</code>: заказы лежат в localStorage браузера (ключ <code>igdemo_flowers_orders_v1</code>), корзина в <code>igdemo_flowers_cart_v1</code>. Снимки букетов из конструктора хранятся в IndexedDB (<code>igdemo_flowers_photos_v1</code>), не в localStorage: пять мегабайт не занимают.</p>
+            <p style="margin-top:var(--s2)">У настоящего клиента панель подключается к базе или Google-таблице, а заказы приходят уведомлением в Telegram. Здесь показаны интерфейс и логика статусов, чтобы было видно, как это работает без программиста.</p>
+          </div>
+        </details>
 
       </div>
     </section>

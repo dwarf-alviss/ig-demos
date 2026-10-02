@@ -33,6 +33,19 @@
      Набор авторский — корзина это плетёное лукошко с дужкой, меню это две линии
      разной длины. Иконки не пересекаются с другими демо-сайтами серии. */
   var ICONS = {
+    /* 2.1: пиктограммы вида цветка и зелени — в том же контурном стиле, что корзина-лукошко */
+    peony: '<g><circle cx="12" cy="12" r="4.6"/><circle cx="12" cy="5.9" r="3.1"/><circle cx="17.6" cy="10" r="3.1"/><circle cx="16.4" cy="17.1" r="3.1"/><circle cx="7.6" cy="17.1" r="3.1"/><circle cx="6.4" cy="10" r="3.1"/></g>',
+    rose: '<g><circle cx="12" cy="9.5" r="3.4"/><path d="M5.9 10.9c1.4 3.1 3.6 4.9 6.1 4.9s4.7-1.8 6.1-4.9c-1.4 5.2-3.6 8.1-6.1 8.1s-4.7-2.9-6.1-8.1Z"/><path d="M12 15.8v4.6"/><path d="M9.3 17.6h5.4"/></g>',
+    ranunculus: '<g><circle cx="12" cy="12" r="2.6"/><circle cx="12" cy="12" r="5.2"/><path d="M12 4.4a7.6 7.6 0 0 1 7 4.7M19.6 12A7.6 7.6 0 0 1 16 18.6M12 19.6a7.6 7.6 0 0 1-7-4.7M4.4 12A7.6 7.6 0 0 1 8 5.4"/></g>',
+    tulip: '<g><path d="M6.9 8.6c0 4.6 2.1 7.2 5.1 7.2s5.1-2.6 5.1-7.2c-1.6.9-2.6 1.3-3.4 1l-1.7-.9-1.7-1c-.9.3-1.8-.1-3.4-1.1Z"/><path d="M12 15.8v4.6"/><path d="m8.6 13.7-3.2-9.1c3.4 1.3 5.6 1.9 6.6 1.9 1 0 3.2-.6 6.6-1.9l-3.2 9.1"/></g>',
+    evas: '<g><circle cx="12" cy="7.9" r="2.9"/><path d="M12 10.8v9.4"/><path d="M12 14.6c-2.9 0-4.4-1.5-4.4-4.4M12 16.6c3.4 0 5.1-1.9 5.1-5.2"/><circle cx="7.6" cy="8.1" r="1.4"/><circle cx="16.4" cy="10.4" r="1.4"/></g>',
+    daisy: '<g><circle cx="12" cy="11.7" r="2.2"/><path d="M12 4.9v2.6M12 16.2v2.6M5.2 11.7h2.6M16.2 11.7h2.6M7.2 7 9 8.8M15 14.8l1.8 1.8M16.8 7 15 8.8M9 14.8 7.2 16.6"/></g>',
+    sunflower: '<g><circle cx="12" cy="10.9" r="3.4"/><path d="M12 4.9v1.5M12 15.6v1.5M6 10.9h1.5M16.5 10.9H18M7.8 6.7l1 1M15.2 14.8l1 1M16.2 6.7l-1 1M8.8 14.8l-1 1"/><path d="M12 14.3v5.9M12 17.8c-1 0-2.2-.8-3-2.2M12 17.8c1 0 2.2-.8 3-2.2"/></g>',
+    lily: '<g><path d="M12 5.8c1.6 2.4 2.6 4.5 2.6 6.4a2.6 2.6 0 1 1-5.2 0c0-1.9 1-4 2.6-6.4Z"/><path d="m10.3 13 5.9 5.2M13.7 13l-5.9 5.2"/><circle cx="12" cy="13.6" r=".7"/></g>',
+    leaf: '<path d="M12 20.4V8.6a6.2 6.2 0 0 1 6.2-6.2c0 5.1-2.7 8.3-6.2 8.3"/><path d="M12 12.4c-3 0-5-1.8-5-5.3 3 0 5 1.8 5 5.3Z"/>',
+    euc: '<path d="M12 20.8V5.4"/><path d="M12 8.2c-1.6-2.5-4-3.2-6.2-2.4.8 2.4 2.8 3.8 6.2 3.4Z"/><path d="M12 12.6c1.6-2.5 4-3.2 6.2-2.4-.8 2.4-2.8 3.8-6.2 3.4Z"/><path d="M12 16.8c-1.6-2-3.6-2.6-5.4-2 .7 2 2.4 3.1 5.4 2.8Z"/>',
+    greenNone: '<path d="M5.4 5.4l13.2 13.2"/><circle cx="12" cy="12" r="8.4"/>',
+    hud: '<rect x="3.4" y="4.9" width="12.6" height="9" rx="1.6"/><path d="m5.8 17.4-1.4 2.6M13.6 17.4l1.4 2.6M6.9 7.4c0 2.9 1.6 4.4 4.2 4.4M6.9 12.4h6.2"/><rect x="17.4" y="8.6" width="3.2" height="3.4" rx=".8"/><path d="M19 12v2.6"/><circle cx="19" cy="16.4" r="1.1"/>',
     basket: '<path d="M3.6 9.4h16.8l-1.7 8.6a1.7 1.7 0 0 1-1.7 1.4H6.9a1.7 1.7 0 0 1-1.7-1.4Z"/><path d="M8.6 9.4a3.4 3.4 0 0 1 6.8 0"/><path d="M4.5 13.2h15"/><path d="M9.8 12.9v4.4"/><path d="M12 12.9v4.4"/><path d="M14.2 12.9v4.4"/>',
     menu: '<path d="M3.6 8.6h16.8"/><path d="M3.6 15.4h10"/>',
     search: '<circle cx="10.6" cy="10.6" r="6.1"/><path d="m15.2 15.2 4.4 4.4"/>',
@@ -160,12 +173,122 @@
     try {
       if (store) { store.setItem(key, raw); } else { memory[key] = raw; }
     } catch (err) {
+      /* 3.5: переполнение квоты чаще всего от старых base64-снимков в корзине.
+         Выкидываем картинки из строк и сохраняем без них, вместо молчаливой потери. */
+      try {
+        var lean = JSON.parse(raw);
+        var dropped = false;
+        (Array.isArray(lean) ? lean : []).forEach(function (row) {
+          if (row && typeof row.img === 'string' && row.img.slice(0, 5) === 'data:') { row.img = BUILDER_IMG; dropped = true; }
+        });
+        if (dropped && store) { store.setItem(key, JSON.stringify(lean)); return; }
+      } catch (err2) {}
       memory[key] = raw;
     }
   }
 
+  /* ============================ снимки конструктора: не base64 в localStorage ============================ */
+  /* 3.5: JPEG-кадр из 3D весит десятки килобайт, поэтому в строке корзины
+     вместо base64 лежит ключ «idb:…», а сам блоб — в IndexedDB. Если база
+     не поднялась (редкий приватный режим), работаем по-старому — data-URL. */
+  var PHOTOS_DB = 'igdemo_flowers_photos_v1';
+  var PHOTOS_STORE = 'shots';
+  var photoURLs = [];
+
+  function dataURLtoBlob(dataUrl) {
+    try {
+      var parts = dataUrl.split(',');
+      var mime = ((parts[0].match(/data:(.*?)[;,]/i) || [])[1] || 'image/jpeg');
+      var bin = atob(parts[1]);
+      var len = bin.length;
+      var arr = new Uint8Array(len);
+      for (var i = 0; i < len; i++) arr[i] = bin.charCodeAt(i);
+      return new Blob([arr], { type: mime });
+    } catch (err) { return null; }
+  }
+
+  function photoKey() { return 's' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+  function isPhotoRef(v) { return typeof v === 'string' && v.indexOf('idb:') === 0; }
+
+  function idbOpen() {
+    return new Promise(function (resolve) {
+      var req;
+      try {
+        if (!window.indexedDB) { return resolve(null); }
+        req = window.indexedDB.open(PHOTOS_DB, 1);
+      } catch (err) { return resolve(null); }
+      req.onupgradeneeded = function () { req.result.createObjectStore(PHOTOS_STORE); };
+      req.onsuccess = function () { resolve(req.result); };
+      req.onerror = function () { resolve(null); };
+      req.onblocked = function () { resolve(null); };
+    });
+  }
+
+  function idbRun(mode, fn) {
+    return idbOpen().then(function (db) {
+      if (!db) { return Promise.reject(new Error('no idb')); }
+      return new Promise(function (resolve, reject) {
+        var tx = db.transaction(PHOTOS_STORE, mode);
+        var req = fn(tx.objectStore(PHOTOS_STORE));
+        req.onsuccess = function () { resolve(req.result); };
+        req.onerror = function () { reject(req.error); };
+      });
+    });
+  }
+
+  function idbSave(key, blob) { return idbRun('readwrite', function (s) { return s.put(blob, key); }); }
+  function idbGet(key) {
+    return idbRun('readonly', function (s) { return s.get(key); }).catch(function () { return null; });
+  }
+  function idbDelete(key) {
+    return idbRun('readwrite', function (s) { return s.delete(key); }).catch(function () { /* тихо */ });
+  }
+
+  /* data-URL → ключ в IndexedDB (или тот же data-URL, если база не поднялась) */
+  function saveSnapshot(dataUrl) {
+    if (!dataUrl || dataUrl.slice(0, 5) !== 'data:') { return Promise.resolve(dataUrl); }
+    return idbOpen().then(function (db) {
+      if (!db) { return dataUrl; }
+      var blob = dataURLtoBlob(dataUrl);
+      if (!blob) { return dataUrl; }
+      var key = photoKey();
+      return idbSave(key, blob).then(function () { return 'idb:' + key; }).catch(function () { return dataUrl; });
+    }, function () { return dataUrl; });
+  }
+
+  /* подсветка снимков в списке: прячем objectURL только на свой пересбор */
+  function revokePhotoURLs() {
+    photoURLs.forEach(function (u) { try { URL.revokeObjectURL(u); } catch (err) {} });
+    photoURLs.length = 0;
+  }
+  function hydratePhotos(rootEl) {
+    revokePhotoURLs();
+    if (!rootEl) { return; }
+    var imgs = rootEl.querySelectorAll('img[data-photo]');
+    Array.prototype.forEach.call(imgs, function (img) {
+      var ref = img.getAttribute('data-photo') || '';
+      if (!isPhotoRef(ref)) { return; }
+      idbGet(ref.slice(4)).then(function (blob) {
+        if (!blob) { return; }
+        var url = URL.createObjectURL(blob);
+        photoURLs.push(url);
+        img.src = url;
+      }).catch(function () { /* остаётся запасная картинка */ });
+    });
+  }
+  /* снимки строк, которые уходят из корзины (удаление, оформленный заказ) */
+  function dropSnapshotRefs(list) {
+    (list || []).forEach(function (l) { if (isPhotoRef(l.img)) { idbDelete(l.img.slice(4)); } });
+  }
+  /* конвертирует data:URL снимка в ключ IndexedDB */
+  function packetFromSnapshot(raw) {
+    if (!raw || raw.slice(0, 5) !== 'data:') { return Promise.resolve(raw); }
+    return saveSnapshot(raw);
+  }
+
   /* ============================ корзина ============================ */
 
+  /* 3.5: «idb:…» в строке корзины — ключ снимка в IndexedDB, гидратируется после рендера */
   function readCart() {
     var list = lsGet(CART_KEY, []);
     if (!Array.isArray(list)) { return []; }
@@ -365,8 +488,65 @@
     toast._timer = window.setTimeout(function () { el.classList.remove('is-visible'); }, 2600);
   }
 
+  /* ---------- липкая плашка «Итого N BYN → …» (только на мобиле) ---------- */
+  var stickyRefresh = null;
+  function ensureStickyBar() {
+    var bar = $('#stickybar');
+    if (bar) { return { bar: bar, sum: $('#stickybar-sum'), go: $('#stickybar-go') }; }
+    var wrap = document.createElement('div');
+    wrap.className = 'stickybar';
+    wrap.id = 'stickybar';
+    wrap.hidden = true;
+    wrap.setAttribute('role', 'region');
+    wrap.setAttribute('aria-label', 'Итог и быстрый переход');
+    wrap.innerHTML = '<span class="stickybar__sum" id="stickybar-sum"></span>' +
+      '<button class="btn stickybar__btn" type="button" id="stickybar-go">В корзину</button>';
+    document.body.appendChild(wrap);
+    return { bar: wrap, sum: $('#stickybar-sum'), go: $('#stickybar-go') };
+  }
+  /* привязка к секции конструктора: на мобиле бар держит «Итого N BYN»,
+     пока его кнопка #builder-add уехала из кадра — по IntersectionObserver.
+     На десктопе (≥880px) бар спрятан на уровне CSS. */
+  function bindSticky(section, actionBtn, sumFn, onGo, label) {
+    var ui = ensureStickyBar();
+    if (!ui || !section || !actionBtn) { return null; }
+    ui.go.textContent = label;
+    ui.go.addEventListener('click', function () { if (onGo) { onGo(); } });
+    var visible = false;
+    function refresh() {
+      var sum = sumFn();
+      if (visible && sum) {
+        ui.sum.textContent = sum;
+        ui.go.setAttribute('aria-label', label + ', итого ' + sum);
+        ui.bar.hidden = false;
+        document.body.classList.add('has-stickybar');
+      } else {
+        ui.bar.hidden = true;
+        document.body.classList.remove('has-stickybar');
+      }
+    }
+    /* IntersectionObserver: прячет бар, когда родная кнопка сама в кадре */
+    var btnIn = new window.IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (entries[i].target === actionBtn) { visible = !entries[i].isIntersecting; }
+      }
+      refresh();
+    }, { rootMargin: '-60px 0px -60px 0px' });
+    btnIn.observe(actionBtn);
+    window.addEventListener('scroll', function () {
+      /* пересчёт суммы на каждый скролл дешёвый: числа, без чтения layout */
+      refresh();
+    }, { passive: true });
+    window.addEventListener('resize', refresh);
+    stickyRefresh = refresh;
+    refresh();
+    return { refresh: refresh };
+  }
+
   function imageMarkup(src, alt, className) {
-    return '<img src="' + esc(src) + '" alt="' + esc(alt) + '" loading="lazy" decoding="async"' +
+    /* «idb:…» — снимок из IndexedDB: src ставим после hydratePhotos, attribute остаётся пустым */
+    return '<img ' + (isPhotoRef(src) ? 'data-photo="' + esc(src) + '"' : 'src="' + esc(src) + '"') +
+      ' alt="' + esc(alt) + '" loading="lazy" decoding="async"' +
       (className ? ' class="' + className + '"' : '') + '>';
   }
 
@@ -510,6 +690,7 @@
         note: product.size
       }, 1);
       updateCartBadges();
+      if (navigator.vibrate) { navigator.vibrate(10); }
       toast('«' + product.name + '» в корзине · ' + count + ' ' + plural(count, 'позиция', 'позиции', 'позиций'));
     });
   }
@@ -548,7 +729,7 @@
     var root = $('#builder');
     if (!root || !BQ) { return; }
 
-    var state = { occasion: 'none', flower: 'peony', count: 15, palette: 'pudra', pack: 'craft', ribbon: 'cream' };
+    var state = { occasion: 'none', flower: 'peony', count: 15, palette: 'pudra', pack: 'craft', green: 'euc', ribbon: 'cream' };
     var svg = $('#bouquet');
     var canvas3d = $('#bouquet3d');
     var hint3d = $('#builder-3d-hint');
@@ -564,6 +745,7 @@
       { field: 'count', list: BQ.COUNTS.map(function (n) { return { id: String(n), title: String(n) }; }) },
       { field: 'palette', list: BQ.PALETTES },
       { field: 'pack', list: BQ.PACKS },
+      { field: 'green', list: BQ.GREENS },
       { field: 'ribbon', list: BQ.RIBBONS },
       { field: 'occasion', list: BUILDER.occasions }
     ];
@@ -572,7 +754,10 @@
       var active = String(state[group.field]) === String(option.id);
       var lead = '';
       if (group.art) {
-        lead = '<span class="chip__art" aria-hidden="true">' + BQ.icon(option.id, 30) + '</span>';
+        /* 2.1: пиктограммы шага «Цветок» из общего словаря ICONS — тот же контур,
+           что у корзины-лукошка (микс — экран с квадратиком размера). */
+        var iconName = option.id === 'mix' ? 'hud' : option.id;
+        lead = '<span class="chip__art" aria-hidden="true">' + icon(iconName, 'icon--chip') + '</span>';
       } else if (option.swatch) {
         lead = '<span class="swatch" style="background:' + esc(option.swatch) + '"></span>';
       }
@@ -616,7 +801,7 @@
     /* Витрину перерисовываем только когда меняется сам рисунок: повод на букет не влияет */
     function draw() {
       if (!svg) { return; }
-      var key = [state.flower, state.count, state.palette, state.pack, state.ribbon].join('|');
+      var key = [state.flower, state.count, state.palette, state.pack, state.green, state.ribbon].join('|');
       if (key === drawn) { return; }
       drawn = key;
       if (mounted3d) { BQ3D.update(state); } else { BQ.render(svg, state, { animate: true }); }
@@ -628,6 +813,7 @@
       var flower = BQ.find(BQ.FLOWERS, state.flower);
       var pal = BQ.find(BQ.PALETTES, state.palette);
       var pack = BQ.find(BQ.PACKS, state.pack);
+      var green = BQ.find(BQ.GREENS, state.green);
       var ribbon = BQ.find(BQ.RIBBONS, state.ribbon);
       var occ = findOption(BUILDER.occasions, state.occasion);
       var sum = builderPrice(state);
@@ -640,8 +826,9 @@
       $('#builder-flower-hint').textContent = flower.hint;
       $('#builder-count-hint').textContent = state.count + ' × ' + flower.stem + ' BYN за бутон и ' + BQ.BASE + ' BYN за работу';
       $('#builder-count-aside').textContent = state.count <= BQ.COUNTS[0] ? BQ.COVER.min
-        : (state.count >= BQ.COUNTS[BQ.COUNTS.length - 1] ? BQ.COVER.max : 'Чаще всего берут 15 или 21.');
+        : (state.count >= BQ.COUNTS[BQ.COUNTS.length - 1] ? BQ.COVER.max : 'Чаще всего берут 9 или 15.');
       $('#builder-pack-hint').textContent = pack.hint;
+      $('#builder-green-hint').textContent = green.hint + (green.add ? ' +' + green.add + ' BYN' : '');
       $('#builder-occasion-hint').textContent = occ.hint;
       $('#builder-price').textContent = byn(sum);
       $('#builder-summary').textContent = BQ.summary(state) + ' · ' + occ.title.toLowerCase();
@@ -676,23 +863,48 @@
         var flower = BQ.find(BQ.FLOWERS, state.flower);
         var occ = findOption(BUILDER.occasions, state.occasion);
         var price = builderPrice(state);
-        var title = state.count + ' ' + plural(state.count, flower.title.toLowerCase(),
-          flower.title.toLowerCase() + 'а', flower.title.toLowerCase() + 'ов');
+        var title = state.count + ' ' + BQ.plural(state.count, flower.forms);
+        var bid = 'bouquet-' + [state.flower, state.count, state.palette, state.pack, state.green, state.ribbon].join('-');
         var count = addToCart({
-          id: 'bouquet-' + [state.flower, state.count, state.palette, state.pack, state.ribbon].join('-'),
+          id: bid,
           name: 'Букет по конструктору: ' + title,
           price: price,
-          /* снимок объёмного букета; если 3D не поднялся — прежняя векторная картинка */
-          img: (mounted3d ? BQ3D.snapshot(480) : '') || BQ.dataUrl(state, 480),
+          /* снимок объёмного букета; если 3D не поднялся — прежняя векторная картинка.
+             3.5: снимок живёт ключом IndexedDB, а не base64-строкой в localStorage. */
+          img: BUILDER_IMG,
           note: BQ.summary(state) + ' · ' + occ.title.toLowerCase(),
-          bouquet: { flower: state.flower, count: state.count, palette: state.palette, pack: state.pack, ribbon: state.ribbon }
+          bouquet: { flower: state.flower, count: state.count, palette: state.palette, pack: state.pack, green: state.green, ribbon: state.ribbon }
         }, 1);
         updateCartBadges();
         toast('Собрали букет за ' + byn(price) + '. В корзине ' + count + ' ' + plural(count, 'позиция', 'позиции', 'позиций'));
+        if (navigator.vibrate) { navigator.vibrate(10); }
+        (mounted3d ? BQ3D.snapshot(480) : Promise.resolve(null)).then(function (snap) {
+          if (!snap || !snap.url) { return; }
+          packetFromSnapshot(snap.url).then(function (ref) {
+            var fresh = readCart();
+            for (var i = fresh.length - 1; i >= 0; i--) {
+              if (fresh[i].id === bid) { fresh[i].img = ref; break; }
+            }
+            writeCart(fresh);
+            if (stickyRefresh) { stickyRefresh(); }
+            if (typeof snap.revoke === 'function') { snap.revoke(); }
+          });
+        });
       });
     }
 
     render();
+    /* 1.2: на мобиле бар с «Итого N BYN» держится, пока #builder-add в кадре */
+    bindSticky(
+      document.getElementById('builder'),
+      $('#builder-add'),
+      function () { var t = $('#builder-price'); return t ? t.textContent : ''; },
+      function () {
+        var b = $('#builder-add');
+        if (b) { b.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      },
+      'В корзину'
+    );
   }
 
   function initFeatured() {
@@ -932,6 +1144,8 @@
       if (label) { label.textContent = 'Оформить заказ · ' + byn(sub + fee); }
       updateCartBadges();
       if (success) { success.hidden = true; }
+      /* снимки из IndexedDB: object-URL сразу после innerHTML, revoke на пересбор */
+      hydratePhotos(list);
     }
 
     root.addEventListener('click', function (event) {
@@ -946,10 +1160,12 @@
         setQty(id, action === 'inc' ? current + 1 : current - 1);
         render();
       } else if (action === 'remove') {
+        dropSnapshotRefs(readCart().filter(function (item) { return item.id === id; }));
         removeFromCart(id);
         render();
         toast('Убрали позицию из корзины');
       } else if (action === 'clear-cart') {
+        dropSnapshotRefs(readCart());
         clearCart();
         render();
         toast('Корзина пустая');
@@ -1030,6 +1246,7 @@
         });
 
         clearCart();
+        dropSnapshotRefs(items);
         updateCartBadges();
         form.reset();
         method = 'delivery';
@@ -1047,6 +1264,7 @@
           success.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         toast('Заказ №' + order.number + ' у нас. Позвоним в течение 15 минут.');
+        dropSnapshotRefs(items);
         render();
       });
     }

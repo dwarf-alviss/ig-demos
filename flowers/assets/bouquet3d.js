@@ -5,6 +5,10 @@
    собирается настоящей геометрией и рисуется в WebGL: лепестки,
    стебли, зелень, упаковка и лента — это форма, а не картинка.
 
+   Головка цветка — лепестковые полотна, поставленные кольцами:
+   одна таблица чисел (FD) описывает и пион, и тюльпан, и ромашку,
+   и подсолнух. Микс («mix») берёт вид на каждую головку отдельно.
+
    Числа и цвета остаются сайтовыми: палитры, ленты и число
    бутонов модуль читает из window.PION_BOUQUET, цену считает
    прежняя функция сайта. Если bouquet.js на странице нет,
@@ -18,10 +22,10 @@
      supported()             — есть ли WebGL
      mount(canvas, getState) — поднять сцену (возвращает Promise)
      update(state, opts)     — пересобрать букет
-     snapshot(width)         — снимок JPEG (data-URL) для корзины
+     snapshot(width)         — снимок корзины: Promise с { url, revoke } (JPEG object-URL)
      dispose()               — остановить
      lastError               — что не получилось
-   Состояние: { occasion, flower, count, palette, pack, ribbon }
+   Состояние: { occasion, flower, count, palette, pack, ribbon, green }
    ============================================================ */
 (function (root) {
   'use strict';
@@ -43,7 +47,8 @@
     { id: 'white', petal: ['#fffdf8', '#f2ecdd', '#dbcfb6'], heart: '#cbb27a', leaf: '#77906b', leaf2: '#96ab88' },
     { id: 'green', petal: ['#e9f2e0', '#cadebd', '#a2c291'], heart: '#e0c98a', leaf: '#4e7c53', leaf2: '#6c9a66' },
     { id: 'terra', petal: ['#f3b489', '#dc8f5b', '#b45f34'], heart: '#9c5a33', leaf: '#5f7d54', leaf2: '#829c6e' },
-    { id: 'bright', petal: ['#f7d784', '#e3a93c', '#bd7621'], heart: '#a8502c', leaf: '#5d8757', leaf2: '#7ea273' }
+    { id: 'bright', petal: ['#f7d784', '#e3a93c', '#bd7621'], heart: '#a8502c', leaf: '#5d8757', leaf2: '#7ea273' },
+    { id: 'wine', petal: ['#c9647f', '#a13355', '#7a1731'], heart: '#6d1226', leaf: '#5b7350', leaf2: '#7c9269' }
   ];
   var FALLBACK_RIBBONS = [
     { id: 'cream', main: '#efe4d2', ink: '#b09a78' },
@@ -58,12 +63,20 @@
     box: { fill: '#cfc6b6', edge: '#b3a894' },
     vase: { fill: '#d6e6ea', edge: '#a3b3b6' }
   };
-  var COUNTS = [7, 11, 15, 21, 25];
+  var COUNTS = [1, 3, 5, 9, 15, 25];
 
   /* ---------- состояние сцены ---------- */
   var renderer = null, scene = null, camera = null, group = null, piece = null, stage = null;
   var canvasEl = null, getState = null, raf = 0, key = null;
-  var yaw = 0, pitch = 0.20, zoom = 1, dragging = false, lastX = 0, lastY = 0, idle = true, idleTimer = 0;
+  var yaw = 0, pitch = 0.20, zoom = 1, dragging = false, lastX = 0, lastY = 0;
+
+  /* Инерция вращения, как в присланном 3D-демо: пока тянешь — букет идёт за рукой,
+     отпустил — едет по инерции и плавно возвращается к спокойному ходу (0.03 —
+     доля приближения к целевому ходу за кадр). При «меньше движения» ход нулевой. */
+  var IDLE_SPIN = 0.0030;
+  var spinVel = IDLE_SPIN;
+  var calm = false, onScreen = true;
+  try { calm = !!(root.matchMedia && root.matchMedia('(prefers-reduced-motion: reduce)').matches); } catch (e) {}
   var camDist = 5.0, lastW = 0, lastH = 0;
   var viewTY = 0;                        /* куда смотрит камера: центр букета */
   var halfH = 1.4, halfW = 1.3, groundY = -1.4;
@@ -348,168 +361,175 @@
      вертикально, у края — крупные и отогнутые. Каждый слой повёрнут
      относительно предыдущего, поэтому цветок не читается кружками. */
 
-  var HEAD = {
-    peony: {
-      petal: { len: 1.00, width: 1.06, baseW: .34, shoulder: .58, tipPow: .46, cup: .23, dish: .05, bend: -.05, tipCurl: -.16, ruffle: .95, ruffleFreq: 2.6, wave: .55, segU: 9, segV: 7 },
-      layers: [
-        { n: 4, p: 10, s: .76, w: .84, ph: 0 },
-        { n: 5, p: 26, s: .86, w: .96, ph: 26 },
-        { n: 6, p: 44, s: .92, w: 1.06, ph: 12 },
-        { n: 5, p: 60, s: .96, w: 1.14, ph: 40 },
-        { n: 6, p: 74, s: 1.00, w: 1.20, ph: 6 }
-      ],
-      core: 'cluster'
-    },
-    rose: {
-      petal: { len: .96, width: .90, baseW: .38, shoulder: .7, tipPow: .95, cup: .34, dish: .02, bend: .07, tipCurl: .13, ruffle: .35, ruffleFreq: 2.1, wave: .35, segU: 9, segV: 7 },
-      layers: [
-        { n: 3, p: 11, s: .46, w: .92, ph: 0, spiral: 1 },
-        { n: 4, p: 26, s: .60, w: 1.02, ph: 0, spiral: 1 },
-        { n: 5, p: 44, s: .76, w: 1.26, ph: 0, spiral: 1 },
-        { n: 5, p: 62, s: .90, w: 1.48, ph: 0, spiral: 1 }
-      ],
-      core: 'rose'
-    },
-    tulip: {
-      petal: { len: 1.28, width: .96, baseW: .52, shoulder: .85, tipPow: .52, cup: .44, dish: .03, bend: .04, tipCurl: .12, ruffle: .14, ruffleFreq: 2.0, wave: .30, segU: 10, segV: 7 },
-      layers: [
-        { n: 3, p: 15, s: 1.00, w: 1.00, ph: 0 },
-        { n: 3, p: 31, s: .93, w: 1.06, ph: 60 }
-      ],
-      core: 'tulip'
-    },
-    ranunculus: {
-      petal: { len: .86, width: .92, baseW: .34, shoulder: .62, tipPow: .60, cup: .28, dish: .03, bend: .02, tipCurl: .06, ruffle: .42, ruffleFreq: 2.3, wave: .40, segU: 8, segV: 6 },
-      layers: [
-        { n: 5, p: 13, s: .62, w: .90, ph: 0 },
-        { n: 6, p: 28, s: .72, w: .96, ph: 18 },
-        { n: 7, p: 42, s: .80, w: 1.00, ph: 34 },
-        { n: 8, p: 55, s: .88, w: 1.04, ph: 8 },
-        { n: 7, p: 68, s: .94, w: 1.08, ph: 46 }
-      ],
-      core: 'dot'
-    },
-    evas: {
-      petal: { len: .95, width: 1.30, baseW: .40, shoulder: .55, tipPow: .50, cup: .17, dish: .04, bend: -.05, tipCurl: -.10, ruffle: .58, ruffleFreq: 2.4, wave: .48, segU: 9, segV: 7 },
-      layers: [
-        { n: 6, p: 72, s: 1.00, w: 1.20, ph: 0 },
-        { n: 5, p: 42, s: .55, w: .86, ph: 30 }
-      ],
-      core: 'evas'
-    }
+  /* ============================ двигатель головки ============================
+     Головка собирается из лепестковых полотен: одно полотно — это лопасть с
+     лодочкой, заворотом и зубчатым или волнистым краем. Из десятков таких
+     полотен, поставленных кольцами под разными углами, получается и пион, и
+     ромашка, и подсолнух: разница только в числах таблицы FD.
+
+     Геометрия сорта считается один раз и живёт в кэше — на букет уходит один
+     меш на головку вместо сотни мешей на лепесток. Полотно несёт серый
+     множитель в цвете вершин (край светлее, середина темнее), поэтому палитра
+     сайта умножается на него и головка не выглядит плоской заливкой. */
+
+  var HR_REF = 0.72;               /* средний радиус головы: с ним сравниваем размер вида */
+
+  /* Кольца лепестков: [число, угол от центра, угол края, длина, ширина,
+     лодочка, заворот, смещение кольца, острота кончика, светлота]. */
+  var FD = {
+    rose: { hr: .62, r: [
+      [3, .08, .2, .32, .22, 1.5, 0, 0, 1, .45],
+      [5, .35, .5, .4, .3, 1.2, 0, .03, 1, .6],
+      [7, .6, .8, .48, .4, 1, .1, .06, 1, .75],
+      [8, .95, 1.15, .55, .48, .75, .3, .09, 1, .9],
+      [9, 1.25, 1.4, .6, .52, .6, .5, .12, 1, 1]
+    ] },
+    peony: { hr: .8, ruf: .05, r: [
+      [4, .05, .2, .4, .4, 1.3, 0, 0, 1, .45],
+      [6, .3, .5, .5, .5, 1.1, .05, .03, 1, .55],
+      [8, .6, .8, .6, .58, .9, .15, .06, 1, .68],
+      [10, .9, 1.1, .68, .64, .75, .3, .1, 1, .8],
+      [12, 1.2, 1.35, .74, .7, .6, .45, .14, 1, .9],
+      [13, 1.4, 1.5, .76, .72, .5, .6, .18, 1, 1]
+    ] },
+    ranunculus: { hr: .55, r: [
+      [4, .05, .15, .28, .26, 1.6, 0, 0, 1, .4],
+      [6, .25, .4, .32, .3, 1.4, 0, .02, 1, .5],
+      [8, .5, .65, .36, .34, 1.2, .05, .04, 1, .6],
+      [9, .8, .95, .4, .38, 1, .1, .06, 1, .7],
+      [10, 1.05, 1.2, .44, .4, .9, .2, .08, 1, .8],
+      [12, 1.3, 1.45, .48, .44, .7, .35, .1, 1, .9],
+      [13, 1.45, 1.55, .5, .44, .5, .5, .12, 1, 1]
+    ] },
+    tulip: { hr: .5, r: [
+      [3, .22, .26, .95, .56, 1.1, -.12, .03, .9, .65],
+      [3, .26, .3, 1, .56, 1.1, -.08, .05, .9, 1]
+    ] },
+    /* эустома: мелкая голова, много узких волнистых лепестков в шахматку */
+    evas: { hr: .58, ruf: .14, r: [
+      [6, .2, .32, .38, .26, 1.35, 0, .01, 1.2, .5],
+      [7, .45, .58, .42, .3, 1.2, .04, .03, 1.3, .62],
+      [8, .68, .82, .46, .32, 1.05, .1, .05, 1.4, .76],
+      [9, .92, 1.05, .5, .34, .9, .2, .07, 1.5, .9],
+      [8, 1.15, 1.28, .52, .34, .75, .32, .09, 1.5, 1]
+    ] },
+    daisy: { hr: .85, r: [
+      [16, 1.42, 1.5, .78, .17, .05, .06, .18, 1.6, .85],
+      [14, 1.3, 1.4, .72, .17, .05, .05, .16, 1.6, 1]
+    ] },
+    sunflower: { hr: 1.25, r: [
+      [24, 1.38, 1.46, .95, .22, .05, .15, .5, 1.7, .7],
+      [22, 1.2, 1.32, .9, .22, .05, .2, .5, 1.7, 1]
+    ] },
+    lily: { hr: 1, r: [
+      [3, .72, .82, 1.15, .44, .5, .6, .03, 1.4, .8],
+      [3, .8, .9, 1.15, .44, .5, .9, .04, 1.4, 1]
+    ] }
   };
 
-  /* Середина цветка: она мельче лепестков, но именно она не даёт головке
-     читаться шариком. Держим её отдельной сеткой — у неё свой цвет палитры. */
-  function buildCoreGeometry(THREE, kind, rnd) {
-    var gb = new GeoBuilder(THREE);
-    var m = new THREE.Matrix4();
-    var i, a;
-    if (kind === 'cluster') {                    /* пион: смятая середина в мелких лепестках */
-      var ball = new THREE.SphereGeometry(0.13, 14, 10);
-      ball.scale(1, .78, 1);
-      m.identity(); m.setPosition(0, 0.42, 0);
-      gb.add(ball, m);
-      ball.dispose();
-      for (i = 0; i < 7; i++) {
-        a = i * 0.9;
-        var bead = new THREE.SphereGeometry(0.040, 8, 6);
-        m.identity(); m.setPosition(Math.cos(a) * 0.115, 0.45 + (i % 2) * 0.05, Math.sin(a) * 0.115);
-        gb.add(bead, m, [1.18, 1.10, 1.02]);
-        bead.dispose();
-      }
-    } else if (kind === 'rose') {                /* роза: плотный свиток в середине */
-      var bud = new THREE.SphereGeometry(0.115, 14, 10);
-      bud.scale(1, 1.25, 1);
-      m.identity(); m.setPosition(0, 0.26, 0);
-      gb.add(bud, m);
-      bud.dispose();
-    } else if (kind === 'tulip') {               /* тюльпан: тёмное дно чашки и пыльники */
-      var disc = new THREE.SphereGeometry(0.20, 16, 10);
-      disc.scale(1, .34, 1);
-      m.identity(); m.setPosition(0, 0.30, 0);
-      gb.add(disc, m);
-      disc.dispose();
-      for (i = 0; i < 3; i++) {
-        a = i * 2.1 + 0.4;
-        var anther = new THREE.CylinderGeometry(0.016, 0.022, 0.20, 6);
-        m.identity();
-        m.makeRotationZ((i - 1) * 0.26);
-        m.setPosition(Math.cos(a) * 0.05, 0.48, Math.sin(a) * 0.05);
-        gb.add(anther, m, [0.86, 0.82, 0.70]);
-        anther.dispose();
-      }
-    } else if (kind === 'dot') {                 /* ранункулюс: мелкая тёмная точка */
-      var dot = new THREE.SphereGeometry(0.085, 12, 8);
-      dot.scale(1, .8, 1);
-      m.identity(); m.setPosition(0, 0.24, 0);
-      gb.add(dot, m);
-      dot.dispose();
-    } else {                                     /* эустома: пестик и тычинки на нитях */
-      var pistil = new THREE.SphereGeometry(0.20, 16, 12);
-      pistil.scale(1, .5, 1);
-      m.identity(); m.setPosition(0, 0.24, 0);
-      gb.add(pistil, m);
-      pistil.dispose();
-      for (i = 0; i < 7; i++) {
-        a = (i / 7) * Math.PI * 2;
-        var fil = new THREE.CylinderGeometry(0.009, 0.012, 0.22, 5);
-        m.identity();
-        m.makeRotationZ(Math.cos(a) * 0.55);
-        m.multiply(new THREE.Matrix4().makeRotationX(Math.sin(a) * 0.55));
-        m.setPosition(Math.cos(a) * 0.10, 0.36, Math.sin(a) * 0.10);
-        gb.add(fil, m, [0.95, 0.92, 0.80]);
-        fil.dispose();
-        var tip = new THREE.SphereGeometry(0.022, 6, 5);
-        m.identity(); m.setPosition(Math.cos(a) * 0.20, 0.47, Math.sin(a) * 0.20);
-        gb.add(tip, m, [1.10, 1.05, 0.90]);
-        tip.dispose();
-      }
+  var MODULE_MIX = ['peony', 'rose', 'ranunculus', 'tulip', 'evas', 'daisy', 'sunflower', 'lily'];
+
+  /* Насколько голова вида крупнее средней: подсолнух в букете и правда больше пиона */
+  var SIZE = { rose: .94, peony: 1.07, ranunculus: .89, tulip: .85, evas: .93, daisy: 1.1, sunflower: 1.25, lily: 1.2 };
+
+  /* Полотно лепестка: единица длины вверх, ширина раздувается у середины,
+     кончик сужается по степени tip, лодочка выгибает лопасть по ширине,
+     заворот закручивает её наружу, волнистость даёт зубчатый край. */
+  function petalSheet(w, l, cup, curl, tip, ruf, s0) {
+    var SU = 10, SV = 6;      /* сетка полотна: 10 по ширине, 6 по длине — хватает на зубчатый край */
+    var g = new THREE.PlaneGeometry(1, 1, SU, SV);
+    var p = g.attributes.position, c = new Float32Array(p.count * 3);
+    for (var i = 0; i < p.count; i++) {
+      var v = p.getX(i) * 2, t = p.getY(i) + .5;
+      var hw = w / 2 * (t < .55
+        ? .35 + .65 * Math.sin(t / .55 * Math.PI / 2)
+        : Math.pow(Math.max(0, 1 - (t - .55) / .45), .5 * tip));
+      var z = -cup * .25 * w * v * v * (.3 + .7 * t) + curl * l * t * t + ruf * w * Math.sin(v * 4.5 * Math.PI) * t * t;
+      p.setXYZ(i, hw * v, l * t, z);
+      var s = s0 * (.62 + .38 * Math.pow(t, .6)) * (1 - .1 * v * v);
+      c[i * 3] = c[i * 3 + 1] = c[i * 3 + 2] = s;
     }
-    return gb.build();
+    g.setAttribute('color', new THREE.BufferAttribute(c, 3));
+    g.computeVertexNormals();
+    return g;
   }
 
   function headGeometry(type, seed) {
-    var key2 = type + '|' + seed;
+    var key2 = 'hd|' + type;
     if (geoCache[key2]) { return geoCache[key2]; }
-    var cfg = HEAD[type] || HEAD.peony;
+    var D = FD[type] || FD.peony;
     var rnd = rng(seed);
     var gb = new GeoBuilder(THREE);
     var m = new THREE.Matrix4();
-    var petal = petalGeometry(THREE, cfg.petal);
-    var baseR = 0.13, radius = 0, i, L;
-    for (L = 0; L < cfg.layers.length; L++) {
-      var lay = cfg.layers[L];
-      var spin = (lay.ph || 0) * Math.PI / 180;
-      for (i = 0; i < lay.n; i++) {
-        var az = lay.spiral ? (spin + (i + L * lay.n) * 2.39996) : (spin + (i / lay.n) * Math.PI * 2);
-        az += (rnd() - 0.5) * 0.12;
-        var pol = clamp((lay.p + (rnd() - 0.5) * 7) * Math.PI / 180, 0.02, 1.50);
-        var s = lay.s * (0.93 + rnd() * 0.14);
-        var roll = (rnd() - 0.5) * 0.55;
-        var sp = Math.sin(pol), cp = Math.cos(pol);
-        var dir = [sp * Math.cos(az), cp, sp * Math.sin(az)];
-        placePlane(THREE, m, dir, [0, 1, 0], s * (lay.w || 1), s, roll,
-          dir[0] * baseR, dir[1] * baseR, dir[2] * baseR);
-        gb.add(petal, m);
-        radius = Math.max(radius, (baseR + s * cfg.petal.len) * sp);
+    var radius = 0, i, k;
+    for (i = 0; i < D.r.length; i++) {
+      var r = D.r[i];
+      var n = r[0], t0 = r[1], t1 = r[2], l = r[3], w = r[4];
+      var cup = r[5], curl = r[6], off = r[7], tip = r[8], s0 = r[9];
+      var sheet = petalSheet(w, l, cup, curl, tip, D.ruf || 0, s0);
+      for (k = 0; k < n; k++) {
+        var a = (k + (i % 2) * .5) / n * Math.PI * 2 + rnd() * .22;
+        var tl = t0 + (t1 - t0) * rnd();
+        var s = .92 + rnd() * .16;
+        m.makeRotationY(a);
+        m.multiply(new THREE.Matrix4().makeTranslation(0, i * .004, off));
+        m.multiply(new THREE.Matrix4().makeRotationX(tl));
+        m.multiply(new THREE.Matrix4().makeScale(s, s, s));
+        gb.add(sheet, m);
+        radius = Math.max(radius, Math.sin(Math.min(tl, 1.55)) * l * s);
       }
+      sheet.dispose();
     }
-    petal.dispose();
     var geo = gb.build();
+    var rad = Math.max(.25, radius * 1.06);
+    /* нормируем на радиус 1: раскладка задаёт размер головы в мировых единицах */
+    geo.scale(1 / rad, 1 / rad, 1 / rad);
+    geo.computeBoundingSphere();
     geo.__keep = true;
-    geoCache[key2] = { geo: geo, radius: Math.max(0.5, radius * 1.08) };
+    geoCache[key2] = { geo: geo, rad: rad };
     return geoCache[key2];
   }
 
-  /* Середину цветка собираем один раз на вид: она одинакова у всех головок */
+  /* Середина цветка: у ромашки — выпуклая жёлтая головка, у подсолнуха — диск
+     с семечками, у лилии и тюльпана — тычинки, у остальных мелкая точка. */
   function coreGeometry(type, seed) {
-    var k = type + '|core';
-    if (!geoCache[k]) {
-      var g = buildCoreGeometry(THREE, (HEAD[type] || HEAD.peony).core, rng(seed));
-      g.__keep = true;
-      geoCache[k] = g;
+    var k = 'core|' + type;
+    if (geoCache[k]) { return geoCache[k]; }
+    var T = THREE, gb = new GeoBuilder(T), m = new T.Matrix4(), i, a;
+    var kind = type === 'daisy' || type === 'sunflower' ? 'disc'
+      : (type === 'lily' || type === 'tulip') ? 'stamen' : 'dot';
+    if (kind === 'dot') {
+      var dot = new T.SphereGeometry(.075, 12, 8);
+      dot.scale(1, .8, 1);
+      m.identity(); m.setPosition(0, .12, 0);
+      gb.add(dot, m);
+      dot.dispose();
+    } else if (kind === 'disc') {
+      var big = type === 'sunflower';
+      var disc = new T.CylinderGeometry(big ? .48 : .2, big ? .43 : .18, big ? .1 : .08, 40);
+      m.identity(); m.setPosition(0, big ? .04 : .03, 0);
+      gb.add(disc, m, big ? [1, .96, .9] : [1.06, 1.02, .92]);
+      disc.dispose();
+    } else {
+      for (i = 0; i < 6; i++) {
+        a = i * 1.05;
+        var fil = new T.CylinderGeometry(.012, .012, .62, 6);
+        m.identity();
+        m.makeRotationZ(Math.cos(a) * .26);
+        m.multiply(new T.Matrix4().makeRotationX(-Math.sin(a) * .26));
+        m.setPosition(Math.sin(a) * .16, .3, Math.cos(a) * .16);
+        gb.add(fil, m, [.95, .93, .8]);
+        fil.dispose();
+        var ant = new T.SphereGeometry(.045, 8, 6);
+        ant.scale(1.6, 1, 1);
+        m.identity(); m.setPosition(Math.sin(a) * .3, .6, Math.cos(a) * .3);
+        gb.add(ant, m, [.9, .62, .34]);
+        ant.dispose();
+      }
     }
+    var geo = gb.build();
+    geo.__keep = true;
+    geoCache[k] = { geo: geo, kind: kind };
     return geoCache[k];
   }
 
@@ -835,6 +855,27 @@
 
   /* ============================ сборка букета ============================ */
 
+  /* Диск подсолнуха: семечки считаем спиралью на канве — так их видно вблизи */
+  function discTexture(THREE) {
+    if (matCache.__discTex) { return matCache.__discTex; }
+    var c = document.createElement('canvas');
+    c.width = c.height = 256;
+    var x = c.getContext('2d');
+    x.fillStyle = '#3a2410';
+    x.fillRect(0, 0, 256, 256);
+    for (var i = 0; i < 420; i++) {
+      var a = i * 2.39996, r = Math.sqrt(i / 420) * 118;
+      x.fillStyle = (i % 3) ? '#7a4d1c' : '#c08a2c';
+      x.beginPath();
+      x.arc(128 + Math.cos(a) * r, 128 + Math.sin(a) * r, 4.2 - r * .02, 0, 7);
+      x.fill();
+    }
+    var t = new THREE.CanvasTexture(c);
+    t.colorSpace = THREE.SRGBColorSpace;
+    matCache.__discTex = t;
+    return t;
+  }
+
   function materialFor(hex, kind) {
     var k = kind + '|' + hex;
     if (matCache[k]) { return matCache[k]; }
@@ -857,6 +898,13 @@
       mat = new THREE.MeshPhysicalMaterial({
         color: 0xffffff, vertexColors: true, roughness: .62, metalness: 0,
         sheen: .55, sheenColor: new THREE.Color(0xdff0d4), sheenRoughness: .6, side: THREE.DoubleSide, envMapIntensity: .9
+      });
+    } else if (kind === 'disc') {
+      /* диск подсолнуха: канва с семечками вместо гладкой заливки */
+      var dt = discTexture(THREE);
+      mat = new THREE.MeshPhysicalMaterial({
+        color: c, map: dt, bumpMap: dt, bumpScale: 2, roughness: .82, metalness: 0,
+        side: THREE.DoubleSide, envMapIntensity: .8
       });
     } else {
       mat = new THREE.MeshPhysicalMaterial({ color: c, vertexColors: true, roughness: .6, metalness: 0, side: THREE.DoubleSide, envMapIntensity: .9 });
@@ -893,27 +941,103 @@
     var palette = pick(paletteList(), state.palette || 'pudra');
     var ribbon = pick(ribbonList(), state.ribbon || 'cream');
     var packId = state.pack || 'craft';
-    var type = HEAD[state.flower] ? state.flower : 'peony';
+    var type = FD[state.flower] ? state.flower : 'peony';
+    var greenMode = state.green || 'euc';
     var count = COUNTS.indexOf(state.count) === -1 ? 15 : state.count;
     var seed = seedOf({ flower: type, count: count, palette: palette.id, pack: packId, ribbon: ribbon.id });
     var rnd = rng(seed);
     var lay = layout3D(count);
     var headR = lay.headR;
-    var head = headGeometry(type, 11 + type.length * 7);
-    var coreGeo = coreGeometry(type, 3 + type.length * 5);
 
-    /* ---- головки: лепестки одной сеткой, середина — своей ---- */
+    var i, it, kindI;
+    var mixRnd = rng(seed + 977);
+    var kinds = [], heads = {}, cores = {};
+    for (i = 0; i < lay.items.length; i++) {
+      kindI = type === 'mix' ? MODULE_MIX[Math.floor(mixRnd() * MODULE_MIX.length) % MODULE_MIX.length] : type;
+      kinds.push(kindI);
+      if (!heads[kindI]) {
+        heads[kindI] = headGeometry(kindI, 11 + kindI.length * 7);
+        cores[kindI] = coreGeometry(kindI, 3 + kindI.length * 5);
+      }
+    }
+
+    /* ---- головки: лепестки одной сеткой, середина — своей ----
+       Микс берёт вид на каждую головку по отдельности, поэтому головки
+       собираем по списку и держим кэш по видам. */
     var petalMatBack = materialFor(palette.petal[2], 'petal');
     var petalMatMid = materialFor(palette.petal[1], 'petal');
     var petalMatLight = materialFor(palette.petal[0], 'petal');
     var heartMat = materialFor(palette.heart, 'heart');
+    var discMat = materialFor(palette.heart, 'disc');
 
-    var i, it;
+    /* ---- головки: 3.4, инстансы по умолчанию ----
+       Головки группируются по (вид × цветовой слой): все бутоны слоя ложатся
+       в один InstancedMesh + один на середину. На 25 бутонов вместо 50 мешей
+       уходит 2 меша на слой (всего 14). Отключается флагом
+       PION_BOUQUET3D_INSTANCED = false до загрузки модуля. */
+    var USE_INSTANCED = true;
+    try { USE_INSTANCED = root.PION_BOUQUET3D_INSTANCED !== false; } catch (e) {}
+
+    if (USE_INSTANCED) {
+      /* группируем бутоны по виду и слою цвета */
+      var layers = {};
+      for (i = 0; i < lay.items.length; i++) {
+        it = lay.items[i];
+        kindI = kinds[i];
+        var lk = kindI + '|' + (it.back ? 'back' : (it.light ? 'light' : 'mid'));
+        if (!layers[lk]) { layers[lk] = { kind: kindI, back: it.back, light: it.light, items: [] }; }
+        layers[lk].items.push(it);
+      }
+      var q = new THREE.Quaternion(), qSpin = new THREE.Quaternion(), axisV = new THREE.Vector3(), m4 = new THREE.Matrix4();
+      var Y_UP = new THREE.Vector3(0, 1, 0);
+      for (var lk in layers) {
+        var gr = layers[lk];
+        var hd = heads[gr.kind], cr = cores[gr.kind];
+        var mat2 = materialFor(palette.petal[gr.back ? 2 : (gr.light ? 0 : 1)], 'petal');
+        var inst = new THREE.InstancedMesh(hd.geo, mat2, gr.items.length);
+        for (i = 0; i < gr.items.length; i++) {
+          it = gr.items[i];
+          var s = it.scale * (SIZE[gr.kind] || 1);
+          axisV.set(Math.sin(it.az), 0, -Math.cos(it.az)).normalize();
+          /* тот же поворот, что у отдельной головки: наклон от центра × собственный спин */
+          q.setFromAxisAngle(axisV, it.tilt);
+          q.multiply(qSpin.setFromAxisAngle(Y_UP, it.spin));
+          m4.compose(
+            new THREE.Vector3(it.x, it.y, it.z), q,
+            new THREE.Vector3(s / hd.rad, s / hd.rad, s / hd.rad)
+          );
+          inst.setMatrixAt(i, m4);
+        }
+        inst.instanceMatrix.needsUpdate = true;
+        inst.castShadow = true;
+        inst.receiveShadow = true;
+        piece.add(inst);
+        var crMat = cr.kind === 'disc' ? discMat : heartMat;
+        var cinst = new THREE.InstancedMesh(cr.geo, crMat, gr.items.length);
+        for (i = 0; i < gr.items.length; i++) {
+          it = gr.items[i];
+          var s2 = it.scale * (SIZE[gr.kind] || 1) / hd.rad;
+          axisV.set(Math.sin(it.az), 0, -Math.cos(it.az)).normalize();
+          q.setFromAxisAngle(axisV, it.tilt);
+          q.multiply(qSpin.setFromAxisAngle(Y_UP, it.spin));
+          m4.compose(
+            new THREE.Vector3(it.x, it.y, it.z), q,
+            new THREE.Vector3(s2, s2, s2)
+          );
+          cinst.setMatrixAt(i, m4);
+        }
+        cinst.instanceMatrix.needsUpdate = true;
+        piece.add(cinst);
+      }
+    } else {
+
     for (i = 0; i < lay.items.length; i++) {
       it = lay.items[i];
-      var s = it.scale / head.radius;
+      kindI = kinds[i];
+      var hd = heads[kindI], cr = cores[kindI];
+      var s = it.scale * (SIZE[kindI] || 1);
       var mat = it.back ? petalMatBack : (it.light ? petalMatLight : petalMatMid);
-      var mesh = new THREE.Mesh(head.geo, mat);
+      var mesh = new THREE.Mesh(hd.geo, mat);
       mesh.scale.setScalar(s);
       mesh.position.set(it.x, it.y, it.z);
       mesh.rotation.set(0, it.spin, 0);
@@ -923,12 +1047,13 @@
       mesh.castShadow = true;
       mesh.receiveShadow = true;
       piece.add(mesh);
-      var core = new THREE.Mesh(coreGeo, heartMat);
-      core.scale.setScalar(s);
+      var core = new THREE.Mesh(cr.geo, cr.kind === 'disc' ? discMat : heartMat);
+      core.scale.setScalar(s / hd.rad);
       core.position.copy(mesh.position);
       core.quaternion.copy(mesh.quaternion);
       core.castShadow = false;
       piece.add(core);
+    }
     }
 
     /* ---- размеры упаковки ---- */
@@ -973,23 +1098,28 @@
       }
       addStem(gb, to, ctrl, from, headR * 0.055, it.back ? pale : deep);
     }
-    /* ---- зелень: листья по краю купола и ветки из-под упаковки ---- */
+    /* ---- зелень: ветки из-под упаковки и крупные листья по краю купола ----
+       «Без зелени» оставляет чистые головы, «только листья» — без веток */
     var leafGeo = petalGeometry(THREE, LEAF);
     var m = new THREE.Matrix4();
     var rimR = Math.max(ringOuter * 0.92, headR * 1.9);
-    for (i = 0; i < 6; i++) {
-      var la = (i / 6) * Math.PI * 2 + 0.4;
-      var lx = Math.cos(la) * rimR, lz = Math.sin(la) * rimR;
-      var dir = [Math.cos(la), 0.62 + (rnd() - 0.5) * 0.3, Math.sin(la)];
-      var ls = headR * (1.05 + rnd() * 0.3);
-      placePlane(THREE, m, dir, [0, 1, 0], ls * 0.85, ls, (rnd() - 0.5) * 0.7, lx * 0.92, headR * 0.05 + (rnd() - 0.5) * 0.1, lz * 0.92);
-      gb.add(leafGeo, m, i % 2 ? pale : deep);
+    if (greenMode !== 'none') {
+      for (i = 0; i < 6; i++) {
+        var la = (i / 6) * Math.PI * 2 + 0.4;
+        var lx = Math.cos(la) * rimR, lz = Math.sin(la) * rimR;
+        var dir = [Math.cos(la), 0.62 + (rnd() - 0.5) * 0.3, Math.sin(la)];
+        var ls = headR * (1.05 + rnd() * 0.3);
+        placePlane(THREE, m, dir, [0, 1, 0], ls * 0.85, ls, (rnd() - 0.5) * 0.7, lx * 0.92, headR * 0.05 + (rnd() - 0.5) * 0.1, lz * 0.92);
+        gb.add(leafGeo, m, i % 2 ? pale : deep);
+      }
     }
     leafGeo.dispose();
-    var sprigCount = 3 + (count >= 15 ? 1 : 0) + (count >= 21 ? 1 : 0);
-    for (i = 0; i < sprigCount; i++) {
-      var sa = (i / sprigCount) * Math.PI * 2 + 0.9;
-      addSprig(gb, palette, rnd, sa, headR * (1.45 + rnd() * 0.35), headR * 0.9);
+    if (greenMode === 'euc') {
+      var sprigCount = 3 + (count >= 15 ? 1 : 0) + (count >= 21 ? 1 : 0);
+      for (i = 0; i < sprigCount; i++) {
+        var sa = (i / sprigCount) * Math.PI * 2 + 0.9;
+        addSprig(gb, palette, rnd, sa, headR * (1.45 + rnd() * 0.35), headR * 0.9);
+      }
     }
     var greenMesh = new THREE.Mesh(gb.build(), materialFor('green', 'green'));
     greenMesh.castShadow = true;
@@ -1092,12 +1222,35 @@
 
   function render() {
     if (!running) { return; }
-    if (idle && !dragging && group) { group.rotation.y += 0.0030; }
+    if (root.document && root.document.hidden) { raf = requestAnimationFrame(render); return; }
+    if (onScreen) { stepSpin(); }
     var cp = Math.cos(pitch), sp = Math.sin(pitch);
     camera.position.set(Math.sin(yaw) * cp * camDist, sp * camDist + camDist * 0.06, Math.cos(yaw) * cp * camDist);
     camera.lookAt(0, viewTY, 0);
     renderer.render(scene, camera);
     raf = requestAnimationFrame(render);
+  }
+
+  /* Шаг вращения: сдвиг угла и возврат хода к спокойному. Вынесено отдельно,
+     чтобы инерцию можно было проверить без рендера. */
+  function stepSpin() {
+    if (!group) { return; }
+    group.rotation.y += spinVel;
+    if (!dragging) { spinVel += ((calm ? 0 : IDLE_SPIN) - spinVel) * 0.03; }
+  }
+
+  /* Палец: поворот за рукой, скорость броска уходит в инерцию, наклон меняет кадр */
+  function dragBy(dx, dy) {
+    yaw += dx * 0.008;
+    spinVel = dx * 0.008;
+    if (group) { group.rotation.y += dx * 0.008; }
+    pitch = clamp(pitch + dy * 0.006, -0.30, 0.90);
+  }
+
+  /* Стрелки: тот же поворот, только шагом */
+  function nudge(delta) {
+    yaw += delta;
+    if (group) { group.rotation.y += delta; }
   }
 
   function resize() {
@@ -1118,24 +1271,32 @@
     if (bound || !canvasEl) { return; }
     bound = true;
     canvasEl.addEventListener('pointerdown', function (e) {
-      dragging = true; idle = false;
+      dragging = true;
       lastX = e.clientX; lastY = e.clientY;
       try { canvasEl.setPointerCapture(e.pointerId); } catch (err) {}
     });
-    canvasEl.addEventListener('pointerup', function () {
-      dragging = false;
-      clearTimeout(idleTimer);
-      idleTimer = setTimeout(function () { idle = true; }, 2200);
-    });
-    canvasEl.addEventListener('pointercancel', function () { dragging = false; idle = true; });
+    canvasEl.addEventListener('pointerup', function () { dragging = false; });
+    canvasEl.addEventListener('pointercancel', function () { dragging = false; });
     canvasEl.addEventListener('pointermove', function (e) {
       if (!dragging) { return; }
-      var dx = e.clientX - lastX;
-      yaw += dx * 0.008;
-      if (group) { group.rotation.y -= dx * 0.008; }
-      pitch = clamp(pitch + (e.clientY - lastY) * 0.006, -0.30, 0.90);
+      dragBy(e.clientX - lastX, e.clientY - lastY);
       lastX = e.clientX; lastY = e.clientY;
     });
+    /* стрелки поворачивают букет, как в демо */
+    canvasEl.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { nudge(-0.15); }
+      else if (e.key === 'ArrowRight') { nudge(0.15); }
+      else { return; }
+      e.preventDefault();
+    });
+    /* кадры считаем, только когда холст в кадре */
+    if (root.IntersectionObserver) {
+      try {
+        new root.IntersectionObserver(function (es) {
+          onScreen = !!(es[0] && es[0].isIntersecting);
+        }, { rootMargin: '120px' }).observe(canvasEl);
+      } catch (err) {}
+    }
     canvasEl.addEventListener('wheel', function (e) {
       e.preventDefault();
       zoom = clamp(zoom - e.deltaY * 0.0011, 0.75, 1.5);
@@ -1258,24 +1419,44 @@
       }
     },
 
-    /* снимок для корзины: тот же букет, что на экране, только уменьшенный */
+    /* снимок для корзины: тот же букет, что на экране, только уменьшенный.
+       3.5: JPEG-объект вместо base64-data-URL — картинка до 480px весит
+       десятки килобайт, а не сотни, и строка корзины не упирается в 5 МБ
+       localStorage. Возвращаем Promise с { url, revoke }: url кладут в img,
+       revoke() можно вызвать, когда снимок больше не нужен. */
     snapshot: function (width) {
-      if (!renderer || !canvasEl) { return ''; }
-      try {
-        renderer.render(scene, camera);
-        var w = width || 480;
-        var h = Math.round(w * (canvasEl.height / canvasEl.width));
-        var off = document.createElement('canvas');
-        off.width = w; off.height = h;
-        var ctx2 = off.getContext('2d');
-        ctx2.fillStyle = SNAP_BG;
-        ctx2.fillRect(0, 0, w, h);
-        ctx2.drawImage(canvasEl, 0, 0, w, h);
-        return off.toDataURL('image/jpeg', 0.86);
-      } catch (e) {
-        api.lastError = 'snapshot: ' + (e && e.name) + ': ' + (e && e.message);
-        return '';
-      }
+      if (!renderer || !canvasEl) { return Promise.resolve(null); }
+      return new Promise(function (resolve) {
+        try {
+          renderer.render(scene, camera);
+          var w = width || 480;
+          var h = Math.round(w * (canvasEl.height / canvasEl.width));
+          var off = document.createElement('canvas');
+          off.width = w; off.height = h;
+          var ctx2 = off.getContext('2d');
+          ctx2.fillStyle = SNAP_BG;
+          ctx2.fillRect(0, 0, w, h);
+          ctx2.drawImage(canvasEl, 0, 0, w, h);
+          /* toBlob и objectURL: файл JPEG, а не строка base64 */
+          if (off.toBlob) {
+            off.toBlob(function (blob) {
+              if (blob && root.URL && root.URL.createObjectURL) {
+                var url = root.URL.createObjectURL(blob);
+                resolve({ url: url, revoke: function () { root.URL.revokeObjectURL(url); } });
+              } else {
+                var fallbackUrl = off.toDataURL('image/jpeg', 0.82);
+                resolve(fallbackUrl ? { url: fallbackUrl, revoke: function () {} } : null);
+              }
+            }, 'image/jpeg', 0.82);
+            return;
+          }
+          var url2 = off.toDataURL('image/jpeg', 0.82);
+          resolve(url2 ? { url: url2, revoke: function () {} } : null);
+        } catch (e) {
+          api.lastError = 'snapshot: ' + (e && e.name) + ': ' + (e && e.message);
+          resolve(null);
+        }
+      });
     },
 
     dispose: function () {
@@ -1304,9 +1485,18 @@
   if (root.PION_BOUQUET3D_TEST) {
     api._test = {
       setThree: function (mod) { THREE = mod; },
-      petalGeometry: function (o) { return petalGeometry(THREE, o); },
+      /* Проверка вращения без рендера: инерция, бросок пальцем, стрелки, «меньше движения» */
+      spin: function () { return spinVel; },
+      step: function (n) { for (var i = 0; i < n; i++) { stepSpin(); } return spinVel; },
+      drag: function (dx, dy) { dragBy(dx, dy); return spinVel; },
+      nudge: function (d) { nudge(d); return yaw; },
+      setCalm: function (v) { calm = !!v; },
+      setOnScreen: function (v) { onScreen = !!v; },
+      angles: function () { return { yaw: yaw, pitch: pitch, spin: spinVel, model: group ? group.rotation.y : null }; },
+      petalGeometry:
+ function (o) { return petalGeometry(THREE, o); },
       headGeometry: function (type, seed) { return headGeometry(type, seed); },
-      headConfig: function (type) { return HEAD[type] || HEAD.peony; },
+      headConfig: function (type) { return FD[type] || FD.peony; },
       rowsFor: rowsFor,
       layout3D: layout3D,
       vaseProfile: function (H, t, b, base) { return vaseProfile(THREE, H, t, b, base); },
@@ -1320,6 +1510,11 @@
         roughTex = deps.roughTex; blobTex = deps.blobTex; floorTex = deps.floorTex;
         lastW = deps.w || 620; lastH = deps.h || 700;
         return rebuild(state);
+      },
+      /* Пульт сцены: нужен только проверке — она гасит тени и снижает
+         разрешение, чтобы софтверный WebGL на слабой машине успел отрисовать кадр. */
+      rig: function () {
+        return { renderer: renderer, scene: scene, camera: camera, key: key, group: group, piece: piece, stage: stage };
       },
       stats: function () {
         var meshes = 0, tris = 0;

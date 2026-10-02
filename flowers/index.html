@@ -5,10 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>«Пион» — цветочная мастерская в Минске: букеты, композиции, подписка</title>
 <meta name="description" content="Мастерская «Пион» на Немиге: монобукеты, композиции в керамике, свадебные букеты и подписка на цветы. Доставка по Минску за 2 часа, 12 BYN, бесплатно от 150 BYN.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="«Пион», цветочная мастерская в Минске">
+<meta property="og:description" content="Монобукеты, композиции в керамике, свадебные букеты и подписка. Доставка по Минску, обычно два часа от звонка, к восьми утра не берёмся.">
+<meta property="og:image" content="assets/img/og.jpg" width="1200" height="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/motion.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Пион">
+<meta property="og:title" content="«Пион», цветочная мастерская в Минске">
+<meta property="og:description" content="Монобукеты, композиции, букеты в коробке. Нас трое и витрины нет, собираем под заказ и везём по Минску обычно за два часа.">
+<meta property="og:image" content="assets/img/og.jpg" width="1200" height="630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body data-page="index">
 <a class="skip-link" href="#main">К основному содержанию</a>
@@ -157,15 +170,15 @@
         <div class="builder__stage">
           <svg id="bouquet" class="bouquet" viewBox="0 0 600 660" role="img"
                aria-label="Букет, который вы собираете"><title>Ваш букет</title></svg>
-          <canvas id="bouquet3d" class="bouquet bouquet--3d" width="620" height="700" hidden
-                  aria-label="Букет в 3D: потяните, чтобы повернуть"></canvas>
+          <canvas id="bouquet3d" class="bouquet bouquet--3d" width="620" height="700" hidden tabindex="0"
+                  aria-label="Букет в 3D: потяните, чтобы повернуть, колесо приближает, стрелки вращают"></canvas>
           <p class="builder__hint" id="builder-3d-hint" hidden>Настоящий объём: потяните букет, чтобы повернуть, и покрутите колесо для приближения.</p>
           <p class="builder__stage-note" id="builder-stage-note">Пятнадцать пионов, пудровая палитра, крафт и кремовая лента.</p>
         </div>
 
         <div class="builder__controls">
           <div class="builder__group">
-            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">01</span>Цветок <small id="builder-flower-hint">Крупная голова, 11–25 бутонов</small></p>
+            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">01</span>Цветок <small id="builder-flower-hint">Крупная голова, 1–25 бутонов</small></p>
             <div class="chips chips--icons" data-options="flower" role="group" aria-label="Вид цветка"></div>
           </div>
 
@@ -186,12 +199,17 @@
           </div>
 
           <div class="builder__group">
-            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">05</span>Лента <small>завяжу бантом</small></p>
+            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">05</span>Зелень <small id="builder-green-hint">Ветки по краю купола — с ними букет держит форму</small></p>
+            <div class="chips" data-options="green" role="group" aria-label="Зелень"></div>
+          </div>
+
+          <div class="builder__group">
+            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">06</span>Лента <small>завяжу бантом</small></p>
             <div class="chips" data-options="ribbon" role="group" aria-label="Цвет ленты"></div>
           </div>
 
           <div class="builder__group">
-            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">06</span>Повод <small id="builder-occasion-hint">Просто потому что хочется</small></p>
+            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">07</span>Повод <small id="builder-occasion-hint">Просто потому что хочется</small></p>
             <div class="chips" data-options="occasion" role="group" aria-label="Повод"></div>
           </div>
 

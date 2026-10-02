@@ -19,20 +19,28 @@
   var NEST_Y = 386;                /* нижний ряд голов: на нём стоит упаковка */
   var WRAP = { x: 300, y: 430 };   /* точка сборки: тут лента, отсюда расходятся стебли */
   var BASE = 20;                   /* работа и упаковка — одна сумма в любом букете */
-  var COUNTS = [7, 11, 15, 21, 25];
+  /* Числа бутонов — как в присланном 3D-демо: от одного цветка до большой шапки */
+  var COUNTS = [1, 3, 5, 9, 15, 25];
   var COVER = {
-    min: 'Минимум 7 бутонов: меньше — это уже не букет',
+    min: 'Один цветок берут как знак внимания, три-пять — просто так',
     max: 'Больше 25 не соберу одной рукой, нужен второй человек'
   };
 
   /* ---------- виды цветов ---------- */
   var FLOWERS = [
-    { id: 'peony', title: 'Пион', forms: ['пион', 'пиона', 'пионов'], stem: 6, hint: 'Крупная голова, от 7 до 25 бутонов' },
+    { id: 'peony', title: 'Пион', forms: ['пион', 'пиона', 'пионов'], stem: 6, hint: 'Крупная голова, от одного бутона до 25' },
     { id: 'rose', title: 'Роза', forms: ['роза', 'розы', 'роз'], stem: 6, hint: 'Собираю плотно, держит форму' },
     { id: 'ranunculus', title: 'Ранункулюс', forms: ['раннукулюс', 'раннукулюса', 'раннукулюсов'], stem: 6, hint: 'Многослойный, люблю его больше всех' },
     { id: 'tulip', title: 'Тюльпан', forms: ['тюльпан', 'тюльпана', 'тюльпанов'], stem: 4, hint: 'Весной берут чаще всего' },
-    { id: 'evas', title: 'Эустома', forms: ['эустома', 'эустомы', 'эустом'], stem: 3, hint: 'Мелкие головы, букет кажется воздушнее' }
+    { id: 'evas', title: 'Эустома', forms: ['эустома', 'эустомы', 'эустом'], stem: 3, hint: 'Мелкие головы, букет кажется воздушнее' },
+    { id: 'daisy', title: 'Ромашка', forms: ['ромашка', 'ромашки', 'ромашек'], stem: 3, hint: 'Берут на «просто так», стоит неделю' },
+    { id: 'sunflower', title: 'Подсолнух', forms: ['подсолнух', 'подсолнуха', 'подсолнухов'], stem: 7, hint: 'Летний, тяжёлая голова — ставлю по одному в ряд' },
+    { id: 'lily', title: 'Лилия', forms: ['лилия', 'лилии', 'лилий'], stem: 5, hint: 'Пахнет на всю комнату, пыльники обрываю' },
+    { id: 'mix', title: 'Микс', forms: ['цветок', 'цветка', 'цветов'], stem: 7, hint: 'Что привезли утром, то и в букете — каждый раз по-разному' }
   ];
+
+  /* Микс собирается из разных голов: один вид даёт витрину шаров */
+  var MIX = ['peony', 'rose', 'ranunculus', 'tulip', 'evas', 'daisy', 'sunflower', 'lily'];
 
   /* ---------- палитры: три тона лепестков, сердцевина, зелень, линия ---------- */
   var PALETTES = [
@@ -40,7 +48,8 @@
     { id: 'white', title: 'Белая', swatch: '#f2ece0', add: 0, petal: ['#fffdf8', '#f2ecdd', '#dbcfb6'], heart: '#cbb27a', leaf: '#77906b', leaf2: '#96ab88', line: 'rgba(118,104,80,.32)' },
     { id: 'green', title: 'Зелёная', swatch: '#cfe0c4', add: 10, petal: ['#e9f2e0', '#cadebd', '#a2c291'], heart: '#e0c98a', leaf: '#4e7c53', leaf2: '#6c9a66', line: 'rgba(70,96,60,.3)' },
     { id: 'terra', title: 'Терракотовая', swatch: '#c97a4a', add: 15, petal: ['#f3b489', '#dc8f5b', '#b45f34'], heart: '#9c5a33', leaf: '#5f7d54', leaf2: '#829c6e', line: 'rgba(96,52,30,.34)' },
-    { id: 'bright', title: 'Яркая', swatch: '#e5b23c', add: 20, petal: ['#f7d784', '#e3a93c', '#bd7621'], heart: '#a8502c', leaf: '#5d8757', leaf2: '#7ea273', line: 'rgba(120,80,30,.34)' }
+    { id: 'bright', title: 'Яркая', swatch: '#e5b23c', add: 20, petal: ['#f7d784', '#e3a93c', '#bd7621'], heart: '#a8502c', leaf: '#5d8757', leaf2: '#7ea273', line: 'rgba(120,80,30,.34)' },
+    { id: 'wine', title: 'Винная', swatch: '#8e1b3f', add: 25, petal: ['#c9647f', '#a13355', '#7a1731'], heart: '#6d1226', leaf: '#5b7350', leaf2: '#7c9269', line: 'rgba(70,16,32,.36)' }
   ];
 
   /* ---------- упаковка ---------- */
@@ -57,6 +66,13 @@
     { id: 'olive', title: 'Оливковая', swatch: '#6a7a4c', add: 0, ink: '#46532f', main: '#6a7a4c' },
     { id: 'terra', title: 'Терракотовая', swatch: '#c97a4a', add: 5, ink: '#8f5230', main: '#c97a4a' },
     { id: 'ink', title: 'Чёрная', swatch: '#2b2b2b', add: 5, ink: '#111010', main: '#33312e' }
+  ];
+
+  /* ---------- зелень ---------- */
+  var GREENS = [
+    { id: 'euc', title: 'Эвкалипт', add: 10, hint: 'Ветки по краю купола — с ними букет держит форму' },
+    { id: 'leaves', title: 'Только листья', add: 0, hint: 'Крупные листья по краям, без веток' },
+    { id: 'none', title: 'Без зелени', add: 0, hint: 'Чистые головы: так берут для фотосъёмок' }
   ];
 
   /* ============================ помощники ============================ */
@@ -192,6 +208,62 @@
     return s;
   }
 
+  /* Ромашка: узкие доли по кругу и выпуклая жёлтая середина */
+  function daisy(c, rnd) {
+    var s = '', i;
+    for (i = 0; i < 16; i++) {
+      s += el('ellipse', { rx: 16.5, ry: 4.4, transform: 'rotate(' + round(i * 22.5 + rnd() * 6 - 3) + ') translate(11 0)', fill: i % 3 === 1 ? c[2] : c[1], stroke: c.line, 'stroke-width': .5 });
+    }
+    for (i = 0; i < 8; i++) {
+      s += el('ellipse', { rx: 9, ry: 3.4, transform: 'rotate(' + round(i * 45 + 22 + rnd() * 5 - 2.5) + ') translate(6 0)', fill: c[0], stroke: c.line, 'stroke-width': .4 });
+    }
+    s += el('circle', { r: 6.6, fill: c.heart });
+    s += el('circle', { r: 4.4, fill: c.heart, opacity: .55 });
+    for (i = 0; i < 6; i++) {
+      var a = i * 2.39996;
+      s += el('circle', { cx: round(Math.cos(a) * 4.6), cy: round(Math.sin(a) * 4.6), r: 1.1, fill: c[2], opacity: .6 });
+    }
+    return s;
+  }
+
+  /* Подсолнух: длинные доли в два ряда и тёмный диск с семечками по спирали */
+  function sunflower(c, rnd) {
+    var s = '', i;
+    for (i = 0; i < 22; i++) {
+      s += el('ellipse', { rx: 16.5, ry: 4.8, transform: 'rotate(' + round(i * 16.36 + rnd() * 5 - 2.5) + ') translate(11 0)', fill: i % 2 ? c[1] : c[0], stroke: c.line, 'stroke-width': .5 });
+    }
+    for (i = 0; i < 11; i++) {
+      s += el('ellipse', { rx: 11, ry: 4, transform: 'rotate(' + round(i * 32.7 + 8 + rnd() * 4 - 2) + ') translate(8 0)', fill: c[2], opacity: .92 });
+    }
+    s += el('circle', { r: 11.5, fill: c[2] });
+    s += el('circle', { r: 11.5, fill: c.heart, opacity: .45 });
+    for (i = 0; i < 18; i++) {
+      var a = i * 2.39996, r = Math.sqrt(i / 18) * 10;
+      s += el('circle', { cx: round(Math.cos(a) * r), cy: round(Math.sin(a) * r), r: round(1.5 - r * .04), fill: i % 2 ? c[2] : c.heart, opacity: .8 });
+    }
+    return s;
+  }
+
+  /* Лилия: шесть заострённых долей с прожилкой и тычинки с пыльниками */
+  function lily(c, rnd) {
+    var s = '', i;
+    for (i = 0; i < 6; i++) {
+      var a = i * 60 + rnd() * 6 - 3;
+      s += '<g transform="rotate(' + round(a) + ')">' +
+        '<path d="M0 -2 C11 -8, 15 -18, 8 -25.5 C3 -20, 1.6 -14, 0 -2 Z" fill="' + (i % 2 ? c[1] : c[0]) + '" stroke="' + c.line + '" stroke-width=".7"/>' +
+        '<path d="M1 -5 C1.5 -13, 3.5 -19, 7.5 -24" fill="none" stroke="' + c[2] + '" stroke-width=".9" opacity=".55"/>' +
+        '<path d="M0 0 C-9 -6, -13 -16, -7.5 -24 C-3 -18, -1.4 -12, 0 0 Z" fill="' + c[1] + '" stroke="' + c.line + '" stroke-width=".6" opacity=".95"/>' +
+        '</g>';
+    }
+    for (i = 0; i < 6; i++) {
+      var a2 = i * 60 + 12;
+      s += '<path d="M0 0 Q ' + round(Math.cos(a2 * Math.PI / 180) * 7) + ' ' + round(Math.sin(a2 * Math.PI / 180) * 7 - 5) + ' ' +
+        round(Math.cos(a2 * Math.PI / 180) * 11) + ' ' + round(Math.sin(a2 * Math.PI / 180) * 11 - 9) + '" fill="none" stroke="' + c.heart + '" stroke-width="1.4"/>';
+      s += el('ellipse', { cx: round(Math.cos(a2 * Math.PI / 180) * 12), cy: round(Math.sin(a2 * Math.PI / 180) * 12 - 10), rx: 2.6, ry: 1.4, transform: 'rotate(' + round(a2 - 90) + ' ' + round(Math.cos(a2 * Math.PI / 180) * 12) + ' ' + round(Math.sin(a2 * Math.PI / 180) * 12 - 10) + ')', fill: c[2] });
+    }
+    return s;
+  }
+
   /* Нераскрытый бутон: им добираем задний ряд, чтобы букет не выглядел витриной шаров */
   function bud(c) {
     var s = '';
@@ -203,10 +275,12 @@
     return s;
   }
 
-  var MODELS = { peony: peony, rose: rose, ranunculus: ranunculus, tulip: tulip, evas: evas };
+  var MODELS = { peony: peony, rose: rose, ranunculus: ranunculus, tulip: tulip, evas: evas, daisy: daisy, sunflower: sunflower, lily: lily };
 
   function bloom(type, colors, seed) {
-    var draw = MODELS[type] || peony;
+    /* микс: каждая головка — свой вид, иначе букет выглядит одинаковым */
+    var id = type === 'mix' ? MIX[Math.floor(rng(seed + 7)() * MIX.length) % MIX.length] : type;
+    var draw = MODELS[id] || peony;
     return draw(colors, rng(seed));
   }
 
@@ -375,20 +449,27 @@
     }
     s += '<g class="bq-stems">' + stems + '</g>';
 
-    /* 3. зелень: ветки из-под упаковки и крупные листья по краям купола */
-    var green = sprig(-34, 200, palette, seed + 3, true) + sprig(36, 178, palette, seed + 11, true) +
-      sprig(-4, 214, palette, seed + 23, false) + sprig(64, 150, palette, seed + 31, true) + sprig(-62, 146, palette, seed + 41, true);
-    for (var g = 0; g < items.length; g++) {
-      var gi = items[g];
-      var t = (gi.x - W / 2) / (W * 0.44);
-      if (Math.abs(t) > 0.5) {
-        green += leaf(gi.x + t * 26, gi.y + 6, round(t * 46 - 12), 1.0, palette.leaf);
-        green += leaf(gi.x + t * 34, gi.y + 30, round(t * 58 + 6), .86, palette.leaf2);
-      } else if (g % 2 === 1) {
-        green += leaf(gi.x + (g % 4 ? 24 : -24), gi.y + 20, g % 4 ? 34 : -34, .8, palette.leaf2);
+    /* 3. зелень: ветки из-под упаковки и крупные листья по краям купола.
+       «Без зелени» — чистые головы, «только листья» — без веток */
+    var greenMode = state.green || 'euc';
+    var green = '';
+    if (greenMode !== 'none') {
+      if (greenMode === 'euc') {
+        green += sprig(-34, 200, palette, seed + 3, true) + sprig(36, 178, palette, seed + 11, true) +
+          sprig(-4, 214, palette, seed + 23, false) + sprig(64, 150, palette, seed + 31, true) + sprig(-62, 146, palette, seed + 41, true);
       }
+      for (var g = 0; g < items.length; g++) {
+        var gi = items[g];
+        var t = (gi.x - W / 2) / (W * 0.44);
+        if (Math.abs(t) > 0.5) {
+          green += leaf(gi.x + t * 26, gi.y + 6, round(t * 46 - 12), 1.0, palette.leaf);
+          green += leaf(gi.x + t * 34, gi.y + 30, round(t * 58 + 6), .86, palette.leaf2);
+        } else if (g % 2 === 1) {
+          green += leaf(gi.x + (g % 4 ? 24 : -24), gi.y + 20, g % 4 ? 34 : -34, .8, palette.leaf2);
+        }
+      }
+      s += '<g class="bq-greenery">' + green + '</g>';
     }
-    s += '<g class="bq-greenery">' + green + '</g>';
 
     /* 4. упаковка поверх стеблей: головы лягут на её край */
     if (pack.id !== 'vase') { s += '<g class="bq-pack">' + packMarkup(pack.id, palette, ribbon) + '</g>'; }
@@ -463,7 +544,8 @@
     var pal = find(PALETTES, state.palette);
     var pack = find(PACKS, state.pack);
     var ribbon = find(RIBBONS, state.ribbon);
-    return BASE + flower.stem * state.count + pal.add + pack.add + ribbon.add;
+    var green = find(GREENS, state.green);
+    return BASE + flower.stem * state.count + pal.add + pack.add + ribbon.add + green.add;
   }
 
   function summary(state) {
@@ -471,12 +553,15 @@
     var pal = find(PALETTES, state.palette);
     var pack = find(PACKS, state.pack);
     var ribbon = find(RIBBONS, state.ribbon);
+    var green = find(GREENS, state.green);
     return state.count + ' ' + plural(state.count, flower.forms) + ' · ' + pal.title.toLowerCase() +
-      ' палитра · ' + pack.title.toLowerCase() + ' · лента ' + ribbon.title.toLowerCase();
+      ' палитра · ' + pack.title.toLowerCase() + ' · лента ' + ribbon.title.toLowerCase() +
+      (green.id === 'none' ? ' · без зелени' : green.id === 'euc' ? ' · с эвкалиптом' : '');
   }
 
   root.PION_BOUQUET = {
     W: W, H: H, BASE: BASE, FLOWERS: FLOWERS, PALETTES: PALETTES, PACKS: PACKS, RIBBONS: RIBBONS,
+    GREENS: GREENS, MIX: MIX,
     COUNTS: COUNTS, COVER: COVER, find: find, plural: plural, priceOf: priceOf, summary: summary,
     markup: markup, render: render, icon: icon, svgString: svgString, dataUrl: dataUrl
   };
