@@ -1,0 +1,582 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font:
+    15px/1.6 Manrope,
+    system-ui,
+    sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+button {
+  font: inherit;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 5px;
+}
+.skip {
+  position: absolute;
+  top: -100px;
+  background: var(--paper);
+  padding: 12px;
+  z-index: 9;
+}
+.skip:focus {
+  top: 0;
+}
+.shop-header {
+  padding: 24px 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  gap: 28px;
+}
+.brand {
+  font: 32px var(--display);
+  letter-spacing: -1px;
+}
+.shop-header nav {
+  display: flex;
+  gap: 28px;
+  font-size: 12px;
+}
+.shop-header .edit {
+  color: var(--accent);
+}
+.hero {
+  max-width: 1600px;
+  margin: auto;
+  padding: 58px 5vw 44px;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 64px;
+  align-items: center;
+}
+.overline {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 26px;
+  color: var(--accent);
+}
+h1 {
+  font: clamp(48px, 5.6vw, 86px) / 1.05 var(--display);
+  letter-spacing: -2.7px;
+  margin: 0 0 24px;
+}
+.hero-copy > p:not(.overline) {
+  max-width: 365px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.actions {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 12px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 38px;
+  min-height: 50px;
+  background: var(--accent);
+  color: var(--on);
+  padding: 13px 23px;
+}
+.hero-visual {
+  position: relative;
+  margin: 0;
+}
+.hero-visual > img {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+}
+.hero-visual figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.hero-note {
+  font-size: 11px;
+  margin-top: 48px;
+  color: var(--muted);
+}
+.promise {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 19px 5vw;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+  color: var(--muted);
+}
+.collection {
+  max-width: 1600px;
+  margin: auto;
+  padding: 70px 5vw;
+}
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 28px;
+  gap: 20px;
+}
+.section-head h2 {
+  font: 38px var(--display);
+  letter-spacing: -1px;
+  margin: 0;
+}
+.section-head p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 10px 0 0;
+}
+.section-head > a {
+  font-size: 12px;
+  border-bottom: 1px solid var(--accent);
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+.product {
+  min-width: 0;
+}
+.product .photo {
+  overflow: hidden;
+  position: relative;
+  background: var(--line);
+}
+.product img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  transition: transform 0.35s;
+}
+.product:hover img {
+  transform: scale(1.025);
+}
+.product .number {
+  position: absolute;
+  left: 13px;
+  top: 12px;
+  font-size: 10px;
+  background: var(--paper);
+  padding: 3px 8px;
+}
+.product h3 {
+  font: 19px var(--display);
+  margin: 17px 0 6px;
+  line-height: 1.3;
+}
+.product p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+}
+.product .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: end;
+}
+.product strong {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.edit-section {
+  margin: 0 5vw 70px;
+  background: var(--wash);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+}
+.edit-section > img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+}
+.edit-copy {
+  padding: 48px 12%;
+}
+.edit-copy h2 {
+  font: 42px/1.15 var(--display);
+  letter-spacing: -1.3px;
+  margin: 0 0 20px;
+}
+.edit-copy > p {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 350px;
+}
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 10px;
+  margin: 26px 0;
+  color: var(--muted);
+}
+.steps b {
+  color: var(--accent);
+  font-weight: 500;
+  margin-right: 6px;
+}
+.shop-footer {
+  border-top: 1px solid var(--line);
+  padding: 35px 5vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.shop-footer .brand {
+  font-size: 25px;
+  color: var(--ink);
+}
+.shop-footer div {
+  display: grid;
+  gap: 9px;
+}
+.shop-footer .legal {
+  max-width: 280px;
+  font-size: 10px;
+}
+body[data-shop="cakes"] {
+  --paper: #fcf5e9;
+  --ink: #49332a;
+  --accent: #a34d36;
+  --on: #fff7eb;
+  --muted: #8a7565;
+  --line: #e2d4bd;
+  --wash: #f2e6d3;
+  --display: Comfortaa, system-ui;
+}
+body[data-shop="cakes"] .hero-visual > img {
+  border-radius: 180px 180px 16px 16px;
+}
+body[data-shop="cakes"] .button {
+  border-radius: 40px;
+}
+body[data-shop="cakes"] .product .photo {
+  border-radius: 14px;
+}
+body[data-shop="cakes"] .edit-section {
+  border-radius: 24px;
+  overflow: hidden;
+}
+body[data-shop="cakes"] .product h3 {
+  font:
+    17px/1.4 Comfortaa,
+    system-ui;
+}
+body[data-shop="cakes"] h1 {
+  font-size: clamp(40px, 4.7vw, 70px);
+  line-height: 1.2;
+  letter-spacing: -2px;
+}
+body[data-shop="flowers"] {
+  --paper: #f6f5ee;
+  --ink: #334031;
+  --accent: #596a4f;
+  --on: #fbfaf3;
+  --muted: #788471;
+  --line: #dce0d3;
+  --wash: #e9ecdf;
+  --display: Georgia, serif;
+}
+body[data-shop="flowers"] .hero {
+  grid-template-columns: 1fr 1.3fr;
+}
+body[data-shop="flowers"] h1 {
+  font-style: italic;
+}
+body[data-shop="flowers"] .hero-visual > img {
+  height: 590px;
+}
+body[data-shop="flowers"] .products {
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  align-items: start;
+}
+body[data-shop="flowers"] .product:nth-child(even) {
+  padding-top: 50px;
+}
+body[data-shop="flowers"] .product img {
+  height: 330px;
+}
+body[data-shop="flowers"] .product:first-child img {
+  height: 390px;
+}
+body[data-shop="flowers"] .edit-section {
+  background: none;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+body[data-shop="jewelry"] {
+  --paper: #181c18;
+  --ink: #e9e3d6;
+  --accent: #c6aa77;
+  --on: #24281f;
+  --muted: #a0a694;
+  --line: #3c4437;
+  --wash: #242c22;
+  --display: Prata, Georgia, serif;
+}
+body[data-shop="jewelry"] .hero {
+  grid-template-columns: 1fr 1.35fr;
+  padding-top: 40px;
+  gap: 40px;
+}
+body[data-shop="jewelry"] .hero-visual > img {
+  height: 570px;
+  object-fit: cover;
+}
+body[data-shop="jewelry"] h1 {
+  font-size: clamp(43px, 4.4vw, 68px);
+  line-height: 1.2;
+}
+body[data-shop="jewelry"] .brand {
+  font-size: 28px;
+}
+body[data-shop="jewelry"] .product h3 {
+  font-size: 18px;
+}
+body[data-shop="jewelry"] .products {
+  gap: 36px;
+}
+body[data-shop="jewelry"] .product .row {
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+body[data-shop="fashion"] {
+  --paper: #f3f3ef;
+  --ink: #161817;
+  --accent: #304bdf;
+  --on: #fff;
+  --muted: #74776d;
+  --line: #cdd0c5;
+  --wash: #e6e8de;
+  --display: Manrope, system-ui;
+}
+body[data-shop="fashion"] .brand {
+  font-weight: 800;
+}
+body[data-shop="fashion"] h1 {
+  font-size: clamp(55px, 7vw, 106px);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -6px;
+}
+body[data-shop="fashion"] .hero {
+  grid-template-columns: 1.2fr 1fr;
+  padding-top: 42px;
+  gap: 30px;
+}
+body[data-shop="fashion"] .hero-visual > img {
+  height: 580px;
+}
+body[data-shop="fashion"] .hero-visual {
+  border-left: 1px solid var(--ink);
+  padding-left: 22px;
+}
+body[data-shop="fashion"] .collection {
+  border-top: 2px solid var(--ink);
+}
+body[data-shop="fashion"] .section-head h2,
+body[data-shop="fashion"] .edit-copy h2 {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 37px;
+}
+body[data-shop="fashion"] .product h3 {
+  font:
+    14px/1.4 Manrope,
+    system-ui;
+  font-weight: 600;
+}
+body[data-shop="fashion"] .promise {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+}
+body[data-shop="fashion"] .edit-section {
+  background: var(--ink);
+  color: var(--paper);
+}
+body[data-shop="fashion"] .edit-copy > p,
+body[data-shop="fashion"] .steps {
+  color: #b0b6a7;
+}
+@media (max-width: 950px) {
+  .hero {
+    gap: 30px;
+  }
+  .hero-visual > img,
+  body[data-shop="flowers"] .hero-visual > img,
+  body[data-shop="jewelry"] .hero-visual > img,
+  body[data-shop="fashion"] .hero-visual > img {
+    height: 460px;
+  }
+  h1 {
+    font-size: 52px;
+  }
+  .products {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .product:nth-child(even) {
+    padding-top: 0 !important;
+  }
+  .product img,
+  .product:first-child img {
+    height: 330px !important;
+  }
+  .edit-copy {
+    padding: 30px;
+  }
+  .edit-copy h2 {
+    font-size: 34px;
+  }
+  .shop-header nav {
+    gap: 17px;
+  }
+}
+@media (max-width: 650px) {
+  .shop-header {
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .brand {
+    font-size: 27px;
+  }
+  .shop-header nav {
+    gap: 20px;
+    font-size: 11px;
+  }
+  .shop-header nav a:first-child {
+    display: none;
+  }
+  .hero,
+  body[data-shop] .hero {
+    grid-template-columns: 1fr;
+    padding: 35px 20px;
+    gap: 32px;
+  }
+  .hero-visual > img,
+  body[data-shop] .hero-visual > img {
+    height: 390px;
+  }
+  h1,
+  body[data-shop="cakes"] h1,
+  body[data-shop="jewelry"] h1 {
+    font-size: 46px;
+    letter-spacing: -1.8px;
+  }
+  .hero-note {
+    margin-top: 25px;
+  }
+  .hero-copy > p:not(.overline) {
+    font-size: 13px;
+  }
+  .promise {
+    padding: 18px 20px;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    font-size: 10px;
+  }
+  .collection {
+    padding: 40px 20px;
+  }
+  .section-head h2 {
+    font-size: 30px;
+  }
+  .section-head > a {
+    font-size: 10px;
+  }
+  .products {
+    gap: 24px 14px;
+  }
+  .product img,
+  .product:first-child img {
+    height: 225px !important;
+  }
+  .product h3 {
+    font-size: 16px;
+  }
+  .product .row {
+    display: block;
+  }
+  .product strong {
+    display: block;
+    margin-top: 9px;
+  }
+  .edit-section {
+    margin: 0 20px 40px;
+    grid-template-columns: 1fr;
+  }
+  .edit-section > img {
+    height: 300px;
+  }
+  .edit-copy {
+    padding: 30px 24px;
+  }
+  .edit-copy h2 {
+    font-size: 33px;
+  }
+  .shop-footer {
+    padding: 25px 20px;
+    flex-wrap: wrap;
+  }
+  body[data-shop="fashion"] h1 {
+    font-size: 65px;
+    letter-spacing: -4px;
+  }
+  body[data-shop="fashion"] .hero-visual {
+    padding-left: 0;
+    border: 0;
+  }
+  .overline {
+    margin-bottom: 20px;
+  }
+  .actions {
+    gap: 18px;
+  }
+  .button {
+    gap: 20px;
+    padding: 12px 18px;
+  }
+  .section-head {
+    align-items: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

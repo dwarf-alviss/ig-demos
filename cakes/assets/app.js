@@ -11,7 +11,7 @@
   var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
 
   function money(n) {
-    return new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' BYN';
+    return new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 2 }).format(Number(n) || 0) + ' BYN';
   }
   function esc(s) {
     return String(s === null || s === undefined ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -326,7 +326,7 @@
       meta: item.meta || 'собран в калькуляторе',
       price: item.price || 0,
       img: item.img || 'assets/img/hero.jpg',
-      alt: 'Торт на заказ'
+      alt: 'Торт на заказ', configuration: item.configuration || null
     };
   }
   function cartLines() { return getCart().map(cartLine); }
@@ -969,6 +969,7 @@
         '<div class="cart-line__media"><img src="' + src + '"' + photoAttr + ' alt="' + esc(l.alt || '') + '" width="160" height="120"></div>' +
         '<div class="cart-line__body">' +
           '<h3 class="cart-line__title">' + esc(l.title) + '</h3>' +
+          (l.configuration && l.configuration.version === 2 ? '<a class="edit-design" href="studio.html?edit=' + encodeURIComponent(l.id) + '">Изменить дизайн →</a>' : '') +
           '<p class="small muted">' + esc(l.meta) + '</p>' +
           '<p class="cart-line__price price">' + money(l.price) + '</p>' +
         '</div>' +

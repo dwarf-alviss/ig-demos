@@ -1,0 +1,63 @@
+{
+  "records": [
+    {
+      "kind": "cakes",
+      "metrics": {
+        "framing": {
+          "maxX": 0.7978252326625016,
+          "maxY": 0.8199131883032695
+        },
+        "drawCalls": 21,
+        "triangles": 576770,
+        "geometries": 11,
+        "textures": 4,
+        "box": [
+          34,
+          9.374574431433283,
+          34
+        ]
+      },
+      "checks": "tabs/search/undo/redo/persistence/download/cart/9 camera poses/mobile"
+    },
+    {
+      "kind": "flowers",
+      "metrics": {
+        "framing": {
+          "maxX": 0.7968372045182665,
+          "maxY": 0.8199473720453714
+        },
+        "drawCalls": 46,
+        "triangles": 1088186,
+        "geometries": 29,
+        "textures": 4,
+        "box": [
+          33.32640481761459,
+          24.848759226726084,
+          27.930628696143543
+        ]
+      },
+      "checks": "tabs/search/undo/redo/persistence/download/cart/9 camera poses/mobile"
+    },
+    {
+      "kind": "jewelry",
+      "metrics": {
+        "framing": {
+          "maxX": 0.3459917007512786,
+          "maxY": 0.8199886831732834
+        },
+        "drawCalls": 10,
+        "triangles": 196154,
+        "geometries": 4,
+        "textures": 5,
+        "box": [
+          1.237391107633734,
+          2.594,
+          0.4350341991972643
+        ]
+      },
+      "checks": "tabs/search/undo/redo/persistence/download/cart/9 camera poses/mobile"
+    }
+  ],
+  "errors": [],
+  "fashion": "real catalogue / sizes / stock / three cart items / mobile"
+}

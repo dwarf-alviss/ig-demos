@@ -1,470 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>«Пион» — цветочная мастерская в Минске: букеты, композиции, подписка</title>
-<meta name="description" content="Мастерская «Пион» на Немиге: монобукеты, композиции в керамике, свадебные букеты и подписка на цветы. Доставка по Минску за 2 часа, 12 BYN, бесплатно от 150 BYN.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="«Пион», цветочная мастерская в Минске">
-<meta property="og:description" content="Монобукеты, композиции в керамике, свадебные букеты и подписка. Доставка по Минску, обычно два часа от звонка, к восьми утра не берёмся.">
-<meta property="og:image" content="assets/img/og.jpg" width="1200" height="630">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/base.css">
-<link rel="stylesheet" href="assets/site.css">
-<link rel="stylesheet" href="assets/motion.css">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Пион">
-<meta property="og:title" content="«Пион», цветочная мастерская в Минске">
-<meta property="og:description" content="Монобукеты, композиции, букеты в коробке. Нас трое и витрины нет, собираем под заказ и везём по Минску обычно за два часа.">
-<meta property="og:image" content="assets/img/og.jpg" width="1200" height="630">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../shared/project-polish.css">
-</head>
-<body data-page="index">
-<a class="skip-link" href="#main">К основному содержанию</a>
-
-<header class="site-header">
-  <div class="container site-header__inner">
-    <a class="logo" href="index.html">
-      <span class="logo__mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-          <path d="M12 13c-1.7 0-3-1.3-3-3 0-1 .5-1.9 1.3-2.4.4.9 1 1.6 1.7 2 .7-.4 1.3-1.1 1.7-2 .8.5 1.3 1.4 1.3 2.4 0 1.7-1.3 3-3 3Z"/>
-          <path d="M9.2 9.6C7.6 9.4 6.5 8 6.7 6.4c.1-.7.4-1.4 1-1.8.5.9 1.2 1.5 2 1.8"/>
-          <path d="M14.8 9.6c1.6-.2 2.7-1.6 2.5-3.2-.1-.7-.4-1.4-1-1.8-.5.9-1.2 1.5-2 1.8"/>
-          <path d="M12 13v8"/>
-          <path d="M12 17.6c1.8-.3 3-1.6 3.2-3.3-1.8-.2-3.1.8-3.2 2.1"/>
-        </svg>
-      </span>
-      <span class="logo__text">Пион<small>мастерская в Минске</small></span>
-    </a>
-
-    <nav class="nav" aria-label="Основная навигация">
-      <a href="index.html" aria-current="page">Главная</a>
-      <a href="catalog.html">Каталог</a>
-      <a href="#delivery">Доставка</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
-
-    <div class="header-actions">
-      <a class="icon-btn" href="cart.html" data-cart-button aria-label="Корзина: 0 позиций">
-        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M3.6 9.4h16.8l-1.7 8.6a1.7 1.7 0 0 1-1.7 1.4H6.9a1.7 1.7 0 0 1-1.7-1.4Z"/>
-          <path d="M8.6 9.4a3.4 3.4 0 0 1 6.8 0"/>
-          <path d="M4.5 13.2h15"/>
-          <path d="M9.8 12.9v4.4"/><path d="M12 12.9v4.4"/><path d="M14.2 12.9v4.4"/>
-        </svg>
-        <span class="icon-btn__count" data-cart-count hidden>0</span>
-      </a>
-      <button class="icon-btn burger" type="button" data-action="menu" aria-expanded="false" aria-controls="mobile-nav" aria-label="Меню">
-        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M3.6 8.6h16.8"/><path d="M3.6 15.4h10"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-</header>
-
-<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-  <a href="index.html"><span class="num" aria-hidden="true">01</span>Главная</a>
-  <a href="catalog.html"><span class="num" aria-hidden="true">02</span>Каталог</a>
-  <a href="#delivery"><span class="num" aria-hidden="true">03</span>Доставка</a>
-  <a href="#contacts"><span class="num" aria-hidden="true">04</span>Контакты</a>
-  <a href="cart.html"><span class="num" aria-hidden="true">05</span>Корзина</a>
-  <a href="admin.html"><span class="num" aria-hidden="true">06</span>Панель владельца</a>
-  <a class="btn" href="catalog.html">Смотреть каталог</a>
-</div>
-
-<aside class="studio-entry"><span>Новая студия · ваш дизайн в 3D</span><a href="studio.html">Создать свой букет ↗</a></aside>
-<main id="main">
-
-  <!-- ============ hero: фото выходит за границу контейнера ============ -->
-  <section class="hero">
-    <div class="container hero__inner">
-      <div class="hero__copy">
-        <p class="eyebrow">Мастерская на Немиге · с 2019 года</p>
-        <h1 class="hero__title">Букеты, которые собирают руками</h1>
-        <span class="hero__kicker">Немига, 12 · на сегодня слот есть</span>
-        <p class="lead hero__lead">Пионы, тюльпаны, композиции в керамике. Нас трое и витрины нет: собираем под заказ, фотографируем и везём по Минску, обычно два часа от звонка. К восьми утра не берёмся, раньше девяти в мастерской никого.</p>
-        <div class="hero__actions">
-          <a class="btn" href="studio.html">
-            Собрать букет
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4.6 12h14.8"/><path d="m13.4 6.2 5.8 5.8-5.8 5.8"/>
-            </svg>
-          </a>
-          <a class="btn btn--ghost" href="catalog.html">Смотреть каталог</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Пион — Ботаническая мастерская · Минск</title>
+    <meta
+      name="description"
+      content="Цветы не требуют большого повода. Собираем букеты, которые передают нежность, благодарность и всё, для чего не хватает слов."
+    />
+    <link rel="stylesheet" href="assets/fonts.css" />
+    <link rel="stylesheet" href="../shared/storefront.css" />
+  </head>
+  <body data-shop="flowers">
+    <a class="skip" href="#main">Перейти к содержимому</a>
+    <header class="shop-header">
+      <a class="brand" href="index.html">Пион</a>
+      <nav aria-label="Основная навигация">
+        <a href="catalog.html">Коллекция</a
+        ><a class="edit" href="studio.html">Своя композиция ↗</a
+        ><a href="cart.html">Корзина</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="overline">Ботаническая мастерская · Минск</p>
+          <h1>Красота<br />живого.</h1>
+          <p>
+            Цветы не требуют большого повода. Собираем букеты, которые передают
+            нежность, благодарность и всё, для чего не хватает слов.
+          </p>
+          <div class="actions">
+            <a class="button" href="catalog.html"
+              >Выбрать в каталоге <span>↗</span></a
+            ><a href="studio.html">Собрать свой букет →</a>
+          </div>
+          <p class="hero-note">Для близких. Для себя. Просто так.</p>
         </div>
-        <ul class="hero__aside">
-          <li>
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="6.4" cy="17.4" r="2.2"/><circle cx="17.4" cy="17.4" r="2.2"/>
-              <path d="M8.6 17.4h6.6"/><path d="M3.8 15.2V10.6h5.5l1.9 6.8"/>
-              <path d="M11.2 10.6h3.5l2.7 6.8"/><path d="M14.7 6.4c1.7.4 2.6 2 2.9 4.2"/>
-            </svg>
-            По Минску 12 BYN, от 150 BYN бесплатно
-          </li>
-          <li>
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="8.1"/><path d="M12 7.4V12l3.3 2"/>
-            </svg>
-            Каждый день с 9:00 до 21:00. Заказ на сегодня принимаю до 20:00
-          </li>
-        </ul>
+        <figure class="hero-visual">
+          <img
+            src="assets/img/hero.jpg"
+            alt="Сезонные цветы. Свободный характер."
+            fetchpriority="high"
+          />
+          <figcaption>
+            <span>Сезонные цветы. Свободный характер.</span
+            ><span>01 / Пион</span>
+          </figcaption>
+        </figure>
+      </section>
+      <div class="promise">
+        <span>Сезонные сочетания</span><span>Упаковка на ваш выбор</span
+        ><span>Доставка по Минску</span>
       </div>
-
-      <figure class="hero__figure">
-        <img src="assets/img/hero.jpg" alt="Плотный букет весенних цветов на светлом фоне: оранжевые тюльпаны, жёлтые каллы и ранункулюсы, персиковая роза, сиреневые дельфиниумы и зелень" width="1200" height="1500">
-        <figcaption class="hero__label">
-          <span class="hero__label-num num" aria-hidden="true">01</span>
-          <span>
-            <strong>Сначала фото, потом курьер</strong>
-            <span>снимок перед выходом из мастерской</span>
-          </span>
-        </figcaption>
-      </figure>
-    </div>
-
-    <div class="container">
-      <ul class="facts">
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="8.1"/><path d="M12 7.4V12l3.3 2"/>
-          </svg>
-          Два часа от звонка до двери
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 3.6 20.2 8v8L12 20.4 3.8 16V8Z"/><path d="m3.8 8 8.2 4.4L20.2 8"/><path d="M12 20.4v-8"/>
-          </svg>
-          За МКАД тоже возим, считаем по адресу
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 3.6c1.9 1.5 3.9 2.2 6 2.3v5.5c0 4.2-2.6 6.9-6 8.5-3.4-1.6-6-4.3-6-8.5V5.9c2.1-.1 4.1-.8 6-2.3Z"/>
-            <path d="m9.4 12 1.8 1.9 3.5-3.7"/>
-          </svg>
-          Поник за пять дней? Пересоберу без разговоров
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="3.4" y="6.3" width="17.2" height="11.4" rx="1.6"/><path d="m4.6 7.8 7.4 5.2 7.4-5.2"/>
-          </svg>
-          Текст на открытке перепишу от руки
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ============ конструктор: живой букет ============ -->
-  <section class="section section--tight" id="builder">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Конструктор</p>
-        <h2>Соберите букет и посмотрите, что получится</h2>
-        <p class="lead">Модельки нарисованы с наших букетов: пион сюда весит больше ранункулюса, поэтому цена считается по бутонам. Собрали — кладите в корзину, я повторю один в один.</p>
-      </div>
-
-      <div class="builder">
-        <div class="builder__stage">
-          <svg id="bouquet" class="bouquet" viewBox="0 0 600 660" role="img"
-               aria-label="Букет, который вы собираете"><title>Ваш букет</title></svg>
-          <canvas id="bouquet3d" class="bouquet bouquet--3d" width="620" height="700" hidden tabindex="0"
-                  aria-label="Букет в 3D: потяните, чтобы повернуть, колесо приближает, стрелки вращают"></canvas>
-          <p class="builder__hint" id="builder-3d-hint" hidden>Настоящий объём: потяните букет, чтобы повернуть, и покрутите колесо для приближения.</p>
-          <p class="builder__stage-note" id="builder-stage-note">Пятнадцать пионов, пудровая палитра, крафт и кремовая лента.</p>
+      <section class="collection">
+        <div class="section-head">
+          <div>
+            <p class="overline">Выбор мастерской / 01—04</p>
+            <h2>Цветы для ваших чувств</h2>
+            <p>Начните с любимого — и найдите что-то своё.</p>
+          </div>
+          <a href="catalog.html">Вся коллекция ↗</a>
         </div>
-
-        <div class="builder__controls">
-          <div class="builder__group">
-            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">01</span>Цветок <small id="builder-flower-hint">Крупная голова, 1–25 бутонов</small></p>
-            <div class="chips chips--icons" data-options="flower" role="group" aria-label="Вид цветка"></div>
-          </div>
-
-          <div class="builder__group">
-            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">02</span>Сколько бутонов <small id="builder-count-hint">15 × 9 BYN за бутон</small></p>
-            <div class="chips" data-options="count" role="group" aria-label="Количество бутонов"></div>
-            <p class="builder__aside" id="builder-count-aside">Меньше семи — это уже не букет.</p>
-          </div>
-
-          <div class="builder__group">
-            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">03</span>Палитра <small>оттенки лепестков</small></p>
-            <div class="chips" data-options="palette" role="group" aria-label="Палитра букета"></div>
-          </div>
-
-          <div class="builder__group">
-            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">04</span>Упаковка <small id="builder-pack-hint">Классика, ничего лишнего</small></p>
-            <div class="chips" data-options="pack" role="group" aria-label="Упаковка"></div>
-          </div>
-
-          <div class="builder__group">
-            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">05</span>Зелень <small id="builder-green-hint">Ветки по краю купола — с ними букет держит форму</small></p>
-            <div class="chips" data-options="green" role="group" aria-label="Зелень"></div>
-          </div>
-
-          <div class="builder__group">
-            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">06</span>Лента <small>завяжу бантом</small></p>
-            <div class="chips" data-options="ribbon" role="group" aria-label="Цвет ленты"></div>
-          </div>
-
-          <div class="builder__group">
-            <p class="builder__legend"><span class="builder__step num" aria-hidden="true">07</span>Повод <small id="builder-occasion-hint">Просто потому что хочется</small></p>
-            <div class="chips" data-options="occasion" role="group" aria-label="Повод"></div>
-          </div>
-
-          <div class="builder__panel">
-            <p class="builder__panel-label">Цена букета</p>
-            <p class="builder__price" id="builder-price" aria-live="polite">95 BYN</p>
-            <p class="builder__summary" id="builder-summary">15 пионов · пудровая палитра · крафт и лента</p>
-            <p class="builder__note" id="builder-note">До бесплатной доставки не хватает 55 BYN. По Минску возим за 12 BYN, обычно за два часа.</p>
-            <button class="btn btn--block" type="button" id="builder-add">
-              <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M3.6 9.4h16.8l-1.7 8.6a1.7 1.7 0 0 1-1.7 1.4H6.9a1.7 1.7 0 0 1-1.7-1.4Z"/>
-                <path d="M8.6 9.4a3.4 3.4 0 0 1 6.8 0"/>
-                <path d="M4.5 13.2h15"/>
-              </svg>
-              Добавить в корзину
-            </button>
-            <div class="builder__tags">
-              <span class="badge">Соберу сегодня</span>
-              <span class="badge badge--ok">Фото до отправки</span>
+        <div class="products">
+          <a class="product" href="catalog.html"
+            ><div class="photo">
+              <img
+                src="assets/img/mono.jpg"
+                alt="Монобукет из коралловых пионов «Сара Бернар» в крафтовой упаковке"
+                loading="lazy"
+              /><span class="number">01</span>
             </div>
+            <h3>Коралловые пионы</h3>
+            <div class="row">
+              <p>15 бутонов · 50 см</p>
+              <strong>110 BYN</strong>
+            </div></a
+          ><a class="product" href="catalog.html"
+            ><div class="photo">
+              <img
+                src="assets/img/studio.jpg"
+                alt="Монобукет из белых пионов в матовой упаковке"
+                loading="lazy"
+              /><span class="number">02</span>
+            </div>
+            <h3>Белые пионы</h3>
+            <div class="row">
+              <p>15 бутонов · 55 см</p>
+              <strong>130 BYN</strong>
+            </div></a
+          ><a class="product" href="catalog.html"
+            ><div class="photo">
+              <img
+                src="assets/img/hero.jpg"
+                alt="Плотный микс из тюльпанов, калл и ранункулюсов"
+                loading="lazy"
+              /><span class="number">03</span>
+            </div>
+            <h3>Весенний микс</h3>
+            <div class="row">
+              <p>микс сезонных цветов · 45 см</p>
+              <strong>95 BYN</strong>
+            </div></a
+          ><a class="product" href="catalog.html"
+            ><div class="photo">
+              <img
+                src="assets/img/comp.jpg"
+                alt="Авторская композиция из оранжевых цветов в керамической вазе"
+                loading="lazy"
+              /><span class="number">04</span>
+            </div>
+            <h3>Терракота</h3>
+            <div class="row">
+              <p>высота 40 см · ваза входит</p>
+              <strong>165 BYN</strong>
+            </div></a
+          >
+        </div>
+      </section>
+      <section class="edit-section">
+        <img
+          src="../shared/presets/flowers-2.jpg"
+          alt="Пример собранной композиции"
+          loading="lazy"
+        />
+        <div class="edit-copy">
+          <p class="overline">Ваша мастерская</p>
+          <h2>Букет, который<br />говорит за вас.</h2>
+          <p>
+            Пионы или полевые цветы, зелень или лёгкий моно-букет. Найдите своё
+            сочетание, упаковку и оттенок ленты.
+          </p>
+          <div class="steps">
+            <span><b>01</b>Форма</span><span><b>02</b>Сочетание</span
+            ><span><b>03</b>Ваш выбор</span>
           </div>
+          <a class="button" href="studio.html"
+            >Собрать свой букет <span>↗</span></a
+          >
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ витрина недели ============ -->
-  <section class="section section--surface">
-    <div class="container">
-      <div class="section-title reveal">
-        <div>
-          <p class="eyebrow">Витрина</p>
-          <h2>Что стоит в мастерской на этой неделе</h2>
-          <p class="lead">Упаковка и лента уже в цене, доплат при встрече не будет. Похожий букет легко собрать самому в конструкторе.</p>
-        </div>
-        <a class="btn btn--ghost" href="catalog.html">
-          Весь каталог
-          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M4.6 12h14.8"/><path d="m13.4 6.2 5.8 5.8-5.8 5.8"/>
-          </svg>
-        </a>
-      </div>
-      <div class="grid grid--3" id="featured"></div>
-    </div>
-  </section>
-
-  <!-- ============ чем занимается мастерская ============ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Что мы делаем</p>
-        <h2>Заказы, с которыми к нам приходят</h2>
-        <p class="lead">Нас трое, конвейера нет: два букета по одному фото всё равно выйдут разными.</p>
-      </div>
-      <div class="formats" id="services"></div>
-    </div>
-  </section>
-
-  <!-- ============ подписка ============ -->
-  <section class="section section--soft">
-    <div class="container band">
-      <div class="reveal">
-        <p class="eyebrow">Подписка</p>
-        <h2>Букет по пятницам</h2>
-        <p class="lead lead--after-title">Четыре букета в месяц, день и час одни и те же. Что будет внутри, решает поставка: в конце мая пионы с ранункулюсами, в сентябре хризантемы с эвкалиптом. Пропустить неделю или закрыть подписку — одно сообщение.</p>
-        <div class="band__price">
-          <span class="price">240 BYN / месяц</span>
-          <span class="muted small">обычная цена <s>260 BYN</s>, по подписке 240</span>
-        </div>
-        <div class="row">
-          <button class="btn" type="button" data-action="add" data-id="week">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 5.4v13.2"/><path d="M5.4 12h13.2"/>
-            </svg>
-            Оформить подписку
-          </button>
-          <a class="btn btn--ghost" href="catalog.html">Посмотреть, что входит</a>
-        </div>
-      </div>
-      <div class="media reveal">
-        <img src="assets/img/subscription.jpg" alt="Свежая роза в вазе — букет недели по подписке" width="1200" height="800" loading="lazy" decoding="async">
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ доставка ============ -->
-  <section class="section" id="delivery">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Доставка и самовывоз</p>
-        <h2>Что происходит после заказа</h2>
-        <p class="lead">По Минску обычно два часа. За МКАД тоже ездим, там цена зависит от адреса.</p>
-      </div>
-
-      <ol class="steps">
-        <li class="step reveal">
-          <span class="step__num num" aria-hidden="true">01</span>
-          <h3>Выбираете букет</h3>
-          <p>Из каталога или сами: повод, размер, палитра, упаковка.</p>
-        </li>
-        <li class="step reveal">
-          <span class="step__num num" aria-hidden="true">02</span>
-          <h3>Звоним и уточняем</h3>
-          <p>Звоню в течение пятнадцати минут, сверим адрес, время и что написать на открытке. Не беру трубку — значит, я в цветах, перезвоню.</p>
-        </li>
-        <li class="step reveal">
-          <span class="step__num num" aria-hidden="true">03</span>
-          <h3>Собираем букет</h3>
-          <p>Цветы из утренней поставки. Фото уйдёт раньше, чем курьер выйдет из мастерской.</p>
-        </li>
-        <li class="step reveal">
-          <span class="step__num num" aria-hidden="true">04</span>
-          <h3>Везём по адресу</h3>
-          <p>По городу в среднем два часа. Если получателя нет дома, звоню вам: подождём, оставим соседям или привезём позже.</p>
-        </li>
-      </ol>
-
-      <div class="terms">
-        <div class="term"><strong>2 часа</strong><span>обычный срок по городу</span></div>
-        <div class="term"><strong>12 BYN</strong><span>по городу, за МКАД по адресу</span></div>
-        <div class="term"><strong>0 BYN</strong><span>если заказ от 150 BYN</span></div>
-        <div class="term"><strong>Самовывоз</strong><span>Немига, 12, бесплатно, каждый день до 21:00</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ призыв ============ -->
-  <section class="section section--tight">
-    <div class="container">
-      <div class="cta-band reveal">
-        <div>
-          <h2>Нужен букет к вечеру?</h2>
-          <p>Позвоните, скажу что есть в мастерской и во сколько привезём. Букет с фото из Instagram повторю в тот же день, но не точь-в-точь.</p>
-        </div>
-        <div class="cta-band__actions">
-          <a class="btn btn--light" href="tel:+375-29-123-45-67">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 3.6H6.3A2.2 2.2 0 0 0 4.1 5.9c.4 7 6.2 12.8 13.2 13.2a2.2 2.2 0 0 0 2.3-2.2v-2.7a12 12 0 0 1-3.5-1l-1.9 1.9a14.6 14.6 0 0 1-4.3-4.3l1.9-1.9a12 12 0 0 1-1-3.5Z"/>
-            </svg>
-            +375 (29) 123-45-67</a>
-          <a class="btn btn--ghost" href="catalog.html">Выбрать в каталоге</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ контакты ============ -->
-  <section class="section section--surface" id="contacts">
-    <div class="container split">
+      </section>
+    </main>
+    <footer class="shop-footer">
       <div>
-        <p class="eyebrow">Контакты</p>
-        <h2>Мастерская во дворе на Немиге</h2>
-        <p class="lead lead--after-title">Витрины нет, всё под заказ. Собираю и отдаю с 9:00 до 21:00, за самовывозом приезжайте в любой день.</p>
-        <ul class="contact-list">
-          <li class="contact-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 3.6a5.9 5.9 0 0 1 5.9 5.9c0 4.2-5.9 10.9-5.9 10.9S6.1 13.7 6.1 9.5A5.9 5.9 0 0 1 12 3.6Z"/><circle cx="12" cy="9.5" r="2.2"/>
-            </svg>
-            <span>г. Минск, ул. Немига, 12 — мастерская 3, вход со двора</span>
-          </li>
-          <li class="contact-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 3.6H6.3A2.2 2.2 0 0 0 4.1 5.9c.4 7 6.2 12.8 13.2 13.2a2.2 2.2 0 0 0 2.3-2.2v-2.7a12 12 0 0 1-3.5-1l-1.9 1.9a14.6 14.6 0 0 1-4.3-4.3l1.9-1.9a12 12 0 0 1-1-3.5Z"/>
-            </svg>
-            <a href="tel:+375-29-123-45-67">+375 (29) 123-45-67</a>
-          </li>
-          <li class="contact-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3.4" y="6.3" width="17.2" height="11.4" rx="1.6"/><path d="m4.6 7.8 7.4 5.2 7.4-5.2"/>
-            </svg>
-            <a href="mailto:hello@example.by">hello@example.by</a>
-          </li>
-          <li class="contact-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3.6" y="3.6" width="16.8" height="16.8" rx="4.6"/><circle cx="12" cy="12" r="4"/><path d="M16.9 7.1h.01"/>
-            </svg>
-            <span>Мы в Instagram: @pion.minsk</span>
-          </li>
-          <li class="contact-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="8.1"/><path d="M12 7.4V12l3.3 2"/>
-            </svg>
-            <span>Каждый день, 9:00–21:00. Заказы на сегодня принимаем до 20:00</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="reveal">
-        <p class="map-hint">Две минуты от метро «Немига», во дворе жилого дома, зелёная дверь с вывеской «Пион». Курьер забирает букеты здесь же, поэтому самовывоз быстрее доставки.</p>
-      </div>
-    </div>
-  </section>
-
-</main>
-<section class="marquee" aria-label="Коротко о правилах">
-  <div class="marquee__track"><span class="marquee__item">Сегодня собираю до 20:00</span><span class="marquee__item">К восьми утра не берусь</span><span class="marquee__item">Фото букета перед отправкой</span><span class="marquee__item">Больше двух свадеб в день не беру</span><span class="marquee__item">По Минску обычно два часа</span><span class="marquee__item">Сегодня собираю до 20:00</span><span class="marquee__item">К восьми утра не берусь</span><span class="marquee__item">Фото букета перед отправкой</span><span class="marquee__item">Больше двух свадеб в день не беру</span><span class="marquee__item">По Минску обычно два часа</span></div>
-</section>
-
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <a class="logo" href="index.html">
-          <span class="logo__mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <path d="M12 13c-1.7 0-3-1.3-3-3 0-1 .5-1.9 1.3-2.4.4.9 1 1.6 1.7 2 .7-.4 1.3-1.1 1.7-2 .8.5 1.3 1.4 1.3 2.4 0 1.7-1.3 3-3 3Z"/>
-              <path d="M9.2 9.6C7.6 9.4 6.5 8 6.7 6.4c.1-.7.4-1.4 1-1.8.5.9 1.2 1.5 2 1.8"/>
-              <path d="M14.8 9.6c1.6-.2 2.7-1.6 2.5-3.2-.1-.7-.4-1.4-1-1.8-.5.9-1.2 1.5-2 1.8"/>
-              <path d="M12 13v8"/>
-              <path d="M12 17.6c1.8-.3 3-1.6 3.2-3.3-1.8-.2-3.1.8-3.2 2.1"/>
-            </svg>
-          </span>
-          <span class="logo__text">Пион</span>
-        </a>
-        <p class="small muted footer__blurb">Мастерская в Минске. Монобукеты, композиции в керамике, свадебные букеты, подписка.</p>
+        <a class="brand" href="index.html">Пион</a
+        ><span>Ботаническая мастерская · Минск</span>
       </div>
       <div>
-        <h4>Разделы</h4>
-        <div class="footer-links">
-          <a href="index.html">Главная</a>
-          <a href="catalog.html">Каталог</a>
-          <a href="cart.html">Корзина</a>
-          <a href="admin.html">Панель владельца</a>
-        </div>
+        <a href="catalog.html">Каталог</a
+        ><a href="studio.html">Собрать свой букет</a
+        ><a href="cart.html">Корзина и заказ</a>
       </div>
-      <div>
-        <h4>Мастерская</h4>
-        <div class="footer-links">
-          <a href="#delivery">Доставка и самовывоз</a>
-          <a href="studio.html">Конструктор букета</a>
-          <a href="#contacts">Контакты</a>
-        </div>
+      <div class="legal">
+        Демонстрационный проект портфолио. Заказы сохраняются в браузере.<br /><a
+          href="../"
+          >Все проекты ↗</a
+        >
       </div>
-      <div>
-        <h4>Связаться</h4>
-        <div class="footer-links">
-          <a href="tel:+375-29-123-45-67">+375 (29) 123-45-67</a>
-          <a href="mailto:hello@example.by">hello@example.by</a>
-          <span class="small muted">Немига, 12 · 9:00–21:00</span>
-        </div>
-      </div>
-    </div>
-    <p class="footer-note">Демо-сайт мастерской «Пион»: бренд и контакты придуманы, чтобы показать, как витрина может выглядеть рядом с Instagram. Фотографии взяты из открытых источников, авторы перечислены в CREDITS.md. © <span data-year>2026</span> «Пион».</p>
-  </div>
-</footer>
-
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-<script src="assets/data.js"></script>
-<script src="assets/bouquet.js"></script>
-<script src="assets/bouquet3d.js"></script>
-<script src="assets/app.js"></script>
-<script src="assets/motion.js"></script>
-</body>
+    </footer>
+  </body>
 </html>

@@ -1,0 +1,173 @@
+[
+  {
+    "kind": "cakes",
+    "preset": 0,
+    "metrics": {
+      "framing": {
+        "maxX": 0.45232731721153224,
+        "maxY": 0.8199314082277329
+      },
+      "drawCalls": 35,
+      "triangles": 1024750,
+      "geometries": 18,
+      "textures": 4,
+      "box": [
+        32,
+        10.799165710000239,
+        32
+      ]
+    }
+  },
+  {
+    "kind": "cakes",
+    "preset": 1,
+    "metrics": {
+      "framing": {
+        "maxX": 0.35316625088916725,
+        "maxY": 0.8199923112417212
+      },
+      "drawCalls": 37,
+      "triangles": 1108978,
+      "geometries": 19,
+      "textures": 4,
+      "box": [
+        32,
+        21.079999994039532,
+        32
+      ]
+    }
+  },
+  {
+    "kind": "cakes",
+    "preset": 2,
+    "metrics": {
+      "framing": {
+        "maxX": 0.4782408921544358,
+        "maxY": 0.8199131883032695
+      },
+      "drawCalls": 21,
+      "triangles": 576770,
+      "geometries": 11,
+      "textures": 4,
+      "box": [
+        34,
+        9.374574431433283,
+        34
+      ]
+    }
+  },
+  {
+    "kind": "flowers",
+    "preset": 0,
+    "metrics": {
+      "framing": {
+        "maxX": 0.3630033816366267,
+        "maxY": 0.819964034667409
+      },
+      "drawCalls": 40,
+      "triangles": 988526,
+      "geometries": 25,
+      "textures": 4,
+      "box": [
+        26.577161391165106,
+        32.54523610853429,
+        25.167228083621254
+      ]
+    }
+  },
+  {
+    "kind": "flowers",
+    "preset": 1,
+    "metrics": {
+      "framing": {
+        "maxX": 0.32605148897268704,
+        "maxY": 0.8199764630794427
+      },
+      "drawCalls": 52,
+      "triangles": 1401182,
+      "geometries": 32,
+      "textures": 4,
+      "box": [
+        43.10330112888469,
+        54.131905316936496,
+        34.480040243277806
+      ]
+    }
+  },
+  {
+    "kind": "flowers",
+    "preset": 2,
+    "metrics": {
+      "framing": {
+        "maxX": 0.4946325308495558,
+        "maxY": 0.8199473720453714
+      },
+      "drawCalls": 46,
+      "triangles": 1088186,
+      "geometries": 29,
+      "textures": 4,
+      "box": [
+        33.32640481761459,
+        24.848759226726084,
+        27.930628696143543
+      ]
+    }
+  },
+  {
+    "kind": "jewelry",
+    "preset": 0,
+    "metrics": {
+      "framing": {
+        "maxX": 0.3394628277312313,
+        "maxY": 0.8199289690114534
+      },
+      "drawCalls": 7,
+      "triangles": 96668,
+      "geometries": 3,
+      "textures": 5,
+      "box": [
+        2.05,
+        2.6212429422985957,
+        0.7974483903774097
+      ]
+    }
+  },
+  {
+    "kind": "jewelry",
+    "preset": 1,
+    "metrics": {
+      "framing": {
+        "maxX": 0.3307258159790282,
+        "maxY": 0.8199558580860291
+      },
+      "drawCalls": 7,
+      "triangles": 96908,
+      "geometries": 3,
+      "textures": 5,
+      "box": [
+        2.05,
+        2.678946572751522,
+        1.0556321828194726
+      ]
+    }
+  },
+  {
+    "kind": "jewelry",
+    "preset": 2,
+    "metrics": {
+      "framing": {
+        "maxX": 0.20445968050895413,
+        "maxY": 0.8199886831732834
+      },
+      "drawCalls": 10,
+      "triangles": 196154,
+      "geometries": 4,
+      "textures": 5,
+      "box": [
+        1.237391107633734,
+        2.594,
+        0.4350341991972643
+      ]
+    }
+  }
+]

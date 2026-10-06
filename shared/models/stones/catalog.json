@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "jw-stone-diamond-01",
+    "url": "models/stones/jw-stone-diamond-01.glb",
+    "pack": "diamond",
+    "index": 1,
+    "sourceFile": "diamond_gem_shape_set_-_1_collectibles.glb",
+    "sourceNode": "Plane_Diamond_Master_0",
+    "sourceMaterial": "Diamond_Master",
+    "triangles": 476
+  },
+  {
+    "id": "jw-stone-diamond-02",
+    "url": "models/stones/jw-stone-diamond-02.glb",
+    "pack": "diamond",
+    "index": 2,
+    "sourceFile": "diamond_gem_shape_set_-_1_collectibles.glb",
+    "sourceNode": "Plane.002_Diamond_Master_0",
+    "sourceMaterial": "Diamond_Master",
+    "triangles": 538
+  },
+  {
+    "id": "jw-stone-diamond-03",
+    "url": "models/stones/jw-stone-diamond-03.glb",
+    "pack": "diamond",
+    "index": 3,
+    "sourceFile": "diamond_gem_shape_set_-_1_collectibles.glb",
+    "sourceNode": "Plane.003_Diamond_Master_0",
+    "sourceMaterial": "Diamond_Master",
+    "triangles": 1384
+  },
+  {
+    "id": "jw-stone-diamond-04",
+    "url": "models/stones/jw-stone-diamond-04.glb",
+    "pack": "diamond",
+    "index": 4,
+    "sourceFile": "diamond_gem_shape_set_-_1_collectibles.glb",
+    "sourceNode": "Plane.004_Diamond_Master_0",
+    "sourceMaterial": "Diamond_Master",
+    "triangles": 1848
+  },
+  {
+    "id": "jw-stone-diamond-05",
+    "url": "models/stones/jw-stone-diamond-05.glb",
+    "pack": "diamond",
+    "index": 5,
+    "sourceFile": "diamond_gem_shape_set_-_1_collectibles.glb",
+    "sourceNode": "Plane.005_Diamond_Master_0",
+    "sourceMaterial": "Diamond_Master",
+    "triangles": 3276
+  },
+  {
+    "id": "jw-stone-diamond-06",
+    "url": "models/stones/jw-stone-diamond-06.glb",
+    "pack": "diamond",
+    "index": 6,
+    "sourceFile": "diamond_gem_shape_set_-_1_collectibles.glb",
+    "sourceNode": "Plane.006_Diamond_Master_0",
+    "sourceMaterial": "Diamond_Master",
+    "triangles": 956
+  },
+  {
+    "id": "jw-stone-diamond-07",
+    "url": "models/stones/jw-stone-diamond-07.glb",
+    "pack": "diamond",
+    "index": 7,
+    "sourceFile": "diamond_gem_shape_set_-_1_collectibles.glb",
+    "sourceNode": "Plane.007_Diamond_Master_0",
+    "sourceMaterial": "Diamond_Master",
+    "triangles": 70
+  },
+  {
+    "id": "jw-stone-diamond-08",
+    "url": "models/stones/jw-stone-diamond-08.glb",
+    "pack": "diamond",
+    "index": 8,
+    "sourceFile": "diamond_gem_shape_set_-_1_collectibles.glb",
+    "sourceNode": "Plane.008_Diamond_Master_0",
+    "sourceMaterial": "Diamond_Master",
+    "triangles": 222
+  },
+  {
+    "id": "jw-stone-diamond-09",
+    "url": "models/stones/jw-stone-diamond-09.glb",
+    "pack": "diamond",
+    "index": 9,
+    "sourceFile": "diamond_gem_shape_set_-_1_collectibles.glb",
+    "sourceNode": "Plane.009_Diamond_Master_0",
+    "sourceMaterial": "Diamond_Master",
+    "triangles": 1184
+  },
+  {
+    "id": "jw-stone-diamond-10",
+    "url": "models/stones/jw-stone-diamond-10.glb",
+    "pack": "diamond",
+    "index": 10,
+    "sourceFile": "diamond_gem_shape_set_-_1_collectibles.glb",
+    "sourceNode": "Plane.010_Diamond_Master_0",
+    "sourceMaterial": "Diamond_Master",
+    "triangles": 180
+  },
+  {
+    "id": "jw-stone-diamond-11",
+    "url": "models/stones/jw-stone-diamond-11.glb",
+    "pack": "diamond",
+    "index": 11,
+    "sourceFile": "diamond_gem_shape_set_-_1_collectibles.glb",
+    "sourceNode": "Plane.011_Diamond_Master_0",
+    "sourceMaterial": "Diamond_Master",
+    "triangles": 188
+  },
+  {
+    "id": "jw-stone-diamond-12",
+    "url": "models/stones/jw-stone-diamond-12.glb",
+    "pack": "diamond",
+    "index": 12,
+    "sourceFile": "diamond_gem_shape_set_-_1_collectibles.glb",
+    "sourceNode": "Plane.001_Diamond_Master_0",
+    "sourceMaterial": "Diamond_Master",
+    "triangles": 388
+  },
+  {
+    "id": "jw-stone-gem-01",
+    "url": "models/stones/jw-stone-gem-01.glb",
+    "pack": "gem",
+    "index": 1,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_4",
+    "sourceMaterial": "White_-_abochon",
+    "triangles": 640
+  },
+  {
+    "id": "jw-stone-gem-02",
+    "url": "models/stones/jw-stone-gem-02.glb",
+    "pack": "gem",
+    "index": 2,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_6",
+    "sourceMaterial": "Light_Blue_-_abochon",
+    "triangles": 2688
+  },
+  {
+    "id": "jw-stone-gem-03",
+    "url": "models/stones/jw-stone-gem-03.glb",
+    "pack": "gem",
+    "index": 3,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_8",
+    "sourceMaterial": "Green_-_abochon",
+    "triangles": 2688
+  },
+  {
+    "id": "jw-stone-gem-04",
+    "url": "models/stones/jw-stone-gem-04.glb",
+    "pack": "gem",
+    "index": 4,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_10",
+    "sourceMaterial": "Red_-_abochon",
+    "triangles": 2688
+  },
+  {
+    "id": "jw-stone-gem-05",
+    "url": "models/stones/jw-stone-gem-05.glb",
+    "pack": "gem",
+    "index": 5,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_12",
+    "sourceMaterial": "Purple_-_abochon",
+    "triangles": 2688
+  },
+  {
+    "id": "jw-stone-gem-06",
+    "url": "models/stones/jw-stone-gem-06.glb",
+    "pack": "gem",
+    "index": 6,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_14",
+    "sourceMaterial": "Orange_-_abochon",
+    "triangles": 2688
+  },
+  {
+    "id": "jw-stone-gem-07",
+    "url": "models/stones/jw-stone-gem-07.glb",
+    "pack": "gem",
+    "index": 7,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_16",
+    "sourceMaterial": "Blue_-_abochon",
+    "triangles": 2688
+  },
+  {
+    "id": "jw-stone-gem-08",
+    "url": "models/stones/jw-stone-gem-08.glb",
+    "pack": "gem",
+    "index": 8,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_18",
+    "sourceMaterial": "Yellow_-_abochon",
+    "triangles": 2688
+  },
+  {
+    "id": "jw-stone-gem-09",
+    "url": "models/stones/jw-stone-gem-09.glb",
+    "pack": "gem",
+    "index": 9,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_20",
+    "sourceMaterial": "White_-_abochon",
+    "triangles": 510
+  },
+  {
+    "id": "jw-stone-gem-10",
+    "url": "models/stones/jw-stone-gem-10.glb",
+    "pack": "gem",
+    "index": 10,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_22",
+    "sourceMaterial": "Light_Blue_-_abochon",
+    "triangles": 510
+  },
+  {
+    "id": "jw-stone-gem-11",
+    "url": "models/stones/jw-stone-gem-11.glb",
+    "pack": "gem",
+    "index": 11,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_24",
+    "sourceMaterial": "Green_-_abochon",
+    "triangles": 510
+  },
+  {
+    "id": "jw-stone-gem-12",
+    "url": "models/stones/jw-stone-gem-12.glb",
+    "pack": "gem",
+    "index": 12,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_26",
+    "sourceMaterial": "Red_-_abochon",
+    "triangles": 510
+  },
+  {
+    "id": "jw-stone-gem-13",
+    "url": "models/stones/jw-stone-gem-13.glb",
+    "pack": "gem",
+    "index": 13,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_28",
+    "sourceMaterial": "Purple_-_abochon",
+    "triangles": 510
+  },
+  {
+    "id": "jw-stone-gem-14",
+    "url": "models/stones/jw-stone-gem-14.glb",
+    "pack": "gem",
+    "index": 14,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_30",
+    "sourceMaterial": "Orange_-_abochon",
+    "triangles": 510
+  },
+  {
+    "id": "jw-stone-gem-15",
+    "url": "models/stones/jw-stone-gem-15.glb",
+    "pack": "gem",
+    "index": 15,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_32",
+    "sourceMaterial": "Blue_-_abochon",
+    "triangles": 510
+  },
+  {
+    "id": "jw-stone-gem-16",
+    "url": "models/stones/jw-stone-gem-16.glb",
+    "pack": "gem",
+    "index": 16,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_34",
+    "sourceMaterial": "Yellow_-_abochon",
+    "triangles": 510
+  },
+  {
+    "id": "jw-stone-gem-17",
+    "url": "models/stones/jw-stone-gem-17.glb",
+    "pack": "gem",
+    "index": 17,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_36",
+    "sourceMaterial": "Light_Blue_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-18",
+    "url": "models/stones/jw-stone-gem-18.glb",
+    "pack": "gem",
+    "index": 18,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_38",
+    "sourceMaterial": "Green_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-19",
+    "url": "models/stones/jw-stone-gem-19.glb",
+    "pack": "gem",
+    "index": 19,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_40",
+    "sourceMaterial": "Red_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-20",
+    "url": "models/stones/jw-stone-gem-20.glb",
+    "pack": "gem",
+    "index": 20,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_42",
+    "sourceMaterial": "Purple_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-21",
+    "url": "models/stones/jw-stone-gem-21.glb",
+    "pack": "gem",
+    "index": 21,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_44",
+    "sourceMaterial": "Orange_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-22",
+    "url": "models/stones/jw-stone-gem-22.glb",
+    "pack": "gem",
+    "index": 22,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_46",
+    "sourceMaterial": "Blue_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-23",
+    "url": "models/stones/jw-stone-gem-23.glb",
+    "pack": "gem",
+    "index": 23,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_48",
+    "sourceMaterial": "Yellow_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-24",
+    "url": "models/stones/jw-stone-gem-24.glb",
+    "pack": "gem",
+    "index": 24,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_50",
+    "sourceMaterial": "White_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-25",
+    "url": "models/stones/jw-stone-gem-25.glb",
+    "pack": "gem",
+    "index": 25,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_52",
+    "sourceMaterial": "Light_Blue_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-26",
+    "url": "models/stones/jw-stone-gem-26.glb",
+    "pack": "gem",
+    "index": 26,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_54",
+    "sourceMaterial": "Green_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-27",
+    "url": "models/stones/jw-stone-gem-27.glb",
+    "pack": "gem",
+    "index": 27,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_56",
+    "sourceMaterial": "Red_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-28",
+    "url": "models/stones/jw-stone-gem-28.glb",
+    "pack": "gem",
+    "index": 28,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_58",
+    "sourceMaterial": "Purple_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-29",
+    "url": "models/stones/jw-stone-gem-29.glb",
+    "pack": "gem",
+    "index": 29,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_60",
+    "sourceMaterial": "Orange_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-30",
+    "url": "models/stones/jw-stone-gem-30.glb",
+    "pack": "gem",
+    "index": 30,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_62",
+    "sourceMaterial": "Blue_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-31",
+    "url": "models/stones/jw-stone-gem-31.glb",
+    "pack": "gem",
+    "index": 31,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_64",
+    "sourceMaterial": "Yellow_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-32",
+    "url": "models/stones/jw-stone-gem-32.glb",
+    "pack": "gem",
+    "index": 32,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_66",
+    "sourceMaterial": "White_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-33",
+    "url": "models/stones/jw-stone-gem-33.glb",
+    "pack": "gem",
+    "index": 33,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_68",
+    "sourceMaterial": "White_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-34",
+    "url": "models/stones/jw-stone-gem-34.glb",
+    "pack": "gem",
+    "index": 34,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_70",
+    "sourceMaterial": "Light_Blue_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-35",
+    "url": "models/stones/jw-stone-gem-35.glb",
+    "pack": "gem",
+    "index": 35,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_72",
+    "sourceMaterial": "Green_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-36",
+    "url": "models/stones/jw-stone-gem-36.glb",
+    "pack": "gem",
+    "index": 36,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_74",
+    "sourceMaterial": "Red_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-37",
+    "url": "models/stones/jw-stone-gem-37.glb",
+    "pack": "gem",
+    "index": 37,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_76",
+    "sourceMaterial": "Purple_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-38",
+    "url": "models/stones/jw-stone-gem-38.glb",
+    "pack": "gem",
+    "index": 38,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_78",
+    "sourceMaterial": "Orange_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-39",
+    "url": "models/stones/jw-stone-gem-39.glb",
+    "pack": "gem",
+    "index": 39,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_80",
+    "sourceMaterial": "Blue_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-40",
+    "url": "models/stones/jw-stone-gem-40.glb",
+    "pack": "gem",
+    "index": 40,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_82",
+    "sourceMaterial": "Yellow_-_Gem",
+    "triangles": 140
+  },
+  {
+    "id": "jw-stone-gem-41",
+    "url": "models/stones/jw-stone-gem-41.glb",
+    "pack": "gem",
+    "index": 41,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_84",
+    "sourceMaterial": "White_-_Gem",
+    "triangles": 198
+  },
+  {
+    "id": "jw-stone-gem-42",
+    "url": "models/stones/jw-stone-gem-42.glb",
+    "pack": "gem",
+    "index": 42,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_86",
+    "sourceMaterial": "Light_Blue_-_Gem",
+    "triangles": 198
+  },
+  {
+    "id": "jw-stone-gem-43",
+    "url": "models/stones/jw-stone-gem-43.glb",
+    "pack": "gem",
+    "index": 43,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_88",
+    "sourceMaterial": "Green_-_Gem",
+    "triangles": 198
+  },
+  {
+    "id": "jw-stone-gem-44",
+    "url": "models/stones/jw-stone-gem-44.glb",
+    "pack": "gem",
+    "index": 44,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_90",
+    "sourceMaterial": "Red_-_Gem",
+    "triangles": 198
+  },
+  {
+    "id": "jw-stone-gem-45",
+    "url": "models/stones/jw-stone-gem-45.glb",
+    "pack": "gem",
+    "index": 45,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_92",
+    "sourceMaterial": "Purple_-_Gem",
+    "triangles": 198
+  },
+  {
+    "id": "jw-stone-gem-46",
+    "url": "models/stones/jw-stone-gem-46.glb",
+    "pack": "gem",
+    "index": 46,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_94",
+    "sourceMaterial": "Orange_-_Gem",
+    "triangles": 198
+  },
+  {
+    "id": "jw-stone-gem-47",
+    "url": "models/stones/jw-stone-gem-47.glb",
+    "pack": "gem",
+    "index": 47,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_96",
+    "sourceMaterial": "Blue_-_Gem",
+    "triangles": 198
+  },
+  {
+    "id": "jw-stone-gem-48",
+    "url": "models/stones/jw-stone-gem-48.glb",
+    "pack": "gem",
+    "index": 48,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_98",
+    "sourceMaterial": "Yellow_-_Gem",
+    "triangles": 198
+  },
+  {
+    "id": "jw-stone-gem-49",
+    "url": "models/stones/jw-stone-gem-49.glb",
+    "pack": "gem",
+    "index": 49,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_100",
+    "sourceMaterial": "White_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-50",
+    "url": "models/stones/jw-stone-gem-50.glb",
+    "pack": "gem",
+    "index": 50,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_102",
+    "sourceMaterial": "Light_Blue_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-51",
+    "url": "models/stones/jw-stone-gem-51.glb",
+    "pack": "gem",
+    "index": 51,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_104",
+    "sourceMaterial": "Green_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-52",
+    "url": "models/stones/jw-stone-gem-52.glb",
+    "pack": "gem",
+    "index": 52,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_106",
+    "sourceMaterial": "Red_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-53",
+    "url": "models/stones/jw-stone-gem-53.glb",
+    "pack": "gem",
+    "index": 53,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_108",
+    "sourceMaterial": "Purple_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-54",
+    "url": "models/stones/jw-stone-gem-54.glb",
+    "pack": "gem",
+    "index": 54,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_110",
+    "sourceMaterial": "Orange_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-55",
+    "url": "models/stones/jw-stone-gem-55.glb",
+    "pack": "gem",
+    "index": 55,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_112",
+    "sourceMaterial": "Blue_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-56",
+    "url": "models/stones/jw-stone-gem-56.glb",
+    "pack": "gem",
+    "index": 56,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_114",
+    "sourceMaterial": "Yellow_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-57",
+    "url": "models/stones/jw-stone-gem-57.glb",
+    "pack": "gem",
+    "index": 57,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_116",
+    "sourceMaterial": "White_-_Gem",
+    "triangles": 384
+  },
+  {
+    "id": "jw-stone-gem-58",
+    "url": "models/stones/jw-stone-gem-58.glb",
+    "pack": "gem",
+    "index": 58,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_118",
+    "sourceMaterial": "Light_Blue_-_Gem",
+    "triangles": 384
+  },
+  {
+    "id": "jw-stone-gem-59",
+    "url": "models/stones/jw-stone-gem-59.glb",
+    "pack": "gem",
+    "index": 59,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_120",
+    "sourceMaterial": "Green_-_Gem",
+    "triangles": 384
+  },
+  {
+    "id": "jw-stone-gem-60",
+    "url": "models/stones/jw-stone-gem-60.glb",
+    "pack": "gem",
+    "index": 60,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_122",
+    "sourceMaterial": "Red_-_Gem",
+    "triangles": 384
+  },
+  {
+    "id": "jw-stone-gem-61",
+    "url": "models/stones/jw-stone-gem-61.glb",
+    "pack": "gem",
+    "index": 61,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_124",
+    "sourceMaterial": "Purple_-_Gem",
+    "triangles": 384
+  },
+  {
+    "id": "jw-stone-gem-62",
+    "url": "models/stones/jw-stone-gem-62.glb",
+    "pack": "gem",
+    "index": 62,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_126",
+    "sourceMaterial": "Orange_-_Gem",
+    "triangles": 384
+  },
+  {
+    "id": "jw-stone-gem-63",
+    "url": "models/stones/jw-stone-gem-63.glb",
+    "pack": "gem",
+    "index": 63,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_128",
+    "sourceMaterial": "Blue_-_Gem",
+    "triangles": 384
+  },
+  {
+    "id": "jw-stone-gem-64",
+    "url": "models/stones/jw-stone-gem-64.glb",
+    "pack": "gem",
+    "index": 64,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_130",
+    "sourceMaterial": "Yellow_-_Gem",
+    "triangles": 384
+  },
+  {
+    "id": "jw-stone-gem-65",
+    "url": "models/stones/jw-stone-gem-65.glb",
+    "pack": "gem",
+    "index": 65,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_132",
+    "sourceMaterial": "White_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-66",
+    "url": "models/stones/jw-stone-gem-66.glb",
+    "pack": "gem",
+    "index": 66,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_134",
+    "sourceMaterial": "Light_Blue_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-67",
+    "url": "models/stones/jw-stone-gem-67.glb",
+    "pack": "gem",
+    "index": 67,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_136",
+    "sourceMaterial": "Green_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-68",
+    "url": "models/stones/jw-stone-gem-68.glb",
+    "pack": "gem",
+    "index": 68,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_138",
+    "sourceMaterial": "Red_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-69",
+    "url": "models/stones/jw-stone-gem-69.glb",
+    "pack": "gem",
+    "index": 69,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_140",
+    "sourceMaterial": "Purple_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-70",
+    "url": "models/stones/jw-stone-gem-70.glb",
+    "pack": "gem",
+    "index": 70,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_142",
+    "sourceMaterial": "Orange_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-71",
+    "url": "models/stones/jw-stone-gem-71.glb",
+    "pack": "gem",
+    "index": 71,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_144",
+    "sourceMaterial": "Blue_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-72",
+    "url": "models/stones/jw-stone-gem-72.glb",
+    "pack": "gem",
+    "index": 72,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_146",
+    "sourceMaterial": "Yellow_-_Gem",
+    "triangles": 302
+  },
+  {
+    "id": "jw-stone-gem-73",
+    "url": "models/stones/jw-stone-gem-73.glb",
+    "pack": "gem",
+    "index": 73,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_148",
+    "sourceMaterial": "Light_Blue_-_Gem",
+    "triangles": 64
+  },
+  {
+    "id": "jw-stone-gem-74",
+    "url": "models/stones/jw-stone-gem-74.glb",
+    "pack": "gem",
+    "index": 74,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_150",
+    "sourceMaterial": "Green_-_Gem",
+    "triangles": 64
+  },
+  {
+    "id": "jw-stone-gem-75",
+    "url": "models/stones/jw-stone-gem-75.glb",
+    "pack": "gem",
+    "index": 75,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_152",
+    "sourceMaterial": "Red_-_Gem",
+    "triangles": 64
+  },
+  {
+    "id": "jw-stone-gem-76",
+    "url": "models/stones/jw-stone-gem-76.glb",
+    "pack": "gem",
+    "index": 76,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_154",
+    "sourceMaterial": "Purple_-_Gem",
+    "triangles": 64
+  },
+  {
+    "id": "jw-stone-gem-77",
+    "url": "models/stones/jw-stone-gem-77.glb",
+    "pack": "gem",
+    "index": 77,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_156",
+    "sourceMaterial": "Orange_-_Gem",
+    "triangles": 64
+  },
+  {
+    "id": "jw-stone-gem-78",
+    "url": "models/stones/jw-stone-gem-78.glb",
+    "pack": "gem",
+    "index": 78,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_158",
+    "sourceMaterial": "Yellow_-_Gem",
+    "triangles": 64
+  },
+  {
+    "id": "jw-stone-gem-79",
+    "url": "models/stones/jw-stone-gem-79.glb",
+    "pack": "gem",
+    "index": 79,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_160",
+    "sourceMaterial": "Blue_-_Gem",
+    "triangles": 64
+  },
+  {
+    "id": "jw-stone-gem-80",
+    "url": "models/stones/jw-stone-gem-80.glb",
+    "pack": "gem",
+    "index": 80,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_162",
+    "sourceMaterial": "White_-_Gem",
+    "triangles": 64
+  },
+  {
+    "id": "jw-stone-gem-81",
+    "url": "models/stones/jw-stone-gem-81.glb",
+    "pack": "gem",
+    "index": 81,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_164",
+    "sourceMaterial": "Light_Blue_-_Gem",
+    "triangles": 60
+  },
+  {
+    "id": "jw-stone-gem-82",
+    "url": "models/stones/jw-stone-gem-82.glb",
+    "pack": "gem",
+    "index": 82,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_166",
+    "sourceMaterial": "White_-_Gem",
+    "triangles": 60
+  },
+  {
+    "id": "jw-stone-gem-83",
+    "url": "models/stones/jw-stone-gem-83.glb",
+    "pack": "gem",
+    "index": 83,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_168",
+    "sourceMaterial": "Green_-_Gem",
+    "triangles": 60
+  },
+  {
+    "id": "jw-stone-gem-84",
+    "url": "models/stones/jw-stone-gem-84.glb",
+    "pack": "gem",
+    "index": 84,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_170",
+    "sourceMaterial": "Red_-_Gem",
+    "triangles": 60
+  },
+  {
+    "id": "jw-stone-gem-85",
+    "url": "models/stones/jw-stone-gem-85.glb",
+    "pack": "gem",
+    "index": 85,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_172",
+    "sourceMaterial": "Purple_-_Gem",
+    "triangles": 60
+  },
+  {
+    "id": "jw-stone-gem-86",
+    "url": "models/stones/jw-stone-gem-86.glb",
+    "pack": "gem",
+    "index": 86,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_174",
+    "sourceMaterial": "Orange_-_Gem",
+    "triangles": 60
+  },
+  {
+    "id": "jw-stone-gem-87",
+    "url": "models/stones/jw-stone-gem-87.glb",
+    "pack": "gem",
+    "index": 87,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_176",
+    "sourceMaterial": "Blue_-_Gem",
+    "triangles": 60
+  },
+  {
+    "id": "jw-stone-gem-88",
+    "url": "models/stones/jw-stone-gem-88.glb",
+    "pack": "gem",
+    "index": 88,
+    "sourceFile": "gemstone_pack.glb",
+    "sourceNode": "Object_178",
+    "sourceMaterial": "Yellow_-_Gem",
+    "triangles": 60
+  }
+]

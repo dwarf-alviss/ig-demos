@@ -652,6 +652,7 @@
         imgTag +
         '<div>' +
           '<div class="cart-line__title">' + esc(title) + '</div>' +
+          (it.configuration && it.configuration.version === 2 ? '<a class="edit-design" href="studio.html?edit=' + encodeURIComponent(it.id) + '">Изменить дизайн →</a>' : '') +
           '<div class="cart-line__meta">' + esc(materialInfo(it.material).name) +
             (p ? ' · ' + esc(p.size) : '') + '</div>' +
           (it.note ? '<div class="cart-line__meta">' + esc(it.note) + '</div>' : '') +

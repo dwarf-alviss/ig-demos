@@ -1,447 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>«Линия» — женская одежда в Минске: платья, костюмы, трикотаж</title>
-<meta name="description" content="«Линия»: магазин женской одежды в Минске. Тринадцать моделей, размеры XS–XL, всё можно померить в зале. Две точки: Призма на Победителей и МОМО на Тимирязева. Доставка 1–2 дня.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="«Линия», магазин женской одежды в Минске">
-<meta property="og:description" content="Тринадцать моделей базового гардероба, размеры XS–XL, две точки: Призма и МОМО. Доставка по Минску 1–2 дня, самовывоз за два часа.">
-<meta property="og:image" content="assets/img/og.jpg" width="1200" height="630">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="«Линия», магазин женской одежды в Минске">
-<meta name="twitter:description" content="Тринадцать моделей базового гардероба, размеры XS–XL, две точки: Призма и МОМО. Доставка по Минску 1–2 дня, самовывоз за два часа.">
-<meta name="twitter:image" content="assets/img/og.jpg">
-<link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/base.css">
-<link rel="stylesheet" href="assets/site.css">
-<link rel="stylesheet" href="assets/motion.css">
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ClothingStore",
-    "name": "«Линия»",
-    "description": "Тринадцать моделей базового гардероба, размеры XS–XL. Две точки: Призма на Победителей 121 и МОМО на Тимирязева 123.",
-    "telephone": "+375 (29) 123-45-67",
-    "email": "hello@example.by",
-    "priceRange": "79–420 BYN",
-    "currenciesAccepted": "BYN",
-    "address": [
-      {
-        "@type": "PostalAddress",
-        "streetAddress": "пр-т Победителей, 121, 2-й этаж",
-        "addressLocality": "Минск",
-        "addressCountry": "BY"
-      },
-      {
-        "@type": "PostalAddress",
-        "streetAddress": "ул. Тимирязева, 123, 1-й этаж",
-        "addressLocality": "Минск",
-        "addressCountry": "BY"
-      }
-    ],
-    "openingHours": ["Mo-Su 10:00-21:00", "Mo-Su 10:00-22:00"]
-  }
-</script>
-<link rel="stylesheet" href="../shared/project-polish.css">
-</head>
-<body>
-<a class="skip-link" href="#main">Перейти к содержимому</a>
-
-<!-- полоса-шапка издания: выпуск, наличие, точки -->
-<div class="masthead">
-  <div class="container masthead__inner">
-    <span>Выпуск 01 · то, что висит в зале круглый год</span>
-    <span><b>13 моделей</b> и <b>2 точки</b></span>
-    <span>размеры <b>XS–XL</b></span>
-    <span>Минск · Призма и МОМО</span>
-  </div>
-</div>
-
-<header class="site-header">
-  <div class="container site-header__inner">
-    <a class="logo" href="index.html">
-      <span class="logo__mark" aria-hidden="true">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="miter" focusable="false">
-          <path d="M16 11.5 2 22.5h28L16 11.5Z"/>
-          <path d="M16 11.5V5h4.5"/>
-          <path d="M6 22.5V26h20v-3.5"/>
-        </svg>
-      </span>
-      <span class="logo__text">Линия<small>магазин женской одежды · Минск</small></span>
-    </a>
-    <nav class="nav" aria-label="Основная навигация">
-      <a href="index.html" aria-current="page">Главная</a>
-      <a href="catalog.html">Каталог</a>
-      <a href="index.html#points">Точки</a>
-      <a href="index.html#delivery">Доставка</a>
-      <a href="admin.html">Панель</a>
-    </nav>
-    <div class="header-actions">
-      <button class="icon-btn burger" type="button" data-action="menu" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav">
-        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M3 6h18"/><path d="M6 12h12"/><path d="M3 18h18"/></svg>
-      </button>
-      <a class="icon-btn" href="cart.html" data-cart-button aria-label="Корзина">
-        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M2.5 8h19l-2.2 12.5H4.7z"/><path d="M8.5 8 11 2.5"/><path d="M15.5 8 13 2.5"/><path d="M9 12v5"/><path d="M12 12v5"/><path d="M15 12v5"/></svg>
-        <span class="icon-btn__count" data-cart-count hidden>0</span>
-      </a>
-    </div>
-  </div>
-</header>
-
-<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-  <div class="container mobile-nav__inner">
-    <ul class="mobile-nav__list">
-      <li><a href="index.html"><span class="mobile-nav__no">01</span>Главная</a></li>
-      <li><a href="catalog.html"><span class="mobile-nav__no">02</span>Каталог</a></li>
-      <li><a href="cart.html"><span class="mobile-nav__no">03</span>Корзина и заказ</a></li>
-      <li><a href="index.html#points"><span class="mobile-nav__no">04</span>Точки</a></li>
-      <li><a href="index.html#delivery"><span class="mobile-nav__no">05</span>Доставка</a></li>
-      <li><a href="index.html#contacts"><span class="mobile-nav__no">06</span>Контакты</a></li>
-    </ul>
-    <div class="mobile-nav__side">
-      <div class="mobile-nav__block">
-        <h4>Точки в Минске</h4>
-        <p>пр-т Победителей, 121, 2-й этаж<br>ул. Тимирязева, 123, 1-й этаж<br>ежедневно 10:00–21:00 и 10:00–22:00</p>
-      </div>
-      <div class="mobile-nav__block">
-        <h4>Связь</h4>
-        <p><a href="tel:+375-29-123-45-67">+375 (29) 123-45-67</a><br><a href="mailto:hello@example.by">hello@example.by</a></p>
-      </div>
-      <a class="btn btn--block" href="catalog.html">Смотреть каталог</a>
-    </div>
-  </div>
-</div>
-
-<aside class="studio-entry"><span>Личная редакция гардероба</span><a href="studio.html">Собрать свою капсулу ↗</a></aside>
-<main id="main">
-
-  <!-- ============================ hero: фото во всю ширину ============================ -->
-  <section class="hero">
-    <figure class="hero__media">
-      <img src="assets/img/hero.jpg" alt="Платья, брюки и трикотаж «Линии» на подвесных рейлах в торговом зале" width="1600" height="1000">
-      <figcaption class="hero__credit">Рейл «Линии» · пр-т Победителей, 121</figcaption>
-    </figure>
-    <div class="hero__plate">
-      <div class="container hero__plate-inner">
-        <p class="hero__kicker">Женская одежда · Минск · с 2018 года</p>
-        <h1 class="hero__title">Померить, а не угадывать</h1>
-        <p class="hero__lead">Тринадцать моделей: платья, костюмы, трикотаж, джинсы. Каждую держу в четырёх-пяти размерах,
-          они висят по одной линии, поэтому разница в посадке видна с двух шагов. Меня зовут Наташа, я старший продавец
-          в Призме. Размеры перемеряю сама раз в месяц: партия приходит смещённой на сантиметр, а в накладной об этом не пишут.</p>
-        <div class="hero__actions">
-          <a class="btn" href="catalog.html">
-            Смотреть каталог
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M2.5 12h18"/><path d="M15 6.5 20.5 12 15 17.5"/></svg>
-          </a>
-          <button class="btn btn--ink-inverse" type="button" data-action="size-chart">
-            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M2 9h20v6H2z"/><path d="M6 9v3"/><path d="M10 9v4"/><path d="M14 9v3"/><path d="M18 9v4"/></svg>
-            Размерная сетка
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="container">
-    <div class="honesty" aria-label="Что стоит знать заранее">
-      <span><b>Вторник</b>: день поставки, к вечеру числа по точкам уже врут</span>
-      <span><b>Стиранное не меняю</b>: бирки должны остаться на месте</span>
-      <span><b>Больше четырёх вещей</b> на дом не возьму, это визит в зал</span>
-    </div>
-    <div class="figures">
-      <div class="stat"><span class="stat__value">2 точки</span><span class="stat__label">Победителей и Тимирязева, обе с 10:00</span></div>
-      <div class="stat"><span class="stat__value">XS–XL</span><span class="stat__label">размеры на рейле, а не под заказ</span></div>
-      <div class="stat"><span class="stat__value">1–2 дня</span><span class="stat__label">доставка по Минску, 8 BYN, от 200 BYN бесплатно</span></div>
-      <div class="stat"><span class="stat__value">2 часа</span><span class="stat__label">собираю заказ на самовывоз и пишу, когда забрать</span></div>
-    </div>
-  </div>
-
-  <!-- ============================ как это устроено ============================ -->
-  <section class="section">
-    <div class="container">
-      <div class="headline-rule">
-        <span class="headline-index">01</span>
-        <h2>Как это устроено</h2>
-        <span class="rule"></span>
-      </div>
-      <p class="lead" style="margin-bottom: var(--s6)">Одна примерка в зале или один заказ на сайте. Дальше по-разному,
-        но без сюрпризов: размеры держу, срок называю честно, подгонку делаю на месте. Не сядет вещь, признаюсь сама,
-        уговаривать не буду.</p>
-      <div class="grid grid--2" id="services"></div>
-    </div>
-  </section>
-
-  <!-- ============================ витрина ============================ -->
-  <section class="section section--tight section--surface">
-    <div class="container">
-      <div class="between" style="align-items: flex-end; margin-bottom: var(--s5)">
-        <div>
-          <p class="eyebrow">02 · витрина</p>
-          <h2 style="margin-top: var(--s3)">Что уходит с рейла первым</h2>
-          <p class="lead" style="margin-top: var(--s3)">Четыре модели, которые я снимаю с вешалки чаще всего. Размер отмечается прямо в строке,
-            наличие по точкам стоит под ценой. В субботу эти четыре лучше смотреть до обеда, к двум в зале тесно.</p>
-        </div>
-        <a class="btn btn--ghost" href="catalog.html">
-          Все тринадцать моделей
-          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M2.5 12h18"/><path d="M15 6.5 20.5 12 15 17.5"/></svg>
-        </a>
-      </div>
-      <div class="lookbook" id="featured"></div>
-    </div>
-  </section>
-
-  <!-- ============================ размеры ============================ -->
-  <section class="section">
-    <div class="container">
-      <div class="split split--figure">
-        <div class="stack">
-          <p class="eyebrow">03 · размеры</p>
-          <h2>Размер подбирается у зеркала</h2>
-          <p class="muted">Шьют на рост 164–172 см, в зале по четыре-пять размеров каждой модели. Если вы между размерами,
-            берите больший: посадку поправлю в точке за час, а длину брюк Рита подошьёт в МОМО бесплатно. Мерить у зеркала
-            в Призме удобнее, там полка под сумку и крючок для пальто.</p>
-          <table class="size-table">
-            <caption class="sr-only">Размеры XS–XL: международный, российский и обхват груди</caption>
-            <thead>
-              <tr><th scope="col">Размер</th><th scope="col">RU</th><th scope="col">Грудь, см</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>XS</td><td>40</td><td>80–84</td></tr>
-              <tr><td>S</td><td>42</td><td>84–88</td></tr>
-              <tr><td>M</td><td>44</td><td>88–92</td></tr>
-              <tr><td>L</td><td>46</td><td>92–96</td></tr>
-              <tr><td>XL</td><td>48</td><td>96–100</td></tr>
-            </tbody>
-          </table>
-          <div class="row">
-            <button class="btn btn--ghost" type="button" data-action="size-chart">Полная сетка</button>
-            <span class="small muted">Талия, бёдра и как снимать мерки.</span>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ЛИНИЯ — Гардероб без лишнего · Минск</title>
+    <meta
+      name="description"
+      content="Вещи, которые работают вместе. Чёткие силуэты, приятные ткани и свобода быть собой каждый день."
+    />
+    <link rel="stylesheet" href="assets/fonts.css" />
+    <link rel="stylesheet" href="../shared/storefront.css" />
+  </head>
+  <body data-shop="fashion">
+    <a class="skip" href="#main">Перейти к содержимому</a>
+    <header class="shop-header">
+      <a class="brand" href="index.html">ЛИНИЯ</a>
+      <nav aria-label="Основная навигация">
+        <a href="catalog.html">Коллекция</a
+        ><a class="edit" href="studio.html">Моя капсула ↗</a
+        ><a href="cart.html">Корзина</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="overline">Гардероб без лишнего · Минск</p>
+          <h1>ВАШ РИТМ.<br />ВАША<br />ЛИНИЯ.</h1>
+          <p>
+            Вещи, которые работают вместе. Чёткие силуэты, приятные ткани и
+            свобода быть собой каждый день.
+          </p>
+          <div class="actions">
+            <a class="button" href="catalog.html"
+              >Смотреть коллекцию <span>↗</span></a
+            ><a href="studio.html">Собрать капсулу →</a>
           </div>
+          <p class="hero-note">13 моделей. Бесконечно ваш гардероб.</p>
         </div>
-        <div class="media media--portrait reveal">
-          <img src="assets/img/knit.jpg" alt="Крупная вязка свитера «Косы»: серое трикотажное полотно крупным планом" width="900" height="675">
-        </div>
+        <figure class="hero-visual">
+          <img
+            src="assets/img/hero.jpg"
+            alt="Ежедневная форма / коллекция 01"
+            fetchpriority="high"
+          />
+          <figcaption>
+            <span>Ежедневная форма / коллекция 01</span><span>01 / ЛИНИЯ</span>
+          </figcaption>
+        </figure>
+      </section>
+      <div class="promise">
+        <span>Размеры XS — XL</span><span>Две точки в Минске</span
+        ><span>Доставка с примеркой</span>
       </div>
-    </div>
-  </section>
-
-  <!-- ============================ точки ============================ -->
-  <section class="section" id="points">
-    <div class="container">
-      <div class="headline-rule">
-        <span class="headline-index">04</span>
-        <h2>Две точки в Минске</h2>
-        <span class="rule"></span>
-      </div>
-      <p class="lead" style="margin-bottom: var(--s5)">Под ценой видно, сколько штук лежит в Призме и сколько в МОМО. Если вашего размера нет на вашей
-        точке, привезу его из второй за день. Бывает, что размер кончился везде, тогда скажу честно и запишу вас на поставку:
-        она приходит по вторникам.</p>
-      <div class="points" id="points-list"></div>
-    </div>
-  </section>
-
-  <!-- ============================ о магазине ============================ -->
-  <section class="section section--surface" id="about">
-    <div class="container">
-      <div class="split split--figure">
-        <div class="media media--portrait reveal">
-          <img src="assets/img/atelier.jpg" alt="Торговый зал «Линии»: одежда на подвесных рейлах, стеллажи и мягкий свет" width="1200" height="800">
-        </div>
-        <div class="stack">
-          <p class="eyebrow">05 · магазин</p>
-          <h2>Один рейл в 2018-м, две точки сейчас</h2>
-          <p class="muted">Начинала с одного рейла в Призме: сорок моделей, договор с ателье на подгонку и одна примерочная.
-            Сейчас в двух залах тринадцать моделей. За количеством не гоняюсь: держу только то, что могу померить на себе,
-            скидок по сезону не устраиваю.</p>
-          <div class="note-card">
-            <p><strong>Зачем это нужно:</strong> если вещь села по фигуре, через сезон вы возьмёте тот же размер и цвет
-              без примерки. Модели отбираю сама, ткань у поставщика не меняю. Иногда хочется взять полотно подешевле,
-              но потом я же первая это и расхлёбываю.</p>
-            <p class="small muted">Состав, плотность ткани и уход указаны в строке каждой модели.</p>
+      <section class="collection">
+        <div class="section-head">
+          <div>
+            <p class="overline">Выбор мастерской / 01—04</p>
+            <h2>ОСНОВА ВАШЕГО ДНЯ</h2>
+            <p>Начните с любимого — и найдите что-то своё.</p>
           </div>
-          <div class="row">
-            <a class="btn" href="catalog.html">Открыть каталог</a>
-            <a class="btn btn--ghost" href="index.html#contacts">Как нас найти</a>
-          </div>
+          <a href="catalog.html">Вся коллекция ↗</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ получение ============================ -->
-  <section class="section section--ink" id="delivery">
-    <div class="container">
-      <div class="headline-rule">
-        <span class="headline-index">06</span>
-        <h2>Самовывоз или доставка</h2>
-        <span class="rule"></span>
-      </div>
-      <p class="lead" style="margin-bottom: var(--s6)">Забрать в точке через два часа или получить курьером на следующий день. Способ выбираете
-        при оформлении заказа, поменять его можно по телефону до отправки.</p>
-      <div class="grid grid--2">
-        <article class="panel reveal">
-          <span class="feature__icon" aria-hidden="true">
-            <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 22 4.5 12.5H9V3h6v9.5h4.5z"/><path d="M9.5 6.5h5"/></svg>
-          </span>
-          <h3>Самовывоз из точки</h3>
-          <p class="small">Собираю заказ за два часа и пишу, когда приходить. Примерочные на месте: не подошёл размер,
-            поменяю в зале без доплаты. Приезжайте к открытию или после семи, в середине дня в Призме людно.</p>
-          <ul class="summary small">
-            <li><span>Призма, пр-т Победителей, 121</span><strong>10:00–21:00</strong></li>
-            <li><span>МОМО, ул. Тимирязева, 123</span><strong>10:00–22:00</strong></li>
-          </ul>
-        </article>
-        <article class="panel reveal">
-          <span class="feature__icon" aria-hidden="true">
-            <svg class="icon icon--lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter"><path d="M2 5h11v11H2z"/><path d="M13 8.5h4.5L21 12.5v3.5h-8"/><circle cx="6.5" cy="18.5" r="1.9"/><circle cx="16.5" cy="18.5" r="1.9"/></svg>
-          </span>
-          <h3>Курьер по Минску</h3>
-          <p class="small">Один-два дня, чаще на второй. Платите только за то, что оставите у себя, остальное Толя
-            увезёт назад.</p>
-          <ul class="summary small">
-            <li><span>Доставка по Минску</span><strong>8 BYN</strong></li>
-            <li><span>Заказ от 200 BYN</span><strong>бесплатно</strong></li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ вопросы ============================ -->
-  <section class="section" id="faq">
-    <div class="container container--narrow">
-      <div class="headline-rule">
-        <span class="headline-index">07</span>
-        <h2>Частые вопросы</h2>
-        <span class="rule"></span>
-      </div>
-      <div class="faq" id="faq-list"></div>
-    </div>
-  </section>
-
-  <!-- ============================ контакты ============================ -->
-  <section class="section section--surface" id="contacts">
-    <div class="container">
-      <div class="split">
-        <div class="stack">
-          <p class="eyebrow">08 · контакты</p>
-          <h2>Приходите в зал или звоните мне</h2>
-          <p class="muted">Подскажу по конкретной модели, отложу вещь до вечера, соберу доставку. Трубку беру сама:
-            не отвечаю, значит примеряю с кем-то, наберу после. Если вещь не сядет, признаюсь сразу, а не буду
-            предлагать похожую подороже.</p>
-          <ul class="summary">
-            <li><span>Телефон</span><strong><a href="tel:+375-29-123-45-67">+375 (29) 123-45-67</a></strong></li>
-            <li><span>Почта</span><strong><a href="mailto:hello@example.by">hello@example.by</a></strong></li>
-            <li><span>Instagram</span><strong>@linia.minsk</strong></li>
-          </ul>
-          <p class="small muted">Обе точки открываются в 10:00, закрываются в 21:00 и 22:00. Заказы с сайта падают
-            круглосуточно, но разбираю я их с утра: до открытия зал не работает.</p>
+        <div class="products">
+          <a class="product" href="catalog.html"
+            ><div class="photo">
+              <img
+                src="assets/img/looks/p-dress-stella.svg"
+                alt="Эскиз силуэта: Платье-миди «Стелла»"
+                loading="lazy"
+              /><span class="number">01</span>
+            </div>
+            <h3>Платье-миди «Стелла»</h3>
+            <div class="row">
+              <p>XS / S / M / L</p>
+              <strong>189 BYN</strong>
+            </div></a
+          ><a class="product" href="catalog.html"
+            ><div class="photo">
+              <img
+                src="assets/img/looks/p-dress-marta.svg"
+                alt="Эскиз силуэта: Платье-рубашка «Марта»"
+                loading="lazy"
+              /><span class="number">02</span>
+            </div>
+            <h3>Платье-рубашка «Марта»</h3>
+            <div class="row">
+              <p>S / M / L / XL</p>
+              <strong>165 BYN</strong>
+            </div></a
+          ><a class="product" href="catalog.html"
+            ><div class="photo">
+              <img
+                src="assets/img/looks/p-suit-duga.svg"
+                alt="Эскиз силуэта: Костюм-двойка «Дуга»"
+                loading="lazy"
+              /><span class="number">03</span>
+            </div>
+            <h3>Костюм-двойка «Дуга»</h3>
+            <div class="row">
+              <p>XS / S / M / L / XL</p>
+              <strong>420 BYN</strong>
+            </div></a
+          ><a class="product" href="catalog.html"
+            ><div class="photo">
+              <img
+                src="assets/img/looks/p-suit-forma.svg"
+                alt="Эскиз силуэта: Жакет «Форма»"
+                loading="lazy"
+              /><span class="number">04</span>
+            </div>
+            <h3>Жакет «Форма»</h3>
+            <div class="row">
+              <p>XS / S / M / L</p>
+              <strong>240 BYN</strong>
+            </div></a
+          >
         </div>
-        <div class="panel reveal">
-          <h3>Наличие в точке</h3>
-          <p class="small muted">Перед поездкой откройте каталог с фильтром по точке: увидите только то, что висит в зале
-            сегодня. Если сомневаетесь, позвоните и спросите меня лично, я в это время стою у рейла и посмотрю руками.</p>
-          <div class="row">
-            <a class="btn btn--sm" href="catalog.html?point=prisma">Товары в Призме</a>
-            <a class="btn btn--ghost btn--sm" href="catalog.html?point=momo">Товары в МОМО</a>
+      </section>
+      <section class="edit-section">
+        <img
+          src="assets/img/atelier.jpg"
+          alt="Пример гардероба"
+          loading="lazy"
+        />
+        <div class="edit-copy">
+          <p class="overline">Персональная редакция</p>
+          <h2>МЕНЬШЕ ВЕЩЕЙ.<br />БОЛЬШЕ ОБРАЗОВ.</h2>
+          <p>
+            Соберите капсулу из настоящего каталога. Выберите размер, проверьте
+            наличие и сохраните комплект для следующей примерки.
+          </p>
+          <div class="steps">
+            <span><b>01</b>Форма</span><span><b>02</b>Сочетание</span
+            ><span><b>03</b>Ваш выбор</span>
           </div>
-          <div class="divider"></div>
-          <p class="small muted">Панель для сотрудников: заказы с сайта, статусы, выгрузка в CSV. Заказы я разбираю
-            утром, до открытия зала.</p>
-          <div class="row">
-            <a class="btn btn--ghost btn--sm" href="admin.html">Открыть панель</a>
-          </div>
+          <a class="button" href="studio.html"
+            >Собрать капсулу <span>↗</span></a
+          >
         </div>
-      </div>
-    </div>
-  </section>
-</main>
-<section class="marquee" aria-label="Коротко о правилах">
-  <div class="marquee__track"><span class="marquee__item">Поставка приходит по вторникам</span><span class="marquee__item">Размеры перемеряю сама</span><span class="marquee__item">Стиранное не меняю</span><span class="marquee__item">Больше четырёх вещей на дом не беру</span><span class="marquee__item">Две точки: «МОМО» и «Призма»</span><span class="marquee__item">Поставка приходит по вторникам</span><span class="marquee__item">Размеры перемеряю сама</span><span class="marquee__item">Стиранное не меняю</span><span class="marquee__item">Больше четырёх вещей на дом не беру</span><span class="marquee__item">Две точки: «МОМО» и «Призма»</span></div>
-</section>
-
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
+      </section>
+    </main>
+    <footer class="shop-footer">
       <div>
-        <a class="logo" href="index.html">
-          <span class="logo__mark" aria-hidden="true">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="miter" focusable="false">
-              <path d="M16 11.5 2 22.5h28L16 11.5Z"/>
-              <path d="M16 11.5V5h4.5"/>
-              <path d="M6 22.5V26h20v-3.5"/>
-            </svg>
-          </span>
-          <span class="logo__text">Линия<small>магазин женской одежды · Минск</small></span>
-        </a>
-        <p class="small muted" style="margin-top: var(--s4)">Тринадцать моделей, размеры XS–XL, Призма и МОМО.
-          Доставка по Минску 1–2 дня, самовывоз за два часа.</p>
+        <a class="brand" href="index.html">ЛИНИЯ</a
+        ><span>Гардероб без лишнего · Минск</span>
       </div>
       <div>
-        <h4>Каталог</h4>
-        <ul class="footer-points">
-          <li><a href="catalog.html">Все модели</a></li>
-          <li><a href="catalog.html?point=prisma">Что висит в Призме</a></li>
-          <li><a href="catalog.html?point=momo">Что висит в МОМО</a></li>
-          <li><button class="filter-reset" type="button" data-action="size-chart">Размерная сетка</button></li>
-        </ul>
+        <a href="catalog.html">Каталог</a
+        ><a href="studio.html">Собрать капсулу</a
+        ><a href="cart.html">Корзина и заказ</a>
       </div>
-      <div>
-        <h4>Покупка</h4>
-        <ul class="footer-points">
-          <li><a href="cart.html">Корзина и заказ</a></li>
-          <li><a href="index.html#delivery">Самовывоз и доставка</a></li>
-          <li><a href="index.html#faq">Частые вопросы</a></li>
-          <li><a href="admin.html">Панель владельца</a></li>
-        </ul>
+      <div class="legal">
+        Демонстрационный проект портфолио. Заказы сохраняются в браузере.<br /><a
+          href="../"
+          >Все проекты ↗</a
+        >
       </div>
-      <div>
-        <h4>Связь</h4>
-        <ul class="footer-points">
-          <li><a href="tel:+375-29-123-45-67">+375 (29) 123-45-67</a></li>
-          <li><a href="mailto:hello@example.by">hello@example.by</a></li>
-          <li>пр-т Победителей, 121<br>ул. Тимирязева, 123</li>
-          <li>@linia.minsk</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom between">
-      <span>© <span data-year>2026</span> «Линия», демонстрационный магазин. Бренд и контакты вымышлены</span>
-      <a href="admin.html">Панель владельца</a>
-    </div>
-  </div>
-</footer>
-
-<!-- ============================ размерная сетка ============================ -->
-<div class="modal" id="size-modal" role="dialog" aria-modal="true" aria-labelledby="size-modal-title" hidden>
-  <div class="modal__dialog">
-    <div class="modal__head">
-      <div>
-        <p class="eyebrow">Размеры</p>
-        <h2 id="size-modal-title">Размерная сетка «Линии»</h2>
-      </div>
-      <button class="icon-btn" type="button" data-action="close-modal" aria-label="Закрыть размерную сетку">
-        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M5 5 19 19"/><path d="M19 5 5 19"/></svg>
-      </button>
-    </div>
-    <div class="modal__body" id="size-modal-body">
-      <p class="small muted">Открываю сетку, секунду.</p>
-    </div>
-    <div class="modal__foot">
-      <a class="btn btn--block" href="catalog.html">Открыть каталог</a>
-    </div>
-  </div>
-</div>
-
-<script src="assets/data.js"></script>
-<script src="assets/app.js"></script>
-<script src="assets/motion.js"></script>
-</body>
+    </footer>
+  </body>
 </html>

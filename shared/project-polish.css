@@ -53,3 +53,95 @@ body {
     transition: none;
   }
 }
+
+body[data-shop="cakes"] {
+  --bg: #fcf5e9;
+  --fg: #49332a;
+  --accent: #a34d36;
+  --line: #e2d4bd;
+  --surface: #fffaf1;
+  --muted: #8a7565;
+  --choco: #49332a;
+}
+body[data-shop="flowers"] {
+  --bg: #f6f5ee;
+  --fg: #334031;
+  --muted: #788471;
+  --line: #dce0d3;
+  --olive: #596a4f;
+  --olive-deep: #46583b;
+  --font-display: Georgia, serif;
+}
+body[data-shop="jewelry"] {
+  --bg: #181c18;
+  --bg-2: #20261e;
+  --surface: #20261e;
+  --surface-2: #293023;
+  --fg: #e9e3d6;
+  --muted: #a0a694;
+  --line: #3c4437;
+  --brass: #c6aa77;
+  --accent: #c6aa77;
+}
+body[data-shop="fashion"] {
+  --bg: #f3f3ef;
+  --accent: #304bdf;
+  --accent-soft: #e6eafa;
+  --font-display: Manrope, system-ui;
+  --line: #cdd0c5;
+}
+.model-teaser {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  background: #f2e6d3;
+  border-radius: 20px;
+  overflow: hidden;
+  align-items: center;
+  color: #49332a;
+}
+.model-teaser img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+.model-teaser > span {
+  padding: 32px;
+  display: grid;
+  gap: 20px;
+}
+.model-teaser strong {
+  font:
+    25px/1.4 Comfortaa,
+    system-ui;
+}
+.model-teaser small {
+  font-size: 12px;
+}
+.model-teaser b {
+  font-size: 13px;
+  color: #a34d36;
+}
+@media (max-width: 650px) {
+  .model-teaser {
+    grid-template-columns: 1fr;
+  }
+  .model-teaser img {
+    height: 270px;
+  }
+  .model-teaser > span {
+    padding: 24px;
+  }
+  .model-teaser strong {
+    font-size: 22px;
+  }
+}
+
+.edit-design {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  font-size: 12px;
+  color: var(--accent, var(--olive));
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

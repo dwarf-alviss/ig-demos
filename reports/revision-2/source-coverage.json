@@ -1,0 +1,2217 @@
+{
+  "source": "C:/webcum/3d-models/готово",
+  "files": 242,
+  "groups": 90,
+  "selectable": 188,
+  "uncovered": [],
+  "distinctVariants": [],
+  "records": [
+    {
+      "source": "bk-berry-blackberry",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 80571828,
+          "geometrySHA256": "3963d1450911b26f673789996652e3fbe1e6231a0b5c294e8daf3457e7dd3a03"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 80571828,
+          "geometrySHA256": "3963d1450911b26f673789996652e3fbe1e6231a0b5c294e8daf3457e7dd3a03"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 80571828,
+          "geometrySHA256": "3963d1450911b26f673789996652e3fbe1e6231a0b5c294e8daf3457e7dd3a03"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-berry-blackberry"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-berry-blueberry",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 97110372,
+          "geometrySHA256": "52673917d09d10ecc09f81be8a162080b187bcc1d20ae8cfc45a97b9561a574d"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 97110372,
+          "geometrySHA256": "52673917d09d10ecc09f81be8a162080b187bcc1d20ae8cfc45a97b9561a574d"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 97110372,
+          "geometrySHA256": "52673917d09d10ecc09f81be8a162080b187bcc1d20ae8cfc45a97b9561a574d"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-berry-blueberry"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-berry-cherry",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 76772224,
+          "geometrySHA256": "4c7aa94cf71023e3f15d0cb72e679b5cbb33b656e758a788e8a9c256a94f6ff0"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 76772224,
+          "geometrySHA256": "4c7aa94cf71023e3f15d0cb72e679b5cbb33b656e758a788e8a9c256a94f6ff0"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 76772224,
+          "geometrySHA256": "4c7aa94cf71023e3f15d0cb72e679b5cbb33b656e758a788e8a9c256a94f6ff0"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-berry-cherry"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-berry-currant-red",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 65268420,
+          "geometrySHA256": "d4352765f6d2a464598f9249305e11927c5677904c077d7da698737e7e80b860"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 65268420,
+          "geometrySHA256": "d4352765f6d2a464598f9249305e11927c5677904c077d7da698737e7e80b860"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 65268420,
+          "geometrySHA256": "d4352765f6d2a464598f9249305e11927c5677904c077d7da698737e7e80b860"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-berry-currant-red"
+      ],
+      "note": "Geometry is a spiral candle, despite the currant filename and thumbnail."
+    },
+    {
+      "source": "bk-berry-raspberry",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 88397072,
+          "geometrySHA256": "86aa382583543f6fb17ba2b369363517c0e2b806b637e36305b3a22db4fe4bc8"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 88397072,
+          "geometrySHA256": "86aa382583543f6fb17ba2b369363517c0e2b806b637e36305b3a22db4fe4bc8"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 88397072,
+          "geometrySHA256": "86aa382583543f6fb17ba2b369363517c0e2b806b637e36305b3a22db4fe4bc8"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-berry-raspberry"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-berry-strawberry",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 85533156,
+          "geometrySHA256": "42d707c6ee3bf65830ba98e2e5012f82fcfaf9a3153b8f34f71b4c79f36dee2d"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 85533156,
+          "geometrySHA256": "42d707c6ee3bf65830ba98e2e5012f82fcfaf9a3153b8f34f71b4c79f36dee2d"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 85533156,
+          "geometrySHA256": "42d707c6ee3bf65830ba98e2e5012f82fcfaf9a3153b8f34f71b4c79f36dee2d"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-berry-strawberry"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-decor-caramel-spiral",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 81820508,
+          "geometrySHA256": "30f88fcddc1811fc1bfccb5e1c869728b4c713680a4f113bb0201db6d796bbc0"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 81820508,
+          "geometrySHA256": "30f88fcddc1811fc1bfccb5e1c869728b4c713680a4f113bb0201db6d796bbc0"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 81820508,
+          "geometrySHA256": "30f88fcddc1811fc1bfccb5e1c869728b4c713680a4f113bb0201db6d796bbc0"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-decor-caramel-spiral"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-decor-chocolate-shard",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 69950700,
+          "geometrySHA256": "3cdfb1567ae9a868cfc07150bbe30fd80926e297a6472213785899770f2533d0"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 69950700,
+          "geometrySHA256": "3cdfb1567ae9a868cfc07150bbe30fd80926e297a6472213785899770f2533d0"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 69950700,
+          "geometrySHA256": "3cdfb1567ae9a868cfc07150bbe30fd80926e297a6472213785899770f2533d0"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-decor-chocolate-shard"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-decor-cream-rosette",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 74340168,
+          "geometrySHA256": "b78e0d3857c9c16704228c08ffa117b6766cb6d78458ccb94a6adf029ea79ffd"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 74340168,
+          "geometrySHA256": "b78e0d3857c9c16704228c08ffa117b6766cb6d78458ccb94a6adf029ea79ffd"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 74340168,
+          "geometrySHA256": "b78e0d3857c9c16704228c08ffa117b6766cb6d78458ccb94a6adf029ea79ffd"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-decor-cream-rosette"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-decor-crumble-cluster",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 80100756,
+          "geometrySHA256": "d0d2750b5e72b003007197e719de8c3f00df467bd02a1001c06185200f8a4b9c"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 80100756,
+          "geometrySHA256": "d0d2750b5e72b003007197e719de8c3f00df467bd02a1001c06185200f8a4b9c"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 80100756,
+          "geometrySHA256": "d0d2750b5e72b003007197e719de8c3f00df467bd02a1001c06185200f8a4b9c"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-decor-crumble-cluster"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-decor-glaze-drip-ring",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 68274076,
+          "geometrySHA256": "e90ddf0a0137483c1efccb6017927e65c4a7f748d3dcc9847086201b5c0c01de"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 68274076,
+          "geometrySHA256": "e90ddf0a0137483c1efccb6017927e65c4a7f748d3dcc9847086201b5c0c01de"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 68274076,
+          "geometrySHA256": "e90ddf0a0137483c1efccb6017927e65c4a7f748d3dcc9847086201b5c0c01de"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-decor-glaze-drip-ring"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-decor-gold-flake",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 70687896,
+          "geometrySHA256": "2d06a4ce17054c68efd4485ac0a5f732aa6c0bc9ee730b188c900a5c04653b0c"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 70687896,
+          "geometrySHA256": "2d06a4ce17054c68efd4485ac0a5f732aa6c0bc9ee730b188c900a5c04653b0c"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 70687896,
+          "geometrySHA256": "2d06a4ce17054c68efd4485ac0a5f732aa6c0bc9ee730b188c900a5c04653b0c"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-decor-gold-flake"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-decor-macaron",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 94548464,
+          "geometrySHA256": "afcbf66c204de75323747a63e833f2a78cbb680fadcdea8b85126e579dc61d43"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 94548464,
+          "geometrySHA256": "afcbf66c204de75323747a63e833f2a78cbb680fadcdea8b85126e579dc61d43"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 94548464,
+          "geometrySHA256": "afcbf66c204de75323747a63e833f2a78cbb680fadcdea8b85126e579dc61d43"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-decor-macaron"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-decor-meringue-kiss",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 70084196,
+          "geometrySHA256": "a4e6e9ed69547101478df5e8c645452a58dd87e92beee5884c98f5a7ff23d322"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 70084196,
+          "geometrySHA256": "a4e6e9ed69547101478df5e8c645452a58dd87e92beee5884c98f5a7ff23d322"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 70084196,
+          "geometrySHA256": "a4e6e9ed69547101478df5e8c645452a58dd87e92beee5884c98f5a7ff23d322"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-decor-meringue-kiss"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-decor-shell-border",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 66781720,
+          "geometrySHA256": "ecab8b5904c9b5e355c5db6103c08fe277fe557e26799ce294ee3f61e62ea8d3"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 66781720,
+          "geometrySHA256": "ecab8b5904c9b5e355c5db6103c08fe277fe557e26799ce294ee3f61e62ea8d3"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 66781720,
+          "geometrySHA256": "ecab8b5904c9b5e355c5db6103c08fe277fe557e26799ce294ee3f61e62ea8d3"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-decor-shell-border"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-decor-sprinkle-ball",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 65182800,
+          "geometrySHA256": "96b39387894221b4b667916001f905f3f8e6eb95399742f4bcfc38e607f1b9ea"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 65182800,
+          "geometrySHA256": "96b39387894221b4b667916001f905f3f8e6eb95399742f4bcfc38e607f1b9ea"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 65182800,
+          "geometrySHA256": "96b39387894221b4b667916001f905f3f8e6eb95399742f4bcfc38e607f1b9ea"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-decor-sprinkle-ball"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-decor-sprinkle-star",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 77168576,
+          "geometrySHA256": "6a4b96004369f6e8d4631bdedfb3ba26ea1717b07c2515cadd2fc8591f2133d2"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 77168576,
+          "geometrySHA256": "6a4b96004369f6e8d4631bdedfb3ba26ea1717b07c2515cadd2fc8591f2133d2"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 77168576,
+          "geometrySHA256": "6a4b96004369f6e8d4631bdedfb3ba26ea1717b07c2515cadd2fc8591f2133d2"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-decor-sprinkle-star"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-decor-truffle-ball",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 96347900,
+          "geometrySHA256": "bf326d3e6861d98b2aaf2ead05646cb292d26a12d81a3b3bb5c7be1f7c7497d9"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 96347900,
+          "geometrySHA256": "bf326d3e6861d98b2aaf2ead05646cb292d26a12d81a3b3bb5c7be1f7c7497d9"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 96347900,
+          "geometrySHA256": "bf326d3e6861d98b2aaf2ead05646cb292d26a12d81a3b3bb5c7be1f7c7497d9"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-decor-truffle-ball"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-decor-wafer-roll",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 86156924,
+          "geometrySHA256": "6b9229e098ec7edb9ae834b48b9a2b1bb40a204f7601e26610eaaadaa8b85d3f"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 86156924,
+          "geometrySHA256": "6b9229e098ec7edb9ae834b48b9a2b1bb40a204f7601e26610eaaadaa8b85d3f"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 86156924,
+          "geometrySHA256": "6b9229e098ec7edb9ae834b48b9a2b1bb40a204f7601e26610eaaadaa8b85d3f"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-decor-wafer-roll"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-pastry-brownie-bite",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 102164260,
+          "geometrySHA256": "0d5d4415c8504afcb0355092573744d7a758533517675f302d34110ddc754106"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 102164260,
+          "geometrySHA256": "0d5d4415c8504afcb0355092573744d7a758533517675f302d34110ddc754106"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 102164260,
+          "geometrySHA256": "0d5d4415c8504afcb0355092573744d7a758533517675f302d34110ddc754106"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-pastry-brownie-bite"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-pastry-cookie-heart",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 72646292,
+          "geometrySHA256": "6f317617e70741357c8cebfb094e501d7a0b16b050663730a78f707d727386e2"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 72646292,
+          "geometrySHA256": "6f317617e70741357c8cebfb094e501d7a0b16b050663730a78f707d727386e2"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 72646292,
+          "geometrySHA256": "6f317617e70741357c8cebfb094e501d7a0b16b050663730a78f707d727386e2"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-pastry-cookie-heart"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-pastry-cookie-round",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 73746692,
+          "geometrySHA256": "6870b1e058b1f8a6321737c4e3c1f70fc1149e21c594272bc1e40c3ee2ebe849"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 73746692,
+          "geometrySHA256": "6870b1e058b1f8a6321737c4e3c1f70fc1149e21c594272bc1e40c3ee2ebe849"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 73746692,
+          "geometrySHA256": "6870b1e058b1f8a6321737c4e3c1f70fc1149e21c594272bc1e40c3ee2ebe849"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-pastry-cookie-round"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-pastry-cupcake",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 79173980,
+          "geometrySHA256": "e154998665ed98aee2a12f1d6e693f0ecdc17e66f6e69dfa11a03a867bcdc322"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 79173980,
+          "geometrySHA256": "e154998665ed98aee2a12f1d6e693f0ecdc17e66f6e69dfa11a03a867bcdc322"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 79173980,
+          "geometrySHA256": "e154998665ed98aee2a12f1d6e693f0ecdc17e66f6e69dfa11a03a867bcdc322"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-pastry-cupcake"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-pastry-donut",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 71145704,
+          "geometrySHA256": "3eabb346fd43f20ea215c3237c3955e6d45a4b8191d1501ff0a35c7068f51e79"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 71145704,
+          "geometrySHA256": "3eabb346fd43f20ea215c3237c3955e6d45a4b8191d1501ff0a35c7068f51e79"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 71145704,
+          "geometrySHA256": "3eabb346fd43f20ea215c3237c3955e6d45a4b8191d1501ff0a35c7068f51e79"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-pastry-donut"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-pastry-eclair",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 78890196,
+          "geometrySHA256": "8a9e3ed9cc7524e4d3f420cdeac9467943a0dc41f4de70a66558ea2ae8999a63"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 78890196,
+          "geometrySHA256": "8a9e3ed9cc7524e4d3f420cdeac9467943a0dc41f4de70a66558ea2ae8999a63"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 78890196,
+          "geometrySHA256": "8a9e3ed9cc7524e4d3f420cdeac9467943a0dc41f4de70a66558ea2ae8999a63"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-pastry-eclair"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-pastry-profiterole",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 78585328,
+          "geometrySHA256": "198adfade4a4e1c849e694408e6b1224dfd10a2c1cd69f8426cb912ce7385404"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 78585328,
+          "geometrySHA256": "198adfade4a4e1c849e694408e6b1224dfd10a2c1cd69f8426cb912ce7385404"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 78585328,
+          "geometrySHA256": "198adfade4a4e1c849e694408e6b1224dfd10a2c1cd69f8426cb912ce7385404"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-pastry-profiterole"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-struct-tier-hex",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 63299092,
+          "geometrySHA256": "8743e240fba568ed312ded061b65b2177c8a06b218e7a731a5321a715142602f"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 63299092,
+          "geometrySHA256": "8743e240fba568ed312ded061b65b2177c8a06b218e7a731a5321a715142602f"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 63299092,
+          "geometrySHA256": "8743e240fba568ed312ded061b65b2177c8a06b218e7a731a5321a715142602f"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-struct-tier-hex"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-struct-tier-round",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 60709332,
+          "geometrySHA256": "db2ed2246865ebc57ce937a78d85656af4fbf9845095d9cddc6c2b919a22364b"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 60709332,
+          "geometrySHA256": "db2ed2246865ebc57ce937a78d85656af4fbf9845095d9cddc6c2b919a22364b"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 60709332,
+          "geometrySHA256": "db2ed2246865ebc57ce937a78d85656af4fbf9845095d9cddc6c2b919a22364b"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-struct-tier-round"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-topper-banner-blank",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 66119924,
+          "geometrySHA256": "89bbe492579d04dda803afcd62da98a421139119b03099087ad9d29ea4a74b1b"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 66119924,
+          "geometrySHA256": "89bbe492579d04dda803afcd62da98a421139119b03099087ad9d29ea4a74b1b"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 66119924,
+          "geometrySHA256": "89bbe492579d04dda803afcd62da98a421139119b03099087ad9d29ea4a74b1b"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-topper-banner-blank"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-topper-candle-spiral",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 0,
+          "empty": true
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 0,
+          "empty": true
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 0,
+          "empty": true
+        }
+      ],
+      "uniqueGeometrySets": 0,
+      "selectable": [],
+      "note": "All source files are empty."
+    },
+    {
+      "source": "bk-topper-crown",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 64321344,
+          "geometrySHA256": "e448c5163359cce27c3d20e9090c48426859a243e77197467e808a8ee9ecf9ee"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 64321344,
+          "geometrySHA256": "e448c5163359cce27c3d20e9090c48426859a243e77197467e808a8ee9ecf9ee"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 64321344,
+          "geometrySHA256": "e448c5163359cce27c3d20e9090c48426859a243e77197467e808a8ee9ecf9ee"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-topper-crown"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-topper-heart",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 64624668,
+          "geometrySHA256": "5d1449952a3da1161227af7f752251fcd58cb45e86f77fd9dba31262930056dc"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 64624668,
+          "geometrySHA256": "5d1449952a3da1161227af7f752251fcd58cb45e86f77fd9dba31262930056dc"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 64624668,
+          "geometrySHA256": "5d1449952a3da1161227af7f752251fcd58cb45e86f77fd9dba31262930056dc"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-topper-heart"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-topper-horn",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 84358876,
+          "geometrySHA256": "c3f131a16b86bf257eef9c05d9e74a6e029ee796a4d1e1c78da333cf2c7b669d"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 84358876,
+          "geometrySHA256": "c3f131a16b86bf257eef9c05d9e74a6e029ee796a4d1e1c78da333cf2c7b669d"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 84358876,
+          "geometrySHA256": "c3f131a16b86bf257eef9c05d9e74a6e029ee796a4d1e1c78da333cf2c7b669d"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-topper-horn"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "bk-topper-star",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 63098928,
+          "geometrySHA256": "a1bed17350c3f77c494e1f77ae8f9f0c2aa7de95854338031c9b3e95537525a8"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 63098928,
+          "geometrySHA256": "a1bed17350c3f77c494e1f77ae8f9f0c2aa7de95854338031c9b3e95537525a8"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 63098928,
+          "geometrySHA256": "a1bed17350c3f77c494e1f77ae8f9f0c2aa7de95854338031c9b3e95537525a8"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "bk-topper-star"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-fill-gypsophila",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 79356860,
+          "geometrySHA256": "eff6362441e7917ac1b0b399bbe33f141dce4560df13763d472da4fdb74fea12"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 79356860,
+          "geometrySHA256": "eff6362441e7917ac1b0b399bbe33f141dce4560df13763d472da4fdb74fea12"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 79356860,
+          "geometrySHA256": "eff6362441e7917ac1b0b399bbe33f141dce4560df13763d472da4fdb74fea12"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-fill-gypsophila"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-fill-solidago",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 76084528,
+          "geometrySHA256": "ed68cd1ccef9a72e87ce483cf6132052a37c8baa5c642ebb1b5023be274b8f7e"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 76084528,
+          "geometrySHA256": "ed68cd1ccef9a72e87ce483cf6132052a37c8baa5c642ebb1b5023be274b8f7e"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 76084528,
+          "geometrySHA256": "ed68cd1ccef9a72e87ce483cf6132052a37c8baa5c642ebb1b5023be274b8f7e"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-fill-solidago"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-flower-anemone",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 83058288,
+          "geometrySHA256": "0d08ab292ae446a8aaed807cea29d9568b1ea34473ada3b3785b022cbd0ce774"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 83058288,
+          "geometrySHA256": "0d08ab292ae446a8aaed807cea29d9568b1ea34473ada3b3785b022cbd0ce774"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 83058288,
+          "geometrySHA256": "0d08ab292ae446a8aaed807cea29d9568b1ea34473ada3b3785b022cbd0ce774"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-flower-anemone"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-flower-chamomile",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 87389004,
+          "geometrySHA256": "73abbf5299ac4c11e340e65cd6fb6c258fb13727427a85bad8c9be1af9aa8ed7"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 87389004,
+          "geometrySHA256": "73abbf5299ac4c11e340e65cd6fb6c258fb13727427a85bad8c9be1af9aa8ed7"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 87389004,
+          "geometrySHA256": "73abbf5299ac4c11e340e65cd6fb6c258fb13727427a85bad8c9be1af9aa8ed7"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-flower-chamomile"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-flower-chrysanthemum-spray",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 79434624,
+          "geometrySHA256": "d74dd4ab5267cbedc0d815963c30abf422cfcf9378c3eb174c3c0de02448c472"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 79434624,
+          "geometrySHA256": "d74dd4ab5267cbedc0d815963c30abf422cfcf9378c3eb174c3c0de02448c472"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 79434624,
+          "geometrySHA256": "d74dd4ab5267cbedc0d815963c30abf422cfcf9378c3eb174c3c0de02448c472"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-flower-chrysanthemum-spray"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-flower-eustoma",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 70820352,
+          "geometrySHA256": "e267b686d3313215ab826353bcaf63147d0b2ab216fae1f3d1eb6969ab17fa79"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 70820352,
+          "geometrySHA256": "e267b686d3313215ab826353bcaf63147d0b2ab216fae1f3d1eb6969ab17fa79"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 70820352,
+          "geometrySHA256": "e267b686d3313215ab826353bcaf63147d0b2ab216fae1f3d1eb6969ab17fa79"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-flower-eustoma"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-flower-gerbera",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 79054936,
+          "geometrySHA256": "a1be28bafddf7e01a0d457dc2f7da7a115e2078f308a516037f6ccaebc527524"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 79054936,
+          "geometrySHA256": "a1be28bafddf7e01a0d457dc2f7da7a115e2078f308a516037f6ccaebc527524"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 79054936,
+          "geometrySHA256": "a1be28bafddf7e01a0d457dc2f7da7a115e2078f308a516037f6ccaebc527524"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-flower-gerbera"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-flower-lily-oriental",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 79129636,
+          "geometrySHA256": "e0514638e61d701aa84081e1381b38ccbdb46a55b6a1a875cdec0d27a5c50102"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 79129636,
+          "geometrySHA256": "e0514638e61d701aa84081e1381b38ccbdb46a55b6a1a875cdec0d27a5c50102"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 79129636,
+          "geometrySHA256": "e0514638e61d701aa84081e1381b38ccbdb46a55b6a1a875cdec0d27a5c50102"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-flower-lily-oriental"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-flower-peony-open",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 73856396,
+          "geometrySHA256": "b9b104fe570822a7748d7c8e5388a2a6976582fc7fb44afd61fb8fec57f909fc"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 73856396,
+          "geometrySHA256": "b9b104fe570822a7748d7c8e5388a2a6976582fc7fb44afd61fb8fec57f909fc"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 73856396,
+          "geometrySHA256": "b9b104fe570822a7748d7c8e5388a2a6976582fc7fb44afd61fb8fec57f909fc"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-flower-peony-open"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-flower-ranunculus",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 76588740,
+          "geometrySHA256": "e37e4c3dd47f21f72d5f0349035b35c1dfe8b9987dc34103dfe61c93d4e75f4e"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 76588740,
+          "geometrySHA256": "e37e4c3dd47f21f72d5f0349035b35c1dfe8b9987dc34103dfe61c93d4e75f4e"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 76588740,
+          "geometrySHA256": "e37e4c3dd47f21f72d5f0349035b35c1dfe8b9987dc34103dfe61c93d4e75f4e"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-flower-ranunculus"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-flower-rose-garden",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 72606372,
+          "geometrySHA256": "8d2d1cbcace61fe0a1c23d2ba690532206ee7e8a6d001a68eec5cd7d1b186c0b"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 72606372,
+          "geometrySHA256": "8d2d1cbcace61fe0a1c23d2ba690532206ee7e8a6d001a68eec5cd7d1b186c0b"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 72606372,
+          "geometrySHA256": "8d2d1cbcace61fe0a1c23d2ba690532206ee7e8a6d001a68eec5cd7d1b186c0b"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-flower-rose-garden"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-flower-tulip",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 85664676,
+          "geometrySHA256": "a1ef1bc2b9397d2ffc9b946a18cf02b4bec62ebdd55ad8bb4ebdd315e30cc091"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 85664676,
+          "geometrySHA256": "a1ef1bc2b9397d2ffc9b946a18cf02b4bec62ebdd55ad8bb4ebdd315e30cc091"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 85664676,
+          "geometrySHA256": "a1ef1bc2b9397d2ffc9b946a18cf02b4bec62ebdd55ad8bb4ebdd315e30cc091"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-flower-tulip"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-green-eucalyptus-baby-blue",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 65136760,
+          "geometrySHA256": "b13d7135b3a60133c4957138ab3b009d70a0275903a50877f4c3e9f63f2b1a00"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 65136760,
+          "geometrySHA256": "b13d7135b3a60133c4957138ab3b009d70a0275903a50877f4c3e9f63f2b1a00"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 65136760,
+          "geometrySHA256": "b13d7135b3a60133c4957138ab3b009d70a0275903a50877f4c3e9f63f2b1a00"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-green-eucalyptus-baby-blue"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-green-eucalyptus-silver",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 67408340,
+          "geometrySHA256": "d2ea39001763f54a691ed4659957324c1a2d3edbb0e4594bd96ea82f822cab7b"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 67408340,
+          "geometrySHA256": "d2ea39001763f54a691ed4659957324c1a2d3edbb0e4594bd96ea82f822cab7b"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 67408340,
+          "geometrySHA256": "d2ea39001763f54a691ed4659957324c1a2d3edbb0e4594bd96ea82f822cab7b"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-green-eucalyptus-silver"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-green-fern",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 74361620,
+          "geometrySHA256": "41d3b4ebe10d760502dd7e7b7d723dcc6239984887f4b697163568f34a198564"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 74361620,
+          "geometrySHA256": "41d3b4ebe10d760502dd7e7b7d723dcc6239984887f4b697163568f34a198564"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 74361620,
+          "geometrySHA256": "41d3b4ebe10d760502dd7e7b7d723dcc6239984887f4b697163568f34a198564"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-green-fern"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-green-lagurus",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 56286244,
+          "geometrySHA256": "08dd6dd9ad37cc98e1df2093bbbb2f5e98342a8ce3492e8a5f27930c92efe271"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 56286244,
+          "geometrySHA256": "08dd6dd9ad37cc98e1df2093bbbb2f5e98342a8ce3492e8a5f27930c92efe271"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 56286244,
+          "geometrySHA256": "08dd6dd9ad37cc98e1df2093bbbb2f5e98342a8ce3492e8a5f27930c92efe271"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-green-lagurus"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-green-olive-branch",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 74013712,
+          "geometrySHA256": "e078ae7fd4ad691c15a0161622753ebe4eff43a97b6020dc81722435769953dd"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 74013712,
+          "geometrySHA256": "e078ae7fd4ad691c15a0161622753ebe4eff43a97b6020dc81722435769953dd"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 74013712,
+          "geometrySHA256": "e078ae7fd4ad691c15a0161622753ebe4eff43a97b6020dc81722435769953dd"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-green-olive-branch"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-green-ruscus",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 62939340,
+          "geometrySHA256": "77de1e9766751bdb8ddfc2501d7c5d3fc81f614b97a99306c6ba0b02fd9adc89"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 62939340,
+          "geometrySHA256": "77de1e9766751bdb8ddfc2501d7c5d3fc81f614b97a99306c6ba0b02fd9adc89"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 62939340,
+          "geometrySHA256": "77de1e9766751bdb8ddfc2501d7c5d3fc81f614b97a99306c6ba0b02fd9adc89"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-green-ruscus"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-ribbon-jute-twine",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 89119448,
+          "geometrySHA256": "de3369e322cef3d303bd4461300a913dc53bffdc0cd06f7e79fcdaf3a4a5af39"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 89119448,
+          "geometrySHA256": "de3369e322cef3d303bd4461300a913dc53bffdc0cd06f7e79fcdaf3a4a5af39"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 89119448,
+          "geometrySHA256": "de3369e322cef3d303bd4461300a913dc53bffdc0cd06f7e79fcdaf3a4a5af39"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-ribbon-jute-twine"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-ribbon-rep-bow",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 86816352,
+          "geometrySHA256": "1ebbdbca3872622412318cc81a01a473bea61aaff22a0e31c571056b4a913913"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 86816352,
+          "geometrySHA256": "1ebbdbca3872622412318cc81a01a473bea61aaff22a0e31c571056b4a913913"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 86816352,
+          "geometrySHA256": "1ebbdbca3872622412318cc81a01a473bea61aaff22a0e31c571056b4a913913"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-ribbon-rep-bow"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-ribbon-satin-bow",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 75598576,
+          "geometrySHA256": "24ce3b2d8de66a938d4b884106392faddef1cd1f0a10ff08e0a1cfbab50b8348"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 75598576,
+          "geometrySHA256": "24ce3b2d8de66a938d4b884106392faddef1cd1f0a10ff08e0a1cfbab50b8348"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 75598576,
+          "geometrySHA256": "24ce3b2d8de66a938d4b884106392faddef1cd1f0a10ff08e0a1cfbab50b8348"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-ribbon-satin-bow"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-vase-bottle-ceramic",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 62081260,
+          "geometrySHA256": "a58ea1010e7ae867a701d1d8c5e6ff35662d4c0a6621ba4811f0fca7c8458a93"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 62081260,
+          "geometrySHA256": "a58ea1010e7ae867a701d1d8c5e6ff35662d4c0a6621ba4811f0fca7c8458a93"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 62081260,
+          "geometrySHA256": "a58ea1010e7ae867a701d1d8c5e6ff35662d4c0a6621ba4811f0fca7c8458a93"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-vase-bottle-ceramic"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-vase-glass-cylinder",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 66931884,
+          "geometrySHA256": "ccd8b8bccd071944558620d8996435e9e9ba41c454991858068e7db6a19ffb87"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 66931884,
+          "geometrySHA256": "ccd8b8bccd071944558620d8996435e9e9ba41c454991858068e7db6a19ffb87"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 66931884,
+          "geometrySHA256": "ccd8b8bccd071944558620d8996435e9e9ba41c454991858068e7db6a19ffb87"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-vase-glass-cylinder"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-vase-kraft-bucket",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 67993468,
+          "geometrySHA256": "875b6032d15e05d4488dac5d3bd9d075123a52eabbe05a8417415b38cbd27050"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 67993468,
+          "geometrySHA256": "875b6032d15e05d4488dac5d3bd9d075123a52eabbe05a8417415b38cbd27050"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 67993468,
+          "geometrySHA256": "875b6032d15e05d4488dac5d3bd9d075123a52eabbe05a8417415b38cbd27050"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-vase-kraft-bucket"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-wrap-basket-rattan",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 94131420,
+          "geometrySHA256": "46768eefb02588ed841d2a8c24b1e87f550bddf48170ccd2b87cba8bbe30d325"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 94131420,
+          "geometrySHA256": "46768eefb02588ed841d2a8c24b1e87f550bddf48170ccd2b87cba8bbe30d325"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-wrap-basket-rattan"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-wrap-hatbox-round",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 63779552,
+          "geometrySHA256": "f26e08130207f7796643b5623c13830adf01612c6617f85a91b1748df3cf4860"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 63779552,
+          "geometrySHA256": "f26e08130207f7796643b5623c13830adf01612c6617f85a91b1748df3cf4860"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 63779552,
+          "geometrySHA256": "f26e08130207f7796643b5623c13830adf01612c6617f85a91b1748df3cf4860"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-wrap-hatbox-round"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-wrap-kraft-cone",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 66265080,
+          "geometrySHA256": "fbbd1df8721ae2f9449fec7b097e79281fdb3292842b0c364bc271a84500a9c4"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 66265080,
+          "geometrySHA256": "fbbd1df8721ae2f9449fec7b097e79281fdb3292842b0c364bc271a84500a9c4"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 66265080,
+          "geometrySHA256": "fbbd1df8721ae2f9449fec7b097e79281fdb3292842b0c364bc271a84500a9c4"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-wrap-kraft-cone"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "fl-wrap-matte-sleeve",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 59751300,
+          "geometrySHA256": "5fc4a19144d00ac67db229e71b048d92f446036a1e578d63e214c5dbbe008ab4"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 59751300,
+          "geometrySHA256": "5fc4a19144d00ac67db229e71b048d92f446036a1e578d63e214c5dbbe008ab4"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 59751300,
+          "geometrySHA256": "5fc4a19144d00ac67db229e71b048d92f446036a1e578d63e214c5dbbe008ab4"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "fl-wrap-matte-sleeve"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-base-band-plain",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 60614716,
+          "geometrySHA256": "3beb20f10a43efb7dd91203b8bcd9d0b3f728762612d65b28f809b0459f1ebc3"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 60614716,
+          "geometrySHA256": "3beb20f10a43efb7dd91203b8bcd9d0b3f728762612d65b28f809b0459f1ebc3"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-base-band-plain"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-base-chain-link-cable",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 75643972,
+          "geometrySHA256": "28f6869d896627979967dd69b4c60cd9bd8dfcaa740f1d803dbd35b20847e61e"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 75643972,
+          "geometrySHA256": "28f6869d896627979967dd69b4c60cd9bd8dfcaa740f1d803dbd35b20847e61e"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-base-chain-link-cable"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-base-cocktail",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 70642272,
+          "geometrySHA256": "8091d8750649b367185b8dc6c801120a96e920a664de4b7661977d0a8b5999d1"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 70642272,
+          "geometrySHA256": "8091d8750649b367185b8dc6c801120a96e920a664de4b7661977d0a8b5999d1"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-base-cocktail"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-base-cuff-bracelet",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 60136164,
+          "geometrySHA256": "1d481201fbe3a209e60827a8536a4590da89f81b47ad8a938244a22e98712032"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 60136164,
+          "geometrySHA256": "1d481201fbe3a209e60827a8536a4590da89f81b47ad8a938244a22e98712032"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-base-cuff-bracelet"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-base-drop-earring",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 66300324,
+          "geometrySHA256": "a0f730d05d15eb86129c83f57c701a490508917ea7c95b31b3f9433e869ec1a4"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 66300324,
+          "geometrySHA256": "a0f730d05d15eb86129c83f57c701a490508917ea7c95b31b3f9433e869ec1a4"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-base-drop-earring"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-base-ear-cuff",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 60372072,
+          "geometrySHA256": "83a85865805ff8c99f2dae2a8d358313f313b5ff1de52affe1eef86339b676f2"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 60372072,
+          "geometrySHA256": "83a85865805ff8c99f2dae2a8d358313f313b5ff1de52affe1eef86339b676f2"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-base-ear-cuff"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-base-pendant",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 63444836,
+          "geometrySHA256": "5a00a2be630842a02bece472b0892384cc9e3588007c072628baf6b4c57188fb"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 63444836,
+          "geometrySHA256": "5a00a2be630842a02bece472b0892384cc9e3588007c072628baf6b4c57188fb"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-base-pendant"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-base-signet",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 57264076,
+          "geometrySHA256": "20289884091bc0ec3c81d3297a3722ed1e922601bbd05864d81f4dd4601a8333"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 57264076,
+          "geometrySHA256": "20289884091bc0ec3c81d3297a3722ed1e922601bbd05864d81f4dd4601a8333"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-base-signet"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-base-solitaire",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 63732180,
+          "geometrySHA256": "4ac8ef953ab8f9e306fa127d216f1325e22335ee8768e4c9c00ba8e55c0aa1a7"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 63732180,
+          "geometrySHA256": "4ac8ef953ab8f9e306fa127d216f1325e22335ee8768e4c9c00ba8e55c0aa1a7"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-base-solitaire"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-base-stacking-thin",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 61824540,
+          "geometrySHA256": "b40349295478e9b2e86ed9b5c1c1ef5e0951679336c4b8c27ef01bedb2cdcc1a"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 61824540,
+          "geometrySHA256": "b40349295478e9b2e86ed9b5c1c1ef5e0951679336c4b8c27ef01bedb2cdcc1a"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-base-stacking-thin"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-base-stud-earring",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 66000616,
+          "geometrySHA256": "1be4749872cbbc98468c9f5a1ca06230a316e70e747cb13e4c1e5d1071715b0b"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 66000616,
+          "geometrySHA256": "1be4749872cbbc98468c9f5a1ca06230a316e70e747cb13e4c1e5d1071715b0b"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-base-stud-earring"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-part-bail-hinged",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 67825512,
+          "geometrySHA256": "c4f2db1941978d57d41ddafbaf7d14c330c4f8e808da4874b9221cef8351a47c"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 67825512,
+          "geometrySHA256": "c4f2db1941978d57d41ddafbaf7d14c330c4f8e808da4874b9221cef8351a47c"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-part-bail-hinged"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-part-charm-tag",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 84821360,
+          "geometrySHA256": "dfc864dacdf83867c9e73ad3dc1ef141d4035ea7a77c280f3ff09ed071732508"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 84821360,
+          "geometrySHA256": "dfc864dacdf83867c9e73ad3dc1ef141d4035ea7a77c280f3ff09ed071732508"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-part-charm-tag"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-part-clasp-lobster",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 64167836,
+          "geometrySHA256": "b080fc0901045915e5d5518fb101fa5e91e3db94d763e8dbc3c6c34890154204"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 64167836,
+          "geometrySHA256": "b080fc0901045915e5d5518fb101fa5e91e3db94d763e8dbc3c6c34890154204"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-part-clasp-lobster"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-part-ear-wire-french",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 63848100,
+          "geometrySHA256": "f861bc71ca817d88047d23448b48a7ce168c9c60526c2510801f2f23c1a4a56c"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 63848100,
+          "geometrySHA256": "f861bc71ca817d88047d23448b48a7ce168c9c60526c2510801f2f23c1a4a56c"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-part-ear-wire-french"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-part-jump-ring",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 73267056,
+          "geometrySHA256": "fec5e3d59b2f32f5e12858c48b3b6470e5ba304b3d0925e03a1dcf2c5c009007"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 73267056,
+          "geometrySHA256": "fec5e3d59b2f32f5e12858c48b3b6470e5ba304b3d0925e03a1dcf2c5c009007"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-part-jump-ring"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-set-baguette",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 65536472,
+          "geometrySHA256": "34d58aa7d2456a5728bb37494f32dbbb462c081dfd921e0675d18036c58b2c80"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 65536472,
+          "geometrySHA256": "34d58aa7d2456a5728bb37494f32dbbb462c081dfd921e0675d18036c58b2c80"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-set-baguette"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-set-bezel",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 61043200,
+          "geometrySHA256": "15f6b5ae3d92bd308d2723810832a3dc88185b89bbcdc9d3d795797ecd2b7602"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 61043200,
+          "geometrySHA256": "15f6b5ae3d92bd308d2723810832a3dc88185b89bbcdc9d3d795797ecd2b7602"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-set-bezel"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-set-halo",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 68750360,
+          "geometrySHA256": "d542c3dc14c72b9f8ee8e86219df7cc2706a0017f3c14834162983700fc21ff8"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 68750360,
+          "geometrySHA256": "d542c3dc14c72b9f8ee8e86219df7cc2706a0017f3c14834162983700fc21ff8"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-set-halo"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-set-heart",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 63325256,
+          "geometrySHA256": "1181c3f0152494a297fd4b1834a818ef20e9076cfacb4e653e60d6da312c3fbf"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 63325256,
+          "geometrySHA256": "1181c3f0152494a297fd4b1834a818ef20e9076cfacb4e653e60d6da312c3fbf"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-set-heart"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-set-marquise",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 68412700,
+          "geometrySHA256": "0af23251bbda9ee6e0be2ebd8c1607016c7fa567a0901e58cab22c4b861b40ab"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 68412700,
+          "geometrySHA256": "0af23251bbda9ee6e0be2ebd8c1607016c7fa567a0901e58cab22c4b861b40ab"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-set-marquise"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-set-pave-band",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 71936824,
+          "geometrySHA256": "cb3eb2f77a1a9ac30817c1e4e79d7ae4df2d7c247d9cf378a477704cfabc08b2"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 71936824,
+          "geometrySHA256": "cb3eb2f77a1a9ac30817c1e4e79d7ae4df2d7c247d9cf378a477704cfabc08b2"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-set-pave-band"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-set-pear",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 62931872,
+          "geometrySHA256": "1c0d9d7a79d8e590858ac9c057cee6eb2d793cd8793615770c2ab32d5e50e221"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 62931872,
+          "geometrySHA256": "1c0d9d7a79d8e590858ac9c057cee6eb2d793cd8793615770c2ab32d5e50e221"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-set-pear"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-set-prong4",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 65582272,
+          "geometrySHA256": "dff47356bcaec908f82e62ea70dd9550863ce929ffc4b2e88b4d19019fde78fc"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 65582272,
+          "geometrySHA256": "dff47356bcaec908f82e62ea70dd9550863ce929ffc4b2e88b4d19019fde78fc"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-set-prong4"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-set-prong6",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 67212552,
+          "geometrySHA256": "059337c54e66692816f791b56e67307d27ceb94fcd1741852212141b5acb68f9"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 67212552,
+          "geometrySHA256": "059337c54e66692816f791b56e67307d27ceb94fcd1741852212141b5acb68f9"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-set-prong6"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-stone",
+      "variants": [
+        {
+          "file": "diamond_gem_shape_set_-_1_collectibles.glb",
+          "bytes": 44266016,
+          "geometrySHA256": "ec10d582c0c4958c435cf28832960115d1d4343a688965d4f78894f0d1af3cd0"
+        },
+        {
+          "file": "gemstone_pack.glb",
+          "bytes": 1717328,
+          "geometrySHA256": "ed8caa3ae322531d4201944db720f68d0b8695db79c7094a94e245cb6502ed4a"
+        }
+      ],
+      "uniqueGeometrySets": 2,
+      "selectable": [
+        "jw-stone-diamond-01",
+        "jw-stone-diamond-02",
+        "jw-stone-diamond-03",
+        "jw-stone-diamond-04",
+        "jw-stone-diamond-05",
+        "jw-stone-diamond-06",
+        "jw-stone-diamond-07",
+        "jw-stone-diamond-08",
+        "jw-stone-diamond-09",
+        "jw-stone-diamond-10",
+        "jw-stone-diamond-11",
+        "jw-stone-diamond-12",
+        "jw-stone-gem-01",
+        "jw-stone-gem-02",
+        "jw-stone-gem-03",
+        "jw-stone-gem-04",
+        "jw-stone-gem-05",
+        "jw-stone-gem-06",
+        "jw-stone-gem-07",
+        "jw-stone-gem-08",
+        "jw-stone-gem-09",
+        "jw-stone-gem-10",
+        "jw-stone-gem-11",
+        "jw-stone-gem-12",
+        "jw-stone-gem-13",
+        "jw-stone-gem-14",
+        "jw-stone-gem-15",
+        "jw-stone-gem-16",
+        "jw-stone-gem-17",
+        "jw-stone-gem-18",
+        "jw-stone-gem-19",
+        "jw-stone-gem-20",
+        "jw-stone-gem-21",
+        "jw-stone-gem-22",
+        "jw-stone-gem-23",
+        "jw-stone-gem-24",
+        "jw-stone-gem-25",
+        "jw-stone-gem-26",
+        "jw-stone-gem-27",
+        "jw-stone-gem-28",
+        "jw-stone-gem-29",
+        "jw-stone-gem-30",
+        "jw-stone-gem-31",
+        "jw-stone-gem-32",
+        "jw-stone-gem-33",
+        "jw-stone-gem-34",
+        "jw-stone-gem-35",
+        "jw-stone-gem-36",
+        "jw-stone-gem-37",
+        "jw-stone-gem-38",
+        "jw-stone-gem-39",
+        "jw-stone-gem-40",
+        "jw-stone-gem-41",
+        "jw-stone-gem-42",
+        "jw-stone-gem-43",
+        "jw-stone-gem-44",
+        "jw-stone-gem-45",
+        "jw-stone-gem-46",
+        "jw-stone-gem-47",
+        "jw-stone-gem-48",
+        "jw-stone-gem-49",
+        "jw-stone-gem-50",
+        "jw-stone-gem-51",
+        "jw-stone-gem-52",
+        "jw-stone-gem-53",
+        "jw-stone-gem-54",
+        "jw-stone-gem-55",
+        "jw-stone-gem-56",
+        "jw-stone-gem-57",
+        "jw-stone-gem-58",
+        "jw-stone-gem-59",
+        "jw-stone-gem-60",
+        "jw-stone-gem-61",
+        "jw-stone-gem-62",
+        "jw-stone-gem-63",
+        "jw-stone-gem-64",
+        "jw-stone-gem-65",
+        "jw-stone-gem-66",
+        "jw-stone-gem-67",
+        "jw-stone-gem-68",
+        "jw-stone-gem-69",
+        "jw-stone-gem-70",
+        "jw-stone-gem-71",
+        "jw-stone-gem-72",
+        "jw-stone-gem-73",
+        "jw-stone-gem-74",
+        "jw-stone-gem-75",
+        "jw-stone-gem-76",
+        "jw-stone-gem-77",
+        "jw-stone-gem-78",
+        "jw-stone-gem-79",
+        "jw-stone-gem-80",
+        "jw-stone-gem-81",
+        "jw-stone-gem-82",
+        "jw-stone-gem-83",
+        "jw-stone-gem-84",
+        "jw-stone-gem-85",
+        "jw-stone-gem-86",
+        "jw-stone-gem-87",
+        "jw-stone-gem-88"
+      ],
+      "note": "12 diamond cuts and 88 gemstones extracted; text labels excluded."
+    },
+    {
+      "source": "jw-stone-cabochon-oval",
+      "variants": [
+        {
+          "file": "белая.glb",
+          "bytes": 71164880,
+          "geometrySHA256": "68c59db0e3beb354ca9ee631121c3dd536b1b3dda6ee7a7b192bb1bab8129b4e"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 71164880,
+          "geometrySHA256": "68c59db0e3beb354ca9ee631121c3dd536b1b3dda6ee7a7b192bb1bab8129b4e"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-stone-cabochon-oval"
+      ],
+      "note": "Equivalent geometry across material variants."
+    },
+    {
+      "source": "jw-stone-round-brilliant",
+      "variants": [
+        {
+          "file": "альбедо.glb",
+          "bytes": 72022944,
+          "geometrySHA256": "234ed5c28b38b0cd780249c09dfc7e386b0d17dd034d55c1c8246c3fba23abe2"
+        },
+        {
+          "file": "белая.glb",
+          "bytes": 72022944,
+          "geometrySHA256": "234ed5c28b38b0cd780249c09dfc7e386b0d17dd034d55c1c8246c3fba23abe2"
+        },
+        {
+          "file": "текстура.glb",
+          "bytes": 72022944,
+          "geometrySHA256": "234ed5c28b38b0cd780249c09dfc7e386b0d17dd034d55c1c8246c3fba23abe2"
+        }
+      ],
+      "uniqueGeometrySets": 1,
+      "selectable": [
+        "jw-stone-round-brilliant"
+      ],
+      "note": "Equivalent geometry across material variants."
+    }
+  ]
+}

@@ -1,431 +1,513 @@
-import * as THREE from "three";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-import { MeshoptDecoder } from "three/addons/libs/meshopt_decoder.module.js";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
-import { themes, price, sanitize } from "./config.js";
-import { disposeTree, fitToScene } from "./scene-utils.js";
-import { cartLine, mergeCart, saveShot } from "./cart.js";
+import { catalogue, byId } from "./catalogue.js";
+import {
+  projectSpecs,
+  defaults,
+  preset,
+  normalize,
+  selectedIds,
+  estimate,
+  describe,
+  toggleAsset,
+} from "./studio-state.js";
+import { ModelLibrary } from "./model-library.js";
+import { assembleProject } from "./assemblers.js";
+import { StudioRenderer } from "./studio-renderer.js";
+import { disposeTree } from "./scene-utils.js";
+import { cartLine, mergeCart, replaceCartDesign, saveShot } from "./cart.js";
 const kind = document.body.dataset.studio,
-  theme = themes[kind],
-  $ = (s) => document.querySelector(s);
-const key = `portfolio-studio-${kind}-v1`;
-let stored = {};
+  spec = projectSpecs[kind],
+  $ = (s) => document.querySelector(s),
+  key = `portfolio-studio-${kind}-v2`;
+let saved,
+  editingId = null;
 try {
-  stored = JSON.parse(localStorage.getItem(key) || "{}");
+  saved = JSON.parse(localStorage.getItem(key));
+  const edit = new URLSearchParams(location.search).get("edit"),
+    cart = JSON.parse(localStorage.getItem(`igdemo_${kind}_cart_v1`) || "[]");
+  const line =
+    Array.isArray(cart) &&
+    cart.find((x) => x?.id === edit && x.configuration?.version === 2);
+  if (line) {
+    saved = line.configuration;
+    editingId = line.id;
+    $("#add-cart").firstChild.textContent = "Сохранить изменения ";
+  }
 } catch {}
-let state = sanitize(theme, stored),
-  revision = 0,
-  active = null,
+let state = normalize(kind, saved),
+  category = spec.categories[0][0],
+  query = "",
+  stoneFilter = "all",
+  history = [],
+  future = [],
+  ticket = 0,
   renderer,
-  scene,
-  camera,
-  controls,
-  environment,
-  frame,
-  observer;
-const templates = new Map(),
-  pending = new Map(),
-  history = [];
-let rotating = false;
-const status = $("#status");
+  assembly,
+  loading = false,
+  failed = false,
+  rotating = false;
+const library = new ModelLibrary(),
+  status = $("#status");
+const money = (n) => n.toLocaleString("ru-RU") + " BYN",
+  esc = (s) =>
+    String(s).replace(
+      /[&<>"']/g,
+      (c) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        })[c],
+    );
 function persist() {
   try {
     localStorage.setItem(key, JSON.stringify(state));
   } catch {
-    status.textContent = "Сохранение в браузере недоступно";
+    status.textContent = "Браузер не разрешает сохранение";
   }
 }
-function setState(next) {
-  history.push({ ...state });
-  state = sanitize(theme, next);
+function change(next, record = true) {
+  if (record) {
+    history.push(structuredClone(state));
+    if (history.length > 40) history.shift();
+    future = [];
+  }
+  state = normalize(kind, next);
   persist();
-  updateUI();
-  assemble();
+  renderUI();
+  rebuild();
 }
-function choice(key, list) {
-  return `<fieldset><legend>${{ base: kind === "flowers" ? "01 / Цветок" : "01 / Форма", detail: kind === "flowers" ? "02 / Упаковка" : kind === "cakes" ? "02 / Декор" : "02 / Камень", extra: "03 / Последний штрих", color: kind === "jewelry" ? "04 / Металл" : "04 / Палитра" }[key]}</legend><div class="choices ${key === "color" ? "swatches" : ""}">${list.map((item, i) => `<button type="button" data-key="${key}" data-value="${i}" aria-pressed="false">${key === "color" ? `<span style="--swatch:${item[1]}"></span>` : ""}${item[key === "color" ? 0 : 1]}</button>`).join("")}</div></fieldset>`;
+function renderCatalog() {
+  $("#catalog").setAttribute("aria-labelledby", "tab-" + category);
+  const selected = new Set(selectedIds(kind, state));
+  const entries = catalogue.filter(
+    (a) =>
+      a.project === kind &&
+      a.category === category &&
+      (!query ||
+        (a.name + " " + (a.variant || "")).toLowerCase().includes(query)) &&
+      (category !== "stone" ||
+        stoneFilter === "all" ||
+        (stoneFilter === "diamond" && a.pack === "diamond") ||
+        (stoneFilter === "gem" && a.pack === "gem") ||
+        (stoneFilter === "cabochon" && a.name.includes("кабошон"))),
+  );
+  entries.sort((a, b) => {
+    if (category === "base" && kind === "cakes")
+      return (
+        Number(b.id.includes("-struct-")) - Number(a.id.includes("-struct-"))
+      );
+    if (category === "base" && kind === "jewelry")
+      return Number(b.id === state.base) - Number(a.id === state.base);
+    return 0;
+  });
+  $("#catalog-count").textContent =
+    entries.length +
+    " " +
+    (category === "stone" ? "огранок и оттенков" : "вариантов");
+  $("#catalog").innerHTML = entries.length
+    ? entries
+        .map(
+          (a) =>
+            `<button class="asset-card ${selected.has(a.id) ? "is-selected" : ""}" data-asset="${a.id}" aria-pressed="${selected.has(a.id)}" aria-label="${esc(a.name + (a.variant ? " · " + a.variant : ""))}"><span class="asset-image"><img src="../shared/${a.thumbnail}" alt="" loading="lazy" width="120" height="120"><span class="asset-check" aria-hidden="true">✓</span></span><span class="asset-name">${esc(a.name)}</span>${a.variant ? `<span class="asset-variant"><i style="background:${a.color}"></i>${esc(a.variant)}</span>` : `<span class="asset-price">${a.price} BYN${category === "flowers" ? " / стебель" : ""}</span>`}</button>`,
+        )
+        .join("")
+    : '<p class="empty">Ничего не найдено. Попробуйте другое название.</p>';
+  $("#stone-filter").hidden = category !== "stone";
 }
-$("#options").innerHTML =
-  choice("base", theme.base) +
-  choice("detail", theme.detail) +
-  choice("extra", theme.extra) +
-  choice("color", theme.colors) +
-  `<fieldset><legend>${theme.quantityLabel}</legend><div class="choices">${theme.quantity.map((q) => `<button type="button" data-key="quantity" data-value="${q}" aria-pressed="false">${q}</button>`).join("")}</div></fieldset>`;
-$("#presets").innerHTML = theme.presets
+function renderUI() {
+  $(".panel-badge").textContent =
+    String(spec.categories.findIndex(([id]) => id === category) + 1).padStart(
+      2,
+      "0",
+    ) +
+    " / " +
+    String(spec.categories.length).padStart(2, "0");
+  document.querySelectorAll("[data-category]").forEach((b) => {
+    b.setAttribute("aria-selected", String(b.dataset.category === category));
+    b.classList.toggle("is-active", b.dataset.category === category);
+    b.tabIndex = b.dataset.category === category ? 0 : -1;
+  });
+  $("#price").textContent = money(estimate(kind, state));
+  $("#summary").textContent = describe(kind, state);
+  $("#undo").disabled = !history.length;
+  $("#redo").disabled = !future.length;
+  $("#palette").innerHTML = spec.palette
+    .map(
+      ([name, color], i) =>
+        `<button class="swatch" data-palette="${i}" aria-pressed="${state.palette === i}" aria-label="${name}" title="${name}"><i style="background:${color}"></i><span>${name}</span></button>`,
+    )
+    .join("");
+  const rows = selectedIds(kind, state);
+  $("#ingredients").innerHTML = rows
+    .map((id) => {
+      const a = byId[id],
+        count = ["glaze", "border"].includes(a.role) ? null : state.counts[id],
+        removable =
+          !["base", "pack"].includes(a.category) &&
+          !(a.category === "flowers" && state.flowers.length === 1);
+      return `<li><img src="../shared/${a.thumbnail}" alt="" width="34" height="34"><span>${esc(a.name)}${a.variant ? `<small>${esc(a.variant)}</small>` : ""}</span>${count ? `<div class="counter"><button data-count="${id}" data-delta="-1" ${count <= 1 ? "disabled" : ""} aria-label="Уменьшить: ${esc(a.name)}">−</button><output>${count}</output><button data-count="${id}" data-delta="1" ${count >= (kind === "flowers" ? 15 : a.role === "sprinkle" ? 60 : 14) || (kind === "flowers" && Object.values(state.counts).reduce((a, b) => a + b, 0) >= 33) ? "disabled" : ""} aria-label="Добавить: ${esc(a.name)}">+</button></div>` : ""}${removable ? `<button class="remove" data-remove="${id}" aria-label="Убрать: ${esc(a.name)}">×</button>` : ""}</li>`;
+    })
+    .join("");
+  $("#selected-count").textContent = rows.length + " деталей";
+  $("#dimension-options").innerHTML =
+    kind === "cakes"
+      ? `<label>${state.base.includes("pastry") ? "В наборе" : "Ярусов"}<select data-config="${state.base.includes("pastry") ? "pieces" : "tiers"}">${(state.base.includes("pastry") ? [1, 4, 6] : [1, 2, 3]).map((v) => `<option ${v === state[state.base.includes("pastry") ? "pieces" : "tiers"] ? "selected" : ""}>${v}</option>`).join("")}</select></label><label>Композиция<select data-config="layout"><option value="crescent" ${state.layout === "crescent" ? "selected" : ""}>Полумесяц</option><option value="wreath" ${state.layout === "wreath" ? "selected" : ""}>Венок</option><option value="center" ${state.layout === "center" ? "selected" : ""}>В центре</option></select></label>${
+          !state.base.includes("pastry")
+            ? `<label>Начинка · за ярус<select data-config="filling">${Object.entries(
+                {
+                  vanilla: "Ваниль",
+                  berry: "Малина +8 BYN",
+                  chocolate: "Шоколад +10 BYN",
+                  pistachio: "Фисташка +16 BYN",
+                },
+              )
+                .map(
+                  ([id, name]) =>
+                    `<option value="${id}" ${state.filling === id ? "selected" : ""}>${name}</option>`,
+                )
+                .join("")}</select></label>`
+            : ""
+        }`
+      : kind === "jewelry"
+        ? `<label ${["jw-base-band-plain", "jw-base-cocktail", "jw-base-signet", "jw-base-solitaire", "jw-base-stacking-thin", "jw-set-bezel", "jw-set-halo"].includes(state.base) ? "" : "hidden"}>Размер кольца<select data-config="size">${[16, 17, 18, 19, 20].map((v) => `<option ${state.size === v ? "selected" : ""}>${v}</option>`).join("")}</select></label><p class="small-hint">Камни из двух коллекций: 12 огранок и 88 цветных вариантов.</p>`
+        : `<p class="small-hint">Число стеблей каждого сорта меняется в составе. Добавьте до пяти видов цветов, всего до 33 стеблей.</p>`;
+  renderCatalog();
+}
+$("#categories").innerHTML = spec.categories
   .map(
-    (p, i) =>
-      `<button data-preset="${i}"><span>0${i + 1}</span>${p[0]}<b>↗</b></button>`,
+    ([id, name], i) =>
+      `<button role="tab" id="tab-${id}" aria-controls="catalog" data-category="${id}" aria-selected="false"><span>0${i + 1}</span>${name}</button>`,
   )
   .join("");
-$("#options").addEventListener("click", (e) => {
-  const b = e.target.closest("[data-key]");
-  if (b) setState({ ...state, [b.dataset.key]: Number(b.dataset.value) });
-});
-$("#presets").addEventListener("click", (e) => {
-  const b = e.target.closest("[data-preset]");
+$("#presets").innerHTML = spec.presets
+  .map(
+    ([name, detail], i) =>
+      `<button data-preset="${i}"><img src="../shared/presets/${kind}-${i}.jpg" alt="" onerror="this.src='../shared/thumbnails/${kind === "cakes" ? "bk-struct-tier-round" : kind === "flowers" ? "fl-flower-peony-open" : "jw-base-solitaire"}.jpg'"><span>${name}<small>${detail}</small></span><b aria-hidden="true">↗</b></button>`,
+  )
+  .join("");
+$("#categories").onclick = (e) => {
+  const b = e.target.closest("[data-category]");
   if (!b) return;
-  const p = theme.presets[Number(b.dataset.preset)];
-  setState({ base: p[1], detail: p[2], color: p[3], quantity: p[4], extra: 0 });
-});
-function updateUI() {
-  document
-    .querySelectorAll("[data-key]")
-    .forEach((b) =>
-      b.setAttribute(
-        "aria-pressed",
-        String(state[b.dataset.key] === Number(b.dataset.value)),
-      ),
-    );
-  $("#price").textContent =
-    price(theme, state).toLocaleString("ru-RU") + " BYN";
-  $("#summary").textContent = [
-    theme.base[state.base][1],
-    theme.detail[state.detail][1],
-    theme.colors[state.color][0],
-    kind === "jewelry"
-      ? `Размер ${state.quantity}`
-      : `${state.quantity} ${kind === "cakes" ? "ярус(а)" : "цветов"}`,
-  ].join(" · ");
-  $("#undo").disabled = !history.length;
-}
-const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
-async function template(id) {
-  if (templates.has(id)) return templates.get(id);
-  if (!pending.has(id))
-    pending.set(
-      id,
-      loader
-        .loadAsync(new URL(`models/${id}.glb`, import.meta.url).href)
-        .then((g) => {
-          templates.set(id, g.scene);
-          pending.delete(id);
-          return g.scene;
-        })
-        .catch((e) => {
-          pending.delete(id);
-          throw e;
-        }),
-    );
-  return pending.get(id);
-}
-function material(color, type = "soft") {
-  return new THREE.MeshPhysicalMaterial({
-    color,
-    roughness: type === "metal" ? 0.2 : type === "gem" ? 0.06 : 0.58,
-    metalness: type === "metal" ? 1 : 0,
-    transmission: type === "gem" ? 0.72 : 0,
-    ior: type === "gem" ? 2.4 : 1.5,
-    thickness: 0.4,
-    clearcoat: type === "soft" ? 0.15 : 0.8,
-    side: THREE.DoubleSide,
-  });
-}
-async function part(id, size, color, type = "soft", axis = "x") {
-  const original = await template(id);
-  const copy = original.clone(true);
-  copy.traverse((n) => {
-    if (n.isMesh) {
-      n.geometry = n.geometry.clone();
-      n.material = material(color, type);
-      n.castShadow = true;
-      n.receiveShadow = true;
+  category = b.dataset.category;
+  query = "";
+  $("#search").value = "";
+  renderUI();
+};
+$("#catalog").onclick = (e) => {
+  const b = e.target.closest("[data-asset]");
+  if (b) {
+    const a = byId[b.dataset.asset];
+    if (
+      a.category === "flowers" &&
+      !state.flowers.includes(a.id) &&
+      state.flowers.length >= 5
+    ) {
+      status.textContent =
+        "Можно сочетать не более пяти сортов. Уберите один из состава.";
+      return;
     }
-  });
-  return fitToScene(copy, size, axis);
-}
-async function assemble() {
+    change(toggleAsset(kind, state, a.id));
+  }
+};
+$("#search").oninput = (e) => {
+  query = e.target.value.toLocaleLowerCase("ru-RU").trim();
+  renderCatalog();
+};
+$("#stone-filter").onchange = (e) => {
+  stoneFilter = e.target.value;
+  renderCatalog();
+};
+$("#palette").onclick = (e) => {
+  const b = e.target.closest("[data-palette]");
+  if (b) change({ ...state, palette: Number(b.dataset.palette) });
+};
+$("#dimension-options").onchange = (e) => {
+  if (e.target.dataset.config) {
+    const key = e.target.dataset.config;
+    change({
+      ...state,
+      [key]: ["layout", "filling"].includes(key)
+        ? e.target.value
+        : Number(e.target.value),
+    });
+  }
+};
+$("#ingredients").onclick = (e) => {
+  const count = e.target.closest("[data-count]"),
+    remove = e.target.closest("[data-remove]");
+  if (count) {
+    const id = count.dataset.count;
+    change({
+      ...state,
+      counts: {
+        ...state.counts,
+        [id]: (state.counts[id] || 1) + Number(count.dataset.delta),
+      },
+    });
+  }
+  if (remove) change(toggleAsset(kind, state, remove.dataset.remove));
+};
+$("#presets").onclick = (e) => {
+  const b = e.target.closest("[data-preset]");
+  if (b) change(preset(kind, Number(b.dataset.preset)));
+};
+$("#undo").onclick = () => {
+  if (!history.length) return;
+  future.push(structuredClone(state));
+  change(history.pop(), false);
+};
+$("#redo").onclick = () => {
+  if (!future.length) return;
+  history.push(structuredClone(state));
+  change(future.pop(), false);
+};
+$("#reset").onclick = () => change(defaults(kind));
+$("#save").onclick = () => {
+  persist();
+  status.textContent = "Черновик сохранён на этом устройстве";
+};
+async function rebuild() {
   if (!renderer) return;
-  const ticket = ++revision,
-    s = { ...state },
-    next = new THREE.Group(),
-    color = theme.colors[s.color][1];
-  status.textContent = "Собираем вашу композицию…";
+  if (renderer.renderer.getContext().isContextLost()) return;
+  const generation = ++ticket,
+    s = structuredClone(state),
+    created = [];
+  loading = true;
+  failed = false;
   $("#viewer").setAttribute("aria-busy", "true");
   $("#add-cart").disabled = true;
+  $("#snapshot").disabled = true;
+  status.textContent = "Собираем детали…";
+  const buildLibrary = {
+    get: async (...args) => {
+      const item = await library.get(...args);
+      created.push(item);
+      return item;
+    },
+  };
   try {
-    if (kind === "cakes") {
-      let y = 0;
-      for (let i = 0; i < s.quantity; i++) {
-        const tier = await part(theme.base[s.base][0], 24 - i * 5, color);
-        const tierHeight = new THREE.Box3()
-          .setFromObject(tier)
-          .getSize(new THREE.Vector3()).y;
-        tier.scale.y *= 8 / tierHeight;
-        tier.position.y = y;
-        next.add(tier);
-        const box = new THREE.Box3().setFromObject(tier);
-        y = box.max.y;
-      }
-      for (let i = 0; i < 7; i++) {
-        const d = await part(
-          theme.detail[s.detail][0],
-          3.4,
-          s.detail < 3
-            ? ["#c84353", "#55568f", "#bd344f"][s.detail]
-            : s.detail === 5
-              ? "#4b2b20"
-              : color,
-        );
-        const a = (i / 7) * Math.PI * 2;
-        d.position.set(
-          Math.cos(a) * (8 - s.quantity),
-          y,
-          Math.sin(a) * (8 - s.quantity),
-        );
-        d.rotation.y = a;
-        next.add(d);
-      }
-      if (s.extra) {
-        const d = await part(theme.extra[s.extra][0], 5, "#d5ae63", "metal");
-        d.position.y = y + 1;
-        next.add(d);
-      }
-    } else if (kind === "flowers") {
-      const wrap = await part(theme.detail[s.detail][0], 20, "#bba17b");
-      if (s.detail === 0) wrap.scale.y *= 0.65;
-      wrap.updateMatrixWorld(true);
-      next.add(wrap);
-      const top = new THREE.Box3().setFromObject(wrap).max.y;
-      for (let i = 0; i < s.quantity; i++) {
-        const angle = i * 2.399963,
-          r = Math.sqrt(i) * 3.25;
-        const flower = await part(theme.base[s.base][0], 10, color);
-        flower.position.set(
-          Math.cos(angle) * r,
-          top - 1 + Math.sin(i) * 1.2,
-          Math.sin(angle) * r,
-        );
-        flower.rotation.set(
-          0.12 * Math.cos(angle),
-          angle,
-          0.12 * Math.sin(angle),
-        );
-        next.add(flower);
-        const stem = new THREE.Mesh(
-          new THREE.CylinderGeometry(0.12, 0.14, top, 6),
-          material("#657a45"),
-        );
-        stem.position.set(
-          Math.cos(angle) * r * 0.5,
-          top * 0.5,
-          Math.sin(angle) * r * 0.5,
-        );
-        next.add(stem);
-      }
-      if (s.extra)
-        for (let i = 0; i < 3; i++) {
-          const green = await part(
-            theme.extra[s.extra][0],
-            12,
-            s.extra === 2 ? "#eee9d8" : "#758a66",
-          );
-          const a = (i / 3) * Math.PI * 2;
-          green.position.set(Math.cos(a) * 7, top * 0.65, Math.sin(a) * 7);
-          green.rotation.y = a;
-          next.add(green);
-        }
-    } else {
-      const base = await part(
-        theme.base[s.base][0],
-        s.base === 4 ? 6 : s.base === 2 ? 2.4 : s.quantity / 10,
-        color,
-        "metal",
-      );
-      next.add(base);
-      const bb = new THREE.Box3().setFromObject(base);
-      const stone = await part(
-        theme.detail[s.detail][0],
-        s.base === 4 ? 0.9 : 0.65,
-        s.detail === 0 ? "#f3f5ff" : "#579c9c",
-        "gem",
-      );
-      stone.position.set(0, bb.max.y - 0.45, 0);
-      next.add(stone);
-      if (s.extra) {
-        const setting = await part(
-          theme.extra[s.extra][0],
-          0.9,
-          color,
-          "metal",
-        );
-        setting.position.y = bb.max.y - 0.3;
-        next.add(setting);
-      }
-    }
-    if (ticket !== revision) {
+    const next = await assembleProject(
+      buildLibrary,
+      kind,
+      s,
+      spec.palette[s.palette][1],
+    );
+    if (generation !== ticket) {
       disposeTree(next);
       return;
     }
-    if (active) {
-      scene.remove(active);
-      disposeTree(active);
-    }
-    active = next;
-    scene.add(active);
-    frameCamera();
+    renderer.setObject(next, {
+      reset: !assembly || s.base !== assembly.base || s.pack !== assembly.pack,
+    });
+    assembly = s;
     $("#fallback").hidden = true;
     $("#canvas").hidden = false;
-    status.textContent = "Композиция готова · потяните для вращения";
     $("#viewer").dataset.ready = "true";
+    $("#measure").textContent = next.userData.measure;
+    status.textContent = "Готово. Вращайте модель, чтобы рассмотреть детали.";
+    $("#retry").hidden = true;
   } catch (e) {
-    disposeTree(next);
-    if (ticket !== revision) return;
-    status.textContent = "Не удалось загрузить модель. Попробуйте ещё раз.";
+    created.forEach(disposeTree);
+    if (generation !== ticket) return;
+    failed = true;
+    status.textContent =
+      "Не удалось загрузить одну из деталей. Повторите загрузку.";
     $("#retry").hidden = false;
     console.error(e);
   } finally {
-    if (ticket === revision) {
+    if (generation === ticket) {
+      loading = false;
       $("#viewer").setAttribute("aria-busy", "false");
-      $("#add-cart").disabled = false;
+      $("#add-cart").disabled = failed;
+      $("#snapshot").disabled = failed;
     }
   }
 }
-function frameCamera() {
-  if (!active) return;
-  const b = new THREE.Box3().setFromObject(active),
-    size = b.getSize(new THREE.Vector3()),
-    center = b.getCenter(new THREE.Vector3());
-  const r = Math.max(size.x, size.y, size.z),
-    distance =
-      (r / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)))) * 1.12;
-  controls.target.copy(center);
-  camera.position
-    .copy(center)
-    .add(new THREE.Vector3(distance * 0.6, distance * 0.48, distance));
-  camera.near = Math.max(0.01, r / 1000);
-  camera.far = distance * 20;
-  camera.updateProjectionMatrix();
-  controls.minDistance = r * 0.65;
-  controls.maxDistance = distance * 3;
-  controls.update();
-}
-function init() {
-  try {
-    renderer = new THREE.WebGLRenderer({
-      canvas: $("#canvas"),
-      alpha: true,
-      antialias: true,
-      preserveDrawingBuffer: true,
-    });
-    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-    renderer.outputColorSpace = THREE.SRGBColorSpace;
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 0.75;
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(35, 1, 0.01, 1000);
-    const room = new RoomEnvironment(),
-      pmrem = new THREE.PMREMGenerator(renderer);
-    environment = pmrem.fromScene(room, 0.04);
-    scene.environment = environment.texture;
-    room.dispose();
-    pmrem.dispose();
-    scene.add(new THREE.HemisphereLight(0xffffff, 0x8c8073, 0.75));
-    const light = new THREE.DirectionalLight(0xfff2db, 1.8);
-    light.position.set(15, 25, 20);
-    scene.add(light);
-    controls = new OrbitControls(camera, $("#canvas"));
-    controls.enableDamping = true;
-    controls.enablePan = false;
-    controls.listenToKeyEvents($("#canvas"));
-    observer = new ResizeObserver(([entry]) => {
-      const { width, height } = entry.contentRect;
-      renderer.setSize(width, height, false);
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-    });
-    observer.observe($("#viewer"));
-    const animate = () => {
-      frame = requestAnimationFrame(animate);
-      if (document.hidden) return;
-      controls.autoRotate =
-        rotating && !matchMedia("(prefers-reduced-motion: reduce)").matches;
-      controls.update();
-      renderer.render(scene, camera);
-    };
-    animate();
-    assemble();
-  } catch (e) {
-    status.textContent =
-      "3D недоступно на этом устройстве. Конфигурация и расчёт работают по фото.";
-    $("#canvas").hidden = true;
-    document
-      .querySelectorAll("[data-camera]")
-      .forEach((b) => (b.disabled = true));
-  }
-}
-$("#undo").onclick = () => {
-  if (history.length) {
-    state = history.pop();
-    persist();
-    updateUI();
-    assemble();
-  }
-};
-$("#reset").onclick = () => setState({});
-$("#retry").onclick = () => {
-  $("#retry").hidden = true;
-  assemble();
-};
-$("#camera-home").onclick = frameCamera;
+$("#retry").onclick = rebuild;
+document.querySelectorAll("[data-pose]").forEach(
+  (b) =>
+    (b.onclick = () => {
+      renderer?.fit(b.dataset.pose);
+      document
+        .querySelectorAll("[data-pose]")
+        .forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    }),
+);
 $("#rotate").onclick = () => {
   rotating = !rotating;
+  renderer?.rotate(rotating);
   $("#rotate").setAttribute("aria-pressed", String(rotating));
 };
-$("#download").onclick = () => {
-  const data = {
-    project: kind,
-    configuration: state,
-    description: $("#summary").textContent,
-    estimateBYN: price(theme, state),
-  };
-  const url = URL.createObjectURL(
-    new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }),
-  );
+$("#snapshot").onclick = () => {
+  if (!renderer) return;
+  renderer.renderer.render(renderer.scene, renderer.camera);
   const a = document.createElement("a");
+  a.href = $("#canvas").toDataURL("image/png");
+  a.download = kind + "-design.png";
+  a.click();
+};
+$("#download").onclick = () => {
+  const url = URL.createObjectURL(
+      new Blob(
+        [
+          JSON.stringify(
+            {
+              project: kind,
+              configuration: state,
+              estimateBYN: estimate(kind, state),
+            },
+            null,
+            2,
+          ),
+        ],
+        { type: "application/json" },
+      ),
+    ),
+    a = document.createElement("a");
   a.href = url;
-  a.download = `${kind}-design.json`;
+  a.download = kind + "-design.json";
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
-  status.textContent = "Конфигурация скачана";
 };
 $("#add-cart").onclick = async () => {
-  const selected = { ...state };
-  const b = $("#add-cart");
-  b.disabled = true;
+  const config = structuredClone(state);
+  $("#add-cart").disabled = true;
   try {
-    const cartKey = `igdemo_${kind}_cart_v1`;
-    const existing = JSON.parse(localStorage.getItem(cartKey) || "[]");
-    const draft = cartLine(kind, selected);
-    const same =
-      Array.isArray(existing) && existing.find((x) => x?.id === draft.id);
-    const image = same?.img || (await saveShot(kind, $("#canvas")));
-    const line = cartLine(kind, selected, image);
-    const latest = JSON.parse(localStorage.getItem(cartKey) || "[]");
-    localStorage.setItem(cartKey, JSON.stringify(mergeCart(latest, line)));
-    status.textContent = "Дизайн добавлен в корзину";
+    const k = `igdemo_${kind}_cart_v1`,
+      before = JSON.parse(localStorage.getItem(k) || "[]"),
+      draft = cartLine(kind, config),
+      existing =
+        Array.isArray(before) && before.find((x) => x?.id === draft.id),
+      image =
+        existing?.img ||
+        (renderer
+          ? await saveShot(
+              kind,
+              $("#canvas"),
+              kind === "jewelry"
+                ? "#22221f"
+                : kind === "flowers"
+                  ? "#eee9e2"
+                  : "#f5e9df",
+            )
+          : undefined);
+    localStorage.setItem(
+      k,
+      JSON.stringify(
+        (editingId ? replaceCartDesign : mergeCart)(
+          JSON.parse(localStorage.getItem(k) || "[]"),
+          cartLine(kind, config, image),
+          editingId,
+        ),
+      ),
+    );
     $("#cart-link").hidden = false;
+    if (editingId) {
+      editingId = draft.id;
+      const url = new URL(location.href);
+      url.searchParams.set("edit", editingId);
+      globalThis.history.replaceState(null, "", url);
+    }
+    status.textContent = "Ваш дизайн в корзине. Можно перейти к оформлению.";
   } catch {
-    status.textContent = "Не удалось сохранить корзину. Скачайте конфигурацию.";
+    status.textContent =
+      "Сохранение корзины недоступно. Скачайте конфигурацию.";
   } finally {
-    b.disabled = false;
+    $("#add-cart").disabled = loading;
   }
 };
-$("#save").onclick = () => {
-  persist();
-  status.textContent = "Ваш дизайн сохранён в этом браузере";
-};
-window.addEventListener("pagehide", (event) => {
-  if (event.persisted) return;
-  ++revision;
-  cancelAnimationFrame(frame);
-  observer?.disconnect();
-  controls?.dispose();
-  if (active) disposeTree(active);
-  templates.forEach(disposeTree);
-  templates.clear();
-  environment?.dispose();
+try {
+  renderer = new StudioRenderer($("#canvas"), $("#viewer"), kind);
+  $("#viewer").addEventListener("contextlost", () => {
+    ++ticket;
+    loading = false;
+    failed = true;
+    $("#fallback").hidden = false;
+    $("#canvas").hidden = true;
+    $("#add-cart").disabled = true;
+    $("#snapshot").disabled = true;
+    status.textContent = "3D временно недоступно. Состав сохранён.";
+  });
+  $("#viewer").addEventListener("contextrestored", rebuild);
+  rebuild();
+} catch {
   renderer?.dispose();
+  renderer = null;
+  $("#viewer").setAttribute("aria-busy", "false");
+  status.textContent = "3D недоступно. Выберите состав по фотографиям деталей.";
+  document
+    .querySelectorAll("[data-pose],#rotate,#snapshot")
+    .forEach((b) => (b.disabled = true));
+}
+window.studioReview = {
+  getState: () => structuredClone(state),
+  setState: (next) => change(next),
+  preset: (i) => change(preset(kind, i)),
+  ready: () => !loading && !failed,
+  pose: (p) => renderer?.fit(p),
+  metrics: () => renderer?.metrics(),
+  catalogue: catalogue.filter((a) => a.project === kind),
+};
+window.addEventListener("pagehide", (e) => {
+  if (e.persisted) return;
+  ++ticket;
+  renderer?.dispose();
+  library.dispose();
 });
-updateUI();
-init();
+renderUI();
+
+const previewButton = document.createElement("button");
+previewButton.className = "expand-preview";
+previewButton.textContent = "Развернуть ↗";
+previewButton.setAttribute("aria-label", "Вернуться к большому предпросмотру");
+$("#viewer").append(previewButton);
+previewButton.onclick = () =>
+  $(".stage-shell").scrollIntoView({
+    behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "instant"
+      : "smooth",
+    block: "start",
+  });
+let scrollQueued = false;
+function compactPreview() {
+  scrollQueued = false;
+  const shell = $(".stage-shell"),
+    panel = $(".design-panel"),
+    floating =
+      innerWidth <= 850 &&
+      shell.getBoundingClientRect().bottom < 90 &&
+      panel.getBoundingClientRect().bottom > 180;
+  $("#viewer").classList.toggle("is-floating", floating);
+  shell.classList.toggle("has-floating", floating);
+}
+addEventListener(
+  "scroll",
+  () => {
+    if (!scrollQueued) {
+      scrollQueued = true;
+      requestAnimationFrame(compactPreview);
+    }
+  },
+  { passive: true },
+);
+addEventListener("resize", compactPreview);
+
+$("#catalog").setAttribute("role", "tabpanel");
+$("#categories").addEventListener("keydown", (e) => {
+  const keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
+  if (!keys.includes(e.key)) return;
+  e.preventDefault();
+  const tabs = [...$("#categories").querySelectorAll("button")],
+    index = tabs.indexOf(document.activeElement),
+    next =
+      e.key === "Home"
+        ? 0
+        : e.key === "End"
+          ? tabs.length - 1
+          : (index + (e.key === "ArrowRight" ? 1 : -1) + tabs.length) %
+            tabs.length;
+  tabs[next].click();
+  tabs[next].focus();
+});
