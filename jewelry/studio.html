@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Начните с силуэта. Найдите свой металл и камень. Рассмотрите каждую грань будущего украшения в свете студии."
+    />
+    <title>Латунь — студия дизайна в 3D</title>
+    <link rel="stylesheet" href="assets/fonts.css" />
+    <link rel="stylesheet" href="../shared/studio.css" />
+  </head>
+  <body data-studio="jewelry">
+    <a class="skip" href="#options">Перейти к настройкам</a>
+    <header>
+      <a class="brand" href="index.html"
+        >Латунь<small>ювелирное ателье</small></a
+      ><a class="back" href="index.html">← Вернуться в магазин</a>
+    </header>
+    <main>
+      <section class="intro">
+        <div>
+          <p class="eyebrow">Ателье украшений / личная коллекция</p>
+          <h1>Форма, которая говорит о вас.</h1>
+        </div>
+        <p>
+          Начните с силуэта. Найдите свой металл и камень. Рассмотрите каждую
+          грань будущего украшения в свете студии.
+        </p>
+      </section>
+      <div class="workspace">
+        <section class="preview" aria-label="Предпросмотр дизайна">
+          <div id="viewer" class="viewer" aria-busy="true">
+            <img
+              id="fallback"
+              class="fallback"
+              src="assets/img/ring.jpg"
+              alt="Пример готовой композиции. Точная 3D-модель появится после загрузки."
+            /><canvas
+              id="canvas"
+              hidden
+              aria-label="3D модель. Мышь или палец вращают, колесо приближает, стрелки перемещают камеру."
+              tabindex="0"
+            ></canvas>
+            <div class="viewer-label">
+              ВАША КОМПОЗИЦИЯ<b>Латунь / Design studio</b>
+            </div>
+            <span class="viewer-corner">360° · детали в реальном времени</span>
+            <div class="tools">
+              <button
+                id="camera-home"
+                data-camera
+                aria-label="Вернуть камеру к начальной позиции"
+                title="Начальный ракурс"
+              >
+                ⌖</button
+              ><button
+                id="rotate"
+                data-camera
+                aria-label="Автоматическое вращение"
+                aria-pressed="false"
+                title="Вращение"
+              >
+                ↻
+              </button>
+            </div>
+          </div>
+          <p class="status" id="status" role="status" aria-live="polite">
+            Готовим студию…
+          </p>
+          <button id="retry" hidden class="secondary">
+            Повторить загрузку
+          </button>
+          <p class="eyebrow" style="margin-top: 24px">Начните с нашей идеи</p>
+          <div id="presets" class="presets"></div>
+        </section>
+        <section class="panel" aria-label="Настройка композиции">
+          <div class="panel-top">
+            <h2>Ваш дизайн</h2>
+            <div>
+              <button id="undo" class="text-button" disabled>Отменить</button
+              ><button id="reset" class="text-button">Сбросить</button>
+            </div>
+          </div>
+          <div id="options"></div>
+          <div class="order">
+            <div class="estimate">
+              <span>Предварительная стоимость</span><strong id="price"></strong>
+            </div>
+            <p id="summary" class="summary"></p>
+            <button id="add-cart" class="primary">
+              Добавить мой дизайн в корзину</button
+            ><a
+              id="cart-link"
+              class="secondary cart-link"
+              href="cart.html"
+              hidden
+              >Перейти в корзину ↗</a
+            ><button id="save" class="secondary">Сохранить черновик</button
+            ><button id="download" class="secondary">
+              Скачать конфигурацию ↓
+            </button>
+            <p class="note">
+              Демонстрационная студия. Стоимость ориентировочная. Дизайн и
+              корзина сохраняются на вашем устройстве; заявка не отправляется.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="craft">
+      <span>Латунь · Каждая деталь имеет значение</span
+      ><a href="../">Все проекты портфолио ↗</a>
+    </footer>
+    <script type="module" src="../shared/studio.bundle.js"></script>
+  </body>
+</html>

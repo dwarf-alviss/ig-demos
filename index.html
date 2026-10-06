@@ -1,45 +1,326 @@
 <!doctype html>
 <html lang="ru">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Демо-сайты: цветы, торты, одежда, украшения</title>
-<style>
-  :root { --bg:#fffdf9; --fg:#1b1917; --muted:#6e6862; --line:#e8e2d9; --accent:#2f6b4f; }
-  * { box-sizing:border-box; margin:0; }
-  body { background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-         padding:clamp(1.5rem,5vw,4rem) clamp(1rem,5vw,2rem); }
-  .wrap { max-width:900px; margin:0 auto; }
-  h1 { font-size:clamp(1.6rem,4vw,2.4rem); letter-spacing:-.02em; margin-bottom:.6rem; }
-  p.lead { color:var(--muted); margin-bottom:2.2rem; max-width:60ch; }
-  ul { list-style:none; padding:0; display:grid; gap:.75rem; }
-  a.card { display:flex; align-items:center; justify-content:space-between; gap:1rem;
-           padding:1.1rem 1.3rem; border:1px solid var(--line); border-radius:16px;
-           background:#fff; text-decoration:none; color:inherit; transition:transform .18s ease, box-shadow .18s ease; }
-  a.card:hover { transform:translateY(-2px); box-shadow:0 10px 30px rgba(27,25,23,.09); }
-  .t { font-weight:700; }
-  .s { color:var(--muted); font-size:.9rem; }
-  footer { margin-top:2.5rem; color:var(--muted); font-size:.85rem; }
-</style>
-</head>
-<body>
-<div class="wrap">
-  <h1>Демо-сайты</h1>
-  <p class="lead">Четыре витрины, собранные на чистом HTML/CSS/JS: каталог, корзина, оформление заказа
-  и панель владельца. Всё демонстрационное — названия и контакты вымышленные, заказы сохраняются
-  только в вашем браузере.</p>
-  <ul>
-    <li><a class="card" href="flowers/"><span><span class="t">Цветочная мастерская</span><br>
-      <span class="s">каталог букетов, конструктор букета в 3D, доставка за 2 часа</span></span><span>→</span></a></li>
-    <li><a class="card" href="cakes/"><span><span class="t">Домашняя кондитерская</span><br>
-      <span class="s">калькулятор заказа: вес, начинка, декор, дата, витрина в 3D</span></span><span>→</span></a></li>
-    <li><a class="card" href="fashion/"><span><span class="t">Магазин женской одежды</span><br>
-      <span class="s">фильтры по размерам, наличие по точкам, самовывоз</span></span><span>→</span></a></li>
-    <li><a class="card" href="jewelry/"><span><span class="t">Украшения ручной работы</span><br>
-      <span class="s">материал, камень, огранка, оправа и гравировка — модель в 3D</span></span><span>→</span></a></li>
-  </ul>
-  <footer>Панель владельца — по ссылке «Кабинет владельца» в подвале каждого сайта.</footer>
-</div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Digital craft — портфолио интерфейсов</title>
+    <meta
+      name="description"
+      content="Четыре самостоятельных бренда. Интернет-магазины и интерактивные конструкторы тортов, букетов и украшений."
+    />
+    <link rel="stylesheet" href="flowers/assets/fonts.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f0eee7;
+        color: #262824;
+        font:
+          15px/1.6 Manrope,
+          system-ui,
+          sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      header,
+      footer {
+        padding: 24px 6vw;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #cccfc3;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      main {
+        max-width: 1600px;
+        margin: auto;
+        padding: 60px 6vw;
+      }
+      .intro {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 60px;
+        align-items: end;
+        margin-bottom: 60px;
+      }
+      .intro small {
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 10px;
+      }
+      h1 {
+        font:
+          clamp(44px, 6vw, 88px) / 1.05 Georgia,
+          serif;
+        letter-spacing: -3px;
+        margin: 22px 0 0;
+      }
+      .intro p {
+        max-width: 430px;
+        color: #6e7568;
+      }
+      .projects {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 26px;
+      }
+      .project {
+        overflow: hidden;
+        background: #fff;
+        padding: 28px;
+      }
+      .project img {
+        width: 100%;
+        height: 310px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.35s;
+      }
+      .project:hover img {
+        transform: scale(1.02);
+      }
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 22px;
+      }
+      .project h2 {
+        font:
+          42px Georgia,
+          serif;
+        margin: 22px 0 8px;
+      }
+      .project p {
+        font-size: 13px;
+        max-width: 430px;
+        margin: 0 0 25px;
+        opacity: 0.8;
+      }
+      .links {
+        display: flex;
+        gap: 24px;
+        border-top: 1px solid currentColor;
+        padding-top: 18px;
+        font-size: 12px;
+      }
+      .links a:hover {
+        text-decoration: underline;
+      }
+      .cakes {
+        background: #f0ddca;
+        color: #583a2d;
+        border-radius: 22px;
+      }
+      .flowers {
+        background: #dce2ce;
+        color: #344931;
+      }
+      .jewelry {
+        background: #1b211b;
+        color: #d7c49a;
+      }
+      .fashion {
+        background: #e2e5e9;
+        color: #20252c;
+      }
+      .fashion h2 {
+        font-family: system-ui;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+      }
+      .approach {
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        border-top: 1px solid #cccfc3;
+        padding-top: 32px;
+      }
+      .approach h3 {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .approach p {
+        color: #697060;
+        font-size: 13px;
+      }
+      footer {
+        border-top: 1px solid #cccfc3;
+        border-bottom: 0;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+      a:focus-visible {
+        outline: 3px solid #58734f;
+        outline-offset: 5px;
+      }
+      @media (max-width: 720px) {
+        .intro,
+        .projects,
+        .approach {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        main {
+          padding-top: 36px;
+        }
+        h1 {
+          font-size: 52px;
+          letter-spacing: -2px;
+        }
+        .intro {
+          margin-bottom: 32px;
+        }
+        .project img {
+          height: 260px;
+        }
+        .project {
+          padding: 20px;
+        }
+        header,
+        footer {
+          gap: 20px;
+          font-size: 10px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .project img {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="./">Digital craft / Selected work</a
+      ><span>Дизайн · разработка · интерактив</span>
+    </header>
+    <main>
+      <section class="intro">
+        <div>
+          <small>Четыре проекта. Четыре характера.</small>
+          <h1>Интерфейсы,<br />которые хочется<br />исследовать.</h1>
+        </div>
+        <p>
+          От первого впечатления до собственного продукта. Самостоятельные
+          бренды, продуманные магазины и студии, в которых идеи обретают форму в
+          3D.
+        </p>
+      </section>
+      <section class="projects" aria-label="Проекты">
+        <article class="project flowers">
+          <div class="meta">
+            <span>01 / Floral studio</span><span>Ботаническая редакция</span>
+          </div>
+          <a href="flowers/studio.html"
+            ><img
+              src="flowers/assets/img/hero.jpg"
+              alt="Цветочная композиция мастерской Пион"
+          /></a>
+          <h2>Пион</h2>
+          <p>
+            Спокойный ритм, природная палитра и цветы крупным планом.
+            Конструктор помогает найти композицию для своего повода.
+          </p>
+          <div class="links">
+            <a href="flowers/">Открыть магазин ↗</a
+            ><a href="flowers/studio.html">Собрать букет ↗</a>
+          </div>
+        </article>
+        <article class="project cakes">
+          <div class="meta">
+            <span>02 / Pastry workshop</span><span>Тёплая кондитерская</span>
+          </div>
+          <a href="cakes/studio.html"
+            ><img
+              src="cakes/assets/img/hero.jpg"
+              alt="Авторский торт кондитерской Мельница"
+          /></a>
+          <h2>Мельница</h2>
+          <p>
+            Сливочная бумага, мягкие формы и терракота. Соберите праздничный
+            торт: от формы ярусов до ягод и топпера.
+          </p>
+          <div class="links">
+            <a href="cakes/">Открыть магазин ↗</a
+            ><a href="cakes/studio.html">Создать торт ↗</a>
+          </div>
+        </article>
+        <article class="project fashion">
+          <div class="meta">
+            <span>03 / Wardrobe edit</span><span>Модный журнал</span>
+          </div>
+          <a href="fashion/"
+            ><img
+              src="fashion/assets/img/hero.jpg"
+              alt="Коллекция одежды магазина Линия"
+          /></a>
+          <h2>Линия</h2>
+          <p>
+            Контрастная типографика, строгая сетка и редакционная подача. Личная
+            капсула из вещей, которые работают вместе.
+          </p>
+          <div class="links">
+            <a href="fashion/">Открыть магазин ↗</a
+            ><a href="fashion/studio.html">Собрать капсулу ↗</a>
+          </div>
+        </article>
+        <article class="project jewelry">
+          <div class="meta">
+            <span>04 / Jewelry atelier</span><span>Тёмная галерея</span>
+          </div>
+          <a href="jewelry/studio.html"
+            ><img
+              src="jewelry/assets/img/hero.jpg"
+              alt="Украшение ателье Латунь"
+          /></a>
+          <h2>Латунь</h2>
+          <p>
+            Свет на металле, точность деталей и сдержанное золото. Личная студия
+            силуэтов, материалов и драгоценных камней.
+          </p>
+          <div class="links">
+            <a href="jewelry/">Открыть магазин ↗</a
+            ><a href="jewelry/studio.html">Создать украшение ↗</a>
+          </div>
+        </article>
+      </section>
+      <section class="approach">
+        <div>
+          <h3>Характер в каждой детали</h3>
+          <p>
+            Типографика, цвет, пространство и тон текста продолжают идею бренда
+            во всех сценариях.
+          </p>
+        </div>
+        <div>
+          <h3>Продукт в ваших руках</h3>
+          <p>
+            Живой предпросмотр, понятные варианты, расчёт стоимости и сохранение
+            своего выбора.
+          </p>
+        </div>
+        <div>
+          <h3>Удобно на любом экране</h3>
+          <p>
+            Адаптивные интерфейсы, управление с клавиатуры и фото вместо пустого
+            экрана при недоступном 3D.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>Портфолио · демонстрационные проекты</span
+      ><span>HTML / CSS / JavaScript / Three.js</span>
+    </footer>
+  </body>
 </html>
