@@ -1,4 +1,7 @@
 import { pastryHeight } from "./pastry-support.js";
+import { buildRecipeCake } from './recipe-cake.js';
+import { buildConstructedJewelry } from './constructed-jewelry.js';
+import { buildComposedBouquet } from './composed-bouquet.js';
 import { fitWrapTwine } from "./wrap-twine.js";
 import containerMouths from "./container-mouths.json" with { type: "json" };
 import * as THREE from "three";
@@ -988,6 +991,9 @@ export async function buildJewelry(lib, s, palette) {
   return root;
 }
 export async function assembleProject(lib, kind, s, palette) {
+  if(kind==='cakes' && s.pattern) return buildRecipeCake(lib,s);
+  if(kind==='jewelry' && s.pattern) return buildConstructedJewelry(lib,s);
+  if(kind==='flowers' && s.pattern) return buildComposedBouquet(lib,s);
   return kind === "cakes"
     ? buildCake(lib, s, palette)
     : kind === "flowers"

@@ -10,7 +10,37 @@ npm run build
 python -m http.server 8765 --bind 127.0.0.1
 ```
 
-Open http://127.0.0.1:8765/ . The committed bundle includes Three.js and MeshoptDecoder, without CDN dependencies. The visual review gallery is at `/reports/revision-3/gallery.html`.
+Open http://127.0.0.1:8765/ . The committed bundle includes Three.js and MeshoptDecoder, without CDN dependencies. The current visual review gallery is at `/reports/revision-4/index.html`. Earlier galleries document the original asset conversion and assembly work.
+
+## Domain constructions (revision 4)
+
+The default studios now build 25 cake/pastry recipes, 12 floral compositions and 24 jewelry designs from `shared/domain/`. The database contains 58 linked primary sources, 48 material profiles, 70 food components (63 used by public recipes), 30 plant profiles (22 used by public bouquets), 34 jewelry modules and 13 cut profiles. Published measurements are distinguished from renderer calibration; component availability is derived from actual recipes and compositions.
+
+Cakes preserve their actual layer stack in both the main body and a matching plated slice. Fraisier exposes cut strawberries in mousseline; Opera uses thin Joconde/coffee/ganache layers; macarons have separate shells, baked feet and filling; choux and other native pastries retain their supplied surface textures. Physical decoration seats use each ingredient's footprint and the measured curved pastry support. Only supported recipes allow tiering, with internal boards and dowels. An empty space cannot receive unlimited berries; quantity controls stop at available seats.
+
+Bouquets distinguish focal, secondary, filler and foliage roles. Heads retain species dimensions and independently calibrated depth. Hand-tied stems share a binding point; foam arrangements use individual insertion positions. Native branch geometry is preserved where available. Wedding bouquets use a ribbon binding, boxes and baskets select their actual container, and paper/vase openings clip hidden parts and shadows. Colors are constrained by each plant's natural palette.
+
+Jewelry uses swept metal profiles with the selected inner ring diameter, contour-derived casts and girdle bearings for the individual gemstone meshes. Bypass rings have an open upper shank and opposed shoulders; channel bands use continuous side walls; three-metal stacks comprise separate parallel bands. Earrings include posts/backs or a hinged hoop closure; chains comprise connected alternating or curb/Figaro links and a clasp. All 100 extracted stones plus two original catalogue stones remain available in compatible constructions. These are visual assemblies, not manufacturing CAD or ray-traced gemstone optics.
+
+“Свободная сборка” retains access to the original supplied parts and the calibrated assembly rules documented below. Defaults use the researched database constructions. Undo/redo, persistence, exports and existing cart editing work for both modes. Each project retains its own visual identity, layout treatments and material controls.
+
+Rebuild and verify the current domain constructions:
+
+```powershell
+python tools/create-domain-database.py
+npm run build
+npm test
+node tools/review-domain-patterns.mjs
+node tools/review-domain-stress.mjs
+node tools/build-domain-thumbnails.mjs
+node tools/review-domain-ui.mjs
+node tools/review-domain-exports.mjs
+node tools/review-flower-containers.mjs
+node tools/build-domain-stress-review.mjs
+node tools/build-domain-review.mjs
+```
+
+The pattern review captures every construction from two poses. The stress review checks 1,562 renderable configurations: 100 maximum cake/pastry sets, 880 flower combinations across compatible containers, four ribbon choices and five palettes, and 582 jewelry combinations covering all 102 catalogue stones plus every design across five metals and four finishes. Every case receives its own image and a nonempty-pixel check; resumable progress is keyed by the exact bundle SHA256. It also checks recovery from WebGL context loss. The export review downloads and checks actual JSON configurations and nonempty PNG scenes. The container review captures 36 constructions from front/back/top. The UI review checks selection, undo/redo, reload, cart editing, desktop/mobile layout, resource failures and horizontal overflow. Passing these checks does not establish that every continuous camera angle or arbitrary future component combination is visually flawless. Real-reference screenshots stay in private `.git/reference-review`; the shipped gallery links to source pages instead of redistributing their photography.
 
 ## Complete source coverage
 
@@ -22,7 +52,7 @@ Source defects are explicit: all files in `bk-topper-candle-spiral` are empty. G
 
 Optimized GLBs stay below 1 MiB and 40k triangles per asset. The 61 textured models in `shared/models/textured/` retain UVs and three surface maps, compressed to WebP. The original geometry-only conversions remain for provenance. `reports/revision-3/textures.json` lists resulting budgets. Gerbera requires attribute-aware permissive simplification (measured geometric error 0.00267); the other textured conversions use successive tolerance limits of 0.001, 0.01 and 0.03 where necessary. Original dough, chocolate, fruit, leaf and packaging colors are preserved. Flower tint masks leave green leaves and dark/yellow centers unchanged. “Исходные оттенки” bypasses the petal tint and preserves all supplied botanical colors.
 
-## Assembly and interaction
+## Original asset assembly and interaction
 
 Quantized position and normal attributes are converted to Float32 before world transforms. This prevents clamped geometry when baking large node scales. The supplied inspector's unit conversion is corrected to meters ×1000; normalization computes its final pivot after scaling.
 

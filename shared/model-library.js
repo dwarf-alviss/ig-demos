@@ -191,7 +191,7 @@ export class ModelLibrary {
                 vec3 sourcePetal=diffuseColor.rgb;
                 bool botanicalGreen=sourcePetal.g>sourcePetal.r*1.07 && sourcePetal.g>sourcePetal.b*1.12;
                 bool darkCenter=max(max(sourcePetal.r,sourcePetal.g),sourcePetal.b)<0.12;
-                bool goldenCenter=sourcePetal.r>sourcePetal.b*2.2 && sourcePetal.g>sourcePetal.b*1.65;
+                bool goldenCenter=${['fl-flower-chamomile','fl-flower-gerbera','fl-flower-lily-oriental'].includes(id)?'true':'false'} && sourcePetal.r>sourcePetal.b*2.2 && sourcePetal.g>sourcePetal.b*1.65;
                 if(!botanicalGreen && !darkCenter && !goldenCenter) {
                   float lightness=max(max(sourcePetal.r,sourcePetal.g),sourcePetal.b);
                   diffuseColor.rgb=flowerTint*lightness;

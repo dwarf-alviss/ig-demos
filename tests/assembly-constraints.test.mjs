@@ -259,7 +259,7 @@ test("native flower colors remain selectable without leaking into other palettes
     0,
   );
   assert.equal(
-    normalize("jewelry", { ...defaults("jewelry"), palette: 4 }).palette,
+    normalize("jewelry", { ...defaults("jewelry"), palette: 5 }).palette,
     0,
   );
 });

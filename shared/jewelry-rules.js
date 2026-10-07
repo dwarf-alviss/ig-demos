@@ -1,4 +1,5 @@
 import { catalogue, byId } from "./catalogue.js";
+import { designs } from "./domain.js";
 export function stoneShape(id) {
   const a = byId[id];
   if (!a) return null;
@@ -47,6 +48,18 @@ const plainBases = new Set([
   "jw-base-signet",
 ]);
 export function compatibleStones(s) {
+  if (designs[s.pattern]) {
+    const cuts = designs[s.pattern].compatibleCuts;
+    return catalogue.filter(
+      (a) =>
+        a.category === "stone" &&
+        cuts.some((c) =>
+          c === "cabochon"
+            ? stoneShape(a.id)?.includes("cabochon")
+            : c === stoneShape(a.id),
+        ),
+    );
+  }
   if (plainBases.has(s.base)) return [];
   let shapes;
   if (s.base === "jw-set-pave-band") shapes = ["round"];
@@ -88,6 +101,7 @@ export function compatibleStones(s) {
   );
 }
 export function compatibleSettings(s) {
+  if (designs[s.pattern]) return [];
   return [
     "jw-base-band-plain",
     "jw-base-stacking-thin",
@@ -113,10 +127,15 @@ export function normalizeJewelry(s) {
   if (!compatibleSettings(s).some((a) => a.id === s.setting)) s.setting = null;
   const choices = compatibleStones(s);
   if (!choices.length) s.stone = null;
-  else if (s.stone && !choices.some((a) => a.id === s.stone)) {
+  else if (
+    (s.pattern && !s.stone) ||
+    (s.stone && !choices.some((a) => a.id === s.stone))
+  ) {
     const color = byId[s.stone]?.color;
     s.stone =
       choices.find((a) => a.color === color)?.id ||
+      choices.find((a) => stoneShape(a.id) === designs[s.pattern]?.defaultCut)
+        ?.id ||
       choices.find((a) => a.id === "jw-stone-diamond-08")?.id ||
       choices[0].id;
   }

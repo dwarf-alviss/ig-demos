@@ -1,7 +1,15 @@
 import { catalogue, byId } from "./catalogue.js";
+import {
+  patternLists,
+  resolvePattern,
+  ingredients,
+  plants,
+  initialTaxonCounts,
+} from "./domain.js";
 import { compatibleStones, compatibleSettings } from "./jewelry-rules.js";
 import {
   projectSpecs,
+  presetPatterns,
   defaults,
   preset,
   normalize,
@@ -12,6 +20,8 @@ import {
   toggleAsset,
 } from "./studio-state.js";
 import { ModelLibrary } from "./model-library.js";
+import { foodDetail } from "./recipe-cake.js";
+import { botanicalHead, botanicalBranch } from "./botanical-components.js";
 import { assembleProject } from "./assemblers.js";
 import { StudioRenderer } from "./studio-renderer.js";
 import { disposeTree } from "./scene-utils.js";
@@ -35,7 +45,17 @@ try {
     $("#add-cart").firstChild.textContent = "Сохранить изменения ";
   }
 } catch {}
-let state = normalize(kind, saved),
+const firstPattern = {
+  cakes: "vanilla-celebration",
+  flowers: "garden-pink",
+  jewelry: "solitaire",
+}[kind];
+let state = normalize(
+    kind,
+    saved?.pattern !== undefined
+      ? saved
+      : { ...(saved || defaults(kind)), pattern: firstPattern },
+  ),
   category = spec.categories[0][0],
   query = "",
   stoneFilter = "all",
@@ -90,11 +110,73 @@ function change(next, record = true) {
 }
 function renderCatalog() {
   $("#catalog").setAttribute("aria-labelledby", "tab-" + category);
+  const pattern = resolvePattern(kind, state.pattern);
+  if (category === "pattern") {
+    const entries = patternLists[kind].filter(
+      (p) => !query || p.name.toLowerCase().includes(query),
+    );
+    $("#catalog-count").textContent = entries.length + " конструкций";
+    $("#catalog").innerHTML =
+      entries
+        .map(
+          (p) =>
+            `<button class="asset-card ${state.pattern === p.id ? "is-selected" : ""}" data-pattern="${p.id}" aria-pressed="${state.pattern === p.id}"><span class="asset-image"><img src="../shared/domain-thumbnails/${kind}-${p.id}.jpg" alt="" loading="lazy" width="120" height="120"><span class="asset-check">✓</span></span><span class="asset-name">${esc(p.name)}</span><span class="asset-price">${kind === "cakes" ? p.diameterCm + " см · " + p.layers.length + " слоёв" : kind === "flowers" ? { round: "Круглый", garden: "Садовый", bridal: "Свадебный", cascade: "Каскадный", line: "Вытянутый", minimal: "Минималистичный", hatbox: "В коробке", basket: "В корзине" }[p.form] : { ring: "Кольцо", earring: "Серьги", pendant: "Подвеска", bracelet: "Браслет", chain: "Цепочка" }[p.type]}</span></button>`,
+        )
+        .join("") +
+      `<button class="asset-card ${!state.pattern ? "is-selected" : ""}" data-pattern=""><span class="asset-name">Свободная сборка</span><span class="asset-price">Все исходные детали · свои сочетания</span></button>`;
+    $("#stone-filter").hidden = true;
+    return;
+  }
+  if (pattern && kind === "cakes" && category === "decor") {
+    $("#catalog-count").textContent =
+      pattern.compatibleDecor.length + " сочетаний";
+    $("#catalog").innerHTML = pattern.compatibleDecor
+      .map((id) => {
+        const c = ingredients[id];
+        return `<button class="asset-card ${state.foodDecor.includes(id) ? "is-selected" : ""}" data-food="${id}"><span class="asset-image"><img src="../shared/${c.asset ? byId[c.asset].thumbnail : "domain-thumbnails/component-" + id + ".jpg"}" alt="" width="120" height="120"></span><span class="asset-name">${esc(c.name)}</span><span class="asset-price">Подходит к рецептуре</span></button>`;
+      })
+      .join("");
+    $("#stone-filter").hidden = true;
+    return;
+  }
+  if (
+    pattern &&
+    kind === "flowers" &&
+    ["flowers", "green"].includes(category)
+  ) {
+    const ids =
+      category === "flowers"
+        ? [...pattern.roles.focal, ...pattern.roles.secondary]
+        : [...pattern.roles.filler, ...pattern.roles.foliage];
+    $("#catalog-count").textContent = ids.length + " видов";
+    $("#catalog").innerHTML = ids
+      .map((id) => {
+        const p = plants[id];
+        return `<article class="asset-card is-selected"><span class="asset-image"><img src="../shared/${p.asset && byId[p.asset] ? byId[p.asset].thumbnail : "domain-thumbnails/plant-" + id + ".jpg"}" alt="" width="120" height="120"></span><span class="asset-name">${esc(p.name)}</span><span class="asset-price">${{ focal: "Главный цветок", secondary: "Вторичный цветок", filler: "Воздушный наполнитель", foliage: "Зелень", line: "Направление", mass: "Объём" }[p.role]}</span></article>`;
+      })
+      .join("");
+    $("#stone-filter").hidden = true;
+    return;
+  }
   const selected = new Set(selectedIds(kind, state));
   const entries = catalogue.filter(
     (a) =>
       a.project === kind &&
       a.category === category &&
+      (!pattern ||
+        kind !== "flowers" ||
+        category !== "pack" ||
+        (pattern.form === "hatbox"
+          ? a.id === "fl-wrap-hatbox-round"
+          : pattern.form === "basket"
+            ? a.id === "fl-wrap-basket-rattan"
+            : ["bridal", "cascade"].includes(pattern.form)
+              ? false
+              : !a.id.includes("hatbox") && !a.id.includes("basket"))) &&
+      (!pattern ||
+        kind !== "cakes" ||
+        category !== "topper" ||
+        ["sponge", "mini"].includes(pattern.type)) &&
       (kind !== "jewelry" ||
         category !== "stone" ||
         compatibleStones(state).some((x) => x.id === a.id)) &&
@@ -131,6 +213,17 @@ function renderCatalog() {
         .join("")
     : `<p class="empty">${query ? "Ничего не найдено. Попробуйте другое название." : kind === "jewelry" && category === "setting" ? "В это изделие уже встроена оправа. Отдельный каст можно выбрать для гладкого кольца, тонкого кольца или цепочки." : kind === "jewelry" && category === "stone" ? "У этого изделия нет гнёзд для камней. Выберите модель со вставками." : "Нет подходящих деталей для этого состава."}</p>`;
   $("#stone-filter").hidden = category !== "stone";
+  if (
+    pattern &&
+    kind === "flowers" &&
+    category === "pack" &&
+    ["bridal", "cascade"].includes(pattern.form)
+  )
+    $("#catalog").innerHTML =
+      '<p class="empty">Стебли этого букета перевязаны лентой. Бумажная упаковка не требуется.</p>';
+  if (pattern && kind === "jewelry" && category === "finding")
+    $("#catalog").innerHTML =
+      '<p class="empty">Фурнитура включена в конструкцию: замки, соединения и штифты соответствуют выбранному изделию.</p>';
 }
 function renderUI() {
   $(".panel-badge").textContent =
@@ -206,6 +299,96 @@ function renderUI() {
         ? `<label ${["jw-base-band-plain", "jw-base-cocktail", "jw-base-signet", "jw-base-solitaire", "jw-base-stacking-thin", "jw-set-bezel", "jw-set-halo"].includes(state.base) ? "" : "hidden"}>Размер кольца<select data-config="size">${[16, 17, 18, 19, 20].map((v) => `<option ${state.size === v ? "selected" : ""}>${v}</option>`).join("")}</select></label><p class="small-hint">${state.base === "jw-set-pave-band" ? "44 круглые вставки. Выбранный оттенок применяется ко всем гнёздам." : state.base === "jw-base-cocktail" ? "Две круглые вставки одного оттенка." : "Каталог показывает камни и оправы, подходящие к выбранному изделию."}</p>`
         : `<p class="small-hint">Число стеблей каждого сорта меняется в составе. Добавьте до пяти видов цветов, всего до 33 стеблей.</p>`;
   renderCatalog();
+  const patterns = patternLists[kind];
+  const active = resolvePattern(kind, state.pattern);
+  const controls = document.createElement("div");
+  controls.className = "domain-controls";
+  controls.innerHTML = `<label>${kind === "cakes" ? "Рецептура и конструкция" : kind === "flowers" ? "Флористическая композиция" : "Конструкция изделия"}<select data-config="pattern">${!active ? '<option value="">Выберите конструкцию</option>' : ""}${patterns.map((p) => `<option value="${p.id}" ${p.id === state.pattern ? "selected" : ""}>${esc(p.name)}</option>`).join("")}</select></label>${active && kind === "cakes" ? `<p class="small-hint">${active.layers.map((l) => `${ingredients[l.component].name} ${l.thicknessCm} см`).join(" → ")}${active.cover ? " · " + ingredients[active.cover].name : ""}</p>` : ""}`;
+  if (active) {
+    $("#selected-count").textContent =
+      kind === "flowers"
+        ? Object.values(state.taxonCounts).reduce((n, v) => n + v, 0) +
+          " стеблей"
+        : kind === "cakes"
+          ? active.layers.length + state.foodDecor.length + " компонентов"
+          : active.name;
+    const small =
+      kind === "cakes" &&
+      [
+        "macaron",
+        "eclair",
+        "profiterole",
+        "paris-brest",
+        "cupcake",
+        "donut",
+        "cookie",
+        "brownie",
+      ].includes(active.type);
+    $("#dimension-options").innerHTML =
+      kind === "cakes"
+        ? `<label>${small ? "В наборе" : "Ярусов"}<select data-config="${small ? "pieces" : "tiers"}">${(small ? [1, 4, 6] : Array.from({ length: active.maxTiers }, (_, i) => i + 1)).map((v) => `<option ${v === state[small ? "pieces" : "tiers"] ? "selected" : ""}>${v}</option>`).join("")}</select></label>`
+        : kind === "flowers"
+          ? `<label>Объём букета<select data-config="bouquetSize">${[11, 19, 29].map((v) => `<option value="${v}" ${v === state.bouquetSize ? "selected" : ""}>${{ 11: "Небольшой", 19: "Средний", 29: "Пышный" }[v]}</option>`).join("")}</select></label>`
+          : `${active.type === "ring" ? `<label>Размер кольца<select data-config="size">${[16, 17, 18, 19, 20].map((v) => `<option ${v === state.size ? "selected" : ""}>${v}</option>`).join("")}</select></label>` : ""}<label>Поверхность<select data-config="finish">${Object.entries(
+              {
+                polished: "Полировка",
+                satin: "Матовая",
+                brushed: "Сатинирование",
+                hammered: "Чеканка",
+              },
+            )
+              .map(
+                ([id, name]) =>
+                  `<option value="${id}" ${state.finish === id ? "selected" : ""}>${name}</option>`,
+              )
+              .join("")}</select></label>`;
+    if (kind === "cakes")
+      $("#ingredients").innerHTML =
+        active.layers
+          .map(
+            (l) =>
+              `<li><span>${esc(ingredients[l.component].name)}</span><small>${l.thicknessCm} см</small></li>`,
+          )
+          .join("") +
+        state.foodDecor
+          .map(
+            (id) =>
+              `<li><span>${esc(ingredients[id].name)}</span><div class="counter"><button data-food-count="${id}" data-delta="-1" ${state.foodCounts[id] <= 1 ? "disabled" : ""}>−</button><output>${state.foodCounts[id]}</output><button data-food-count="${id}" data-delta="1" aria-label="Добавить ${esc(ingredients[id].name)}" ${normalize(kind, { ...state, foodCounts: { ...state.foodCounts, [id]: state.foodCounts[id] + 1 } }).foodCounts[id] <= state.foodCounts[id] ? "disabled" : ""}>+</button></div><button class="remove" data-food-remove="${id}" aria-label="Убрать ${esc(ingredients[id].name)}">×</button></li>`,
+          )
+          .join("");
+    if (kind === "flowers")
+      $("#ingredients").innerHTML = Object.entries(state.taxonCounts)
+        .map(
+          ([id, count]) =>
+            `<li><span>${esc(plants[id].name)}</span><div class="counter"><button data-taxon-count="${id}" aria-label="Уменьшить ${esc(plants[id].name)}" data-delta="-1" ${count <= 1 ? "disabled" : ""}>−</button><output>${count}</output><button data-taxon-count="${id}" aria-label="Добавить ${esc(plants[id].name)}" data-delta="1" ${count >= 33 || Object.values(state.taxonCounts).reduce((n, v) => n + v, 0) >= 33 ? "disabled" : ""}>+</button></div></li>`,
+        )
+        .join("");
+    if (kind === "jewelry")
+      $("#ingredients").innerHTML =
+        `<li><span>${esc(active.name)}</span></li>${state.stone ? `<li><span>${esc(byId[state.stone].name)} · ${esc(byId[state.stone].variant || "")}</span><small>${active.stoneSizeMm} мм</small></li>` : ""}<li><span>${esc(active.fixedMetals ? "Жёлтое, белое и розовое золото" : spec.palette[state.palette][0])}</span><small>${{ polished: "Полировка", satin: "Матовая", brushed: "Сатинирование", hammered: "Чеканка" }[state.finish]}</small></li>`;
+  }
+  $("#dimension-options").prepend(controls);
+  if (active && kind === "cakes" && active.compatibleCovers)
+    $("#dimension-options").insertAdjacentHTML(
+      "beforeend",
+      `<label>Покрытие<select data-config="cover">${active.compatibleCovers.map((id) => `<option value="${id}" ${state.cover === id ? "selected" : ""}>${ingredients[id].name}</option>`).join("")}</select></label>`,
+    );
+  if (
+    active &&
+    kind === "cakes" &&
+    !["cream-coat", "sugar-fondant"].includes(state.cover)
+  ) {
+    materialHeading.textContent = "Покрытие рецептуры";
+    materialCaption.textContent = "Выбрано";
+    $("#palette").innerHTML =
+      `<p class="small-hint">${state.cover ? ingredients[state.cover].name : "Без дополнительного покрытия"}. Цвет теста, крема и ягод сохраняется.</p>`;
+  }
+  if (active?.fixedMetals) {
+    materialHeading.textContent = "Три металла";
+    materialCaption.textContent = "Комплект";
+    $("#palette").innerHTML =
+      '<p class="small-hint">Жёлтое, белое и розовое золото. Три отдельных кольца, которые можно носить вместе.</p>';
+  }
 }
 $("#categories").innerHTML = spec.categories
   .map(
@@ -216,7 +399,7 @@ $("#categories").innerHTML = spec.categories
 $("#presets").innerHTML = spec.presets
   .map(
     ([name, detail], i) =>
-      `<button data-preset="${i}"><img src="../shared/presets/${kind}-${i}.jpg" alt="" onerror="this.src='../shared/thumbnails/${kind === "cakes" ? "bk-struct-tier-round" : kind === "flowers" ? "fl-flower-peony-open" : "jw-base-solitaire"}.jpg'"><span>${name}<small>${detail}</small></span><b aria-hidden="true">↗</b></button>`,
+      `<button data-preset="${i}"><img src="../shared/domain-thumbnails/${kind}-${presetPatterns[kind][i]}.jpg" alt=""><span>${name}<small>${detail}</small></span><b aria-hidden="true">↗</b></button>`,
   )
   .join("");
 $("#categories").onclick = (e) => {
@@ -228,9 +411,79 @@ $("#categories").onclick = (e) => {
   renderUI();
 };
 $("#catalog").onclick = (e) => {
+  const patternButton = e.target.closest("[data-pattern]"),
+    food = e.target.closest("[data-food]");
+  if (patternButton) {
+    change({
+      ...state,
+      pattern: patternButton.dataset.pattern,
+      palette: kind === "flowers" ? undefined : state.palette,
+      stone: undefined,
+      foodDecor: undefined,
+      foodCounts: undefined,
+      taxonCounts: undefined,
+    });
+    return;
+  }
+  if (food) {
+    const id = food.dataset.food;
+    change({
+      ...state,
+      foodDecor: state.foodDecor.includes(id)
+        ? state.foodDecor.filter((x) => x !== id)
+        : [...state.foodDecor, id],
+    });
+    return;
+  }
   const b = e.target.closest("[data-asset]");
   if (b) {
     const a = byId[b.dataset.asset];
+    if (a.category === "base") {
+      const mapping =
+        kind === "cakes"
+          ? {
+              "bk-pastry-cupcake": "tiramisu-cupcake",
+              "bk-pastry-donut": "vanilla-doughnut",
+              "bk-pastry-eclair": "vanilla-eclair",
+              "bk-pastry-profiterole": "cream-puff",
+              "bk-pastry-cookie-round": "iced-cookie-round",
+              "bk-pastry-cookie-heart": "iced-cookie-heart",
+              "bk-pastry-brownie-bite": "fudge-brownie",
+              "bk-struct-tier-round": "vanilla-celebration",
+              "bk-struct-tier-hex": "vanilla-celebration",
+            }
+          : kind === "jewelry"
+            ? {
+                "jw-base-solitaire": "solitaire",
+                "jw-base-band-plain": "wedding-band",
+                "jw-base-stacking-thin": "pave-band",
+                "jw-base-cocktail": "trilogy",
+                "jw-base-cuff-bracelet": "bangle",
+                "jw-base-ear-cuff": "hoop",
+                "jw-base-stud-earring": "stud",
+                "jw-base-drop-earring": "drop",
+                "jw-base-pendant": "bezel-pendant",
+                "jw-base-chain-link-cable": "cable-chain",
+                "jw-set-bezel": "bezel-ring",
+                "jw-set-halo": "halo-ring",
+                "jw-set-pave-band": null,
+              }
+            : {};
+      if (state.pattern && mapping[a.id]) {
+        change({
+          ...state,
+          base: a.id,
+          pattern: mapping[a.id],
+          stone: undefined,
+          foodDecor: undefined,
+          foodCounts: undefined,
+          taxonCounts: undefined,
+        });
+        return;
+      }
+      change({ ...toggleAsset(kind, state, a.id), pattern: null });
+      return;
+    }
     if (
       a.category === "flowers" &&
       !state.flowers.includes(a.id) &&
@@ -260,13 +513,58 @@ $("#dimension-options").onchange = (e) => {
     const key = e.target.dataset.config;
     change({
       ...state,
-      [key]: ["layout", "filling"].includes(key)
+      ...(key === "pattern"
+        ? {
+            stone: undefined,
+            palette: kind === "flowers" ? undefined : state.palette,
+            foodDecor: undefined,
+            foodCounts: undefined,
+            taxonCounts: undefined,
+          }
+        : key === "bouquetSize"
+          ? { taxonCounts: undefined }
+          : {}),
+      [key]: ["layout", "filling", "pattern", "finish", "cover"].includes(key)
         ? e.target.value
         : Number(e.target.value),
     });
   }
 };
 $("#ingredients").onclick = (e) => {
+  const food = e.target.closest("[data-food-count]"),
+    removeFood = e.target.closest("[data-food-remove]"),
+    taxon = e.target.closest("[data-taxon-count]");
+  if (food) {
+    const id = food.dataset.foodCount;
+    change({
+      ...state,
+      foodCounts: {
+        ...state.foodCounts,
+        [id]: state.foodCounts[id] + Number(food.dataset.delta),
+      },
+    });
+    return;
+  }
+  if (removeFood) {
+    change({
+      ...state,
+      foodDecor: state.foodDecor.filter(
+        (id) => id !== removeFood.dataset.foodRemove,
+      ),
+    });
+    return;
+  }
+  if (taxon) {
+    const id = taxon.dataset.taxonCount;
+    change({
+      ...state,
+      taxonCounts: {
+        ...state.taxonCounts,
+        [id]: state.taxonCounts[id] + Number(taxon.dataset.delta),
+      },
+    });
+    return;
+  }
   const count = e.target.closest("[data-count]"),
     remove = e.target.closest("[data-remove]");
   if (count) {
@@ -295,7 +593,7 @@ $("#redo").onclick = () => {
   history.push(structuredClone(state));
   change(future.pop(), false);
 };
-$("#reset").onclick = () => change(defaults(kind));
+$("#reset").onclick = () => change(preset(kind, 0));
 $("#save").onclick = () => {
   persist();
   status.textContent = "Черновик сохранён на этом устройстве";
@@ -331,7 +629,11 @@ async function rebuild() {
       return;
     }
     renderer.setObject(next, {
-      reset: !assembly || s.base !== assembly.base || s.pack !== assembly.pack,
+      reset:
+        !assembly ||
+        s.pattern !== assembly.pattern ||
+        s.base !== assembly.base ||
+        s.pack !== assembly.pack,
     });
     assembly = s;
     $("#fallback").hidden = true;
@@ -475,6 +777,17 @@ try {
     .forEach((b) => (b.disabled = true));
 }
 window.studioReview = {
+  component: (type, id) => {
+    const object =
+      type === "food"
+        ? foodDetail(id)
+        : plants[id].role === "foliage" || plants[id].role === "filler"
+          ? botanicalBranch(plants[id], 8)
+          : botanicalHead(plants[id]);
+    renderer.setObject(object);
+    renderer.fit("front");
+    return object.userData;
+  },
   freeze: () => {
     cancelAnimationFrame(renderer.raf);
     renderer.loop = () => {};

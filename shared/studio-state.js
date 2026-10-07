@@ -1,11 +1,21 @@
 import { catalogue, byId } from "./catalogue.js";
 import {
+  resolvePattern,
+  recipes,
+  bouquets,
+  forms,
+  initialTaxonCounts,
+  ingredients,
+  designs,
+} from "./domain.js";
+import {
   cakeParts,
   cakeSurfaces,
   findCakeSeat,
   cakeBlockers,
 } from "./assembly-profiles.js";
 import { normalizeJewelry } from "./jewelry-rules.js";
+import { recipeSeats } from "./recipe-layout.js";
 export const projectSpecs = {
   cakes: {
     brand: "Мельница",
@@ -80,6 +90,39 @@ export const projectSpecs = {
     ],
   },
 };
+for (const [kind, label] of Object.entries({
+  cakes: "Рецептуры",
+  flowers: "Композиции",
+  jewelry: "Конструкции",
+}))
+  projectSpecs[kind].categories.unshift(["pattern", label]);
+projectSpecs.jewelry.palette = [
+  ["Жёлтое золото", "#d8b56b"],
+  ["Белое золото", "#e0ded3"],
+  ["Розовое золото", "#d79e88"],
+  ["Серебро", "#d5dbde"],
+  ["Платина", "#c9cccf"],
+];
+export const presetPatterns = {
+  cakes: ["vanilla-celebration", "fraisier", "macaron-pistachio"],
+  flowers: ["garden-pink", "peony-mono", "white-box"],
+  jewelry: ["solitaire", "halo-ring", "bezel-pendant"],
+};
+projectSpecs.cakes.presets = [
+  ["Ванильный праздник", "Бисквит и масляный крем"],
+  ["Фрезье", "Муслин, клубника и миндальная паста"],
+  ["Фисташковые макароны", "Миндальная оболочка и фисташковый крем"],
+];
+projectSpecs.flowers.presets = [
+  ["Розовый сад", "Розы, ранункулюсы и анемоны"],
+  ["Пионы", "Круглый монобукет"],
+  ["Светлая коробка", "Розы, эустома и гвоздика"],
+];
+projectSpecs.jewelry.presets = [
+  ["Первый свет", "Солитер с шестью крапанами"],
+  ["Ореол", "Центральный камень и обрамление"],
+  ["Личная история", "Подвеска на тонкой цепочке"],
+];
 const counts = {
   "bk-berry-strawberry": 3,
   "bk-berry-blueberry": 7,
@@ -88,73 +131,14 @@ const counts = {
   "fl-flower-rose-garden": 4,
 };
 export function preset(kind, index = 0) {
-  if (kind === "cakes")
-    return index === 1
-      ? {
-          ...defaults(kind),
-          base: "bk-struct-tier-round",
-          tiers: 2,
-          decor: [
-            "bk-decor-macaron",
-            "bk-berry-raspberry",
-            "bk-decor-gold-flake",
-          ],
-          counts: {
-            "bk-decor-macaron": 4,
-            "bk-berry-raspberry": 5,
-            "bk-decor-gold-flake": 5,
-          },
-          topper: "bk-topper-crown",
-          palette: 1,
-        }
-      : index === 2
-        ? {
-            ...defaults(kind),
-            base: "bk-pastry-cupcake",
-            decor: ["bk-berry-blueberry"],
-            counts: { "bk-berry-blueberry": 5 },
-            pieces: 4,
-          }
-        : defaults(kind);
-  if (kind === "flowers")
-    return index === 1
-      ? {
-          ...defaults(kind),
-          flowers: ["fl-flower-chamomile"],
-          green: ["fl-fill-gypsophila", "fl-green-lagurus"],
-          pack: "fl-wrap-kraft-cone",
-          ribbon: "fl-ribbon-jute-twine",
-          counts: { "fl-flower-chamomile": 11 },
-          palette: 1,
-        }
-      : index === 2
-        ? {
-            ...defaults(kind),
-            flowers: ["fl-flower-ranunculus", "fl-flower-eustoma"],
-            green: ["fl-green-ruscus"],
-            pack: "fl-wrap-hatbox-round",
-            ribbon: "fl-ribbon-rep-bow",
-            counts: { "fl-flower-ranunculus": 7, "fl-flower-eustoma": 4 },
-            palette: 3,
-          }
-        : defaults(kind);
-  return index === 1
-    ? {
-        ...defaults(kind),
-        base: "jw-set-halo",
-        stone: "jw-stone-gem-18",
-        palette: 0,
-      }
-    : index === 2
-      ? {
-          ...defaults(kind),
-          base: "jw-base-pendant",
-          stone: "jw-stone-gem-19",
-          finding: ["jw-part-bail-hinged"],
-          palette: 2,
-        }
-      : defaults(kind);
+  return normalize(kind, {
+    ...defaults(kind),
+    stone: undefined,
+    palette: kind === "flowers" ? undefined : defaults(kind).palette,
+    pattern: presetPatterns[kind][index] || presetPatterns[kind][0],
+  });
 }
+
 export function defaults(kind) {
   return kind === "cakes"
     ? {
@@ -204,6 +188,62 @@ export function normalize(kind, value) {
   const valid = (id, category) =>
     byId[id]?.project === kind && byId[id]?.category === category;
   const out = { ...d, counts: {} };
+  out.pattern = resolvePattern(kind, value.pattern)?.id || null;
+  out.finish = ["polished", "satin", "brushed", "hammered"].includes(
+    value.finish,
+  )
+    ? value.finish
+    : "polished";
+  out.bouquetSize = [11, 19, 29].includes(Number(value.bouquetSize))
+    ? Number(value.bouquetSize)
+    : 19;
+  if (out.pattern && kind === "flowers") {
+    const initial = initialTaxonCounts(out.pattern, out.bouquetSize),
+      validPlants = Object.keys(initial);
+    out.taxonCounts = Object.fromEntries(
+      validPlants.map((id) => [
+        id,
+        Math.max(
+          1,
+          Math.min(
+            33,
+            Math.round(Number(value.taxonCounts?.[id]) || initial[id]),
+          ),
+        ),
+      ]),
+    );
+    let total = Object.values(out.taxonCounts).reduce((n, v) => n + v, 0);
+    while (total > 33) {
+      const id = validPlants.reduce((a, b) =>
+        out.taxonCounts[a] >= out.taxonCounts[b] ? a : b,
+      );
+      out.taxonCounts[id]--;
+      total--;
+    }
+  }
+  if (out.pattern && kind === "cakes") {
+    const recipe = recipes[out.pattern];
+    out.cover = (recipe.compatibleCovers || [recipe.cover]).includes(
+      value.cover,
+    )
+      ? value.cover
+      : recipe.cover;
+    out.foodDecor = Array.isArray(value.foodDecor)
+      ? [...new Set(value.foodDecor)].filter((id) =>
+          recipes[out.pattern].compatibleDecor.includes(id),
+        )
+      : recipes[out.pattern].defaultDecor ||
+        recipes[out.pattern].compatibleDecor.slice(0, 2);
+    out.foodCounts = Object.fromEntries(
+      out.foodDecor.map((id) => [
+        id,
+        Math.max(
+          1,
+          Math.min(12, Math.round(Number(value.foodCounts?.[id]) || 3)),
+        ),
+      ]),
+    );
+  }
   for (const key of ["base", "topper", "pack", "ribbon", "stone", "setting"])
     if (key in d)
       out[key] = valid(value[key], key)
@@ -254,14 +294,25 @@ export function normalize(kind, value) {
     value.palette >= 0 &&
     value.palette < projectSpecs[kind].palette.length
       ? value.palette
-      : 0;
+      : kind === "flowers"
+        ? bouquets[out.pattern]?.defaultPalette || 0
+        : 0;
   if (kind === "cakes") {
+    if (out.pattern)
+      out.tiers = Math.min(value.tiers || 1, recipes[out.pattern].maxTiers);
     out.filling = ["vanilla", "berry", "chocolate", "pistachio"].includes(
       value.filling,
     )
       ? value.filling
       : "vanilla";
-    out.tiers = [1, 2, 3].includes(value.tiers) ? value.tiers : 1;
+    out.tiers = out.pattern
+      ? Math.max(
+          1,
+          Math.min(Number(value.tiers) || 1, recipes[out.pattern].maxTiers),
+        )
+      : [1, 2, 3].includes(value.tiers)
+        ? value.tiers
+        : 1;
     out.pieces = [1, 4, 6].includes(value.pieces) ? value.pieces : 4;
     out.layout = ["crescent", "wreath", "center"].includes(value.layout)
       ? value.layout
@@ -305,6 +356,26 @@ export function normalize(kind, value) {
   }
   if (kind === "jewelry")
     out.size = [16, 17, 18, 19, 20].includes(value.size) ? value.size : 17;
+  if (kind === "jewelry" && out.pattern && value.stone === undefined)
+    out.stone = null;
+  if (kind === "jewelry" && designs[out.pattern]?.fixedMetals) out.palette = 0;
+  if (out.pattern && kind === "flowers") {
+    const form = forms[bouquets[out.pattern].form];
+    if (form.packaging.includes("box")) out.pack = "fl-wrap-hatbox-round";
+    else if (form.packaging.includes("basket"))
+      out.pack = "fl-wrap-basket-rattan";
+    else if (form.packaging.includes("ribbon")) out.pack = null;
+    else if (
+      !out.pack ||
+      ["fl-wrap-hatbox-round", "fl-wrap-basket-rattan"].includes(out.pack)
+    )
+      out.pack = d.pack;
+  }
+  if (out.pattern && kind === "cakes") {
+    const layout = recipeSeats(out);
+    out.foodCounts = layout.counts;
+    out.foodDecor = out.foodDecor.filter((id) => layout.counts[id]);
+  }
   return kind === "jewelry" ? normalizeJewelry(out) : out;
 }
 export function selectedIds(kind, s) {
@@ -344,6 +415,50 @@ export function canIncreaseCount(kind, s, id) {
   );
 }
 export function estimate(kind, s) {
+  const pattern = resolvePattern(kind, s.pattern);
+  if (pattern) {
+    if (kind === "cakes") {
+      const small = [
+        "macaron",
+        "eclair",
+        "profiterole",
+        "paris-brest",
+        "cupcake",
+        "donut",
+        "cookie",
+        "brownie",
+      ].includes(pattern.type);
+      const base = small
+        ? (5 + pattern.diameterCm * 0.6 + pattern.layers.length) *
+          (s.pieces || 1)
+        : (35 + pattern.diameterCm * 1.8 + pattern.layers.length * 3) *
+          (s.tiers || 1);
+      return Math.round(
+        base +
+          (s.foodDecor || []).reduce(
+            (n, id) => n + (s.foodCounts?.[id] || 3) * 1.4,
+            0,
+          ) +
+          (s.topper && !small ? byId[s.topper]?.price || 0 : 0),
+      );
+    }
+    if (kind === "flowers")
+      return Math.round(
+        Object.values(s.taxonCounts || {}).reduce((n, v) => n + v, 0) * 7.5 +
+          18,
+      );
+    return Math.round(
+      { ring: 220, earring: 170, pendant: 185, bracelet: 350, chain: 240 }[
+        pattern.type
+      ] +
+        (pattern.stoneSizeMm || 0) * 35 +
+        (["yellow-gold", "white-gold", "rose-gold", "silver", "platinum"][
+          s.palette
+        ] === "platinum"
+          ? 90
+          : 0),
+    );
+  }
   let total = 0;
   for (const id of selectedIds(kind, s)) {
     const a = byId[id];
@@ -367,6 +482,23 @@ export function estimate(kind, s) {
   return Math.round(total * 100) / 100;
 }
 export function describe(kind, s) {
+  const pattern = resolvePattern(kind, s.pattern);
+  if (pattern)
+    return [
+      pattern.name,
+      kind === "cakes"
+        ? `${["macaron", "eclair", "profiterole", "paris-brest", "cupcake", "donut", "cookie", "brownie"].includes(pattern.type) ? s.pieces + " шт." : s.tiers + " ярус"} · ${pattern.diameterCm} см`
+        : kind === "flowers"
+          ? `${Object.values(s.taxonCounts || {}).reduce((n, v) => n + v, 0)} стеблей`
+          : pattern.fixedMetals
+            ? "Три оттенка золота"
+            : projectSpecs.jewelry.palette[s.palette][0],
+      kind === "jewelry" && s.stone
+        ? byId[s.stone]?.variant || byId[s.stone]?.name
+        : "",
+    ]
+      .filter(Boolean)
+      .join(" · ");
   return (
     kind === "cakes" && !s.base.includes("pastry")
       ? [

@@ -3,9 +3,26 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { disposeTree } from "./scene-utils.js";
 import { bounds } from "./model-library.js";
-function studioEnvironment(renderer) {
-  const room = new RoomEnvironment(),
-    pmrem = new THREE.PMREMGenerator(renderer),
+function studioEnvironment(renderer, kind) {
+  const room = new RoomEnvironment();
+  if (kind === "cakes") {
+    for (const [width, height, position] of [
+      [1.4, 4, [-3, 3, -4]],
+      [4, 2, [0, 5, 0]],
+    ]) {
+      const panel = new THREE.Mesh(
+        new THREE.PlaneGeometry(width, height),
+        new THREE.MeshBasicMaterial({
+          color: new THREE.Color(5, 5, 5),
+          side: THREE.DoubleSide,
+        }),
+      );
+      panel.position.set(...position);
+      panel.lookAt(0, 0, 0);
+      room.add(panel);
+    }
+  }
+  const pmrem = new THREE.PMREMGenerator(renderer),
     env = pmrem.fromScene(room, 0.025);
   room.dispose();
   pmrem.dispose();
@@ -35,7 +52,7 @@ export class StudioRenderer {
       0.01,
       1000,
     );
-    this.env = studioEnvironment(this.renderer);
+    this.env = studioEnvironment(this.renderer, kind);
     this.scene.environment = this.env.texture;
     this.scene.add(
       new THREE.HemisphereLight(
@@ -89,7 +106,7 @@ export class StudioRenderer {
       "webglcontextrestored",
       (this.onRestored = () => {
         this.env.dispose();
-        this.env = studioEnvironment(this.renderer);
+        this.env = studioEnvironment(this.renderer, this.kind);
         this.scene.environment = this.env.texture;
         host.dispatchEvent(new CustomEvent("contextrestored"));
       }),
@@ -157,7 +174,7 @@ export class StudioRenderer {
           : pose === "back"
             ? new THREE.Vector3(-0.35, 0.4, -1)
             : this.kind === "jewelry"
-              ? new THREE.Vector3(0.22, 0.25, 1)
+              ? new THREE.Vector3(0.48, 0.44, 1)
               : new THREE.Vector3(
                   0.28,
                   this.kind === "flowers" ? 0.44 : 0.62,

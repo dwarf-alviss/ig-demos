@@ -1,0 +1,1304 @@
+{
+  "plants": [
+    {
+      "id": "rose",
+      "name": "Садовая роза",
+      "role": "focal",
+      "morphology": "cupped-rosette",
+      "headDiameterCm": 7.2,
+      "season": "spring-summer",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-species",
+        "ifl-spring",
+        "ifl-peony",
+        "da-winter"
+      ],
+      "asset": "fl-flower-rose-garden",
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "ivory",
+        "blush",
+        "apricot",
+        "burgundy"
+      ],
+      "cultivarReference": {
+        "name": "Keira (Ausboxer), garden rose type",
+        "source": "da-taffeta",
+        "geometry": "species-level asset; cultivar-inspired palette, not an exact botanical scan"
+      },
+      "compatibleBouquets": [
+        "garden-pink",
+        "ivory-bridal",
+        "rose-mono",
+        "white-box",
+        "summer-basket",
+        "bridal-cascade"
+      ],
+      "headDepthCalibration": 1.7,
+      "stemDiameterCm": 0.3
+    },
+    {
+      "id": "peony",
+      "name": "Пион",
+      "role": "focal",
+      "morphology": "many-layered-cup",
+      "headDiameterCm": 10,
+      "season": "late-spring-early-summer",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-species",
+        "ifl-spring",
+        "ifl-peony",
+        "da-winter"
+      ],
+      "asset": "fl-flower-peony-open",
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "ivory",
+        "blush",
+        "burgundy"
+      ],
+      "compatibleBouquets": [
+        "peony-mono",
+        "summer-basket"
+      ],
+      "headDepthCalibration": 1.25,
+      "stemDiameterCm": 0.4
+    },
+    {
+      "id": "ranunculus",
+      "name": "Ранункулюс",
+      "role": "secondary",
+      "morphology": "concentric-cupped-petals",
+      "headDiameterCm": 6,
+      "season": "spring",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-species",
+        "ifl-spring",
+        "ifl-peony",
+        "da-winter"
+      ],
+      "asset": "fl-flower-ranunculus",
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "ivory",
+        "blush",
+        "yellow",
+        "orange"
+      ],
+      "cultivarReference": {
+        "name": "Elegance Rosa",
+        "source": "da-taffeta",
+        "geometry": "species-level asset; cultivar-inspired palette, not an exact botanical scan"
+      },
+      "compatibleBouquets": [
+        "garden-pink",
+        "ivory-bridal",
+        "spring-air"
+      ],
+      "headDepthCalibration": 1.4,
+      "stemDiameterCm": 0.22
+    },
+    {
+      "id": "anemone",
+      "name": "Анемона",
+      "role": "secondary",
+      "morphology": "single-petal-black-centre",
+      "headDiameterCm": 6.4,
+      "season": "spring",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-species",
+        "ifl-spring",
+        "ifl-peony",
+        "da-winter"
+      ],
+      "asset": "fl-flower-anemone",
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "ivory",
+        "pink",
+        "violet"
+      ],
+      "cultivarReference": {
+        "name": "Mistral Panda Blush",
+        "source": "da-taffeta",
+        "geometry": "species-level asset; cultivar-inspired palette, not an exact botanical scan"
+      },
+      "compatibleBouquets": [
+        "garden-pink",
+        "spring-air"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.24
+    },
+    {
+      "id": "tulip",
+      "name": "Тюльпан",
+      "role": "line",
+      "morphology": "six-petal-cup",
+      "headDiameterCm": 4.6,
+      "season": "spring",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-species",
+        "ifl-spring",
+        "ifl-peony",
+        "da-winter"
+      ],
+      "asset": "fl-flower-tulip",
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "ivory",
+        "blush",
+        "yellow",
+        "burgundy"
+      ],
+      "compatibleBouquets": [
+        "tulip-line",
+        "minimal-stems"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.45
+    },
+    {
+      "id": "chamomile",
+      "name": "Ромашка",
+      "role": "filler",
+      "morphology": "white-rays-yellow-disc",
+      "headDiameterCm": 4.1,
+      "season": "summer",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-species",
+        "ifl-spring",
+        "ifl-peony",
+        "da-winter"
+      ],
+      "asset": "fl-flower-chamomile",
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "white-yellow"
+      ],
+      "compatibleBouquets": [
+        "meadow"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.1
+    },
+    {
+      "id": "gerbera",
+      "name": "Гербера",
+      "role": "focal",
+      "morphology": "multi-row-rays-disc",
+      "headDiameterCm": 8,
+      "season": "summer",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-species",
+        "ifl-spring",
+        "ifl-peony",
+        "da-winter"
+      ],
+      "asset": "fl-flower-gerbera",
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "pink",
+        "yellow",
+        "orange"
+      ],
+      "compatibleBouquets": [
+        "autumn"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.18
+    },
+    {
+      "id": "chrysanthemum",
+      "name": "Хризантема",
+      "role": "focal",
+      "morphology": "incurved-many-petals",
+      "headDiameterCm": 6.5,
+      "season": "autumn",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-species",
+        "ifl-spring",
+        "ifl-peony",
+        "da-winter"
+      ],
+      "asset": "fl-flower-chrysanthemum-spray",
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "ivory",
+        "yellow",
+        "burgundy"
+      ],
+      "compatibleBouquets": [
+        "autumn"
+      ],
+      "headDepthCalibration": 1.2,
+      "stemDiameterCm": 0.18
+    },
+    {
+      "id": "lisianthus",
+      "name": "Эустома",
+      "role": "secondary",
+      "morphology": "ruffled-cup",
+      "headDiameterCm": 6,
+      "season": "summer",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-species",
+        "ifl-spring",
+        "ifl-peony",
+        "da-winter"
+      ],
+      "asset": "fl-flower-eustoma",
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "ivory",
+        "blush",
+        "violet"
+      ],
+      "compatibleBouquets": [
+        "meadow",
+        "white-box",
+        "summer-basket"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.24
+    },
+    {
+      "id": "lily",
+      "name": "Восточная лилия",
+      "role": "line",
+      "morphology": "six-recurved-tepals-stamens",
+      "headDiameterCm": 10,
+      "season": "summer",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-species",
+        "ifl-spring",
+        "ifl-peony",
+        "da-winter"
+      ],
+      "asset": "fl-flower-lily-oriental",
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "ivory",
+        "pink"
+      ],
+      "compatibleBouquets": [],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.4
+    },
+    {
+      "id": "dahlia",
+      "name": "Георгин",
+      "role": "focal",
+      "morphology": "overlapping-geometric-petals",
+      "headDiameterCm": 10,
+      "season": "late-summer-autumn",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "rhs-dahlia"
+      ],
+      "asset": null,
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "ivory",
+        "blush",
+        "yellow",
+        "burgundy"
+      ],
+      "compatibleBouquets": [
+        "autumn"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.38
+    },
+    {
+      "id": "hydrangea",
+      "name": "Гортензия",
+      "role": "mass",
+      "morphology": "cluster-four-sepal-florets",
+      "headDiameterCm": 16,
+      "season": "summer-autumn",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "rhs-hydrangea"
+      ],
+      "asset": null,
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "ivory",
+        "blush",
+        "blue"
+      ],
+      "compatibleBouquets": [],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.18
+    },
+    {
+      "id": "carnation",
+      "name": "Гвоздика",
+      "role": "secondary",
+      "morphology": "serrated-ruffled-petals",
+      "headDiameterCm": 6,
+      "season": "summer",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-species",
+        "ifl-spring",
+        "ifl-peony",
+        "da-winter"
+      ],
+      "asset": null,
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "ivory",
+        "blush",
+        "burgundy"
+      ],
+      "compatibleBouquets": [
+        "white-box"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.18
+    },
+    {
+      "id": "sweet-pea",
+      "name": "Душистый горошек",
+      "role": "line",
+      "morphology": "wing-standard-keel",
+      "headDiameterCm": 4,
+      "season": "spring-summer",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "rhs-pea",
+        "umich-sweetpea"
+      ],
+      "asset": null,
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "ivory",
+        "blush",
+        "violet"
+      ],
+      "compatibleBouquets": [
+        "minimal-stems"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.18
+    },
+    {
+      "id": "hellebore",
+      "name": "Морозник",
+      "role": "secondary",
+      "morphology": "five-sepal-open-cup",
+      "headDiameterCm": 6,
+      "season": "winter-spring",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-species",
+        "ifl-spring",
+        "ifl-peony",
+        "da-winter"
+      ],
+      "asset": null,
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "ivory",
+        "green",
+        "burgundy"
+      ],
+      "compatibleBouquets": [
+        "spring-air",
+        "bridal-cascade"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.18
+    },
+    {
+      "id": "astrantia",
+      "name": "Астранция",
+      "role": "filler",
+      "morphology": "star-bracts-tiny-cluster",
+      "headDiameterCm": 2.4,
+      "season": "summer",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-species",
+        "ifl-spring",
+        "ifl-peony",
+        "da-winter",
+        "rhs-astrantia"
+      ],
+      "asset": null,
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "ivory",
+        "blush"
+      ],
+      "compatibleBouquets": [
+        "spring-air",
+        "bridal-cascade"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.1
+    },
+    {
+      "id": "muscari",
+      "name": "Мускари",
+      "role": "line",
+      "morphology": "dense-bell-raceme",
+      "headDiameterCm": 1,
+      "season": "spring",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-species",
+        "ifl-spring",
+        "ifl-peony",
+        "da-winter"
+      ],
+      "asset": null,
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "violet-blue"
+      ],
+      "compatibleBouquets": [],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.18
+    },
+    {
+      "id": "lilac",
+      "name": "Сирень",
+      "role": "filler",
+      "morphology": "branched-four-petal-florets",
+      "headDiameterCm": 1,
+      "season": "spring",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-species",
+        "ifl-spring",
+        "ifl-peony",
+        "da-winter"
+      ],
+      "asset": null,
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "naturalColors": [
+        "ivory",
+        "violet"
+      ],
+      "compatibleBouquets": [],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.1
+    },
+    {
+      "id": "eucalyptus",
+      "name": "Эвкалипт",
+      "role": "foliage",
+      "morphology": "opposite-round-leaves",
+      "headDiameterCm": 1,
+      "season": "conditioned-year-round",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-method",
+        "da-winter"
+      ],
+      "asset": "fl-green-eucalyptus-silver",
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "lengthCm": [
+        25,
+        55
+      ],
+      "compatibleBouquets": [
+        "garden-pink",
+        "spring-air"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.1
+    },
+    {
+      "id": "ruscus",
+      "name": "Рускус",
+      "role": "foliage",
+      "morphology": "pointed-alternate-cladodes",
+      "headDiameterCm": 1,
+      "season": "conditioned-year-round",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-method",
+        "da-winter"
+      ],
+      "asset": "fl-green-ruscus",
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "lengthCm": [
+        25,
+        55
+      ],
+      "compatibleBouquets": [
+        "ivory-bridal",
+        "white-box"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.1
+    },
+    {
+      "id": "fern",
+      "name": "Папоротник",
+      "role": "foliage",
+      "morphology": "pinnate-frond",
+      "headDiameterCm": 1,
+      "season": "conditioned-year-round",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-method",
+        "da-winter"
+      ],
+      "asset": "fl-green-fern",
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "lengthCm": [
+        25,
+        55
+      ],
+      "compatibleBouquets": [
+        "meadow"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.1
+    },
+    {
+      "id": "salal",
+      "name": "Салал",
+      "role": "foliage",
+      "morphology": "broad-leaf-branch",
+      "headDiameterCm": 1,
+      "season": "conditioned-year-round",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-method",
+        "da-winter"
+      ],
+      "asset": null,
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "lengthCm": [
+        25,
+        55
+      ],
+      "compatibleBouquets": [
+        "autumn",
+        "summer-basket"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.1
+    },
+    {
+      "id": "gypsophila",
+      "name": "Гипсофила",
+      "role": "filler",
+      "morphology": "branched-tiny-white-flowers",
+      "headDiameterCm": 1,
+      "season": "conditioned-year-round",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-method",
+        "da-winter"
+      ],
+      "asset": "fl-fill-gypsophila",
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "lengthCm": [
+        25,
+        55
+      ],
+      "compatibleBouquets": [
+        "ivory-bridal",
+        "meadow",
+        "white-box"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.1
+    },
+    {
+      "id": "limonium",
+      "name": "Лимониум",
+      "role": "filler",
+      "morphology": "airy-small-flower-spray",
+      "headDiameterCm": 1,
+      "season": "conditioned-year-round",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-method",
+        "da-winter"
+      ],
+      "asset": null,
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "lengthCm": [
+        25,
+        55
+      ],
+      "compatibleBouquets": [
+        "autumn"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.1
+    },
+    {
+      "id": "lagurus",
+      "name": "Лагурус",
+      "role": "filler",
+      "morphology": "soft-oval-grass-heads",
+      "headDiameterCm": 1,
+      "season": "conditioned-year-round",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-method",
+        "da-winter"
+      ],
+      "asset": "fl-green-lagurus",
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "lengthCm": [
+        25,
+        55
+      ],
+      "compatibleBouquets": [],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.1
+    },
+    {
+      "id": "wheat",
+      "name": "Колосья",
+      "role": "filler",
+      "morphology": "grain-ear",
+      "headDiameterCm": 1,
+      "season": "conditioned-year-round",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-method",
+        "da-winter"
+      ],
+      "asset": null,
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "lengthCm": [
+        25,
+        55
+      ],
+      "compatibleBouquets": [],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.1
+    },
+    {
+      "id": "olive",
+      "name": "Олива",
+      "role": "foliage",
+      "morphology": "opposite-narrow-leaves",
+      "headDiameterCm": 1,
+      "season": "conditioned-year-round",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-method",
+        "da-winter"
+      ],
+      "asset": null,
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "lengthCm": [
+        25,
+        55
+      ],
+      "compatibleBouquets": [
+        "tulip-line"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.1
+    },
+    {
+      "id": "ivy",
+      "name": "Плющ",
+      "role": "foliage",
+      "morphology": "trailing-lobed-leaves",
+      "headDiameterCm": 1,
+      "season": "conditioned-year-round",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-method",
+        "da-winter",
+        "rhs-ivy"
+      ],
+      "asset": null,
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "lengthCm": [
+        25,
+        55
+      ],
+      "compatibleBouquets": [
+        "bridal-cascade"
+      ],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.1
+    },
+    {
+      "id": "pittosporum",
+      "name": "Питтоспорум",
+      "role": "foliage",
+      "morphology": "whorled-variegated-leaves",
+      "headDiameterCm": 1,
+      "season": "conditioned-year-round",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-method",
+        "da-winter"
+      ],
+      "asset": null,
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "lengthCm": [
+        25,
+        55
+      ],
+      "compatibleBouquets": [],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.1
+    },
+    {
+      "id": "spirea",
+      "name": "Спирея",
+      "role": "filler",
+      "morphology": "arching-flowering-branch",
+      "headDiameterCm": 1,
+      "season": "spring-summer",
+      "seasonRegion": "UK outdoor; greenhouse and imports differ",
+      "sources": [
+        "ifl-method",
+        "da-winter"
+      ],
+      "asset": null,
+      "dimensions": "visual modelling range, not a cultivar measurement",
+      "lengthCm": [
+        25,
+        55
+      ],
+      "compatibleBouquets": [],
+      "headDepthCalibration": 1,
+      "stemDiameterCm": 0.1
+    }
+  ],
+  "forms": [
+    {
+      "id": "round",
+      "name": "Круглый букет",
+      "shape": "hemisphere",
+      "density": 0.82,
+      "stemSystem": "hand-tied-spiral",
+      "packaging": [
+        "paper",
+        "vase"
+      ],
+      "sources": [
+        "ifl-method"
+      ]
+    },
+    {
+      "id": "garden",
+      "name": "Садовый букет",
+      "shape": "asymmetric-dome",
+      "density": 0.63,
+      "stemSystem": "hand-tied-spiral",
+      "packaging": [
+        "paper",
+        "vase"
+      ],
+      "sources": [
+        "da-taffeta",
+        "da-summer"
+      ]
+    },
+    {
+      "id": "bridal",
+      "name": "Свадебный",
+      "shape": "compact-dome",
+      "density": 0.9,
+      "stemSystem": "hand-tied-spiral",
+      "packaging": [
+        "ribbon"
+      ],
+      "sources": [
+        "da-taffeta"
+      ]
+    },
+    {
+      "id": "cascade",
+      "name": "Каскадный",
+      "shape": "directional-cascade",
+      "density": 0.57,
+      "stemSystem": "wired-and-bound",
+      "packaging": [
+        "ribbon"
+      ],
+      "sources": [
+        "da-winter"
+      ]
+    },
+    {
+      "id": "line",
+      "name": "Вытянутый",
+      "shape": "directional-fan",
+      "density": 0.55,
+      "stemSystem": "hand-tied-spiral",
+      "packaging": [
+        "paper",
+        "vase"
+      ],
+      "sources": [
+        "ifl-method"
+      ]
+    },
+    {
+      "id": "minimal",
+      "name": "Минималистичный",
+      "shape": "loose-fan",
+      "density": 0.4,
+      "stemSystem": "hand-tied-spiral",
+      "packaging": [
+        "paper",
+        "vase"
+      ],
+      "sources": [
+        "ifl-method"
+      ]
+    },
+    {
+      "id": "hatbox",
+      "name": "Композиция в коробке",
+      "shape": "low-dome",
+      "density": 0.94,
+      "stemSystem": "floral-foam",
+      "packaging": [
+        "box"
+      ],
+      "sources": [
+        "ifl-method"
+      ]
+    },
+    {
+      "id": "basket",
+      "name": "Композиция в корзине",
+      "shape": "low-asymmetric-dome",
+      "density": 0.8,
+      "stemSystem": "floral-foam",
+      "packaging": [
+        "basket"
+      ],
+      "sources": [
+        "ifl-method"
+      ]
+    }
+  ],
+  "bouquets": [
+    {
+      "id": "garden-pink",
+      "name": "Розы, ранункулюсы и анемоны",
+      "form": "garden",
+      "roles": {
+        "focal": [
+          "rose"
+        ],
+        "secondary": [
+          "ranunculus",
+          "anemone"
+        ],
+        "filler": [],
+        "foliage": [
+          "eucalyptus"
+        ]
+      },
+      "sources": [
+        "da-taffeta"
+      ],
+      "observedVsAdapted": "species roles and construction observed; exact counts/layout calibrated for these assets",
+      "stemCounts": {
+        "small": 11,
+        "medium": 19,
+        "large": 29
+      },
+      "stemDirections": "shared binding point or foam insertion; never independent floating heads",
+      "colorFamilies": [
+        "ivory",
+        "blush",
+        "seasonal-natural"
+      ],
+      "defaultPalette": 0
+    },
+    {
+      "id": "ivory-bridal",
+      "name": "Светлый свадебный",
+      "form": "bridal",
+      "roles": {
+        "focal": [
+          "rose"
+        ],
+        "secondary": [
+          "ranunculus"
+        ],
+        "filler": [
+          "gypsophila"
+        ],
+        "foliage": [
+          "ruscus"
+        ]
+      },
+      "sources": [
+        "da-summer"
+      ],
+      "observedVsAdapted": "species roles and construction observed; exact counts/layout calibrated for these assets",
+      "stemCounts": {
+        "small": 11,
+        "medium": 19,
+        "large": 29
+      },
+      "stemDirections": "shared binding point or foam insertion; never independent floating heads",
+      "colorFamilies": [
+        "ivory",
+        "blush",
+        "seasonal-natural"
+      ],
+      "defaultPalette": 1
+    },
+    {
+      "id": "spring-air",
+      "name": "Весенний воздушный",
+      "form": "garden",
+      "roles": {
+        "focal": [
+          "ranunculus"
+        ],
+        "secondary": [
+          "anemone",
+          "hellebore"
+        ],
+        "filler": [
+          "astrantia"
+        ],
+        "foliage": [
+          "eucalyptus"
+        ]
+      },
+      "sources": [
+        "ifl-spring",
+        "da-winter"
+      ],
+      "observedVsAdapted": "species roles and construction observed; exact counts/layout calibrated for these assets",
+      "stemCounts": {
+        "small": 11,
+        "medium": 19,
+        "large": 29
+      },
+      "stemDirections": "shared binding point or foam insertion; never independent floating heads",
+      "colorFamilies": [
+        "ivory",
+        "blush",
+        "seasonal-natural"
+      ],
+      "defaultPalette": 0
+    },
+    {
+      "id": "peony-mono",
+      "name": "Монобукет пионов",
+      "form": "round",
+      "roles": {
+        "focal": [
+          "peony"
+        ],
+        "secondary": [],
+        "filler": [],
+        "foliage": []
+      },
+      "sources": [
+        "ifl-peony"
+      ],
+      "observedVsAdapted": "species roles and construction observed; exact counts/layout calibrated for these assets",
+      "stemCounts": {
+        "small": 11,
+        "medium": 19,
+        "large": 29
+      },
+      "stemDirections": "shared binding point or foam insertion; never independent floating heads",
+      "colorFamilies": [
+        "ivory",
+        "blush",
+        "seasonal-natural"
+      ],
+      "defaultPalette": 0
+    },
+    {
+      "id": "rose-mono",
+      "name": "Монобукет садовых роз",
+      "form": "round",
+      "roles": {
+        "focal": [
+          "rose"
+        ],
+        "secondary": [],
+        "filler": [],
+        "foliage": []
+      },
+      "sources": [
+        "da-taffeta"
+      ],
+      "observedVsAdapted": "species roles and construction observed; exact counts/layout calibrated for these assets",
+      "stemCounts": {
+        "small": 11,
+        "medium": 19,
+        "large": 29
+      },
+      "stemDirections": "shared binding point or foam insertion; never independent floating heads",
+      "colorFamilies": [
+        "ivory",
+        "blush",
+        "seasonal-natural"
+      ],
+      "defaultPalette": 0
+    },
+    {
+      "id": "tulip-line",
+      "name": "Весенние тюльпаны",
+      "form": "line",
+      "roles": {
+        "focal": [
+          "tulip"
+        ],
+        "secondary": [],
+        "filler": [],
+        "foliage": [
+          "olive"
+        ]
+      },
+      "sources": [
+        "ifl-spring"
+      ],
+      "observedVsAdapted": "species roles and construction observed; exact counts/layout calibrated for these assets",
+      "stemCounts": {
+        "small": 5,
+        "medium": 7,
+        "large": 11
+      },
+      "stemDirections": "shared binding point or foam insertion; never independent floating heads",
+      "colorFamilies": [
+        "ivory",
+        "blush",
+        "seasonal-natural"
+      ],
+      "defaultPalette": 0
+    },
+    {
+      "id": "meadow",
+      "name": "Полевой",
+      "form": "garden",
+      "roles": {
+        "focal": [
+          "chamomile"
+        ],
+        "secondary": [
+          "lisianthus"
+        ],
+        "filler": [
+          "gypsophila"
+        ],
+        "foliage": [
+          "fern"
+        ]
+      },
+      "sources": [
+        "ifl-method",
+        "ifl-species"
+      ],
+      "observedVsAdapted": "species roles and construction observed; exact counts/layout calibrated for these assets",
+      "stemCounts": {
+        "small": 11,
+        "medium": 19,
+        "large": 29
+      },
+      "stemDirections": "shared binding point or foam insertion; never independent floating heads",
+      "colorFamilies": [
+        "ivory",
+        "blush",
+        "seasonal-natural"
+      ],
+      "defaultPalette": 1
+    },
+    {
+      "id": "autumn",
+      "name": "Осенний",
+      "form": "garden",
+      "roles": {
+        "focal": [
+          "dahlia",
+          "chrysanthemum"
+        ],
+        "secondary": [
+          "gerbera"
+        ],
+        "filler": [
+          "limonium"
+        ],
+        "foliage": [
+          "salal"
+        ]
+      },
+      "sources": [
+        "ifl-season"
+      ],
+      "observedVsAdapted": "species roles and construction observed; exact counts/layout calibrated for these assets",
+      "stemCounts": {
+        "small": 11,
+        "medium": 19,
+        "large": 29
+      },
+      "stemDirections": "shared binding point or foam insertion; never independent floating heads",
+      "colorFamilies": [
+        "ivory",
+        "blush",
+        "seasonal-natural"
+      ],
+      "defaultPalette": 3
+    },
+    {
+      "id": "white-box",
+      "name": "Светлая коробка",
+      "form": "hatbox",
+      "roles": {
+        "focal": [
+          "rose"
+        ],
+        "secondary": [
+          "lisianthus",
+          "carnation"
+        ],
+        "filler": [
+          "gypsophila"
+        ],
+        "foliage": [
+          "ruscus"
+        ]
+      },
+      "sources": [
+        "ifl-method"
+      ],
+      "observedVsAdapted": "species roles and construction observed; exact counts/layout calibrated for these assets",
+      "stemCounts": {
+        "small": 11,
+        "medium": 19,
+        "large": 29
+      },
+      "stemDirections": "shared binding point or foam insertion; never independent floating heads",
+      "colorFamilies": [
+        "ivory",
+        "blush",
+        "seasonal-natural"
+      ],
+      "defaultPalette": 1
+    },
+    {
+      "id": "summer-basket",
+      "name": "Летняя корзина",
+      "form": "basket",
+      "roles": {
+        "focal": [
+          "peony"
+        ],
+        "secondary": [
+          "rose",
+          "lisianthus"
+        ],
+        "filler": [],
+        "foliage": [
+          "salal"
+        ]
+      },
+      "sources": [
+        "ifl-method",
+        "ifl-season"
+      ],
+      "observedVsAdapted": "species roles and construction observed; exact counts/layout calibrated for these assets",
+      "stemCounts": {
+        "small": 11,
+        "medium": 19,
+        "large": 29
+      },
+      "stemDirections": "shared binding point or foam insertion; never independent floating heads",
+      "colorFamilies": [
+        "ivory",
+        "blush",
+        "seasonal-natural"
+      ],
+      "defaultPalette": 0
+    },
+    {
+      "id": "minimal-stems",
+      "name": "Несколько выразительных стеблей",
+      "form": "minimal",
+      "roles": {
+        "focal": [
+          "tulip"
+        ],
+        "secondary": [
+          "sweet-pea"
+        ],
+        "filler": [],
+        "foliage": []
+      },
+      "sources": [
+        "ifl-spring"
+      ],
+      "observedVsAdapted": "species roles and construction observed; exact counts/layout calibrated for these assets",
+      "stemCounts": {
+        "small": 5,
+        "medium": 7,
+        "large": 9
+      },
+      "stemDirections": "shared binding point or foam insertion; never independent floating heads",
+      "colorFamilies": [
+        "ivory",
+        "blush",
+        "seasonal-natural"
+      ],
+      "defaultPalette": 0
+    },
+    {
+      "id": "bridal-cascade",
+      "name": "Свадебный каскад",
+      "form": "cascade",
+      "roles": {
+        "focal": [
+          "rose"
+        ],
+        "secondary": [
+          "hellebore"
+        ],
+        "filler": [
+          "astrantia"
+        ],
+        "foliage": [
+          "ivy"
+        ]
+      },
+      "sources": [
+        "da-winter"
+      ],
+      "observedVsAdapted": "species roles and construction observed; exact counts/layout calibrated for these assets",
+      "stemCounts": {
+        "small": 11,
+        "medium": 19,
+        "large": 29
+      },
+      "stemDirections": "shared binding point or foam insertion; never independent floating heads",
+      "colorFamilies": [
+        "ivory",
+        "blush",
+        "seasonal-natural"
+      ],
+      "defaultPalette": 1
+    }
+  ]
+}

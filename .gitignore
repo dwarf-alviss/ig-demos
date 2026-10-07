@@ -1,3 +1,6 @@
 node_modules/
 .playwright/
 *.log
+
+# Local resumable QA cache; final results and scene images are committed.
+/reports/revision-4/stress/progress.jsonl
