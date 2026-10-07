@@ -1,5 +1,34 @@
 import * as THREE from "three";
+import { mergeGeometries } from "three/addons/utils/BufferGeometryUtils.js";
 import { domainMaterial } from "./domain-materials.js";
+// Petals retain their individual volume and transforms but share a draw call.
+function batchHead(group) {
+  const batches = new Map();
+  for (const mesh of group.children.filter((n) => n.isMesh)) {
+    const key = mesh.material;
+    if (!batches.has(key)) batches.set(key, []);
+    batches.get(key).push(mesh);
+  }
+  for (const [material, meshes] of batches) {
+    if (meshes.length < 2) continue;
+    const pieces = meshes.map((mesh) => {
+      mesh.updateMatrix();
+      return mesh.geometry.clone().applyMatrix4(mesh.matrix);
+    });
+    const geometry = mergeGeometries(pieces);
+    if (!geometry) throw new Error("Incompatible botanical geometry batch");
+    const merged = new THREE.Mesh(geometry, material);
+    merged.castShadow = meshes[0].castShadow;
+    merged.userData.batchedParts = meshes.length;
+    for (const mesh of meshes) {
+      group.remove(mesh);
+      mesh.geometry.dispose();
+    }
+    for (const piece of pieces) piece.dispose();
+    group.add(merged);
+  }
+  return group;
+}
 // Closed, two-sided petal volume, with a rolled edge and a non-planar midrib.
 export function petalGeometry(
   length,
@@ -247,6 +276,9 @@ export function botanicalHead(plant, color = "#e5d9cd", seed = 1) {
       plant.id === "astrantia" ? "#9ca777" : "#c6b568",
     );
     const florets = plant.id === "astrantia" ? 38 : 18;
+    const floretMaterial = domainMaterial("petal", {
+      color: plant.id === "astrantia" ? "#eee9d8" : "#d6c77e",
+    });
     for (let k = 0; k < florets; k++) {
       const a = k * 2.399963,
         rr =
@@ -255,9 +287,7 @@ export function botanicalHead(plant, color = "#e5d9cd", seed = 1) {
             : radius * 0.2,
         n = new THREE.Mesh(
           new THREE.SphereGeometry(0.06, 8, 6),
-          domainMaterial("petal", {
-            color: plant.id === "astrantia" ? "#eee9d8" : "#d6c77e",
-          }),
+          floretMaterial,
         );
       n.position.set(
         Math.cos(a) * rr,
@@ -270,7 +300,7 @@ export function botanicalHead(plant, color = "#e5d9cd", seed = 1) {
     }
   }
   group.userData.component = plant.id + "-head";
-  return group;
+  return batchHead(group);
 }
 export function botanicalBranch(plant, length = 16, seed = 1) {
   const g = new THREE.Group();

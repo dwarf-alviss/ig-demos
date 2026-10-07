@@ -17,7 +17,41 @@ import { floralLayout, stemMouthPoint } from "../shared/composed-bouquet.js";
 import { domainMaterial } from "../shared/domain-materials.js";
 import { sweptBand } from "../shared/constructed-jewelry.js";
 import { cartLine } from "../shared/cart.js";
-import { petalGeometry } from "../shared/botanical-components.js";
+import {
+  petalGeometry,
+  botanicalHead,
+} from "../shared/botanical-components.js";
+test("detailed procedural flowers retain volume and UVs within three mesh batches", () => {
+  for (const id of [
+    "dahlia",
+    "carnation",
+    "sweet-pea",
+    "hellebore",
+    "astrantia",
+  ]) {
+    const plant = flowers.plants.find((p) => p.id === id);
+    const head = botanicalHead(plant);
+    const meshes = head.children.filter((n) => n.isMesh);
+    assert.ok(meshes.length <= 3, id);
+    assert.ok(
+      meshes.reduce((n, m) => n + m.geometry.index.count / 3, 0) > 1000,
+      id,
+    );
+    const box = new THREE.Box3().setFromObject(head);
+    assert.ok(box.max.y - box.min.y > 0.2, id);
+    for (const mesh of meshes) {
+      assert.equal(
+        mesh.geometry.attributes.uv.count,
+        mesh.geometry.attributes.position.count,
+      );
+      if (mesh.material.vertexColors)
+        assert.equal(
+          mesh.geometry.attributes.color.count,
+          mesh.geometry.attributes.position.count,
+        );
+    }
+  }
+});
 test("petals expose usable UVs and outward normals on both volumetric faces", () => {
   for (const shape of ["pointed", "fan", "ivy"]) {
     const g = petalGeometry(3, 1.4, 0.6, 0.2, 1, shape);

@@ -18,7 +18,7 @@ The default studios now build 25 cake/pastry recipes, 12 floral compositions and
 
 Cakes preserve their actual layer stack in both the main body and a matching plated slice. Fraisier exposes cut strawberries in mousseline; Opera uses thin Joconde/coffee/ganache layers; macarons have separate shells, baked feet and filling; choux and other native pastries retain their supplied surface textures. Physical decoration seats use each ingredient's footprint and the measured curved pastry support. Only supported recipes allow tiering, with internal boards and dowels. An empty space cannot receive unlimited berries; quantity controls stop at available seats.
 
-Bouquets distinguish focal, secondary, filler and foliage roles. Heads retain species dimensions and independently calibrated depth. Hand-tied stems share a binding point; foam arrangements use individual insertion positions. Native branch geometry is preserved where available. Wedding bouquets use a ribbon binding, boxes and baskets select their actual container, and paper/vase openings clip hidden parts and shadows. Colors are constrained by each plant's natural palette.
+Bouquets distinguish focal, secondary, filler and foliage roles. Heads retain species dimensions and independently calibrated depth. Hand-tied stems share a binding point; foam arrangements use individual insertion positions. Native branch geometry is preserved where available. Wedding bouquets use a ribbon binding, boxes and baskets select their actual container, and paper/vase openings clip hidden parts and shadows. Colors are constrained by each plant's natural palette. Volumetric procedural petals are batched by material without removing detail; the recorded maximum autumn scene drops from 8,295 to 1,533 draw calls.
 
 Jewelry uses swept metal profiles with the selected inner ring diameter, contour-derived casts and girdle bearings for the individual gemstone meshes. Bypass rings have an open upper shank and opposed shoulders; channel bands use continuous side walls; three-metal stacks comprise separate parallel bands. Earrings include posts/backs or a hinged hoop closure; chains comprise connected alternating or curb/Figaro links and a clasp. All 100 extracted stones plus two original catalogue stones remain available in compatible constructions. These are visual assemblies, not manufacturing CAD or ray-traced gemstone optics.
 
@@ -37,6 +37,7 @@ node tools/review-domain-ui.mjs
 node tools/review-domain-exports.mjs
 node tools/review-flower-containers.mjs
 node tools/build-domain-stress-review.mjs
+node tools/review-domain-performance.mjs
 node tools/build-domain-review.mjs
 ```
 

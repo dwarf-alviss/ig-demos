@@ -150,6 +150,12 @@ try {
       );
       const metrics = await page.evaluate(() => window.studioReview.metrics());
       assert.ok(metrics.assembly, c.id);
+      assert.ok(
+        metrics.framing.maxX < 0.95 && metrics.framing.maxY < 0.95,
+        `${c.id}: clipped framing`,
+      );
+      if (kind === "flowers")
+        assert.ok(metrics.drawCalls < 2000, `${c.id}: excessive draw calls`);
       if (kind === "flowers" && metrics.assembly.container) {
         const a = metrics.assembly;
         for (const flower of a.crown)
