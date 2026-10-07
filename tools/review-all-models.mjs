@@ -23,6 +23,7 @@ for (const kind of ["cakes", "flowers", "jewelry"]) {
   await p.waitForFunction(() => window.studioReview?.ready(), {
     timeout: 60000,
   });
+  await p.evaluate(() => window.studioReview.freeze());
   for (const [i, asset] of catalogue
     .filter((a) => a.project === kind && (!only.length || only.includes(a.id)))
     .entries()) {
@@ -42,6 +43,7 @@ for (const kind of ["cakes", "flowers", "jewelry"]) {
       } else if (asset.category === "green") state.green = [asset.id];
       else state[asset.category] = asset.id;
     } else {
+      if(asset.category==='stone')state.base='jw-base-band-plain';
       if (asset.category === "finding" || asset.category === "setting")
         state = toggleAsset(kind, state, asset.id);
       else state[asset.category] = asset.id;

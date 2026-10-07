@@ -40,7 +40,7 @@ export function physical(color, role = "soft") {
     side: THREE.DoubleSide,
   });
 }
-export function bake(root) {
+export function bake(root, preserveMaterials = false) {
   root.updateMatrixWorld(true);
   const group = new THREE.Group();
   root.traverse((n) => {
@@ -58,9 +58,26 @@ export function bake(root) {
       geo.setAttribute(key, new THREE.BufferAttribute(values, 3));
     }
     if (n.geometry.index) geo.setIndex(n.geometry.index.clone());
+    if (n.geometry.getAttribute("uv"))
+      geo.setAttribute("uv", n.geometry.getAttribute("uv").clone());
     geo.applyMatrix4(n.matrixWorld);
     geo.computeBoundingBox();
     const mesh = new THREE.Mesh(geo);
+    if (preserveMaterials) {
+      mesh.material = n.material.clone();
+      for (const key of [
+        "map",
+        "normalMap",
+        "roughnessMap",
+        "metalnessMap",
+        "aoMap",
+      ]) {
+        if (mesh.material[key]) {
+          mesh.material[key] = mesh.material[key].clone();
+          mesh.material[key].needsUpdate = true;
+        }
+      }
+    }
     group.add(mesh);
   });
   return group;
@@ -78,9 +95,16 @@ export class ModelLibrary {
       this.pending.set(
         id,
         this.loader
-          .loadAsync(new URL(byId[id].url, import.meta.url).href)
+          .loadAsync(
+            new URL(
+              byId[id].project !== "jewelry"
+                ? `models/textured/${id}.glb`
+                : byId[id].url,
+              import.meta.url,
+            ).href,
+          )
           .then((g) => {
-            const baked = bake(g.scene);
+            const baked = bake(g.scene, byId[id].project !== "jewelry");
             disposeTree(g.scene);
             if (this.closed) {
               disposeTree(baked);
@@ -106,6 +130,7 @@ export class ModelLibrary {
       role = "soft",
       rotation = null,
       regional = false,
+      nativeColor = false,
     } = {},
   ) {
     const base = await this.original(id),
@@ -113,7 +138,71 @@ export class ModelLibrary {
     root.traverse((n) => {
       if (n.isMesh) {
         n.geometry = n.geometry.clone();
-        n.material = physical(color, role);
+        const textured = byId[id].project !== "jewelry";
+        n.material = textured ? n.material.clone() : physical(color, role);
+        if (textured) {
+          for (const key of [
+            "map",
+            "normalMap",
+            "roughnessMap",
+            "metalnessMap",
+            "aoMap",
+          ]) {
+            if (n.material[key]) {
+              n.material[key] = n.material[key].clone();
+              n.material[key].needsUpdate = true;
+            }
+          }
+          if (role === "glass") {
+            const source = n.material;
+            n.material = new THREE.MeshPhysicalMaterial({
+              color: "#ffffff",
+              normalMap: source.normalMap,
+              roughness: 0.08,
+              metalness: 0,
+              transmission: 0.35,
+              transparent: true,
+              opacity: 0.28,
+              depthWrite: false,
+              thickness: 0.15,
+              ior: 1.46,
+              normalScale: new THREE.Vector2(0.25, 0.25),
+              side: THREE.DoubleSide,
+            });
+            for (const key of ["map", "roughnessMap", "metalnessMap", "aoMap"])
+              source[key]?.dispose();
+            source.dispose();
+          }
+          n.material.side = THREE.DoubleSide;
+          n.material.metalness = 0;
+          // Natural food and botanical colors come from the supplied texture.
+          // Only neutral icing/wrapping can be tinted without painting leaves and dough.
+          n.material.color.set(id.includes("struct-tier") ? color : "#ffffff");
+          n.material.userData.textured = true;
+          if (id.startsWith("fl-flower") && !nativeColor) {
+            const tint = new THREE.Color(color);
+            n.material.onBeforeCompile = (shader) => {
+              shader.uniforms.flowerTint = { value: tint };
+              shader.fragmentShader =
+                "uniform vec3 flowerTint;\n" + shader.fragmentShader;
+              shader.fragmentShader = shader.fragmentShader.replace(
+                "#include <map_fragment>",
+                `#include <map_fragment>
+                vec3 sourcePetal=diffuseColor.rgb;
+                bool botanicalGreen=sourcePetal.g>sourcePetal.r*1.07 && sourcePetal.g>sourcePetal.b*1.12;
+                bool darkCenter=max(max(sourcePetal.r,sourcePetal.g),sourcePetal.b)<0.12;
+                bool goldenCenter=sourcePetal.r>sourcePetal.b*2.2 && sourcePetal.g>sourcePetal.b*1.65;
+                if(!botanicalGreen && !darkCenter && !goldenCenter) {
+                  float lightness=max(max(sourcePetal.r,sourcePetal.g),sourcePetal.b);
+                  diffuseColor.rgb=flowerTint*lightness;
+                }
+              `,
+              );
+            };
+            n.material.customProgramCacheKey = () =>
+              "botanical-texture-tint-v1";
+          }
+        }
         n.castShadow = true;
         n.receiveShadow = true;
         n.userData.asset = id;
@@ -128,7 +217,7 @@ export class ModelLibrary {
     const result = fitToScene(root, size, axis);
     result.userData.asset = id;
     result.userData.label = byId[id].name;
-    if (regional) {
+    if (regional && byId[id].project === "jewelry") {
       const b = bounds(result);
       result.traverse((n) => {
         if (!n.isMesh) return;

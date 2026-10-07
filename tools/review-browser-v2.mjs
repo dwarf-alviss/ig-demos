@@ -35,7 +35,12 @@ for (const kind of ["cakes", "flowers", "jewelry"]) {
   );
   for (const tab of await p.locator("[data-category]").all()) {
     await tab.click();
-    assert.ok((await p.locator("[data-asset]").count()) > 0);
+    if (
+      kind === "jewelry" &&
+      (await tab.getAttribute("data-category")) === "setting"
+    )
+      assert.ok((await p.locator(".empty").count()) > 0);
+    else assert.ok((await p.locator("[data-asset]").count()) > 0);
   }
   await p.locator("#search").fill("zzzz");
   assert.equal(await p.locator("[data-asset]").count(), 0);
@@ -85,15 +90,18 @@ for (const kind of ["cakes", "flowers", "jewelry"]) {
     await wait(p);
     assert.equal(await p.locator("#add-cart").isDisabled(), false);
   }
-  const baseline = (await p.evaluate(() => window.studioReview.metrics()))
-    .geometries;
+  const baseline = await p.evaluate(() => window.studioReview.metrics());
   for (let i = 0; i < 8; i++) {
     await p.locator(`[data-palette="${i % 4}"]`).click();
     await wait(p);
   }
   assert.equal(
     (await p.evaluate(() => window.studioReview.metrics())).geometries,
-    baseline,
+    baseline.geometries,
+  );
+  assert.equal(
+    (await p.evaluate(() => window.studioReview.metrics())).textures,
+    baseline.textures,
   );
   await p.locator("#reset").click();
   await wait(p);

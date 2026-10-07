@@ -74,8 +74,8 @@ export class StudioRenderer {
       if (this.disposed) return;
       this.raf = requestAnimationFrame(this.loop);
       if (document.hidden || this.renderer.getContext().isContextLost()) return;
-      this.controls.update();
-      this.renderer.render(this.scene, this.camera);
+      if (this.controls.update() || this.controls.autoRotate)
+        this.renderer.render(this.scene, this.camera);
     };
     this.loop();
     canvas.addEventListener(
@@ -228,6 +228,7 @@ export class StudioRenderer {
       });
     }
     return {
+      assembly: this.active?.userData.assembly || null,
       framing,
       drawCalls: this.renderer.info.render.calls,
       triangles: this.renderer.info.render.triangles,

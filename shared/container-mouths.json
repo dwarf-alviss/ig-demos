@@ -1,0 +1,37 @@
+{
+  "fl-wrap-matte-sleeve": {
+    "referenceWidth": 23,
+    "lip": 31.30197313106455,
+    "mouthRadius": 7.82
+  },
+  "fl-wrap-kraft-cone": {
+    "referenceWidth": 23,
+    "lip": 49.77105031319333,
+    "mouthRadius": 7.590000000000001
+  },
+  "fl-wrap-hatbox-round": {
+    "referenceWidth": 29,
+    "lip": 14.824321069069725,
+    "mouthRadius": 9.344444444444454
+  },
+  "fl-wrap-basket-rattan": {
+    "referenceWidth": 27,
+    "lip": 14.295424567053477,
+    "mouthRadius": 11.850000000000017
+  },
+  "fl-vase-kraft-bucket": {
+    "referenceWidth": 22,
+    "lip": 20.425495933378368,
+    "mouthRadius": 10.266666666666644
+  },
+  "fl-vase-bottle-ceramic": {
+    "referenceWidth": 16,
+    "lip": 22.855919615315628,
+    "mouthRadius": 2.1333333333333324
+  },
+  "fl-vase-glass-cylinder": {
+    "referenceWidth": 15,
+    "lip": 41.07913297412107,
+    "mouthRadius": 7.166666666666658
+  }
+}

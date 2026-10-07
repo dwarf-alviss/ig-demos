@@ -11,6 +11,7 @@ for (const kind of ["cakes", "flowers", "jewelry"]) {
   await p.waitForFunction(() => window.studioReview?.ready(), {
     timeout: 60000,
   });
+  await p.evaluate(() => window.studioReview.freeze());
   for (let i = 0; i < 3; i++) {
     await p.evaluate((i) => window.studioReview.preset(i), i);
     await p.waitForFunction(() => window.studioReview.ready(), {

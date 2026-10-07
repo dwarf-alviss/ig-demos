@@ -35,13 +35,13 @@ window.audit = async function (record, view = "front") {
     disposeTree(current);
   }
   const gltf = await loader.loadAsync(
-    new URL(record.url, import.meta.url).href,
+    new URL(byId[record.id]?.project !== 'jewelry' ? `models/textured/${record.id}.glb` : record.url, import.meta.url).href,
   );
   const original = gltf.scene;
   const asset = byId[record.id];
   if (record.id === "jw-base-band-plain") original.rotation.y = Math.PI / 2;
   original.traverse((n) => {
-    if (n.isMesh)
+    if (n.isMesh && byId[record.id]?.project === 'jewelry')
       n.material = new THREE.MeshPhysicalMaterial({
         color: byId[record.id]?.color || "#c9ad87",
         metalness:

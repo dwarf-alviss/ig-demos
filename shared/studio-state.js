@@ -1,4 +1,11 @@
 import { catalogue, byId } from "./catalogue.js";
+import {
+  cakeParts,
+  cakeSurfaces,
+  findCakeSeat,
+  cakeBlockers,
+} from "./assembly-profiles.js";
+import { normalizeJewelry } from "./jewelry-rules.js";
 export const projectSpecs = {
   cakes: {
     brand: "Мельница",
@@ -12,10 +19,10 @@ export const projectSpecs = {
       ["topper", "Топперы"],
     ],
     palette: [
-      ["Ваниль", "#edd6b6"],
-      ["Ягодный крем", "#dfa2b0"],
-      ["Фисташка", "#b4c3a0"],
-      ["Шоколад", "#754432"],
+      ["Сливочный", "#edd6b6"],
+      ["Розовый", "#dfa2b0"],
+      ["Оливковый", "#b4c3a0"],
+      ["Какао", "#754432"],
     ],
     presets: [
       ["Ягодный сад", "Торт с кремом и свежими ягодами"],
@@ -40,6 +47,7 @@ export const projectSpecs = {
       ["Молочный", "#f3ebd7"],
       ["Винный", "#a44d6c"],
       ["Абрикосовый", "#e3a17e"],
+      ["Исходные оттенки", "#e8dbc7"],
     ],
     presets: [
       ["Нежное утро", "Пионы, розы и эвкалипт"],
@@ -68,7 +76,7 @@ export const projectSpecs = {
     presets: [
       ["Первый свет", "Классический солитер с бриллиантом"],
       ["Лесной свет", "Кольцо с изумрудом и ореолом"],
-      ["Личная история", "Подвеска с камнем-сердцем"],
+      ["Личная история", "Подвеска с рубиновым камнем"],
     ],
   },
 };
@@ -141,7 +149,7 @@ export function preset(kind, index = 0) {
       ? {
           ...defaults(kind),
           base: "jw-base-pendant",
-          stone: "jw-stone-diamond-03",
+          stone: "jw-stone-gem-19",
           finding: ["jw-part-bail-hinged"],
           palette: 2,
         }
@@ -213,6 +221,14 @@ export function normalize(kind, value) {
           )
         : d[key];
   if (kind === "flowers" && !out.flowers.length) out.flowers = d.flowers;
+  if (kind === "cakes")
+    out.decor = out.decor.filter(
+      (id) =>
+        !(
+          out.base.includes("pastry") &&
+          ["glaze", "border"].includes(byId[id].role)
+        ) && !(out.base.includes("hex") && byId[id].role === "glaze"),
+    );
   for (const id of [...(out.decor || []), ...(out.flowers || [])])
     out.counts[id] = Math.max(
       1,
@@ -234,7 +250,9 @@ export function normalize(kind, value) {
     }
   }
   out.palette =
-    Number.isInteger(value.palette) && value.palette >= 0 && value.palette < 4
+    Number.isInteger(value.palette) &&
+    value.palette >= 0 &&
+    value.palette < projectSpecs[kind].palette.length
       ? value.palette
       : 0;
   if (kind === "cakes") {
@@ -248,10 +266,46 @@ export function normalize(kind, value) {
     out.layout = ["crescent", "wreath", "center"].includes(value.layout)
       ? value.layout
       : "crescent";
+    const surfaces = cakeSurfaces(out),
+      occupied = cakeBlockers(out);
+    const originalDecorCount = out.decor.length;
+    for (const id of [...out.decor].sort(
+      (x, y) =>
+        (out.base.includes("pastry")
+          ? cakeParts[y]?.flatFootprint || cakeParts[y]?.footprint || 0
+          : cakeParts[y]?.footprint || 0) -
+        (out.base.includes("pastry")
+          ? cakeParts[x]?.flatFootprint || cakeParts[x]?.footprint || 0
+          : cakeParts[x]?.footprint || 0),
+    )) {
+      if (["glaze", "border"].includes(byId[id].role)) continue;
+      const footprint = cakeParts[id]?.footprint || byId[id].size * 0.42;
+      let accepted = 0;
+      for (let i = 0; i < out.counts[id]; i++) {
+        if (
+          !findCakeSeat(
+            surfaces,
+            occupied,
+            footprint,
+            out.layout,
+            i,
+            cakeParts[id],
+          )
+        )
+          break;
+        accepted++;
+      }
+      if (accepted) out.counts[id] = accepted;
+      else {
+        out.decor = out.decor.filter((x) => x !== id);
+        delete out.counts[id];
+      }
+    }
+    if (out.decor.length < originalDecorCount) return normalize(kind, out);
   }
   if (kind === "jewelry")
     out.size = [16, 17, 18, 19, 20].includes(value.size) ? value.size : 17;
-  return out;
+  return kind === "jewelry" ? normalizeJewelry(out) : out;
 }
 export function selectedIds(kind, s) {
   return [
@@ -271,6 +325,24 @@ export function selectedIds(kind, s) {
     ),
   ];
 }
+export function canIncreaseCount(kind, s, id) {
+  const count = s.counts[id] || 0,
+    limit = kind === "flowers" ? 15 : byId[id]?.role === "sprinkle" ? 60 : 14;
+  if (count >= limit) return false;
+  if (kind === "flowers")
+    return Object.values(s.counts).reduce((n, v) => n + v, 0) < 33;
+  if (kind !== "cakes") return false;
+  const next = normalize(kind, {
+    ...s,
+    counts: { ...s.counts, [id]: count + 1 },
+  });
+  return (
+    next.counts[id] === count + 1 &&
+    s.decor.every(
+      (other) => other === id || next.counts[other] === s.counts[other],
+    )
+  );
+}
 export function estimate(kind, s) {
   let total = 0;
   for (const id of selectedIds(kind, s)) {
@@ -279,6 +351,13 @@ export function estimate(kind, s) {
     if (a.category === "base")
       count =
         kind === "cakes" ? (a.id.includes("-struct-") ? s.tiers : s.pieces) : 1;
+    if (kind === "jewelry" && a.category === "stone")
+      count =
+        s.base === "jw-set-pave-band"
+          ? 44
+          : s.base === "jw-base-cocktail"
+            ? 2
+            : 1;
     total += a.price * count;
   }
   if (kind === "cakes" && !s.base.includes("pastry"))

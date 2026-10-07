@@ -1,0 +1,5 @@
+{
+  "configurations": 9344,
+  "checks": "all screenshot files exist; pagination; project/search/pose filters; reopen exact state; mobile overflow",
+  "errors": []
+}

@@ -1,9 +1,11 @@
 import { catalogue, byId } from "./catalogue.js";
+import { compatibleStones, compatibleSettings } from "./jewelry-rules.js";
 import {
   projectSpecs,
   defaults,
   preset,
   normalize,
+  canIncreaseCount,
   selectedIds,
   estimate,
   describe,
@@ -44,7 +46,8 @@ let state = normalize(kind, saved),
   assembly,
   loading = false,
   failed = false,
-  rotating = false;
+  rotating = false,
+  fitNotice = "";
 const library = new ModelLibrary(),
   status = $("#status");
 const money = (n) => n.toLocaleString("ru-RU") + " BYN",
@@ -74,6 +77,13 @@ function change(next, record = true) {
     future = [];
   }
   state = normalize(kind, next);
+  fitNotice =
+    kind === "cakes" &&
+    next.decor?.some(
+      (id) => Number(next.counts?.[id]) > (state.counts[id] || 0),
+    )
+      ? "Состав скорректирован под выбранную форму и свободное место."
+      : "";
   persist();
   renderUI();
   rebuild();
@@ -85,6 +95,12 @@ function renderCatalog() {
     (a) =>
       a.project === kind &&
       a.category === category &&
+      (kind !== "jewelry" ||
+        category !== "stone" ||
+        compatibleStones(state).some((x) => x.id === a.id)) &&
+      (kind !== "jewelry" ||
+        category !== "setting" ||
+        compatibleSettings(state).some((x) => x.id === a.id)) &&
       (!query ||
         (a.name + " " + (a.variant || "")).toLowerCase().includes(query)) &&
       (category !== "stone" ||
@@ -113,7 +129,7 @@ function renderCatalog() {
             `<button class="asset-card ${selected.has(a.id) ? "is-selected" : ""}" data-asset="${a.id}" aria-pressed="${selected.has(a.id)}" aria-label="${esc(a.name + (a.variant ? " · " + a.variant : ""))}"><span class="asset-image"><img src="../shared/${a.thumbnail}" alt="" loading="lazy" width="120" height="120"><span class="asset-check" aria-hidden="true">✓</span></span><span class="asset-name">${esc(a.name)}</span>${a.variant ? `<span class="asset-variant"><i style="background:${a.color}"></i>${esc(a.variant)}</span>` : `<span class="asset-price">${a.price} BYN${category === "flowers" ? " / стебель" : ""}</span>`}</button>`,
         )
         .join("")
-    : '<p class="empty">Ничего не найдено. Попробуйте другое название.</p>';
+    : `<p class="empty">${query ? "Ничего не найдено. Попробуйте другое название." : kind === "jewelry" && category === "setting" ? "В это изделие уже встроена оправа. Отдельный каст можно выбрать для гладкого кольца, тонкого кольца или цепочки." : kind === "jewelry" && category === "stone" ? "У этого изделия нет гнёзд для камней. Выберите модель со вставками." : "Нет подходящих деталей для этого состава."}</p>`;
   $("#stone-filter").hidden = category !== "stone";
 }
 function renderUI() {
@@ -133,12 +149,28 @@ function renderUI() {
   $("#summary").textContent = describe(kind, state);
   $("#undo").disabled = !history.length;
   $("#redo").disabled = !future.length;
-  $("#palette").innerHTML = spec.palette
-    .map(
-      ([name, color], i) =>
-        `<button class="swatch" data-palette="${i}" aria-pressed="${state.palette === i}" aria-label="${name}" title="${name}"><i style="background:${color}"></i><span>${name}</span></button>`,
-    )
-    .join("");
+  const nativeMaterial =
+    (kind === "cakes" && state.base.includes("pastry")) ||
+    (kind === "flowers" &&
+      state.flowers.every((id) => id === "fl-flower-chamomile"));
+  const materialHeading = $(".material-options .section-line h3"),
+    materialCaption = $(".material-options .section-line span");
+  materialHeading.textContent = nativeMaterial
+    ? "Природные оттенки"
+    : kind === "cakes"
+      ? "Оттенок крема"
+      : kind === "flowers"
+        ? "Палитра лепестков"
+        : "Металл";
+  materialCaption.textContent = nativeMaterial ? "Сохранены" : "Ваш оттенок";
+  $("#palette").innerHTML = nativeMaterial
+    ? `<p class="small-hint">${kind === "cakes" ? "Сохранены исходные цвета теста, крема и шоколада." : "Белые лепестки и жёлтые сердцевины ромашек сохраняют природный цвет."}</p>`
+    : spec.palette
+        .map(
+          ([name, color], i) =>
+            `<button class="swatch" data-palette="${i}" aria-pressed="${state.palette === i}" aria-label="${name}" title="${name}"><i style="background:${color}"></i><span>${name}</span></button>`,
+        )
+        .join("");
   const rows = selectedIds(kind, state);
   $("#ingredients").innerHTML = rows
     .map((id) => {
@@ -147,13 +179,13 @@ function renderUI() {
         removable =
           !["base", "pack"].includes(a.category) &&
           !(a.category === "flowers" && state.flowers.length === 1);
-      return `<li><img src="../shared/${a.thumbnail}" alt="" width="34" height="34"><span>${esc(a.name)}${a.variant ? `<small>${esc(a.variant)}</small>` : ""}</span>${count ? `<div class="counter"><button data-count="${id}" data-delta="-1" ${count <= 1 ? "disabled" : ""} aria-label="Уменьшить: ${esc(a.name)}">−</button><output>${count}</output><button data-count="${id}" data-delta="1" ${count >= (kind === "flowers" ? 15 : a.role === "sprinkle" ? 60 : 14) || (kind === "flowers" && Object.values(state.counts).reduce((a, b) => a + b, 0) >= 33) ? "disabled" : ""} aria-label="Добавить: ${esc(a.name)}">+</button></div>` : ""}${removable ? `<button class="remove" data-remove="${id}" aria-label="Убрать: ${esc(a.name)}">×</button>` : ""}</li>`;
+      return `<li><img src="../shared/${a.thumbnail}" alt="" width="34" height="34"><span>${esc(a.name)}${a.variant ? `<small>${esc(a.variant)}</small>` : ""}</span>${kind === "jewelry" && a.category === "stone" ? `<small>${state.base === "jw-set-pave-band" ? "44 вставки" : state.base === "jw-base-cocktail" ? "2 вставки" : "1 вставка"}</small>` : ""}${count ? `<div class="counter"><button data-count="${id}" data-delta="-1" ${count <= 1 ? "disabled" : ""} aria-label="Уменьшить: ${esc(a.name)}">−</button><output>${count}</output><button data-count="${id}" data-delta="1" ${!canIncreaseCount(kind, state, id) ? "disabled" : ""} aria-label="Добавить: ${esc(a.name)}">+</button></div>` : ""}${removable ? `<button class="remove" data-remove="${id}" aria-label="Убрать: ${esc(a.name)}">×</button>` : ""}</li>`;
     })
     .join("");
   $("#selected-count").textContent = rows.length + " деталей";
   $("#dimension-options").innerHTML =
     kind === "cakes"
-      ? `<label>${state.base.includes("pastry") ? "В наборе" : "Ярусов"}<select data-config="${state.base.includes("pastry") ? "pieces" : "tiers"}">${(state.base.includes("pastry") ? [1, 4, 6] : [1, 2, 3]).map((v) => `<option ${v === state[state.base.includes("pastry") ? "pieces" : "tiers"] ? "selected" : ""}>${v}</option>`).join("")}</select></label><label>Композиция<select data-config="layout"><option value="crescent" ${state.layout === "crescent" ? "selected" : ""}>Полумесяц</option><option value="wreath" ${state.layout === "wreath" ? "selected" : ""}>Венок</option><option value="center" ${state.layout === "center" ? "selected" : ""}>В центре</option></select></label>${
+      ? `<p class="small-hint">Крупный декор для мини-десертов размещается на тарелке. Количество ограничивается свободным местом.</p><label>${state.base.includes("pastry") ? "В наборе" : "Ярусов"}<select data-config="${state.base.includes("pastry") ? "pieces" : "tiers"}">${(state.base.includes("pastry") ? [1, 4, 6] : [1, 2, 3]).map((v) => `<option ${v === state[state.base.includes("pastry") ? "pieces" : "tiers"] ? "selected" : ""}>${v}</option>`).join("")}</select></label><label>Композиция<select data-config="layout"><option value="crescent" ${state.layout === "crescent" ? "selected" : ""}>Полумесяц</option><option value="wreath" ${state.layout === "wreath" ? "selected" : ""}>Венок</option><option value="center" ${state.layout === "center" ? "selected" : ""}>В центре</option></select></label>${
           !state.base.includes("pastry")
             ? `<label>Начинка · за ярус<select data-config="filling">${Object.entries(
                 {
@@ -171,7 +203,7 @@ function renderUI() {
             : ""
         }`
       : kind === "jewelry"
-        ? `<label ${["jw-base-band-plain", "jw-base-cocktail", "jw-base-signet", "jw-base-solitaire", "jw-base-stacking-thin", "jw-set-bezel", "jw-set-halo"].includes(state.base) ? "" : "hidden"}>Размер кольца<select data-config="size">${[16, 17, 18, 19, 20].map((v) => `<option ${state.size === v ? "selected" : ""}>${v}</option>`).join("")}</select></label><p class="small-hint">Камни из двух коллекций: 12 огранок и 88 цветных вариантов.</p>`
+        ? `<label ${["jw-base-band-plain", "jw-base-cocktail", "jw-base-signet", "jw-base-solitaire", "jw-base-stacking-thin", "jw-set-bezel", "jw-set-halo"].includes(state.base) ? "" : "hidden"}>Размер кольца<select data-config="size">${[16, 17, 18, 19, 20].map((v) => `<option ${state.size === v ? "selected" : ""}>${v}</option>`).join("")}</select></label><p class="small-hint">${state.base === "jw-set-pave-band" ? "44 круглые вставки. Выбранный оттенок применяется ко всем гнёздам." : state.base === "jw-base-cocktail" ? "Две круглые вставки одного оттенка." : "Каталог показывает камни и оправы, подходящие к выбранному изделию."}</p>`
         : `<p class="small-hint">Число стеблей каждого сорта меняется в составе. Добавьте до пяти видов цветов, всего до 33 стеблей.</p>`;
   renderCatalog();
 }
@@ -306,7 +338,8 @@ async function rebuild() {
     $("#canvas").hidden = false;
     $("#viewer").dataset.ready = "true";
     $("#measure").textContent = next.userData.measure;
-    status.textContent = "Готово. Вращайте модель, чтобы рассмотреть детали.";
+    status.textContent =
+      fitNotice || "Готово. Вращайте модель, чтобы рассмотреть детали.";
     $("#retry").hidden = true;
   } catch (e) {
     created.forEach(disposeTree);
@@ -442,6 +475,11 @@ try {
     .forEach((b) => (b.disabled = true));
 }
 window.studioReview = {
+  freeze: () => {
+    cancelAnimationFrame(renderer.raf);
+    renderer.loop = () => {};
+    renderer.renderer.setPixelRatio(1);
+  },
   getState: () => structuredClone(state),
   setState: (next) => change(next),
   preset: (i) => change(preset(kind, i)),
