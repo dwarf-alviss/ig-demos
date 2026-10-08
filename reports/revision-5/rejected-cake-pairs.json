@@ -15,6 +15,16 @@
     "pieces": 1,
     "requested": [
       "bk-berry-blackberry",
+      "bk-decor-caramel-spiral"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-brownie-bite",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-blackberry",
       "bk-decor-macaron"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
@@ -26,6 +36,16 @@
     "requested": [
       "bk-berry-blueberry",
       "bk-berry-strawberry"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-brownie-bite",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-blueberry",
+      "bk-decor-caramel-spiral"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
   },
@@ -46,6 +66,16 @@
     "requested": [
       "bk-berry-cherry",
       "bk-berry-strawberry"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-brownie-bite",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-cherry",
+      "bk-decor-caramel-spiral"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
   },
@@ -66,6 +96,16 @@
     "requested": [
       "bk-berry-raspberry",
       "bk-berry-strawberry"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-brownie-bite",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-raspberry",
+      "bk-decor-caramel-spiral"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
   },
@@ -175,7 +215,77 @@
     "pieces": 1,
     "requested": [
       "bk-decor-caramel-spiral",
+      "bk-decor-cream-rosette"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-brownie-bite",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-crumble-cluster"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-brownie-bite",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-gold-flake"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-brownie-bite",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
       "bk-decor-macaron"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-brownie-bite",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-meringue-kiss"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-brownie-bite",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-sprinkle-ball"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-brownie-bite",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-sprinkle-star"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-brownie-bite",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-truffle-ball"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
   },
@@ -255,6 +365,26 @@
     "pieces": 6,
     "requested": [
       "bk-berry-strawberry",
+      "bk-decor-caramel-spiral"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-brownie-bite",
+    "tiers": 3,
+    "pieces": 6,
+    "requested": [
+      "bk-berry-strawberry",
+      "bk-decor-macaron"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-brownie-bite",
+    "tiers": 3,
+    "pieces": 6,
+    "requested": [
+      "bk-decor-caramel-spiral",
       "bk-decor-macaron"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
@@ -265,6 +395,16 @@
     "pieces": 1,
     "requested": [
       "bk-berry-blackberry",
+      "bk-decor-caramel-spiral"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-heart",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-blackberry",
       "bk-decor-chocolate-shard"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
@@ -285,6 +425,16 @@
     "pieces": 1,
     "requested": [
       "bk-berry-blueberry",
+      "bk-decor-caramel-spiral"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-heart",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-blueberry",
       "bk-decor-chocolate-shard"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
@@ -305,6 +455,16 @@
     "pieces": 1,
     "requested": [
       "bk-berry-cherry",
+      "bk-decor-caramel-spiral"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-heart",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-cherry",
       "bk-decor-chocolate-shard"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
@@ -316,6 +476,16 @@
     "requested": [
       "bk-berry-cherry",
       "bk-decor-wafer-roll"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-heart",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-raspberry",
+      "bk-decor-caramel-spiral"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
   },
@@ -395,7 +565,77 @@
     "pieces": 1,
     "requested": [
       "bk-decor-caramel-spiral",
+      "bk-decor-cream-rosette"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-heart",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-crumble-cluster"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-heart",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-gold-flake"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-heart",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
       "bk-decor-macaron"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-heart",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-meringue-kiss"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-heart",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-sprinkle-ball"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-heart",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-sprinkle-star"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-heart",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-truffle-ball"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
   },
@@ -585,6 +825,16 @@
     "pieces": 1,
     "requested": [
       "bk-berry-blackberry",
+      "bk-decor-caramel-spiral"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-round",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-blackberry",
       "bk-decor-chocolate-shard"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
@@ -605,6 +855,16 @@
     "pieces": 1,
     "requested": [
       "bk-berry-blueberry",
+      "bk-decor-caramel-spiral"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-round",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-blueberry",
       "bk-decor-chocolate-shard"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
@@ -625,6 +885,16 @@
     "pieces": 1,
     "requested": [
       "bk-berry-cherry",
+      "bk-decor-caramel-spiral"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-round",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-cherry",
       "bk-decor-chocolate-shard"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
@@ -636,6 +906,16 @@
     "requested": [
       "bk-berry-cherry",
       "bk-decor-wafer-roll"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-round",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-raspberry",
+      "bk-decor-caramel-spiral"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
   },
@@ -715,7 +995,77 @@
     "pieces": 1,
     "requested": [
       "bk-decor-caramel-spiral",
+      "bk-decor-cream-rosette"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-round",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-crumble-cluster"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-round",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-gold-flake"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-round",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
       "bk-decor-macaron"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-round",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-meringue-kiss"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-round",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-sprinkle-ball"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-round",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-sprinkle-star"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cookie-round",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-truffle-ball"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
   },
@@ -905,7 +1255,27 @@
     "pieces": 1,
     "requested": [
       "bk-berry-blackberry",
+      "bk-decor-caramel-spiral"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cupcake",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-blackberry",
       "bk-decor-macaron"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cupcake",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-blueberry",
+      "bk-decor-caramel-spiral"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
   },
@@ -925,7 +1295,27 @@
     "pieces": 1,
     "requested": [
       "bk-berry-cherry",
+      "bk-decor-caramel-spiral"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cupcake",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-cherry",
       "bk-decor-macaron"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cupcake",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-berry-raspberry",
+      "bk-decor-caramel-spiral"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
   },
@@ -965,7 +1355,77 @@
     "pieces": 1,
     "requested": [
       "bk-decor-caramel-spiral",
+      "bk-decor-cream-rosette"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cupcake",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-crumble-cluster"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cupcake",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-gold-flake"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cupcake",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
       "bk-decor-macaron"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cupcake",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-meringue-kiss"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cupcake",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-sprinkle-ball"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cupcake",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-sprinkle-star"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cupcake",
+    "tiers": 1,
+    "pieces": 1,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-truffle-ball"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
   },
@@ -1036,6 +1496,16 @@
     "requested": [
       "bk-decor-macaron",
       "bk-decor-truffle-ball"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-cupcake",
+    "tiers": 3,
+    "pieces": 6,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-macaron"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
   },
@@ -1686,6 +2156,16 @@
     "requested": [
       "bk-decor-truffle-ball",
       "bk-decor-wafer-roll"
+    ],
+    "reason": "Both components cannot retain at least one physical seat in this composition."
+  },
+  {
+    "base": "bk-pastry-donut",
+    "tiers": 3,
+    "pieces": 6,
+    "requested": [
+      "bk-decor-caramel-spiral",
+      "bk-decor-macaron"
     ],
     "reason": "Both components cannot retain at least one physical seat in this composition."
   },

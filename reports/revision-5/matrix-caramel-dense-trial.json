@@ -1,0 +1,302 @@
+[
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 2,
+        "bk-decor-crumble-cluster": 14
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / dense actual 2+14 / 4"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 5,
+        "bk-decor-crumble-cluster": 14
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / dense actual 5+14 / 4"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 5,
+        "bk-decor-crumble-cluster": 14
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-round / dense actual 5+14 / 4"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 3,
+        "bk-decor-crumble-cluster": 14
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / dense actual 3+14 / 4"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-donut",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 5,
+        "bk-decor-crumble-cluster": 14
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-donut / dense actual 5+14 / 4"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 2,
+        "bk-decor-crumble-cluster": 14
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / dense actual 2+14 / 4"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 2,
+        "bk-decor-crumble-cluster": 14
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / dense actual 2+14 / 6"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 6,
+        "bk-decor-crumble-cluster": 6
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / dense actual 6+6 / 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 3,
+        "bk-decor-crumble-cluster": 8
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / dense actual 3+8 / 4"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 8,
+        "bk-decor-crumble-cluster": 9
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / dense actual 8+9 / 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 4,
+        "bk-decor-crumble-cluster": 11
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / dense actual 4+11 / 4"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 3,
+        "bk-decor-crumble-cluster": 3
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / dense actual 3+3 / 6"
+  }
+]

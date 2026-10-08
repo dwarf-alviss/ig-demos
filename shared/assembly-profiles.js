@@ -37,7 +37,11 @@ export const cakeParts = {
     flatFootprint: 3.2,
     flatRotation: [Math.PI / 2, 0, 0],
   },
-  "bk-decor-caramel-spiral": { size: 5.2, footprint: 1.63 },
+  "bk-decor-caramel-spiral": {
+    size: 5.2,
+    footprint: 2.85,
+    rotation: [Math.PI / 2, 0, 0],
+  },
   "bk-decor-wafer-roll": {
     size: 7.5,
     footprint: 1.55,

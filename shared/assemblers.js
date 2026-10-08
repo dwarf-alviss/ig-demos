@@ -258,7 +258,10 @@ export async function buildCake(lib, s, palette) {
       }
       if (cakeParts[id]) size = cakeParts[id].size;
       if (cakeParts[id]?.rotation) rotation = [...cakeParts[id].rotation];
-      if (id.includes("bk-berry-") || id === "bk-decor-crumble-cluster")
+      if (
+        id.includes("bk-berry-") ||
+        ["bk-decor-crumble-cluster", "bk-decor-caramel-spiral"].includes(id)
+      )
         rotation = foodPose(id, i, Math.atan2(z, x));
       let seat;
       if (a.role !== "border") {
@@ -294,7 +297,8 @@ export async function buildCake(lib, s, palette) {
               : a.color,
         rotation: id.includes("wafer") ? null : rotation,
         rotationOrder:
-          id.includes("bk-berry-") || id === "bk-decor-crumble-cluster"
+          id.includes("bk-berry-") ||
+          ["bk-decor-crumble-cluster", "bk-decor-caramel-spiral"].includes(id)
             ? "YXZ"
             : "XYZ",
         regional: id.includes("berry"),

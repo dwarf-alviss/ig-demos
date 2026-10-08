@@ -18,6 +18,9 @@ export function distanceToSurface(root, point) {
           position,
           index ? index.getX(offset + j) : offset + j,
         ).applyMatrix4(mesh.matrixWorld);
+      // Source meshes may retain zero-area faces. They have no surface and
+      // can make closestPointToPoint return NaN after an otherwise valid pose.
+      if (triangle.getArea() < 1e-12) continue;
       triangle.closestPointToPoint(point, closest);
       nearest = Math.min(nearest, point.distanceTo(closest));
     }

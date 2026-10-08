@@ -55,6 +55,8 @@ for (const suite of ["native", "domain"]) {
           ["cakes", "84dba3cc87d8"],
           ["cakes", "4c711d204873"],
           ["cakes", "e9e0d316006f"],
+          ["cakes", "5a78254afc4a"],
+          ["cakes", "8c775822a0b8"],
         ]
       : [
           ["jewelry", "1244faab04d6"],
@@ -65,6 +67,8 @@ for (const suite of ["native", "domain"]) {
           ["cakes", "61daa640c94e"],
           ["cakes", "84dba3cc87d8"],
           ["cakes", "e9e0d316006f"],
+          ["cakes", "5a78254afc4a"],
+          ["cakes", "8c775822a0b8"],
         ];
   // Native cakes include precise food contact and their current lighting.
   // Domain cakes changed their cutout support and require the current proof.
@@ -126,7 +130,22 @@ for (const suite of ["native", "domain"]) {
         : state.foodDecor?.some(
             (id) => ingredients[id]?.asset === "bk-decor-crumble-cluster",
           );
-    if (changedCrumble && !row.bundleHash.startsWith("e9e0d316006f")) {
+    if (
+      changedCrumble &&
+      !["e9e0d316006f", "5a78254afc4a", "8c775822a0b8"].some((hash) =>
+        row.bundleHash.startsWith(hash),
+      )
+    ) {
+      preserved.delete(key);
+      continue;
+    }
+    const changedCaramel =
+      suite === "native"
+        ? state.decor?.includes("bk-decor-caramel-spiral")
+        : state.foodDecor?.some(
+            (id) => ingredients[id]?.asset === "bk-decor-caramel-spiral",
+          );
+    if (changedCaramel && !row.bundleHash.startsWith("8c775822a0b8")) {
       preserved.delete(key);
       continue;
     }
@@ -150,9 +169,13 @@ for (const suite of ["native", "domain"]) {
           );
     if (
       affected &&
-      !["84dba3cc87d8", "4c711d204873", "e9e0d316006f"].some((hash) =>
-        row.bundleHash.startsWith(hash),
-      )
+      ![
+        "84dba3cc87d8",
+        "4c711d204873",
+        "e9e0d316006f",
+        "5a78254afc4a",
+        "8c775822a0b8",
+      ].some((hash) => row.bundleHash.startsWith(hash))
     )
       preserved.delete(key);
   }
