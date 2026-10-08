@@ -7,3 +7,12 @@ await build({
   minify: true,
   sourcemap: false,
 });
+
+await build({
+  entryPoints: ["shared/audit.js"],
+  bundle: true,
+  format: "esm",
+  outfile: "shared/audit.bundle.js",
+  minify: true,
+  sourcemap: false,
+});

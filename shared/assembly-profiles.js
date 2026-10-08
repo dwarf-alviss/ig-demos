@@ -15,8 +15,8 @@ export const cakeParts = {
   "bk-berry-blueberry": { size: 1.05, footprint: 0.58 },
   "bk-berry-strawberry": {
     size: 3.8,
-    footprint: 1.58,
-    rotation: [-0.42, 0, 0],
+    footprint: 1.85,
+    rotation: [1.34, 0, 0],
   },
   "bk-berry-raspberry": { size: 1.9, footprint: 1.04 },
   "bk-berry-blackberry": { size: 2.3, footprint: 1.0 },
@@ -25,7 +25,11 @@ export const cakeParts = {
   "bk-decor-cream-rosette": { size: 3.0, footprint: 1.62 },
   "bk-decor-meringue-kiss": { size: 2.8, footprint: 1.49 },
   "bk-decor-truffle-ball": { size: 2.7, footprint: 1.42 },
-  "bk-decor-crumble-cluster": { size: 2.2, footprint: 1.05 },
+  "bk-decor-crumble-cluster": {
+    size: 2.2,
+    footprint: 1.22,
+    rotation: [Math.PI / 2, 0, 0],
+  },
   "bk-decor-chocolate-shard": {
     size: 5.5,
     footprint: 1.25,

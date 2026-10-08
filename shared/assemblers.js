@@ -1,12 +1,37 @@
+import { basketHandleContact } from "./basket-handle-contact.js";
+import { clearRingPavilion } from "./mounted-gallery.js";
+import { precisePlace } from "./precise-fit.js";
+import { integratedSockets, seatIntegratedGems } from "./integrated-setting.js";
+import ringSizes from "./native-ring-sizes.json" with { type: "json" };
+import { branchCut } from "./branch-attachment.js";
+import { fittedNativeProngs } from "./native-prongs.js";
+import { nativeSetting, seatNativeGem } from "./native-setting.js";
 import { pastryHeight } from "./pastry-support.js";
-import { buildRecipeCake } from './recipe-cake.js';
-import { buildConstructedJewelry } from './constructed-jewelry.js';
-import { buildComposedBouquet } from './composed-bouquet.js';
+import { closeCableLink, attachNativeFindings } from "./finding-assembly.js";
+import { foodPose } from "./food-pose.js";
+import { buildRecipeCake } from "./recipe-cake.js";
+import { buildConstructedJewelry } from "./constructed-jewelry.js";
+import {
+  buildComposedBouquet,
+  floralLayout,
+  paperWidth,
+  stemMouthPoint,
+} from "./composed-bouquet.js";
+import { plants } from "./domain.js";
+import { domainMaterial } from "./domain-materials.js";
+import { paperRim, clearPaperEdge } from "./wrapper-rim.js";
 import { fitWrapTwine } from "./wrap-twine.js";
 import containerMouths from "./container-mouths.json" with { type: "json" };
 import * as THREE from "three";
 import { byId } from "./catalogue.js";
-import { bounds, place, cylinder, stem, physical } from "./model-library.js";
+import {
+  bounds,
+  place,
+  cylinder,
+  stem,
+  curvedStem,
+  physical,
+} from "./model-library.js";
 import {
   cakeParts,
   containers,
@@ -233,6 +258,8 @@ export async function buildCake(lib, s, palette) {
       }
       if (cakeParts[id]) size = cakeParts[id].size;
       if (cakeParts[id]?.rotation) rotation = [...cakeParts[id].rotation];
+      if (id.includes("bk-berry-") || id === "bk-decor-crumble-cluster")
+        rotation = foodPose(id, i, Math.atan2(z, x));
       let seat;
       if (a.role !== "border") {
         seat = findCakeSeat(
@@ -248,6 +275,8 @@ export async function buildCake(lib, s, palette) {
         z = seat.z;
         if (seat.laidFlat) rotation = [...cakeParts[id].flatRotation];
       }
+      if (id === "bk-berry-raspberry" && seat?.surface === -1)
+        rotation = foodPose(id, i, Math.atan2(z, x), false, "plate");
       if (pastry && !seat) {
         const p = pastryAnchors[(slot + i) % pastryAnchors.length];
         x = p.x + Math.cos(i * 2.4) * 0.6;
@@ -264,6 +293,10 @@ export async function buildCake(lib, s, palette) {
               ? "#ce98ab"
               : a.color,
         rotation: id.includes("wafer") ? null : rotation,
+        rotationOrder:
+          id.includes("bk-berry-") || id === "bk-decor-crumble-cluster"
+            ? "YXZ"
+            : "XYZ",
         regional: id.includes("berry"),
       });
       if (id.includes("wafer")) {
@@ -285,7 +318,7 @@ export async function buildCake(lib, s, palette) {
         const hit = supportRay.intersectObject(support, true)[0];
         if (hit) seat.y = hit.point.y;
         if (target.asset) {
-          place(decor, x, 0, z);
+          precisePlace(decor, x, 0, z);
           const height = bounds(decor).getSize(new THREE.Vector3()).y;
           let supportY = -Infinity;
           decor.traverse((n) => {
@@ -312,7 +345,7 @@ export async function buildCake(lib, s, palette) {
           if (Number.isFinite(supportY)) seat.y = supportY;
         }
       }
-      place(
+      precisePlace(
         decor,
         x,
         seat
@@ -379,7 +412,48 @@ export async function buildFlowers(lib, s, palette) {
     bottle = pack.id.includes("bottle"),
     glass = pack.id.includes("glass");
   const container = containers[pack.id];
-  const packWidth = container.width;
+  const entries = s.flowers.flatMap((id) =>
+    Array.from({ length: s.counts[id] || 3 }, (_, i) => ({ id, index: i })),
+  );
+  const count = Math.min(33, entries.length),
+    headDiameter =
+      entries
+        .map((x) => flowerHeads[x.id].diameter)
+        .reduce((a, b) => a + b, 0) / entries.length;
+  const arranged = entries
+    .slice(0, count)
+    .sort((a, b) =>
+      basket
+        ? (Object.values(plants).find((p) => p.asset === b.id)
+            ?.headCoreRadiusCm || flowerHeads[b.id].diameter * 0.22) -
+            (Object.values(plants).find((p) => p.asset === a.id)
+              ?.headCoreRadiusCm || flowerHeads[a.id].diameter * 0.22) ||
+          a.index - b.index
+        : a.index - b.index,
+    );
+  const packWidth = cone
+    ? paperWidth(
+        entries.map((e) => ({
+          plant: { headDiameterCm: flowerHeads[e.id].diameter },
+        })),
+        container.width,
+      )
+    : basket
+      ? Math.min(
+          container.width,
+          Math.max(
+            14,
+            2 +
+              Math.sqrt(
+                entries.reduce(
+                  (area, entry) => area + flowerHeads[entry.id].diameter ** 2,
+                  0,
+                ),
+              ) *
+                1.15,
+          ),
+        )
+      : container.width;
   const wrapper = await lib.get(pack.id, {
     size: packWidth,
     axis: "x",
@@ -401,27 +475,59 @@ export async function buildFlowers(lib, s, palette) {
     h = b.max.y,
     centerX = packWidth * container.centerX;
   const measuredMouth = containerMouths[pack.id];
-  const lip = measuredMouth?.lip ?? h * (cone ? 1.02 : container.lip),
-    mouthRadius = measuredMouth?.mouthRadius ?? packWidth * container.mouth;
-  const entries = s.flowers.flatMap((id) =>
-    Array.from({ length: s.counts[id] || 3 }, (_, i) => ({ id, index: i })),
+  const rim = cone ? paperRim(wrapper, centerX, packWidth) : null;
+  const containerSurface = rim || paperRim(wrapper, centerX, packWidth);
+  const measurementScale =
+    packWidth / (measuredMouth?.referenceWidth || packWidth);
+  const lip =
+      measuredMouth?.lip * measurementScale ||
+      h * (cone ? 1.02 : container.lip),
+    mouthRadius =
+      measuredMouth?.mouthRadius * measurementScale ||
+      packWidth * container.mouth;
+  const handleContact = basket ? basketHandleContact(wrapper, lip) : null;
+  const foamTop = lip - (basket ? 6 * (packWidth / container.width) : 2.1);
+  let floralFoam;
+  const foamAnchors = [];
+  if (hat || basket) {
+    const foam = new THREE.Mesh(
+      new THREE.CylinderGeometry(
+        mouthRadius * 0.86,
+        mouthRadius * 0.86,
+        2.2,
+        64,
+      ),
+      domainMaterial("leaf", { color: "#3c5134" }),
+    );
+    foam.position.set(centerX, foamTop - 1.1, 0);
+    foam.castShadow = foam.receiveShadow = true;
+    root.add(foam);
+    floralFoam = foam;
+  }
+  const positions = floralLayout(
+    arranged.map((e) => ({
+      ...e,
+      role: "focal",
+      plant: Object.values(plants).find((p) => p.asset === e.id) || {
+        headDiameterCm: flowerHeads[e.id].diameter,
+      },
+    })),
+    { shape: "asymmetric-dome", density: 0.65 },
+    bottle ? packWidth * 0.48 : mouthRadius,
   );
-  const count = Math.min(33, entries.length),
-    headDiameter =
-      entries
-        .map((x) => flowerHeads[x.id].diameter)
-        .reduce((a, b) => a + b, 0) / entries.length;
-  const canopyRadius = Math.max(8, Math.sqrt(count) * headDiameter * 0.44),
-    baseY = lip + (bottle ? 7 : cone ? 0.8 : 1.1);
-  const arranged = entries.slice(0, count).sort((a, b) => a.index - b.index);
+  const canopyRadius = Math.max(...positions.map((p) => Math.hypot(p.x, p.z))),
+    baseY = (rim?.mean ?? lip) + (hat || basket ? -1.1 : -0.8);
+  const crown = [],
+    flowerModels = [];
   for (let i = 0; i < count; i++) {
     const { id } = arranged[i],
+      p = positions[i],
       a = byId[id],
-      rr = count === 1 ? 0 : canopyRadius * Math.sqrt((i + 0.1) / count),
-      angle = i * 2.399963,
-      x = centerX + Math.cos(angle) * rr,
-      z = Math.sin(angle) * rr,
-      y = baseY + (1 - Math.pow(rr / canopyRadius, 2)) * 3.2;
+      rr = Math.hypot(p.x, p.z),
+      angle = Math.atan2(p.z, p.x),
+      x = centerX + p.x,
+      z = p.z,
+      y = baseY + p.y;
     const head = await lib.get(id, {
       size: flowerHeads[id].diameter,
       nativeColor: s.palette === 4,
@@ -440,45 +546,190 @@ export async function buildFlowers(lib, s, palette) {
       regional: true,
     });
     const dir = new THREE.Vector3(
-      Math.cos(angle) * rr * 0.038,
+      Math.cos(angle) * rr * 0.075,
       1,
-      Math.sin(angle) * rr * 0.038,
+      Math.sin(angle) * rr * 0.075,
     ).normalize();
     const tilt = new THREE.Quaternion().setFromUnitVectors(
       new THREE.Vector3(0, 1, 0),
       dir,
     );
+    head.scale.y *= positions[i].entry.plant.headDepthCalibration || 1;
     head.quaternion.premultiply(tilt);
     place(head, x, y, z, "center");
     head.traverse((n) => {
-      if (n.isMesh) {
-        n.material.clipShadows = true;
-        n.material.clippingPlanes = [
-          new THREE.Plane(new THREE.Vector3(0, 1, 0), -lip),
-        ];
-      }
+      if (n.isMesh) n.material.clippingPlanes = null;
     });
     root.add(head);
-    const bb = bounds(head),
-      headBottom = new THREE.Vector3(
-        x,
-        Math.max(lip + 1.5, bb.max.y - (bb.max.y - bb.min.y) * 0.32),
-        z,
-      ),
-      bottom = new THREE.Vector3(
-        centerX + Math.cos(angle) * Math.min(mouthRadius * 0.25, 1.1),
-        h * container.base,
-        Math.sin(angle) * Math.min(mouthRadius * 0.25, 1.1),
-      );
-    const neck = new THREE.Vector3(
-      centerX + Math.cos(angle) * Math.min(mouthRadius * 0.4, 1.2),
-      lip,
-      Math.sin(angle) * Math.min(mouthRadius * 0.4, 1.2),
+    const centre = new THREE.Vector3(
+      x,
+      y + clearPaperEdge(head, rim, centerX, mouthRadius),
+      z,
     );
-    root.add(stem(bottom, neck, 0.09));
-    root.add(stem(neck, headBottom, 0.09));
+    const ray = new THREE.Raycaster(
+      centre.clone().addScaledVector(dir, -flowerHeads[id].diameter * 2),
+      dir,
+    );
+    const hit = ray.intersectObject(head, true)[0];
+    const headBottom = hit
+      ? hit.point.clone().addScaledVector(dir, 0.06)
+      : centre.clone().addScaledVector(dir, -flowerHeads[id].diameter * 0.2);
+    if ((hat || basket) && headBottom.y < foamTop + 0.2) {
+      const lift = foamTop + 0.2 - headBottom.y;
+      head.position.y += lift;
+      centre.y += lift;
+      headBottom.y += lift;
+    }
+    if (
+      handleContact &&
+      (handleContact.intersects(head, p.radius) ||
+        crown.some((c) => {
+          const other = Object.values(plants).find(
+            (plant) => plant.asset === c.asset,
+          );
+          return (
+            new THREE.Vector3().fromArray(c.center).distanceTo(centre) <
+            (p.radius +
+              (other.headCoreRadiusCm ?? other.headDiameterCm * 0.22)) *
+              0.98
+          );
+        }))
+    ) {
+      const original = head.position.clone(),
+        originalCentre = centre.clone(),
+        originalBottom = headBottom.clone();
+      const side =
+        Math.sign(
+          new THREE.Vector3(centre.x - centerX, 0, centre.z).dot(
+            handleContact.normal,
+          ),
+        ) || (i % 2 ? 1 : -1);
+      let solved = false;
+      search: for (const vertical of [
+        0, -0.6, 0.6, -1.2, 1.2, -1.8, 1.8, -2.4, 2.4, 3, 3.6, 4.2, 4.8, 5.4, 6,
+        6.6, 7.2, 7.8, 8.4, 9, 9.6, 10.2, 10.8, 11.4, 12,
+      ])
+        for (const distance of [
+          0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6, 4, 4.4, 4.8, 5.2, 5.6,
+          6, 6.4, 6.8, 7.2, 7.6, 8,
+        ]) {
+          for (const sign of [side, -side]) {
+            const shift = handleContact.normal
+              .clone()
+              .multiplyScalar(distance * sign);
+            shift.y = vertical;
+            const trialCentre = originalCentre.clone().add(shift),
+              trialBottom = originalBottom.clone().add(shift);
+            if (
+              trialBottom.y < foamTop + 0.2 ||
+              Math.hypot(trialCentre.x - centerX, trialCentre.z) >
+                mouthRadius + flowerHeads[id].diameter * 0.35
+            )
+              continue;
+            const coreClear = positions.every((other, j) => {
+              if (j >= i) return true;
+              const point =
+                j < i
+                  ? new THREE.Vector3().fromArray(crown[j].center)
+                  : new THREE.Vector3(
+                      centerX + other.x,
+                      baseY + other.y,
+                      other.z,
+                    );
+              return (
+                point.distanceTo(trialCentre) >=
+                (p.radius + other.radius) * 0.98
+              );
+            });
+            if (!coreClear) continue;
+            head.position.copy(original).add(shift);
+            if (!handleContact.intersects(head, p.radius)) {
+              centre.copy(trialCentre);
+              headBottom.copy(trialBottom);
+              solved = true;
+              break search;
+            }
+          }
+        }
+      if (!solved)
+        throw new Error("Flower cannot clear actual basket handle: " + id);
+    }
+    if (!cone && !hat && !basket) {
+      const minimum =
+        lip +
+        Math.max(
+          1,
+          (Math.hypot(headBottom.x - centerX, headBottom.z) -
+            mouthRadius * 0.82) *
+            0.45,
+        );
+      const lift = Math.max(0, minimum - headBottom.y);
+      head.position.y += lift;
+      centre.y += lift;
+      headBottom.y += lift;
+      const wallLift = clearPaperEdge(
+        head,
+        containerSurface,
+        centerX,
+        mouthRadius,
+      );
+      centre.y += wallLift;
+      headBottom.y += wallLift;
+    }
+    const angleBundle = i * 2.399963,
+      bundleRadius = Math.min(mouthRadius * 0.55, Math.sqrt(count) * 0.16),
+      radial = Math.sqrt((i + 0.5) / count) * bundleRadius;
+    const bottom = new THREE.Vector3(
+      centerX + Math.cos(angleBundle + 0.35) * radial * 1.45,
+      hat || basket ? foamTop - 1.8 : h * container.base,
+      Math.sin(angleBundle + 0.35) * radial * 1.45,
+    );
+    const binding = new THREE.Vector3(
+      centerX + Math.cos(angleBundle) * radial,
+      hat || basket ? foamTop - 0.6 : rim ? lip * 0.45 : lip - 3,
+      Math.sin(angleBundle) * radial,
+    );
+    if (hat || basket) {
+      bottom
+        .copy(headBottom)
+        .addScaledVector(dir, -(headBottom.y - foamTop + 1.8) / dir.y);
+      binding
+        .copy(headBottom)
+        .addScaledVector(dir, -(headBottom.y - foamTop + 0.6) / dir.y);
+    }
+    if (basket) foamAnchors.push(bottom.clone(), binding.clone());
+    const mouth = stemMouthPoint(
+      headBottom,
+      centerX,
+      Math.min(
+        rim ? rim.at(headBottom.x, headBottom.z) - 1.5 : lip,
+        headBottom.y - 0.3,
+      ),
+      mouthRadius,
+    );
+    const shoulder = headBottom
+      .clone()
+      .addScaledVector(
+        dir,
+        -Math.min(1.4, headBottom.distanceTo(mouth) * 0.45),
+      );
+    const stemRadius = (p.entry.plant.stemDiameterCm || 0.18) / 2;
+    root.add(
+      curvedStem([bottom, binding, mouth, shoulder, headBottom], stemRadius),
+    );
+    flowerModels.push(head);
+    crown.push({
+      asset: id,
+      center: centre.toArray(),
+      attachment: headBottom.toArray(),
+      mouthPoint: mouth.toArray(),
+      stemRadius,
+    });
   }
-  const petalTop = bounds(root).max.y;
+  // The basket handle is not part of the floral crown.
+  const petalTop = basket
+    ? Math.max(...flowerModels.map((head) => bounds(head).max.y))
+    : bounds(root).max.y;
   for (const [gIndex, id] of s.green.entries()) {
     const filler = id.includes("fill"),
       stemHeight = greeneryProfiles[id].length;
@@ -491,13 +742,14 @@ export async function buildFlowers(lib, s, palette) {
         color: byId[id].color,
       });
       const branchWidth = bounds(branch).getSize(new THREE.Vector3()).x;
-      const widthLimit = filler
-        ? Math.max(5, canopyRadius * 0.75)
-        : Math.max(6, canopyRadius * 0.95);
+      const widthLimit = Math.max(
+        2,
+        Math.min(canopyRadius * 0.7, mouthRadius * 1.5),
+      );
       if (branchWidth > widthLimit) {
-        branch.scale.x *= widthLimit / branchWidth;
-        branch.scale.z *= widthLimit / branchWidth;
+        branch.scale.multiplyScalar(widthLimit / branchWidth);
       }
+      const cutLocal = branch.worldToLocal(branchCut(branch));
       branch.rotation.set(
         Math.sin(angle) * profile.lean,
         angle,
@@ -506,39 +758,77 @@ export async function buildFlowers(lib, s, palette) {
       const branchHeight = bounds(branch).getSize(new THREE.Vector3()).y;
       place(
         branch,
-        centerX + Math.cos(angle) * canopyRadius * profile.spread,
+        centerX +
+          Math.cos(angle) *
+            Math.min(canopyRadius * profile.spread * 0.6, mouthRadius * 0.7),
         petalTop + profile.height * (0.65 + (i % 2) * 0.18) - branchHeight,
-        Math.sin(angle) * canopyRadius * profile.spread,
+        Math.sin(angle) *
+          Math.min(canopyRadius * profile.spread * 0.6, mouthRadius * 0.7),
       );
-      branch.traverse((n) => {
-        if (n.isMesh) {
-          n.material.clipShadows = true;
-          n.material.clippingPlanes = [
-            new THREE.Plane(new THREE.Vector3(0, 1, 0), -(lip + 0.15)),
-          ];
-        }
-      });
+      const initialCut = branch.localToWorld(cutLocal.clone());
+      branch.position.x +=
+        centerX +
+        Math.cos(angle) * Math.min(mouthRadius * 0.45, 0.8) -
+        initialCut.x;
+      branch.position.z +=
+        Math.sin(angle) * Math.min(mouthRadius * 0.45, 0.8) - initialCut.z;
+      branch.updateMatrixWorld(true);
+      clearPaperEdge(branch, containerSurface, centerX, mouthRadius);
       root.add(branch);
+      const cut = branch.localToWorld(cutLocal.clone());
       const neck = new THREE.Vector3(
         centerX + Math.cos(angle) * Math.min(mouthRadius * 0.25, 0.8),
-        lip + 0.18,
+        Math.min(lip - 1, cut.y - 0.6),
         Math.sin(angle) * Math.min(mouthRadius * 0.25, 0.8),
       );
-      root.add(
-        stem(new THREE.Vector3(centerX, h * container.base, 0), neck, 0.07),
+      const direction = new THREE.Vector3(0, 1, 0).transformDirection(
+        branch.matrixWorld,
       );
-      root.add(
-        stem(
-          neck,
-          new THREE.Vector3(
-            centerX + Math.cos(angle) * canopyRadius * profile.spread,
-            lip + 1.5,
-            Math.sin(angle) * canopyRadius * profile.spread,
-          ),
-          0.07,
-        ),
-      );
+      const lower =
+        hat || basket
+          ? cut
+              .clone()
+              .addScaledVector(
+                direction,
+                -(cut.y - foamTop + 1.8) / direction.y,
+              )
+          : new THREE.Vector3(centerX, h * container.base, 0);
+      const entry =
+        hat || basket
+          ? cut
+              .clone()
+              .addScaledVector(
+                direction,
+                -(cut.y - foamTop + 0.6) / direction.y,
+              )
+          : neck;
+      if (basket) foamAnchors.push(lower.clone(), entry.clone());
+      const path = [
+        lower,
+        entry,
+        cut.clone().addScaledVector(direction, -0.6),
+        cut,
+      ].filter((p, i, a) => i === 0 || p.distanceTo(a[i - 1]) > 0.01);
+      root.add(curvedStem(path, 0.07));
     }
+  }
+  if (basket && foamAnchors.length) {
+    // Fit the support to the actual inserted stems, rather than filling the
+    // entire basket mouth with an exposed flat green disc.
+    const anchorBounds = new THREE.Box3().setFromPoints(foamAnchors);
+    const center = anchorBounds.getCenter(new THREE.Vector3());
+    const radius =
+      Math.max(
+        ...foamAnchors.map((point) =>
+          Math.hypot(point.x - center.x, point.z - center.z),
+        ),
+      ) + 0.65;
+    floralFoam.geometry.dispose();
+    floralFoam.geometry = new THREE.CylinderGeometry(radius, radius, 2.2, 64);
+    floralFoam.position.x = center.x;
+    floralFoam.position.z = center.z;
+    floralFoam.userData.role = "floral-support";
+    floralFoam.userData.anchors = foamAnchors.map((point) => point.toArray());
   }
   if (s.ribbon) {
     const twine = s.ribbon.includes("jute"),
@@ -648,12 +938,14 @@ export async function buildFlowers(lib, s, palette) {
   }
   root.userData.assembly = {
     container: pack.id,
+    widthCm: packWidth,
     lip,
     mouthRadius,
     centerX,
     flowers: count,
+    crown,
   };
-  root.userData.measure = `${count} ${count === 1 ? "цветок" : "цветов"} · ручная сборка`;
+  root.userData.measure = `${count} ${count === 1 ? "цветок" : "цветов"} · ${basket ? `корзина ${packWidth.toFixed(0)} см` : "ручная сборка"}`;
   return root;
 }
 const ringIds = new Set([
@@ -674,7 +966,7 @@ export async function buildJewelry(lib, s, palette) {
     chain = s.base.includes("chain"),
     cuff = s.base.includes("cuff") || s.base === "jw-set-pave-band";
   const baseSize = isRing
-    ? s.size / 10 + 0.35
+    ? s.size / 10 / ringSizes[s.base].innerDiameterPerWidth
     : pendant
       ? 2.4
       : drop
@@ -689,12 +981,13 @@ export async function buildJewelry(lib, s, palette) {
   let base;
   if (chain) {
     for (let i = 0; i < 11; i++) {
-      const link = await lib.get(s.base, {
+      const nativeLink = await lib.get(s.base, {
         size: 0.82,
         axis: "y",
         color: palette,
         role: "metal",
       });
+      const link = closeCableLink(nativeLink, palette);
       link.rotation.z = Math.PI / 2;
       link.rotation.x = i % 2 ? Math.PI / 2 : 0;
       place(link, (i - 5) * 0.54, 0.65, 0, "center");
@@ -732,7 +1025,9 @@ export async function buildJewelry(lib, s, palette) {
     width: baseSize * 0.35,
   };
   let facePlane = null,
-    castDimensions = null;
+    calibratedSetting = null,
+    calibratedProng = null,
+    mountedFrame = null;
   if (s.base === "jw-base-solitaire")
     socket = {
       x: 0,
@@ -784,6 +1079,7 @@ export async function buildJewelry(lib, s, palette) {
       : null);
   if (mount?.startsWith("custom-")) {
     const setting = await fittedCast(lib, s.stone, socket, palette, mount);
+    mountedFrame = setting;
     if (socket.face === "z") setting.rotation.x = Math.PI / 2;
     place(
       setting,
@@ -797,6 +1093,32 @@ export async function buildJewelry(lib, s, palette) {
         ? bounds(setting).max.y + (mount === "custom-bezel" ? 0.01 : -0.045)
         : bounds(setting).max.z - 0.025;
     root.add(setting);
+  } else if (
+    mount &&
+    [
+      "jw-set-heart",
+      "jw-set-baguette",
+      "jw-set-marquise",
+      "jw-set-pear",
+    ].includes(mount)
+  ) {
+    calibratedSetting = await nativeSetting(
+      lib,
+      mount,
+      socket,
+      palette,
+      s.stone,
+    );
+    root.add(calibratedSetting.root);
+  } else if (["jw-set-prong4", "jw-set-prong6"].includes(mount) && s.stone) {
+    calibratedProng = await fittedNativeProngs(
+      lib,
+      mount,
+      s.stone,
+      socket,
+      palette,
+    );
+    root.add(calibratedProng.root);
   } else if (mount) {
     const a = byId[mount],
       prong = a.id.includes("prong");
@@ -827,7 +1149,7 @@ export async function buildJewelry(lib, s, palette) {
       socket.width *= 0.8;
       facePlane = bounds(setting).max.z - 0.025;
     }
-    if (!prong) castDimensions = bounds(setting).getSize(new THREE.Vector3());
+    mountedFrame = setting;
     root.add(setting);
   }
   if (chain && s.stone) {
@@ -863,7 +1185,27 @@ export async function buildJewelry(lib, s, palette) {
     }
     root.userData.assembly = { stoneCount: paveSockets.sockets.length };
   }
-  if (s.stone && s.base !== "jw-set-pave-band") {
+  if (s.stone && calibratedProng) {
+    root.add(calibratedProng.stone);
+    root.userData.assembly = {
+      stoneCount: 1,
+      nativeSeat: calibratedProng.stone.userData.nativeSeat,
+    };
+  } else if (s.stone && calibratedSetting) {
+    const stone = await seatNativeGem(lib, s.stone, calibratedSetting);
+    root.add(stone);
+    root.userData.assembly = {
+      stoneCount: 1,
+      nativeSeat: stone.userData.nativeSeat,
+    };
+  } else if (s.stone && integratedSockets[s.base]) {
+    const stones = await seatIntegratedGems(lib, s.base, base, s.stone);
+    root.add(...stones);
+    root.userData.assembly = {
+      stoneCount: stones.length,
+      nativeIntegrated: stones.map((stone) => stone.userData.nativeSeat),
+    };
+  } else if (s.stone && s.base !== "jw-set-pave-band") {
     const a = byId[s.stone],
       face = a.face || "y",
       rotation =
@@ -887,26 +1229,6 @@ export async function buildJewelry(lib, s, palette) {
     if (mount === "jw-set-heart" && a.pack === "gem") {
       if (socket.face === "y") stone.rotateY(-Math.PI / 2);
       else stone.rotateZ(-Math.PI / 2);
-      stone.updateMatrixWorld(true);
-    }
-    if (castDimensions) {
-      const wrapper = new THREE.Group();
-      wrapper.add(stone);
-      stone = wrapper;
-      stone.updateMatrixWorld(true);
-      const measured = bounds(stone).getSize(new THREE.Vector3());
-      const ratios = {
-        "jw-set-baguette": [0.65, 0.68],
-        "jw-set-heart": [0.63, 0.66],
-        "jw-set-marquise": [0.64, 0.72],
-        "jw-set-pear": [0.64, 0.68],
-      }[mount];
-      if (ratios) {
-        stone.scale.x *= (castDimensions.x * ratios[0]) / measured.x;
-        const depth = socket.face === "y" ? "z" : "y";
-        stone.scale[depth] *=
-          (castDimensions[depth] * ratios[1]) / measured[depth];
-      }
       stone.updateMatrixWorld(true);
     }
     const sb = bounds(stone),
@@ -959,30 +1281,24 @@ export async function buildJewelry(lib, s, palette) {
       root.userData.assembly = { stoneCount: 17 };
     }
   }
-  for (const id of s.finding) {
-    const a = byId[id],
-      wire = id.includes("ear-wire"),
-      bail = id.includes("bail"),
-      clasp = id.includes("clasp"),
-      jump = id.includes("jump");
-    const part = await lib.get(id, {
-      size: wire ? 1.9 : bail ? 0.85 : clasp ? 1.0 : jump ? 0.4 : 0.9,
-      axis: wire || bail || clasp ? "y" : "x",
-      color: palette,
-      role: "metal",
-    });
-    if (wire || bail)
-      place(
-        part,
-        0,
-        bail && pendant ? b.max.y * 0.76 - 0.08 : b.max.y - 0.08,
-        0,
-      );
-    else if (clasp) place(part, size.x * 0.5 + 0.3, 0.65, 0, "center");
-    else if (jump) place(part, 0, b.max.y - 0.06, 0, "center");
-    else place(part, chain ? -0.8 : size.x * 0.62, 0.4, 0.25, "center");
-    root.add(part);
+  if (isRing && mount && s.stone) {
+    const frame =
+      calibratedSetting?.root || calibratedProng?.root || mountedFrame;
+    const gem =
+      root.children.find((c) => c.userData.nativeSeat) ||
+      root.children.find((c) => c.userData.asset === s.stone);
+    if (frame && gem) {
+      const gallery = clearRingPavilion(base, frame, gem, palette);
+      if (gallery) {
+        root.add(gallery);
+        root.userData.assembly = {
+          ...root.userData.assembly,
+          pavilionClearance: gallery.userData.pavilionClearance,
+        };
+      }
+    }
   }
+  await attachNativeFindings(lib, root, base, s, palette);
   const end = bounds(root);
   root.position.y -= end.min.y;
   root.userData.measure = isRing
@@ -991,9 +1307,9 @@ export async function buildJewelry(lib, s, palette) {
   return root;
 }
 export async function assembleProject(lib, kind, s, palette) {
-  if(kind==='cakes' && s.pattern) return buildRecipeCake(lib,s);
-  if(kind==='jewelry' && s.pattern) return buildConstructedJewelry(lib,s);
-  if(kind==='flowers' && s.pattern) return buildComposedBouquet(lib,s);
+  if (kind === "cakes" && s.pattern) return buildRecipeCake(lib, s);
+  if (kind === "jewelry" && s.pattern) return buildConstructedJewelry(lib, s);
+  if (kind === "flowers" && s.pattern) return buildComposedBouquet(lib, s);
   return kind === "cakes"
     ? buildCake(lib, s, palette)
     : kind === "flowers"

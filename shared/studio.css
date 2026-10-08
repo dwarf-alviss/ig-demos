@@ -1136,8 +1136,9 @@ body[data-studio="jewelry"] .asset-check {
     scroll-behavior: auto !important;
   }
 }
+/* WebGL canvases and cart restoration use ordinary document navigation. */
 @view-transition {
-  navigation: auto;
+  navigation: none;
 }
 
 .asset-name {
@@ -1251,19 +1252,149 @@ body[data-studio="jewelry"] .asset-check {
 .dimension-options label select {
   max-width: 180px;
 }
-.domain-controls {flex-basis:100%;width:100%;}
-.domain-controls label {display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
-.domain-controls label select {max-width:100%;width:100%;min-width:220px;}
-.domain-controls .small-hint {line-height:1.7;margin:12px 0;}
-.ingredients li>span {min-width:0;}
-.asset-name,body[data-studio="flowers"] .asset-name,body[data-studio="jewelry"] .asset-name {font-size:12px;line-height:1.45;min-height:34px;}
-.asset-price,.asset-variant,.catalog-count {font-size:11px;line-height:1.45;}
-.search input,select {font-size:13px;}
-.asset-grid {max-height:440px;gap:10px;}
-.asset-card {padding:7px 7px 12px;}
-.palette {grid-template-columns:repeat(auto-fit,minmax(70px,1fr));}
-.counter button,.remove {min-width:30px;min-height:30px;}
-.domain-controls select {min-height:42px;}
-body[data-studio="cakes"] .domain-controls {padding:16px;background:#f5ece2;border-radius:12px;}
-body[data-studio="flowers"] .domain-controls {padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-body[data-studio="jewelry"] .domain-controls {padding:16px 0;border-bottom:1px solid var(--accent);}
+.domain-controls {
+  flex-basis: 100%;
+  width: 100%;
+}
+.domain-controls label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.domain-controls label select {
+  max-width: 100%;
+  width: 100%;
+  min-width: 220px;
+}
+.domain-controls .small-hint {
+  line-height: 1.7;
+  margin: 12px 0;
+}
+.ingredients li > span {
+  min-width: 0;
+}
+.asset-name,
+body[data-studio="flowers"] .asset-name,
+body[data-studio="jewelry"] .asset-name {
+  font-size: 12px;
+  line-height: 1.45;
+  min-height: 34px;
+}
+.asset-price,
+.asset-variant,
+.catalog-count {
+  font-size: 11px;
+  line-height: 1.45;
+}
+.search input,
+select {
+  font-size: 13px;
+}
+.asset-grid {
+  max-height: 440px;
+  gap: 10px;
+}
+.asset-card {
+  padding: 7px 7px 12px;
+}
+.palette {
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+}
+.counter button,
+.remove {
+  min-width: 30px;
+  min-height: 30px;
+}
+.domain-controls select {
+  min-height: 42px;
+}
+body[data-studio="cakes"] .domain-controls {
+  padding: 16px;
+  background: #f5ece2;
+  border-radius: 12px;
+}
+body[data-studio="flowers"] .domain-controls {
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+body[data-studio="jewelry"] .domain-controls {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--accent);
+}
+
+/* Preserve complete jewelry silhouettes without light letterbox bands. */
+body[data-studio="jewelry"] [data-pattern] .asset-image {
+  background: #252b20;
+}
+
+.asset-card:disabled {
+  opacity: 1;
+  cursor: not-allowed;
+}
+.asset-card:disabled .asset-image {
+  opacity: 0.45;
+}
+.asset-card:disabled .asset-name,
+.asset-card:disabled .asset-price {
+  color: var(--muted);
+}
+
+/* Mobile controls remain readable and usable with a thumb. */
+@media (max-width: 520px) {
+  .asset-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .asset-name,
+  body[data-studio="flowers"] .asset-name,
+  body[data-studio="jewelry"] .asset-name {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .asset-price,
+  .asset-variant,
+  .catalog-count {
+    font-size: 12px;
+  }
+  .search input,
+  select {
+    font-size: 16px;
+  }
+  .counter button,
+  .remove,
+  .category-tabs button,
+  .draft-actions button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  .counter {
+    flex-shrink: 0;
+  }
+  .ingredients {
+    font-size: 13px;
+  }
+  .palette {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .swatch {
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .draft-actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 520px) {
+  .category-tabs {
+    gap: 16px;
+  }
+  .category-tabs button {
+    flex: 0 0 auto;
+    min-width: max-content;
+    padding-inline: 4px;
+    font-size: 12px;
+  }
+}

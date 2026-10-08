@@ -1,0 +1,152 @@
+[
+  {
+    "pattern": "fraisier",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-fraisier-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-fraisier.jpg"
+  },
+  {
+    "pattern": "opera",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-opera-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-opera.jpg"
+  },
+  {
+    "pattern": "caramel-cheesecake",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-caramel-cheesecake-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-caramel-cheesecake.jpg"
+  },
+  {
+    "pattern": "hazelnut-entremet",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-hazelnut-entremet-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-hazelnut-entremet.jpg"
+  },
+  {
+    "pattern": "raspberry-chocolate",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-raspberry-chocolate-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-raspberry-chocolate.jpg"
+  },
+  {
+    "pattern": "raspberry-cremeux",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-raspberry-cremeux-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-raspberry-cremeux.jpg"
+  },
+  {
+    "pattern": "chocolate-strawberry-heart",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-chocolate-strawberry-heart-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-chocolate-strawberry-heart.jpg"
+  },
+  {
+    "pattern": "black-forest",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-black-forest-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-black-forest.jpg"
+  },
+  {
+    "pattern": "lemon-cloud",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-lemon-cloud-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-lemon-cloud.jpg"
+  },
+  {
+    "pattern": "tiramisu",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-tiramisu-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-tiramisu.jpg"
+  },
+  {
+    "pattern": "vanilla-celebration",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-vanilla-celebration-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-vanilla-celebration.jpg"
+  },
+  {
+    "pattern": "mini-buttercream",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-mini-buttercream-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-mini-buttercream.jpg"
+  },
+  {
+    "pattern": "vanilla-eclair",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-vanilla-eclair-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-vanilla-eclair.jpg"
+  },
+  {
+    "pattern": "cream-puff",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-cream-puff-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-cream-puff.jpg"
+  },
+  {
+    "pattern": "paris-brest",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-paris-brest-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-paris-brest.jpg"
+  },
+  {
+    "pattern": "macaron-chocolate",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-macaron-chocolate-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-macaron-chocolate.jpg"
+  },
+  {
+    "pattern": "macaron-raspberry",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-macaron-raspberry-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-macaron-raspberry.jpg"
+  },
+  {
+    "pattern": "macaron-pistachio",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-macaron-pistachio-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-macaron-pistachio.jpg"
+  },
+  {
+    "pattern": "macaron-vanilla",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-macaron-vanilla-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-macaron-vanilla.jpg"
+  },
+  {
+    "pattern": "macaron-caramel",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-macaron-caramel-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-macaron-caramel.jpg"
+  },
+  {
+    "pattern": "tiramisu-cupcake",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-tiramisu-cupcake-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-tiramisu-cupcake.jpg"
+  },
+  {
+    "pattern": "vanilla-doughnut",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-vanilla-doughnut-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-vanilla-doughnut.jpg"
+  },
+  {
+    "pattern": "iced-cookie-round",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-iced-cookie-round-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-iced-cookie-round.jpg"
+  },
+  {
+    "pattern": "iced-cookie-heart",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-iced-cookie-heart-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-iced-cookie-heart.jpg"
+  },
+  {
+    "pattern": "fudge-brownie",
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "source": "patterns/cakes-fudge-brownie-front.jpg",
+    "output": "shared/domain-thumbnails/cakes-fudge-brownie.jpg"
+  }
+]

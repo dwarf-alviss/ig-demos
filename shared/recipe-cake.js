@@ -2,116 +2,13 @@ import * as THREE from "three";
 import { recipes, ingredients, layerStack } from "./domain.js";
 import { domainMaterial } from "./domain-materials.js";
 import { bounds, place } from "./model-library.js";
+import { preciseBounds, precisePlace } from "./precise-fit.js";
 import { byId } from "./catalogue.js";
 import { recipeSeats, supportSizes } from "./recipe-layout.js";
 import { pastryHeight } from "./pastry-support.js";
+import { foodPose } from "./food-pose.js";
+import { outline } from "./recipe-outline.js";
 
-function heartOutline(radius, slice) {
-  const full = new THREE.Shape();
-  full.moveTo(0, -radius * 0.8);
-  full.bezierCurveTo(
-    -radius * 1.6,
-    radius * 0.05,
-    -radius,
-    radius * 1.35,
-    0,
-    radius * 0.6,
-  );
-  full.bezierCurveTo(
-    radius,
-    radius * 1.35,
-    radius * 1.6,
-    radius * 0.05,
-    0,
-    -radius * 0.8,
-  );
-  return splitOutline(full, slice);
-}
-function splitOutline(full, slice) {
-  const polygon = full.getPoints(120),
-    inside = (p) => p.x >= 0 && p.y >= 0 && p.y <= Math.tan(0.57) * p.x;
-  if (slice) {
-    let result = polygon;
-    for (const f of [
-      (p) => p.x,
-      (p) => p.y,
-      (p) => Math.tan(0.57) * p.x - p.y,
-    ]) {
-      const next = [];
-      for (let i = 0; i < result.length; i++) {
-        const a = result[i],
-          b = result[(i + 1) % result.length],
-          fa = f(a),
-          fb = f(b);
-        if (fa >= 0) next.push(a);
-        if (fa >= 0 !== fb >= 0) next.push(a.clone().lerp(b, fa / (fa - fb)));
-      }
-      result = next;
-    }
-    return new THREE.Shape(result);
-  }
-  const result = [];
-  for (let i = 0; i < polygon.length - 1; i++) {
-    const a = polygon[i],
-      b = polygon[i + 1],
-      ai = inside(a),
-      bi = inside(b);
-    if (!ai) result.push(a);
-    if (ai !== bi) {
-      let lo = 0,
-        hi = 1;
-      for (let k = 0; k < 32; k++) {
-        const mid = (lo + hi) / 2;
-        if (inside(a.clone().lerp(b, mid)) === ai) lo = mid;
-        else hi = mid;
-      }
-      result.push(a.clone().lerp(b, (lo + hi) / 2));
-      if (!ai) result.push(new THREE.Vector2(0, 0));
-    }
-  }
-  return new THREE.Shape(result);
-}
-function outline(recipe, radius, slice = false) {
-  if (recipe.shape === "heart") return heartOutline(radius, slice);
-  if (recipe.shape === "hex") {
-    const full = new THREE.Shape();
-    for (let i = 0; i < 6; i++) {
-      const a = (i / 6) * Math.PI * 2;
-      full[i ? "lineTo" : "moveTo"](Math.cos(a) * radius, Math.sin(a) * radius);
-    }
-    full.closePath();
-    return splitOutline(full, slice);
-  }
-  const s = new THREE.Shape();
-  if (slice) {
-    if (recipe.shape === "rectangle") {
-      s.moveTo(0, 0);
-      s.lineTo(radius * 0.8, 0);
-      s.lineTo(radius * 0.8, radius * 0.37);
-      s.lineTo(0, radius * 0.37);
-      s.closePath();
-    } else {
-      s.moveTo(0, 0);
-      s.absarc(0, 0, radius, 0, 0.57, false);
-      s.lineTo(0, 0);
-    }
-  } else if (recipe.shape === "rectangle") {
-    const w = radius,
-      h = radius * 0.67;
-    s.moveTo(-w, -h);
-    s.lineTo(w * 0.2, -h);
-    s.lineTo(w * 0.2, -w * 0.3);
-    s.lineTo(w, -w * 0.3);
-    s.lineTo(w, h);
-    s.lineTo(-w, h);
-    s.closePath();
-  } else {
-    s.moveTo(0, 0);
-    s.absarc(0, 0, radius, 0.57, Math.PI * 2, false);
-    s.lineTo(0, 0);
-  }
-  return s;
-}
 function volume(shape, height, material, y, bevel = 0.035) {
   const geo = new THREE.ExtrudeGeometry(shape, {
     depth: height,
@@ -365,6 +262,8 @@ export async function buildRecipeCake(lib, state) {
     start = 0.32,
   ) => {
     const group = new THREE.Group();
+    group.userData.component = slice ? "recipe-slice" : "recipe-body";
+    group.userData.tierRadiusCm = radius;
     for (const l of stack) {
       const material = domainMaterial(l.component.material, {
         color: l.component.id.includes("pistachio")
@@ -597,8 +496,24 @@ export async function buildRecipeCake(lib, state) {
     if (seat.id === "topper") continue;
     const c = ingredients[seat.id];
     const n = c.asset
-      ? await lib.get(c.asset, { size: c.sizeCm, axis: "max", regional: true })
+      ? await lib.get(c.asset, {
+          size: c.sizeCm,
+          axis: "max",
+          regional: true,
+          rotation: foodPose(
+            c.asset,
+            seat.index,
+            Math.atan2(seat.z, seat.x),
+            isSmall,
+            isSmall ? "plate" : "cake",
+          ),
+          rotationOrder: "YXZ",
+        })
       : foodDetail(c.id);
+    if (c.id === "strawberry-half") {
+      n.rotation.x = -Math.PI / 2;
+      n.rotation.y = Math.atan2(seat.z, seat.x) + seat.index * 0.31;
+    }
     const piece = seat.piece,
       px = state.pieces === 1 ? 0 : ((piece % 2) - 0.5) * pitch,
       pz =
@@ -611,12 +526,40 @@ export async function buildRecipeCake(lib, state) {
       sample = recipe.nativeBase
         ? pastryHeight(recipe.nativeBase, seat.x / scale, seat.z / scale)
         : null;
-    const y = isSmall
+    let y = isSmall
       ? (sample !== null
           ? 0.32 + sample * scale
           : anchor?.y || recipe.heightCm) - 0.03
       : top - 0.09;
-    place(
+    if (isSmall && recipe.nativeBase) {
+      precisePlace(n, px + seat.x, 0, pz + seat.z);
+      const b = preciseBounds(n),
+        h = b.max.y - b.min.y;
+      let supportY = -Infinity;
+      n.traverse((mesh) => {
+        if (!mesh.isMesh) return;
+        const positions = mesh.geometry.attributes.position;
+        for (
+          let j = 0;
+          j < positions.count;
+          j += Math.max(1, Math.floor(positions.count / 800))
+        ) {
+          const p = new THREE.Vector3()
+            .fromBufferAttribute(positions, j)
+            .applyMatrix4(mesh.matrixWorld);
+          if (p.y > h * 0.45) continue;
+          const roof = pastryHeight(
+            recipe.nativeBase,
+            (p.x - px) / scale,
+            (p.z - pz) / scale,
+          );
+          if (roof !== null)
+            supportY = Math.max(supportY, 0.32 + roof * scale - p.y);
+        }
+      });
+      if (Number.isFinite(supportY)) y = supportY - 0.025;
+    }
+    precisePlace(
       n,
       isSmall ? px + seat.x : cakeOffset + seat.x,
       y,

@@ -47,6 +47,24 @@ const plainBases = new Set([
   "jw-base-ear-cuff",
   "jw-base-signet",
 ]);
+export function compatibleFindings(s) {
+  if (designs[s.pattern]) return [];
+  const allowed =
+    s.base === "jw-base-pendant"
+      ? ["jw-part-bail-hinged", "jw-part-jump-ring"]
+      : s.base === "jw-base-drop-earring"
+        ? ["jw-part-ear-wire-french", "jw-part-jump-ring"]
+        : s.base === "jw-base-chain-link-cable"
+          ? ["jw-part-clasp-lobster", "jw-part-charm-tag", "jw-part-jump-ring"]
+          : [];
+  const connectedKit = (s.finding || []).some(
+    (id) => allowed.includes(id) && id !== "jw-part-jump-ring",
+  );
+  return catalogue.filter(
+    (a) =>
+      allowed.includes(a.id) && !(connectedKit && a.id === "jw-part-jump-ring"),
+  );
+}
 export function compatibleStones(s) {
   if (designs[s.pattern]) {
     const cuts = designs[s.pattern].compatibleCuts;
@@ -62,7 +80,9 @@ export function compatibleStones(s) {
   }
   if (plainBases.has(s.base)) return [];
   let shapes;
-  if (s.base === "jw-set-pave-band") shapes = ["round"];
+  if (["jw-base-pendant", "jw-base-cocktail"].includes(s.base))
+    shapes = ["oval"];
+  else if (s.base === "jw-set-pave-band") shapes = ["round"];
   else if (fixedShape[s.setting]) shapes = [fixedShape[s.setting]];
   else if (
     [
@@ -124,6 +144,14 @@ export function requiredSetting(stone) {
   );
 }
 export function normalizeJewelry(s) {
+  const findings = compatibleFindings(s);
+  s.finding = (s.finding || []).filter((id) =>
+    findings.some((a) => a.id === id),
+  );
+  for (const id of Object.keys(s.counts || {}))
+    if (byId[id]?.category === "finding" && !s.finding.includes(id))
+      delete s.counts[id];
+  for (const id of s.finding) s.counts[id] = 1;
   if (!compatibleSettings(s).some((a) => a.id === s.setting)) s.setting = null;
   const choices = compatibleStones(s);
   if (!choices.length) s.stone = null;
@@ -133,9 +161,12 @@ export function normalizeJewelry(s) {
   ) {
     const color = byId[s.stone]?.color;
     s.stone =
-      choices.find((a) => a.color === color)?.id ||
-      choices.find((a) => stoneShape(a.id) === designs[s.pattern]?.defaultCut)
-        ?.id ||
+      (color && choices.find((a) => a.color === color)?.id) ||
+      choices.find((a) =>
+        designs[s.pattern]?.defaultCut === "cabochon"
+          ? stoneShape(a.id)?.includes("cabochon")
+          : stoneShape(a.id) === designs[s.pattern]?.defaultCut,
+      )?.id ||
       choices.find((a) => a.id === "jw-stone-diamond-08")?.id ||
       choices[0].id;
   }

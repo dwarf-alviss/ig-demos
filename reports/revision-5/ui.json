@@ -1,0 +1,449 @@
+[
+  {
+    "bundleHash": "5a78254afc4a6d5a3313a1d1a8e2fd42151329a3e3aeea4bc7fa6bb00b139b08",
+    "cssHash": "c00dca5281074cd89d8c144f56f17ac5ae7ec6bde912637c7ac9a1366d5fe8f6",
+    "passed": true,
+    "nativeFindingsChecked": false,
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "vanilla-celebration",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "cream-coat",
+      "foodDecor": [
+        "strawberry",
+        "raspberry",
+        "blueberry",
+        "cream-rosette",
+        "piped-rope"
+      ],
+      "foodCounts": {
+        "strawberry": 3,
+        "raspberry": 5,
+        "blueberry": 9,
+        "cream-rosette": 3,
+        "piped-rope": 3
+      }
+    },
+    "errors": [],
+    "missing": [],
+    "networkFailures": [],
+    "overflow": false,
+    "metrics": {
+      "assembly": {
+        "surfaces": [
+          {
+            "id": -1,
+            "x": 0,
+            "z": 0,
+            "y": 0.48,
+            "radius": 12.796164413176783,
+            "inner": 0
+          },
+          {
+            "id": 0,
+            "asset": "bk-pastry-brownie-bite",
+            "x": 7.5,
+            "z": 0,
+            "y": 4.492278735350412,
+            "radius": 1.85,
+            "inner": 0
+          },
+          {
+            "id": 1,
+            "asset": "bk-pastry-brownie-bite",
+            "x": 4.592425496802575e-16,
+            "z": 7.5,
+            "y": 4.492278735350412,
+            "radius": 1.85,
+            "inner": 0
+          },
+          {
+            "id": 2,
+            "asset": "bk-pastry-brownie-bite",
+            "x": -7.5,
+            "z": 9.18485099360515e-16,
+            "y": 4.492278735350412,
+            "radius": 1.85,
+            "inner": 0
+          },
+          {
+            "id": 3,
+            "asset": "bk-pastry-brownie-bite",
+            "x": -1.3777276490407722e-15,
+            "z": -7.5,
+            "y": 4.492278735350412,
+            "radius": 1.85,
+            "inner": 0
+          }
+        ],
+        "decorSeats": [
+          {
+            "x": 7.5,
+            "z": 0,
+            "footprint": 3.5961644131767843,
+            "surface": -1
+          },
+          {
+            "x": 4.592425496802575e-16,
+            "z": 7.5,
+            "footprint": 3.5961644131767843,
+            "surface": -1
+          },
+          {
+            "x": -7.5,
+            "z": 9.18485099360515e-16,
+            "footprint": 3.5961644131767843,
+            "surface": -1
+          },
+          {
+            "x": -1.3777276490407722e-15,
+            "z": -7.5,
+            "footprint": 3.5961644131767843,
+            "surface": -1
+          },
+          {
+            "x": -7.1301331484028765,
+            "z": 6.371604365119577,
+            "y": 0.4499999940395355,
+            "footprint": 1.85,
+            "surface": -1
+          },
+          {
+            "x": 7.064678213499328,
+            "z": 6.444102935185961,
+            "y": 0.4499999940395355,
+            "footprint": 1.85,
+            "surface": -1
+          },
+          {
+            "x": 0.642710763433384,
+            "z": 1.8472967319633886,
+            "y": 0.4499999940395355,
+            "footprint": 1.85,
+            "surface": -1
+          }
+        ]
+      },
+      "framing": {
+        "maxX": 0.8499332383113536,
+        "maxY": 0.6298004556842439
+      },
+      "drawCalls": 17,
+      "triangles": 448754,
+      "geometries": 9,
+      "textures": 11,
+      "box": [
+        26.592329025268555,
+        4.631567904034235,
+        26.592329025268555
+      ]
+    }
+  },
+  {
+    "bundleHash": "5a78254afc4a6d5a3313a1d1a8e2fd42151329a3e3aeea4bc7fa6bb00b139b08",
+    "cssHash": "c00dca5281074cd89d8c144f56f17ac5ae7ec6bde912637c7ac9a1366d5fe8f6",
+    "passed": true,
+    "nativeFindingsChecked": false,
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-peony-open",
+        "fl-flower-rose-garden"
+      ],
+      "green": [
+        "fl-green-eucalyptus-silver"
+      ],
+      "pack": "fl-wrap-matte-sleeve",
+      "ribbon": "fl-ribbon-satin-bow",
+      "counts": {
+        "fl-flower-peony-open": 5,
+        "fl-flower-rose-garden": 4
+      },
+      "palette": 0,
+      "pattern": "garden-pink",
+      "finish": "polished",
+      "bouquetSize": 29,
+      "taxonCounts": {
+        "rose": 16,
+        "ranunculus": 7,
+        "anemone": 6
+      }
+    },
+    "errors": [],
+    "missing": [],
+    "networkFailures": [],
+    "overflow": false,
+    "metrics": {
+      "assembly": {
+        "container": "fl-wrap-matte-sleeve",
+        "widthCm": 23,
+        "lip": 31.30197313106455,
+        "mouthRadius": 7.82,
+        "centerX": 0,
+        "flowers": 9,
+        "crown": [
+          {
+            "asset": "fl-flower-peony-open",
+            "center": [
+              2.141021400097978,
+              36.11950861457583,
+              0.2642214587447351
+            ],
+            "attachment": [
+              1.8524518543449886,
+              34.32242524903959,
+              0.2286093596201442
+            ],
+            "mouthPoint": [
+              1.8524518543449886,
+              27.505497975702117,
+              0.2286093596201442
+            ],
+            "stemRadius": 0.2
+          },
+          {
+            "asset": "fl-flower-rose-garden",
+            "center": [
+              -2.605373604372492,
+              34.42883568698166,
+              2.227784562649706
+            ],
+            "attachment": [
+              -2.2524640061944172,
+              32.62277558829024,
+              1.926021102118529
+            ],
+            "mouthPoint": [
+              -2.2524640061944172,
+              28.845172210568467,
+              1.926021102118529
+            ],
+            "stemRadius": 0.15
+          },
+          {
+            "asset": "fl-flower-peony-open",
+            "center": [
+              0.04146186182095356,
+              33.36274873400915,
+              -4.876996753516193
+            ],
+            "attachment": [
+              0.03614541892766731,
+              31.65308346258633,
+              -4.251644355141556
+            ],
+            "mouthPoint": [
+              0.03614541892766731,
+              29.276725897975304,
+              -4.251644355141556
+            ],
+            "stemRadius": 0.2
+          },
+          {
+            "asset": "fl-flower-rose-garden",
+            "center": [
+              3.1512209777621685,
+              32.96167204523877,
+              4.463038555812981
+            ],
+            "attachment": [
+              2.7434011737115696,
+              31.236119497285493,
+              3.8854479894432234
+            ],
+            "mouthPoint": [
+              2.7434011737115696,
+              27.600195910761915,
+              3.8854479894432234
+            ],
+            "stemRadius": 0.15
+          },
+          {
+            "asset": "fl-flower-peony-open",
+            "center": [
+              -5.96041203142706,
+              31.83397201647633,
+              -1.0330281710838405
+            ],
+            "attachment": [
+              -5.21931973111238,
+              30.17616201630146,
+              -0.9045858386474543
+            ],
+            "mouthPoint": [
+              -5.21931973111238,
+              28.52453370390818,
+              -0.9045858386474543
+            ],
+            "stemRadius": 0.2
+          },
+          {
+            "asset": "fl-flower-rose-garden",
+            "center": [
+              5.601621926952604,
+              33.65375194697496,
+              -3.1571561253443083
+            ],
+            "attachment": [
+              4.8959541728417575,
+              31.974077111571845,
+              -2.759431448205837
+            ],
+            "mouthPoint": [
+              4.8959541728417575,
+              28.918193039899336,
+              -2.759431448205837
+            ],
+            "stemRadius": 0.15
+          },
+          {
+            "asset": "fl-flower-peony-open",
+            "center": [
+              -1.8557026818082547,
+              30.78866089537626,
+              6.0761116010421405
+            ],
+            "attachment": [
+              -1.6269744995290174,
+              29.14523540111294,
+              5.32718884770651
+            ],
+            "mouthPoint": [
+              -1.6269744995290174,
+              27.867595595713798,
+              5.32718884770651
+            ],
+            "stemRadius": 0.2
+          },
+          {
+            "asset": "fl-flower-rose-garden",
+            "center": [
+              -3.6528946204924004,
+              30.64906441800004,
+              -6.043298764304927
+            ],
+            "attachment": [
+              -3.2014118843474035,
+              29.001119311262972,
+              -5.296371917265943
+            ],
+            "mouthPoint": [
+              -3.2014118843474035,
+              27.593088207780927,
+              -5.296371917265943
+            ],
+            "stemRadius": 0.15
+          },
+          {
+            "asset": "fl-flower-peony-open",
+            "center": [
+              7.936008692027403,
+              32.03382492723834,
+              2.389795231905739
+            ],
+            "attachment": [
+              7.015770308914255,
+              30.487727186632064,
+              2.112680956263656
+            ],
+            "mouthPoint": [
+              6.140047033941025,
+              28.326149872974653,
+              1.848971654999615
+            ],
+            "stemRadius": 0.2
+          }
+        ]
+      },
+      "framing": {
+        "maxX": 0.5140082594512813,
+        "maxY": 0.819996582125869
+      },
+      "drawCalls": 57,
+      "triangles": 1072730,
+      "geometries": 29,
+      "textures": 19,
+      "box": [
+        24.935679856935714,
+        43.49707406633473,
+        24.51766894276543
+      ]
+    }
+  },
+  {
+    "bundleHash": "5a78254afc4a6d5a3313a1d1a8e2fd42151329a3e3aeea4bc7fa6bb00b139b08",
+    "cssHash": "c00dca5281074cd89d8c144f56f17ac5ae7ec6bde912637c7ac9a1366d5fe8f6",
+    "passed": true,
+    "nativeFindingsChecked": true,
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-round-brilliant",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 4,
+      "size": 17,
+      "pattern": "solitaire",
+      "finish": "satin",
+      "bouquetSize": 19
+    },
+    "errors": [],
+    "missing": [],
+    "networkFailures": [],
+    "overflow": false,
+    "metrics": {
+      "assembly": {
+        "findingConnections": [
+          {
+            "id": "jw-part-ear-wire-french",
+            "target": [
+              0.00007035220098200456,
+              3.12408928509487,
+              0
+            ],
+            "actual": [
+              0.00007035220098203232,
+              3.12408928509487,
+              0
+            ]
+          }
+        ]
+      },
+      "framing": {
+        "maxX": 0.348616675293954,
+        "maxY": 0.8199212425432989
+      },
+      "drawCalls": 9,
+      "triangles": 192770,
+      "geometries": 5,
+      "textures": 5,
+      "box": [
+        2.004531313389002,
+        4.86366685479055,
+        0.4
+      ]
+    }
+  }
+]

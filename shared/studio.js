@@ -6,7 +6,11 @@ import {
   plants,
   initialTaxonCounts,
 } from "./domain.js";
-import { compatibleStones, compatibleSettings } from "./jewelry-rules.js";
+import {
+  compatibleStones,
+  compatibleSettings,
+  compatibleFindings,
+} from "./jewelry-rules.js";
 import {
   projectSpecs,
   presetPatterns,
@@ -14,6 +18,7 @@ import {
   preset,
   normalize,
   canIncreaseCount,
+  canSelectCakeDecoration,
   selectedIds,
   estimate,
   describe,
@@ -183,6 +188,9 @@ function renderCatalog() {
       (kind !== "jewelry" ||
         category !== "setting" ||
         compatibleSettings(state).some((x) => x.id === a.id)) &&
+      (kind !== "jewelry" ||
+        category !== "finding" ||
+        compatibleFindings(state).some((x) => x.id === a.id)) &&
       (!query ||
         (a.name + " " + (a.variant || "")).toLowerCase().includes(query)) &&
       (category !== "stone" ||
@@ -206,12 +214,26 @@ function renderCatalog() {
     (category === "stone" ? "огранок и оттенков" : "вариантов");
   $("#catalog").innerHTML = entries.length
     ? entries
-        .map(
-          (a) =>
-            `<button class="asset-card ${selected.has(a.id) ? "is-selected" : ""}" data-asset="${a.id}" aria-pressed="${selected.has(a.id)}" aria-label="${esc(a.name + (a.variant ? " · " + a.variant : ""))}"><span class="asset-image"><img src="../shared/${a.thumbnail}" alt="" loading="lazy" width="120" height="120"><span class="asset-check" aria-hidden="true">✓</span></span><span class="asset-name">${esc(a.name)}</span>${a.variant ? `<span class="asset-variant"><i style="background:${a.color}"></i>${esc(a.variant)}</span>` : `<span class="asset-price">${a.price} BYN${category === "flowers" ? " / стебель" : ""}</span>`}</button>`,
-        )
+        .map((a) => {
+          const unavailable =
+            kind === "cakes" &&
+            category === "decor" &&
+            !pattern &&
+            !canSelectCakeDecoration(state, a.id);
+          return `<button ${unavailable ? 'disabled title="Не помещается в текущий состав. Измените основу, количество изделий или освободите место."' : ""} class="asset-card ${selected.has(a.id) ? "is-selected" : ""}" data-asset="${a.id}" aria-pressed="${selected.has(a.id)}" aria-label="${esc(a.name + (a.variant ? " · " + a.variant : ""))}"><span class="asset-image"><img src="../shared/${a.thumbnail}" alt="" loading="lazy" width="120" height="120"><span class="asset-check" aria-hidden="true">✓</span></span><span class="asset-name">${esc(a.name)}</span>${a.variant ? `<span class="asset-variant"><i style="background:${a.color}"></i>${esc(a.variant)}</span>` : `<span class="asset-price">${unavailable ? "Не помещается в этот состав" : `${a.price} BYN${category === "flowers" ? " / стебель" : ""}`}</span>`}</button>`;
+        })
         .join("")
     : `<p class="empty">${query ? "Ничего не найдено. Попробуйте другое название." : kind === "jewelry" && category === "setting" ? "В это изделие уже встроена оправа. Отдельный каст можно выбрать для гладкого кольца, тонкого кольца или цепочки." : kind === "jewelry" && category === "stone" ? "У этого изделия нет гнёзд для камней. Выберите модель со вставками." : "Нет подходящих деталей для этого состава."}</p>`;
+  if (
+    kind === "jewelry" &&
+    !pattern &&
+    category === "finding" &&
+    (state.finding || []).some((id) => id !== "jw-part-jump-ring")
+  )
+    $("#catalog").insertAdjacentHTML(
+      "beforeend",
+      '<p class="empty">Соединительное кольцо входит в выбранную фурнитуру и не оплачивается отдельно.</p>',
+    );
   $("#stone-filter").hidden = category !== "stone";
   if (
     pattern &&
@@ -296,7 +318,7 @@ function renderUI() {
             : ""
         }`
       : kind === "jewelry"
-        ? `<label ${["jw-base-band-plain", "jw-base-cocktail", "jw-base-signet", "jw-base-solitaire", "jw-base-stacking-thin", "jw-set-bezel", "jw-set-halo"].includes(state.base) ? "" : "hidden"}>Размер кольца<select data-config="size">${[16, 17, 18, 19, 20].map((v) => `<option ${state.size === v ? "selected" : ""}>${v}</option>`).join("")}</select></label><p class="small-hint">${state.base === "jw-set-pave-band" ? "44 круглые вставки. Выбранный оттенок применяется ко всем гнёздам." : state.base === "jw-base-cocktail" ? "Две круглые вставки одного оттенка." : "Каталог показывает камни и оправы, подходящие к выбранному изделию."}</p>`
+        ? `<label ${["jw-base-band-plain", "jw-base-cocktail", "jw-base-signet", "jw-base-solitaire", "jw-base-stacking-thin", "jw-set-bezel", "jw-set-halo"].includes(state.base) ? "" : "hidden"}>Размер кольца<select data-config="size">${[16, 17, 18, 19, 20].map((v) => `<option ${state.size === v ? "selected" : ""}>${v}</option>`).join("")}</select></label><p class="small-hint">${state.base === "jw-set-pave-band" ? "44 круглые вставки. Выбранный оттенок применяется ко всем гнёздам." : state.base === "jw-base-cocktail" ? "Две овальные вставки одного оттенка." : state.base === "jw-set-halo" ? "Литой декоративный ореол. Цвет центрального камня выбирается отдельно." : "Каталог показывает камни и оправы, подходящие к выбранному изделию."}</p>`
         : `<p class="small-hint">Число стеблей каждого сорта меняется в составе. Добавьте до пяти видов цветов, всего до 33 стеблей.</p>`;
   renderCatalog();
   const patterns = patternLists[kind];

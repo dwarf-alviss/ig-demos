@@ -157,9 +157,29 @@ test("focal and secondary flower heads of different natural sizes cannot collaps
     for (let j = i + 1; j < positions.length; j++) {
       const a = positions[i],
         b = positions[j];
-      assert.ok(Math.hypot(a.x - b.x, a.z - b.z) >= a.radius + b.radius - 0.02);
+      assert.ok(
+        Math.hypot(a.x - b.x, a.y - b.y, a.z - b.z) >=
+          a.radius + b.radius - 0.03,
+      );
     }
   assert.notEqual(positions[0].radius, positions[1].radius);
+  assert.ok(
+    Math.max(...positions.map((p) => p.y)) -
+      Math.min(...positions.map((p) => p.y)) >
+      1,
+  );
+  assert.ok(
+    positions.some((a, i) =>
+      positions
+        .slice(i + 1)
+        .some(
+          (b) =>
+            Math.hypot(a.x - b.x, a.z - b.z) <
+            (a.entry.plant.headDiameterCm + b.entry.plant.headDiameterCm) / 2,
+        ),
+    ),
+    "petal envelopes should overlap in projection",
+  );
 });
 test("ring profiles preserve the requested inner diameter and actual metal thickness", () => {
   for (const profile of [

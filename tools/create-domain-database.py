@@ -74,7 +74,7 @@ for id,name,material in [('strawberry-confit','Клубничное конфи',
     food(id,name,'insert',material,'thin-insert',['laf-love','cal-hazel','cal-paris','kab-forest','mdc-opera','kab-lemon'],thicknessCm=[.08,.55],dimensionBasis='renderer range')
 for id,name,material in [('cream-coat','Сливочное покрытие','cream'),('ganache-coat','Ганаш','ganache'),('dark-mirror','Тёмная зеркальная глазурь','mirror-glaze'),('caramel-glaze','Карамельная глазурь','caramel'),('praline-glaze','Глазурь пралине','caramel'),('chocolate-velvet','Шоколадный велюр','velvet'),('almond-paste','Миндальная паста','fondant'),('sugar-fondant','Сахарная мастика','fondant'),('cocoa-dust','Какао','cocoa-sponge')]:
     food(id,name,'finish',material,'conformal-shell',['cal-cheese','cal-hazel','mdc-fraisier','kab-tiramisu','wil-stack'],thicknessCm=[.015,.3],dimensionBasis='renderer range')
-native_decor=[('strawberry','Клубника','strawberry',3.8,'bk-berry-strawberry'),('blueberry','Голубика','blueberry',1.05,'bk-berry-blueberry'),('raspberry','Малина','raspberry',1.9,'bk-berry-raspberry'),('blackberry','Ежевика','raspberry',2.3,'bk-berry-blackberry'),('cherry','Вишня','cherry',2.5,'bk-berry-cherry'),('macaron','Макарон','joconde',4.2,'bk-decor-macaron'),('cream-rosette','Кремовая розетка','cream',3,'bk-decor-cream-rosette'),('meringue','Меренга','cream',2.8,'bk-decor-meringue-kiss'),('truffle','Трюфель','dark-chocolate',2.7,'bk-decor-truffle-ball'),('crumb','Крошка','sable',.45,'bk-decor-crumble-cluster'),('chocolate-shard','Шоколадная пластинка','dark-chocolate',4.5,'bk-decor-chocolate-shard'),('wafer','Вафельная трубочка','sable',7.5,'bk-decor-wafer-roll')]
+native_decor=[('strawberry','Клубника','strawberry',3.8,'bk-berry-strawberry'),('blueberry','Голубика','blueberry',1.05,'bk-berry-blueberry'),('raspberry','Малина','raspberry',1.9,'bk-berry-raspberry'),('blackberry','Ежевика','raspberry',2.3,'bk-berry-blackberry'),('cherry','Вишня','cherry',4.1,'bk-berry-cherry'),('macaron','Макарон','joconde',4.2,'bk-decor-macaron'),('cream-rosette','Кремовая розетка','cream',3,'bk-decor-cream-rosette'),('meringue','Меренга','cream',2.8,'bk-decor-meringue-kiss'),('truffle','Трюфель','dark-chocolate',2.7,'bk-decor-truffle-ball'),('crumb','Крошка','sable',.45,'bk-decor-crumble-cluster'),('chocolate-shard','Шоколадная пластинка','dark-chocolate',4.5,'bk-decor-chocolate-shard'),('wafer','Вафельная трубочка','sable',7.5,'bk-decor-wafer-roll')]
 for id,name,m,size,asset in native_decor:food(id,name,'decor',m,'native-mesh',['cal-rasp','cal-charm','kab-forest'],sizeCm=size,asset=asset,dimensionBasis='visually calibrated natural size; not a manufacturer tolerance')
 for id,name,m,g in [('pistachio-kernel','Фисташка','nut','split-kernel'),('hazelnut','Фундук','nut','ribbed-nut'),('almond-flake','Миндальный лепесток','nut','curved-flake'),('chocolate-curl','Шоколадная стружка','dark-chocolate','rolled-thin-shell'),('chocolate-pearl','Шоколадная жемчужина','dark-chocolate','small-coated-core'),('piped-shell','Кремовая ракушка','cream','star-nozzle-sweep'),('piped-rope','Кремовый канат','cream','twisted-nozzle-sweep'),('cream-dollop','Кремовая капля','cream','tapered-nozzle-sweep'),('strawberry-half','Половинка клубники','strawberry','cut-fruit'),('lemon-slice','Лимонный срез','lemon-curd','citrus-segments')]:
     food(id,name,'decor',m,g,['cal-charm','cal-hazel','kab-lemon','kab-forest'],dimensionBasis='renderer calibration')
@@ -179,7 +179,7 @@ for p in plants:
     if p['asset']=='fl-green-salal': p['asset']=None
     if p['id'] in natural:p['naturalColors']=natural[p['id']]
     p['compatibleBouquets']=[b['id'] for b in bouquets if any(p['id'] in members for members in b['roles'].values())]
-    p['headDepthCalibration']={'rose':1.7,'ranunculus':1.4,'peony':1.25,'chrysanthemum':1.2}.get(p['id'],1)
+    p['headDepthCalibration']={'rose':1.0,'ranunculus':0.85,'peony':0.8,'chrysanthemum':0.9}.get(p['id'],1)
 for recipe in recipes:
     if recipe['id'] in ['fraisier','chocolate-strawberry-heart']:recipe['finishColor']={'fraisier':'#dfb5b4','chocolate-strawberry-heart':'#bb1738'}[recipe['id']]
 for bouquet in bouquets:
@@ -197,6 +197,13 @@ next(c for c in cuts if c['id']=='round')['supportedSettings'] += ['pave','share
 for p in jewelPatterns:
     p['compatibleCuts']=[c['id'] for c in cuts if p['setting'] in c['supportedSettings']] if p['defaultCut'] else []
     if p['defaultCut'] and p['defaultCut'] not in p['compatibleCuts']:raise ValueError(p['id'])
+
+# Collision radii distinguish firm tulip cups from open lily petals.
+head_cores = {'rose':2.25,'peony':3.1,'ranunculus':1.9,'tulip':1.95,'chamomile':.9,'gerbera':1.9,'chrysanthemum':1.75,'lisianthus':1.7,'anemone':1.5,'lily':1.6}
+for p in plants:
+    if p['id'] in head_cores:
+        p['headCoreRadiusCm']=head_cores[p['id']]
+        p['headCoreBasis']='renderer collision calibration for the solid centre; peripheral petals may overlap'
 
 for filename,data in [('sources',sources),('materials',materials),('baking',dict(components=baking,recipes=recipes)),('flowers',dict(plants=plants,forms=forms,bouquets=bouquets)),('jewelry',dict(components=jewelryComponents,cuts=cuts,patterns=jewelPatterns))]:
     (ROOT/(filename+'.json')).write_bytes((json.dumps(data,ensure_ascii=False,indent=2)+'\n').encode())

@@ -13,6 +13,11 @@ export async function reviewBrowser() {
       // Playwright's Windows tree-kill calls synchronous taskkill, which hangs
       // on this host. Terminate only our spawned browser root through Node.
       const child = server.process();
+      // Ask our browser to close its renderer/GPU children before the fallback.
+      await Promise.race([
+        browser.newBrowserCDPSession().then(session=>session.send("Browser.close")).catch(()=>{}),
+        new Promise(resolve=>setTimeout(resolve,3000)),
+      ]);
       if (child.exitCode === null) child.kill("SIGKILL");
       await Promise.race([
         new Promise((resolve) => child.once("exit", resolve)),

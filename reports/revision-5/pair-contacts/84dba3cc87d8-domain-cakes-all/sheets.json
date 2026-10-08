@@ -1,0 +1,53 @@
+[
+  {
+    "file": "page-0.jpg",
+    "ids": [
+      "cakes-4c4823308344433f",
+      "cakes-d4ab4ab9876e6210",
+      "cakes-15ddf3eff09c4dea",
+      "cakes-f6a7961baaa97bf3",
+      "cakes-c20e1705417f98d9",
+      "cakes-60c88d768a314172"
+    ],
+    "bundleHash": "84dba3cc87d8ca44ad7b7cd276bee0b08622d6136b012c2fb7fad476de8b1380",
+    "poses": [
+      "front",
+      "side",
+      "top",
+      "back"
+    ]
+  },
+  {
+    "file": "page-1.jpg",
+    "ids": [
+      "cakes-f261ea66f9f50997",
+      "cakes-559fdf0ec2ef6838",
+      "cakes-490f0ba0ffa366ac",
+      "cakes-d0b31a5dd437b531",
+      "cakes-09b893a96b9cc06b",
+      "cakes-80ea0103e05607a0"
+    ],
+    "bundleHash": "84dba3cc87d8ca44ad7b7cd276bee0b08622d6136b012c2fb7fad476de8b1380",
+    "poses": [
+      "front",
+      "side",
+      "top",
+      "back"
+    ]
+  },
+  {
+    "file": "page-2.jpg",
+    "ids": [
+      "cakes-6849335d6e80a8a6",
+      "cakes-e629a2fef7abfd51",
+      "cakes-0a0ade583db5a7c7"
+    ],
+    "bundleHash": "84dba3cc87d8ca44ad7b7cd276bee0b08622d6136b012c2fb7fad476de8b1380",
+    "poses": [
+      "front",
+      "side",
+      "top",
+      "back"
+    ]
+  }
+]

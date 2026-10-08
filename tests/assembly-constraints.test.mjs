@@ -1,7 +1,7 @@
 import test from "node:test";
 import * as THREE from "three";
 import { fitWrapTwine } from "../shared/wrap-twine.js";
-import { canIncreaseCount } from "../shared/studio-state.js";
+import { canIncreaseCount, canSelectCakeDecoration } from "../shared/studio-state.js";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import validator from "gltf-validator";
@@ -133,17 +133,17 @@ test("mixed cake counts have non-overlapping seats inside each tier or plate", (
   );
 });
 test("fixed jewelry sockets expose compatible forms and pavé has calibrated multiple seats", async () => {
-  for (const base of [
-    "jw-set-pave-band",
-    "jw-base-solitaire",
-    "jw-base-cocktail",
-    "jw-set-halo",
-  ])
+  for (const base of ["jw-set-pave-band", "jw-base-solitaire", "jw-set-halo"])
     assert.ok(
       compatibleStones({ ...defaults("jewelry"), base }).every(
         (a) => stoneShape(a.id) === "round",
       ),
     );
+  for (const base of ["jw-base-cocktail", "jw-base-pendant"]) {
+    const stones = compatibleStones({ ...defaults("jewelry"), base });
+    assert.ok(stones.length > 0);
+    assert.ok(stones.every((a) => stoneShape(a.id) === "oval"));
+  }
   const map = JSON.parse(
     await readFile(
       new URL("../shared/pave-sockets.json", import.meta.url),
@@ -390,4 +390,14 @@ test("long decorations lie on the plate and reserve their full horizontal projec
       ).surface,
       -1,
     );
+});
+
+test("decoration selection reports actual plate capacity rather than silently dropping a choice", () => {
+  const single = normalize("cakes", { ...defaults("cakes"), pattern: null, base: "bk-pastry-brownie-bite", pieces: 1, decor: [], counts: {} });
+  const saved = structuredClone(single);
+  assert.equal(canSelectCakeDecoration(single, "bk-berry-strawberry"), false);
+  assert.equal(canSelectCakeDecoration(single, "bk-berry-blueberry"), true);
+  const set = normalize("cakes", { ...single, pieces: 4 });
+  assert.equal(canSelectCakeDecoration(set, "bk-berry-strawberry"), true);
+  assert.deepEqual(single, saved, "checking catalogue capacity must not change the saved composition");
 });

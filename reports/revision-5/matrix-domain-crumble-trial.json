@@ -1,0 +1,2012 @@
+[
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "crumb"
+      ],
+      "foodCounts": {
+        "crumb": 1
+      }
+    },
+    "label": "caramel-cheesecake / crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "crumb"
+      ],
+      "foodCounts": {
+        "crumb": 12
+      }
+    },
+    "label": "caramel-cheesecake / crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 1,
+        "crumb": 1
+      }
+    },
+    "label": "caramel-cheesecake / hazelnut+crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 12,
+        "crumb": 12
+      }
+    },
+    "label": "caramel-cheesecake / hazelnut+crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "pistachio-kernel",
+        "crumb"
+      ],
+      "foodCounts": {
+        "pistachio-kernel": 1,
+        "crumb": 1
+      }
+    },
+    "label": "caramel-cheesecake / pistachio-kernel+crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "pistachio-kernel",
+        "crumb"
+      ],
+      "foodCounts": {
+        "pistachio-kernel": 12,
+        "crumb": 12
+      }
+    },
+    "label": "caramel-cheesecake / pistachio-kernel+crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "pistachio-kernel",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 1,
+        "pistachio-kernel": 1,
+        "crumb": 1
+      }
+    },
+    "label": "caramel-cheesecake / hazelnut+pistachio-kernel+crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "pistachio-kernel",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 12,
+        "pistachio-kernel": 12,
+        "crumb": 12
+      }
+    },
+    "label": "caramel-cheesecake / hazelnut+pistachio-kernel+crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "chocolate-curl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "chocolate-curl": 1,
+        "crumb": 1
+      }
+    },
+    "label": "caramel-cheesecake / chocolate-curl+crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "chocolate-curl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "chocolate-curl": 12,
+        "crumb": 12
+      }
+    },
+    "label": "caramel-cheesecake / chocolate-curl+crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-curl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 1,
+        "chocolate-curl": 1,
+        "crumb": 1
+      }
+    },
+    "label": "caramel-cheesecake / hazelnut+chocolate-curl+crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-curl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 12,
+        "chocolate-curl": 12,
+        "crumb": 12
+      }
+    },
+    "label": "caramel-cheesecake / hazelnut+chocolate-curl+crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "pistachio-kernel",
+        "chocolate-curl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "pistachio-kernel": 1,
+        "chocolate-curl": 1,
+        "crumb": 1
+      }
+    },
+    "label": "caramel-cheesecake / pistachio-kernel+chocolate-curl+crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "pistachio-kernel",
+        "chocolate-curl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "pistachio-kernel": 12,
+        "chocolate-curl": 12,
+        "crumb": 12
+      }
+    },
+    "label": "caramel-cheesecake / pistachio-kernel+chocolate-curl+crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "pistachio-kernel",
+        "chocolate-curl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 1,
+        "pistachio-kernel": 1,
+        "chocolate-curl": 1,
+        "crumb": 1
+      }
+    },
+    "label": "caramel-cheesecake / hazelnut+pistachio-kernel+chocolate-curl+crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "pistachio-kernel",
+        "chocolate-curl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 12,
+        "pistachio-kernel": 12,
+        "chocolate-curl": 12,
+        "crumb": 12
+      }
+    },
+    "label": "caramel-cheesecake / hazelnut+pistachio-kernel+chocolate-curl+crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "pistachio-kernel",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 5,
+        "pistachio-kernel": 7,
+        "crumb": 9
+      }
+    },
+    "label": "caramel-cheesecake / caramel-glaze / no-topper"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-berry-currant-red",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "pistachio-kernel",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 5,
+        "pistachio-kernel": 7,
+        "crumb": 9
+      }
+    },
+    "label": "caramel-cheesecake / caramel-glaze / bk-berry-currant-red"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-topper-banner-blank",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "pistachio-kernel",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 5,
+        "pistachio-kernel": 7,
+        "crumb": 9
+      }
+    },
+    "label": "caramel-cheesecake / caramel-glaze / bk-topper-banner-blank"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-topper-crown",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "pistachio-kernel",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 5,
+        "pistachio-kernel": 7,
+        "crumb": 9
+      }
+    },
+    "label": "caramel-cheesecake / caramel-glaze / bk-topper-crown"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-topper-heart",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "pistachio-kernel",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 5,
+        "pistachio-kernel": 7,
+        "crumb": 9
+      }
+    },
+    "label": "caramel-cheesecake / caramel-glaze / bk-topper-heart"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-topper-horn",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "pistachio-kernel",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 5,
+        "pistachio-kernel": 7,
+        "crumb": 9
+      }
+    },
+    "label": "caramel-cheesecake / caramel-glaze / bk-topper-horn"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-topper-star",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "caramel-cheesecake",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "caramel-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "pistachio-kernel",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 5,
+        "pistachio-kernel": 7,
+        "crumb": 9
+      }
+    },
+    "label": "caramel-cheesecake / caramel-glaze / bk-topper-star"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "crumb"
+      ],
+      "foodCounts": {
+        "crumb": 1
+      }
+    },
+    "label": "hazelnut-entremet / crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "crumb"
+      ],
+      "foodCounts": {
+        "crumb": 12
+      }
+    },
+    "label": "hazelnut-entremet / crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 1,
+        "crumb": 1
+      }
+    },
+    "label": "hazelnut-entremet / hazelnut+crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 12,
+        "crumb": 12
+      }
+    },
+    "label": "hazelnut-entremet / hazelnut+crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "chocolate-shard",
+        "crumb"
+      ],
+      "foodCounts": {
+        "chocolate-shard": 1,
+        "crumb": 1
+      }
+    },
+    "label": "hazelnut-entremet / chocolate-shard+crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "chocolate-shard",
+        "crumb"
+      ],
+      "foodCounts": {
+        "chocolate-shard": 12,
+        "crumb": 12
+      }
+    },
+    "label": "hazelnut-entremet / chocolate-shard+crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 1,
+        "chocolate-shard": 1,
+        "crumb": 1
+      }
+    },
+    "label": "hazelnut-entremet / hazelnut+chocolate-shard+crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 12,
+        "chocolate-shard": 12,
+        "crumb": 12
+      }
+    },
+    "label": "hazelnut-entremet / hazelnut+chocolate-shard+crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "chocolate-pearl": 1,
+        "crumb": 1
+      }
+    },
+    "label": "hazelnut-entremet / chocolate-pearl+crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "chocolate-pearl": 12,
+        "crumb": 12
+      }
+    },
+    "label": "hazelnut-entremet / chocolate-pearl+crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 1,
+        "chocolate-pearl": 1,
+        "crumb": 1
+      }
+    },
+    "label": "hazelnut-entremet / hazelnut+chocolate-pearl+crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 12,
+        "chocolate-pearl": 12,
+        "crumb": 12
+      }
+    },
+    "label": "hazelnut-entremet / hazelnut+chocolate-pearl+crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "chocolate-shard": 1,
+        "chocolate-pearl": 1,
+        "crumb": 1
+      }
+    },
+    "label": "hazelnut-entremet / chocolate-shard+chocolate-pearl+crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "chocolate-shard": 12,
+        "chocolate-pearl": 12,
+        "crumb": 12
+      }
+    },
+    "label": "hazelnut-entremet / chocolate-shard+chocolate-pearl+crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 1,
+        "chocolate-shard": 1,
+        "chocolate-pearl": 1,
+        "crumb": 1
+      }
+    },
+    "label": "hazelnut-entremet / hazelnut+chocolate-shard+chocolate-pearl+crumb / 1 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 12,
+        "chocolate-shard": 12,
+        "chocolate-pearl": 12,
+        "crumb": 12
+      }
+    },
+    "label": "hazelnut-entremet / hazelnut+chocolate-shard+chocolate-pearl+crumb / 12 / tiers 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 4,
+        "chocolate-shard": 3,
+        "chocolate-pearl": 5,
+        "crumb": 7
+      }
+    },
+    "label": "hazelnut-entremet / praline-glaze / no-topper"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-berry-currant-red",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 4,
+        "chocolate-shard": 3,
+        "chocolate-pearl": 5,
+        "crumb": 7
+      }
+    },
+    "label": "hazelnut-entremet / praline-glaze / bk-berry-currant-red"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-topper-banner-blank",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 4,
+        "chocolate-shard": 3,
+        "chocolate-pearl": 5,
+        "crumb": 7
+      }
+    },
+    "label": "hazelnut-entremet / praline-glaze / bk-topper-banner-blank"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-topper-crown",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 4,
+        "chocolate-shard": 3,
+        "chocolate-pearl": 5,
+        "crumb": 7
+      }
+    },
+    "label": "hazelnut-entremet / praline-glaze / bk-topper-crown"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-topper-heart",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 4,
+        "chocolate-shard": 3,
+        "chocolate-pearl": 5,
+        "crumb": 7
+      }
+    },
+    "label": "hazelnut-entremet / praline-glaze / bk-topper-heart"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-topper-horn",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 4,
+        "chocolate-shard": 3,
+        "chocolate-pearl": 5,
+        "crumb": 7
+      }
+    },
+    "label": "hazelnut-entremet / praline-glaze / bk-topper-horn"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-topper-star",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "praline-glaze",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 4,
+        "chocolate-shard": 3,
+        "chocolate-pearl": 5,
+        "crumb": 7
+      }
+    },
+    "label": "hazelnut-entremet / praline-glaze / bk-topper-star"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "chocolate-velvet",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 4,
+        "chocolate-shard": 3,
+        "chocolate-pearl": 5,
+        "crumb": 7
+      }
+    },
+    "label": "hazelnut-entremet / chocolate-velvet / no-topper"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-berry-currant-red",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "chocolate-velvet",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 4,
+        "chocolate-shard": 3,
+        "chocolate-pearl": 5,
+        "crumb": 7
+      }
+    },
+    "label": "hazelnut-entremet / chocolate-velvet / bk-berry-currant-red"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-topper-banner-blank",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "chocolate-velvet",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 4,
+        "chocolate-shard": 3,
+        "chocolate-pearl": 5,
+        "crumb": 7
+      }
+    },
+    "label": "hazelnut-entremet / chocolate-velvet / bk-topper-banner-blank"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-topper-crown",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "chocolate-velvet",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 4,
+        "chocolate-shard": 3,
+        "chocolate-pearl": 5,
+        "crumb": 7
+      }
+    },
+    "label": "hazelnut-entremet / chocolate-velvet / bk-topper-crown"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-topper-heart",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "chocolate-velvet",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 4,
+        "chocolate-shard": 3,
+        "chocolate-pearl": 5,
+        "crumb": 7
+      }
+    },
+    "label": "hazelnut-entremet / chocolate-velvet / bk-topper-heart"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-topper-horn",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "chocolate-velvet",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 4,
+        "chocolate-shard": 3,
+        "chocolate-pearl": 5,
+        "crumb": 7
+      }
+    },
+    "label": "hazelnut-entremet / chocolate-velvet / bk-topper-horn"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": "bk-topper-star",
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "hazelnut-entremet",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "chocolate-velvet",
+      "foodDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "foodCounts": {
+        "hazelnut": 4,
+        "chocolate-shard": 3,
+        "chocolate-pearl": 5,
+        "crumb": 7
+      }
+    },
+    "label": "hazelnut-entremet / chocolate-velvet / bk-topper-star"
+  }
+]

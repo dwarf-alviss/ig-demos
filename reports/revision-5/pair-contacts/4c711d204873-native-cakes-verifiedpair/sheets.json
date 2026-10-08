@@ -1,0 +1,56 @@
+[
+  {
+    "file": "page-0.jpg",
+    "ids": [
+      "cakes-3f1c9d5ec0cd6052",
+      "cakes-a12b2b3845dba377",
+      "cakes-5ce25fc043b3eb51",
+      "cakes-69df48e977f31ca7",
+      "cakes-02b1af026496a60b",
+      "cakes-f456730636ee2847"
+    ],
+    "bundleHash": "4c711d20487372ba335a26cfd5660443395ce60de0b3da04599b7e86b09151dd",
+    "poses": [
+      "front",
+      "side",
+      "top",
+      "back"
+    ]
+  },
+  {
+    "file": "page-1.jpg",
+    "ids": [
+      "cakes-89a67204be56cf0a",
+      "cakes-5d0000bb3be005b5",
+      "cakes-3b5a21e08a9ca2de",
+      "cakes-d06f834f825496a8",
+      "cakes-34e9ea02c993753c",
+      "cakes-a7232447b87cb78e"
+    ],
+    "bundleHash": "4c711d20487372ba335a26cfd5660443395ce60de0b3da04599b7e86b09151dd",
+    "poses": [
+      "front",
+      "side",
+      "top",
+      "back"
+    ]
+  },
+  {
+    "file": "page-2.jpg",
+    "ids": [
+      "cakes-04c313c656062d48",
+      "cakes-cbe61a635cad21d0",
+      "cakes-90d0d82731d8c23c",
+      "cakes-61ebcdfb93ad5f0d",
+      "cakes-4ca7119eda5d6de1",
+      "cakes-d186cb40de25d576"
+    ],
+    "bundleHash": "4c711d20487372ba335a26cfd5660443395ce60de0b3da04599b7e86b09151dd",
+    "poses": [
+      "front",
+      "side",
+      "top",
+      "back"
+    ]
+  }
+]

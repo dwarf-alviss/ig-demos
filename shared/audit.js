@@ -78,4 +78,5 @@ window.audit = async function (record, view = "front") {
     meshes: original.children.map((n) => n.name),
   };
 };
+window.auditResize = (size) => { r.setSize(size,size); };
 window.auditReady = true;

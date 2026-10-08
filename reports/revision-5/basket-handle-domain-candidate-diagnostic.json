@@ -1,0 +1,161 @@
+{
+  "bundle": "4c711d20487372ba335a26cfd5660443395ce60de0b3da04599b7e86b09151dd",
+  "method": "Real runtime textured GLB triangle edges versus actual basket geometry above measured lip; both segment directions; no AABB-only acceptance.",
+  "results": [
+    {
+      "id": "summer-basket",
+      "state": {
+        "version": 2,
+        "flowers": [
+          "fl-flower-peony-open",
+          "fl-flower-rose-garden"
+        ],
+        "green": [
+          "fl-green-eucalyptus-silver"
+        ],
+        "pack": "fl-wrap-basket-rattan",
+        "ribbon": "fl-ribbon-satin-bow",
+        "counts": {
+          "fl-flower-peony-open": 5,
+          "fl-flower-rose-garden": 4
+        },
+        "palette": 4,
+        "pattern": "summer-basket",
+        "finish": "polished",
+        "bouquetSize": 11,
+        "taxonCounts": {
+          "peony": 6,
+          "rose": 3,
+          "lisianthus": 2
+        }
+      },
+      "handleTriangles": 9071,
+      "intersectingFlowerTriangles": 0,
+      "headHits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "summer-basket",
+      "state": {
+        "version": 2,
+        "flowers": [
+          "fl-flower-peony-open",
+          "fl-flower-rose-garden"
+        ],
+        "green": [
+          "fl-green-eucalyptus-silver"
+        ],
+        "pack": "fl-wrap-basket-rattan",
+        "ribbon": "fl-ribbon-satin-bow",
+        "counts": {
+          "fl-flower-peony-open": 5,
+          "fl-flower-rose-garden": 4
+        },
+        "palette": 4,
+        "pattern": "summer-basket",
+        "finish": "polished",
+        "bouquetSize": 19,
+        "taxonCounts": {
+          "peony": 10,
+          "rose": 5,
+          "lisianthus": 4
+        }
+      },
+      "handleTriangles": 9071,
+      "intersectingFlowerTriangles": 0,
+      "headHits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "summer-basket",
+      "state": {
+        "version": 2,
+        "flowers": [
+          "fl-flower-peony-open",
+          "fl-flower-rose-garden"
+        ],
+        "green": [
+          "fl-green-eucalyptus-silver"
+        ],
+        "pack": "fl-wrap-basket-rattan",
+        "ribbon": "fl-ribbon-satin-bow",
+        "counts": {
+          "fl-flower-peony-open": 5,
+          "fl-flower-rose-garden": 4
+        },
+        "palette": 4,
+        "pattern": "summer-basket",
+        "finish": "polished",
+        "bouquetSize": 29,
+        "taxonCounts": {
+          "peony": 16,
+          "rose": 7,
+          "lisianthus": 6
+        }
+      },
+      "handleTriangles": 9071,
+      "intersectingFlowerTriangles": 0,
+      "headHits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

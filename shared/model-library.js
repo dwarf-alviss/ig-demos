@@ -3,6 +3,7 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { MeshoptDecoder } from "three/addons/libs/meshopt_decoder.module.js";
 import { byId } from "./catalogue.js";
 import { fitToScene, disposeTree } from "./scene-utils.js";
+import { mergeGeometries } from "three/addons/utils/BufferGeometryUtils.js";
 export const bounds = (o) => {
   o.updateMatrixWorld(true);
   return new THREE.Box3().setFromObject(o);
@@ -129,6 +130,7 @@ export class ModelLibrary {
       color = byId[id].color,
       role = "soft",
       rotation = null,
+      rotationOrder = "XYZ",
       regional = false,
       nativeColor = false,
     } = {},
@@ -191,7 +193,7 @@ export class ModelLibrary {
                 vec3 sourcePetal=diffuseColor.rgb;
                 bool botanicalGreen=sourcePetal.g>sourcePetal.r*1.07 && sourcePetal.g>sourcePetal.b*1.12;
                 bool darkCenter=max(max(sourcePetal.r,sourcePetal.g),sourcePetal.b)<0.12;
-                bool goldenCenter=${['fl-flower-chamomile','fl-flower-gerbera','fl-flower-lily-oriental'].includes(id)?'true':'false'} && sourcePetal.r>sourcePetal.b*2.2 && sourcePetal.g>sourcePetal.b*1.65;
+                bool goldenCenter=${["fl-flower-chamomile", "fl-flower-gerbera", "fl-flower-lily-oriental"].includes(id) ? "true" : "false"} && sourcePetal.r>sourcePetal.b*2.2 && sourcePetal.g>sourcePetal.b*1.65;
                 if(!botanicalGreen && !darkCenter && !goldenCenter) {
                   float lightness=max(max(sourcePetal.r,sourcePetal.g),sourcePetal.b);
                   diffuseColor.rgb=flowerTint*lightness;
@@ -208,7 +210,7 @@ export class ModelLibrary {
         n.userData.asset = id;
       }
     });
-    if (rotation) root.rotation.set(...rotation);
+    if (rotation) root.rotation.set(...rotation, rotationOrder);
     root.updateMatrixWorld(true);
     const box = bounds(root),
       s = box.getSize(new THREE.Vector3());
@@ -290,4 +292,104 @@ export function stem(start, end, radius = 0.08) {
     dir.normalize(),
   );
   return mesh;
+}
+
+export function curvedStem(points, radius = 0.08) {
+  const curve = new THREE.CurvePath();
+  const tangents = points.map((point, i) => {
+    if (i === 1) return new THREE.Vector3(0, 1, 0);
+    if (i === 0) return points[1].clone().sub(point).normalize();
+    if (i === points.length - 1)
+      return point
+        .clone()
+        .sub(points[i - 1])
+        .normalize();
+    return point
+      .clone()
+      .sub(points[i - 1])
+      .normalize()
+      .add(points[i + 1].clone().sub(point).normalize())
+      .normalize();
+  });
+  for (let i = 0; i < points.length - 1; i++) {
+    const distance = points[i].distanceTo(points[i + 1]);
+    if (distance < 1e-6) continue;
+    const previous = i ? points[i - 1].distanceTo(points[i]) : distance;
+    const next =
+      i + 2 < points.length
+        ? points[i + 1].distanceTo(points[i + 2])
+        : distance;
+    curve.add(
+      new THREE.CubicBezierCurve3(
+        points[i],
+        points[i]
+          .clone()
+          .addScaledVector(tangents[i], Math.min(distance, previous) / 3),
+        points[i + 1]
+          .clone()
+          .addScaledVector(tangents[i + 1], -Math.min(distance, next) / 3),
+        points[i + 1],
+      ),
+    );
+  }
+  const geometry = new THREE.TubeGeometry(curve, 48, radius, 16, false),
+    position = geometry.attributes.position;
+  // Taper toward the calyx without changing the smooth centreline.
+  for (let ring = 0; ring <= 48; ring++) {
+    const centre = curve.getPointAt(ring / 48),
+      taper = 1 - (ring / 48) * 0.22;
+    for (let side = 0; side <= 16; side++) {
+      const i = ring * 17 + side;
+      const p = new THREE.Vector3()
+        .fromBufferAttribute(position, i)
+        .sub(centre)
+        .multiplyScalar(taper)
+        .add(centre);
+      position.setXYZ(i, p.x, p.y, p.z);
+    }
+  }
+  geometry.computeVertexNormals();
+  const caps = [0, 1].map((t) => {
+    const cap = new THREE.CircleGeometry(radius * (t ? 0.78 : 1), 16);
+    cap.applyQuaternion(
+      new THREE.Quaternion().setFromUnitVectors(
+        new THREE.Vector3(0, 0, 1),
+        curve.getTangentAt(t).multiplyScalar(t ? 1 : -1),
+      ),
+    );
+    const centre = curve.getPointAt(t);
+    cap.translate(centre.x, centre.y, centre.z);
+    return cap;
+  });
+  const closed = mergeGeometries([geometry, ...caps]);
+  geometry.dispose();
+  caps.forEach((c) => c.dispose());
+  const mesh = new THREE.Mesh(closed, physical("#526c49"));
+  mesh.material.roughness = 0.88;
+  mesh.material.clearcoat = 0;
+  mesh.castShadow = mesh.receiveShadow = true;
+  mesh.userData.component = "continuous-stem";
+  mesh.stemCurve = curve;
+  return mesh;
+}
+
+// Attach foliage to the actual cubic stem, rather than the straight chord
+// between the mouth and calyx. Curve data stays outside serializable userData.
+export function stemPointAtHeight(mesh, height) {
+  const path = mesh.stemCurve;
+  if (!path) throw new Error("Expected a curved stem");
+  const segment = path.curves.find(
+    (c) =>
+      height >= Math.min(c.v0.y, c.v3.y) && height <= Math.max(c.v0.y, c.v3.y),
+  );
+  if (!segment) return path.getPointAt(height < path.getPointAt(0).y ? 0 : 1);
+  let lo = 0,
+    hi = 1;
+  const ascending = segment.v3.y >= segment.v0.y;
+  for (let i = 0; i < 40; i++) {
+    const t = (lo + hi) / 2;
+    if (segment.getPoint(t).y < height === ascending) lo = t;
+    else hi = t;
+  }
+  return segment.getPoint((lo + hi) / 2);
 }

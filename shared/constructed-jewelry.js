@@ -1,3 +1,4 @@
+import { attachFinding } from "./finding-assembly.js";
 import * as THREE from "three";
 import { designs, jewelParts } from "./domain.js";
 import { domainMaterial } from "./domain-materials.js";
@@ -347,7 +348,7 @@ export async function buildConstructedJewelry(lib, state) {
         root.add(b);
       }
     } else if (["channel-band", "pave-band"].includes(d.id)) {
-      const count = d.id === "pave-band" ? 23 : 13;
+      const count = d.id === "pave-band" ? 23 : 11;
       for (let i = 0; i < count; i++) {
         const a = 0.27 + (i / (count - 1)) * (Math.PI - 0.54),
           seat = await makeSetting();
@@ -515,44 +516,56 @@ export async function buildConstructedJewelry(lib, state) {
         const seat = await makeSetting();
         seat.rotation.x = Math.PI / 2;
         e.add(seat);
-        const post = wire(
-          [new THREE.Vector3(0, 0, -0.05), new THREE.Vector3(0, 0, -0.9)],
-          0.025,
-          metal,
-        );
-        e.add(post);
-        for (const side of [-1, 1]) {
-          const back = loop(0.075, 0.095, 0.022, metal);
-          back.position.set(side * 0.075, 0, -0.69);
-          back.rotation.y = side * 0.3;
-          e.add(back);
-        }
         if (d.id === "drop") {
-          const hook = wire(
-            [
-              new THREE.Vector3(0, 0.3, 0),
-              new THREE.Vector3(0, 0.85, 0),
-              new THREE.Vector3(0, 1.1, 0.3),
-              new THREE.Vector3(0, 0.5, 0.45),
-            ],
-            0.025,
-            metal,
-          );
+          const b = bounds(seat), z = b.getCenter(new THREE.Vector3()).z;
+          const eyeY = b.max.y + 0.045;
+          const eye = loop(0.055, 0.07, 0.018, metal);
+          eye.position.set(0, eyeY, z);
+          eye.userData.component = "drop-setting-eye";
+          e.add(eye);
+          const connector = loop(0.09, 0.105, 0.018, metal);
+          connector.rotation.y = Math.PI / 2;
+          connector.position.set(0, eyeY + 0.07, z);
+          connector.userData.component = "drop-connector";
+          e.add(connector);
+          const hook = await lib.get("jw-part-ear-wire-french", {size:1.3, axis:"y", role:"metal", color:metal.color.getHex()});
+          attachFinding(hook, "jw-part-ear-wire-french", new THREE.Vector3(0, eyeY + 0.14, z));
+          hook.userData.component = "french-ear-wire";
           e.add(hook);
+        } else {
+          const post = wire([new THREE.Vector3(0, 0, -0.05), new THREE.Vector3(0, 0, -0.9)], 0.025, metal);
+          post.userData.component = "stud-post";
+          e.add(post);
+          for (const side of [-1, 1]) {
+            const back = loop(0.075, 0.095, 0.022, metal);
+            back.position.set(side * 0.075, 0, -0.69);
+            back.rotation.y = side * 0.3;
+            back.userData.component = "stud-back";
+            e.add(back);
+          }
         }
       }
       root.add(e);
     }
   } else if (d.type === "chain") chain(root, d, metal);
   else if (d.type === "pendant") {
-    chain(root, { id: "cable-chain" }, metal, 2.4, 3.2);
+    const necklace = new THREE.Group();
+    chain(necklace, { id: "cable-chain" }, metal, 2.4, 3.2);
+    necklace.rotation.y = Math.PI;
+    root.add(necklace);
     const gem = await makeSetting();
-    gem.rotation.x = Math.PI / 2;
-    gem.position.set(0, 0.25, -3.5);
+    // The chain is laid in XZ: keep the gemstone table facing +Y.
+    const gemBox = bounds(gem),
+      gemDepth = gemBox.max.z - gemBox.min.z;
+    gem.position.set(0, -gemBox.min.y + 0.04, 3.2 + gemDepth / 2 + 0.19);
+    gem.userData.component = "pendant-setting";
     root.add(gem);
     const bail = loop(0.11, 0.16, 0.026, metal);
-    bail.rotation.x = Math.PI / 2;
-    bail.position.set(0, 0.18, -3.2);
+    // A vertical YZ bail surrounds the chain at its lowest point and joins
+    // the top of the setting. Rotating it flat would close the threading path.
+    bail.rotation.y = Math.PI / 2;
+    bail.position.set(0, 0.12, 3.27);
+    bail.userData.component = "threaded-pendant-bail";
     root.add(bail);
   } else if (d.id === "bangle") {
     const g = loop(3.1, 2.65, 0.11, metal);

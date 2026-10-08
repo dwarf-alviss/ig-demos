@@ -54,6 +54,7 @@ export class StudioRenderer {
     );
     this.env = studioEnvironment(this.renderer, kind);
     this.scene.environment = this.env.texture;
+    this.scene.environmentIntensity = kind === "cakes" ? 0.45 : 1;
     this.scene.add(
       new THREE.HemisphereLight(
         0xffffff,
@@ -140,7 +141,11 @@ export class StudioRenderer {
     this.floor.scale.setScalar(r * 8);
     this.key.position
       .copy(c)
-      .add(new THREE.Vector3(r * 0.18, r * 2.5, r * 0.75));
+      .add(
+        this.kind === "cakes"
+          ? new THREE.Vector3(r * 0.8, r * 1.8, r * 0.9)
+          : new THREE.Vector3(r * 0.18, r * 2.5, r * 0.75),
+      );
     this.key.target.position.copy(c);
     this.scene.add(this.key.target);
     const sh = this.key.shadow.camera;

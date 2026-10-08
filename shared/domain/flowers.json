@@ -35,8 +35,10 @@
         "summer-basket",
         "bridal-cascade"
       ],
-      "headDepthCalibration": 1.7,
-      "stemDiameterCm": 0.3
+      "headDepthCalibration": 1.0,
+      "stemDiameterCm": 0.3,
+      "headCoreRadiusCm": 2.25,
+      "headCoreBasis": "renderer collision calibration for the solid centre; peripheral petals may overlap"
     },
     {
       "id": "peony",
@@ -63,8 +65,10 @@
         "peony-mono",
         "summer-basket"
       ],
-      "headDepthCalibration": 1.25,
-      "stemDiameterCm": 0.4
+      "headDepthCalibration": 0.8,
+      "stemDiameterCm": 0.4,
+      "headCoreRadiusCm": 3.1,
+      "headCoreBasis": "renderer collision calibration for the solid centre; peripheral petals may overlap"
     },
     {
       "id": "ranunculus",
@@ -98,8 +102,10 @@
         "ivory-bridal",
         "spring-air"
       ],
-      "headDepthCalibration": 1.4,
-      "stemDiameterCm": 0.22
+      "headDepthCalibration": 0.85,
+      "stemDiameterCm": 0.22,
+      "headCoreRadiusCm": 1.9,
+      "headCoreBasis": "renderer collision calibration for the solid centre; peripheral petals may overlap"
     },
     {
       "id": "anemone",
@@ -132,7 +138,9 @@
         "spring-air"
       ],
       "headDepthCalibration": 1,
-      "stemDiameterCm": 0.24
+      "stemDiameterCm": 0.24,
+      "headCoreRadiusCm": 1.5,
+      "headCoreBasis": "renderer collision calibration for the solid centre; peripheral petals may overlap"
     },
     {
       "id": "tulip",
@@ -161,7 +169,9 @@
         "minimal-stems"
       ],
       "headDepthCalibration": 1,
-      "stemDiameterCm": 0.45
+      "stemDiameterCm": 0.45,
+      "headCoreRadiusCm": 1.95,
+      "headCoreBasis": "renderer collision calibration for the solid centre; peripheral petals may overlap"
     },
     {
       "id": "chamomile",
@@ -186,7 +196,9 @@
         "meadow"
       ],
       "headDepthCalibration": 1,
-      "stemDiameterCm": 0.1
+      "stemDiameterCm": 0.1,
+      "headCoreRadiusCm": 0.9,
+      "headCoreBasis": "renderer collision calibration for the solid centre; peripheral petals may overlap"
     },
     {
       "id": "gerbera",
@@ -213,7 +225,9 @@
         "autumn"
       ],
       "headDepthCalibration": 1,
-      "stemDiameterCm": 0.18
+      "stemDiameterCm": 0.18,
+      "headCoreRadiusCm": 1.9,
+      "headCoreBasis": "renderer collision calibration for the solid centre; peripheral petals may overlap"
     },
     {
       "id": "chrysanthemum",
@@ -239,8 +253,10 @@
       "compatibleBouquets": [
         "autumn"
       ],
-      "headDepthCalibration": 1.2,
-      "stemDiameterCm": 0.18
+      "headDepthCalibration": 0.9,
+      "stemDiameterCm": 0.18,
+      "headCoreRadiusCm": 1.75,
+      "headCoreBasis": "renderer collision calibration for the solid centre; peripheral petals may overlap"
     },
     {
       "id": "lisianthus",
@@ -269,7 +285,9 @@
         "summer-basket"
       ],
       "headDepthCalibration": 1,
-      "stemDiameterCm": 0.24
+      "stemDiameterCm": 0.24,
+      "headCoreRadiusCm": 1.7,
+      "headCoreBasis": "renderer collision calibration for the solid centre; peripheral petals may overlap"
     },
     {
       "id": "lily",
@@ -293,7 +311,9 @@
       ],
       "compatibleBouquets": [],
       "headDepthCalibration": 1,
-      "stemDiameterCm": 0.4
+      "stemDiameterCm": 0.4,
+      "headCoreRadiusCm": 1.6,
+      "headCoreBasis": "renderer collision calibration for the solid centre; peripheral petals may overlap"
     },
     {
       "id": "dahlia",

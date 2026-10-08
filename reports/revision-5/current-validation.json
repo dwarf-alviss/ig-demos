@@ -1,0 +1,67 @@
+{
+  "bundleHash": "5a78254afc4a6d5a3313a1d1a8e2fd42151329a3e3aeea4bc7fa6bb00b139b08",
+  "status": "physical-checks-pass-visual-review-incomplete",
+  "fullSuite": {
+    "bundleHash": "e9e0d316006f23e1d09df0ed20d44c9a594332ccf8afa6c8c366508066384884",
+    "passed": 68,
+    "total": 68,
+    "durationMs": 199559.8809
+  },
+  "subsequentStateChange": {
+    "description": "Clear toppers unavailable in the selected recipe, avoiding hidden accessories and phantom price.",
+    "currentTargetTestsPassed": 20,
+    "files": [
+      "tests/recipe-topper-persistence.test.mjs",
+      "tests/domain-construction.test.mjs",
+      "tests/studio-v2.test.mjs"
+    ]
+  },
+  "ui": {
+    "passed": 3,
+    "currentBundle": true,
+    "mobilePhotosPersonallyViewed": 3
+  },
+  "exports": {
+    "passedProjects": 3,
+    "currentBundle": true
+  },
+  "capture": {
+    "native": 14251,
+    "domain": 5388,
+    "total": 19639,
+    "failed": 0,
+    "pending": 0,
+    "note": "Current and explicitly preserved geometry family evidence. Capture completion does not imply personal visual acceptance."
+  },
+  "crumble": {
+    "nativeStates": 979,
+    "domainStates": 53,
+    "realVertexPlacements": 5188,
+    "footprintViolations": 0,
+    "contactReviewCases": 27
+  },
+  "basket": {
+    "productionGeometryPreservedFrom": "f74a91e3e956",
+    "nativeCases": 567,
+    "domainCases": 84,
+    "coreViolations": 0,
+    "handleDiagnosticSpecies": 10,
+    "domainHandleSizes": 3,
+    "handleIntersections": 0
+  },
+  "remaining": [
+    "Small flower crowns expose support and lower stems.",
+    "Dense floral overhang and plant-by-plant composition need further review.",
+    "Dense cake decor remains overly regular; cupcake crumble has roughly 1mm sampled clearance.",
+    "Not every captured state has been personally viewed.",
+    "Mobile heavy-scene performance remains unresolved."
+  ],
+  "unpromotedBasketTrial": {
+    "bundleHash": "4d08876e0ca3daa7f5a17542ce77327cf3252ee0d3e57b5d8cf30276e1adc248",
+    "description": "Tighter .92 area factor with minimum14cm basket; horizontal source-mesh cuts constrain inserted stem anchors and foam radius.",
+    "captureCases": 20,
+    "captureFailures": 0,
+    "personallyViewedFourPoseCases": 20,
+    "full567BuildProbe": "running"
+  }
+}

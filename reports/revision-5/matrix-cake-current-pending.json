@@ -1,0 +1,427 @@
+[
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-berry-blackberry",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-berry-blackberry": 4,
+        "bk-decor-crumble-cluster": 9
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 1 изделий / verified pair bk-berry-blackberry+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 9,
+        "bk-decor-crumble-cluster": 9
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 1 изделий / verified pair bk-berry-blueberry+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-berry-raspberry",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-berry-raspberry": 4,
+        "bk-decor-crumble-cluster": 9
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 1 изделий / verified pair bk-berry-raspberry+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-berry-cherry": 7,
+        "bk-decor-crumble-cluster": 2
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / 1 изделий / verified pair bk-berry-cherry+bk-decor-crumble-cluster / requested 7"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-decor-crumble-cluster",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-crumble-cluster": 1,
+        "bk-decor-meringue-kiss": 8
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / 1 изделий / verified pair bk-decor-crumble-cluster+bk-decor-meringue-kiss / requested 8"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-round",
+      "decor": [
+        "bk-berry-blackberry",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-berry-blackberry": 4,
+        "bk-decor-crumble-cluster": 9
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-round / 1 изделий / verified pair bk-berry-blackberry+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-round",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 11,
+        "bk-decor-crumble-cluster": 9
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-round / 1 изделий / verified pair bk-berry-blueberry+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-round",
+      "decor": [
+        "bk-berry-raspberry",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-berry-raspberry": 2,
+        "bk-decor-crumble-cluster": 9
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-round / 1 изделий / verified pair bk-berry-raspberry+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-berry-blackberry",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-berry-blackberry": 4,
+        "bk-decor-crumble-cluster": 9
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 1 изделий / verified pair bk-berry-blackberry+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 9,
+        "bk-decor-crumble-cluster": 9
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 1 изделий / verified pair bk-berry-blueberry+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-berry-raspberry",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-berry-raspberry": 2,
+        "bk-decor-crumble-cluster": 9
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 1 изделий / verified pair bk-berry-raspberry+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-donut",
+      "decor": [
+        "bk-berry-blackberry",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-berry-blackberry": 1,
+        "bk-decor-crumble-cluster": 11
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-donut / 1 изделий / verified pair bk-berry-blackberry+bk-decor-crumble-cluster / requested 11"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-donut",
+      "decor": [
+        "bk-berry-raspberry",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-berry-raspberry": 1,
+        "bk-decor-crumble-cluster": 11
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-donut / 1 изделий / verified pair bk-berry-raspberry+bk-decor-crumble-cluster / requested 11"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-berry-blackberry",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-berry-blackberry": 1,
+        "bk-decor-crumble-cluster": 14
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / 1 изделий / verified pair bk-berry-blackberry+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-berry-raspberry",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-berry-raspberry": 1,
+        "bk-decor-crumble-cluster": 14
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / 1 изделий / verified pair bk-berry-raspberry+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-decor-chocolate-shard",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-chocolate-shard": 10,
+        "bk-decor-crumble-cluster": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / 3 яруса / verified pair bk-decor-chocolate-shard+bk-decor-crumble-cluster / requested 10"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-decor-crumble-cluster",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-crumble-cluster": 1,
+        "bk-decor-truffle-ball": 10
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / 3 яруса / verified pair bk-decor-crumble-cluster+bk-decor-truffle-ball / requested 10"
+  }
+]

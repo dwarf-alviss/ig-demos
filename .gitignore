@@ -4,3 +4,8 @@ node_modules/
 
 # Local resumable QA cache; final results and scene images are committed.
 /reports/revision-4/stress/progress.jsonl
+/reports/revision-5/combinations/
+
+# Locally reproducible visual QA contact sheets; keep compact UI evidence.
+/reports/revision-5/**/*.jpg
+!/reports/revision-5/pages/*.jpg

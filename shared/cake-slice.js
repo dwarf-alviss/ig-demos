@@ -81,7 +81,9 @@ export function cakeSlice(filling, icing) {
   );
   side.position.y = (y + 0.25) / 2;
   root.add(side);
-  root.rotation.y = -0.45;
+  // Face both radial cuts toward the default front and side cameras.
+  // The iced curved back remains behind the visible crumb layers.
+  root.rotation.y = Math.PI * 0.55;
   root.userData.component = "filling-slice";
   return root;
 }

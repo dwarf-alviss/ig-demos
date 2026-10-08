@@ -1,0 +1,60 @@
+{
+  "jw-base-drop-earring": {
+    "sourceHash": "7215ad52a6ec37e1651cb38e2134ae4294966e2c5743b73c19b49afc3025da0f",
+    "selectors": {
+      "eye": [
+        "front",
+        0
+      ]
+    }
+  },
+  "jw-base-pendant": {
+    "sourceHash": "9926fd01a50862df04da413e48009c67c59c34508fdbd6c6ca3ed022631a159d",
+    "selectors": {
+      "eye": [
+        "front",
+        0
+      ],
+      "chainEye": [
+        "side",
+        0
+      ]
+    }
+  },
+  "jw-part-bail-hinged": {
+    "sourceHash": "daf9085d31bd69ed74548b7593f7ed74c3eace96e6299199c72a496ab9d67fad",
+    "selectors": {
+      "eye": [
+        "front",
+        0
+      ]
+    }
+  },
+  "jw-part-charm-tag": {
+    "sourceHash": "2fea92238a80665f80669670bc1b46bd130ab906b559c87705b3f4206a06dd27",
+    "selectors": {
+      "eye": [
+        "front",
+        0
+      ]
+    }
+  },
+  "jw-part-clasp-lobster": {
+    "sourceHash": "908efd54277cf191f7552105544f0b8a3a2ccdd029cac1454fb85e91cf9bca12",
+    "selectors": {
+      "eye": [
+        "front",
+        2
+      ]
+    }
+  },
+  "jw-part-ear-wire-french": {
+    "sourceHash": "6d0c42b09d4430b1f0c0613c5de2993b809373962975a26df8318d6e16b5814e",
+    "selectors": {
+      "eye": [
+        "front",
+        0
+      ]
+    }
+  }
+}

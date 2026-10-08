@@ -1,3 +1,4 @@
+import culinaryCompositions from "./culinary-compositions.json" with { type: "json" };
 import { catalogue, byId } from "./catalogue.js";
 import {
   resolvePattern,
@@ -14,7 +15,7 @@ import {
   findCakeSeat,
   cakeBlockers,
 } from "./assembly-profiles.js";
-import { normalizeJewelry } from "./jewelry-rules.js";
+import { normalizeJewelry, compatibleFindings } from "./jewelry-rules.js";
 import { recipeSeats } from "./recipe-layout.js";
 export const projectSpecs = {
   cakes: {
@@ -232,14 +233,29 @@ export function normalize(kind, value) {
       ? [...new Set(value.foodDecor)].filter((id) =>
           recipes[out.pattern].compatibleDecor.includes(id),
         )
-      : recipes[out.pattern].defaultDecor ||
-        recipes[out.pattern].compatibleDecor.slice(0, 2);
+      : Object.keys(culinaryCompositions[out.pattern]?.decor || {}).filter(
+            (id) => recipes[out.pattern].compatibleDecor.includes(id),
+          ).length
+        ? Object.keys(culinaryCompositions[out.pattern].decor).filter((id) =>
+            recipes[out.pattern].compatibleDecor.includes(id),
+          )
+        : recipes[out.pattern].defaultDecor ||
+          recipes[out.pattern].compatibleDecor.slice(0, 2);
     out.foodCounts = Object.fromEntries(
       out.foodDecor.map((id) => [
         id,
         Math.max(
           1,
-          Math.min(12, Math.round(Number(value.foodCounts?.[id]) || 3)),
+          Math.min(
+            12,
+            Math.round(
+              Number(value.foodCounts?.[id]) ||
+                (culinaryCompositions[out.pattern]?.decor[id] || 3) *
+                  (culinaryCompositions[out.pattern]?.layout === "per-piece"
+                    ? Number(value.pieces) || 4
+                    : 1),
+            ),
+          ),
         ),
       ]),
     );
@@ -298,6 +314,8 @@ export function normalize(kind, value) {
         ? bouquets[out.pattern]?.defaultPalette || 0
         : 0;
   if (kind === "cakes") {
+    if (out.pattern && !["sponge", "mini"].includes(recipes[out.pattern].type))
+      out.topper = null;
     if (out.pattern)
       out.tiers = Math.min(value.tiers || 1, recipes[out.pattern].maxTiers);
     out.filling = ["vanilla", "berry", "chocolate", "pistachio"].includes(
@@ -395,6 +413,18 @@ export function selectedIds(kind, s) {
       ].filter(Boolean),
     ),
   ];
+}
+export function canSelectCakeDecoration(s, id) {
+  if (s.decor.includes(id)) return true;
+  const next = normalize("cakes", {
+    ...s,
+    decor: [...s.decor, id],
+    counts: { ...s.counts, [id]: 1 },
+  });
+  return (
+    next.decor.includes(id) &&
+    s.decor.every((other) => next.counts[other] === s.counts[other])
+  );
 }
 export function canIncreaseCount(kind, s, id) {
   const count = s.counts[id] || 0,
@@ -542,7 +572,8 @@ export function toggleAsset(kind, s, id) {
       "jw-part-charm-tag": "jw-base-chain-link-cable",
       "jw-part-jump-ring": "jw-base-pendant",
     };
-    if (baseFor[id]) next.base = baseFor[id];
+    if (baseFor[id] && !compatibleFindings(next).some((a) => a.id === id))
+      next.base = baseFor[id];
   }
   if (["decor", "flowers", "green", "finding"].includes(a.category)) {
     const list = next[a.category];

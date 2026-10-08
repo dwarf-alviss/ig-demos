@@ -988,9 +988,9 @@
       "sources": [
         "kab-forest"
       ],
-      "sizeCm": 2.5,
+      "sizeCm": 4.1,
       "asset": "bk-berry-cherry",
-      "dimensionBasis": "visually calibrated natural size; not a manufacturer tolerance",
+      "dimensionBasis": "renderer calibration: whole source cherry including stalk, fruit body about 2.3 cm",
       "compatibleRecipes": [
         "black-forest"
       ],

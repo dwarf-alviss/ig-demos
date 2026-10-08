@@ -1,0 +1,4 @@
+/* Cart editing restores a WebGL scene; cross-document snapshots are unreliable. */
+@view-transition {
+  navigation: none;
+}
