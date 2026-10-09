@@ -335,6 +335,9 @@ export function normalize(kind, value) {
     out.layout = ["crescent", "wreath", "center"].includes(value.layout)
       ? value.layout
       : "crescent";
+    // A spiral is a focal garnish: one per small pastry, with its original dimensions.
+    if (out.base.includes("pastry") && out.counts["bk-decor-caramel-spiral"])
+      out.counts["bk-decor-caramel-spiral"] = Math.min(out.pieces,out.counts["bk-decor-caramel-spiral"]);
     const surfaces = cakeSurfaces(out),
       occupied = cakeBlockers(out);
     const originalDecorCount = out.decor.length;

@@ -9,6 +9,7 @@ import { plants } from "../shared/domain.js";
 import { disposeTree } from "../shared/scene-utils.js";
 test("summer basket retains separate bloom cores and real calyx contact at all three bouquet sizes", async () => {
   const lib = new Library();
+  let previousBasketWidth = 0;
   try {
     for (const bouquetSize of [11, 19, 29]) {
       const state = normalize("flowers", {
@@ -19,6 +20,11 @@ test("summer basket retains separate bloom cores and real calyx contact at all t
       });
       const root = await buildComposedBouquet(lib, state);
       try {
+        const basket = root.children.find((n) => n.userData.asset === "fl-wrap-basket-rattan");
+        assert.ok(basket, "The supplied woven basket must remain in the composition");
+        const width = new THREE.Box3().setFromObject(basket).getSize(new THREE.Vector3()).x;
+        assert.ok(width > previousBasketWidth, "More stems require a larger basket, not smaller flowers");
+        previousBasketWidth = width;
         const crown = root.userData.assembly.crown,
           heads = root.children.filter(
             (n) =>

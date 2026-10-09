@@ -1,13 +1,11 @@
-# Tier, garnish and basket correction
+# Basket proportions and individual pastry garnish
 
-Current production bundle: af88e96d0b3e91943500f334ee4c2e85ac24fee69af8187de86c99accab654ae.
+Current production bundle: be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371.
 
-Small decorations now use accessible lower tier ledges. Hexagonal seats use a contour extracted from the actual roof mesh. Recipe seating keeps ingredient ordinals stable across normalization and reserves tier-specific positions.
+Dense ready-made summer baskets now use a larger supplied basket mesh for 19 and 29 stems, preserving original flower sizes. Native mixed baskets preserve their compact variants up to 11 stems and can grow by up to 30% for larger arrangements; the size calculation still considers each supplied flower diameter. Compact stalk insertion reduces the exposed support radius without detaching calyx contacts.
 
-Plate berries form bounded groups beside their pastries. Pastry bodies use conservative calibrated rectangular envelopes rather than circles; every transformed source vertex of all seven pastry bodies is covered by the new regression. Large flat decorations keep their full footprint.
+A caramel spiral is limited to one per small pastry. Quantity normalization, the increase control and restored state agree on that limit. Large caramel source dimensions and textured materials are preserved. Previous real tier ledges, calibrated pastry envelopes and bounded berry side groups remain in place.
 
-Basket supports fit nine horizontal cuts through the supplied woven body. Lower flower and foliage stalks enter a compact block; calyx contacts stay attached. Selected species receive their own bounded stem leaves. Gerberas stay leafless. Lower crown placement is species-aware for upright native tulips.
+Validation on this exact bundle: all 73 tests passed, including quantity-control and increasing basket-size regressions. The 567-case native basket core/finiteness probe passed. All 55 current configurations were personally inspected in front, side, top and back views, including three mixed 33-stem baskets. Three browser interface checks and six JSON/PNG export checks passed.
 
-Validation: 72 tests passed before the final native tulip rim-clearance restoration; 7 relevant tests passed on the final source. The 567-case core/finiteness probe passed again on the final source. All 52 current scenes were captured and personally viewed in four poses. Three browser UI checks and six JSON/PNG export checks passed on the current bundle.
-
-Visual acceptance remains open. Sparse upright bouquets expose a small support patch from above; dense summer baskets remain wide. Several caramel spirals visually dominate a single pastry. Do not mark this checkpoint ideal or all-combinations-complete. Changed cake and basket captures are invalidated in the current ledger; unchanged single round tiers and unaffected single-tier recipes retain their original evidence hashes.
+Visual acceptance remains open: sparse lily stems and the artistic spacing of some lower-tier berries require further refinement. The canonical matrix was renormalized after the caramel limit; stale evidence is kept historical rather than presented as current. This checkpoint is not an ideal or all-combinations-complete claim.

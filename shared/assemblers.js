@@ -446,7 +446,7 @@ export async function buildFlowers(lib, s, palette) {
       )
     : basket
       ? Math.min(
-          container.width,
+          container.width * Math.min(1.3, Math.max(1, Math.sqrt(count / 11))),
           Math.max(
             14,
             2 +
@@ -498,7 +498,7 @@ export async function buildFlowers(lib, s, palette) {
     ? basketInteriorRadius(wrapper, centerX, foamTop)
     : null;
   const insertionRadius = interior
-    ? Math.min(interior.radius - 0.65, Math.max(3.4, Math.sqrt(count) * 0.75))
+    ? Math.min(interior.radius - 0.65, Math.max(1.6, Math.sqrt(count) * 0.35))
     : null;
   const foamAnchors = [];
   if (hat || basket) {

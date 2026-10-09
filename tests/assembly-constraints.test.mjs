@@ -25,6 +25,19 @@ import {
   pastryFootprint,
 } from "../shared/pastry-support.js";
 import { plateRadius } from "../shared/assembly-profiles.js";
+test("caramel spirals respect individual pastry portions and the quantity control", () => {
+  const id = "bk-decor-caramel-spiral";
+  for (const pieces of [1, 4, 6]) {
+    const state = normalize("cakes", {
+      ...defaults("cakes"), pattern: null, base: "bk-pastry-eclair", pieces,
+      decor: [id], counts: { [id]: 14 }, topper: null,
+    });
+    assert.ok(state.counts[id] > 0);
+    assert.ok(state.counts[id] <= pieces);
+    assert.equal(canIncreaseCount("cakes", state, id), false);
+    assert.deepEqual(normalize("cakes", state), state);
+  }
+});
 test("pastry seats respect real holes, curved cream and the complete body footprint", () => {
   assert.equal(pastryHeight("bk-pastry-donut", 0, 0), null);
   assert.equal(supportsDecoration("bk-pastry-donut", 0, 0, 0.58), false);

@@ -1,51 +1,52 @@
 {
-  "bundleHash": "af88e96d0b3e91943500f334ee4c2e85ac24fee69af8187de86c99accab654ae",
-  "phase": "tier-cluster-and-basket-correction",
+  "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
+  "phase": "basket-sizing-and-individual-caramel-portions",
   "complete": false,
   "fullTests": {
-    "bundleHash": "a5de8ce335d4",
-    "passed": 72,
+    "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
+    "passed": 73,
     "failed": 0,
-    "durationMs": 118812.1698,
-    "note": "Before the final native upright-tulip clearance restoration."
-  },
-  "currentTargetTests": {
-    "passed": 7,
-    "failed": 0,
-    "files": [
-      "tests/basket-attachment.test.mjs",
-      "tests/domain-basket-contact.test.mjs",
-      "tests/composition-refinement.test.mjs",
-      "tests/native-setting.test.mjs (native flower/vase and basket greenery checks)"
-    ]
+    "durationMs": 180257.6062
   },
   "fourPoseVisualReview": {
-    "nativeCakes": 27,
-    "domainCakes": 2,
-    "nativeFlowers": 20,
-    "domainFlowers": 3,
-    "total": 52,
-    "personallyViewed": 52,
-    "idealAcceptance": false
+    "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
+    "configurations": 55,
+    "poses": [
+      "front",
+      "side",
+      "top",
+      "back"
+    ],
+    "native": {
+      "flowers": 23,
+      "cakes": 27
+    },
+    "domain": {
+      "flowers": 3,
+      "cakes": 2
+    },
+    "personallyViewed": true,
+    "status": "reviewed-defect"
   },
   "wideBasketProbe": {
+    "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
     "cases": 567,
     "failures": 0,
-    "bundleHash": "af88e96d0b3e91943500f334ee4c2e85ac24fee69af8187de86c99accab654ae",
-    "currentBundle": true
+    "scope": "Native bloom core separation and finite geometry; this is not a full vertex collision or visual acceptance proof."
   },
   "ui": {
-    "passedProjects": 3,
-    "currentBundle": true
+    "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
+    "passed": 3,
+    "failed": 0
   },
   "exports": {
-    "passedFiles": 6,
-    "currentBundle": true
+    "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
+    "passed": 6,
+    "failed": 0
   },
   "openDefects": [
-    "Small support patch remains visible from above in sparse upright bouquets.",
-    "Dense summer baskets still have a wide silhouette.",
-    "Several large caramel spirals dominate a single pastry composition.",
-    "Full cake and basket combination images require refresh after layout changes; previous hashes remain historical evidence."
+    "Some sparse lily baskets expose stem sections between blooms.",
+    "Some lower cake tiers have sparse, evenly spaced berry placements that still need artistic refinement.",
+    "The canonical matrix contains combinations whose visual evidence has not been refreshed; complete per-combination acceptance remains open."
   ]
 }

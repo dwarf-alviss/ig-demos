@@ -157,6 +157,8 @@ export async function buildComposedBouquet(lib, state) {
     ...originalProfile,
     width: /sleeve|cone/.test(packId)
       ? paperWidth(entries, originalProfile.width)
+      : pattern.form === "basket"
+        ? originalProfile.width * Math.min(1.65, Math.max(1, Math.sqrt(entries.length / 11)))
       : originalProfile.width,
   };
   let rim = null;
@@ -229,14 +231,14 @@ export async function buildComposedBouquet(lib, state) {
       (pattern.form === "basket" ? -2.4 : box ? -1.1 : rim ? -2.2 : -0.8);
   const handleContact =
     pattern.form === "basket" ? basketHandleContact(wrapper, lip) : null;
-  const foamTop = lip - (pattern.form === "basket" ? 6 : 2.1);
+  const foamTop = lip - (pattern.form === "basket" ? 6 * profile.width / originalProfile.width : 2.1);
   const interior = handleContact
     ? basketInteriorRadius(wrapper, centerX, foamTop)
     : null;
   const insertionRadius = interior
     ? Math.min(
         interior.radius - 0.65,
-        Math.max(3.4, Math.sqrt(positions.length) * 0.75),
+        Math.max(1.6, Math.sqrt(positions.length) * 0.35),
       )
     : null;
   const foamAnchors = [];
