@@ -409,7 +409,7 @@ export async function buildCake(lib, s, palette) {
     for (const child of root.children)
       if (child !== board) child.position.x -= 5;
     const slice = cakeSlice(s.filling, palette);
-    slice.position.set(15, 0.47, 6);
+    slice.position.set(19, 0.47, 9);
     root.add(slice);
   }
   root.userData.assembly = { surfaces, decorSeats: occupied };

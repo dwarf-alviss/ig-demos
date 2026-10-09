@@ -376,7 +376,7 @@ export const plateRadius = (s) =>
           (id) => (cakeParts[id]?.flatFootprint || 0) * 2 + 0.5,
         ),
       )
-    : 21;
+    : 25;
 export function cakeSurfaces(s) {
   if (!s.base.includes("pastry"))
     return Array.from({ length: s.tiers }, (_, i) => ({
