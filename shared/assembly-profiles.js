@@ -117,7 +117,7 @@ export const flowerHeads = {
   "fl-flower-peony-open": { diameter: 9 },
   "fl-flower-ranunculus": { diameter: 6 },
   "fl-flower-rose-garden": { diameter: 7 },
-  "fl-flower-tulip": { diameter: 4.6, upright: true },
+  "fl-flower-tulip": { diameter: 3.4, upright: true },
 };
 
 export function nativeTierSurface(base, diameter, hasUpperTier) {

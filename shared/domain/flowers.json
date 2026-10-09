@@ -147,7 +147,7 @@
       "name": "Тюльпан",
       "role": "line",
       "morphology": "six-petal-cup",
-      "headDiameterCm": 4.6,
+      "headDiameterCm": 3.4,
       "season": "spring",
       "seasonRegion": "UK outdoor; greenhouse and imports differ",
       "sources": [
@@ -169,8 +169,8 @@
         "minimal-stems"
       ],
       "headDepthCalibration": 1,
-      "stemDiameterCm": 0.45,
-      "headCoreRadiusCm": 1.95,
+      "stemDiameterCm": 0.33,
+      "headCoreRadiusCm": 1.44,
       "headCoreBasis": "renderer collision calibration for the solid centre; peripheral petals may overlap"
     },
     {

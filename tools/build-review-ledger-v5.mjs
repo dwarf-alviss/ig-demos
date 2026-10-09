@@ -125,7 +125,10 @@ for (const suite of ["native", "domain"]) {
             )));
     if (
       changedCake ||
-      (row.kind === "flowers" && state.pack === "fl-wrap-basket-rattan")
+        (row.kind === "flowers" &&
+          (state.pack === "fl-wrap-basket-rattan" ||
+            state.flowers?.includes("fl-flower-tulip") ||
+            state.taxonCounts?.tulip > 0))
     )
       preserved.delete(key);
   }
