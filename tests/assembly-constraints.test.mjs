@@ -1,7 +1,10 @@
 import test from "node:test";
 import * as THREE from "three";
 import { fitWrapTwine } from "../shared/wrap-twine.js";
-import { canIncreaseCount, canSelectCakeDecoration } from "../shared/studio-state.js";
+import {
+  canIncreaseCount,
+  canSelectCakeDecoration,
+} from "../shared/studio-state.js";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import validator from "gltf-validator";
@@ -393,11 +396,22 @@ test("long decorations lie on the plate and reserve their full horizontal projec
 });
 
 test("decoration selection reports actual plate capacity rather than silently dropping a choice", () => {
-  const single = normalize("cakes", { ...defaults("cakes"), pattern: null, base: "bk-pastry-brownie-bite", pieces: 1, decor: [], counts: {} });
+  const single = normalize("cakes", {
+    ...defaults("cakes"),
+    pattern: null,
+    base: "bk-pastry-brownie-bite",
+    pieces: 1,
+    decor: [],
+    counts: {},
+  });
   const saved = structuredClone(single);
-  assert.equal(canSelectCakeDecoration(single, "bk-berry-strawberry"), false);
+  assert.equal(canSelectCakeDecoration(single, "bk-berry-strawberry"), true);
   assert.equal(canSelectCakeDecoration(single, "bk-berry-blueberry"), true);
   const set = normalize("cakes", { ...single, pieces: 4 });
   assert.equal(canSelectCakeDecoration(set, "bk-berry-strawberry"), true);
-  assert.deepEqual(single, saved, "checking catalogue capacity must not change the saved composition");
+  assert.deepEqual(
+    single,
+    saved,
+    "checking catalogue capacity must not change the saved composition",
+  );
 });

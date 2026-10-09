@@ -1,19 +1,19 @@
 [
   {
     "file": "matrix-all.json",
-    "changed": 506,
-    "duplicates": 66,
-    "total": 14185
+    "changed": 1986,
+    "duplicates": 221,
+    "total": 14079
   },
   {
     "file": "matrix-native-real-pairs.json",
-    "changed": 78,
-    "duplicates": 15,
-    "total": 3222
+    "changed": 183,
+    "duplicates": 31,
+    "total": 3306
   },
   {
     "file": "matrix-domain.json",
-    "changed": 0,
+    "changed": 2,
     "duplicates": 0,
     "total": 5388
   }

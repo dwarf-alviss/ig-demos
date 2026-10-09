@@ -1,4 +1,7 @@
+import hexRoof from "./native-hex-roof.json" with { type: "json" };
 import {
+  pastryBodyClearance,
+  pastrySideRadius,
   supportsDecoration,
   pastryHeight,
   pastryFootprint,
@@ -114,6 +117,48 @@ export const flowerHeads = {
   "fl-flower-tulip": { diameter: 4.6, upright: true },
 };
 
+export function nativeTierSurface(base, diameter, hasUpperTier) {
+  const hex = base.includes("hex");
+  return {
+    radius: hex ? diameter * 0.59 : diameter / 2,
+    inner: !hex && hasUpperTier ? (diameter - 5) / 2 + 0.1 : 0,
+    ...(hex
+      ? {
+          outline: hexRoof.outline.map(([x, z]) => [
+            x * diameter,
+            z * diameter,
+          ]),
+          exclusion: hasUpperTier
+            ? hexRoof.outline.map(([x, z]) => [
+                x * (diameter - 5),
+                z * (diameter - 5),
+              ])
+            : null,
+        }
+      : {}),
+  };
+}
+function polygonClearance(outline, x, z) {
+  let inside = true,
+    distance = Infinity;
+  for (let i = 0; i < outline.length; i++) {
+    const a = outline[i],
+      b = outline[(i + 1) % outline.length],
+      dx = b[0] - a[0],
+      dz = b[1] - a[1];
+    if (dx * (z - a[1]) - dz * (x - a[0]) < 0) inside = false;
+    const t = Math.max(
+      0,
+      Math.min(1, ((x - a[0]) * dx + (z - a[1]) * dz) / (dx * dx + dz * dz)),
+    );
+    distance = Math.min(
+      distance,
+      Math.hypot(x - a[0] - t * dx, z - a[1] - t * dz),
+    );
+  }
+  return inside ? distance : -distance;
+}
+
 // Deterministic placement with measured footprints, tier exclusion rings and spacing.
 export function findCakeSeat(
   surfaces,
@@ -131,7 +176,10 @@ export function findCakeSeat(
         ...pastries.slice(0, index % pastries.length),
         ...surfaces.filter((s) => !s.asset),
       ]
-    : [...surfaces].reverse();
+    : [
+        ...surfaces.slice(index % surfaces.length),
+        ...surfaces.slice(0, index % surfaces.length),
+      ];
   for (let k = 0; k < ordered.length; k++) {
     const surface = ordered[k];
     const laidFlat = Boolean(
@@ -153,9 +201,57 @@ export function findCakeSeat(
         fraction = Math.max(0.12, 0.88 - Math.floor(n / 160) * 0.14);
       }
       const radius = (surface.radius - footprint - 0.08) * fraction;
-      const x = surface.x + Math.cos(angle) * radius,
+      let x = surface.x + Math.cos(angle) * radius,
         z = surface.z + Math.sin(angle) * radius;
+      if (surface.id < 0 && pastries.length && n < 960) {
+        const anchor =
+          pastries[(index + Math.floor(n / 160)) % pastries.length];
+        const body = occupied.find(
+          (p) => p.surface === -1 && p.x === anchor.x && p.z === anchor.z,
+        );
+        const local = n % 160;
+        const distance = pastrySideRadius(anchor.asset, 1.1) + footprint + 0.25;
+        const spread = Math.sqrt(local) * (0.38 + footprint * 0.32),
+          a = local * 2.399963;
+        x = anchor.x + Math.cos(1.1) * distance + Math.cos(a) * spread;
+        z = anchor.z + Math.sin(1.1) * distance + Math.sin(a) * spread;
+        if (
+          Math.hypot(x - surface.x, z - surface.z) + footprint >
+          surface.radius - 0.08
+        )
+          continue;
+      }
+      if (
+        surface.id < 0 &&
+        pastries.length &&
+        profile?.size <= 3.8 &&
+        !pastries.some((anchor) => {
+          const body = occupied.find(
+            (p) => p.surface === -1 && p.x === anchor.x && p.z === anchor.z,
+          );
+          const distance =
+            pastrySideRadius(anchor.asset, 1.1) + footprint + 0.25;
+          return (
+            Math.hypot(
+              x - anchor.x - Math.cos(1.1) * distance,
+              z - anchor.z - Math.sin(1.1) * distance,
+            ) <=
+            3.1 + footprint * 0.35
+          );
+        })
+      )
+        continue;
       if (surface.inner > 0 && radius - footprint < surface.inner) continue;
+      if (
+        surface.outline &&
+        polygonClearance(surface.outline, x, z) < footprint + 0.08
+      )
+        continue;
+      if (
+        surface.exclusion &&
+        polygonClearance(surface.exclusion, x, z) > -footprint - 0.12
+      )
+        continue;
       if (
         surface.asset &&
         !supportsDecoration(
@@ -177,7 +273,10 @@ export function findCakeSeat(
         occupied.some(
           (p) =>
             p.surface === surface.id &&
-            Math.hypot(x - p.x, z - p.z) < footprint + p.footprint + 0.16,
+            (p.asset
+              ? pastryBodyClearance(p.asset, x - p.x, z - p.z) <
+                footprint + 0.16
+              : Math.hypot(x - p.x, z - p.z) < footprint + p.footprint + 0.16),
         )
       )
         continue;
@@ -242,8 +341,7 @@ export function cakeSurfaces(s) {
       x: 0,
       z: 0,
       y: 0,
-      radius: (24 - i * 5) / (s.base.includes("hex") ? 2.33 : 2),
-      inner: i < s.tiers - 1 ? (19 - i * 5) / 2 + 0.1 : 0,
+      ...nativeTierSurface(s.base, 24 - i * 5, i < s.tiers - 1),
     }));
   const size = pastryDimensions[s.base],
     rr = s.pieces === 1 ? 0 : s.base.includes("eclair") ? 11 : 9;
@@ -270,6 +368,7 @@ export function pastryBlockers(s) {
     ? pastryPositions(s).map((p) => ({
         ...p,
         footprint: pastryFootprint(s.base),
+        asset: s.base,
         surface: -1,
       }))
     : [];

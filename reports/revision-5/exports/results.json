@@ -1,41 +1,41 @@
 [
   {
-    "bundleHash": "8c775822a0b888d370417590a281b4fba5252343fa4200598083b9b144ae25a3",
+    "bundleHash": "af88e96d0b3e91943500f334ee4c2e85ac24fee69af8187de86c99accab654ae",
     "kind": "cakes",
     "extension": "json",
     "bytes": 817,
     "passed": true
   },
   {
-    "bundleHash": "8c775822a0b888d370417590a281b4fba5252343fa4200598083b9b144ae25a3",
+    "bundleHash": "af88e96d0b3e91943500f334ee4c2e85ac24fee69af8187de86c99accab654ae",
     "kind": "cakes",
     "extension": "png",
     "bytes": 107658,
     "passed": true
   },
   {
-    "bundleHash": "8c775822a0b888d370417590a281b4fba5252343fa4200598083b9b144ae25a3",
+    "bundleHash": "af88e96d0b3e91943500f334ee4c2e85ac24fee69af8187de86c99accab654ae",
     "kind": "flowers",
     "extension": "json",
     "bytes": 579,
     "passed": true
   },
   {
-    "bundleHash": "8c775822a0b888d370417590a281b4fba5252343fa4200598083b9b144ae25a3",
+    "bundleHash": "af88e96d0b3e91943500f334ee4c2e85ac24fee69af8187de86c99accab654ae",
     "kind": "flowers",
     "extension": "png",
     "bytes": 145648,
     "passed": true
   },
   {
-    "bundleHash": "8c775822a0b888d370417590a281b4fba5252343fa4200598083b9b144ae25a3",
+    "bundleHash": "af88e96d0b3e91943500f334ee4c2e85ac24fee69af8187de86c99accab654ae",
     "kind": "jewelry",
     "extension": "json",
     "bytes": 329,
     "passed": true
   },
   {
-    "bundleHash": "8c775822a0b888d370417590a281b4fba5252343fa4200598083b9b144ae25a3",
+    "bundleHash": "af88e96d0b3e91943500f334ee4c2e85ac24fee69af8187de86c99accab654ae",
     "kind": "jewelry",
     "extension": "png",
     "bytes": 106689,

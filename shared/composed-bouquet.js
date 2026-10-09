@@ -1,3 +1,5 @@
+import { basketInteriorRadius, fitBasketInsertion } from "./basket-interior.js";
+import { attachBasketStemLeaves } from "./flower-stem-leaves.js";
 import { basketHandleContact } from "./basket-handle-contact.js";
 import { aimBranch } from "./branch-attachment.js";
 import * as THREE from "three";
@@ -222,10 +224,21 @@ export async function buildComposedBouquet(lib, state) {
       bridal ? null : crownOpening,
     ).sort((a, b) => (pattern.form === "basket" ? b.radius - a.radius : 0)),
     bindingY = bridal ? 15 : rim ? lip * 0.45 : Math.max(2, lip - 3),
-    headBase = (rim?.mean ?? lip) + (box ? -1.1 : rim ? -2.2 : -0.8);
+    headBase =
+      (rim?.mean ?? lip) +
+      (pattern.form === "basket" ? -2.4 : box ? -1.1 : rim ? -2.2 : -0.8);
   const handleContact =
     pattern.form === "basket" ? basketHandleContact(wrapper, lip) : null;
   const foamTop = lip - (pattern.form === "basket" ? 6 : 2.1);
+  const interior = handleContact
+    ? basketInteriorRadius(wrapper, centerX, foamTop)
+    : null;
+  const insertionRadius = interior
+    ? Math.min(
+        interior.radius - 0.65,
+        Math.max(3.4, Math.sqrt(positions.length) * 0.75),
+      )
+    : null;
   const foamAnchors = [];
   let floralFoam;
   if (box) {
@@ -456,7 +469,11 @@ export async function buildComposedBouquet(lib, state) {
         );
       path.push(shoulder, attach);
     }
-    if (handleContact) foamAnchors.push(bottom.clone(), neck.clone());
+    if (handleContact) {
+      fitBasketInsertion(bottom, centerX, insertionRadius);
+      fitBasketInsertion(neck, centerX, insertionRadius);
+      foamAnchors.push(bottom.clone(), neck.clone());
+    }
     const flowerStem = curvedStem(path, stemRadius);
     root.add(flowerStem);
     crown[crown.length - 1].mouthPoint = mouthPoint.toArray();
@@ -467,7 +484,15 @@ export async function buildComposedBouquet(lib, state) {
         flowerStem,
         THREE.MathUtils.lerp(mouthPoint.y, attach.y, t),
       );
-    if (leafPosition.y > (bridal ? bindingY + 1 : lip + 1)) {
+    if (pattern.form === "basket") {
+      attachBasketStemLeaves(root, flowerStem, plant, {
+        top: attach.y - 0.4,
+        bottom: foamTop + 0.3,
+        centerX,
+        radius: mouthRadius * 0.9,
+        phase: i,
+      });
+    } else if (leafPosition.y > (bridal ? bindingY + 1 : lip + 1)) {
       const leaf = botanicalLeaf(
         plant.id === "tulip" ? 4 : bridal ? 4.2 : 3.6,
         plant.id === "tulip" ? 0.9 : bridal ? 1.6 : 0.85,
@@ -538,6 +563,10 @@ export async function buildComposedBouquet(lib, state) {
                 -(cut.y - foamTop + 0.6) / anchor.direction.y,
               )
           : entry;
+        if (handleContact) {
+          fitBasketInsertion(lower, centerX, insertionRadius);
+          fitBasketInsertion(neck, centerX, insertionRadius);
+        }
         const path = [
           lower,
           neck,
@@ -548,8 +577,7 @@ export async function buildComposedBouquet(lib, state) {
         root.add(curvedStem(path, 0.05));
       }
   if (handleContact && foamAnchors.length) {
-    const box = new THREE.Box3().setFromPoints(foamAnchors),
-      center = box.getCenter(new THREE.Vector3());
+    const center = new THREE.Vector3(centerX, foamTop - 1.1, 0);
     const radius =
       Math.max(
         ...foamAnchors.map((point) =>

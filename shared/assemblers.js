@@ -1,3 +1,5 @@
+import { basketInteriorRadius, fitBasketInsertion } from "./basket-interior.js";
+import { attachBasketStemLeaves } from "./flower-stem-leaves.js";
 import { basketHandleContact } from "./basket-handle-contact.js";
 import { clearRingPavilion } from "./mounted-gallery.js";
 import { precisePlace } from "./precise-fit.js";
@@ -33,6 +35,7 @@ import {
   physical,
 } from "./model-library.js";
 import {
+  nativeTierSurface,
   cakeParts,
   containers,
   flowerHeads,
@@ -80,8 +83,7 @@ export async function buildCake(lib, s, palette) {
         x: 0,
         z: 0,
         y: top,
-        radius: s.base.includes("hex") ? diameter / 2.33 : radius,
-        inner: i < s.tiers - 1 ? (diameter - 5) / 2 + 0.1 : 0,
+        ...nativeTierSurface(s.base, diameter, i < s.tiers - 1),
       });
     }
   } else {
@@ -492,6 +494,12 @@ export async function buildFlowers(lib, s, palette) {
   const handleContact = basket ? basketHandleContact(wrapper, lip) : null;
   const foamTop = lip - (basket ? 6 * (packWidth / container.width) : 2.1);
   let floralFoam;
+  const interior = handleContact
+    ? basketInteriorRadius(wrapper, centerX, foamTop)
+    : null;
+  const insertionRadius = interior
+    ? Math.min(interior.radius - 0.65, Math.max(3.4, Math.sqrt(count) * 0.75))
+    : null;
   const foamAnchors = [];
   if (hat || basket) {
     const foam = new THREE.Mesh(
@@ -520,7 +528,7 @@ export async function buildFlowers(lib, s, palette) {
     bottle ? packWidth * 0.48 : mouthRadius,
   );
   const canopyRadius = Math.max(...positions.map((p) => Math.hypot(p.x, p.z))),
-    baseY = (rim?.mean ?? lip) + (hat || basket ? -1.1 : -0.8);
+    baseY = (rim?.mean ?? lip) + (basket ? -3.0 : hat ? -1.1 : -0.8);
   const crown = [],
     flowerModels = [];
   for (let i = 0; i < count; i++) {
@@ -531,7 +539,8 @@ export async function buildFlowers(lib, s, palette) {
       angle = Math.atan2(p.z, p.x),
       x = centerX + p.x,
       z = p.z,
-      y = baseY + p.y;
+      // Upright tulip cups need their previous rim clearance; lowering them sinks petals into the weave.
+      y = baseY + p.y + (basket && flowerHeads[id].upright ? 1.9 : 0);
     const head = await lib.get(id, {
       size: flowerHeads[id].diameter,
       nativeColor: s.palette === 4,
@@ -701,7 +710,11 @@ export async function buildFlowers(lib, s, palette) {
         .copy(headBottom)
         .addScaledVector(dir, -(headBottom.y - foamTop + 0.6) / dir.y);
     }
-    if (basket) foamAnchors.push(bottom.clone(), binding.clone());
+    if (basket) {
+      fitBasketInsertion(bottom, centerX, insertionRadius);
+      fitBasketInsertion(binding, centerX, insertionRadius);
+      foamAnchors.push(bottom.clone(), binding.clone());
+    }
     const mouth = stemMouthPoint(
       headBottom,
       centerX,
@@ -718,9 +731,19 @@ export async function buildFlowers(lib, s, palette) {
         -Math.min(1.4, headBottom.distanceTo(mouth) * 0.45),
       );
     const stemRadius = (p.entry.plant.stemDiameterCm || 0.18) / 2;
-    root.add(
-      curvedStem([bottom, binding, mouth, shoulder, headBottom], stemRadius),
+    const flowerStem = curvedStem(
+      [bottom, binding, mouth, shoulder, headBottom],
+      stemRadius,
     );
+    root.add(flowerStem);
+    if (basket)
+      attachBasketStemLeaves(root, flowerStem, p.entry.plant, {
+        top: headBottom.y - 0.4,
+        bottom: foamTop + 0.3,
+        centerX,
+        radius: mouthRadius * 0.9,
+        phase: crown.length,
+      });
     flowerModels.push(head);
     crown.push({
       asset: id,
@@ -806,7 +829,11 @@ export async function buildFlowers(lib, s, palette) {
                 -(cut.y - foamTop + 0.6) / direction.y,
               )
           : neck;
-      if (basket) foamAnchors.push(lower.clone(), entry.clone());
+      if (basket) {
+        fitBasketInsertion(lower, centerX, insertionRadius);
+        fitBasketInsertion(entry, centerX, insertionRadius);
+        foamAnchors.push(lower.clone(), entry.clone());
+      }
       const path = [
         lower,
         entry,
@@ -819,8 +846,7 @@ export async function buildFlowers(lib, s, palette) {
   if (basket && foamAnchors.length) {
     // Fit the support to the actual inserted stems, rather than filling the
     // entire basket mouth with an exposed flat green disc.
-    const anchorBounds = new THREE.Box3().setFromPoints(foamAnchors);
-    const center = anchorBounds.getCenter(new THREE.Vector3());
+    const center = new THREE.Vector3(centerX, foamTop - 1.1, 0);
     const radius =
       Math.max(
         ...foamAnchors.map((point) =>

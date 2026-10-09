@@ -134,7 +134,7 @@ test("recipe decoration counts are bounded by distinct berry footprints and have
         for (let j = i + 1; j < seats.length; j++) {
           const a = seats[i],
             b = seats[j];
-          if (a.piece === b.piece)
+          if (a.piece === b.piece && a.tier === b.tier)
             assert.ok(
               Math.hypot(a.x - b.x, a.z - b.z) + 1e-6 >=
                 a.footprint + b.footprint + 0.12,

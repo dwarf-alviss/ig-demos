@@ -222,7 +222,7 @@ try {
       await page.locator('[data-category="decor"]').click();
       assert.equal(
         await page.locator('[data-asset="bk-berry-strawberry"]').isDisabled(),
-        true,
+        false,
       );
       assert.equal(
         await page.locator('[data-asset="bk-berry-blueberry"]').isDisabled(),

@@ -1,104 +1,51 @@
 {
-  "bundleHash": "8c775822a0b888d370417590a281b4fba5252343fa4200598083b9b144ae25a3",
-  "status": "physical-checks-pass-visual-review-incomplete",
-  "fullSuite": {
-    "bundleHash": "8c775822a0b888d370417590a281b4fba5252343fa4200598083b9b144ae25a3",
-    "passed": 69,
-    "total": 69,
-    "durationMs": 52501.1127
+  "bundleHash": "af88e96d0b3e91943500f334ee4c2e85ac24fee69af8187de86c99accab654ae",
+  "phase": "tier-cluster-and-basket-correction",
+  "complete": false,
+  "fullTests": {
+    "bundleHash": "a5de8ce335d4",
+    "passed": 72,
+    "failed": 0,
+    "durationMs": 118812.1698,
+    "note": "Before the final native upright-tulip clearance restoration."
   },
-  "subsequentStateChange": {
-    "description": "Clear toppers unavailable in the selected recipe, avoiding hidden accessories and phantom price.",
-    "currentTargetTestsPassed": 20,
+  "currentTargetTests": {
+    "passed": 7,
+    "failed": 0,
     "files": [
-      "tests/recipe-topper-persistence.test.mjs",
-      "tests/domain-construction.test.mjs",
-      "tests/studio-v2.test.mjs"
+      "tests/basket-attachment.test.mjs",
+      "tests/domain-basket-contact.test.mjs",
+      "tests/composition-refinement.test.mjs",
+      "tests/native-setting.test.mjs (native flower/vase and basket greenery checks)"
     ]
   },
+  "fourPoseVisualReview": {
+    "nativeCakes": 27,
+    "domainCakes": 2,
+    "nativeFlowers": 20,
+    "domainFlowers": 3,
+    "total": 52,
+    "personallyViewed": 52,
+    "idealAcceptance": false
+  },
+  "wideBasketProbe": {
+    "cases": 567,
+    "failures": 0,
+    "bundleHash": "af88e96d0b3e91943500f334ee4c2e85ac24fee69af8187de86c99accab654ae",
+    "currentBundle": true
+  },
   "ui": {
-    "passed": 3,
-    "currentBundle": true,
-    "mobilePhotosPersonallyViewed": 3,
-    "verifiedUnchangedUIBundle": "5a78254afc4a6d5a3313a1d1a8e2fd42151329a3e3aeea4bc7fa6bb00b139b08",
-    "desktopPhotosPersonallyViewed": 3
+    "passedProjects": 3,
+    "currentBundle": true
   },
   "exports": {
-    "passedProjects": 3,
-    "currentBundle": true,
-    "verifiedPreviousBundle": "5a78254afc4a6d5a3313a1d1a8e2fd42151329a3e3aeea4bc7fa6bb00b139b08"
+    "passedFiles": 6,
+    "currentBundle": true
   },
-  "capture": {
-    "native": 14300,
-    "domain": 5388,
-    "total": 19688,
-    "failed": 0,
-    "pending": 0,
-    "note": "Current and explicitly preserved geometry family evidence. Capture completion does not imply personal visual acceptance."
-  },
-  "crumble": {
-    "nativeStates": 979,
-    "domainStates": 53,
-    "realVertexPlacements": 5188,
-    "footprintViolations": 0,
-    "contactReviewCases": 27
-  },
-  "basket": {
-    "productionGeometryPreservedFrom": "f74a91e3e956",
-    "nativeCases": 567,
-    "domainCases": 84,
-    "coreViolations": 0,
-    "handleDiagnosticSpecies": 10,
-    "domainHandleSizes": 3,
-    "handleIntersections": 0
-  },
-  "remaining": [
-    "Small flower crowns expose support and lower stems.",
-    "Dense floral overhang and plant-by-plant composition need further review.",
-    "Dense cake decor remains overly regular; cupcake crumble has roughly 1mm sampled clearance.",
-    "Not every captured state has been personally viewed.",
-    "Mobile heavy-scene performance remains unresolved."
-  ],
-  "unpromotedBasketTrial": {
-    "bundleHash": "4d08876e0ca3daa7f5a17542ce77327cf3252ee0d3e57b5d8cf30276e1adc248",
-    "description": "Tighter .92 area factor with minimum14cm basket; horizontal source-mesh cuts constrain inserted stem anchors and foam radius.",
-    "captureCases": 20,
-    "captureFailures": 0,
-    "personallyViewedFourPoseCases": 20,
-    "full567BuildProbe": "passed with finite crown/transform assertions, zero errors and core overlaps"
-  },
-  "previousBundleHash": "5a78254afc4a6d5a3313a1d1a8e2fd42151329a3e3aeea4bc7fa6bb00b139b08",
-  "caramelCorrection": {
-    "sizeCm": 5.2,
-    "rotation": "lay on flank; preserve source proportions and UVs",
-    "reservedRadiusCm": 2.85,
-    "actualGeometryCases": 841,
-    "actualGeometryPieces": 1806,
-    "failed": 0,
-    "contactSampleCases": 32,
-    "personallyViewedSparseCases": 20,
-    "personallyViewedDenseCases": 12,
-    "remainingVisualIssue": "Dense arrangement is mechanically scattered; not accepted as visually complete",
-    "canonicalMatrixPendingCapture": 0,
-    "recapturedCases": 775,
-    "newBalancedStates": 115,
-    "additionalRecapturedCases": 107,
-    "personallyViewedAdditionalFourPoseCases": 107
-  },
-  "experimentalBasket": {
-    "bundleHash": "4d08876e0ca3daa7f5a17542ce77327cf3252ee0d3e57b5d8cf30276e1adc248",
-    "promoted": false,
-    "finiteTransformsAndCrownCases": 567,
-    "coreViolations": 0,
-    "attachmentAndActualSupportIntersectionCases": 30,
-    "failed": 0,
-    "remainingVisualIssue": "Visible support and exposed stems remain in small flower arrangements"
-  },
-  "pendantTopInspection": {
-    "geometryDefectConfirmed": false,
-    "cause": "Close perspective top camera magnifies the upper bail and obscures the thin pendant behind it",
-    "trialHash": "5e3ea6d1b052c99f1aa74667c4fc17fb4a483375ca48e6c2bbf5559b50feadeb",
-    "promoted": false,
-    "reason": "Remote camera shows complete projection but makes the piece too small; needs a considered inspection view"
-  }
+  "openDefects": [
+    "Small support patch remains visible from above in sparse upright bouquets.",
+    "Dense summer baskets still have a wide silhouette.",
+    "Several large caramel spirals dominate a single pastry composition.",
+    "Full cake and basket combination images require refresh after layout changes; previous hashes remain historical evidence."
+  ]
 }

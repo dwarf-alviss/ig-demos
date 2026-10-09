@@ -58,3 +58,25 @@ const radii = Object.fromEntries(
   }),
 );
 export const pastryFootprint = (id) => radii[id];
+
+// A complete body envelope comes from the calibrated top-down mesh samples.
+// Its rectangular bounds are conservative for rounded and heart-shaped bodies.
+export function pastryBodyClearance(id, x, z) {
+  const s = surfaces[id];
+  const dx = Math.max(s.minX - x, 0, x - s.maxX),
+    dz = Math.max(s.minZ - z, 0, z - s.maxZ);
+  if (dx === 0 && dz === 0)
+    return -Math.min(x - s.minX, s.maxX - x, z - s.minZ, s.maxZ - z);
+  return Math.hypot(dx, dz) - 0.12;
+}
+export function pastrySideRadius(id, angle) {
+  const s = surfaces[id],
+    c = Math.cos(angle),
+    z = Math.sin(angle);
+  return (
+    Math.min(
+      Math.abs((c > 0 ? s.maxX : s.minX) / c),
+      Math.abs((z > 0 ? s.maxZ : s.minZ) / z),
+    ) + 0.12
+  );
+}

@@ -530,7 +530,7 @@ export async function buildRecipeCake(lib, state) {
       ? (sample !== null
           ? 0.32 + sample * scale
           : anchor?.y || recipe.heightCm) - 0.03
-      : top - 0.09;
+      : top - 0.09 - (tiers - 1 - (seat.tier ?? tiers - 1)) * (total + 0.18);
     if (isSmall && recipe.nativeBase) {
       precisePlace(n, px + seat.x, 0, pz + seat.z);
       const b = preciseBounds(n),

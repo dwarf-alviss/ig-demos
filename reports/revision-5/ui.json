@@ -1,6 +1,6 @@
 [
   {
-    "bundleHash": "8c775822a0b888d370417590a281b4fba5252343fa4200598083b9b144ae25a3",
+    "bundleHash": "af88e96d0b3e91943500f334ee4c2e85ac24fee69af8187de86c99accab654ae",
     "cssHash": "c00dca5281074cd89d8c144f56f17ac5ae7ec6bde912637c7ac9a1366d5fe8f6",
     "passed": true,
     "nativeFindingsChecked": false,
@@ -100,43 +100,47 @@
             "x": 7.5,
             "z": 0,
             "footprint": 3.5961644131767843,
+            "asset": "bk-pastry-brownie-bite",
             "surface": -1
           },
           {
             "x": 4.592425496802575e-16,
             "z": 7.5,
             "footprint": 3.5961644131767843,
+            "asset": "bk-pastry-brownie-bite",
             "surface": -1
           },
           {
             "x": -7.5,
             "z": 9.18485099360515e-16,
             "footprint": 3.5961644131767843,
+            "asset": "bk-pastry-brownie-bite",
             "surface": -1
           },
           {
             "x": -1.3777276490407722e-15,
             "z": -7.5,
             "footprint": 3.5961644131767843,
+            "asset": "bk-pastry-brownie-bite",
             "surface": -1
           },
           {
-            "x": -7.1301331484028765,
-            "z": 6.371604365119577,
+            "x": 9.062681254004785,
+            "z": 5.1350570700102764,
             "y": 0.4499999940395355,
             "footprint": 1.85,
             "surface": -1
           },
           {
-            "x": 7.064678213499328,
-            "z": 6.444102935185961,
+            "x": -4.635252300533163,
+            "z": 6.034699972521291,
             "y": 0.4499999940395355,
             "footprint": 1.85,
             "surface": -1
           },
           {
-            "x": 0.642710763433384,
-            "z": 1.8472967319633886,
+            "x": 0.1877301883885436,
+            "z": -0.0463090599073519,
             "y": 0.4499999940395355,
             "footprint": 1.85,
             "surface": -1
@@ -159,7 +163,7 @@
     }
   },
   {
-    "bundleHash": "8c775822a0b888d370417590a281b4fba5252343fa4200598083b9b144ae25a3",
+    "bundleHash": "af88e96d0b3e91943500f334ee4c2e85ac24fee69af8187de86c99accab654ae",
     "cssHash": "c00dca5281074cd89d8c144f56f17ac5ae7ec6bde912637c7ac9a1366d5fe8f6",
     "passed": true,
     "nativeFindingsChecked": false,
@@ -391,7 +395,7 @@
     }
   },
   {
-    "bundleHash": "8c775822a0b888d370417590a281b4fba5252343fa4200598083b9b144ae25a3",
+    "bundleHash": "af88e96d0b3e91943500f334ee4c2e85ac24fee69af8187de86c99accab654ae",
     "cssHash": "c00dca5281074cd89d8c144f56f17ac5ae7ec6bde912637c7ac9a1366d5fe8f6",
     "passed": true,
     "nativeFindingsChecked": true,

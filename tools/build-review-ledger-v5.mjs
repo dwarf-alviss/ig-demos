@@ -1,3 +1,4 @@
+import culinaryCompositions from "../shared/culinary-compositions.json" with { type: "json" };
 import { readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { catalogue } from "../shared/catalogue.js";
@@ -99,6 +100,29 @@ for (const suite of ["native", "domain"]) {
         if (e.code !== "ENOENT") throw e;
       }
     }
+  }
+  // Tier seating, plated body exclusions and recipe ordinals changed together.
+  // Preserve unchanged single round tiers and recipe layouts whose ingredient ordinals do not affect their positions.
+  // Other old cake images and all old basket images are historical.
+  for (const [key, row] of preserved) {
+    const state = JSON.parse(key);
+    const changedCake =
+      row.kind === "cakes" &&
+      (suite === "native"
+        ? state.base?.includes("-pastry-") ||
+          state.base?.includes("hex") ||
+          state.tiers > 1
+        : state.tiers > 1 ||
+          (culinaryCompositions[state.pattern]?.layout === "wreath" &&
+            state.foodDecor?.some(
+              (id, i) =>
+                recipes[state.pattern]?.compatibleDecor.indexOf(id) !== i,
+            )));
+    if (
+      changedCake ||
+      (row.kind === "flowers" && state.pack === "fl-wrap-basket-rattan")
+    )
+      preserved.delete(key);
   }
   // Basket support and crown corrections invalidate all native baskets.
   if (suite === "native")
