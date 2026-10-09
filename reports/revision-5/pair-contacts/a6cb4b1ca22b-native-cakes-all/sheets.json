@@ -1,0 +1,20 @@
+[
+  {
+    "file": "page-0.jpg",
+    "ids": [
+      "cakes-02c85557020d5234",
+      "cakes-8470cd29c4467815",
+      "cakes-fb6f646ded46d722",
+      "cakes-22e1c9fe57db45d6",
+      "cakes-60c8681690fdec0f",
+      "cakes-1e761bbf03744486"
+    ],
+    "bundleHash": "a6cb4b1ca22b012a44fe248ba785bcad8e6f48aa15beccbcbb33c9b254afb5ee",
+    "poses": [
+      "front",
+      "side",
+      "top",
+      "back"
+    ]
+  }
+]
