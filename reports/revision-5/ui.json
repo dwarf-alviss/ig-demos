@@ -1,6 +1,6 @@
 [
   {
-    "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
+    "bundleHash": "c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970",
     "cssHash": "c00dca5281074cd89d8c144f56f17ac5ae7ec6bde912637c7ac9a1366d5fe8f6",
     "passed": true,
     "nativeFindingsChecked": false,
@@ -148,8 +148,8 @@
         ]
       },
       "framing": {
-        "maxX": 0.8499332383113536,
-        "maxY": 0.6298004556842439
+        "maxX": 0.8499248921119923,
+        "maxY": 0.6298541396229016
       },
       "drawCalls": 17,
       "triangles": 448754,
@@ -157,13 +157,13 @@
       "textures": 11,
       "box": [
         26.592329025268555,
-        4.631567904034235,
+        4.629603618942284,
         26.592329025268555
       ]
     }
   },
   {
-    "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
+    "bundleHash": "c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970",
     "cssHash": "c00dca5281074cd89d8c144f56f17ac5ae7ec6bde912637c7ac9a1366d5fe8f6",
     "passed": true,
     "nativeFindingsChecked": false,
@@ -395,7 +395,7 @@
     }
   },
   {
-    "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
+    "bundleHash": "c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970",
     "cssHash": "c00dca5281074cd89d8c144f56f17ac5ae7ec6bde912637c7ac9a1366d5fe8f6",
     "passed": true,
     "nativeFindingsChecked": true,

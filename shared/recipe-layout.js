@@ -1,4 +1,5 @@
 import { recipeFootprintSupported } from "./recipe-outline.js";
+import { tierClusterPoint } from "./tier-clusters.js";
 import culinaryCompositions from "./culinary-compositions.json" with { type: "json" };
 import { recipes, ingredients } from "./domain.js";
 import { cakeParts } from "./assembly-profiles.js";
@@ -120,14 +121,14 @@ export function recipeSeats(state) {
             }
           }
           if (inner) {
-            const a = 1.05 + ((i * 0.67 + step * 0.31) % (Math.PI * 2 - 1.25));
-            const rr =
-              inner +
-              footprint +
-              0.14 +
-              (radius - inner - footprint * 2 - 0.28) * (ring / 5);
-            x = Math.cos(a) * rr;
-            z = Math.sin(a) * rr;
+            const point = tierClusterPoint(
+              { id: tier, radius, inner },
+              footprint,
+              ring * 80 + step,
+              composition,
+            );
+            if (!point) continue;
+            ({ x, z } = point);
           }
           if (Math.hypot(x, z) - footprint < inner) continue;
           if (

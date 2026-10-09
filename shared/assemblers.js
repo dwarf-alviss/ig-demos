@@ -260,11 +260,6 @@ export async function buildCake(lib, s, palette) {
       }
       if (cakeParts[id]) size = cakeParts[id].size;
       if (cakeParts[id]?.rotation) rotation = [...cakeParts[id].rotation];
-      if (
-        id.includes("bk-berry-") ||
-        ["bk-decor-crumble-cluster", "bk-decor-caramel-spiral"].includes(id)
-      )
-        rotation = foodPose(id, i, Math.atan2(z, x));
       let seat;
       if (a.role !== "border") {
         seat = findCakeSeat(
@@ -279,9 +274,19 @@ export async function buildCake(lib, s, palette) {
         x = seat.x;
         z = seat.z;
         if (seat.laidFlat) rotation = [...cakeParts[id].flatRotation];
+        if (seat.rotation) rotation = [...seat.rotation];
       }
-      if (id === "bk-berry-raspberry" && seat?.surface === -1)
-        rotation = foodPose(id, i, Math.atan2(z, x), false, "plate");
+      if (
+        id.includes("bk-berry-") ||
+        ["bk-decor-crumble-cluster", "bk-decor-caramel-spiral"].includes(id)
+      )
+        rotation = foodPose(
+          id,
+          i,
+          Math.atan2(z, x),
+          Boolean(seat?.laidFlat),
+          seat?.surface === -1 ? "plate" : "cake",
+        );
       if (pastry && !seat) {
         const p = pastryAnchors[(slot + i) % pastryAnchors.length];
         x = p.x + Math.cos(i * 2.4) * 0.6;
@@ -306,10 +311,12 @@ export async function buildCake(lib, s, palette) {
         regional: id.includes("berry"),
       });
       if (id.includes("wafer")) {
-        const d = bounds(decor).getSize(new THREE.Vector3());
-        decor.scale.x *= 0.7 / d.x;
-        decor.scale.z *= 0.7 / d.z;
-        decor.rotation.set(...rotation);
+        if (!seat?.capsule) {
+          const d = bounds(decor).getSize(new THREE.Vector3());
+          decor.scale.x *= 0.7 / d.x;
+          decor.scale.z *= 0.7 / d.z;
+        }
+        decor.rotation.set(...rotation, seat?.capsule ? "YXZ" : "XYZ");
       }
       if (seat?.laidFlat)
         decor.rotateOnWorldAxis(new THREE.Vector3(0, 1, 0), i * 0.83);
@@ -498,7 +505,7 @@ export async function buildFlowers(lib, s, palette) {
     ? basketInteriorRadius(wrapper, centerX, foamTop)
     : null;
   const insertionRadius = interior
-    ? Math.min(interior.radius - 0.65, Math.max(1.6, Math.sqrt(count) * 0.35))
+    ? Math.min(interior.radius - 0.65, Math.max(0.7, Math.sqrt(count) * 0.18))
     : null;
   const foamAnchors = [];
   if (hat || basket) {

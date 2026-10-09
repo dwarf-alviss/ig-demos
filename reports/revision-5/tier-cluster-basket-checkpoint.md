@@ -1,11 +1,11 @@
-# Basket proportions and individual pastry garnish
+# Tier groups, lily insertion and wafer seating
 
-Current production bundle: be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371.
+Current production bundle: c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970.
 
-Dense ready-made summer baskets now use a larger supplied basket mesh for 19 and 29 stems, preserving original flower sizes. Native mixed baskets preserve their compact variants up to 11 stems and can grow by up to 30% for larger arrangements; the size calculation still considers each supplied flower diameter. Compact stalk insertion reduces the exposed support radius without detaching calyx contacts.
+Lower tier decorations search small asymmetric groups on the usable ledge, using each ingredient footprint and actual polygon boundaries. Food orientation uses the final seated position. Long wafer rolls lie on their side on tier roofs, retain the supplied diameter, and check their full length against the roof and nearby decoration; capsule collisions include crossed rods and berries near their ends. Plate/pastry placement remains separately calibrated.
 
-A caramel spiral is limited to one per small pastry. Quantity normalization, the increase control and restored state agree on that limit. Large caramel source dimensions and textured materials are preserved. Previous real tier ledges, calibrated pastry envelopes and bounded berry side groups remain in place.
+Basket stalk insertion and support radius are smaller. Lilies receive three narrow leaves higher along their own curved stalks, bounded by the basket mouth. Count-aware basket sizing and original flower dimensions are preserved.
 
-Validation on this exact bundle: all 73 tests passed, including quantity-control and increasing basket-size regressions. The 567-case native basket core/finiteness probe passed. All 55 current configurations were personally inspected in front, side, top and back views, including three mixed 33-stem baskets. Three browser interface checks and six JSON/PNG export checks passed.
+Validation: the full 74-test suite passed. After adding one collision regression, all five composition tests passed again without a production change. The native basket core/finiteness probe passed 567 cases. Personally inspected 89 configurations in four views (55 native cakes, 29 native baskets, 2 recipe cakes, 3 recipe baskets). Three browser interface checks and six export checks passed on this bundle. The first interface run timed out on a repeated cart action; the full retry passed, but its original cause remains unconfirmed.
 
-Visual acceptance remains open: sparse lily stems and the artistic spacing of some lower-tier berries require further refinement. The canonical matrix was renormalized after the caramel limit; stale evidence is kept historical rather than presented as current. This checkpoint is not an ideal or all-combinations-complete claim.
+Acceptance is incomplete: some sparse lily baskets expose inner stalk/support; limited-quantity cakes can still look sparse. This is a checkpoint with improvements and recorded defects, not a claim that every combination is ideal.

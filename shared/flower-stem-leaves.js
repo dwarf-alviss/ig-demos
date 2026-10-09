@@ -20,8 +20,10 @@ export function attachBasketStemLeaves(
 ) {
   const dimensions = profiles[plant.id];
   if (!dimensions || top - bottom < 1) return;
-  for (let j = 0; j < 2; j++) {
-    const y = bottom + (top - bottom) * (0.25 + j * 0.32),
+  const lily = plant.id === "lily";
+  for (let j = 0; j < (lily ? 3 : 2); j++) {
+    const y =
+        bottom + (top - bottom) * (lily ? 0.5 + j * 0.2 : 0.25 + j * 0.32),
       position = stemPointAtHeight(stem, y);
     const radial = Math.hypot(position.x - centerX, position.z);
     // Point into the arrangement, keeping the entire leaf within the basket mouth.

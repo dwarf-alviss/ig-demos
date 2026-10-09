@@ -1,16 +1,22 @@
 {
-  "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
-  "phase": "basket-sizing-and-individual-caramel-portions",
+  "bundleHash": "c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970",
+  "phase": "tier-clusters-lily-insertion-and-flat-wafer-seats",
   "complete": false,
   "fullTests": {
-    "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
-    "passed": 73,
+    "bundleHash": "c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970",
+    "passed": 74,
     "failed": 0,
-    "durationMs": 180257.6062
+    "durationMs": 267073.38
+  },
+  "targetTests": {
+    "passed": 5,
+    "failed": 0,
+    "durationMs": 74192.2576,
+    "note": "A collision regression was added after the full suite; the five composition tests were rerun. Production code did not change."
   },
   "fourPoseVisualReview": {
-    "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
-    "configurations": 55,
+    "bundleHash": "c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970",
+    "configurations": 89,
     "poses": [
       "front",
       "side",
@@ -18,8 +24,8 @@
       "back"
     ],
     "native": {
-      "flowers": 23,
-      "cakes": 27
+      "flowers": 29,
+      "cakes": 55
     },
     "domain": {
       "flowers": 3,
@@ -29,24 +35,25 @@
     "status": "reviewed-defect"
   },
   "wideBasketProbe": {
-    "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
+    "bundleHash": "c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970",
     "cases": 567,
     "failures": 0,
-    "scope": "Native bloom core separation and finite geometry; this is not a full vertex collision or visual acceptance proof."
+    "scope": "Native bloom core separation and finite geometry, not full vertex collision or visual acceptance."
   },
   "ui": {
-    "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
+    "bundleHash": "c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970",
     "passed": 3,
-    "failed": 0
+    "failed": 0,
+    "note": "The first run timed out on the second cart addition; a complete retry passed all three projects. The timeout cause was not established."
   },
   "exports": {
-    "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
+    "bundleHash": "c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970",
     "passed": 6,
     "failed": 0
   },
   "openDefects": [
-    "Some sparse lily baskets expose stem sections between blooms.",
-    "Some lower cake tiers have sparse, evenly spaced berry placements that still need artistic refinement.",
-    "The canonical matrix contains combinations whose visual evidence has not been refreshed; complete per-combination acceptance remains open."
+    "Sparse lily baskets still expose some inner stalk/support.",
+    "Some limited-quantity cake arrangements remain visually sparse, including lower tiers.",
+    "The full canonical matrix has not been visually accepted; previous affected-family captures are historical."
   ]
 }

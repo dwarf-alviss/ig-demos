@@ -1,4 +1,6 @@
 import hexRoof from "./native-hex-roof.json" with { type: "json" };
+import { tierClusterPoint } from "./tier-clusters.js";
+import { cakeSeatsOverlap } from "./cake-seat-overlap.js";
 import {
   pastryBodyClearance,
   pastrySideRadius,
@@ -51,6 +53,7 @@ export const cakeParts = {
     rotation: [-0.32, 0, 0],
     flatFootprint: 4,
     flatRotation: [Math.PI / 2, 0, 0],
+    tierCapsule: { halfLength: 3.75, radius: 0.42 },
   },
 };
 export const containers = {
@@ -189,7 +192,16 @@ export function findCakeSeat(
             !surface.asset.includes("cupcake") &&
             !surface.asset.includes("brownie"))),
     );
-    footprint = laidFlat ? profile.flatFootprint : uprightFootprint;
+    const rod =
+      surface.id >= 0 &&
+      !surface.asset &&
+      !pastries.length &&
+      profile?.tierCapsule;
+    footprint = rod
+      ? rod.radius
+      : laidFlat
+        ? profile.flatFootprint
+        : uprightFootprint;
     if (footprint + 0.08 > surface.radius) continue;
     for (let n = 0; n < 1600; n++) {
       let angle = n * 2.399963,
@@ -200,9 +212,39 @@ export function findCakeSeat(
         angle = Math.PI * 0.08 + ((n * 2.399963) % (Math.PI * 0.84));
         fraction = Math.max(0.12, 0.88 - Math.floor(n / 160) * 0.14);
       }
-      const radius = (surface.radius - footprint - 0.08) * fraction;
+      let radius = (surface.radius - footprint - 0.08) * fraction;
       let x = surface.x + Math.cos(angle) * radius,
         z = surface.z + Math.sin(angle) * radius;
+      if ((surface.inner > 0 || surface.exclusion) && n < 960) {
+        const point = tierClusterPoint(surface, footprint, n, layout);
+        if (!point) continue;
+        ({ x, z } = point);
+        radius = Math.hypot(x - surface.x, z - surface.z);
+      }
+      const rodAngle = Math.atan2(z - surface.z, x - surface.x);
+      const capsule = rod && {
+        ax: x - Math.sin(rodAngle) * rod.halfLength,
+        az: z + Math.cos(rodAngle) * rod.halfLength,
+        bx: x + Math.sin(rodAngle) * rod.halfLength,
+        bz: z - Math.cos(rodAngle) * rod.halfLength,
+      };
+      if (
+        capsule &&
+        Array.from({ length: 17 }, (_, j) => {
+          const px = capsule.ax + ((capsule.bx - capsule.ax) * j) / 16;
+          const pz = capsule.az + ((capsule.bz - capsule.az) * j) / 16;
+          const r = Math.hypot(px - surface.x, pz - surface.z);
+          return (
+            r + footprint > surface.radius - 0.08 ||
+            (surface.inner > 0 && r - footprint < surface.inner) ||
+            (surface.outline &&
+              polygonClearance(surface.outline, px, pz) < footprint + 0.08) ||
+            (surface.exclusion &&
+              polygonClearance(surface.exclusion, px, pz) > -footprint - 0.12)
+          );
+        }).some(Boolean)
+      )
+        continue;
       if (surface.id < 0 && pastries.length && n < 960) {
         const anchor =
           pastries[(index + Math.floor(n / 160)) % pastries.length];
@@ -276,7 +318,7 @@ export function findCakeSeat(
             (p.asset
               ? pastryBodyClearance(p.asset, x - p.x, z - p.z) <
                 footprint + 0.16
-              : Math.hypot(x - p.x, z - p.z) < footprint + p.footprint + 0.16),
+              : cakeSeatsOverlap(p, { x, z, footprint, capsule })),
         )
       )
         continue;
@@ -287,6 +329,7 @@ export function findCakeSeat(
         footprint,
         surface: surface.id,
         ...(laidFlat ? { laidFlat: true } : {}),
+        ...(capsule ? { capsule, rotation: [Math.PI / 2, -rodAngle, 0] } : {}),
       };
       occupied.push(seat);
       return seat;

@@ -238,7 +238,7 @@ export async function buildComposedBouquet(lib, state) {
   const insertionRadius = interior
     ? Math.min(
         interior.radius - 0.65,
-        Math.max(1.6, Math.sqrt(positions.length) * 0.35),
+        Math.max(0.7, Math.sqrt(positions.length) * 0.18),
       )
     : null;
   const foamAnchors = [];

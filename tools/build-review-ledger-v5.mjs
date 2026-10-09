@@ -111,7 +111,12 @@ for (const suite of ["native", "domain"]) {
       (suite === "native"
         ? state.base?.includes("-pastry-") ||
           state.base?.includes("hex") ||
-          state.tiers > 1
+          state.tiers > 1 ||
+          state.decor?.some(
+            (id) =>
+              id.startsWith("bk-berry-") ||
+              ["bk-decor-crumble-cluster", "bk-decor-caramel-spiral", "bk-decor-wafer-roll"].includes(id),
+          )
         : state.tiers > 1 ||
           (culinaryCompositions[state.pattern]?.layout === "wreath" &&
             state.foodDecor?.some(
