@@ -2050,3 +2050,326 @@ body[data-architecture="fashion-c"] {
     transition: none;
   }
 }
+/* Content follows each brand's own visual rhythm. */
+.celebration-guide,
+.flower-moods,
+.jewel-materials,
+.fashion-fabric {
+  padding: 80px 4vw;
+  border-top: 1px solid var(--line);
+}
+.celebration-guide header,
+.flower-moods header,
+.jewel-materials header,
+.fashion-fabric header {
+  max-width: 780px;
+  margin-bottom: 40px;
+}
+.celebration-guide h2,
+.flower-moods h2,
+.jewel-materials h2,
+.fashion-fabric h2,
+.cake-flavour-board h2,
+.flower-gift-story h2,
+.flower-care h2,
+.jewel-detail-story h2,
+.jewel-spec-note h2,
+.fashion-capsule-guide h2,
+.content-faq h2 {
+  font-size: clamp(32px, 4.5vw, 68px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  margin: 18px 0 24px;
+}
+.story-cards,
+.fabric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+.story-cards img,
+.fabric-grid img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 22px;
+}
+.story-cards article > span {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.story-cards h3,
+.fabric-grid h3,
+.material-ledger h3 {
+  font-size: 28px;
+  font-weight: 400;
+  margin: 16px 0;
+}
+.story-cards p,
+.fabric-grid p,
+.material-ledger p,
+.flower-care p,
+.fashion-capsule-guide p {
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 440px;
+}
+.story-cards a,
+.fabric-grid a,
+.flower-gift-story a,
+.jewel-detail-story a,
+.fashion-capsule-guide > a {
+  display: inline-block;
+  padding: 12px 0;
+  border-bottom: 1px solid currentColor;
+  font-size: 13px;
+}
+.cake-flavour-board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9vw;
+  padding: 70px 4vw;
+  background: var(--soft);
+}
+.cake-flavour-board ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cake-flavour-board li {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.cake-flavour-board b {
+  font-size: 23px;
+  font-weight: 400;
+}
+.cake-flavour-board p {
+  line-height: 1.7;
+}
+.cake-flavour-board a {
+  font-size: 13px;
+}
+.flower-gift-story,
+.jewel-detail-story {
+  padding: 80px 4vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7vw;
+  align-items: center;
+  border-top: 1px solid var(--line);
+}
+.flower-gift-story figure,
+.jewel-detail-story figure {
+  margin: 0;
+}
+.flower-gift-story img,
+.jewel-detail-story img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+.flower-gift-story figcaption,
+.jewel-detail-story figcaption {
+  font-size: 11px;
+  margin-top: 14px;
+}
+.flower-gift-story p,
+.jewel-detail-story p {
+  line-height: 1.8;
+  max-width: 520px;
+}
+.flower-gift-story ol {
+  padding-left: 20px;
+  line-height: 1.9;
+}
+.flower-gift-story li {
+  padding: 10px 0;
+}
+.flower-care {
+  padding: 70px 4vw;
+  background: var(--soft);
+}
+.flower-care > div,
+.fashion-capsule-guide > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+.flower-care article {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+}
+.flower-care article > span {
+  font-size: 11px;
+}
+.flower-care h3 {
+  font-size: 26px;
+  font-weight: 400;
+}
+.material-ledger {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+}
+.material-ledger article {
+  padding: 30px;
+  border-right: 1px solid var(--line);
+}
+.material-ledger article:last-child {
+  border-right: 0;
+}
+.material-ledger span {
+  font-size: 11px;
+}
+.jewel-detail-story dl > div {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+}
+.jewel-detail-story dd {
+  margin: 0;
+  font-size: 13px;
+}
+.jewel-spec-note {
+  padding: 65px 4vw;
+  background: var(--soft);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.jewel-spec-note > .eyebrow,
+.jewel-spec-note small {
+  grid-column: 1/-1;
+}
+.jewel-spec-note p {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+  line-height: 1.6;
+}
+.jewel-spec-note b {
+  margin-right: 18px;
+}
+.jewel-spec-note small {
+  max-width: 680px;
+  line-height: 1.7;
+}
+.fashion-fabric .fabric-grid img {
+  height: 360px;
+}
+.fashion-capsule-guide {
+  padding: 70px 4vw;
+  border-top: 1px solid var(--line);
+}
+.fashion-capsule-guide article {
+  padding: 24px;
+  border: 1px solid var(--line);
+}
+.fashion-capsule-guide article > span {
+  font-size: 11px;
+}
+.fashion-capsule-guide h3 {
+  font-size: 25px;
+  font-weight: 400;
+}
+.fashion-capsule-guide > a {
+  margin-top: 30px;
+}
+.content-faq {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  padding: 80px 4vw;
+  gap: 7vw;
+  border-top: 1px solid var(--line);
+}
+.content-faq details {
+  border-bottom: 1px solid var(--line);
+  padding: 24px 0;
+}
+.content-faq summary {
+  cursor: pointer;
+  font-size: 19px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  list-style: none;
+}
+.content-faq summary::-webkit-details-marker {
+  display: none;
+}
+.content-faq details[open] summary span {
+  transform: rotate(45deg);
+}
+.content-faq details p {
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 620px;
+}
+.studio-heading > p {
+  max-width: 620px;
+  line-height: 1.7;
+  font-size: 15px;
+}
+.studio-mount iframe {
+  height: 1150px;
+}
+.studio-mount {
+  overflow: hidden;
+}
+@media (max-width: 760px) {
+  .celebration-guide,
+  .flower-moods,
+  .jewel-materials,
+  .fashion-fabric,
+  .flower-care,
+  .fashion-capsule-guide,
+  .content-faq,
+  .flower-gift-story,
+  .jewel-detail-story,
+  .jewel-spec-note,
+  .cake-flavour-board {
+    padding: 48px 5vw;
+  }
+  .story-cards,
+  .fabric-grid,
+  .material-ledger,
+  .flower-care > div,
+  .fashion-capsule-guide > div,
+  .content-faq,
+  .flower-gift-story,
+  .jewel-detail-story,
+  .jewel-spec-note,
+  .cake-flavour-board {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .story-cards img,
+  .fabric-grid img,
+  .fashion-fabric .fabric-grid img {
+    height: 320px;
+  }
+  .flower-gift-story img,
+  .jewel-detail-story img {
+    height: 360px;
+  }
+  .material-ledger {
+    gap: 0;
+  }
+  .material-ledger article {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .material-ledger article:last-child {
+    border-bottom: 0;
+  }
+  .studio-section {
+    padding: 40px 3vw;
+  }
+  .content-faq summary {
+    font-size: 17px;
+  }
+}

@@ -36,17 +36,36 @@ document
   .forEach((a) =>
     a.addEventListener("click", () => selectPattern(a.dataset.setPattern)),
   );
-$("[data-load-studio]")?.addEventListener("click", () => {
-  const frame = $(".studio-mount iframe");
-  frame.src = frame.dataset.src;
-  frame.hidden = false;
-  $(".studio-placeholder").hidden = true;
-  frame.addEventListener(
+const inlineFrame = $("[data-inline-studio]");
+if (inlineFrame) {
+  inlineFrame.addEventListener(
     "load",
     () => {
+      const doc = inlineFrame.contentDocument;
+      const style = doc.createElement("style");
+      style.textContent = `body > header, body > footer, body > .skip, .studio-intro, .intro {display:none!important} body {margin:0!important; min-height:0!important} main {padding:24px!important; max-width:none!important} .atelier {position:static!important} @media(max-width:600px){ main {padding:12px!important} }`;
+      doc.head.append(style);
+      if (document.body.dataset.brand === "fashion") {
+        const theme = getComputedStyle(document.body);
+        style.textContent += `body {background:${theme.getPropertyValue("--bg")};color:${theme.getPropertyValue("--ink")}} .caption, .panel, .panel button, .panel fieldset {border-color:${theme.getPropertyValue("--line")}} .panel button {color:inherit} .panel button.active, .panel button[aria-pressed="true"], #add-capsule {background:${theme.getPropertyValue("--accent")};color:#182019;border-color:${theme.getPropertyValue("--accent")}}`;
+      }
+      doc.querySelectorAll("a[href]").forEach((link) => {
+        if (!link.getAttribute("href").startsWith("#")) link.target = "_top";
+      });
+      const fit = () => {
+        const height =
+          Math.ceil(doc.querySelector("main").getBoundingClientRect().height) +
+          8;
+        if (Math.abs(inlineFrame.clientHeight - height) > 2)
+          inlineFrame.style.height = height + "px";
+      };
+      new inlineFrame.contentWindow.ResizeObserver(fit).observe(
+        doc.querySelector("main"),
+      );
+      fit();
       let attempts = 0;
       const wait = () => {
-        if (frame.contentWindow?.studioReview?.ready()) {
+        if (inlineFrame.contentWindow?.studioReview?.ready()) {
           applyPattern();
           return;
         }
@@ -56,7 +75,8 @@ $("[data-load-studio]")?.addEventListener("click", () => {
     },
     { once: true },
   );
-});
+  inlineFrame.src = inlineFrame.dataset.src;
+}
 document.querySelectorAll("[data-draft]").forEach((form) => {
   const key = "portfolio-concept-" + form.dataset.draft;
   try {

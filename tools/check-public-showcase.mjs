@@ -30,7 +30,7 @@ for (const path of pages) {
   }
   if (path.includes("concept-") && !html.includes("data-concept="))
     throw Error("Old or incorrect content " + path);
-  if (path.endsWith("/index.html") && !html.includes("data-load-studio"))
+  if (path.endsWith("/index.html") && !html.includes("data-inline-studio"))
     throw Error("Deployment not updated " + path);
   if (path === "directions.html" && !html.includes("shared/design-previews/"))
     throw Error("Missing concept previews");
@@ -67,7 +67,8 @@ const bytes = Buffer.from(
 if (hash !== local)
   throw Error("Published constructor differs from validated local bundle");
 await writeFile(
-  process.env.PUBLIC_VALIDATION_OUTPUT || "reports/concepts-structural/public-validation.json",
+  process.env.PUBLIC_VALIDATION_OUTPUT ||
+    "reports/concepts-structural/public-validation.json",
   JSON.stringify({ base, pages: results, bundleHash: hash }, null, 2) + "\n",
 );
 console.log("Public bundle matches local");

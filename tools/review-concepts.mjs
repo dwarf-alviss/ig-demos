@@ -95,10 +95,11 @@ try {
           Number(await page.locator("[data-result-count]").textContent()) > 0,
         );
       }
-      await page.locator("[data-load-studio]").click();
+      assert.equal(await page.locator("[data-load-studio]").count(), 0);
+      await page.locator("#create").scrollIntoViewIfNeeded();
       await page
         .frameLocator(".studio-mount iframe")
-        .locator("h1")
+        .locator("main")
         .waitFor({ timeout: 60000 });
       const frame = page.frames().find((f) => f.url().endsWith("/studio.html"));
       if (kind === "fashion")

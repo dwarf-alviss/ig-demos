@@ -2,7 +2,7 @@
 
 ## Four storefronts and twelve design directions
 
-The four independent entry points are `cakes/`, `flowers/`, `jewelry/` and `fashion/`. Each has three structurally different live concepts: `index.html`, `concept-b.html` and `concept-c.html`. `directions.html` compares them using actual rendered previews. The existing catalogue, cart and studios remain available. Each storefront loads its studio inside the page only after the visitor requests it; the three 3D builders retain their existing saved designs, and fashion retains its catalogue capsule builder.
+The four independent entry points are `cakes/`, `flowers/`, `jewelry/` and `fashion/`. Each has three structurally different live concepts: `index.html`, `concept-b.html` and `concept-c.html`. `directions.html` compares them using actual rendered previews. The existing catalogue, cart and studios remain available. Each storefront initializes its studio directly inside the page without a launch button or separate-page navigation; the three 3D builders retain their existing saved designs, and fashion retains its catalogue capsule builder.
 
 Rebuild the storefront pages with `npm run showcase:build`. Run `npm run showcase:review` against a local HTTP server for desktop/mobile layout and four embedded studio checks. `reports/concepts-structural/validation.json` records desktop/mobile layouts, concept-specific interaction and successful transfer of the selected recipe/design to the embedded constructor for all twelve architectures. Cake concepts use occasions, tasting or event planning; flower concepts use a florist workbench, a message-led gift or an interior rhythm board; jewelry uses an exhibition, a technical desk or a personal archive; fashion uses an editorial issue, a wardrobe planner or a searchable real-product catalogue. These design proposals do not claim to fix the separately recorded model composition defects.
 
@@ -120,3 +120,5 @@ For the flat-decoration revision, `REVIEW_REUSE=1 node tools/review-combinations
 When only normalization has changed and displayed geometry is identical, `REVIEW_REUSE_STABLE=1` allows reuse of any exact matching state whose visible decoration count agrees with its recorded quantities. Do not use this override after material or geometry changes.
 
 Selected primary storefronts: cakes C (celebration poster), flowers B (personal letter), jewelry B (design bureau), fashion C (searchable catalogue). tools/selected-concepts.mjs controls canonical routes; all A/B/C concepts remain available at their concept URLs. reports/concepts-selected/validation.json records the routing revision checks.
+
+The selected storefronts now include brand-specific editorial guides, selection advice and expandable FAQs. Embedded studio headers are removed and their height follows their actual content, including mobile layouts. Run `node tools/review-inline-mobile.mjs` to verify all four inline studios, automatic height, overflow and FAQs.
