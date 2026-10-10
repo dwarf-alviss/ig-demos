@@ -67,7 +67,7 @@ const bytes = Buffer.from(
 if (hash !== local)
   throw Error("Published constructor differs from validated local bundle");
 await writeFile(
-  "reports/concepts-structural/public-validation.json",
+  process.env.PUBLIC_VALIDATION_OUTPUT || "reports/concepts-structural/public-validation.json",
   JSON.stringify({ base, pages: results, bundleHash: hash }, null, 2) + "\n",
 );
 console.log("Public bundle matches local");
