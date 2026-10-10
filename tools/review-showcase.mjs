@@ -57,11 +57,13 @@ try {
             .waitForFunction(() => window.studioReview?.ready(), null, {
               timeout: 90000,
             });
-        } else
+        } else {
           await frame
             .locator("#choices button")
             .first()
             .waitFor({ timeout: 30000 });
+          await page.frames().find(f => f.url().endsWith('/studio.html')).waitForFunction(() => [...document.querySelectorAll('#look img')].length === 3 && [...document.querySelectorAll('#look img')].every(i => i.complete && i.naturalWidth > 0), null, {timeout:30000});
+        }
         assert.equal(
           await page.locator(".studio-placeholder").isVisible(),
           false,

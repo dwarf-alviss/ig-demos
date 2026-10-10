@@ -18,6 +18,12 @@ for (const path of pages) {
     }),
     html = await response.text();
   if (!response.ok) throw Error(`${path}: HTTP ${response.status}`);
+  if (path !== "directions.html" && !path.endsWith("studio.html")) {
+    const kind = path.split("/")[0];
+    const variant = path.includes("concept-b") ? "b" : path.includes("concept-c") ? "c" : "a";
+    if (!html.includes(`data-architecture="${kind}-${variant}"`))
+      throw Error("Structural redesign not published " + path);
+  }
   if (path.includes("concept-") && !html.includes("data-concept="))
     throw Error("Old or incorrect content " + path);
   if (path.endsWith("/index.html") && !html.includes("data-load-studio"))
@@ -57,7 +63,7 @@ const bytes = Buffer.from(
 if (hash !== local)
   throw Error("Published constructor differs from validated local bundle");
 await writeFile(
-  "reports/showcase-final/public-validation.json",
+  "reports/concepts-structural/public-validation.json",
   JSON.stringify({ base, pages: results, bundleHash: hash }, null, 2) + "\n",
 );
 console.log("Public bundle matches local");
