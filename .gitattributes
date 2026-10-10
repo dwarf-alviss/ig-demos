@@ -1,2 +1,0 @@
-# Preserve generated shader strings; their trailing spaces are part of the build artifact.
-shared/*.bundle.js whitespace=-blank-at-eol,cr-at-eol
