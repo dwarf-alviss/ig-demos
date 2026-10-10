@@ -2376,3 +2376,6 @@ body[data-architecture="fashion-c"] {
     font-size: 17px;
   }
 }
+.inline-studio[data-wardrobe] .look figcaption {
+  color: #20252c;
+}
