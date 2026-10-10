@@ -3,24 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>ЛИНИЯ — Журнал городской формы</title>
+    <title>ЛИНИЯ — Функциональный магазин</title>
     <meta
       name="description"
-      content="Редакционный журнал с крупными номерами выпусков, разворотами и подборками образов."
+      content="Каталог на первом экране: поиск, категории, сортировка и реальные позиции. Капсула — отдельный инструмент выбора."
     />
     <link rel="stylesheet" href="assets/fonts.css" />
     <link rel="stylesheet" href="../shared/concepts.css" />
     <script src="assets/data.js" defer></script>
     <script src="../shared/concepts.js" defer></script>
   </head>
-  <body data-brand="fashion" data-concept="a" data-architecture="fashion-a">
+  <body data-brand="fashion" data-concept="c" data-architecture="fashion-c">
     <a class="skip" href="#main">Перейти к содержимому</a>
     <aside class="concept-bar">
       <a href="../directions.html">12 самостоятельных концепций ↗</a>
       <div>
-        <a aria-current="page" href="index.html">A · Журнал городской формы</a
+        <a href="concept-a.html">A · Журнал городской формы</a
         ><a href="concept-b.html">B · Планировщик гардероба</a
-        ><a href="concept-c.html">C · Функциональный магазин</a>
+        ><a aria-current="page" href="index.html">C · Функциональный магазин</a>
       </div>
     </aside>
     <header class="site-header">
@@ -31,52 +31,46 @@
       </nav>
     </header>
     <main id="main">
-      <section class="fashion-cover">
-        <div class="issue-line">
-          <span>ЛИНИЯ / ГОРОДСКОЙ ЖУРНАЛ</span><span>ВЫПУСК 01</span>
-        </div>
-        <h1>ФОРМА<br />ВАШЕГО<br />ДНЯ.</h1>
-        <img
-          class="cover-photo"
-          src="assets/img/rack.jpg"
-          alt="Городской гардероб"
-          loading="lazy"
-        /><a class="cover-link" href="#issue">Открыть выпуск ↓</a
-        ><span class="issue-number">01</span>
+      <section class="utility-intro">
+        <span>ЛИНИЯ / ФУНКЦИОНАЛЬНЫЙ ГАРДЕРОБ</span>
+        <h1>НАЙТИ.<br />СОЧЕТАТЬ.<br />НОСИТЬ.</h1>
+        <a href="#create">Есть идея комплекта? Соберите капсулу ↗</a>
       </section>
-      <section id="issue" class="editorial-spread">
-        <div>
-          <span class="eyebrow">01 / мягкая структура</span>
-          <h2>Не переодеваться.<br />Менять ритм.</h2>
-          <p>
-            Одна рубашка, джинсы и жакет. От утреннего кофе до последней встречи
-            — вещи, которые работают вместе.
-          </p>
-          <a class="primary" href="#create"
-            >Собрать свою редакцию <span>↗</span></a
+      <section class="live-catalog">
+        <header>
+          <div>
+            <h2>Вещи без лишнего.</h2>
+            <p><span data-result-count></span> моделей из каталога</p>
+          </div>
+          <label
+            >Поиск<input
+              type="search"
+              data-product-search
+              placeholder="Рубашка, деним, трикотаж" /></label
+          ><label
+            >Порядок<select data-product-sort>
+              <option value="default">По коллекции</option>
+              <option value="price-up">Цена по возрастанию</option>
+              <option value="price-down">Цена по убыванию</option>
+            </select></label
           >
+        </header>
+        <div class="catalog-chips" role="group" aria-label="Категории">
+          <button data-category="all" aria-pressed="true">Все</button
+          ><button data-category="shirt" aria-pressed="false">Рубашки</button
+          ><button data-category="knit" aria-pressed="false">Трикотаж</button
+          ><button data-category="jeans" aria-pressed="false">Джинсы</button
+          ><button data-category="jacket" aria-pressed="false">Жакеты</button>
         </div>
-        <img
-          class=""
-          src="assets/img/shirt.jpg"
-          alt="Рубашка как основа образа"
-          loading="lazy"
-        /><img
-          class=""
-          src="assets/img/denim.jpg"
-          alt="Деним для ежедневного гардероба"
-          loading="lazy"
-        />
-      </section>
-      <section class="issue-index">
-        <a href="catalog.html">01 / Чёткий силуэт <span>Рубашки ↗</span></a
-        ><a href="catalog.html">02 / Мягкий слой <span>Трикотаж ↗</span></a
-        ><a href="catalog.html">03 / Свобода движения <span>Деним ↗</span></a>
+        <div data-live-products class="live-product-grid"></div>
+        <p class="catalog-empty" data-empty hidden>
+          Ничего не найдено. Измените запрос или категорию.
+        </p>
       </section>
       <section id="create" class="studio-section" data-initial-pattern="">
         <div class="studio-heading">
           <span class="eyebrow">Капсула / рабочий инструмент</span>
-          <h2>Ваша редакция гардероба.</h2>
+          <h2>Отдельные вещи. Цельный комплект.</h2>
           <a href="studio.html">Открыть отдельно ↗</a>
         </div>
         <div class="studio-mount">
@@ -90,7 +84,7 @@
             </button>
           </div>
           <iframe
-            title="Ваша редакция гардероба."
+            title="Отдельные вещи. Цельный комплект."
             data-src="studio.html"
             hidden
           ></iframe>

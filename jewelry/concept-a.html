@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Латунь — Галерея одного предмета</title>
+    <meta
+      name="description"
+      content="Музейный просмотр: один предмет занимает экран, смена экспоната и описание формы предшествуют каталогу."
+    />
+    <link rel="stylesheet" href="assets/fonts.css" />
+    <link rel="stylesheet" href="../shared/concepts.css" />
+    <script src="../shared/concepts.js" defer></script>
+  </head>
+  <body data-brand="jewelry" data-concept="a" data-architecture="jewelry-a">
+    <a class="skip" href="#main">Перейти к содержимому</a>
+    <aside class="concept-bar">
+      <a href="../directions.html">12 самостоятельных концепций ↗</a>
+      <div>
+        <a aria-current="page" href="concept-a.html"
+          >A · Галерея одного предмета</a
+        ><a href="index.html">B · Ювелирное бюро</a
+        ><a href="concept-c.html">C · Архив личных историй</a>
+      </div>
+    </aside>
+    <header class="site-header">
+      <a class="wordmark" href="index.html">Латунь</a>
+      <nav aria-label="Основная навигация">
+        <a href="catalog.html">Каталог</a><a href="#create">Конструктор</a
+        ><a href="cart.html">Корзина ↗</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="museum-object">
+        <div class="museum-title">
+          <span class="eyebrow">Латунь / галерея личных вещей</span>
+          <h1>Форма.<br />Материал.<br />Свет.</h1>
+        </div>
+        <figure>
+          <img
+            class="selection-image"
+            src="../shared/domain-thumbnails/jewelry-solitaire.jpg"
+            alt="Солитер с шестью крапанами"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>ЭКСПОНАТ / 001</span>
+            <h2 data-selection-title>Солитер</h2>
+            <p data-selection-description>
+              Кольцо · открытая закрепка · свет со всех сторон
+            </p>
+          </figcaption>
+        </figure>
+        <aside>
+          <span>ВЫБЕРИТЕ ЭКСПОНАТ</span
+          ><button
+            class="choice"
+            data-choice
+            data-pattern="solitaire"
+            data-preview="../shared/domain-thumbnails/jewelry-solitaire.jpg"
+            data-title="Солитер"
+            data-description="Кольцо · открытая закрепка"
+          >
+            <span>Солитер</span><small>Кольцо · открытая закрепка</small
+            ><b>↗</b></button
+          ><button
+            class="choice"
+            data-choice
+            data-pattern="bezel-pendant"
+            data-preview="../shared/domain-thumbnails/jewelry-bezel-pendant.jpg"
+            data-title="Подвеска"
+            data-description="Камень · цепь · спокойный контур"
+          >
+            <span>Подвеска</span><small>Камень · цепь · спокойный контур</small
+            ><b>↗</b></button
+          ><button
+            class="choice"
+            data-choice
+            data-pattern="bangle"
+            data-preview="../shared/domain-thumbnails/jewelry-bangle.jpg"
+            data-title="Браслет"
+            data-description="Металл · объём · чистая линия"
+          >
+            <span>Браслет</span><small>Металл · объём · чистая линия</small
+            ><b>↗</b></button
+          ><a class="primary" href="#create"
+            >Рассмотреть в 3D <span>↗</span></a
+          >
+        </aside>
+      </section>
+      <section class="museum-label">
+        <span>ОБЪЕКТ, КОТОРЫЙ СТАНОВИТСЯ ЛИЧНЫМ</span>
+        <p>
+          В галерее важен взгляд. В мастерской — ваш выбор. Измените металл,
+          оттенок камня и детали изделия, сохранив его характер.
+        </p>
+      </section>
+      <section
+        id="create"
+        class="studio-section"
+        data-initial-pattern="solitaire"
+      >
+        <div class="studio-heading">
+          <span class="eyebrow">Мастерская / рабочий инструмент</span>
+          <h2>Перейдите от взгляда к выбору.</h2>
+          <a href="studio.html">Открыть отдельно ↗</a>
+        </div>
+        <div class="studio-mount">
+          <div class="studio-placeholder">
+            <p>
+              Выбранная композиция откроется в 3D. Меняйте детали, вращайте
+              модель и сохраняйте вариант.
+            </p>
+            <button class="primary" data-load-studio>
+              Войти в конструктор <span>↗</span>
+            </button>
+          </div>
+          <iframe
+            title="Перейдите от взгляда к выбору."
+            data-src="studio.html"
+            hidden
+          ></iframe>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="wordmark" href="index.html">Латунь</a
+      ><a href="../directions.html">Сравнить концепции ↗</a>
+      <p>
+        Демонстрационный магазин · реальное оформление заказа не подключено.
+      </p>
+    </footer>
+  </body>
+</html>

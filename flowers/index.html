@@ -3,22 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Пион — Цветочный бар</title>
+    <title>Пион — Письмо с цветами</title>
     <meta
       name="description"
-      content="Сайт как стол флориста: выбор сезонного направления, ботанические карточки и рабочая композиция."
+      content="Подарочный сценарий: сначала чувство и текст открытки, затем букет. Живая открытка — центр интерфейса."
     />
     <link rel="stylesheet" href="assets/fonts.css" />
     <link rel="stylesheet" href="../shared/concepts.css" />
     <script src="../shared/concepts.js" defer></script>
   </head>
-  <body data-brand="flowers" data-concept="a" data-architecture="flowers-a">
+  <body data-brand="flowers" data-concept="b" data-architecture="flowers-b">
     <a class="skip" href="#main">Перейти к содержимому</a>
     <aside class="concept-bar">
       <a href="../directions.html">12 самостоятельных концепций ↗</a>
       <div>
-        <a aria-current="page" href="index.html">A · Цветочный бар</a
-        ><a href="concept-b.html">B · Письмо с цветами</a
+        <a href="concept-a.html">A · Цветочный бар</a
+        ><a aria-current="page" href="index.html">B · Письмо с цветами</a
         ><a href="concept-c.html">C · Цветы в вашем ритме</a>
       </div>
     </aside>
@@ -30,105 +30,80 @@
       </nav>
     </header>
     <main id="main">
-      <section class="flower-bar">
-        <aside>
-          <span class="vertical-label">ПИОН / СТОЛ ФЛОРИСТА</span>
-          <h1>Собираем<br />живое.</h1>
-          <p>
-            Выберите направление — и посмотрите, с каких цветов начинается
-            композиция.
-          </p>
-          <div>
-            <button
-              class="choice"
-              data-choice
-              data-pattern="tulip-line"
-              data-preview="assets/img/hero.jpg"
-              data-title="Весенняя линия"
-              data-description="Тюльпан · выразительные стебли"
-            >
-              <span>Весенняя линия</span
-              ><small>Тюльпан · выразительные стебли</small><b>↗</b></button
-            ><button
-              class="choice"
-              data-choice
-              data-pattern="garden-pink"
-              data-preview="assets/img/mix.jpg"
-              data-title="Сад без правил"
-              data-description="Розы · ранункулюсы · анемоны"
-            >
-              <span>Сад без правил</span
-              ><small>Розы · ранункулюсы · анемоны</small><b>↗</b></button
-            ><button
-              class="choice"
-              data-choice
-              data-pattern="peony-mono"
-              data-preview="assets/img/mono.jpg"
-              data-title="Только пионы"
-              data-description="Один цветок · большой характер"
-            >
-              <span>Только пионы</span
-              ><small>Один цветок · большой характер</small><b>↗</b>
-            </button>
-          </div>
-        </aside>
-        <figure>
+      <section class="letter-intro">
+        <span class="eyebrow">Пион / письмо без лишних слов</span>
+        <h1>Что вы хотите<br /><em>сказать?</em></h1>
+        <p>Начните не с количества цветов. Начните с чувства.</p>
+      </section>
+      <section class="letter-workspace">
+        <div class="letter-options">
+          <button
+            class="choice"
+            data-choice
+            data-pattern="garden-pink"
+            data-preview="assets/img/mix.jpg"
+            data-title="Спасибо, что ты рядом"
+            data-description="Свободный садовый букет"
+          >
+            <span>Спасибо, что ты рядом</span
+            ><small>Свободный садовый букет</small><b>↗</b></button
+          ><button
+            class="choice"
+            data-choice
+            data-pattern="rose-mono"
+            data-preview="assets/img/wedding.jpg"
+            data-title="Я думаю о тебе"
+            data-description="Монобукет садовых роз"
+          >
+            <span>Я думаю о тебе</span><small>Монобукет садовых роз</small
+            ><b>↗</b></button
+          ><button
+            class="choice"
+            data-choice
+            data-pattern="peony-mono"
+            data-preview="assets/img/mono.jpg"
+            data-title="Сегодня — твой день"
+            data-description="Объёмный монобукет пионов"
+          >
+            <span>Сегодня — твой день</span
+            ><small>Объёмный монобукет пионов</small><b>↗</b></button
+          ><label class="message-input"
+            >Ваши слова<textarea
+              data-letter
+              placeholder="Напишите короткое послание"
+              maxlength="220"
+            ></textarea>
+          </label>
+        </div>
+        <figure class="gift-preview">
           <img
             class="selection-image"
-            src="assets/img/hero.jpg"
-            alt="Сезонные цветы"
+            src="assets/img/mix.jpg"
+            alt="Букет для близкого человека"
             loading="lazy"
           />
-          <figcaption>
-            <h2 data-selection-title>Весенняя линия</h2>
-            <p data-selection-description>Тюльпан · выразительные стебли</p>
-          </figcaption>
+          <div class="postcard">
+            <span>ДЛЯ ТЕБЯ</span>
+            <p data-letter-preview>Спасибо, что ты рядом.</p>
+            <small>Пион / ваша открытка</small>
+          </div>
         </figure>
       </section>
-      <section class="botanical-specimens">
-        <header>
-          <h2>У каждого —<br />свой характер.</h2>
-          <span>БОТАНИЧЕСКИЕ КАРТОЧКИ / 01—03</span>
-        </header>
-        <div>
-          <a class="object-card" href="catalog.html"
-            ><img
-              class=""
-              src="assets/img/mono.jpg"
-              alt="Пион"
-              loading="lazy"
-            />
-            <h3>Пион</h3>
-            <p>Объём и мягкость</p></a
-          ><a class="object-card" href="catalog.html"
-            ><img
-              class=""
-              src="assets/img/hero.jpg"
-              alt="Тюльпан"
-              loading="lazy"
-            />
-            <h3>Тюльпан</h3>
-            <p>Линия и движение</p></a
-          ><a class="object-card" href="catalog.html"
-            ><img
-              class=""
-              src="assets/img/mix.jpg"
-              alt="Садовая роза"
-              loading="lazy"
-            />
-            <h3>Садовая роза</h3>
-            <p>Ритм и фактура</p></a
-          >
-        </div>
+      <section class="gift-detail">
+        <h2>Послание остаётся.<br />Букет говорит первым.</h2>
+        <p>
+          Текст открытки сохраняется в этом браузере. Форму и состав букета
+          можно подобрать в мастерской ниже.
+        </p>
       </section>
       <section
         id="create"
         class="studio-section"
-        data-initial-pattern="tulip-line"
+        data-initial-pattern="garden-pink"
       >
         <div class="studio-heading">
           <span class="eyebrow">Мастерская / рабочий инструмент</span>
-          <h2>Ваш стол флориста.</h2>
+          <h2>Букет к вашим словам.</h2>
           <a href="studio.html">Открыть отдельно ↗</a>
         </div>
         <div class="studio-mount">
@@ -142,7 +117,7 @@
             </button>
           </div>
           <iframe
-            title="Ваш стол флориста."
+            title="Букет к вашим словам."
             data-src="studio.html"
             hidden
           ></iframe>

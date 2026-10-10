@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Пион — Цветочный бар</title>
+    <meta
+      name="description"
+      content="Сайт как стол флориста: выбор сезонного направления, ботанические карточки и рабочая композиция."
+    />
+    <link rel="stylesheet" href="assets/fonts.css" />
+    <link rel="stylesheet" href="../shared/concepts.css" />
+    <script src="../shared/concepts.js" defer></script>
+  </head>
+  <body data-brand="flowers" data-concept="a" data-architecture="flowers-a">
+    <a class="skip" href="#main">Перейти к содержимому</a>
+    <aside class="concept-bar">
+      <a href="../directions.html">12 самостоятельных концепций ↗</a>
+      <div>
+        <a aria-current="page" href="concept-a.html">A · Цветочный бар</a
+        ><a href="index.html">B · Письмо с цветами</a
+        ><a href="concept-c.html">C · Цветы в вашем ритме</a>
+      </div>
+    </aside>
+    <header class="site-header">
+      <a class="wordmark" href="index.html">Пион</a>
+      <nav aria-label="Основная навигация">
+        <a href="catalog.html">Каталог</a><a href="#create">Конструктор</a
+        ><a href="cart.html">Корзина ↗</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="flower-bar">
+        <aside>
+          <span class="vertical-label">ПИОН / СТОЛ ФЛОРИСТА</span>
+          <h1>Собираем<br />живое.</h1>
+          <p>
+            Выберите направление — и посмотрите, с каких цветов начинается
+            композиция.
+          </p>
+          <div>
+            <button
+              class="choice"
+              data-choice
+              data-pattern="tulip-line"
+              data-preview="assets/img/hero.jpg"
+              data-title="Весенняя линия"
+              data-description="Тюльпан · выразительные стебли"
+            >
+              <span>Весенняя линия</span
+              ><small>Тюльпан · выразительные стебли</small><b>↗</b></button
+            ><button
+              class="choice"
+              data-choice
+              data-pattern="garden-pink"
+              data-preview="assets/img/mix.jpg"
+              data-title="Сад без правил"
+              data-description="Розы · ранункулюсы · анемоны"
+            >
+              <span>Сад без правил</span
+              ><small>Розы · ранункулюсы · анемоны</small><b>↗</b></button
+            ><button
+              class="choice"
+              data-choice
+              data-pattern="peony-mono"
+              data-preview="assets/img/mono.jpg"
+              data-title="Только пионы"
+              data-description="Один цветок · большой характер"
+            >
+              <span>Только пионы</span
+              ><small>Один цветок · большой характер</small><b>↗</b>
+            </button>
+          </div>
+        </aside>
+        <figure>
+          <img
+            class="selection-image"
+            src="assets/img/hero.jpg"
+            alt="Сезонные цветы"
+            loading="lazy"
+          />
+          <figcaption>
+            <h2 data-selection-title>Весенняя линия</h2>
+            <p data-selection-description>Тюльпан · выразительные стебли</p>
+          </figcaption>
+        </figure>
+      </section>
+      <section class="botanical-specimens">
+        <header>
+          <h2>У каждого —<br />свой характер.</h2>
+          <span>БОТАНИЧЕСКИЕ КАРТОЧКИ / 01—03</span>
+        </header>
+        <div>
+          <a class="object-card" href="catalog.html"
+            ><img
+              class=""
+              src="assets/img/mono.jpg"
+              alt="Пион"
+              loading="lazy"
+            />
+            <h3>Пион</h3>
+            <p>Объём и мягкость</p></a
+          ><a class="object-card" href="catalog.html"
+            ><img
+              class=""
+              src="assets/img/hero.jpg"
+              alt="Тюльпан"
+              loading="lazy"
+            />
+            <h3>Тюльпан</h3>
+            <p>Линия и движение</p></a
+          ><a class="object-card" href="catalog.html"
+            ><img
+              class=""
+              src="assets/img/mix.jpg"
+              alt="Садовая роза"
+              loading="lazy"
+            />
+            <h3>Садовая роза</h3>
+            <p>Ритм и фактура</p></a
+          >
+        </div>
+      </section>
+      <section
+        id="create"
+        class="studio-section"
+        data-initial-pattern="tulip-line"
+      >
+        <div class="studio-heading">
+          <span class="eyebrow">Мастерская / рабочий инструмент</span>
+          <h2>Ваш стол флориста.</h2>
+          <a href="studio.html">Открыть отдельно ↗</a>
+        </div>
+        <div class="studio-mount">
+          <div class="studio-placeholder">
+            <p>
+              Выбранная композиция откроется в 3D. Меняйте детали, вращайте
+              модель и сохраняйте вариант.
+            </p>
+            <button class="primary" data-load-studio>
+              Войти в конструктор <span>↗</span>
+            </button>
+          </div>
+          <iframe
+            title="Ваш стол флориста."
+            data-src="studio.html"
+            hidden
+          ></iframe>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="wordmark" href="index.html">Пион</a
+      ><a href="../directions.html">Сравнить концепции ↗</a>
+      <p>
+        Демонстрационный магазин · реальное оформление заказа не подключено.
+      </p>
+    </footer>
+  </body>
+</html>

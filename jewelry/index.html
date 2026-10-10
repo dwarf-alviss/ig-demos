@@ -3,22 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Латунь — Галерея одного предмета</title>
+    <title>Латунь — Ювелирное бюро</title>
     <meta
       name="description"
-      content="Музейный просмотр: один предмет занимает экран, смена экспоната и описание формы предшествуют каталогу."
+      content="Сайт как проектный стол: силуэт, камень, закрепка, карточка спецификации и переход к сборке."
     />
     <link rel="stylesheet" href="assets/fonts.css" />
     <link rel="stylesheet" href="../shared/concepts.css" />
     <script src="../shared/concepts.js" defer></script>
   </head>
-  <body data-brand="jewelry" data-concept="a" data-architecture="jewelry-a">
+  <body data-brand="jewelry" data-concept="b" data-architecture="jewelry-b">
     <a class="skip" href="#main">Перейти к содержимому</a>
     <aside class="concept-bar">
       <a href="../directions.html">12 самостоятельных концепций ↗</a>
       <div>
-        <a aria-current="page" href="index.html">A · Галерея одного предмета</a
-        ><a href="concept-b.html">B · Ювелирное бюро</a
+        <a href="concept-a.html">A · Галерея одного предмета</a
+        ><a aria-current="page" href="index.html">B · Ювелирное бюро</a
         ><a href="concept-c.html">C · Архив личных историй</a>
       </div>
     </aside>
@@ -30,69 +30,94 @@
       </nav>
     </header>
     <main id="main">
-      <section class="museum-object">
-        <div class="museum-title">
-          <span class="eyebrow">Латунь / галерея личных вещей</span>
-          <h1>Форма.<br />Материал.<br />Свет.</h1>
+      <section class="design-desk">
+        <header>
+          <span class="eyebrow">Латунь / проектное бюро</span>
+          <h1>Спроектируйте<br />личный акцент.</h1>
+          <span class="drawing-id"
+            >ПРОЕКТ № 001<br />ФОРМА / ЗАКРЕПКА / МЕТАЛЛ</span
+          >
+        </header>
+        <div class="desk-grid">
+          <aside>
+            <h2>01 / Силуэт</h2>
+            <button
+              class="choice"
+              data-choice
+              data-pattern="solitaire"
+              data-preview="../shared/domain-thumbnails/jewelry-solitaire.jpg"
+              data-title="Круглый солитер"
+              data-description="Шесть крапанов · круглый камень"
+            >
+              <span>Круглый солитер</span
+              ><small>Шесть крапанов · круглый камень</small><b>↗</b></button
+            ><button
+              class="choice"
+              data-choice
+              data-pattern="oval-solitaire"
+              data-preview="../shared/domain-thumbnails/jewelry-oval-solitaire.jpg"
+              data-title="Овальный солитер"
+              data-description="Вытянутая форма · открытая закрепка"
+            >
+              <span>Овальный солитер</span
+              ><small>Вытянутая форма · открытая закрепка</small
+              ><b>↗</b></button
+            ><button
+              class="choice"
+              data-choice
+              data-pattern="bezel-ring"
+              data-preview="../shared/domain-thumbnails/jewelry-bezel-ring.jpg"
+              data-title="Глухая закрепка"
+              data-description="Непрерывный металлический контур"
+            >
+              <span>Глухая закрепка</span
+              ><small>Непрерывный металлический контур</small><b>↗</b>
+            </button>
+          </aside>
+          <figure class="technical-preview">
+            <span class="axis axis-x"></span><span class="axis axis-y"></span
+            ><img
+              class="selection-image"
+              src="../shared/domain-thumbnails/jewelry-solitaire.jpg"
+              alt="Проект кольца"
+              loading="lazy"
+            /><span class="dimension">ФОРМА В МАСШТАБЕ ПРЕДПРОСМОТРА</span>
+          </figure>
+          <section class="specification">
+            <h2>Карточка проекта</h2>
+            <dl>
+              <dt>Силуэт</dt>
+              <dd data-selection-title>Круглый солитер</dd>
+              <dt>Особенность</dt>
+              <dd data-selection-description>
+                Шесть крапанов · круглый камень
+              </dd>
+              <dt>Следующий шаг</dt>
+              <dd>Металл, камень и размер в 3D-студии</dd>
+            </dl>
+            <a class="primary" href="#create"
+              >Настроить изделие <span>↗</span></a
+            >
+            <p class="fine">Визуальная сборка, не производственный CAD.</p>
+          </section>
         </div>
-        <figure>
-          <img
-            class="selection-image"
-            src="../shared/domain-thumbnails/jewelry-solitaire.jpg"
-            alt="Солитер с шестью крапанами"
-            loading="lazy"
-          />
-          <figcaption>
-            <span>ЭКСПОНАТ / 001</span>
-            <h2 data-selection-title>Солитер</h2>
-            <p data-selection-description>
-              Кольцо · открытая закрепка · свет со всех сторон
-            </p>
-          </figcaption>
-        </figure>
-        <aside>
-          <span>ВЫБЕРИТЕ ЭКСПОНАТ</span
-          ><button
-            class="choice"
-            data-choice
-            data-pattern="solitaire"
-            data-preview="../shared/domain-thumbnails/jewelry-solitaire.jpg"
-            data-title="Солитер"
-            data-description="Кольцо · открытая закрепка"
-          >
-            <span>Солитер</span><small>Кольцо · открытая закрепка</small
-            ><b>↗</b></button
-          ><button
-            class="choice"
-            data-choice
-            data-pattern="bezel-pendant"
-            data-preview="../shared/domain-thumbnails/jewelry-bezel-pendant.jpg"
-            data-title="Подвеска"
-            data-description="Камень · цепь · спокойный контур"
-          >
-            <span>Подвеска</span><small>Камень · цепь · спокойный контур</small
-            ><b>↗</b></button
-          ><button
-            class="choice"
-            data-choice
-            data-pattern="bangle"
-            data-preview="../shared/domain-thumbnails/jewelry-bangle.jpg"
-            data-title="Браслет"
-            data-description="Металл · объём · чистая линия"
-          >
-            <span>Браслет</span><small>Металл · объём · чистая линия</small
-            ><b>↗</b></button
-          ><a class="primary" href="#create"
-            >Рассмотреть в 3D <span>↗</span></a
-          >
-        </aside>
       </section>
-      <section class="museum-label">
-        <span>ОБЪЕКТ, КОТОРЫЙ СТАНОВИТСЯ ЛИЧНЫМ</span>
-        <p>
-          В галерее важен взгляд. В мастерской — ваш выбор. Измените металл,
-          оттенок камня и детали изделия, сохранив его характер.
-        </p>
+      <section class="bench-process">
+        <article>
+          <span>02</span>
+          <h3>Металл</h3>
+          <p>Найдите свой оттенок и фактуру поверхности.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Камень</h3>
+          <p>Совместимые формы и цвета, с посадкой под изделие.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Детали</h3>
+          <p>Размер, ракурс, сохранение и сравнение.</p>
+        </article>
       </section>
       <section
         id="create"
@@ -101,7 +126,7 @@
       >
         <div class="studio-heading">
           <span class="eyebrow">Мастерская / рабочий инструмент</span>
-          <h2>Перейдите от взгляда к выбору.</h2>
+          <h2>Ваш проект в объёме.</h2>
           <a href="studio.html">Открыть отдельно ↗</a>
         </div>
         <div class="studio-mount">
@@ -115,7 +140,7 @@
             </button>
           </div>
           <iframe
-            title="Перейдите от взгляда к выбору."
+            title="Ваш проект в объёме."
             data-src="studio.html"
             hidden
           ></iframe>

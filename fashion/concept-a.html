@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ЛИНИЯ — Журнал городской формы</title>
+    <meta
+      name="description"
+      content="Редакционный журнал с крупными номерами выпусков, разворотами и подборками образов."
+    />
+    <link rel="stylesheet" href="assets/fonts.css" />
+    <link rel="stylesheet" href="../shared/concepts.css" />
+    <script src="assets/data.js" defer></script>
+    <script src="../shared/concepts.js" defer></script>
+  </head>
+  <body data-brand="fashion" data-concept="a" data-architecture="fashion-a">
+    <a class="skip" href="#main">Перейти к содержимому</a>
+    <aside class="concept-bar">
+      <a href="../directions.html">12 самостоятельных концепций ↗</a>
+      <div>
+        <a aria-current="page" href="concept-a.html"
+          >A · Журнал городской формы</a
+        ><a href="concept-b.html">B · Планировщик гардероба</a
+        ><a href="index.html">C · Функциональный магазин</a>
+      </div>
+    </aside>
+    <header class="site-header">
+      <a class="wordmark" href="index.html">ЛИНИЯ</a>
+      <nav aria-label="Основная навигация">
+        <a href="catalog.html">Каталог</a><a href="#create">Капсула</a
+        ><a href="cart.html">Корзина ↗</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="fashion-cover">
+        <div class="issue-line">
+          <span>ЛИНИЯ / ГОРОДСКОЙ ЖУРНАЛ</span><span>ВЫПУСК 01</span>
+        </div>
+        <h1>ФОРМА<br />ВАШЕГО<br />ДНЯ.</h1>
+        <img
+          class="cover-photo"
+          src="assets/img/rack.jpg"
+          alt="Городской гардероб"
+          loading="lazy"
+        /><a class="cover-link" href="#issue">Открыть выпуск ↓</a
+        ><span class="issue-number">01</span>
+      </section>
+      <section id="issue" class="editorial-spread">
+        <div>
+          <span class="eyebrow">01 / мягкая структура</span>
+          <h2>Не переодеваться.<br />Менять ритм.</h2>
+          <p>
+            Одна рубашка, джинсы и жакет. От утреннего кофе до последней встречи
+            — вещи, которые работают вместе.
+          </p>
+          <a class="primary" href="#create"
+            >Собрать свою редакцию <span>↗</span></a
+          >
+        </div>
+        <img
+          class=""
+          src="assets/img/shirt.jpg"
+          alt="Рубашка как основа образа"
+          loading="lazy"
+        /><img
+          class=""
+          src="assets/img/denim.jpg"
+          alt="Деним для ежедневного гардероба"
+          loading="lazy"
+        />
+      </section>
+      <section class="issue-index">
+        <a href="catalog.html">01 / Чёткий силуэт <span>Рубашки ↗</span></a
+        ><a href="catalog.html">02 / Мягкий слой <span>Трикотаж ↗</span></a
+        ><a href="catalog.html">03 / Свобода движения <span>Деним ↗</span></a>
+      </section>
+      <section id="create" class="studio-section" data-initial-pattern="">
+        <div class="studio-heading">
+          <span class="eyebrow">Капсула / рабочий инструмент</span>
+          <h2>Ваша редакция гардероба.</h2>
+          <a href="studio.html">Открыть отдельно ↗</a>
+        </div>
+        <div class="studio-mount">
+          <div class="studio-placeholder">
+            <p>
+              Сочетайте реальные позиции каталога, выбирайте размер и сохраняйте
+              комплект.
+            </p>
+            <button class="primary" data-load-studio>
+              Войти в конструктор <span>↗</span>
+            </button>
+          </div>
+          <iframe
+            title="Ваша редакция гардероба."
+            data-src="studio.html"
+            hidden
+          ></iframe>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="wordmark" href="index.html">ЛИНИЯ</a
+      ><a href="../directions.html">Сравнить концепции ↗</a>
+      <p>
+        Демонстрационный магазин · реальное оформление заказа не подключено.
+      </p>
+    </footer>
+  </body>
+</html>
