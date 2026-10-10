@@ -1,8 +1,9 @@
 import { reviewBrowser } from "./review-runtime.mjs";
-import { writeFile } from "node:fs/promises";
+import { writeFile, mkdir } from "node:fs/promises";
 import assert from "node:assert/strict";
 const base = process.env.REVIEW_URL || "http://127.0.0.1:8765";
 const folder = process.env.REVIEW_OUTPUT || "reports/content-inline";
+await mkdir(folder, { recursive: true });
 const { browser, close } = await reviewBrowser();
 const results = [];
 try {
