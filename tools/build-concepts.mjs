@@ -1,3 +1,4 @@
+import { selectedConcepts, conceptPath } from "./selected-concepts.mjs";
 import { writeFile } from "node:fs/promises";
 import { projects } from "./showcase-data.mjs";
 const img = (src, alt, cls = "") =>
@@ -110,14 +111,13 @@ for (const [kind, p] of Object.entries(projects))
     const links = names[kind]
       .map(
         ([n], j) =>
-          `<a ${i === j ? 'aria-current="page"' : ""} href="${j === 0 ? "index.html" : `concept-${["a", "b", "c"][j]}.html`}">${["A", "B", "C"][j]} · ${n}</a>`,
+          `<a ${i === j ? 'aria-current="page"' : ""} href="${conceptPath(kind, ["a", "b", "c"][j])}">${["A", "B", "C"][j]} · ${n}</a>`,
       )
       .join("");
     const html = `<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${p.brand} — ${name}</title><meta name="description" content="${description}"><link rel="stylesheet" href="assets/fonts.css"><link rel="stylesheet" href="../shared/concepts.css">${kind === "fashion" ? '<script src="assets/data.js" defer></script>' : ""}<script src="../shared/concepts.js" defer></script></head><body data-brand="${kind}" data-concept="${v}" data-architecture="${id}"><a class="skip" href="#main">Перейти к содержимому</a><aside class="concept-bar"><a href="../directions.html">12 самостоятельных концепций ↗</a><div>${links}</div></aside><header class="site-header"><a class="wordmark" href="index.html">${p.brand}</a><nav aria-label="Основная навигация"><a href="catalog.html">Каталог</a><a href="#create">${kind === "fashion" ? "Капсула" : "Конструктор"}</a><a href="cart.html">Корзина ↗</a></nav></header><main id="main">${pages[id]}</main><footer><a class="wordmark" href="index.html">${p.brand}</a><a href="../directions.html">Сравнить концепции ↗</a><p>Демонстрационный магазин · реальное оформление заказа не подключено.</p></footer></body></html>`;
-    await writeFile(
-      `${kind}/${v === "a" ? "index" : `concept-${v}`}.html`,
-      html + "\n",
-    );
+    await writeFile(`${kind}/${conceptPath(kind, v)}`, html + "\n");
+    if (selectedConcepts[kind] === v)
+      await writeFile(`${kind}/concept-${v}.html`, html + "\n");
   }
 const cards = Object.entries(projects)
   .map(
@@ -127,7 +127,7 @@ const cards = Object.entries(projects)
       ]
         .map(([name, desc], i) => {
           const v = ["a", "b", "c"][i];
-          return `<a class="direction" href="${kind}/${v === "a" ? "index.html" : `concept-${v}.html`}"><img src="shared/design-previews/${kind}-${v}.jpg" alt="${name}" loading="lazy"><div><span>Концепция ${v.toUpperCase()}</span><h3>${name}</h3><p>${desc}</p><strong>Попробовать сценарий ↗</strong></div></a>`;
+          return `<a class="direction" href="${kind}/${conceptPath(kind, v)}"><img src="shared/design-previews/${kind}-${v}.jpg" alt="${name}" loading="lazy"><div><span>Концепция ${v.toUpperCase()}${selectedConcepts[kind] === v ? " · Выбрана" : ""}</span><h3>${name}</h3><p>${desc}</p><strong>Попробовать сценарий ↗</strong></div></a>`;
         })
         .join("")}</div></section>`,
   )

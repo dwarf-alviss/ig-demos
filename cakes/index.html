@@ -3,23 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Мельница — Мастерская праздника</title>
+    <title>Мельница — Праздничный плакат</title>
     <meta
       name="description"
-      content="Сценарий начинается с события. Выбор повода меняет стартовый рецепт; торт и короткий маршрут сборки стоят на первом экране."
+      content="Графичный постер и планировщик события: дата, повод и список пожеланий. Подача через праздник, а не витрину."
     />
     <link rel="stylesheet" href="assets/fonts.css" />
     <link rel="stylesheet" href="../shared/concepts.css" />
     <script src="../shared/concepts.js" defer></script>
   </head>
-  <body data-brand="cakes" data-concept="a" data-architecture="cakes-a">
+  <body data-brand="cakes" data-concept="c" data-architecture="cakes-c">
     <a class="skip" href="#main">Перейти к содержимому</a>
     <aside class="concept-bar">
       <a href="../directions.html">12 самостоятельных концепций ↗</a>
       <div>
-        <a aria-current="page" href="index.html">A · Мастерская праздника</a
+        <a href="concept-a.html">A · Мастерская праздника</a
         ><a href="concept-b.html">B · Дегустационное меню</a
-        ><a href="concept-c.html">C · Праздничный плакат</a>
+        ><a aria-current="page" href="index.html">C · Праздничный плакат</a>
       </div>
     </aside>
     <header class="site-header">
@@ -30,81 +30,76 @@
       </nav>
     </header>
     <main id="main">
-      <span class="eyebrow">Мельница / мастерская праздника</span>
-      <section class="cake-occasion">
-        <div class="occasion-copy">
-          <h1>Какой у вас<br /><em>повод?</em></h1>
-          <p>
-            Начнём с события. А вкус, форму и последнюю ягоду вы выберете сами.
-          </p>
-          <div class="occasion-choices">
-            <button
-              class="choice"
-              data-choice
-              data-pattern="vanilla-celebration"
-              data-preview="../shared/domain-thumbnails/cakes-vanilla-celebration.jpg"
-              data-title="День рождения"
-              data-description="Ванильный торт для общего стола"
-            >
-              <span>День рождения</span
-              ><small>Ванильный торт для общего стола</small><b>↗</b></button
-            ><button
-              class="choice"
-              data-choice
-              data-pattern="chocolate-strawberry-heart"
-              data-preview="../shared/domain-thumbnails/cakes-chocolate-strawberry-heart.jpg"
-              data-title="Вечер для двоих"
-              data-description="Шоколад, клубника и небольшая форма"
-            >
-              <span>Вечер для двоих</span
-              ><small>Шоколад, клубника и небольшая форма</small
-              ><b>↗</b></button
-            ><button
-              class="choice"
-              data-choice
-              data-pattern="fraisier"
-              data-preview="../shared/domain-thumbnails/cakes-fraisier.jpg"
-              data-title="Просто хочется"
-              data-description="Клубника и нежный крем"
-            >
-              <span>Просто хочется</span><small>Клубника и нежный крем</small
-              ><b>↗</b>
-            </button>
-          </div>
+      <section class="party-poster">
+        <div class="poster-text">
+          <span>МЕЛЬНИЦА / СОБИРАЕМ ПОВОДЫ</span>
+          <h1>ДАВАЙТЕ<br />ПРАЗДНОВАТЬ<span>!</span></h1>
+          <a href="#plan">Сначала план. Потом торт. ↓</a>
         </div>
-        <div class="cake-stage">
-          <span class="stamp">ВЫ ПРИДУМАЛИ<br />МЫ СОБРАЛИ</span
-          ><img
-            class="selection-image"
-            src="../shared/domain-thumbnails/cakes-vanilla-celebration.jpg"
-            alt="Ванильный торт"
-            loading="lazy"
-          />
-          <div class="selection-caption">
-            <h3 data-selection-title>День рождения</h3>
-            <p data-selection-description>Ванильный торт для общего стола</p>
-          </div>
-        </div>
+        <img
+          class="poster-cake"
+          src="assets/img/bento.jpg"
+          alt="Небольшой праздничный торт"
+          loading="lazy"
+        /><span class="poster-label">СВОЙ ТОРТ.<br />СВОИ ПРАВИЛА.</span>
       </section>
-      <section class="numbered-path">
-        <h2>Три шага<br />до вашего торта.</h2>
-        <ol>
-          <li>
-            <b>01</b>
-            <h3>Вкус</h3>
-            <p>Выберите рецепт, который хочется попробовать.</p>
-          </li>
-          <li>
-            <b>02</b>
-            <h3>Характер</h3>
-            <p>Добавьте ярусы и совместимые украшения.</p>
-          </li>
-          <li>
-            <b>03</b>
-            <h3>Последняя деталь</h3>
-            <p>Рассмотрите композицию и сохраните вариант.</p>
-          </li>
-        </ol>
+      <section id="plan" class="party-planner">
+        <div>
+          <h2>Что отмечаем?</h2>
+          <p>
+            Сохраните идею события вместе с пожеланиями к торту. Это ваша
+            заметка, без бронирования даты.
+          </p>
+        </div>
+        <form class="draft-form" data-draft="party">
+          <label
+            >Повод<input
+              name="occasion"
+              placeholder="Например, 30 лет и всё впереди"
+              maxlength="80" /></label
+          ><label>Дата<input type="date" name="date" /></label
+          ><label
+            >Пожелания<textarea
+              name="note"
+              placeholder="Любимые вкусы, цвета, детали"
+              maxlength="500"
+            ></textarea></label
+          ><button class="primary" type="submit">Сохранить план ↗</button
+          ><output aria-live="polite"></output>
+        </form>
+      </section>
+      <section class="party-picks">
+        <h2>Не все праздники<br />должны быть большими.</h2>
+        <div>
+          <a class="object-card" href="catalog.html"
+            ><img
+              class=""
+              src="assets/img/bento.jpg"
+              alt="Маленькая радость"
+              loading="lazy"
+            />
+            <h3>Маленькая радость</h3>
+            <p>Бенто</p></a
+          ><a class="object-card" href="catalog.html"
+            ><img
+              class=""
+              src="assets/img/cupcakes.jpg"
+              alt="Для всей компании"
+              loading="lazy"
+            />
+            <h3>Для всей компании</h3>
+            <p>Капкейки</p></a
+          ><a class="object-card" href="catalog.html"
+            ><img
+              class=""
+              src="assets/img/wedding.jpg"
+              alt="Большой день"
+              loading="lazy"
+            />
+            <h3>Большой день</h3>
+            <p>Ярусный торт</p></a
+          >
+        </div>
       </section>
       <section
         id="create"
@@ -113,7 +108,7 @@
       >
         <div class="studio-heading">
           <span class="eyebrow">Мастерская / рабочий инструмент</span>
-          <h2>Теперь сделайте его своим.</h2>
+          <h2>Придумайте главный акцент.</h2>
           <a href="studio.html">Открыть отдельно ↗</a>
         </div>
         <div class="studio-mount">
@@ -127,7 +122,7 @@
             </button>
           </div>
           <iframe
-            title="Теперь сделайте его своим."
+            title="Придумайте главный акцент."
             data-src="studio.html"
             hidden
           ></iframe>

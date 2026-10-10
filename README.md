@@ -118,3 +118,5 @@ Large matrix reviews can be split with `REVIEW_START` and `REVIEW_END` (exclusiv
 For the flat-decoration revision, `REVIEW_REUSE=1 node tools/review-combinations.mjs cakes` keeps exact-state screenshots of unchanged cases and rerenders every wafer or chocolate-shard case. This reuse rule is specific to that revision; other geometry changes require a fresh review.
 
 When only normalization has changed and displayed geometry is identical, `REVIEW_REUSE_STABLE=1` allows reuse of any exact matching state whose visible decoration count agrees with its recorded quantities. Do not use this override after material or geometry changes.
+
+Selected primary storefronts: cakes C (celebration poster), flowers B (personal letter), jewelry B (design bureau), fashion C (searchable catalogue). tools/selected-concepts.mjs controls canonical routes; all A/B/C concepts remain available at their concept URLs. reports/concepts-selected/validation.json records the routing revision checks.

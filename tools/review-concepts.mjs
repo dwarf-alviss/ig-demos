@@ -1,3 +1,4 @@
+import { conceptPath } from "./selected-concepts.mjs";
 import { reviewBrowser } from "./review-runtime.mjs";
 import { mkdir, writeFile } from "node:fs/promises";
 import assert from "node:assert/strict";
@@ -14,7 +15,7 @@ try {
         }),
         errors = [];
       page.on("pageerror", (e) => errors.push(e.message));
-      const path = `${kind}/${v === "a" ? "index" : `concept-${v}`}.html`;
+      const path = `${kind}/${conceptPath(kind, v)}`;
       await page.goto(base + "/" + path, { waitUntil: "networkidle" });
       assert.equal(await page.locator("h1").count(), 1);
       assert.equal(
@@ -119,12 +120,10 @@ try {
           { timeout: 90000 },
         );
       assert.deepEqual(errors, []);
-      await page
-        .locator(".studio-mount")
-        .screenshot({
-          path: `${folder}/${kind}-${v}-embedded.jpg`,
-          quality: 80,
-        });
+      await page.locator(".studio-mount").screenshot({
+        path: `${folder}/${kind}-${v}-embedded.jpg`,
+        quality: 80,
+      });
       results.push({
         kind,
         variant: v,

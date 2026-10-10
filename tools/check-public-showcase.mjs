@@ -1,3 +1,4 @@
+import { selectedConcepts, conceptPath } from "./selected-concepts.mjs";
 import { writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
@@ -6,8 +7,9 @@ const pages = [
   "directions.html",
   ...["cakes", "flowers", "jewelry", "fashion"].flatMap((k) => [
     `${k}/index.html`,
-    `${k}/concept-b.html`,
-    `${k}/concept-c.html`,
+    ...["a", "b", "c"]
+      .filter((v) => v !== selectedConcepts[k])
+      .map((v) => `${k}/${conceptPath(k, v)}`),
     `${k}/studio.html`,
   ]),
 ];
@@ -20,7 +22,9 @@ for (const path of pages) {
   if (!response.ok) throw Error(`${path}: HTTP ${response.status}`);
   if (path !== "directions.html" && !path.endsWith("studio.html")) {
     const kind = path.split("/")[0];
-    const variant = path.includes("concept-b") ? "b" : path.includes("concept-c") ? "c" : "a";
+    const variant = path.endsWith("index.html")
+      ? selectedConcepts[kind]
+      : path.match(/concept-([abc])/)[1];
     if (!html.includes(`data-architecture="${kind}-${variant}"`))
       throw Error("Structural redesign not published " + path);
   }
