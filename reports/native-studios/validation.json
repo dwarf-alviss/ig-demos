@@ -1,0 +1,93 @@
+{
+  "base": "http://127.0.0.1:8765",
+  "results": [
+    {
+      "kind": "cakes",
+      "width": 1440,
+      "inline": true,
+      "noConceptBanner": true,
+      "choice": true,
+      "size": true,
+      "save": true,
+      "cart": true,
+      "overflow": false
+    },
+    {
+      "kind": "flowers",
+      "width": 1440,
+      "inline": true,
+      "noConceptBanner": true,
+      "choice": true,
+      "size": true,
+      "save": true,
+      "cart": true,
+      "overflow": false
+    },
+    {
+      "kind": "jewelry",
+      "width": 1440,
+      "inline": true,
+      "noConceptBanner": true,
+      "choice": true,
+      "size": true,
+      "save": true,
+      "cart": true,
+      "overflow": false
+    },
+    {
+      "kind": "fashion",
+      "width": 1440,
+      "inline": true,
+      "noConceptBanner": true,
+      "choice": true,
+      "size": true,
+      "save": true,
+      "cart": true,
+      "overflow": false
+    },
+    {
+      "kind": "cakes",
+      "width": 390,
+      "inline": true,
+      "noConceptBanner": true,
+      "choice": true,
+      "size": true,
+      "save": true,
+      "cart": true,
+      "overflow": false
+    },
+    {
+      "kind": "flowers",
+      "width": 390,
+      "inline": true,
+      "noConceptBanner": true,
+      "choice": true,
+      "size": true,
+      "save": true,
+      "cart": true,
+      "overflow": false
+    },
+    {
+      "kind": "jewelry",
+      "width": 390,
+      "inline": true,
+      "noConceptBanner": true,
+      "choice": true,
+      "size": true,
+      "save": true,
+      "cart": true,
+      "overflow": false
+    },
+    {
+      "kind": "fashion",
+      "width": 390,
+      "inline": true,
+      "noConceptBanner": true,
+      "choice": true,
+      "size": true,
+      "save": true,
+      "cart": true,
+      "overflow": false
+    }
+  ]
+}

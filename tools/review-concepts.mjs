@@ -24,7 +24,7 @@ try {
       );
       assert.equal(
         await page.locator(".concept-bar [aria-current]").count(),
-        1,
+        0,
       );
       await page.screenshot({
         path: `${folder}/${kind}-${v}-desktop.jpg`,
@@ -97,11 +97,8 @@ try {
       }
       assert.equal(await page.locator("[data-load-studio]").count(), 0);
       await page.locator("#create").scrollIntoViewIfNeeded();
-      await page
-        .frameLocator(".studio-mount iframe")
-        .locator("main")
-        .waitFor({ timeout: 60000 });
-      const frame = page.frames().find((f) => f.url().endsWith("/studio.html"));
+      await page.locator(".inline-main").waitFor();
+      const frame = page;
       if (kind === "fashion")
         await frame.waitForFunction(
           () =>

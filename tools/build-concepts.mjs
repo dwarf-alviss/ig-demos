@@ -1,6 +1,6 @@
 import { enrichContent } from "./storefront-content.mjs";
 import { selectedConcepts, conceptPath } from "./selected-concepts.mjs";
-import { writeFile } from "node:fs/promises";
+import { writeFile, readFile } from "node:fs/promises";
 import { projects } from "./showcase-data.mjs";
 const img = (src, alt, cls = "") =>
   `<img class="${cls}" src="${src}" alt="${alt}" loading="lazy">`;
@@ -14,8 +14,22 @@ const card = (src, title, caption) =>
   `<a class="object-card" href="catalog.html">${img(src, title)}<h3>${title}</h3><p>${caption}</p></a>`;
 const choice = (title, pattern, src, desc = "", extra = "") =>
   `<button class="choice" data-choice data-pattern="${pattern}" data-preview="${src}" data-title="${title}" data-description="${desc}" ${extra}><span>${title}</span><small>${desc}</small><b>↗</b></button>`;
+const studioFragments = Object.fromEntries(
+  await Promise.all(
+    ["cakes", "flowers", "jewelry", "fashion"].map(async (kind) => {
+      const template = await readFile(`${kind}/studio.html`, "utf8");
+      const main = template
+        .match(/<main>([\s\S]*?)<\/main>/)[1]
+        .replace(
+          /<section class="(?:studio-intro|intro)">[\s\S]*?<\/section>/,
+          "",
+        );
+      return [kind, main];
+    }),
+  ),
+);
 const studio = (kind, title, pattern) =>
-  `<section id="create" class="studio-section" data-initial-pattern="${pattern}"><div class="studio-heading">${eyebrow(kind === "fashion" ? "Ваша капсула / прямо здесь" : "Ваша мастерская / прямо здесь")}<h2>${title}</h2><p>${kind === "fashion" ? "Выбирайте вещи и размер, сохраняйте комплект и добавляйте его в корзину." : "Выбирайте детали, вращайте модель и сохраняйте свой дизайн, оставаясь на этой странице."}</p></div><div class="studio-mount"><iframe title="${title}" data-src="studio.html" data-inline-studio></iframe></div></section>`;
+  `<section id="create" class="studio-section" data-initial-pattern="${pattern}"><div class="studio-heading">${eyebrow(kind === "fashion" ? "Ваша капсула / прямо здесь" : "Ваша мастерская / прямо здесь")}<h2>${title}</h2><p>Меняйте детали и сохраняйте свой дизайн прямо на этой странице.</p></div><div class="studio-mount inline-studio" ${kind === "fashion" ? "data-wardrobe" : `data-studio="${kind}"`}><div class="inline-main">${studioFragments[kind]}</div></div></section>`;
 const names = {
   cakes: [
     [
@@ -115,7 +129,7 @@ for (const [kind, p] of Object.entries(projects))
           `<a ${i === j ? 'aria-current="page"' : ""} href="${conceptPath(kind, ["a", "b", "c"][j])}">${["A", "B", "C"][j]} · ${n}</a>`,
       )
       .join("");
-    const html = `<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${p.brand} — ${name}</title><meta name="description" content="${description}"><link rel="stylesheet" href="assets/fonts.css"><link rel="stylesheet" href="../shared/concepts.css">${kind === "fashion" ? '<script src="assets/data.js" defer></script>' : ""}<script src="../shared/concepts.js" defer></script></head><body data-brand="${kind}" data-concept="${v}" data-architecture="${id}"><a class="skip" href="#main">Перейти к содержимому</a><aside class="concept-bar"><a href="../directions.html">12 самостоятельных концепций ↗</a><div>${links}</div></aside><header class="site-header"><a class="wordmark" href="index.html">${p.brand}</a><nav aria-label="Основная навигация"><a href="catalog.html">Каталог</a><a href="#create">${kind === "fashion" ? "Капсула" : "Конструктор"}</a><a href="cart.html">Корзина ↗</a></nav></header><main id="main">${selectedConcepts[kind] === v ? enrichContent(kind, pages[id]) : pages[id]}</main><footer><a class="wordmark" href="index.html">${p.brand}</a><a href="../directions.html">Сравнить концепции ↗</a><p>Демонстрационный магазин · реальное оформление заказа не подключено.</p></footer></body></html>`;
+    const html = `<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${p.brand} — ${name}</title><meta name="description" content="${description}"><link rel="stylesheet" href="assets/fonts.css"><link rel="stylesheet" href="../shared/concepts.css?v=native-1"><link rel="stylesheet" href="../shared/inline-studio.css?v=native-1">${kind === "fashion" ? '<script src="assets/data.js" defer></script>' : ""}<script src="../shared/concepts.js?v=native-1" defer></script><script type="module" src="../shared/${kind === "fashion" ? "wardrobe.js" : "studio.bundle.js"}?v=native-1"></script></head><body ${kind === "fashion" ? "" : `data-studio="${kind}"`} data-brand="${kind}" data-concept="${v}" data-architecture="${id}"><a class="skip" href="#main">Перейти к содержимому</a><header class="site-header"><a class="wordmark" href="index.html">${p.brand}</a><nav aria-label="Основная навигация"><a href="catalog.html">Каталог</a><a href="#create">${kind === "fashion" ? "Капсула" : "Конструктор"}</a><a href="cart.html">Корзина ↗</a></nav></header><main id="main">${selectedConcepts[kind] === v ? enrichContent(kind, pages[id]) : pages[id]}</main><footer><a class="wordmark" href="index.html">${p.brand}</a><a href="#create">${kind === "fashion" ? "Собрать капсулу" : "Создать свой дизайн"} ↗</a><p>Демонстрационный магазин · реальное оформление заказа не подключено.</p></footer></body></html>`;
     await writeFile(`${kind}/${conceptPath(kind, v)}`, html + "\n");
     if (selectedConcepts[kind] === v)
       await writeFile(`${kind}/concept-${v}.html`, html + "\n");

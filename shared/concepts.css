@@ -2320,6 +2320,9 @@ body[data-architecture="fashion-c"] {
 .studio-mount {
   overflow: hidden;
 }
+.studio-mount.inline-studio {
+  overflow: visible;
+}
 @media (max-width: 760px) {
   .celebration-guide,
   .flower-moods,

@@ -30,7 +30,7 @@ for (const path of pages) {
   }
   if (path.includes("concept-") && !html.includes("data-concept="))
     throw Error("Old or incorrect content " + path);
-  if (path.endsWith("/index.html") && !html.includes("data-inline-studio"))
+  if (path.endsWith("/index.html") && !html.includes("inline-main"))
     throw Error("Deployment not updated " + path);
   if (path === "directions.html" && !html.includes("shared/design-previews/"))
     throw Error("Missing concept previews");
@@ -40,7 +40,7 @@ for (const path of pages) {
       (p) =>
         !p.startsWith("#") &&
         !p.startsWith("http") &&
-        /\.(jpg|css|js)$/.test(p),
+        /\.(jpg|css|js)(?:\?|$)/.test(p),
     );
   for (const asset of new Set(assets)) {
     const url = new URL(asset, base + path),
