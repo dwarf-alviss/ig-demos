@@ -3,160 +3,196 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Латунь — Маленькое ателье · Личные украшения</title>
     <meta
       name="description"
-      content="Тихие акценты на каждый день. Силуэты, которые хочется рассматривать, и украшения, которые хочется оставить себе."
+      content="Силуэт, металл, свет. Создайте украшение, в котором каждая грань и каждый оттенок камня выбраны вами."
     />
+    <meta name="theme-color" content="#1b1c1d" />
+    <title>Латунь — Минеральная галерея</title>
     <link rel="stylesheet" href="assets/fonts.css" />
-    <link rel="stylesheet" href="../shared/storefront.css" />
+    <link rel="stylesheet" href="../shared/showcase.css" />
+    <script src="../shared/showcase.js" defer></script>
   </head>
-  <body data-shop="jewelry">
+  <body data-brand="jewelry" data-concept="a">
     <a class="skip" href="#main">Перейти к содержимому</a>
-    <header class="shop-header">
-      <a class="brand" href="index.html">Латунь</a>
-      <nav aria-label="Основная навигация">
-        <a href="catalog.html">Коллекция</a
-        ><a class="edit" href="studio.html">Своя композиция ↗</a
-        ><a href="cart.html">Корзина</a>
+    <aside class="concept-bar" aria-label="Варианты дизайна">
+      <a href="../directions.html">Все 12 направлений ↗</a>
+      <div>
+        <a aria-current="page" href="index.html">A · Минеральная галерея</a
+        ><a href="concept-b.html">B · Предметное бюро</a
+        ><a href="concept-c.html">C · Личная драгоценность</a>
+      </div>
+    </aside>
+    <header class="site-header">
+      <a class="wordmark" href="index.html"
+        >Латунь<small>Ателье личных украшений</small></a
+      >
+      <nav aria-label="Главная навигация">
+        <a href="#collection">Коллекция</a><a href="#create">Мастерская</a
+        ><a href="cart.html">Корзина ↗</a>
       </nav>
     </header>
     <main id="main">
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="overline">Маленькое ателье · Личные украшения</p>
-          <h1>Личная история.<br />Точная форма.</h1>
+      <section class="opening">
+        <div class="opening-copy">
+          <span class="eyebrow">Ателье личных украшений / Минск</span>
+          <h1>Ваша история.<br />Её точная форма.</h1>
           <p>
-            Тихие акценты на каждый день. Силуэты, которые хочется
-            рассматривать, и украшения, которые хочется оставить себе.
+            Силуэт, металл, свет. Создайте украшение, в котором каждая грань и
+            каждый оттенок камня выбраны вами.
           </p>
-          <div class="actions">
-            <a class="button" href="catalog.html"
-              >Выбрать в каталоге <span>↗</span></a
-            ><a href="studio.html">Создать украшение →</a>
+          <div class="hero-actions">
+            <a class="primary" href="#create"
+              >Создать украшение<span>↗</span></a
+            ><a class="text-link" href="catalog.html">Смотреть коллекцию →</a>
           </div>
-          <p class="hero-note">Форма. Материал. Свет.</p>
+          <div class="edition">
+            <span>Индивидуальность в деталях</span><span>Коллекция / 01</span>
+          </div>
         </div>
-        <figure class="hero-visual">
+        <figure class="opening-image">
           <img
-            src="../shared/presets/jewelry-0.jpg"
-            alt="Солитер / исследование света и формы"
+            src="assets/img/ring.jpg"
+            alt="Латунь: Кольца"
             fetchpriority="high"
           />
           <figcaption>
-            <span>Солитер / исследование света и формы</span
-            ><span>01 / Латунь</span>
+            <span>Латунь / личный выбор</span><span>01—04</span>
           </figcaption>
         </figure>
+        <span class="hero-index" aria-hidden="true">✳</span>
       </section>
-      <div class="promise">
-        <span>Ручная работа</span><span>Латунь и серебро в каталоге</span
-        ><span>Индивидуальная композиция</span>
+      <div class="brand-strip">
+        <span>Свет меняет форму. Вы меняете детали.</span
+        ><a href="#create">Начать с себя ↗</a>
       </div>
-      <section class="collection">
-        <div class="section-head">
+      <section id="collection" class="collection-section">
+        <div class="section-title">
           <div>
-            <p class="overline">Выбор мастерской / 01—04</p>
-            <h2>Предметы привязанности</h2>
-            <p>Начните с любимого — и найдите что-то своё.</p>
+            <span class="eyebrow">Выбор мастерской / 01</span>
+            <h2>Найдите своё.</h2>
           </div>
-          <a href="catalog.html">Вся коллекция ↗</a>
+          <a class="text-link" href="catalog.html">Вся коллекция ↗</a>
         </div>
-        <div class="products">
-          <a class="product" href="catalog.html"
-            ><div class="photo">
-              <img
-                src="assets/img/earrings.jpg"
-                alt="Серьги-подвески на тонких дужках с россыпью мелких камней"
-                loading="lazy"
-              /><span class="number">01</span>
-            </div>
-            <h3>Серьги «Капля»</h3>
-            <div class="row">
-              <p>длина 3,5 см</p>
-              <strong>78 BYN</strong>
-            </div></a
-          ><a class="product" href="catalog.html"
-            ><div class="photo">
+        <div class="piece-grid">
+          <a class="piece" href="catalog.html"
+            ><figure>
               <img
                 src="assets/img/ring.jpg"
-                alt="Два полированных кольца-обручалки на тёмной матовой поверхности"
+                alt="Личный акцент"
                 loading="lazy"
-              /><span class="number">02</span>
-            </div>
-            <h3>Кольцо «Грань»</h3>
-            <div class="row">
-              <p>размеры 15–21</p>
-              <strong>62 BYN</strong>
+              /><span>01</span>
+            </figure>
+            <div>
+              <h3>Личный акцент</h3>
+              <p>Кольца</p>
+              <span aria-hidden="true">↗</span>
             </div></a
-          ><a class="product" href="catalog.html"
-            ><div class="photo">
-              <img
-                src="assets/img/hero.jpg"
-                alt="Колье из бирюзовых бусин в латунных шапочках на светлом фоне"
-                loading="lazy"
-              /><span class="number">03</span>
-            </div>
-            <h3>Колье «Оазис»</h3>
-            <div class="row">
-              <p>длина 42 см + удлинитель 5 см</p>
-              <strong>110 BYN</strong>
-            </div></a
-          ><a class="product" href="catalog.html"
-            ><div class="photo">
+          ><a class="piece" href="catalog.html"
+            ><figure>
               <img
                 src="assets/img/pendant.jpg"
-                alt="Подвеска с натуральными бирюзовыми камешками на тонкой цепочке"
+                alt="Ближе к сердцу"
                 loading="lazy"
-              /><span class="number">04</span>
-            </div>
-            <h3>Подвеска «Бирюза»</h3>
-            <div class="row">
-              <p>подвеска 3 см, цепочка 45 см</p>
-              <strong>95 BYN</strong>
+              /><span>02</span>
+            </figure>
+            <div>
+              <h3>Ближе к сердцу</h3>
+              <p>Подвески</p>
+              <span aria-hidden="true">↗</span>
+            </div></a
+          ><a class="piece" href="catalog.html"
+            ><figure>
+              <img
+                src="assets/img/earrings.jpg"
+                alt="Ритм и свет"
+                loading="lazy"
+              /><span>03</span>
+            </figure>
+            <div>
+              <h3>Ритм и свет</h3>
+              <p>Серьги</p>
+              <span aria-hidden="true">↗</span>
             </div></a
           >
         </div>
       </section>
-      <section class="edit-section">
-        <img
-          src="../shared/presets/jewelry-1.jpg"
-          alt="Пример собранной композиции"
-          loading="lazy"
-        />
-        <div class="edit-copy">
-          <p class="overline">Ваша мастерская</p>
-          <h2>Найдите свой<br />оттенок света.</h2>
+      <section class="story">
+        <figure>
+          <img
+            src="assets/img/workshop.jpg"
+            alt="Ателье личных украшений: материалы и мастерская"
+            loading="lazy"
+          />
+        </figure>
+        <div>
+          <span class="eyebrow">Внимание к деталям / 02</span>
+          <h2>От замысла<br />до личной вещи.</h2>
           <p>
-            От классического солитера до подвески. Исследуйте огранки, оттенки
-            камней и металл — и рассмотрите результат со всех сторон.
+            Выбирайте готовую композицию или начните с чистого листа. В
+            мастерской можно менять детали, сравнивать варианты и сохранять свой
+            замысел.
           </p>
-          <div class="steps">
-            <span><b>01</b>Форма</span><span><b>02</b>Сочетание</span
-            ><span><b>03</b>Ваш выбор</span>
-          </div>
-          <a class="button" href="studio.html"
-            >Создать украшение <span>↗</span></a
-          >
+          <a class="text-link" href="#create">Войти в мастерскую →</a>
         </div>
       </section>
-    </main>
-    <footer class="shop-footer">
-      <div>
-        <a class="brand" href="index.html">Латунь</a
-        ><span>Маленькое ателье · Личные украшения</span>
-      </div>
-      <div>
-        <a href="catalog.html">Каталог</a
-        ><a href="studio.html">Создать украшение</a
-        ><a href="cart.html">Корзина и заказ</a>
-      </div>
-      <div class="legal">
-        Демонстрационный проект портфолио. Заказы сохраняются в браузере.<br /><a
-          href="../"
-          >Все проекты ↗</a
+      <section id="create" class="create-section">
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">Ваша личная мастерская / 03</span>
+            <h2>Создать украшение.</h2>
+          </div>
+          <p>
+            Меняйте детали и вращайте композицию в 3D.<br />Сохраняйте вариант и
+            возвращайтесь к нему.
+          </p>
+        </div>
+        <ol class="steps">
+          <li><span>01</span>Выберите силуэт</li>
+          <li><span>02</span>Найдите свой металл и камень</li>
+          <li><span>03</span>Рассмотрите каждую грань</li>
+        </ol>
+        <div class="studio-mount">
+          <div class="studio-placeholder">
+            <span class="eyebrow">Интерактивная студия</span>
+            <h3>Теперь — ваша очередь.</h3>
+            <p>
+              Конструктор откроется прямо здесь.<br />Ваши сохранённые варианты
+              останутся доступны.
+            </p>
+            <button class="primary" data-load-studio>
+              Открыть конструктор <span>↗</span></button
+            ><a class="text-link" href="studio.html">Открыть на весь экран →</a>
+          </div>
+          <iframe
+            title="Создать украшение: интерактивный конструктор"
+            data-src="studio.html"
+            hidden
+          ></iframe>
+        </div>
+        <div class="studio-bottom">
+          <span>Ракурсы · сохранение · экспорт композиции</span
+          ><a href="studio.html">Полноэкранная мастерская ↗</a>
+        </div>
+      </section>
+      <section class="closing">
+        <span class="eyebrow">Начните с того, что нравится</span>
+        <h2>Оставьте себе.</h2>
+        <a class="primary" href="catalog.html"
+          >Посмотреть коллекцию <span>↗</span></a
         >
+      </section>
+    </main>
+    <footer>
+      <a class="wordmark" href="index.html">Латунь</a>
+      <div>
+        <a href="catalog.html">Каталог</a><a href="studio.html">Конструктор</a
+        ><a href="cart.html">Корзина</a>
       </div>
+      <p>
+        Портфолио · демонстрационный магазин<br />Оформление реального заказа
+        недоступно
+      </p>
     </footer>
   </body>
 </html>

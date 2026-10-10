@@ -1,5 +1,13 @@
 # Portfolio studios
 
+## Four storefronts and twelve design directions
+
+The four independent entry points are `cakes/`, `flowers/`, `jewelry/` and `fashion/`. Each has three live design directions: recommended `index.html`, `concept-b.html` and `concept-c.html`. `directions.html` compares them using actual rendered previews. The existing catalogue, cart and studios remain available. Each storefront loads its studio inside the page only after the visitor requests it; the three 3D builders retain their existing saved designs, and fashion retains its catalogue capsule builder.
+
+Rebuild the storefront pages with `npm run showcase:build`. Run `npm run showcase:review` against a local HTTP server for desktop/mobile layout and four embedded studio checks. `reports/showcase-final/validation.json` records the complete twelve-direction check. These design proposals do not claim to fix the separately recorded model composition defects.
+
+GitHub Pages uses the `codex/pages-showcase` branch. `npm run pages:prepare` prepares an allowlisted deployment tree from committed source: only the four sites, shared runtime/assets, portfolio index, design gallery and `.nojekyll`. Local credential files, dependencies, reports and development tools are excluded from the published tree. Push that branch to publish subsequent updates; the working source branch remains separate.
+
 Four static stores with distinct visual identities and an interactive portfolio index. Three Three.js studios assemble the supplied cake, flower and jewelry assets; the fashion capsule uses catalogue products and labelled garment sketches.
 
 ## Run
