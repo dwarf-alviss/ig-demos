@@ -9,21 +9,14 @@
       content="Редакционный журнал с крупными номерами выпусков, разворотами и подборками образов."
     />
     <link rel="stylesheet" href="assets/fonts.css" />
-    <link rel="stylesheet" href="../shared/concepts.css" />
+    <link rel="stylesheet" href="../shared/concepts.css?v=native-1" />
+    <link rel="stylesheet" href="../shared/inline-studio.css?v=native-1" />
     <script src="assets/data.js" defer></script>
-    <script src="../shared/concepts.js" defer></script>
+    <script src="../shared/concepts.js?v=native-1" defer></script>
+    <script type="module" src="../shared/wardrobe.js?v=native-1"></script>
   </head>
   <body data-brand="fashion" data-concept="a" data-architecture="fashion-a">
     <a class="skip" href="#main">Перейти к содержимому</a>
-    <aside class="concept-bar">
-      <a href="../directions.html">12 самостоятельных концепций ↗</a>
-      <div>
-        <a aria-current="page" href="concept-a.html"
-          >A · Журнал городской формы</a
-        ><a href="concept-b.html">B · Планировщик гардероба</a
-        ><a href="index.html">C · Функциональный магазин</a>
-      </div>
-    </aside>
     <header class="site-header">
       <a class="wordmark" href="index.html">ЛИНИЯ</a>
       <nav aria-label="Основная навигация">
@@ -78,23 +71,42 @@
         <div class="studio-heading">
           <span class="eyebrow">Ваша капсула / прямо здесь</span>
           <h2>Ваша редакция гардероба.</h2>
-          <p>
-            Выбирайте вещи и размер, сохраняйте комплект и добавляйте его в
-            корзину.
-          </p>
+          <p>Меняйте детали и сохраняйте свой дизайн прямо на этой странице.</p>
         </div>
-        <div class="studio-mount">
-          <iframe
-            title="Ваша редакция гардероба."
-            data-src="studio.html"
-            data-inline-studio
-          ></iframe>
+        <div class="studio-mount inline-studio" data-wardrobe>
+          <div class="inline-main">
+            <div class="workspace">
+              <section>
+                <div class="look" id="look" aria-label="Ваш образ"></div>
+                <div class="caption">
+                  <span>YOUR DAILY UNIFORM</span><span id="count">01 — 03</span>
+                </div>
+              </section>
+              <section class="panel">
+                <h2>Ваша редакция</h2>
+                <div id="choices"></div>
+                <fieldset>
+                  <legend>Размер</legend>
+                  <div class="sizes" id="sizes"></div>
+                </fieldset>
+                <div class="total">
+                  <span>Стоимость капсулы</span><strong id="price"></strong>
+                </div>
+                <p id="summary"></p>
+                <button id="add-capsule">Добавить комплект в корзину ↗</button
+                ><button id="save">Сохранить капсулу ↗</button>
+                <p class="note" id="status" role="status">
+                  Демонстрационный подбор. Выбор сохраняется в вашем браузере.
+                </p>
+              </section>
+            </div>
+          </div>
         </div>
       </section>
     </main>
     <footer>
       <a class="wordmark" href="index.html">ЛИНИЯ</a
-      ><a href="../directions.html">Сравнить концепции ↗</a>
+      ><a href="#create">Собрать капсулу ↗</a>
       <p>
         Демонстрационный магазин · реальное оформление заказа не подключено.
       </p>

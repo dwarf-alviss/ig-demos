@@ -9,19 +9,18 @@
       content="Графичный постер и планировщик события: дата, повод и список пожеланий. Подача через праздник, а не витрину."
     />
     <link rel="stylesheet" href="assets/fonts.css" />
-    <link rel="stylesheet" href="../shared/concepts.css" />
-    <script src="../shared/concepts.js" defer></script>
+    <link rel="stylesheet" href="../shared/concepts.css?v=native-1" />
+    <link rel="stylesheet" href="../shared/inline-studio.css?v=native-1" />
+    <script src="../shared/concepts.js?v=native-1" defer></script>
+    <script type="module" src="../shared/studio.bundle.js?v=native-1"></script>
   </head>
-  <body data-brand="cakes" data-concept="c" data-architecture="cakes-c">
+  <body
+    data-studio="cakes"
+    data-brand="cakes"
+    data-concept="c"
+    data-architecture="cakes-c"
+  >
     <a class="skip" href="#main">Перейти к содержимому</a>
-    <aside class="concept-bar">
-      <a href="../directions.html">12 самостоятельных концепций ↗</a>
-      <div>
-        <a href="concept-a.html">A · Мастерская праздника</a
-        ><a href="concept-b.html">B · Дегустационное меню</a
-        ><a aria-current="page" href="index.html">C · Праздничный плакат</a>
-      </div>
-    </aside>
     <header class="site-header">
       <a class="wordmark" href="index.html">Мельница</a>
       <nav aria-label="Основная навигация">
@@ -195,17 +194,237 @@
         <div class="studio-heading">
           <span class="eyebrow">Ваша мастерская / прямо здесь</span>
           <h2>Придумайте главный акцент.</h2>
-          <p>
-            Выбирайте детали, вращайте модель и сохраняйте свой дизайн,
-            оставаясь на этой странице.
-          </p>
+          <p>Меняйте детали и сохраняйте свой дизайн прямо на этой странице.</p>
         </div>
-        <div class="studio-mount">
-          <iframe
-            title="Придумайте главный акцент."
-            data-src="studio.html"
-            data-inline-studio
-          ></iframe>
+        <div class="studio-mount inline-studio" data-studio="cakes">
+          <div class="inline-main">
+            <div class="studio-workspace">
+              <section class="atelier" aria-label="Предпросмотр">
+                <div class="stage-shell">
+                  <div class="stage-title">
+                    <span>Ваш авторский десерт</span>
+                    <div class="history">
+                      <button
+                        id="undo"
+                        title="Отменить"
+                        aria-label="Отменить действие"
+                        disabled
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          aria-hidden="true"
+                        >
+                          <path d="M9 5 4 10l5 5M4 10h9a6 6 0 0 1 0 12" />
+                        </svg></button
+                      ><button
+                        id="redo"
+                        title="Повторить"
+                        aria-label="Повторить действие"
+                        disabled
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          aria-hidden="true"
+                        >
+                          <path d="m15 5 5 5-5 5m5-5h-9a6 6 0 0 0 0 12" />
+                        </svg></button
+                      ><button
+                        id="reset"
+                        title="Начать заново"
+                        aria-label="Начать заново"
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          aria-hidden="true"
+                        >
+                          <path d="M4 10a8 8 0 1 1 1 8M4 4v6h6" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div id="viewer" class="viewer" aria-busy="true">
+                    <img
+                      id="fallback"
+                      src="assets/img/berry.jpg"
+                      alt="Пример готового изделия. Точный предпросмотр появится после загрузки."
+                    /><canvas
+                      id="canvas"
+                      hidden
+                      tabindex="0"
+                      aria-label="3D предпросмотр. Перетаскивание вращает модель, колесо приближает. Для готовых ракурсов используйте кнопки под моделью."
+                    ></canvas>
+                  </div>
+                  <div class="stage-tools">
+                    <div class="poses" aria-label="Ракурс">
+                      <button data-pose="front" aria-pressed="true">
+                        Спереди</button
+                      ><button data-pose="side" aria-pressed="false">
+                        Сбоку</button
+                      ><button data-pose="top" aria-pressed="false">
+                        Сверху
+                      </button>
+                    </div>
+                    <span id="measure" class="measure"></span>
+                    <div class="utility">
+                      <button
+                        id="rotate"
+                        title="Вращение"
+                        aria-label="Автоматическое вращение"
+                        aria-pressed="false"
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          aria-hidden="true"
+                        >
+                          <path d="M19 9a7 7 0 1 0 1 7m-1-7V3m0 6h-6" />
+                        </svg></button
+                      ><button
+                        id="snapshot"
+                        title="Скачать изображение"
+                        aria-label="Скачать изображение"
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          aria-hidden="true"
+                        >
+                          <path d="M3 7h5l2-3h4l2 3h5v13H3Z" />
+                          <circle cx="12" cy="13" r="4" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="scene-status">
+                  <p id="status" role="status" aria-live="polite">
+                    Готовим вашу студию…
+                  </p>
+                  <button id="retry" hidden>Повторить загрузку</button
+                  ><span>Потяните для вращения · колесо для приближения</span>
+                </div>
+                <section class="inspiration">
+                  <div class="section-line">
+                    <h2>С чего начнём?</h2>
+                    <span>Три готовые идеи</span>
+                  </div>
+                  <div id="presets" class="presets"></div>
+                </section>
+              </section>
+              <aside class="design-panel" aria-label="Настройка дизайна">
+                <div class="panel-heading">
+                  <div>
+                    <p class="eyebrow">Маленькие детали. Большая разница.</p>
+                    <h2>Соберите свой рецепт</h2>
+                  </div>
+                  <span class="panel-badge">01 / 03</span>
+                </div>
+                <div
+                  class="category-tabs"
+                  id="categories"
+                  role="tablist"
+                  aria-label="Категории деталей"
+                ></div>
+                <div class="catalog-toolbar">
+                  <label class="search"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      aria-hidden="true"
+                    >
+                      <circle cx="10" cy="10" r="6" />
+                      <path d="m15 15 5 5" /></svg
+                    ><input
+                      type="search"
+                      id="search"
+                      placeholder="Найти деталь…"
+                      aria-label="Поиск детали" /></label
+                  ><select
+                    id="stone-filter"
+                    hidden
+                    aria-label="Коллекция камней"
+                  >
+                    <option value="all">Все камни</option>
+                    <option value="diamond">12 бриллиантовых огранок</option>
+                    <option value="gem">88 цветных камней</option>
+                    <option value="cabochon">Кабошоны</option>
+                  </select>
+                </div>
+                <p id="catalog-count" class="catalog-count"></p>
+                <div
+                  id="catalog"
+                  class="asset-grid"
+                  role="group"
+                  aria-label="Детали"
+                ></div>
+                <section class="material-options">
+                  <div class="section-line">
+                    <h3>Палитра композиции</h3>
+                    <span>Ваш оттенок</span>
+                  </div>
+                  <div id="palette" class="palette"></div>
+                  <div id="dimension-options" class="dimension-options"></div>
+                </section>
+                <details class="composition" open>
+                  <summary>Состав <span id="selected-count"></span></summary>
+                  <ul id="ingredients"></ul>
+                </details>
+                <div class="checkout">
+                  <div class="estimate">
+                    <span>Ваш дизайн</span><strong id="price"></strong>
+                  </div>
+                  <p id="summary" class="summary"></p>
+                  <button id="add-cart" class="primary">
+                    Добавить в корзину
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      aria-hidden="true"
+                    >
+                      <path d="M4 12h16m-6-6 6 6-6 6" />
+                    </svg></button
+                  ><a id="cart-link" class="cart-link" href="cart.html" hidden
+                    >Перейти к оформлению ↗</a
+                  >
+                  <div class="draft-actions">
+                    <button id="save">Сохранить черновик</button
+                    ><button id="download">
+                      Конфигурация
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4" />
+                      </svg>
+                    </button>
+                  </div>
+                  <p class="demo-note">
+                    Демо-проект · стоимость ориентировочная
+                  </p>
+                </div>
+              </aside>
+            </div>
+          </div>
         </div>
       </section>
       <section class="content-faq">
@@ -241,7 +460,7 @@
     </main>
     <footer>
       <a class="wordmark" href="index.html">Мельница</a
-      ><a href="../directions.html">Сравнить концепции ↗</a>
+      ><a href="#create">Создать свой дизайн ↗</a>
       <p>
         Демонстрационный магазин · реальное оформление заказа не подключено.
       </p>
