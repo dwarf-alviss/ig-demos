@@ -1,0 +1,17 @@
+[
+  {
+    "file": "page-0.jpg",
+    "ids": [
+      "flowers-89eb7bf295bc9b7f",
+      "flowers-2a88c08c6f86be1b",
+      "flowers-70cf79ac1b5f9025"
+    ],
+    "bundleHash": "be42943b71c4ffc31da478cce328b9a00b175391c6a36fcb47117c72042ad371",
+    "poses": [
+      "front",
+      "side",
+      "top",
+      "back"
+    ]
+  }
+]

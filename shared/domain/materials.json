@@ -1,0 +1,752 @@
+[
+  {
+    "id": "yellow-gold",
+    "name": "Жёлтое золото 750",
+    "color": "#d8b56b",
+    "roughness": 0.16,
+    "microstructure": "fine parallel polishing marks",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 1,
+    "finish": [
+      "polished",
+      "satin",
+      "brushed",
+      "hammered"
+    ],
+    "sources": [
+      "node-trudy",
+      "tif-pendant",
+      "cartier-trinity"
+    ]
+  },
+  {
+    "id": "white-gold",
+    "name": "Белое золото 750",
+    "color": "#e0ded3",
+    "roughness": 0.16,
+    "microstructure": "fine parallel polishing marks",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 1,
+    "finish": [
+      "polished",
+      "satin",
+      "brushed",
+      "hammered"
+    ],
+    "sources": [
+      "node-trudy",
+      "tif-pendant",
+      "cartier-trinity"
+    ]
+  },
+  {
+    "id": "rose-gold",
+    "name": "Розовое золото 750",
+    "color": "#d79e88",
+    "roughness": 0.16,
+    "microstructure": "fine parallel polishing marks",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 1,
+    "finish": [
+      "polished",
+      "satin",
+      "brushed",
+      "hammered"
+    ],
+    "sources": [
+      "node-trudy",
+      "tif-pendant",
+      "cartier-trinity"
+    ]
+  },
+  {
+    "id": "silver",
+    "name": "Серебро 925",
+    "color": "#e7e9eb",
+    "roughness": 0.16,
+    "microstructure": "fine parallel polishing marks",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 1,
+    "finish": [
+      "polished",
+      "satin",
+      "brushed",
+      "hammered"
+    ],
+    "sources": [
+      "node-trudy",
+      "tif-pendant",
+      "cartier-trinity"
+    ]
+  },
+  {
+    "id": "platinum",
+    "name": "Платина 950",
+    "color": "#c9d0d5",
+    "roughness": 0.16,
+    "microstructure": "fine parallel polishing marks",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 1,
+    "finish": [
+      "polished",
+      "satin",
+      "brushed",
+      "hammered"
+    ],
+    "sources": [
+      "node-trudy",
+      "tif-pendant",
+      "cartier-trinity"
+    ]
+  },
+  {
+    "id": "diamond",
+    "name": "Бриллиант",
+    "color": "#ffffff",
+    "roughness": 0.04,
+    "microstructure": "facets",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "ior": 2.42,
+    "transmission": 0.92,
+    "sources": [
+      "gia-diamond"
+    ]
+  },
+  {
+    "id": "ruby",
+    "name": "Рубин",
+    "color": "#b71f3e",
+    "roughness": 0.04,
+    "microstructure": "facets",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "ior": 1.766,
+    "transmission": 0.92,
+    "sources": [
+      "gia-ruby"
+    ]
+  },
+  {
+    "id": "emerald",
+    "name": "Изумруд",
+    "color": "#12845c",
+    "roughness": 0.04,
+    "microstructure": "facets",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "ior": 1.58,
+    "transmission": 0.92,
+    "sources": [
+      "gia-emerald"
+    ]
+  },
+  {
+    "id": "aquamarine",
+    "name": "Аквамарин",
+    "color": "#97d4e2",
+    "roughness": 0.04,
+    "microstructure": "facets",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "ior": 1.58,
+    "transmission": 0.92,
+    "sources": [
+      "gia-aquamarine"
+    ]
+  },
+  {
+    "id": "amethyst",
+    "name": "Аметист",
+    "color": "#8552aa",
+    "roughness": 0.04,
+    "microstructure": "facets",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "ior": 1.548,
+    "transmission": 0.92,
+    "sources": [
+      "gia-amethyst"
+    ]
+  },
+  {
+    "id": "opal",
+    "name": "Опал",
+    "color": "#eee9d3",
+    "roughness": 0.04,
+    "microstructure": "domed silica play-of-colour",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "ior": 1.45,
+    "transmission": 0.12,
+    "sources": [
+      "gia-opal"
+    ]
+  },
+  {
+    "id": "sponge",
+    "name": "Бисквит",
+    "color": "#dab77f",
+    "roughness": 0.86,
+    "microstructure": "open irregular crumb pores",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "cocoa-sponge",
+    "name": "Шоколадный бисквит",
+    "color": "#694031",
+    "roughness": 0.88,
+    "microstructure": "open crumb pores",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "sable",
+    "name": "Песочное тесто",
+    "color": "#c49555",
+    "roughness": 0.8,
+    "microstructure": "baked fine granular crumb",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "joconde",
+    "name": "Joconde",
+    "color": "#d5b17c",
+    "roughness": 0.78,
+    "microstructure": "fine almond crumb",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "choux",
+    "name": "Заварное тесто",
+    "color": "#c38a47",
+    "roughness": 0.66,
+    "microstructure": "baked ridges and browned edges",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "cream",
+    "name": "Сливочный крем",
+    "color": "#fff0d4",
+    "roughness": 0.48,
+    "microstructure": "whipped microbubbles",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "mousse",
+    "name": "Мусс",
+    "color": "#8c5c47",
+    "roughness": 0.52,
+    "microstructure": "fine airy pores",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "custard",
+    "name": "Заварной крем",
+    "color": "#f1d7a1",
+    "roughness": 0.4,
+    "microstructure": "smooth viscous surface",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "cheesecake",
+    "name": "Сырный слой",
+    "color": "#f3dfb9",
+    "roughness": 0.52,
+    "microstructure": "fine dense grain",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "confit",
+    "name": "Ягодное конфи",
+    "color": "#a32946",
+    "roughness": 0.25,
+    "microstructure": "fruit pulp and seeds",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "lemon-curd",
+    "name": "Лимонный курд",
+    "color": "#dfbe51",
+    "roughness": 0.3,
+    "microstructure": "smooth opaque emulsion",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "dark-chocolate",
+    "name": "Тёмный шоколад",
+    "color": "#3e241c",
+    "roughness": 0.29,
+    "microstructure": "fine cocoa surface",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "milk-chocolate",
+    "name": "Молочный шоколад",
+    "color": "#78503a",
+    "roughness": 0.31,
+    "microstructure": "fine cocoa surface",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "white-chocolate",
+    "name": "Белый шоколад",
+    "color": "#e9d8ad",
+    "roughness": 0.32,
+    "microstructure": "fine cocoa-butter surface",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "ganache",
+    "name": "Ганаш",
+    "color": "#513227",
+    "roughness": 0.26,
+    "microstructure": "smooth emulsion",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "mirror-glaze",
+    "name": "Зеркальная глазурь",
+    "color": "#652b26",
+    "roughness": 0.13,
+    "microstructure": "thin glossy meniscus",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "caramel",
+    "name": "Карамель",
+    "color": "#b87832",
+    "roughness": 0.18,
+    "microstructure": "viscous translucent gloss",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "velvet",
+    "name": "Шоколадный велюр",
+    "color": "#b16b70",
+    "roughness": 0.92,
+    "microstructure": "dense fine cocoa-butter droplets",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "fondant",
+    "name": "Мастика",
+    "color": "#f0e6d9",
+    "roughness": 0.7,
+    "microstructure": "smooth sugar paste",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "nut",
+    "name": "Орех",
+    "color": "#ad8151",
+    "roughness": 0.77,
+    "microstructure": "irregular toasted ridges",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "strawberry",
+    "name": "Клубника",
+    "color": "#bc3028",
+    "roughness": 0.41,
+    "microstructure": "seeds in dimples",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "blueberry",
+    "name": "Голубика",
+    "color": "#415473",
+    "roughness": 0.72,
+    "microstructure": "waxy bloom",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "raspberry",
+    "name": "Малина",
+    "color": "#b93549",
+    "roughness": 0.57,
+    "microstructure": "individual drupelets",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "cherry",
+    "name": "Вишня",
+    "color": "#921f36",
+    "roughness": 0.25,
+    "microstructure": "taut glossy skin",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "subsurfaceApproximation": "low transmission/backlighting only; not a spectral BSSRDF",
+    "sources": [
+      "cal-cheese",
+      "cal-hazel",
+      "kab-choux",
+      "lad-macaron"
+    ]
+  },
+  {
+    "id": "petal",
+    "name": "Лепесток",
+    "color": "#dbafbb",
+    "roughness": 0.63,
+    "microstructure": "veins and thin translucent margins",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "transmission": 0.12,
+    "sources": [
+      "ifl-method",
+      "da-taffeta"
+    ]
+  },
+  {
+    "id": "leaf",
+    "name": "Лист",
+    "color": "#416c47",
+    "roughness": 0.61,
+    "microstructure": "raised vein network",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "transmission": 0,
+    "sources": [
+      "ifl-method",
+      "da-taffeta"
+    ]
+  },
+  {
+    "id": "stem",
+    "name": "Стебель",
+    "color": "#507346",
+    "roughness": 0.75,
+    "microstructure": "longitudinal fibres",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "transmission": 0,
+    "sources": [
+      "ifl-method",
+      "da-taffeta"
+    ]
+  },
+  {
+    "id": "kraft",
+    "name": "Крафтовая бумага",
+    "color": "#bda07a",
+    "roughness": 0.91,
+    "microstructure": "cellulose fibres",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "transmission": 0,
+    "sources": [
+      "ifl-method",
+      "da-taffeta"
+    ]
+  },
+  {
+    "id": "tissue",
+    "name": "Тишью",
+    "color": "#eadbd5",
+    "roughness": 0.83,
+    "microstructure": "fine creased fibres",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "transmission": 0.12,
+    "sources": [
+      "ifl-method",
+      "da-taffeta"
+    ]
+  },
+  {
+    "id": "mesh-wrap",
+    "name": "Флористическая сетка",
+    "color": "#d4c4b2",
+    "roughness": 0.72,
+    "microstructure": "woven open grid",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "transmission": 0,
+    "sources": [
+      "ifl-method",
+      "da-taffeta"
+    ]
+  },
+  {
+    "id": "satin",
+    "name": "Атласная лента",
+    "color": "#b88796",
+    "roughness": 0.39,
+    "microstructure": "directional satin weave",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "transmission": 0,
+    "sources": [
+      "ifl-method",
+      "da-taffeta"
+    ]
+  },
+  {
+    "id": "linen",
+    "name": "Льняная лента",
+    "color": "#c5b396",
+    "roughness": 0.9,
+    "microstructure": "coarse woven fibres",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "transmission": 0,
+    "sources": [
+      "ifl-method",
+      "da-taffeta"
+    ]
+  },
+  {
+    "id": "rattan",
+    "name": "Ротанг",
+    "color": "#98774f",
+    "roughness": 0.84,
+    "microstructure": "woven woody strips",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "transmission": 0,
+    "sources": [
+      "ifl-method",
+      "da-taffeta"
+    ]
+  },
+  {
+    "id": "glass",
+    "name": "Стекло",
+    "color": "#ffffff",
+    "roughness": 0.065,
+    "microstructure": "smooth glass",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "transmission": 0.97,
+    "sources": [
+      "ifl-method",
+      "da-taffeta"
+    ]
+  },
+  {
+    "id": "sapphire",
+    "name": "Сапфир",
+    "color": "#345caa",
+    "roughness": 0.035,
+    "microstructure": "polished facets",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "ior": 1.766,
+    "transmission": 0.92,
+    "sources": [
+      "gia-sapphire"
+    ]
+  },
+  {
+    "id": "citrine",
+    "name": "Цитрин",
+    "color": "#d18b3d",
+    "roughness": 0.035,
+    "microstructure": "polished facets",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "ior": 1.548,
+    "transmission": 0.92,
+    "sources": [
+      "gia-citrine"
+    ]
+  },
+  {
+    "id": "topaz",
+    "name": "Топаз",
+    "color": "#d9b351",
+    "roughness": 0.035,
+    "microstructure": "polished facets",
+    "calibration": "PBR appearance tuning; roughness is not a laboratory measurement",
+    "metalness": 0,
+    "ior": 1.623,
+    "transmission": 0.92,
+    "sources": [
+      "gia-topaz"
+    ]
+  }
+]

@@ -1,0 +1,408 @@
+{
+  "cal-cheese": {
+    "id": "cal-cheese",
+    "title": "Callebaut: Caramel cheesecake",
+    "url": "https://www.callebaut.com/en/recipes/caramel-cheesecake/2132",
+    "accessed": "2026-10-07",
+    "facts": "Breton biscuit, caramel cream-cheese filling, salted caramel, gold-chocolate glaze; biscuit rolled to 4 mm."
+  },
+  "cal-rasp": {
+    "id": "cal-rasp",
+    "title": "Callebaut: Kumabo raspberry mousse pastry",
+    "url": "https://www.callebaut.com/en/recipes/kumabo-chocolate-mousse-raspberry/1133",
+    "accessed": "2026-10-07",
+    "facts": "Chocolate sablé supports chocolate mousse; finish includes fresh raspberries and macarons."
+  },
+  "cal-hazel": {
+    "id": "cal-hazel",
+    "title": "Callebaut: Hazelnut Crunch Entremet",
+    "url": "https://www.callebaut.com/en-US/recipes/Hazelnut-Crunch-Entremet/3601",
+    "accessed": "2026-10-07",
+    "facts": "Hazelnut biscuit, chocolate-hazelnut crunch, gianduja mousse, praline glaze; moulded and frozen before glazing."
+  },
+  "cal-charm": {
+    "id": "cal-charm",
+    "title": "Callebaut: Raspberry chocolate charm",
+    "url": "https://www.callebaut.com/en/recipes/rasberry-chocolate-charm/1212",
+    "accessed": "2026-10-07",
+    "facts": "Two sablé layers, raspberry chocolate crémeux, chocolate glaze, raspberry and pistachio accents."
+  },
+  "cal-paris": {
+    "id": "cal-paris",
+    "title": "Callebaut: Ruby raspberry pistachio Paris-Brest",
+    "url": "https://www.callebaut.com/en-CA/recipes/ruby-raspberry-pistachio-paris-brest/5097",
+    "accessed": "2026-10-07",
+    "facts": "Choux with ruby cream, raspberry and pistachio praline."
+  },
+  "kab-choux": {
+    "id": "kab-choux",
+    "title": "King Arthur: Cream puffs and éclairs",
+    "url": "https://www.kingarthurbaking.com/recipes/cream-puffs-and-eclairs-recipe",
+    "accessed": "2026-10-07",
+    "facts": "Choux geometry differs for round puffs and elongated éclairs; pastry-cream filling and chocolate top icing."
+  },
+  "kab-lemon": {
+    "id": "kab-lemon",
+    "title": "King Arthur: Lemon Cloud Cake",
+    "url": "https://www.kingarthurbaking.com/recipes/lemon-cloud-cake-recipe",
+    "accessed": "2026-10-07",
+    "facts": "Two cake layers, lemon pastry cream and whipped lemon cream; 8-inch square or 9-inch round pans."
+  },
+  "kab-forest": {
+    "id": "kab-forest",
+    "title": "King Arthur: Black Forest Cake",
+    "url": "https://www.kingarthurbaking.com/recipes/black-forest-cake-recipe",
+    "accessed": "2026-10-07",
+    "facts": "Chocolate cake, cherry filling, whipped cream and chocolate decoration."
+  },
+  "kab-tiramisu": {
+    "id": "kab-tiramisu",
+    "title": "King Arthur: Tiramisu",
+    "url": "https://www.kingarthurbaking.com/recipes/tiramisu-recipe",
+    "accessed": "2026-10-07",
+    "facts": "Coffee-soaked sponge or ladyfingers alternate with mascarpone filling."
+  },
+  "mdc-opera": {
+    "id": "mdc-opera",
+    "title": "Meilleur du Chef: CAP Opéra",
+    "url": "https://www.meilleurduchef.com/fr/recette/biscuit-joconde-opera-cap-patissier-video.html",
+    "accessed": "2026-10-07",
+    "facts": "Almond Joconde, coffee syrup, coffee buttercream and chocolate ganache form thin alternating layers."
+  },
+  "mdc-fraisier": {
+    "id": "mdc-fraisier",
+    "title": "Meilleur du Chef: Fraisier",
+    "url": "https://www.meilleurduchef.com/fr/recette/fraisier-facile.html",
+    "accessed": "2026-10-07",
+    "facts": "Génoise, mousseline, strawberries and almond-paste finish."
+  },
+  "cap-fraisier": {
+    "id": "cap-fraisier",
+    "title": "French Baccalaureat professionnel pastry examination, 2013: Fraisier",
+    "url": "https://bnseep.eduscol.education.fr/ressources/examens/sujets/13/400/2210500/E2/U21_sujet2.pdf",
+    "accessed": "2026-10-07",
+    "facts": "Published 20 cm diameter and 4.5 cm ring height; génoise, mousseline, strawberries, optional kirsch syrup."
+  },
+  "laf-love": {
+    "id": "laf-love",
+    "title": "LaFuong: Roll in Love",
+    "url": "https://lafuong.com/roll-in-love",
+    "accessed": "2026-10-07",
+    "facts": "14 cm heart, 5 cm tall; chocolate sponge, vanilla crémeux, wild-strawberry jam, chocolate mousse, mirror glaze."
+  },
+  "lad-macaron": {
+    "id": "lad-macaron",
+    "title": "Ladurée: macaron flavours",
+    "url": "https://laduree.com/en/pages/macarons-flavors",
+    "accessed": "2026-10-07",
+    "facts": "Almond shells; distinct chocolate ganache, raspberry jam, pistachio buttercream, vanilla cream and salted-caramel fillings."
+  },
+  "wil-mini": {
+    "id": "wil-mini",
+    "title": "Wilton: Mini yellow cakes",
+    "url": "https://wilton.com/mini-yellow-cakes/wlrecip-8899/",
+    "accessed": "2026-10-07",
+    "facts": "Small layer cakes use buttercream and sprinkles."
+  },
+  "wil-stack": {
+    "id": "wil-stack",
+    "title": "Wilton: tier construction",
+    "url": "https://wilton.com/stacked-tiered-cake-construction/wltech-423/",
+    "accessed": "2026-10-07",
+    "facts": "Separate cake boards and cut support dowels carry upper tiers; stacking is a structural system."
+  },
+  "ifl-method": {
+    "id": "ifl-method",
+    "title": "Interflora: hand-tied and container arrangements",
+    "url": "https://www.interflora.co.uk/page/designed-for-you",
+    "accessed": "2026-10-07",
+    "facts": "Hand-tied bouquets use a loose spiral; container arrangements use floral foam; hatboxes are filled with blooms."
+  },
+  "ifl-season": {
+    "id": "ifl-season",
+    "title": "Interflora: seasonal flowers",
+    "url": "https://www.interflora.co.uk/blog/flower-guides/best-flowers-for-every-month",
+    "accessed": "2026-10-07",
+    "facts": "Seasonality refers to UK outdoor production, rather than guaranteed local or imported availability."
+  },
+  "ifl-species": {
+    "id": "ifl-species",
+    "title": "Interflora: flower guide",
+    "url": "https://www.interflora.co.uk/blog/flower-guides",
+    "accessed": "2026-10-07",
+    "facts": "Species have distinct forms; spring tulips, summer peonies and autumn chrysanthemums are differentiated."
+  },
+  "ifl-peony": {
+    "id": "ifl-peony",
+    "title": "Interflora: peony guide",
+    "url": "https://www.interflora.co.uk/blog/flower-guides/peony",
+    "accessed": "2026-10-07",
+    "facts": "Peonies are large focal blooms; garden roses, hydrangeas and dahlias are alternatives outside their season."
+  },
+  "ifl-spring": {
+    "id": "ifl-spring",
+    "title": "Interflora: spring wedding flowers",
+    "url": "https://www.interflora.co.uk/blog/occasions/wedding/spring-wedding-flowers",
+    "accessed": "2026-10-07",
+    "facts": "Spring examples include anemones, ranunculus, tulips, peonies, sweet peas, hyacinths, lilac and muscari."
+  },
+  "da-taffeta": {
+    "id": "da-taffeta",
+    "title": "David Austin: Pink Taffeta",
+    "url": "https://www.davidaustinrosebouquets.com/products/pink-taffeta",
+    "accessed": "2026-10-07",
+    "facts": "Keira roses with Ranunculus Elegance Rosa and Anemone Mistral Panda Blush; mixed blooms grouped around roses."
+  },
+  "da-winter": {
+    "id": "da-winter",
+    "title": "David Austin: winter bouquets",
+    "url": "https://www.davidaustin.com/5-winter-wedding-bouquets/",
+    "accessed": "2026-10-07",
+    "facts": "Leonora roses combined with ranunculus, lilac, astrantia, hellebore and trailing foliage."
+  },
+  "da-summer": {
+    "id": "da-summer",
+    "title": "David Austin: summer bridal bouquets",
+    "url": "https://www.davidaustin.com/summer-2023-wedding-bouquet-trends/",
+    "accessed": "2026-10-07",
+    "facts": "Ivory garden roses with yellow butterfly ranunculus form loose, directional bouquets."
+  },
+  "gia-set": {
+    "id": "gia-set",
+    "title": "GIA: engagement-ring settings",
+    "url": "https://4cs.gia.edu/en-us/blog/tips-for-buying-an-engagement-ring/",
+    "accessed": "2026-10-07",
+    "facts": "Solitaire, prong, bezel and halo constructions differ in how they support the centre and melee stones."
+  },
+  "gia-bearing": {
+    "id": "gia-bearing",
+    "title": "GIA: prong quality benchmarks",
+    "url": "https://www.gia.edu/gia-website/bench-tip-avoid-stone-loss-with-quality-assurance-benchmarks",
+    "accessed": "2026-10-07",
+    "facts": "Prong bearings match stone contour without gaps; prong contact is a structural constraint."
+  },
+  "stuller-set": {
+    "id": "stuller-set",
+    "title": "Stuller: wedding-band constructions",
+    "url": "https://www.stuller.com/diamond-wedding-band-resource-center",
+    "accessed": "2026-10-07",
+    "facts": "Channel walls carry adjacent stones; bezel surrounds girdle; shared prongs retain two neighbouring stones."
+  },
+  "node-trudy": {
+    "id": "node-trudy",
+    "title": "Nodeform: Trudy bezel trilogy",
+    "url": "https://nodeform.com/products/trudy-three-stone-engagement-ring-bezel-set-round-moissanite-trillion-side-accents",
+    "accessed": "2026-10-07",
+    "facts": "7 mm centre with 3×3 mm trillion sides; band 4.9 mm, bottom thickness 1.8 mm, shoulder 2.1 mm; height 5.4 mm."
+  },
+  "node-bypass": {
+    "id": "node-bypass",
+    "title": "Nodeform: alexandrite bypass solitaire",
+    "url": "https://nodeform.com/products/lab-alexandrite-bezel-bypass-solitaire-engagement-ring",
+    "accessed": "2026-10-07",
+    "facts": "Bypass shoulders join an encircling bezel; multiple precious-metal options."
+  },
+  "tif-pendant": {
+    "id": "tif-pendant",
+    "title": "Tiffany: bezel diamond pendant",
+    "url": "https://www.tiffany.com/jewelry/necklaces-pendants/ep-diamonds-by-the-yard-platinum-round-brilliant-diamonds-necklaces-pendants-1428528852.html",
+    "accessed": "2026-10-07",
+    "facts": "Fine chain connected to a bezel-set diamond in platinum."
+  },
+  "tif-catalogue": {
+    "id": "tif-catalogue",
+    "title": "Tiffany: engagement catalogue",
+    "url": "https://media.tiffany.com/is/content/Tiffany/2018_Believe_In_Love_INTL",
+    "accessed": "2026-10-07",
+    "facts": "Solitaire, pavé, halo and graduated three-stone arrangements with round, oval, emerald and baguette cuts."
+  },
+  "cartier-trinity": {
+    "id": "cartier-trinity",
+    "title": "Cartier: Trinity construction",
+    "url": "https://www.cartier.com/en-us/jewelry/rings/trinity/",
+    "accessed": "2026-10-07",
+    "facts": "Three separate interlinked mobile bands use yellow, white and rose gold."
+  },
+  "rio-chain": {
+    "id": "rio-chain",
+    "title": "Rio Grande: chain construction guide",
+    "url": "https://products.riogrande.com/content/Instruction-Sheets/Guide-To-Jewelery-Chain-IS.pdf",
+    "accessed": "2026-10-07",
+    "facts": "Cable links alternate planes; curb links twist flat; Figaro repeats a long link with three to five short links; anchor adds a crossbar."
+  },
+  "rio-clasp": {
+    "id": "rio-clasp",
+    "title": "Rio Grande: clasps",
+    "url": "https://www.riogrande.com/product/findings/clasps/",
+    "accessed": "2026-10-07",
+    "facts": "Lobster and ring clasps connect to jump rings and chain end fittings."
+  },
+  "gia-diamond": {
+    "id": "gia-diamond",
+    "title": "GIA: Бриллиант",
+    "url": "https://www.gia.edu/diamond",
+    "accessed": "2026-10-07",
+    "facts": "Mineral identity and optical properties from the GIA gem encyclopedia."
+  },
+  "gia-ruby": {
+    "id": "gia-ruby",
+    "title": "GIA: Рубин",
+    "url": "https://www.gia.edu/ruby",
+    "accessed": "2026-10-07",
+    "facts": "Mineral identity and optical properties from the GIA gem encyclopedia."
+  },
+  "gia-emerald": {
+    "id": "gia-emerald",
+    "title": "GIA: Изумруд",
+    "url": "https://www.gia.edu/emerald",
+    "accessed": "2026-10-07",
+    "facts": "Mineral identity and optical properties from the GIA gem encyclopedia."
+  },
+  "gia-aquamarine": {
+    "id": "gia-aquamarine",
+    "title": "GIA: Аквамарин",
+    "url": "https://www.gia.edu/aquamarine",
+    "accessed": "2026-10-07",
+    "facts": "Mineral identity and optical properties from the GIA gem encyclopedia."
+  },
+  "gia-amethyst": {
+    "id": "gia-amethyst",
+    "title": "GIA: Аметист",
+    "url": "https://www.gia.edu/amethyst",
+    "accessed": "2026-10-07",
+    "facts": "Mineral identity and optical properties from the GIA gem encyclopedia."
+  },
+  "gia-opal": {
+    "id": "gia-opal",
+    "title": "GIA: Опал",
+    "url": "https://www.gia.edu/opal",
+    "accessed": "2026-10-07",
+    "facts": "Mineral identity and optical properties from the GIA gem encyclopedia."
+  },
+  "gia-sapphire": {
+    "id": "gia-sapphire",
+    "title": "GIA: Сапфир",
+    "url": "https://www.gia.edu/sapphire",
+    "accessed": "2026-10-07",
+    "facts": "Published mineral refractive-index range; scalar IOR is its approximate midpoint."
+  },
+  "gia-citrine": {
+    "id": "gia-citrine",
+    "title": "GIA: Цитрин",
+    "url": "https://www.gia.edu/citrine",
+    "accessed": "2026-10-07",
+    "facts": "Published mineral refractive-index range; scalar IOR is its approximate midpoint."
+  },
+  "gia-topaz": {
+    "id": "gia-topaz",
+    "title": "GIA: Топаз",
+    "url": "https://www.gia.edu/topaz",
+    "accessed": "2026-10-07",
+    "facts": "Published mineral refractive-index range; scalar IOR is its approximate midpoint."
+  },
+  "rhs-hydrangea": {
+    "id": "rhs-hydrangea",
+    "title": "RHS: Hydrangea macrophylla",
+    "url": "https://www.rhs.org.uk/plants/40792/hydrangea-macrophylla-h/details",
+    "accessed": "2026-10-07",
+    "facts": "Mophead hydrangea has a clustered flower head."
+  },
+  "rhs-dahlia": {
+    "id": "rhs-dahlia",
+    "title": "RHS: dahlia forms",
+    "url": "https://www.rhs.org.uk/plants/dahlia/growing-guide",
+    "accessed": "2026-10-07",
+    "facts": "Cultivar classes include cactus, ball, collarette and other distinct ray-floret arrangements."
+  },
+  "rhs-pea": {
+    "id": "rhs-pea",
+    "title": "RHS: annual sweet peas",
+    "url": "https://www.rhs.org.uk/plants/lathyrus/sweet-peas",
+    "accessed": "2026-10-07",
+    "facts": "Pea-like flowers in white, pink, coral, red, violet and blue; individual plant stems used for cut flowers."
+  },
+  "kab-cupcakes": {
+    "id": "kab-cupcakes",
+    "title": "King Arthur: commercial cupcake constructions",
+    "url": "https://www.kingarthurbaking.com/cupcakes",
+    "accessed": "2026-10-07",
+    "facts": "Tiramisu cupcakes use coffee-soaked vanilla cake with mascarpone frosting; Boston cream cupcakes use pastry cream and ganache."
+  },
+  "kab-doughnut": {
+    "id": "kab-doughnut",
+    "title": "King Arthur: Baked Doughnuts Three Ways",
+    "url": "https://www.kingarthurbaking.com/recipes/baked-doughnuts-three-ways-recipe",
+    "accessed": "2026-10-07",
+    "facts": "Baked ring doughnuts with sugar or thin icing; the central hole is preserved."
+  },
+  "kab-cookie": {
+    "id": "kab-cookie",
+    "title": "King Arthur: decorating cookies",
+    "url": "https://www.kingarthurbaking.com/learn/guides/cookie-decorating",
+    "accessed": "2026-10-07",
+    "facts": "Cut-out cookies with thin sugar icing and small edible sprinkles."
+  },
+  "kab-brownie": {
+    "id": "kab-brownie",
+    "title": "King Arthur: Fudge Brownies",
+    "url": "https://www.kingarthurbaking.com/recipes/fudge-brownies-recipe",
+    "accessed": "2026-10-07",
+    "facts": "Dense chocolate brownies with a crackled surface; published portion size 2 inches."
+  },
+  "cal-velvet": {
+    "id": "cal-velvet",
+    "title": "Callebaut Chocolate Academy: velvet temperature",
+    "url": "https://www.callebaut.com/en-GB/callebaut-chocolate-academy/tutorials/velvet-temperature",
+    "accessed": "2026-10-07",
+    "facts": "Chocolate spray creates a fine textured velvet finish on chilled cakes and pastries."
+  },
+  "luther-stack": {
+    "id": "luther-stack",
+    "title": "Luthers Diamonds: three separate stacking bands",
+    "url": "https://luthersdiamonds.com/products/triple-stacking-modular-band-ring-in-14k-yellow-rose-white-gold",
+    "accessed": "2026-10-07",
+    "facts": "Separate yellow, white and rose gold bands can be stacked or worn individually; no interpenetrating geometry is required."
+  },
+  "tif-stud": {
+    "id": "tif-stud",
+    "title": "Tiffany: Solitaire stud earrings",
+    "url": "https://www.tiffany.com/jewelry/earrings/platinum-round-brilliant-diamonds-earrings-60006719.html",
+    "accessed": "2026-10-07",
+    "facts": "Round brilliant stones in metal baskets; matching pair of post earrings."
+  },
+  "tif-tennis": {
+    "id": "tif-tennis",
+    "title": "Tiffany: diamond tennis bracelets",
+    "url": "https://www.tiffany.com/jewelry/tennis-bracelets/platinum/diamond/",
+    "accessed": "2026-10-07",
+    "facts": "Flexible line bracelets carry repeated round brilliant diamonds."
+  },
+  "tif-hoop": {
+    "id": "tif-hoop",
+    "title": "Tiffany: gold hoop earrings",
+    "url": "https://www.tiffany.com/jewelry/hoop-earrings/gold/",
+    "accessed": "2026-10-07",
+    "facts": "Hoop earrings have a wearable closure rather than a decorative closed annulus."
+  },
+  "rhs-astrantia": {
+    "id": "rhs-astrantia",
+    "title": "RHS: Astrantia major morphology",
+    "url": "https://www.rhs.org.uk/plants/1870/astrantia-major/details",
+    "accessed": "2026-10-07",
+    "facts": "Branched upright stems carry compact umbels surrounded by conspicuous bracts; leaf shape and branching differ from a generic foliage spray."
+  },
+  "umich-sweetpea": {
+    "id": "umich-sweetpea",
+    "title": "University of Michigan: Lathyrus odoratus morphology",
+    "url": "https://climbers.lsa.umich.edu/lathyrus-odoratus/",
+    "accessed": "2026-10-07",
+    "facts": "The pea flower has one standard, two wing petals and a keel formed by two joined petals; flowers occur in small groups."
+  },
+  "rhs-ivy": {
+    "id": "rhs-ivy",
+    "title": "RHS: Hedera morphology",
+    "url": "https://www.rhs.org.uk/plants/ivy/growing-guide",
+    "accessed": "2026-10-07",
+    "facts": "Ivy foliage varies by species and growth phase; lobed juvenile leaves are appropriate for a trailing ivy model."
+  }
+}

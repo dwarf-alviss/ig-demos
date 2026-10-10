@@ -1,0 +1,266 @@
+{
+  "bundle": "f74a91e3e956d51d59cdd4deaeed05dba099560476a7cc7adad609a5d677a31a",
+  "method": "Real runtime textured GLB triangle edges versus actual basket geometry above measured lip; both segment directions; no AABB-only acceptance.",
+  "results": [
+    {
+      "id": "fl-flower-anemone",
+      "state": {
+        "pack": "fl-wrap-basket-rattan",
+        "flowers": [
+          "fl-flower-anemone"
+        ],
+        "counts": {
+          "fl-flower-anemone": 7
+        },
+        "green": [],
+        "ribbon": null,
+        "palette": 4
+      },
+      "handleTriangles": 8992,
+      "intersectingFlowerTriangles": 0,
+      "headHits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "fl-flower-chamomile",
+      "state": {
+        "pack": "fl-wrap-basket-rattan",
+        "flowers": [
+          "fl-flower-chamomile"
+        ],
+        "counts": {
+          "fl-flower-chamomile": 7
+        },
+        "green": [],
+        "ribbon": null,
+        "palette": 4
+      },
+      "handleTriangles": 8887,
+      "intersectingFlowerTriangles": 0,
+      "headHits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "fl-flower-chrysanthemum-spray",
+      "state": {
+        "pack": "fl-wrap-basket-rattan",
+        "flowers": [
+          "fl-flower-chrysanthemum-spray"
+        ],
+        "counts": {
+          "fl-flower-chrysanthemum-spray": 7
+        },
+        "green": [],
+        "ribbon": null,
+        "palette": 4
+      },
+      "handleTriangles": 8992,
+      "intersectingFlowerTriangles": 0,
+      "headHits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "fl-flower-eustoma",
+      "state": {
+        "pack": "fl-wrap-basket-rattan",
+        "flowers": [
+          "fl-flower-eustoma"
+        ],
+        "counts": {
+          "fl-flower-eustoma": 7
+        },
+        "green": [],
+        "ribbon": null,
+        "palette": 4
+      },
+      "handleTriangles": 8973,
+      "intersectingFlowerTriangles": 0,
+      "headHits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "fl-flower-gerbera",
+      "state": {
+        "pack": "fl-wrap-basket-rattan",
+        "flowers": [
+          "fl-flower-gerbera"
+        ],
+        "counts": {
+          "fl-flower-gerbera": 7
+        },
+        "green": [],
+        "ribbon": null,
+        "palette": 4
+      },
+      "handleTriangles": 9060,
+      "intersectingFlowerTriangles": 0,
+      "headHits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "fl-flower-lily-oriental",
+      "state": {
+        "pack": "fl-wrap-basket-rattan",
+        "flowers": [
+          "fl-flower-lily-oriental"
+        ],
+        "counts": {
+          "fl-flower-lily-oriental": 7
+        },
+        "green": [],
+        "ribbon": null,
+        "palette": 4
+      },
+      "handleTriangles": 9071,
+      "intersectingFlowerTriangles": 0,
+      "headHits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "fl-flower-peony-open",
+      "state": {
+        "pack": "fl-wrap-basket-rattan",
+        "flowers": [
+          "fl-flower-peony-open"
+        ],
+        "counts": {
+          "fl-flower-peony-open": 7
+        },
+        "green": [],
+        "ribbon": null,
+        "palette": 4
+      },
+      "handleTriangles": 9071,
+      "intersectingFlowerTriangles": 0,
+      "headHits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "fl-flower-ranunculus",
+      "state": {
+        "pack": "fl-wrap-basket-rattan",
+        "flowers": [
+          "fl-flower-ranunculus"
+        ],
+        "counts": {
+          "fl-flower-ranunculus": 7
+        },
+        "green": [],
+        "ribbon": null,
+        "palette": 4
+      },
+      "handleTriangles": 8973,
+      "intersectingFlowerTriangles": 0,
+      "headHits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "fl-flower-rose-garden",
+      "state": {
+        "pack": "fl-wrap-basket-rattan",
+        "flowers": [
+          "fl-flower-rose-garden"
+        ],
+        "counts": {
+          "fl-flower-rose-garden": 7
+        },
+        "green": [],
+        "ribbon": null,
+        "palette": 4
+      },
+      "handleTriangles": 9021,
+      "intersectingFlowerTriangles": 0,
+      "headHits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "fl-flower-tulip",
+      "state": {
+        "pack": "fl-wrap-basket-rattan",
+        "flowers": [
+          "fl-flower-tulip"
+        ],
+        "counts": {
+          "fl-flower-tulip": 7
+        },
+        "green": [],
+        "ribbon": null,
+        "palette": 4
+      },
+      "handleTriangles": 8914,
+      "intersectingFlowerTriangles": 0,
+      "headHits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

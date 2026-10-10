@@ -1,0 +1,40 @@
+{
+  "project": "cakes",
+  "configuration": {
+    "version": 2,
+    "base": "bk-struct-tier-round",
+    "decor": [
+      "bk-berry-strawberry",
+      "bk-berry-blueberry",
+      "bk-decor-cream-rosette"
+    ],
+    "counts": {
+      "bk-berry-strawberry": 3,
+      "bk-berry-blueberry": 7,
+      "bk-decor-cream-rosette": 5
+    },
+    "topper": null,
+    "tiers": 1,
+    "pieces": 4,
+    "filling": "vanilla",
+    "palette": 0,
+    "layout": "crescent",
+    "pattern": "vanilla-celebration",
+    "finish": "polished",
+    "bouquetSize": 19,
+    "cover": "cream-coat",
+    "foodDecor": [
+      "strawberry",
+      "raspberry",
+      "blueberry",
+      "cream-rosette"
+    ],
+    "foodCounts": {
+      "strawberry": 3,
+      "raspberry": 5,
+      "blueberry": 9,
+      "cream-rosette": 3
+    }
+  },
+  "estimateBYN": 114
+}

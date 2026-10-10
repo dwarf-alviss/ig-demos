@@ -1,0 +1,1510 @@
+{
+  "auditHash": "94bbf84a9d5f7aabfaa8e7c4e4d8202b57d7949cec83f1aeb20fd3a077e8c9c9",
+  "method": "Личный визуальный просмотр 42 контактных листов: исходные 188 компонентов в front/side/top. Масштаб листа не заменяет крупную проверку соединения в сборке.",
+  "models": [
+    {
+      "id": "bk-berry-blackberry",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-berry-blueberry",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-berry-cherry",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-berry-currant-red",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-berry-raspberry",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-berry-strawberry",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-decor-caramel-spiral",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-decor-chocolate-shard",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-decor-cream-rosette",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-decor-crumble-cluster",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-decor-glaze-drip-ring",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-decor-gold-flake",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-decor-macaron",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-decor-meringue-kiss",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-decor-shell-border",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-decor-sprinkle-ball",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-decor-sprinkle-star",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-decor-truffle-ball",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-decor-wafer-roll",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-pastry-brownie-bite",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-pastry-cookie-heart",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-pastry-cookie-round",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-pastry-cupcake",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-pastry-donut",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-pastry-eclair",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-pastry-profiterole",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-struct-tier-hex",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-struct-tier-round",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-topper-banner-blank",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-topper-crown",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-topper-heart",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-topper-horn",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "bk-topper-star",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-fill-gypsophila",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-fill-solidago",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-flower-anemone",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-flower-chamomile",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-flower-chrysanthemum-spray",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-flower-eustoma",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-flower-gerbera",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-flower-lily-oriental",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-flower-peony-open",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-flower-ranunculus",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-flower-rose-garden",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-flower-tulip",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-green-eucalyptus-baby-blue",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-green-eucalyptus-silver",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-green-fern",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-green-lagurus",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-green-olive-branch",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-green-ruscus",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-ribbon-jute-twine",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-ribbon-rep-bow",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-ribbon-satin-bow",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-vase-bottle-ceramic",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-vase-glass-cylinder",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-vase-kraft-bucket",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-wrap-basket-rattan",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-wrap-hatbox-round",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-wrap-kraft-cone",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "fl-wrap-matte-sleeve",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-base-band-plain",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-base-chain-link-cable",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-base-cocktail",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-base-cuff-bracelet",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-base-drop-earring",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-base-ear-cuff",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-base-pendant",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-base-signet",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-base-solitaire",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-base-stacking-thin",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-base-stud-earring",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-part-bail-hinged",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-part-charm-tag",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-part-clasp-lobster",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-part-ear-wire-french",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-part-jump-ring",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-set-baguette",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-set-bezel",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-set-halo",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-set-heart",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-set-marquise",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-set-pave-band",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-set-pear",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-set-prong4",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-set-prong6",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-cabochon-oval",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-round-brilliant",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-diamond-01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-diamond-02",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-diamond-03",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-diamond-04",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-diamond-05",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-diamond-06",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-diamond-07",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-diamond-08",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-diamond-09",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-diamond-10",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-diamond-11",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-diamond-12",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-02",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-03",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-04",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-05",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-06",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-07",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-08",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-09",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-10",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-11",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-12",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-13",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-14",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-15",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-16",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-17",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-18",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-19",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-20",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-21",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-22",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-23",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-24",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-25",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-26",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-27",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-28",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-29",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-30",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-31",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-32",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-33",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-34",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-35",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-36",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-37",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-38",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-39",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-40",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-41",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-42",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-43",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-44",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-45",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-46",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-47",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-48",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-49",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-50",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-51",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-52",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-53",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-54",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-55",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-56",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-57",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-58",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-59",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-60",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-61",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-62",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-63",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-64",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-65",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-66",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-67",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-68",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-69",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-70",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-71",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-72",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-73",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-74",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-75",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-76",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-77",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-78",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-79",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-80",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-81",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-82",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-83",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-84",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-85",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-86",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-87",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    },
+    {
+      "id": "jw-stone-gem-88",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ]
+    }
+  ]
+}

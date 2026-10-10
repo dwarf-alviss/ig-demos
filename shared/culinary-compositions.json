@@ -1,0 +1,136 @@
+{
+  "fraisier": {
+    "layout": "fruit-crescent",
+    "decor": {
+      "strawberry": 4,
+      "strawberry-half": 5,
+      "pistachio-kernel": 7
+    }
+  },
+  "opera": {
+    "layout": "diagonal",
+    "decor": {
+      "gold-leaf": 3,
+      "chocolate-pearl": 5
+    }
+  },
+  "caramel-cheesecake": {
+    "layout": "paired-clusters",
+    "decor": {
+      "hazelnut": 5,
+      "pistachio-kernel": 7,
+      "crumb": 9
+    }
+  },
+  "hazelnut-entremet": {
+    "layout": "paired-clusters",
+    "decor": {
+      "hazelnut": 4,
+      "chocolate-shard": 3,
+      "chocolate-pearl": 5,
+      "crumb": 7
+    }
+  },
+  "raspberry-chocolate": {
+    "layout": "paired-clusters",
+    "decor": {
+      "raspberry": 7,
+      "macaron": 2,
+      "chocolate-shard": 2
+    }
+  },
+  "raspberry-cremeux": {
+    "layout": "fruit-crescent",
+    "decor": {
+      "raspberry": 9,
+      "pistachio-kernel": 7,
+      "chocolate-curl": 3
+    }
+  },
+  "chocolate-strawberry-heart": {
+    "layout": "fruit-crescent",
+    "decor": {
+      "strawberry": 3,
+      "strawberry-half": 4,
+      "chocolate-curl": 3
+    }
+  },
+  "black-forest": {
+    "layout": "wreath",
+    "decor": {
+      "cream-rosette": 6,
+      "cherry": 6,
+      "chocolate-curl": 5
+    }
+  },
+  "lemon-cloud": {
+    "layout": "edge-fan",
+    "decor": {
+      "lemon-slice": 3,
+      "cream-dollop": 5,
+      "meringue": 3
+    }
+  },
+  "tiramisu": {
+    "layout": "diagonal",
+    "decor": {
+      "chocolate-curl": 5
+    }
+  },
+  "vanilla-celebration": {
+    "layout": "fruit-crescent",
+    "decor": {
+      "strawberry": 5,
+      "raspberry": 7,
+      "blueberry": 9,
+      "cream-rosette": 3
+    }
+  },
+  "mini-buttercream": {
+    "layout": "wreath",
+    "decor": {
+      "piped-shell": 8,
+      "strawberry": 2
+    }
+  },
+  "vanilla-eclair": {
+    "layout": "per-piece",
+    "decor": {
+      "chocolate-pearl": 1,
+      "chocolate-curl": 1
+    }
+  },
+  "cream-puff": {
+    "layout": "per-piece",
+    "decor": {
+      "chocolate-pearl": 1,
+      "chocolate-curl": 1
+    }
+  },
+  "paris-brest": {
+    "layout": "per-piece",
+    "decor": {
+      "raspberry": 1,
+      "pistachio-kernel": 2,
+      "almond-flake": 2
+    }
+  },
+  "vanilla-doughnut": {
+    "layout": "per-piece",
+    "decor": {
+      "sugar-pearl": 2
+    }
+  },
+  "iced-cookie-round": {
+    "layout": "per-piece",
+    "decor": {
+      "sugar-pearl": 2
+    }
+  },
+  "iced-cookie-heart": {
+    "layout": "per-piece",
+    "decor": {
+      "sugar-pearl": 2
+    }
+  }
+}

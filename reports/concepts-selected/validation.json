@@ -1,0 +1,138 @@
+{
+  "base": "http://127.0.0.1:8765",
+  "results": [
+    {
+      "kind": "cakes",
+      "variant": "a",
+      "path": "cakes/concept-a.html",
+      "architecture": "cakes-a",
+      "desktop": true,
+      "mobile": true,
+      "interaction": true,
+      "embedded": true,
+      "selectedPattern": "chocolate-strawberry-heart"
+    },
+    {
+      "kind": "cakes",
+      "variant": "b",
+      "path": "cakes/concept-b.html",
+      "architecture": "cakes-b",
+      "desktop": true,
+      "mobile": true,
+      "interaction": true,
+      "embedded": true,
+      "selectedPattern": "fraisier"
+    },
+    {
+      "kind": "cakes",
+      "variant": "c",
+      "path": "cakes/index.html",
+      "architecture": "cakes-c",
+      "desktop": true,
+      "mobile": true,
+      "interaction": true,
+      "embedded": true,
+      "selectedPattern": "vanilla-celebration"
+    },
+    {
+      "kind": "flowers",
+      "variant": "a",
+      "path": "flowers/concept-a.html",
+      "architecture": "flowers-a",
+      "desktop": true,
+      "mobile": true,
+      "interaction": true,
+      "embedded": true,
+      "selectedPattern": "garden-pink"
+    },
+    {
+      "kind": "flowers",
+      "variant": "b",
+      "path": "flowers/index.html",
+      "architecture": "flowers-b",
+      "desktop": true,
+      "mobile": true,
+      "interaction": true,
+      "embedded": true,
+      "selectedPattern": "rose-mono"
+    },
+    {
+      "kind": "flowers",
+      "variant": "c",
+      "path": "flowers/concept-c.html",
+      "architecture": "flowers-c",
+      "desktop": true,
+      "mobile": true,
+      "interaction": true,
+      "embedded": true,
+      "selectedPattern": "peony-mono"
+    },
+    {
+      "kind": "jewelry",
+      "variant": "a",
+      "path": "jewelry/concept-a.html",
+      "architecture": "jewelry-a",
+      "desktop": true,
+      "mobile": true,
+      "interaction": true,
+      "embedded": true,
+      "selectedPattern": "bezel-pendant"
+    },
+    {
+      "kind": "jewelry",
+      "variant": "b",
+      "path": "jewelry/index.html",
+      "architecture": "jewelry-b",
+      "desktop": true,
+      "mobile": true,
+      "interaction": true,
+      "embedded": true,
+      "selectedPattern": "oval-solitaire"
+    },
+    {
+      "kind": "jewelry",
+      "variant": "c",
+      "path": "jewelry/concept-c.html",
+      "architecture": "jewelry-c",
+      "desktop": true,
+      "mobile": true,
+      "interaction": true,
+      "embedded": true,
+      "selectedPattern": "wedding-band"
+    },
+    {
+      "kind": "fashion",
+      "variant": "a",
+      "path": "fashion/concept-a.html",
+      "architecture": "fashion-a",
+      "desktop": true,
+      "mobile": true,
+      "interaction": true,
+      "embedded": true,
+      "selectedPattern": ""
+    },
+    {
+      "kind": "fashion",
+      "variant": "b",
+      "path": "fashion/concept-b.html",
+      "architecture": "fashion-b",
+      "desktop": true,
+      "mobile": true,
+      "interaction": true,
+      "embedded": true,
+      "selectedPattern": ""
+    },
+    {
+      "kind": "fashion",
+      "variant": "c",
+      "path": "fashion/index.html",
+      "architecture": "fashion-c",
+      "desktop": true,
+      "mobile": true,
+      "interaction": true,
+      "embedded": true,
+      "selectedPattern": ""
+    }
+  ],
+  "concepts": 12
+}

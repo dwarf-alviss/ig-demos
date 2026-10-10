@@ -1,0 +1,129 @@
+{
+  "bundleHash": "7e1a952fd79d2d79f46b84d2f89d31dc99b72bc4a8b9238032b8c42716679da1",
+  "phase": "visible-cake-slice-gap",
+  "complete": false,
+  "fourPoseVisualReview": {
+    "bundleHash": "7e1a952fd79d2d79f46b84d2f89d31dc99b72bc4a8b9238032b8c42716679da1",
+    "configurations": 6,
+    "poses": [
+      "front",
+      "side",
+      "top",
+      "back"
+    ],
+    "personallyViewed": true
+  },
+  "historicalValidation": {
+    "bundleHash": "a6cb4b1ca22b012a44fe248ba785bcad8e6f48aa15beccbcbb33c9b254afb5ee",
+    "phase": "cake-slice-clearance",
+    "complete": false,
+    "fourPoseVisualReview": {
+      "bundleHash": "a6cb4b1ca22b012a44fe248ba785bcad8e6f48aa15beccbcbb33c9b254afb5ee",
+      "configurations": 6,
+      "poses": [
+        "front",
+        "side",
+        "top",
+        "back"
+      ],
+      "personallyViewed": true
+    },
+    "historicalValidation": {
+      "bundleHash": "dc35b13b5b0edd34e713ceb295a508d006cb46a156626d89d86b57a59a9321f1",
+      "phase": "smaller-tulips",
+      "complete": false,
+      "targetTests": {
+        "passed": 11,
+        "failed": 0,
+        "durationMs": 1953.2706
+      },
+      "fourPoseVisualReview": {
+        "bundleHash": "dc35b13b5b0edd34e713ceb295a508d006cb46a156626d89d86b57a59a9321f1",
+        "configurations": 8,
+        "native": 6,
+        "domain": 2,
+        "poses": [
+          "front",
+          "side",
+          "top",
+          "back"
+        ],
+        "personallyViewed": true
+      },
+      "historicalValidation": {
+        "bundleHash": "c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970",
+        "phase": "tier-clusters-lily-insertion-and-flat-wafer-seats",
+        "complete": false,
+        "fullTests": {
+          "bundleHash": "c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970",
+          "passed": 74,
+          "failed": 0,
+          "durationMs": 267073.38
+        },
+        "targetTests": {
+          "passed": 5,
+          "failed": 0,
+          "durationMs": 74192.2576,
+          "note": "A collision regression was added after the full suite; the five composition tests were rerun. Production code did not change."
+        },
+        "fourPoseVisualReview": {
+          "bundleHash": "c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970",
+          "configurations": 89,
+          "poses": [
+            "front",
+            "side",
+            "top",
+            "back"
+          ],
+          "native": {
+            "flowers": 29,
+            "cakes": 55
+          },
+          "domain": {
+            "flowers": 3,
+            "cakes": 2
+          },
+          "personallyViewed": true,
+          "status": "reviewed-defect"
+        },
+        "wideBasketProbe": {
+          "bundleHash": "c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970",
+          "cases": 567,
+          "failures": 0,
+          "scope": "Native bloom core separation and finite geometry, not full vertex collision or visual acceptance."
+        },
+        "ui": {
+          "bundleHash": "c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970",
+          "passed": 3,
+          "failed": 0,
+          "note": "The first run timed out on the second cart addition; a complete retry passed all three projects. The timeout cause was not established."
+        },
+        "exports": {
+          "bundleHash": "c608b93efcfa8fd79b7b993ff1effaf61f92f5e11658a505a2b596b2afaba970",
+          "passed": 6,
+          "failed": 0
+        },
+        "openDefects": [
+          "Sparse lily baskets still expose some inner stalk/support.",
+          "Some limited-quantity cake arrangements remain visually sparse, including lower tiers.",
+          "The full canonical matrix has not been visually accepted; previous affected-family captures are historical."
+        ]
+      },
+      "openDefects": [
+        "Sparse lily baskets still expose some inner stalk/support.",
+        "Some limited-quantity cake arrangements remain visually sparse, including lower tiers.",
+        "The full canonical matrix has not been visually accepted; previous affected-family captures are historical."
+      ]
+    },
+    "openDefects": [
+      "Sparse lily baskets still expose some inner stalk/support.",
+      "Some limited-quantity cake arrangements remain visually sparse, including lower tiers.",
+      "The full canonical matrix has not been visually accepted; previous affected-family captures are historical."
+    ]
+  },
+  "openDefects": [
+    "Sparse lily baskets still expose some inner stalk/support.",
+    "Some limited-quantity cake arrangements remain visually sparse, including lower tiers.",
+    "The full canonical matrix has not been visually accepted; previous affected-family captures are historical."
+  ]
+}

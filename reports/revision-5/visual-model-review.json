@@ -1,0 +1,2073 @@
+{
+  "method": "Личный просмотр всех компонентов в сборке на 42 контактных листах front/side/top; крупно проверены обнаруженные посадки. Это просмотр компонентов, не приемка каждого сочетания.",
+  "models": [
+    {
+      "id": "fl-fill-gypsophila",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-fill-solidago",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-flower-anemone",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-flower-chamomile",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-flower-chrysanthemum-spray",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-flower-eustoma",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-flower-gerbera",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-flower-lily-oriental",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-flower-peony-open",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-flower-ranunculus",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-flower-rose-garden",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-flower-tulip",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-green-eucalyptus-baby-blue",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-green-eucalyptus-silver",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-green-fern",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-green-lagurus",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-green-olive-branch",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-green-ruscus",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-ribbon-jute-twine",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-ribbon-rep-bow",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-ribbon-satin-bow",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-vase-bottle-ceramic",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-vase-glass-cylinder",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-vase-kraft-bucket",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-wrap-basket-rattan",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-wrap-hatbox-round",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-wrap-kraft-cone",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "fl-wrap-matte-sleeve",
+      "bundleHash": "b4c7aa3dafb0c7286612bbbbfa5677288f3aef2c897f65ea75915f084284ecd9",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-base-band-plain",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-base-chain-link-cable",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-base-cocktail",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-base-cuff-bracelet",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-base-drop-earring",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-base-ear-cuff",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-base-pendant",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-base-signet",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-base-solitaire",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-base-stacking-thin",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-base-stud-earring",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-part-bail-hinged",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-part-charm-tag",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-part-clasp-lobster",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-part-ear-wire-french",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-part-jump-ring",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-set-baguette",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-set-bezel",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-set-heart",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-set-marquise",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-set-pave-band",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-set-pear",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-set-prong4",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-set-prong6",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-cabochon-oval",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-round-brilliant",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-diamond-01",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-diamond-02",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-diamond-03",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-diamond-04",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-diamond-05",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-diamond-06",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-diamond-07",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-diamond-08",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-diamond-09",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-diamond-10",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-diamond-11",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-diamond-12",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-01",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-02",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-03",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-04",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-05",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-06",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-07",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-08",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-09",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-10",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-11",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-12",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-13",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-14",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-15",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-16",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-17",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-18",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-19",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-20",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-21",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-22",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-23",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-24",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-25",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-26",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-27",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-28",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-29",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-30",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-31",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-32",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-33",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-34",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-35",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-36",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-37",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-38",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-39",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-40",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-41",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-42",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-43",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-44",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-45",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-46",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-47",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-48",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-49",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-50",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-51",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-52",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-53",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-54",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-55",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-56",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-57",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-58",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-59",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-60",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-61",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-62",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-63",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-64",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-65",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-66",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-67",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-68",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-69",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-70",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-71",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-72",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-73",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-74",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-75",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-76",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-77",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-78",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-79",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-80",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-81",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-82",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-83",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-84",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-85",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-86",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-87",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-stone-gem-88",
+      "bundleHash": "7974ba54cf17e6cfb6f8051cd5fc44a93e2bb7f0054853aecb4d7bc7c8f6ce1d",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "jw-set-halo",
+      "bundleHash": "7c3d186333812b0a0313d845fe4109e3d97e6d054515f534c2fb2b7374ed5c22",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Посадка, ориентация и объем просмотрены в трех ракурсах."
+    },
+    {
+      "id": "bk-berry-blackberry",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-berry-blueberry",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-berry-cherry",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-berry-currant-red",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-berry-raspberry",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-berry-strawberry",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-decor-caramel-spiral",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-decor-chocolate-shard",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-decor-cream-rosette",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-decor-crumble-cluster",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-decor-glaze-drip-ring",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-decor-gold-flake",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-decor-macaron",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-decor-meringue-kiss",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-decor-shell-border",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-decor-sprinkle-ball",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-decor-sprinkle-star",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-decor-truffle-ball",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-decor-wafer-roll",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-pastry-brownie-bite",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-pastry-cookie-heart",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-pastry-cookie-round",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-pastry-cupcake",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-pastry-donut",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-pastry-eclair",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-pastry-profiterole",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-struct-tier-hex",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-struct-tier-round",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-topper-banner-blank",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-topper-crown",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-topper-heart",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-topper-horn",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    },
+    {
+      "id": "bk-topper-star",
+      "bundleHash": "cff6a33edfd27afcdd054a6de685a41107f8691b292627603e5178dd841d4d01",
+      "poses": [
+        "front",
+        "side",
+        "top"
+      ],
+      "status": "reviewed-component",
+      "notes": "Контакт декора исправлен по реальным вершинам; актуальный свет просмотрен."
+    }
+  ]
+}

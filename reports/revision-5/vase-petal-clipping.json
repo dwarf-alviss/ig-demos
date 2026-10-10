@@ -1,0 +1,52 @@
+[
+  {
+    "id": "fl-flower-eustoma",
+    "pack": "fl-vase-bottle-ceramic",
+    "clipped": 155
+  },
+  {
+    "id": "fl-flower-eustoma",
+    "pack": "fl-vase-glass-cylinder",
+    "clipped": 314
+  },
+  {
+    "id": "fl-flower-gerbera",
+    "pack": "fl-vase-glass-cylinder",
+    "clipped": 25
+  },
+  {
+    "id": "fl-flower-gerbera",
+    "pack": "fl-vase-kraft-bucket",
+    "clipped": 73
+  },
+  {
+    "id": "fl-flower-lily-oriental",
+    "pack": "fl-vase-bottle-ceramic",
+    "clipped": 342
+  },
+  {
+    "id": "fl-flower-lily-oriental",
+    "pack": "fl-vase-glass-cylinder",
+    "clipped": 5215
+  },
+  {
+    "id": "fl-flower-lily-oriental",
+    "pack": "fl-vase-kraft-bucket",
+    "clipped": 6091
+  },
+  {
+    "id": "fl-flower-peony-open",
+    "pack": "fl-vase-glass-cylinder",
+    "clipped": 2014
+  },
+  {
+    "id": "fl-flower-peony-open",
+    "pack": "fl-vase-kraft-bucket",
+    "clipped": 1883
+  },
+  {
+    "id": "fl-flower-rose-garden",
+    "pack": "fl-vase-glass-cylinder",
+    "clipped": 336
+  }
+]

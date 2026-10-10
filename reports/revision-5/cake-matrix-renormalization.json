@@ -1,0 +1,20 @@
+[
+  {
+    "file": "matrix-all.json",
+    "changed": 5,
+    "duplicates": 0,
+    "total": 14098
+  },
+  {
+    "file": "matrix-native-real-pairs.json",
+    "changed": 0,
+    "duplicates": 0,
+    "total": 3306
+  },
+  {
+    "file": "matrix-domain.json",
+    "changed": 0,
+    "duplicates": 0,
+    "total": 5390
+  }
+]

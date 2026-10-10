@@ -301,7 +301,7 @@
         price: Math.round(Number(item.price) || 0),
         qty: Math.max(1, Math.round(Number(item.qty) || 1)),
         img: item.img || BUILDER_IMG,
-        note: item.note || ''
+        note: item.note || '', configuration: item.configuration || null
       };
     });
   }
@@ -343,7 +343,7 @@
         price: Math.round(Number(item.price) || 0),
         qty: add,
         img: item.img || BUILDER_IMG,
-        note: item.note || ''
+        note: item.note || '', configuration: item.configuration || null
       });
     }
     writeCart(list);
@@ -416,7 +416,7 @@
       slot: payload.slot || '',
       comment: payload.comment || '',
       items: payload.items.map(function (item) {
-        return { name: item.name, note: item.note || '', price: item.price, qty: item.qty };
+        return { name: item.name, note: item.note || '', configuration: item.configuration || null, price: item.price, qty: item.qty };
       }),
       subtotal: payload.subtotal,
       delivery: payload.delivery,
@@ -1100,6 +1100,7 @@
               '<div class="cart-line__media">' + imageMarkup(item.img, item.name) + '</div>' +
               '<div class="cart-line__body">' +
                 '<h3>' + esc(item.name) + '</h3>' +
+                (item.configuration && item.configuration.version === 2 ? '<a class="edit-design" href="studio.html?edit=' + encodeURIComponent(item.id) + '">Изменить дизайн →</a>' : '') +
                 (item.note ? '<p class="tiny muted">' + esc(item.note) + '</p>' : '') +
                 '<p class="small muted">' + byn(item.price) + ' за штуку</p>' +
               '</div>' +

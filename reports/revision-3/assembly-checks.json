@@ -1,0 +1,17 @@
+{
+  "cakes": {
+    "configurations": 6057,
+    "errors": 0,
+    "checks": "counts, calibrated support masks, footprints, reserved tiers/topper/plate bodies, camera frame"
+  },
+  "flowers": {
+    "configurations": 2660,
+    "errors": 0,
+    "checks": "visible stem counts, camera frame"
+  },
+  "jewelry": {
+    "configurations": 627,
+    "errors": 0,
+    "checks": "render completion, camera frame"
+  }
+}

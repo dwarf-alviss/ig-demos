@@ -1,0 +1,1907 @@
+{
+  "components": [
+    {
+      "id": "band-court",
+      "name": "Полукруглая шинка",
+      "type": "band",
+      "geometry": "swept-profile",
+      "sources": [
+        "gia-set",
+        "node-trudy",
+        "node-bypass",
+        "tif-catalogue"
+      ],
+      "profile": "round-court",
+      "widthMm": 2,
+      "thicknessMm": 1.7,
+      "dimensionBasis": "published for wide band; calibrated range for others",
+      "requires": [
+        "closed-inner-ring"
+      ]
+    },
+    {
+      "id": "band-flat",
+      "name": "Плоская шинка",
+      "type": "band",
+      "geometry": "swept-profile",
+      "sources": [
+        "gia-set",
+        "node-trudy",
+        "node-bypass",
+        "tif-catalogue"
+      ],
+      "profile": "rounded-flat",
+      "widthMm": 2.5,
+      "thicknessMm": 1.7,
+      "dimensionBasis": "published for wide band; calibrated range for others",
+      "requires": [
+        "closed-inner-ring"
+      ]
+    },
+    {
+      "id": "band-knife",
+      "name": "Шинка с ребром",
+      "type": "band",
+      "geometry": "swept-profile",
+      "sources": [
+        "gia-set",
+        "node-trudy",
+        "node-bypass",
+        "tif-catalogue"
+      ],
+      "profile": "knife-edge",
+      "widthMm": 2,
+      "thicknessMm": 1.7,
+      "dimensionBasis": "published for wide band; calibrated range for others",
+      "requires": [
+        "closed-inner-ring"
+      ]
+    },
+    {
+      "id": "band-comfort",
+      "name": "Комфортная шинка",
+      "type": "band",
+      "geometry": "swept-profile",
+      "sources": [
+        "gia-set",
+        "node-trudy",
+        "node-bypass",
+        "tif-catalogue"
+      ],
+      "profile": "comfort-fit",
+      "widthMm": 3,
+      "thicknessMm": 1.7,
+      "dimensionBasis": "published for wide band; calibrated range for others",
+      "requires": [
+        "closed-inner-ring"
+      ]
+    },
+    {
+      "id": "band-wide",
+      "name": "Широкая шинка",
+      "type": "band",
+      "geometry": "swept-profile",
+      "sources": [
+        "gia-set",
+        "node-trudy",
+        "node-bypass",
+        "tif-catalogue"
+      ],
+      "profile": "rounded-flat",
+      "widthMm": 4.9,
+      "thicknessMm": 1.8,
+      "dimensionBasis": "published for wide band; calibrated range for others",
+      "requires": [
+        "closed-inner-ring"
+      ]
+    },
+    {
+      "id": "band-split",
+      "name": "Раздвоенная шинка",
+      "type": "band",
+      "geometry": "swept-profile",
+      "sources": [
+        "gia-set",
+        "node-trudy",
+        "node-bypass",
+        "tif-catalogue"
+      ],
+      "profile": "split-shoulder",
+      "widthMm": 2,
+      "thicknessMm": 1.7,
+      "dimensionBasis": "published for wide band; calibrated range for others",
+      "requires": [
+        "closed-inner-ring"
+      ]
+    },
+    {
+      "id": "band-taper",
+      "name": "Суженная шинка",
+      "type": "band",
+      "geometry": "swept-profile",
+      "sources": [
+        "gia-set",
+        "node-trudy",
+        "node-bypass",
+        "tif-catalogue"
+      ],
+      "profile": "tapered-shoulder",
+      "widthMm": 2.2,
+      "thicknessMm": 1.7,
+      "dimensionBasis": "published for wide band; calibrated range for others",
+      "requires": [
+        "closed-inner-ring"
+      ]
+    },
+    {
+      "id": "band-bypass",
+      "name": "Обходная шинка",
+      "type": "band",
+      "geometry": "swept-profile",
+      "sources": [
+        "gia-set",
+        "node-trudy",
+        "node-bypass",
+        "tif-catalogue"
+      ],
+      "profile": "bypass",
+      "widthMm": 2.1,
+      "thicknessMm": 1.7,
+      "dimensionBasis": "published for wide band; calibrated range for others",
+      "requires": [
+        "closed-inner-ring"
+      ]
+    },
+    {
+      "id": "setting-four-prong",
+      "name": "Четыре крапана",
+      "type": "setting",
+      "geometry": "contour-and-bearing",
+      "sources": [
+        "gia-bearing",
+        "stuller-set",
+        "gia-set"
+      ],
+      "prongs": 4,
+      "contact": "girdle-bearing",
+      "stoneSizesMm": [
+        1,
+        8
+      ],
+      "requires": [
+        "girdle-supported",
+        "pavilion-clearance"
+      ],
+      "incompatible": [
+        "unsupported-floating-stone"
+      ]
+    },
+    {
+      "id": "setting-six-prong",
+      "name": "Шесть крапанов",
+      "type": "setting",
+      "geometry": "contour-and-bearing",
+      "sources": [
+        "gia-bearing",
+        "stuller-set",
+        "gia-set"
+      ],
+      "prongs": 6,
+      "contact": "girdle-bearing",
+      "stoneSizesMm": [
+        1,
+        8
+      ],
+      "requires": [
+        "girdle-supported",
+        "pavilion-clearance"
+      ],
+      "incompatible": [
+        "unsupported-floating-stone"
+      ]
+    },
+    {
+      "id": "setting-v-prong",
+      "name": "V-крапаны",
+      "type": "setting",
+      "geometry": "contour-and-bearing",
+      "sources": [
+        "gia-bearing",
+        "stuller-set",
+        "gia-set"
+      ],
+      "prongs": 3,
+      "contact": "protected-tip-bearing",
+      "stoneSizesMm": [
+        1,
+        8
+      ],
+      "requires": [
+        "girdle-supported",
+        "pavilion-clearance"
+      ],
+      "incompatible": [
+        "unsupported-floating-stone"
+      ]
+    },
+    {
+      "id": "setting-bezel",
+      "name": "Глухая закрепка",
+      "type": "setting",
+      "geometry": "contour-and-bearing",
+      "sources": [
+        "gia-bearing",
+        "stuller-set",
+        "gia-set"
+      ],
+      "prongs": 0,
+      "contact": "folded-girdle-rim",
+      "stoneSizesMm": [
+        1,
+        8
+      ],
+      "requires": [
+        "girdle-supported",
+        "pavilion-clearance"
+      ],
+      "incompatible": [
+        "unsupported-floating-stone"
+      ]
+    },
+    {
+      "id": "setting-half-bezel",
+      "name": "Полуглухая закрепка",
+      "type": "setting",
+      "geometry": "contour-and-bearing",
+      "sources": [
+        "gia-bearing",
+        "stuller-set",
+        "gia-set"
+      ],
+      "prongs": 0,
+      "contact": "two-opposing-rims",
+      "stoneSizesMm": [
+        1,
+        8
+      ],
+      "requires": [
+        "girdle-supported",
+        "pavilion-clearance"
+      ],
+      "incompatible": [
+        "unsupported-floating-stone"
+      ]
+    },
+    {
+      "id": "setting-halo",
+      "name": "Ореол",
+      "type": "setting",
+      "geometry": "contour-and-bearing",
+      "sources": [
+        "gia-bearing",
+        "stuller-set",
+        "gia-set"
+      ],
+      "prongs": 4,
+      "contact": "centre-prongs-and-melee",
+      "stoneSizesMm": [
+        1,
+        8
+      ],
+      "requires": [
+        "girdle-supported",
+        "pavilion-clearance"
+      ],
+      "incompatible": [
+        "unsupported-floating-stone"
+      ]
+    },
+    {
+      "id": "setting-channel",
+      "name": "Канал",
+      "type": "setting",
+      "geometry": "contour-and-bearing",
+      "sources": [
+        "gia-bearing",
+        "stuller-set",
+        "gia-set"
+      ],
+      "prongs": 0,
+      "contact": "opposing-continuous-walls",
+      "stoneSizesMm": [
+        1,
+        8
+      ],
+      "requires": [
+        "girdle-supported",
+        "pavilion-clearance"
+      ],
+      "incompatible": [
+        "unsupported-floating-stone"
+      ]
+    },
+    {
+      "id": "setting-shared-prong",
+      "name": "Общие крапаны",
+      "type": "setting",
+      "geometry": "contour-and-bearing",
+      "sources": [
+        "gia-bearing",
+        "stuller-set",
+        "gia-set"
+      ],
+      "prongs": 2,
+      "contact": "paired-girdle-bearings",
+      "stoneSizesMm": [
+        1,
+        8
+      ],
+      "requires": [
+        "girdle-supported",
+        "pavilion-clearance"
+      ],
+      "incompatible": [
+        "unsupported-floating-stone"
+      ]
+    },
+    {
+      "id": "setting-pave",
+      "name": "Паве",
+      "type": "setting",
+      "geometry": "contour-and-bearing",
+      "sources": [
+        "gia-bearing",
+        "stuller-set",
+        "gia-set"
+      ],
+      "prongs": 4,
+      "contact": "small-girdle-beads",
+      "stoneSizesMm": [
+        1,
+        8
+      ],
+      "requires": [
+        "girdle-supported",
+        "pavilion-clearance"
+      ],
+      "incompatible": [
+        "unsupported-floating-stone"
+      ]
+    },
+    {
+      "id": "gallery",
+      "name": "Галерея",
+      "type": "connection",
+      "geometry": "open-support-rails",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "basket",
+      "name": "Корзинка каста",
+      "type": "connection",
+      "geometry": "curved-uprights-and-rail",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "bridge",
+      "name": "Перемычка",
+      "type": "connection",
+      "geometry": "arched-bridge",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "post",
+      "name": "Штифт серьги",
+      "type": "connection",
+      "geometry": "post-with-stop",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "butterfly",
+      "name": "Замок-бабочка",
+      "type": "connection",
+      "geometry": "folded-spring-back",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "ear-hook",
+      "name": "Швенза",
+      "type": "connection",
+      "geometry": "curved-wire-with-loop",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "hinge",
+      "name": "Шарнир",
+      "type": "connection",
+      "geometry": "interleaved-knuckles-and-pin",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "bail",
+      "name": "Бейл подвески",
+      "type": "connection",
+      "geometry": "closed-bail",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "jump-ring",
+      "name": "Соединительное кольцо",
+      "type": "connection",
+      "geometry": "closed-round-wire",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "lobster",
+      "name": "Карабин",
+      "type": "connection",
+      "geometry": "body-gate-pivot",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "spring-clasp",
+      "name": "Шпрингель",
+      "type": "connection",
+      "geometry": "spring-ring-with-gate",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "cable-link",
+      "name": "Якорное звено",
+      "type": "connection",
+      "geometry": "alternating-plane-oval",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "curb-link",
+      "name": "Панцирное звено",
+      "type": "connection",
+      "geometry": "twisted-flat-oval",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "figaro-link",
+      "name": "Фигаро",
+      "type": "connection",
+      "geometry": "one-long-three-short",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "anchor-link",
+      "name": "Морское звено",
+      "type": "connection",
+      "geometry": "oval-with-crossbar",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "tennis-link",
+      "name": "Теннисное звено",
+      "type": "connection",
+      "geometry": "articulated-stone-basket",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    },
+    {
+      "id": "separator",
+      "name": "Разделитель",
+      "type": "connection",
+      "geometry": "solid-connecting-bridge",
+      "sources": [
+        "rio-chain",
+        "rio-clasp",
+        "gia-bearing",
+        "tif-pendant"
+      ],
+      "dimensionBasis": "calibrated physical geometry"
+    }
+  ],
+  "cuts": [
+    {
+      "id": "round",
+      "name": "Круглая",
+      "lengthWidthRatio": 1,
+      "ratioBasis": "visualization target; individual stones vary",
+      "supportedSettings": [
+        "four-prong",
+        "six-prong",
+        "bezel",
+        "halo",
+        "pave",
+        "shared-prong",
+        "channel"
+      ],
+      "crown": "faceted",
+      "pavilion": "faceted-cone",
+      "sources": [
+        "gia-set",
+        "tif-catalogue",
+        "node-trudy"
+      ]
+    },
+    {
+      "id": "oval",
+      "name": "Овал",
+      "lengthWidthRatio": 1.4,
+      "ratioBasis": "visualization target; individual stones vary",
+      "supportedSettings": [
+        "four-prong",
+        "six-prong",
+        "bezel",
+        "halo"
+      ],
+      "crown": "faceted",
+      "pavilion": "faceted-cone",
+      "sources": [
+        "gia-set",
+        "tif-catalogue",
+        "node-trudy"
+      ]
+    },
+    {
+      "id": "cushion",
+      "name": "Кушон",
+      "lengthWidthRatio": 1.08,
+      "ratioBasis": "visualization target; individual stones vary",
+      "supportedSettings": [
+        "four-prong",
+        "bezel",
+        "halo"
+      ],
+      "crown": "faceted",
+      "pavilion": "faceted-cone",
+      "sources": [
+        "gia-set",
+        "tif-catalogue",
+        "node-trudy"
+      ]
+    },
+    {
+      "id": "princess",
+      "name": "Принцесса",
+      "lengthWidthRatio": 1,
+      "ratioBasis": "visualization target; individual stones vary",
+      "supportedSettings": [
+        "four-prong",
+        "bezel"
+      ],
+      "crown": "faceted",
+      "pavilion": "faceted-cone",
+      "sources": [
+        "gia-set",
+        "tif-catalogue",
+        "node-trudy"
+      ]
+    },
+    {
+      "id": "emerald",
+      "name": "Изумрудная",
+      "lengthWidthRatio": 1.4,
+      "ratioBasis": "visualization target; individual stones vary",
+      "supportedSettings": [
+        "four-prong",
+        "bezel"
+      ],
+      "crown": "faceted",
+      "pavilion": "faceted-cone",
+      "sources": [
+        "gia-set",
+        "tif-catalogue",
+        "node-trudy"
+      ]
+    },
+    {
+      "id": "baguette",
+      "name": "Багет",
+      "lengthWidthRatio": 2,
+      "ratioBasis": "visualization target; individual stones vary",
+      "supportedSettings": [
+        "channel",
+        "bezel"
+      ],
+      "crown": "faceted",
+      "pavilion": "faceted-cone",
+      "sources": [
+        "gia-set",
+        "tif-catalogue",
+        "node-trudy"
+      ]
+    },
+    {
+      "id": "pear",
+      "name": "Груша",
+      "lengthWidthRatio": 1.5,
+      "ratioBasis": "visualization target; individual stones vary",
+      "supportedSettings": [
+        "v-prong",
+        "bezel",
+        "halo"
+      ],
+      "crown": "faceted",
+      "pavilion": "faceted-cone",
+      "sources": [
+        "gia-set",
+        "tif-catalogue",
+        "node-trudy"
+      ]
+    },
+    {
+      "id": "marquise",
+      "name": "Маркиз",
+      "lengthWidthRatio": 2,
+      "ratioBasis": "visualization target; individual stones vary",
+      "supportedSettings": [
+        "v-prong",
+        "bezel"
+      ],
+      "crown": "faceted",
+      "pavilion": "faceted-cone",
+      "sources": [
+        "gia-set",
+        "tif-catalogue",
+        "node-trudy"
+      ]
+    },
+    {
+      "id": "heart",
+      "name": "Сердце",
+      "lengthWidthRatio": 1,
+      "ratioBasis": "visualization target; individual stones vary",
+      "supportedSettings": [
+        "v-prong",
+        "bezel"
+      ],
+      "crown": "faceted",
+      "pavilion": "faceted-cone",
+      "sources": [
+        "gia-set",
+        "tif-catalogue",
+        "node-trudy"
+      ]
+    },
+    {
+      "id": "trillion",
+      "name": "Триллион",
+      "lengthWidthRatio": 1,
+      "ratioBasis": "visualization target; individual stones vary",
+      "supportedSettings": [
+        "v-prong",
+        "bezel"
+      ],
+      "crown": "faceted",
+      "pavilion": "faceted-cone",
+      "sources": [
+        "gia-set",
+        "tif-catalogue",
+        "node-trudy"
+      ]
+    },
+    {
+      "id": "cabochon",
+      "name": "Кабошон",
+      "lengthWidthRatio": 1.2,
+      "ratioBasis": "visualization target; individual stones vary",
+      "supportedSettings": [
+        "bezel"
+      ],
+      "crown": "smooth-dome",
+      "pavilion": "flat-seat",
+      "sources": [
+        "gia-set",
+        "tif-catalogue",
+        "node-trudy"
+      ]
+    },
+    {
+      "id": "asscher",
+      "name": "Ашер",
+      "lengthWidthRatio": 1,
+      "ratioBasis": "visualization target",
+      "supportedSettings": [
+        "four-prong",
+        "bezel"
+      ],
+      "crown": "faceted-step",
+      "pavilion": "faceted-cone",
+      "sources": [
+        "tif-catalogue",
+        "gia-set"
+      ]
+    },
+    {
+      "id": "step",
+      "name": "Ступенчатая огранка",
+      "lengthWidthRatio": 1.35,
+      "ratioBasis": "visualization target",
+      "supportedSettings": [
+        "four-prong",
+        "bezel"
+      ],
+      "crown": "faceted-step",
+      "pavilion": "faceted-cone",
+      "sources": [
+        "tif-catalogue",
+        "gia-set"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "solitaire",
+      "name": "Солитер · шесть крапанов",
+      "type": "ring",
+      "band": "court",
+      "setting": "six-prong",
+      "defaultCut": "round",
+      "stoneSizeMm": 6.5,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "gia-set",
+        "tif-catalogue"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "round",
+        "oval"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "oval-solitaire",
+      "name": "Овальный солитер",
+      "type": "ring",
+      "band": "taper",
+      "setting": "four-prong",
+      "defaultCut": "oval",
+      "stoneSizeMm": 7,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "gia-set",
+        "tif-catalogue"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "round",
+        "oval",
+        "cushion",
+        "princess",
+        "emerald",
+        "asscher",
+        "step"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "bezel-ring",
+      "name": "Кольцо с глухой закрепкой",
+      "type": "ring",
+      "band": "comfort",
+      "setting": "bezel",
+      "defaultCut": "round",
+      "stoneSizeMm": 6,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "gia-set"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "round",
+        "oval",
+        "cushion",
+        "princess",
+        "emerald",
+        "baguette",
+        "pear",
+        "marquise",
+        "heart",
+        "trillion",
+        "cabochon",
+        "asscher",
+        "step"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "bypass-ring",
+      "name": "Кольцо с обходной шинкой",
+      "type": "ring",
+      "band": "bypass",
+      "setting": "bezel",
+      "defaultCut": "oval",
+      "stoneSizeMm": 6,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "node-bypass"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "round",
+        "oval",
+        "cushion",
+        "princess",
+        "emerald",
+        "baguette",
+        "pear",
+        "marquise",
+        "heart",
+        "trillion",
+        "cabochon",
+        "asscher",
+        "step"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "halo-ring",
+      "name": "Кольцо с ореолом",
+      "type": "ring",
+      "band": "split",
+      "setting": "halo",
+      "defaultCut": "cushion",
+      "stoneSizeMm": 6,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "tif-catalogue"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "round",
+        "oval",
+        "cushion",
+        "pear"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "trilogy",
+      "name": "Трилогия",
+      "type": "ring",
+      "band": "wide",
+      "setting": "bezel",
+      "defaultCut": "round",
+      "stoneSizeMm": 7,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "node-trudy"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "round",
+        "oval",
+        "cushion",
+        "princess",
+        "emerald",
+        "baguette",
+        "pear",
+        "marquise",
+        "heart",
+        "trillion",
+        "cabochon",
+        "asscher",
+        "step"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ],
+      "publishedMeasures": {
+        "centreMm": 7,
+        "sidesMm": [
+          3,
+          3
+        ],
+        "bandWidthMm": 4.9,
+        "bottomThicknessMm": 1.8,
+        "heightMm": 5.4
+      }
+    },
+    {
+      "id": "emerald-solitaire",
+      "name": "Ступенчатая огранка",
+      "type": "ring",
+      "band": "flat",
+      "setting": "four-prong",
+      "defaultCut": "emerald",
+      "stoneSizeMm": 7,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "tif-catalogue"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "round",
+        "oval",
+        "cushion",
+        "princess",
+        "emerald",
+        "asscher",
+        "step"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "pear-solitaire",
+      "name": "Груша с защитой острия",
+      "type": "ring",
+      "band": "taper",
+      "setting": "v-prong",
+      "defaultCut": "pear",
+      "stoneSizeMm": 7,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "gia-bearing",
+        "gia-set"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "pear",
+        "marquise",
+        "heart",
+        "trillion"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "channel-band",
+      "name": "Кольцо с каналом",
+      "type": "ring",
+      "band": "flat",
+      "setting": "channel",
+      "defaultCut": "baguette",
+      "stoneSizeMm": 2.6,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "stuller-set"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "round",
+        "baguette"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "pave-band",
+      "name": "Кольцо паве",
+      "type": "ring",
+      "band": "court",
+      "setting": "pave",
+      "defaultCut": "round",
+      "stoneSizeMm": 1.3,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "stuller-set"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "round"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "wedding-band",
+      "name": "Обручальное кольцо",
+      "type": "ring",
+      "band": "comfort",
+      "setting": null,
+      "defaultCut": null,
+      "stoneSizeMm": 0,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "node-trudy"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "three-metal",
+      "name": "Комплект трёх колец",
+      "type": "ring",
+      "band": "court",
+      "setting": null,
+      "defaultCut": null,
+      "stoneSizeMm": 0,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "luther-stack"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ],
+      "construction": "three-separate-stacking-bands",
+      "fixedMetals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold"
+      ]
+    },
+    {
+      "id": "stud",
+      "name": "Пусеты",
+      "type": "earring",
+      "band": null,
+      "setting": "four-prong",
+      "defaultCut": "round",
+      "stoneSizeMm": 5,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "gia-set",
+        "tif-stud"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "round",
+        "oval",
+        "cushion",
+        "princess",
+        "emerald",
+        "asscher",
+        "step"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "bezel-stud",
+      "name": "Пусеты с глухой закрепкой",
+      "type": "earring",
+      "band": null,
+      "setting": "bezel",
+      "defaultCut": "round",
+      "stoneSizeMm": 5,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "tif-pendant",
+        "tif-stud"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "round",
+        "oval",
+        "cushion",
+        "princess",
+        "emerald",
+        "baguette",
+        "pear",
+        "marquise",
+        "heart",
+        "trillion",
+        "cabochon",
+        "asscher",
+        "step"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "drop",
+      "name": "Серьги-капли",
+      "type": "earring",
+      "band": null,
+      "setting": "v-prong",
+      "defaultCut": "pear",
+      "stoneSizeMm": 7,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "gia-bearing"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "pear",
+        "marquise",
+        "heart",
+        "trillion"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "hoop",
+      "name": "Серьги-кольца",
+      "type": "earring",
+      "band": null,
+      "setting": null,
+      "defaultCut": null,
+      "stoneSizeMm": 0,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "rio-clasp",
+        "tif-hoop"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "bezel-pendant",
+      "name": "Подвеска в глухой закрепке",
+      "type": "pendant",
+      "band": null,
+      "setting": "bezel",
+      "defaultCut": "round",
+      "stoneSizeMm": 6,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "tif-pendant"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "round",
+        "oval",
+        "cushion",
+        "princess",
+        "emerald",
+        "baguette",
+        "pear",
+        "marquise",
+        "heart",
+        "trillion",
+        "cabochon",
+        "asscher",
+        "step"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "pear-pendant",
+      "name": "Подвеска-капля",
+      "type": "pendant",
+      "band": null,
+      "setting": "v-prong",
+      "defaultCut": "pear",
+      "stoneSizeMm": 8,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "gia-bearing"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "pear",
+        "marquise",
+        "heart",
+        "trillion"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "cabochon-pendant",
+      "name": "Кулон с кабошоном",
+      "type": "pendant",
+      "band": null,
+      "setting": "bezel",
+      "defaultCut": "cabochon",
+      "stoneSizeMm": 9,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "stuller-set"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "round",
+        "oval",
+        "cushion",
+        "princess",
+        "emerald",
+        "baguette",
+        "pear",
+        "marquise",
+        "heart",
+        "trillion",
+        "cabochon",
+        "asscher",
+        "step"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "tennis",
+      "name": "Теннисный браслет",
+      "type": "bracelet",
+      "band": null,
+      "setting": "four-prong",
+      "defaultCut": "round",
+      "stoneSizeMm": 3,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "stuller-set",
+        "rio-clasp",
+        "tif-tennis"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [
+        "round",
+        "oval",
+        "cushion",
+        "princess",
+        "emerald",
+        "asscher",
+        "step"
+      ],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "bangle",
+      "name": "Жёсткий браслет",
+      "type": "bracelet",
+      "band": null,
+      "setting": null,
+      "defaultCut": null,
+      "stoneSizeMm": 0,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "rio-clasp"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "cable-chain",
+      "name": "Якорная цепочка",
+      "type": "chain",
+      "band": null,
+      "setting": null,
+      "defaultCut": null,
+      "stoneSizeMm": 0,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "rio-chain",
+        "rio-clasp"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "curb-chain",
+      "name": "Панцирная цепочка",
+      "type": "chain",
+      "band": null,
+      "setting": null,
+      "defaultCut": null,
+      "stoneSizeMm": 0,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "rio-chain",
+        "rio-clasp"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    },
+    {
+      "id": "figaro-chain",
+      "name": "Фигаро",
+      "type": "chain",
+      "band": null,
+      "setting": null,
+      "defaultCut": null,
+      "stoneSizeMm": 0,
+      "metals": [
+        "yellow-gold",
+        "white-gold",
+        "rose-gold",
+        "silver",
+        "platinum"
+      ],
+      "finishes": [
+        "polished",
+        "satin",
+        "brushed",
+        "hammered"
+      ],
+      "sources": [
+        "rio-chain",
+        "rio-clasp"
+      ],
+      "dimensions": "renderer calibration except explicitly publishedMeasures",
+      "compatibleCuts": [],
+      "parts": [
+        "foundation",
+        "setting",
+        "stone",
+        "connections"
+      ],
+      "incompatible": [
+        "unseated-girdle",
+        "intersecting-inner-ring",
+        "unjoined-connection"
+      ]
+    }
+  ]
+}

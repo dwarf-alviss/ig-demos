@@ -1,0 +1,51 @@
+{
+  "jw-base-band-plain": {
+    "sourceHash": "83543dd6eca3ba12dbbccf251dcbaace94248534509b099875a41057f0319769",
+    "view": "side",
+    "center": [0, 0.49694764733795543, 0.0002924412527457454],
+    "innerDiameterPerWidth": 0.8255545880542398,
+    "measurement": "opposing mesh intersections through the finger cavity centre; silhouette locates the cavity only"
+  },
+  "jw-base-cocktail": {
+    "sourceHash": "02292d795f551440c6dd96f86b413ee60f88747367dae8f0083f6af194e284eb",
+    "view": "front",
+    "center": [0.00010387098654618399, 0.4608111170458046, 0],
+    "innerDiameterPerWidth": 0.9039624228050973,
+    "measurement": "opposing mesh intersections through the finger cavity centre; silhouette locates the cavity only"
+  },
+  "jw-base-signet": {
+    "sourceHash": "88a0aae58e6f715eed3a769e555b0ed6e416626eb26aa20abfd3963b4e8cc51a",
+    "view": "front",
+    "center": [-0.0001124593998876322, 0.4985375855973855, 0],
+    "innerDiameterPerWidth": 0.8400039269460527,
+    "measurement": "opposing mesh intersections through the finger cavity centre; silhouette locates the cavity only"
+  },
+  "jw-base-solitaire": {
+    "sourceHash": "a311987b188b1f7eab0e9f10d40a984f916a7175ae84826e8d9b0c0ee9066725",
+    "view": "front",
+    "center": [0.00006527252137861206, 0.399700432225074, 0],
+    "innerDiameterPerWidth": 0.8319064751656033,
+    "measurement": "opposing mesh intersections through the finger cavity centre; silhouette locates the cavity only"
+  },
+  "jw-base-stacking-thin": {
+    "sourceHash": "b1f1429f9ec6e77471238abf51a13bf66303f56b10f320b54ec0ec954a3872b3",
+    "view": "front",
+    "center": [-0.00017733282234155823, 0.49848270188801075, 0],
+    "innerDiameterPerWidth": 0.8152525872181472,
+    "measurement": "opposing mesh intersections through the finger cavity centre; silhouette locates the cavity only"
+  },
+  "jw-set-bezel": {
+    "sourceHash": "d542f718ec28063122807ed9619b37864afa2e65bace9984c0bb018c05168717",
+    "view": "front",
+    "center": [-0.000033544485471215246, 0.43227161412885445, 0],
+    "innerDiameterPerWidth": 0.8280093530271322,
+    "measurement": "opposing mesh intersections through the finger cavity centre; silhouette locates the cavity only"
+  },
+  "jw-set-halo": {
+    "sourceHash": "145bc9123534e604e7a49ab1c59549a485fd437704ac0ee00f6f8332e2b4fbfc",
+    "view": "front",
+    "center": [-0.00004976259965572272, 0.42313282833316723, 0],
+    "innerDiameterPerWidth": 0.8295701219852952,
+    "measurement": "opposing mesh intersections through the finger cavity centre; silhouette locates the cavity only"
+  }
+}

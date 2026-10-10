@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ЛИНИЯ — Журнал городской формы</title>
+    <meta
+      name="description"
+      content="Редакционный журнал с крупными номерами выпусков, разворотами и подборками образов."
+    />
+    <link rel="stylesheet" href="assets/fonts.css" />
+    <link rel="stylesheet" href="../shared/concepts.css?v=native-1" />
+    <link rel="stylesheet" href="../shared/inline-studio.css?v=native-1" />
+    <script src="assets/data.js" defer></script>
+    <script src="../shared/concepts.js?v=native-1" defer></script>
+    <script type="module" src="../shared/wardrobe.js?v=native-1"></script>
+  </head>
+  <body data-brand="fashion" data-concept="a" data-architecture="fashion-a">
+    <a class="skip" href="#main">Перейти к содержимому</a>
+    <header class="site-header">
+      <a class="wordmark" href="index.html">ЛИНИЯ</a>
+      <nav aria-label="Основная навигация">
+        <a href="catalog.html">Каталог</a><a href="#create">Капсула</a
+        ><a href="cart.html">Корзина ↗</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="fashion-cover">
+        <div class="issue-line">
+          <span>ЛИНИЯ / ГОРОДСКОЙ ЖУРНАЛ</span><span>ВЫПУСК 01</span>
+        </div>
+        <h1>ФОРМА<br />ВАШЕГО<br />ДНЯ.</h1>
+        <img
+          class="cover-photo"
+          src="assets/img/rack.jpg"
+          alt="Городской гардероб"
+          loading="lazy"
+        /><a class="cover-link" href="#issue">Открыть выпуск ↓</a
+        ><span class="issue-number">01</span>
+      </section>
+      <section id="issue" class="editorial-spread">
+        <div>
+          <span class="eyebrow">01 / мягкая структура</span>
+          <h2>Не переодеваться.<br />Менять ритм.</h2>
+          <p>
+            Одна рубашка, джинсы и жакет. От утреннего кофе до последней встречи
+            — вещи, которые работают вместе.
+          </p>
+          <a class="primary" href="#create"
+            >Собрать свою редакцию <span>↗</span></a
+          >
+        </div>
+        <img
+          class=""
+          src="assets/img/shirt.jpg"
+          alt="Рубашка как основа образа"
+          loading="lazy"
+        /><img
+          class=""
+          src="assets/img/denim.jpg"
+          alt="Деним для ежедневного гардероба"
+          loading="lazy"
+        />
+      </section>
+      <section class="issue-index">
+        <a href="catalog.html">01 / Чёткий силуэт <span>Рубашки ↗</span></a
+        ><a href="catalog.html">02 / Мягкий слой <span>Трикотаж ↗</span></a
+        ><a href="catalog.html">03 / Свобода движения <span>Деним ↗</span></a>
+      </section>
+      <section id="create" class="studio-section" data-initial-pattern="">
+        <div class="studio-heading">
+          <span class="eyebrow">Ваша капсула / прямо здесь</span>
+          <h2>Ваша редакция гардероба.</h2>
+          <p>Меняйте детали и сохраняйте свой дизайн прямо на этой странице.</p>
+        </div>
+        <div class="studio-mount inline-studio" data-wardrobe>
+          <div class="inline-main">
+            <div class="workspace">
+              <section>
+                <div class="look" id="look" aria-label="Ваш образ"></div>
+                <div class="caption">
+                  <span>YOUR DAILY UNIFORM</span><span id="count">01 — 03</span>
+                </div>
+              </section>
+              <section class="panel">
+                <h2>Ваша редакция</h2>
+                <div id="choices"></div>
+                <fieldset>
+                  <legend>Размер</legend>
+                  <div class="sizes" id="sizes"></div>
+                </fieldset>
+                <div class="total">
+                  <span>Стоимость капсулы</span><strong id="price"></strong>
+                </div>
+                <p id="summary"></p>
+                <button id="add-capsule">Добавить комплект в корзину ↗</button
+                ><button id="save">Сохранить капсулу ↗</button>
+                <p class="note" id="status" role="status">
+                  Демонстрационный подбор. Выбор сохраняется в вашем браузере.
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="wordmark" href="index.html">ЛИНИЯ</a
+      ><a href="#create">Собрать капсулу ↗</a>
+      <p>
+        Демонстрационный магазин · реальное оформление заказа не подключено.
+      </p>
+    </footer>
+  </body>
+</html>

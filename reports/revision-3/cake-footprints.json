@@ -1,0 +1,218 @@
+[
+  {
+    "id": "bk-decor-sprinkle-ball",
+    "pose": "upright",
+    "dimensions": [
+      0.35,
+      0.3442747747693579,
+      0.3482482765110203
+    ],
+    "projectedRadius": 0.17740183692969494,
+    "footprint": 0.19,
+    "required": 0.19
+  },
+  {
+    "id": "bk-decor-sprinkle-star",
+    "pose": "upright",
+    "dimensions": [
+      0.35,
+      0.3362422855165036,
+      0.09648581047708607
+    ],
+    "projectedRadius": 0.17512541489143818,
+    "footprint": 0.2,
+    "required": 0.19
+  },
+  {
+    "id": "bk-decor-gold-flake",
+    "pose": "upright",
+    "dimensions": [
+      0.15800041647338176,
+      0.16714377703318387,
+      0.7
+    ],
+    "projectedRadius": 0.3519864460419309,
+    "footprint": 0.37,
+    "required": 0.37
+  },
+  {
+    "id": "bk-berry-blueberry",
+    "pose": "upright",
+    "dimensions": [
+      1.048589956977187,
+      1.0500000000000003,
+      1.048461862820309
+    ],
+    "projectedRadius": 0.5300412865053884,
+    "footprint": 0.58,
+    "required": 0.55
+  },
+  {
+    "id": "bk-berry-strawberry",
+    "pose": "upright",
+    "dimensions": [
+      2.1671408045843057,
+      3.8,
+      3.263412889555216
+    ],
+    "projectedRadius": 1.5143440266847614,
+    "footprint": 1.58,
+    "required": 1.57
+  },
+  {
+    "id": "bk-berry-raspberry",
+    "pose": "upright",
+    "dimensions": [
+      1.8325050728936978,
+      1.9,
+      1.7749839771199392
+    ],
+    "projectedRadius": 0.9963190495344149,
+    "footprint": 1.04,
+    "required": 1.04
+  },
+  {
+    "id": "bk-berry-blackberry",
+    "pose": "upright",
+    "dimensions": [
+      1.5348306411714276,
+      2.3,
+      1.519388394716167
+    ],
+    "projectedRadius": 0.8200959263716877,
+    "footprint": 1,
+    "required": 0.85
+  },
+  {
+    "id": "bk-berry-cherry",
+    "pose": "upright",
+    "dimensions": [
+      2.4707356024952207,
+      4.1,
+      2.152916105580365
+    ],
+    "projectedRadius": 1.4107130514772523,
+    "footprint": 1.47,
+    "required": 1.47
+  },
+  {
+    "id": "bk-decor-macaron",
+    "pose": "upright",
+    "dimensions": [
+      4.176414740152163,
+      2.58790845268917,
+      4.2
+    ],
+    "projectedRadius": 2.146839128652549,
+    "footprint": 2.23,
+    "required": 2.23
+  },
+  {
+    "id": "bk-decor-cream-rosette",
+    "pose": "upright",
+    "dimensions": [
+      2.948728326285945,
+      2.8154238628898556,
+      3
+    ],
+    "projectedRadius": 1.555796341570754,
+    "footprint": 1.62,
+    "required": 1.62
+  },
+  {
+    "id": "bk-decor-meringue-kiss",
+    "pose": "upright",
+    "dimensions": [
+      2.8,
+      2.6212351124535407,
+      2.6639610631328168
+    ],
+    "projectedRadius": 1.425838360100575,
+    "footprint": 1.49,
+    "required": 1.48
+  },
+  {
+    "id": "bk-decor-truffle-ball",
+    "pose": "upright",
+    "dimensions": [
+      2.7,
+      2.687475586419689,
+      2.6795651556352613
+    ],
+    "projectedRadius": 1.3643885630159263,
+    "footprint": 1.42,
+    "required": 1.42
+  },
+  {
+    "id": "bk-decor-crumble-cluster",
+    "pose": "upright",
+    "dimensions": [
+      1.4452709542212403,
+      2.2,
+      1.4189520738342356
+    ],
+    "projectedRadius": 0.7847201536244494,
+    "footprint": 1.05,
+    "required": 0.82
+  },
+  {
+    "id": "bk-decor-chocolate-shard",
+    "pose": "upright",
+    "dimensions": [
+      1.947894719743991,
+      5.5,
+      1.0235029654602599
+    ],
+    "projectedRadius": 0.8169679873465587,
+    "footprint": 1.25,
+    "required": 0.85
+  },
+  {
+    "id": "bk-decor-chocolate-shard",
+    "pose": "flat",
+    "dimensions": [
+      0.5975523529086625,
+      1.0191959044554,
+      5.5
+    ],
+    "projectedRadius": 2.757803544101758,
+    "footprint": 3.2,
+    "required": 2.86
+  },
+  {
+    "id": "bk-decor-caramel-spiral",
+    "pose": "upright",
+    "dimensions": [
+      2.3679065610674757,
+      5.2,
+      2.783214839739041
+    ],
+    "projectedRadius": 1.568992368284685,
+    "footprint": 1.63,
+    "required": 1.63
+  },
+  {
+    "id": "bk-decor-wafer-roll",
+    "pose": "upright",
+    "dimensions": [
+      0.7,
+      7.339462228049589,
+      3.023713997278592
+    ],
+    "projectedRadius": 1.4857103566498493,
+    "footprint": 1.55,
+    "required": 1.54
+  },
+  {
+    "id": "bk-decor-wafer-roll",
+    "pose": "flat",
+    "dimensions": [
+      0.7,
+      0.7000000000000017,
+      7.5
+    ],
+    "projectedRadius": 3.7626603126299036,
+    "footprint": 4,
+    "required": 3.9
+  }
+]

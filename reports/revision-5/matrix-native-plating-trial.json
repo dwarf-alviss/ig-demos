@@ -1,0 +1,482 @@
+[
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 9,
+        "bk-berry-raspberry": 7,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / plating trial 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 9,
+        "bk-berry-raspberry": 7,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / plating trial 2"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 9,
+        "bk-berry-raspberry": 7,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / plating trial 3"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 9,
+        "bk-berry-raspberry": 7,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / plating trial 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 9,
+        "bk-berry-raspberry": 7,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / plating trial 2"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 9,
+        "bk-berry-raspberry": 7,
+        "bk-decor-caramel-spiral": 2
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / plating trial 3"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 2,
+        "bk-berry-raspberry": 1,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / plating trial 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 9,
+        "bk-berry-raspberry": 7,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / plating trial 2"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 7,
+        "bk-berry-raspberry": 7,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / plating trial 3"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 3,
+        "bk-berry-raspberry": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / plating trial 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 9,
+        "bk-berry-raspberry": 7,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / plating trial 2"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 9,
+        "bk-berry-raspberry": 7,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / plating trial 3"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 3,
+        "bk-berry-raspberry": 4
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / plating trial 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 9,
+        "bk-berry-raspberry": 7,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / plating trial 2"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 9,
+        "bk-berry-raspberry": 7,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / plating trial 3"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 4,
+        "bk-berry-raspberry": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / plating trial 1"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 9,
+        "bk-berry-raspberry": 7,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / plating trial 2"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 9,
+        "bk-berry-raspberry": 7,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / plating trial 3"
+  }
+]

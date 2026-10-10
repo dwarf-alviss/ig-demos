@@ -1,0 +1,180 @@
+{
+  "records": [
+    {
+      "kind": "cakes",
+      "metrics": {
+        "assembly": {
+          "surfaces": [
+            {
+              "id": -1,
+              "x": 0,
+              "z": 0,
+              "y": 0.48,
+              "radius": 12.600086421951321,
+              "inner": 0
+            },
+            {
+              "id": 0,
+              "asset": "bk-pastry-cupcake",
+              "x": 7.5,
+              "z": 0,
+              "y": 8,
+              "radius": 2.1,
+              "inner": 0
+            },
+            {
+              "id": 1,
+              "asset": "bk-pastry-cupcake",
+              "x": 4.592425496802575e-16,
+              "z": 7.5,
+              "y": 8,
+              "radius": 2.1,
+              "inner": 0
+            },
+            {
+              "id": 2,
+              "asset": "bk-pastry-cupcake",
+              "x": -7.5,
+              "z": 9.18485099360515e-16,
+              "y": 8,
+              "radius": 2.1,
+              "inner": 0
+            },
+            {
+              "id": 3,
+              "asset": "bk-pastry-cupcake",
+              "x": -1.3777276490407722e-15,
+              "z": -7.5,
+              "y": 8,
+              "radius": 2.1,
+              "inner": 0
+            }
+          ],
+          "decorSeats": [
+            {
+              "x": 7.5,
+              "z": 0,
+              "footprint": 3.4000864219513214,
+              "surface": -1
+            },
+            {
+              "x": 4.592425496802575e-16,
+              "z": 7.5,
+              "footprint": 3.4000864219513214,
+              "surface": -1
+            },
+            {
+              "x": -7.5,
+              "z": 9.18485099360515e-16,
+              "footprint": 3.4000864219513214,
+              "surface": -1
+            },
+            {
+              "x": -1.3777276490407722e-15,
+              "z": -7.5,
+              "footprint": 3.4000864219513214,
+              "surface": -1
+            },
+            {
+              "x": 8.7273885817822,
+              "z": 0.31513982501530396,
+              "y": 6.573500141992428,
+              "footprint": 0.58,
+              "surface": 0
+            },
+            {
+              "x": 1.2273885817822017,
+              "z": 7.815139825015304,
+              "y": 6.27503601773136,
+              "footprint": 0.58,
+              "surface": 1
+            },
+            {
+              "x": -6.2726114182177986,
+              "z": 0.3151398250153049,
+              "y": 6.717014853849419,
+              "footprint": 0.58,
+              "surface": 2
+            },
+            {
+              "x": 1.2273885817822,
+              "z": -7.184860174984696,
+              "y": 6.309952951471221,
+              "footprint": 0.58,
+              "surface": 3
+            },
+            {
+              "x": 6.382088102434516,
+              "z": 0.596715031888371,
+              "y": 6.672893660011925,
+              "footprint": 0.58,
+              "surface": 0
+            }
+          ]
+        },
+        "framing": {
+          "maxX": 0.7772575906655286,
+          "maxY": 0.8199876644405721
+        },
+        "drawCalls": 21,
+        "triangles": 598290,
+        "geometries": 11,
+        "textures": 10,
+        "box": [
+          26.200172424316406,
+          7.999999994039536,
+          26.200172424316406
+        ]
+      },
+      "checks": "tabs/search/undo/redo/persistence/download/cart/9 camera poses/mobile"
+    },
+    {
+      "kind": "flowers",
+      "metrics": {
+        "assembly": {
+          "container": "fl-wrap-hatbox-round",
+          "lip": 14.824321069069725,
+          "mouthRadius": 9.344444444444454,
+          "centerX": -4.64,
+          "flowers": 11
+        },
+        "framing": {
+          "maxX": 0.7686139085986019,
+          "maxY": 0.8199454960650431
+        },
+        "drawCalls": 65,
+        "triangles": 1089102,
+        "geometries": 48,
+        "textures": 19,
+        "box": [
+          30.73197511572848,
+          24.349548284601795,
+          23.18395023145697
+        ]
+      },
+      "checks": "tabs/search/undo/redo/persistence/download/cart/9 camera poses/mobile"
+    },
+    {
+      "kind": "jewelry",
+      "metrics": {
+        "assembly": null,
+        "framing": {
+          "maxX": 0.34047936829831027,
+          "maxY": 0.8199467235623413
+        },
+        "drawCalls": 10,
+        "triangles": 192908,
+        "geometries": 4,
+        "textures": 5,
+        "box": [
+          1.237391107633734,
+          2.594,
+          0.4246051372424944
+        ]
+      },
+      "checks": "tabs/search/undo/redo/persistence/download/cart/9 camera poses/mobile"
+    }
+  ],
+  "errors": [],
+  "fashion": "real catalogue / sizes / stock / three cart items / mobile"
+}

@@ -1,0 +1,472 @@
+[
+  {
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "kind": "cakes",
+    "pattern": "chocolate-strawberry-heart",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "chocolate-strawberry-heart",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "dark-mirror",
+      "foodDecor": [
+        "strawberry",
+        "strawberry-half",
+        "chocolate-curl"
+      ],
+      "foodCounts": {
+        "strawberry": 2,
+        "strawberry-half": 4,
+        "chocolate-curl": 3
+      }
+    },
+    "poses": {
+      "front": {
+        "assembly": {
+          "layerCount": 5,
+          "tiers": 1,
+          "source": [
+            "laf-love"
+          ],
+          "components": [
+            "cocoa-sponge",
+            "vanilla-cremeux",
+            "strawberry-confit",
+            "cocoa-sponge",
+            "chocolate-mousse"
+          ]
+        },
+        "framing": {
+          "maxX": 0.6766413480599436,
+          "maxY": 0.8199972128607961
+        },
+        "drawCalls": 294,
+        "triangles": 221722,
+        "geometries": 148,
+        "textures": 158,
+        "box": [
+          30.399999618530273,
+          7.6958985520109815,
+          30.399999618530273
+        ]
+      },
+      "side": {
+        "assembly": {
+          "layerCount": 5,
+          "tiers": 1,
+          "source": [
+            "laf-love"
+          ],
+          "components": [
+            "cocoa-sponge",
+            "vanilla-cremeux",
+            "strawberry-confit",
+            "cocoa-sponge",
+            "chocolate-mousse"
+          ]
+        },
+        "framing": {
+          "maxX": 0.8397850343484636,
+          "maxY": 0.819977601233309
+        },
+        "drawCalls": 294,
+        "triangles": 221722,
+        "geometries": 148,
+        "textures": 158,
+        "box": [
+          30.399999618530273,
+          7.6958985520109815,
+          30.399999618530273
+        ]
+      },
+      "top": {
+        "assembly": {
+          "layerCount": 5,
+          "tiers": 1,
+          "source": [
+            "laf-love"
+          ],
+          "components": [
+            "cocoa-sponge",
+            "vanilla-cremeux",
+            "strawberry-confit",
+            "cocoa-sponge",
+            "chocolate-mousse"
+          ]
+        },
+        "framing": {
+          "maxX": 0.6145476693784796,
+          "maxY": 0.8199691914194231
+        },
+        "drawCalls": 294,
+        "triangles": 221722,
+        "geometries": 148,
+        "textures": 158,
+        "box": [
+          30.399999618530273,
+          7.6958985520109815,
+          30.399999618530273
+        ]
+      },
+      "back": {
+        "assembly": {
+          "layerCount": 5,
+          "tiers": 1,
+          "source": [
+            "laf-love"
+          ],
+          "components": [
+            "cocoa-sponge",
+            "vanilla-cremeux",
+            "strawberry-confit",
+            "cocoa-sponge",
+            "chocolate-mousse"
+          ]
+        },
+        "framing": {
+          "maxX": 0.7915101435514923,
+          "maxY": 0.8198778255390515
+        },
+        "drawCalls": 294,
+        "triangles": 221722,
+        "geometries": 148,
+        "textures": 158,
+        "box": [
+          30.399999618530273,
+          7.6958985520109815,
+          30.399999618530273
+        ]
+      }
+    },
+    "errors": []
+  },
+  {
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "kind": "cakes",
+    "pattern": "vanilla-celebration",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "vanilla-celebration",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "cream-coat",
+      "foodDecor": [
+        "strawberry",
+        "raspberry",
+        "blueberry",
+        "cream-rosette"
+      ],
+      "foodCounts": {
+        "strawberry": 3,
+        "raspberry": 5,
+        "blueberry": 9,
+        "cream-rosette": 3
+      }
+    },
+    "poses": {
+      "front": {
+        "assembly": {
+          "layerCount": 5,
+          "tiers": 1,
+          "source": [
+            "wil-mini",
+            "wil-stack"
+          ],
+          "components": [
+            "vanilla-sponge",
+            "vanilla-buttercream",
+            "vanilla-sponge",
+            "vanilla-buttercream",
+            "vanilla-sponge"
+          ]
+        },
+        "framing": {
+          "maxX": 0.6864008036679817,
+          "maxY": 0.8199428370118828
+        },
+        "drawCalls": 68,
+        "triangles": 1355670,
+        "geometries": 35,
+        "textures": 34,
+        "box": [
+          36.400001525878906,
+          8.53212780650405,
+          36.400001525878906
+        ]
+      },
+      "side": {
+        "assembly": {
+          "layerCount": 5,
+          "tiers": 1,
+          "source": [
+            "wil-mini",
+            "wil-stack"
+          ],
+          "components": [
+            "vanilla-sponge",
+            "vanilla-buttercream",
+            "vanilla-sponge",
+            "vanilla-buttercream",
+            "vanilla-sponge"
+          ]
+        },
+        "framing": {
+          "maxX": 0.8499982783199682,
+          "maxY": 0.8109427238507321
+        },
+        "drawCalls": 68,
+        "triangles": 1355670,
+        "geometries": 35,
+        "textures": 34,
+        "box": [
+          36.400001525878906,
+          8.53212780650405,
+          36.400001525878906
+        ]
+      },
+      "top": {
+        "assembly": {
+          "layerCount": 5,
+          "tiers": 1,
+          "source": [
+            "wil-mini",
+            "wil-stack"
+          ],
+          "components": [
+            "vanilla-sponge",
+            "vanilla-buttercream",
+            "vanilla-sponge",
+            "vanilla-buttercream",
+            "vanilla-sponge"
+          ]
+        },
+        "framing": {
+          "maxX": 0.6145618616904721,
+          "maxY": 0.8199711695175705
+        },
+        "drawCalls": 68,
+        "triangles": 1355670,
+        "geometries": 35,
+        "textures": 34,
+        "box": [
+          36.400001525878906,
+          8.53212780650405,
+          36.400001525878906
+        ]
+      },
+      "back": {
+        "assembly": {
+          "layerCount": 5,
+          "tiers": 1,
+          "source": [
+            "wil-mini",
+            "wil-stack"
+          ],
+          "components": [
+            "vanilla-sponge",
+            "vanilla-buttercream",
+            "vanilla-sponge",
+            "vanilla-buttercream",
+            "vanilla-sponge"
+          ]
+        },
+        "framing": {
+          "maxX": 0.8065281534747987,
+          "maxY": 0.8199522181461292
+        },
+        "drawCalls": 68,
+        "triangles": 1355670,
+        "geometries": 35,
+        "textures": 34,
+        "box": [
+          36.400001525878906,
+          8.53212780650405,
+          36.400001525878906
+        ]
+      }
+    },
+    "errors": []
+  },
+  {
+    "bundleHash": "61daa640c94e377cdb1953b2871867c264cc3877e71ddf3fd1d759b6e9277634",
+    "kind": "cakes",
+    "pattern": "mini-buttercream",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-berry-blueberry",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-berry-blueberry": 7,
+        "bk-decor-cream-rosette": 5
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": "mini-buttercream",
+      "finish": "polished",
+      "bouquetSize": 19,
+      "cover": "cream-coat",
+      "foodDecor": [
+        "piped-shell",
+        "strawberry"
+      ],
+      "foodCounts": {
+        "piped-shell": 5,
+        "strawberry": 2
+      }
+    },
+    "poses": {
+      "front": {
+        "assembly": {
+          "layerCount": 3,
+          "tiers": 1,
+          "source": [
+            "wil-mini"
+          ],
+          "components": [
+            "vanilla-sponge",
+            "vanilla-buttercream",
+            "vanilla-sponge"
+          ]
+        },
+        "framing": {
+          "maxX": 0.7085337566652542,
+          "maxY": 0.819891801720247
+        },
+        "drawCalls": 34,
+        "triangles": 223414,
+        "geometries": 18,
+        "textures": 24,
+        "box": [
+          26.399999618530273,
+          5.562020251581394,
+          26.399999618530273
+        ]
+      },
+      "side": {
+        "assembly": {
+          "layerCount": 3,
+          "tiers": 1,
+          "source": [
+            "wil-mini"
+          ],
+          "components": [
+            "vanilla-sponge",
+            "vanilla-buttercream",
+            "vanilla-sponge"
+          ]
+        },
+        "framing": {
+          "maxX": 0.8499692571724432,
+          "maxY": 0.7627430920338963
+        },
+        "drawCalls": 34,
+        "triangles": 223414,
+        "geometries": 18,
+        "textures": 24,
+        "box": [
+          26.399999618530273,
+          5.562020251581394,
+          26.399999618530273
+        ]
+      },
+      "top": {
+        "assembly": {
+          "layerCount": 3,
+          "tiers": 1,
+          "source": [
+            "wil-mini"
+          ],
+          "components": [
+            "vanilla-sponge",
+            "vanilla-buttercream",
+            "vanilla-sponge"
+          ]
+        },
+        "framing": {
+          "maxX": 0.6145791104172472,
+          "maxY": 0.8199575289777826
+        },
+        "drawCalls": 34,
+        "triangles": 223414,
+        "geometries": 18,
+        "textures": 24,
+        "box": [
+          26.399999618530273,
+          5.562020251581394,
+          26.399999618530273
+        ]
+      },
+      "back": {
+        "assembly": {
+          "layerCount": 3,
+          "tiers": 1,
+          "source": [
+            "wil-mini"
+          ],
+          "components": [
+            "vanilla-sponge",
+            "vanilla-buttercream",
+            "vanilla-sponge"
+          ]
+        },
+        "framing": {
+          "maxX": 0.840857343346775,
+          "maxY": 0.8198988697329862
+        },
+        "drawCalls": 34,
+        "triangles": 223414,
+        "geometries": 18,
+        "textures": 24,
+        "box": [
+          26.399999618530273,
+          5.562020251581394,
+          26.399999618530273
+        ]
+      }
+    },
+    "errors": []
+  }
+]

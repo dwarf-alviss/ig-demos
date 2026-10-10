@@ -1,0 +1,2738 @@
+[
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-diamond-09",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-diamond-09 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-diamond-09",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-diamond-09 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-57",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-57 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-57",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-57 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-58",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-58 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-58",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-58 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-59",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-59 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-59",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-59 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-60",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-60 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-60",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-60 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-61",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-61 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-61",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-61 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-62",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-62 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-62",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-62 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-63",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-63 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-63",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-63 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-64",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-64 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-pendant",
+      "stone": "jw-stone-gem-64",
+      "setting": null,
+      "finding": [
+        "jw-part-bail-hinged"
+      ],
+      "counts": {
+        "jw-part-bail-hinged": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-pendant / calibrated-integrated / jw-stone-gem-64 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-round-brilliant",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-round-brilliant / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-round-brilliant",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-round-brilliant / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-diamond-08",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-diamond-08 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-diamond-08",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-diamond-08 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-17",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-17 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-17",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-17 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-18",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-18 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-18",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-18 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-19",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-19 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-19",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-19 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-20",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-20 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-20",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-20 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-21",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-21 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-21",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-21 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-22",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-22 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-22",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-22 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-23",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-23 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-23",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-23 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-24",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-24 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-drop-earring",
+      "stone": "jw-stone-gem-24",
+      "setting": null,
+      "finding": [
+        "jw-part-ear-wire-french"
+      ],
+      "counts": {
+        "jw-part-ear-wire-french": 1
+      },
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-drop-earring / calibrated-integrated / jw-stone-gem-24 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-diamond-09",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-diamond-09 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-diamond-09",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-diamond-09 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-57",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-57 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-57",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-57 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-58",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-58 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-58",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-58 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-59",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-59 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-59",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-59 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-60",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-60 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-60",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-60 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-61",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-61 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-61",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-61 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-62",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-62 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-62",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-62 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-63",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-63 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-63",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-63 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-64",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-64 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-cocktail",
+      "stone": "jw-stone-gem-64",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-cocktail / calibrated-integrated / jw-stone-gem-64 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-round-brilliant",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-round-brilliant / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-round-brilliant",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-round-brilliant / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-diamond-08",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-diamond-08 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-diamond-08",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-diamond-08 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-17",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-17 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-17",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-17 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-18",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-18 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-18",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-18 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-19",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-19 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-19",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-19 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-20",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-20 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-20",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-20 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-21",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-21 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-21",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-21 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-22",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-22 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-22",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-22 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-23",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-23 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-23",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-23 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-24",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-24 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-solitaire",
+      "stone": "jw-stone-gem-24",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-solitaire / calibrated-integrated / jw-stone-gem-24 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-round-brilliant",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-round-brilliant / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-round-brilliant",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-round-brilliant / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-diamond-08",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-diamond-08 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-diamond-08",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-diamond-08 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-17",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-17 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-17",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-17 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-18",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-18 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-18",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-18 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-19",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-19 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-19",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-19 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-20",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-20 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-20",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-20 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-21",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-21 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-21",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-21 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-22",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-22 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-22",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-22 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-23",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-23 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-23",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-23 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-24",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-24 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-halo",
+      "stone": "jw-stone-gem-24",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-halo / calibrated-integrated / jw-stone-gem-24 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-round-brilliant",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-round-brilliant / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-round-brilliant",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-round-brilliant / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-diamond-08",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-diamond-08 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-diamond-08",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-diamond-08 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-09",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-09 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-09",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-09 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-10",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-10 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-10",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-10 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-11",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-11 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-11",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-11 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-12",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-12 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-12",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-12 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-13",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-13 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-13",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-13 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-14",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-14 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-14",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-14 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-15",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-15 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-15",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-15 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-16",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-16 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-16",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-16 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-17",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-17 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-17",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-17 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-18",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-18 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-18",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-18 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-19",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-19 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-19",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-19 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-20",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-20 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-20",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-20 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-21",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-21 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-21",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-21 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-22",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-22 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-22",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-22 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-23",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-23 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-23",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-23 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-24",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-24 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-set-bezel",
+      "stone": "jw-stone-gem-24",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-set-bezel / calibrated-integrated / jw-stone-gem-24 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-round-brilliant",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-round-brilliant / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-round-brilliant",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-round-brilliant / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-diamond-08",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-diamond-08 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-diamond-08",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-diamond-08 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-17",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-17 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-17",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-17 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-18",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-18 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-18",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-18 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-19",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-19 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-19",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-19 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-20",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-20 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-20",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-20 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-21",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-21 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-21",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-21 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-22",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-22 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-22",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-22 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-23",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-23 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-23",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-23 / 24"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-24",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 16,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-24 / 16"
+  },
+  {
+    "kind": "jewelry",
+    "state": {
+      "version": 2,
+      "base": "jw-base-stud-earring",
+      "stone": "jw-stone-gem-24",
+      "setting": null,
+      "finding": [],
+      "counts": {},
+      "palette": 0,
+      "size": 17,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "jw-base-stud-earring / calibrated-integrated / jw-stone-gem-24 / 24"
+  }
+]

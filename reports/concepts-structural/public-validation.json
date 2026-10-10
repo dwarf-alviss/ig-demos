@@ -1,0 +1,91 @@
+{
+  "base": "https://dwarf-alviss.github.io/ig-demos/",
+  "pages": [
+    {
+      "path": "directions.html",
+      "status": 200,
+      "assetsChecked": 14
+    },
+    {
+      "path": "cakes/index.html",
+      "status": 200,
+      "assetsChecked": 4
+    },
+    {
+      "path": "cakes/concept-b.html",
+      "status": 200,
+      "assetsChecked": 4
+    },
+    {
+      "path": "cakes/concept-c.html",
+      "status": 200,
+      "assetsChecked": 6
+    },
+    {
+      "path": "cakes/studio.html",
+      "status": 200,
+      "assetsChecked": 4
+    },
+    {
+      "path": "flowers/index.html",
+      "status": 200,
+      "assetsChecked": 6
+    },
+    {
+      "path": "flowers/concept-b.html",
+      "status": 200,
+      "assetsChecked": 4
+    },
+    {
+      "path": "flowers/concept-c.html",
+      "status": 200,
+      "assetsChecked": 7
+    },
+    {
+      "path": "flowers/studio.html",
+      "status": 200,
+      "assetsChecked": 4
+    },
+    {
+      "path": "jewelry/index.html",
+      "status": 200,
+      "assetsChecked": 4
+    },
+    {
+      "path": "jewelry/concept-b.html",
+      "status": 200,
+      "assetsChecked": 4
+    },
+    {
+      "path": "jewelry/concept-c.html",
+      "status": 200,
+      "assetsChecked": 4
+    },
+    {
+      "path": "jewelry/studio.html",
+      "status": 200,
+      "assetsChecked": 4
+    },
+    {
+      "path": "fashion/index.html",
+      "status": 200,
+      "assetsChecked": 7
+    },
+    {
+      "path": "fashion/concept-b.html",
+      "status": 200,
+      "assetsChecked": 7
+    },
+    {
+      "path": "fashion/concept-c.html",
+      "status": 200,
+      "assetsChecked": 4
+    },
+    {
+      "path": "fashion/studio.html",
+      "status": 200,
+      "assetsChecked": 4
+    }
+  ],
+  "bundleHash": "7e1a952fd79d2d79f46b84d2f89d31dc99b72bc4a8b9238032b8c42716679da1"
+}

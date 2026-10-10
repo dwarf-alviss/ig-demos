@@ -1,0 +1,402 @@
+[
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-anemone"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-anemone": 7
+      },
+      "palette": 0,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-anemone / no-green / no-ribbon"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-chamomile"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-chamomile": 7
+      },
+      "palette": 0,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-chamomile / no-green / no-ribbon"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-chrysanthemum-spray"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-chrysanthemum-spray": 7
+      },
+      "palette": 0,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-chrysanthemum-spray / no-green / no-ribbon"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-eustoma"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-eustoma": 7
+      },
+      "palette": 0,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-eustoma / no-green / no-ribbon"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-gerbera"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-gerbera": 7
+      },
+      "palette": 0,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-gerbera / no-green / no-ribbon"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-lily-oriental"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-lily-oriental": 7
+      },
+      "palette": 0,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-lily-oriental / no-green / no-ribbon"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-peony-open"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-peony-open": 7
+      },
+      "palette": 0,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-peony-open / no-green / no-ribbon"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-ranunculus"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-ranunculus": 7
+      },
+      "palette": 0,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-ranunculus / no-green / no-ribbon"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-rose-garden"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-rose-garden": 7
+      },
+      "palette": 0,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-rose-garden / no-green / no-ribbon"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-tulip"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-tulip": 7
+      },
+      "palette": 0,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-tulip / no-green / no-ribbon"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-anemone"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-anemone": 7
+      },
+      "palette": 4,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-anemone / native colors"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-chamomile"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-chamomile": 7
+      },
+      "palette": 4,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-chamomile / native colors"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-chrysanthemum-spray"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-chrysanthemum-spray": 7
+      },
+      "palette": 4,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-chrysanthemum-spray / native colors"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-eustoma"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-eustoma": 7
+      },
+      "palette": 4,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-eustoma / native colors"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-gerbera"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-gerbera": 7
+      },
+      "palette": 4,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-gerbera / native colors"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-lily-oriental"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-lily-oriental": 7
+      },
+      "palette": 4,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-lily-oriental / native colors"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-peony-open"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-peony-open": 7
+      },
+      "palette": 4,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-peony-open / native colors"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-ranunculus"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-ranunculus": 7
+      },
+      "palette": 4,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-ranunculus / native colors"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-rose-garden"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-rose-garden": 7
+      },
+      "palette": 4,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-rose-garden / native colors"
+  },
+  {
+    "kind": "flowers",
+    "state": {
+      "version": 2,
+      "flowers": [
+        "fl-flower-tulip"
+      ],
+      "green": [],
+      "pack": "fl-wrap-basket-rattan",
+      "ribbon": null,
+      "counts": {
+        "fl-flower-tulip": 7
+      },
+      "palette": 4,
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "fl-wrap-basket-rattan / fl-flower-tulip / native colors"
+  }
+]

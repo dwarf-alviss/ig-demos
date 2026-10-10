@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ЛИНИЯ — Планировщик гардероба</title>
+    <meta
+      name="description"
+      content="Рабочая доска из трёх слоёв: выбор контекста меняет комплект. Пользователь собирает гардероб, а не листает рекламу."
+    />
+    <link rel="stylesheet" href="assets/fonts.css" />
+    <link rel="stylesheet" href="../shared/concepts.css?v=native-1" />
+    <link rel="stylesheet" href="../shared/inline-studio.css?v=native-1" />
+    <script src="assets/data.js" defer></script>
+    <script src="../shared/concepts.js?v=native-1" defer></script>
+    <script type="module" src="../shared/wardrobe.js?v=native-1"></script>
+  </head>
+  <body data-brand="fashion" data-concept="b" data-architecture="fashion-b">
+    <a class="skip" href="#main">Перейти к содержимому</a>
+    <header class="site-header">
+      <a class="wordmark" href="index.html">ЛИНИЯ</a>
+      <nav aria-label="Основная навигация">
+        <a href="catalog.html">Каталог</a><a href="#create">Капсула</a
+        ><a href="cart.html">Корзина ↗</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="wardrobe-board">
+        <header>
+          <span class="eyebrow">ЛИНИЯ / планировщик гардероба</span>
+          <h1>Один день.<br />Три слоя.</h1>
+          <p>Не начинайте с очередной покупки. Начните с сочетания.</p>
+        </header>
+        <div
+          class="wardrobe-context"
+          role="group"
+          aria-label="Контекст гардероба"
+        >
+          <button data-outfit="work" aria-pressed="true">Рабочий день</button
+          ><button data-outfit="weekend" aria-pressed="false">
+            Свободный день</button
+          ><button data-outfit="travel" aria-pressed="false">В дорогу</button>
+        </div>
+        <div class="outfit-board">
+          <article>
+            <span>СЛОЙ / 01</span
+            ><img
+              class="outfit-image-0"
+              src="assets/img/shirt.jpg"
+              alt="Рубашка"
+              loading="lazy"
+            />
+            <h2 class="outfit-title-0">Рубашка</h2>
+            <p class="outfit-note-0">Чёткая основа</p>
+          </article>
+          <article>
+            <span>СЛОЙ / 02</span
+            ><img
+              class="outfit-image-1"
+              src="assets/img/denim.jpg"
+              alt="Джинсы"
+              loading="lazy"
+            />
+            <h2 class="outfit-title-1">Джинсы</h2>
+            <p class="outfit-note-1">Свобода движения</p>
+          </article>
+          <article>
+            <span>СЛОЙ / 03</span
+            ><img
+              class="outfit-image-2"
+              src="assets/img/knit.jpg"
+              alt="Трикотаж"
+              loading="lazy"
+            />
+            <h2 class="outfit-title-2">Трикотаж</h2>
+            <p class="outfit-note-2">Мягкий слой</p>
+          </article>
+        </div>
+        <div class="outfit-total">
+          <p data-outfit-output>Чёткая основа для рабочего дня.</p>
+          <a class="primary" href="#create"
+            >Подобрать вещи и размеры <span>↗</span></a
+          >
+        </div>
+      </section>
+      <section class="wardrobe-checklist">
+        <h2>Вещь остаётся,<br />когда работает.</h2>
+        <ul>
+          <li>Сочетается с тем, что уже есть</li>
+          <li>Подходит вашему ритму</li>
+          <li>Нужный размер доступен в каталоге</li>
+        </ul>
+      </section>
+      <section id="create" class="studio-section" data-initial-pattern="">
+        <div class="studio-heading">
+          <span class="eyebrow">Ваша капсула / прямо здесь</span>
+          <h2>Соберите настоящую капсулу.</h2>
+          <p>Меняйте детали и сохраняйте свой дизайн прямо на этой странице.</p>
+        </div>
+        <div class="studio-mount inline-studio" data-wardrobe>
+          <div class="inline-main">
+            <div class="workspace">
+              <section>
+                <div class="look" id="look" aria-label="Ваш образ"></div>
+                <div class="caption">
+                  <span>YOUR DAILY UNIFORM</span><span id="count">01 — 03</span>
+                </div>
+              </section>
+              <section class="panel">
+                <h2>Ваша редакция</h2>
+                <div id="choices"></div>
+                <fieldset>
+                  <legend>Размер</legend>
+                  <div class="sizes" id="sizes"></div>
+                </fieldset>
+                <div class="total">
+                  <span>Стоимость капсулы</span><strong id="price"></strong>
+                </div>
+                <p id="summary"></p>
+                <button id="add-capsule">Добавить комплект в корзину ↗</button
+                ><button id="save">Сохранить капсулу ↗</button>
+                <p class="note" id="status" role="status">
+                  Демонстрационный подбор. Выбор сохраняется в вашем браузере.
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="wordmark" href="index.html">ЛИНИЯ</a
+      ><a href="#create">Собрать капсулу ↗</a>
+      <p>
+        Демонстрационный магазин · реальное оформление заказа не подключено.
+      </p>
+    </footer>
+  </body>
+</html>

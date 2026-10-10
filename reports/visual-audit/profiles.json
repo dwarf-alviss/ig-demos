@@ -1,0 +1,3198 @@
+[
+  {
+    "id": "bk-berry-blackberry",
+    "url": "models/bk-berry-blackberry.glb",
+    "size": [
+      1,
+      1.498536875096884,
+      0.989939051992521
+    ],
+    "center": [
+      0,
+      0.749268437548442,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-berry-blueberry",
+    "url": "models/bk-berry-blueberry.glb",
+    "size": [
+      0.9999999999999999,
+      1.0013448888740055,
+      0.9998780307008552
+    ],
+    "center": [
+      0,
+      0.5006724444370028,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-berry-cherry",
+    "url": "models/bk-berry-cherry.glb",
+    "size": [
+      0.9999999999999999,
+      1.6594250336430236,
+      0.8713666927132149
+    ],
+    "center": [
+      0,
+      0.8297125168215118,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-berry-currant-red",
+    "url": "models/bk-berry-currant-red.glb",
+    "size": [
+      1,
+      12.680729392722446,
+      1.0030978137750777
+    ],
+    "center": [
+      0,
+      6.340364696361223,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-berry-raspberry",
+    "url": "models/bk-berry-raspberry.glb",
+    "size": [
+      1,
+      1.0368322157831724,
+      0.9686108443943803
+    ],
+    "center": [
+      0,
+      0.5184161078915862,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-berry-strawberry",
+    "url": "models/bk-berry-strawberry.glb",
+    "size": [
+      0.9999999999999999,
+      1.4787890308845204,
+      0.9888079856638325
+    ],
+    "center": [
+      0,
+      0.7393945154422602,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-decor-caramel-spiral",
+    "url": "models/bk-decor-caramel-spiral.glb",
+    "size": [
+      1.0000000000000002,
+      2.1960328904847053,
+      1.1753908423646058
+    ],
+    "center": [
+      0,
+      1.0980164452423526,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-decor-chocolate-shard",
+    "url": "models/bk-decor-chocolate-shard.glb",
+    "size": [
+      1,
+      9.204214948978548,
+      1.7056194433605683
+    ],
+    "center": [
+      0,
+      4.602107474489274,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-decor-cream-rosette",
+    "url": "models/bk-decor-cream-rosette.glb",
+    "size": [
+      0.9999999999999999,
+      0.9547927014067081,
+      1.0173877894310508
+    ],
+    "center": [
+      0,
+      0.47739635070335407,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-decor-crumble-cluster",
+    "url": "models/bk-decor-crumble-cluster.glb",
+    "size": [
+      1,
+      1.5222060411630927,
+      0.9817898003380439
+    ],
+    "center": [
+      0,
+      0.7611030205815463,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-decor-glaze-drip-ring",
+    "url": "models/bk-decor-glaze-drip-ring.glb",
+    "size": [
+      0.9999999999999999,
+      0.6296560063161898,
+      1.0061414056468005
+    ],
+    "center": [
+      0,
+      0.3148280031580949,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-decor-gold-flake",
+    "url": "models/bk-decor-gold-flake.glb",
+    "size": [
+      0.9999999999999999,
+      4.430368503753427,
+      1.0578698558356334
+    ],
+    "center": [
+      0,
+      2.2151842518767135,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-decor-macaron",
+    "url": "models/bk-decor-macaron.glb",
+    "size": [
+      1,
+      0.6196485012197145,
+      1.0056473349673745
+    ],
+    "center": [
+      0,
+      0.30982425060985724,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-decor-meringue-kiss",
+    "url": "models/bk-decor-meringue-kiss.glb",
+    "size": [
+      1,
+      0.9361555317879355,
+      0.9514147865259341
+    ],
+    "center": [
+      0,
+      0.46807776589396777,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-decor-shell-border",
+    "url": "models/bk-decor-shell-border.glb",
+    "size": [
+      1,
+      4.216267166782684,
+      5.472112190162777
+    ],
+    "center": [
+      0,
+      2.108133583391342,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-decor-sprinkle-ball",
+    "url": "models/bk-decor-sprinkle-ball.glb",
+    "size": [
+      1,
+      0.9836423447682762,
+      0.9949952302933471
+    ],
+    "center": [
+      0,
+      0.4918211723841381,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-decor-sprinkle-star",
+    "url": "models/bk-decor-sprinkle-star.glb",
+    "size": [
+      1,
+      0.9606923259116181,
+      0.2756738622133849
+    ],
+    "center": [
+      0,
+      0.48034616295580906,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-decor-truffle-ball",
+    "url": "models/bk-decor-truffle-ball.glb",
+    "size": [
+      1,
+      0.9953614536371889,
+      0.9924316767274932
+    ],
+    "center": [
+      0,
+      0.49768072681859443,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-decor-wafer-roll",
+    "url": "models/bk-decor-wafer-roll.glb",
+    "size": [
+      1.0000000000000002,
+      9.834035068932453,
+      0.9988009752949941
+    ],
+    "center": [
+      0,
+      4.917017534466226,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-pastry-brownie-bite",
+    "url": "models/bk-pastry-brownie-bite.glb",
+    "size": [
+      0.9999999999999999,
+      0.8018821196483715,
+      1.004291167369584
+    ],
+    "center": [
+      0,
+      0.40094105982418576,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-pastry-cookie-heart",
+    "url": "models/bk-pastry-cookie-heart.glb",
+    "size": [
+      1,
+      0.9020967791231981,
+      0.27030259595110423
+    ],
+    "center": [
+      0,
+      0.45104838956159904,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-pastry-cookie-round",
+    "url": "models/bk-pastry-cookie-round.glb",
+    "size": [
+      0.9999999999999999,
+      1.145098929991029,
+      0.3847284949045359
+    ],
+    "center": [
+      0,
+      0.5725494649955145,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-pastry-cupcake",
+    "url": "models/bk-pastry-cupcake.glb",
+    "size": [
+      1,
+      1.25838196485261,
+      1.02334989756892
+    ],
+    "center": [
+      0,
+      0.629190982426305,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-pastry-donut",
+    "url": "models/bk-pastry-donut.glb",
+    "size": [
+      1,
+      0.9997560352299056,
+      0.3645437789964998
+    ],
+    "center": [
+      0,
+      0.4998780176149528,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-pastry-eclair",
+    "url": "models/bk-pastry-eclair.glb",
+    "size": [
+      1,
+      2.2509449480808916,
+      0.6169544280561611
+    ],
+    "center": [
+      0,
+      1.1254724740404458,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-pastry-profiterole",
+    "url": "models/bk-pastry-profiterole.glb",
+    "size": [
+      1,
+      0.8670616235131804,
+      0.9995119546390082
+    ],
+    "center": [
+      0,
+      0.4335308117565902,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-struct-tier-hex",
+    "url": "models/bk-struct-tier-hex.glb",
+    "size": [
+      1,
+      0.9823910292321005,
+      1.1633119650790136
+    ],
+    "center": [
+      0,
+      0.49119551461605027,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-struct-tier-round",
+    "url": "models/bk-struct-tier-round.glb",
+    "size": [
+      1,
+      0.7198097955233113,
+      0.9996340089087296
+    ],
+    "center": [
+      0,
+      0.35990489776165563,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-topper-banner-blank",
+    "url": "models/bk-topper-banner-blank.glb",
+    "size": [
+      1,
+      1.225255379371206,
+      0.057884478574735644
+    ],
+    "center": [
+      0,
+      0.612627689685603,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-topper-crown",
+    "url": "models/bk-topper-crown.glb",
+    "size": [
+      0.9999999999999999,
+      1.8393962478005448,
+      0.14864739858082995
+    ],
+    "center": [
+      0,
+      0.9196981239002724,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-topper-heart",
+    "url": "models/bk-topper-heart.glb",
+    "size": [
+      1,
+      1.7276708072858655,
+      0.050406228566050426
+    ],
+    "center": [
+      0,
+      0.8638354036429328,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-topper-horn",
+    "url": "models/bk-topper-horn.glb",
+    "size": [
+      1.0000000000000002,
+      6.131550358881588,
+      0.9962584427139218
+    ],
+    "center": [
+      0,
+      3.065775179440794,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "bk-topper-star",
+    "url": "models/bk-topper-star.glb",
+    "size": [
+      1,
+      1.7883967092456678,
+      0.04235370084047146
+    ],
+    "center": [
+      0,
+      0.8941983546228339,
+      3.469446951953614e-18
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-fill-gypsophila",
+    "url": "models/fl-fill-gypsophila.glb",
+    "size": [
+      1,
+      1.6203642956084476,
+      0.8771638208779562
+    ],
+    "center": [
+      0,
+      0.8101821478042238,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-fill-solidago",
+    "url": "models/fl-fill-solidago.glb",
+    "size": [
+      0.9999999999999998,
+      1.8414637578933128,
+      0.7133306793275042
+    ],
+    "center": [
+      0,
+      0.9207318789466564,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-flower-anemone",
+    "url": "models/fl-flower-anemone.glb",
+    "size": [
+      1,
+      0.9989015419813139,
+      0.551591748591623
+    ],
+    "center": [
+      0,
+      0.49945077099065693,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-flower-chamomile",
+    "url": "models/fl-flower-chamomile.glb",
+    "size": [
+      1,
+      1.0011000487039303,
+      0.2936972806858434
+    ],
+    "center": [
+      0,
+      0.5005500243519652,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-flower-chrysanthemum-spray",
+    "url": "models/fl-flower-chrysanthemum-spray.glb",
+    "size": [
+      1,
+      1.0044142738784152,
+      0.5599119289070758
+    ],
+    "center": [
+      0,
+      0.5022071369392076,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-flower-eustoma",
+    "url": "models/fl-flower-eustoma.glb",
+    "size": [
+      1,
+      0.9658195170939823,
+      0.8778041357652063
+    ],
+    "center": [
+      0,
+      0.48290975854699114,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-flower-gerbera",
+    "url": "models/fl-flower-gerbera.glb",
+    "size": [
+      1,
+      1.0023249758987083,
+      0.3152245507052298
+    ],
+    "center": [
+      0,
+      0.5011624879493541,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-flower-lily-oriental",
+    "url": "models/fl-flower-lily-oriental.glb",
+    "size": [
+      1,
+      0.997192499332813,
+      0.5077671628662458
+    ],
+    "center": [
+      0,
+      0.4985962496664065,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-flower-peony-open",
+    "url": "models/fl-flower-peony-open.glb",
+    "size": [
+      1,
+      0.854487969529311,
+      0.8030947995717317
+    ],
+    "center": [
+      0,
+      0.4272439847646555,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-flower-ranunculus",
+    "url": "models/fl-flower-ranunculus.glb",
+    "size": [
+      1,
+      0.9903563733023071,
+      0.664144025513373
+    ],
+    "center": [
+      0,
+      0.49517818665115354,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-flower-rose-garden",
+    "url": "models/fl-flower-rose-garden.glb",
+    "size": [
+      1,
+      1.0272111198429204,
+      0.725477523178448
+    ],
+    "center": [
+      0,
+      0.5136055599214602,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-flower-tulip",
+    "url": "models/fl-flower-tulip.glb",
+    "size": [
+      1,
+      1.576094580149855,
+      0.6869170909723658
+    ],
+    "center": [
+      0,
+      0.7880472900749275,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-green-eucalyptus-baby-blue",
+    "url": "models/fl-green-eucalyptus-baby-blue.glb",
+    "size": [
+      1.0000000000000002,
+      4.855809894464241,
+      0.844102721968687
+    ],
+    "center": [
+      0,
+      2.4279049472321206,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-green-eucalyptus-silver",
+    "url": "models/fl-green-eucalyptus-silver.glb",
+    "size": [
+      1,
+      5.8180051462188125,
+      0.7677565666733573
+    ],
+    "center": [
+      0,
+      2.9090025731094062,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-green-fern",
+    "url": "models/fl-green-fern.glb",
+    "size": [
+      1,
+      2.4791559728248314,
+      0.0508439504294321
+    ],
+    "center": [
+      0,
+      1.2395779864124157,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-green-lagurus",
+    "url": "models/fl-green-lagurus.glb",
+    "size": [
+      0.9999999999999999,
+      7.2429277269474905,
+      1.043325604931577
+    ],
+    "center": [
+      0,
+      3.6214638634737453,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-green-olive-branch",
+    "url": "models/fl-green-olive-branch.glb",
+    "size": [
+      1,
+      2.0922677627737922,
+      0.4896242534193451
+    ],
+    "center": [
+      0,
+      1.0461338813868961,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-green-ruscus",
+    "url": "models/fl-green-ruscus.glb",
+    "size": [
+      1,
+      3.6697283864507093,
+      0.30014612639919147
+    ],
+    "center": [
+      0,
+      1.8348641932253547,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-ribbon-jute-twine",
+    "url": "models/fl-ribbon-jute-twine.glb",
+    "size": [
+      0.9999999999999999,
+      1.1973181280680938,
+      0.2198269891051095
+    ],
+    "center": [
+      0,
+      0.5986590640340469,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-ribbon-rep-bow",
+    "url": "models/fl-ribbon-rep-bow.glb",
+    "size": [
+      1,
+      0.8198188543469624,
+      0.17969311808792113
+    ],
+    "center": [
+      0,
+      0.4099094271734812,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-ribbon-satin-bow",
+    "url": "models/fl-ribbon-satin-bow.glb",
+    "size": [
+      1,
+      0.8448440409578111,
+      0.22046585558838458
+    ],
+    "center": [
+      0,
+      0.42242202047890554,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-vase-bottle-ceramic",
+    "url": "models/fl-vase-bottle-ceramic.glb",
+    "size": [
+      1,
+      1.4223026073356888,
+      0.9902772579129957
+    ],
+    "center": [
+      0,
+      0.7111513036678444,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-vase-glass-cylinder",
+    "url": "models/fl-vase-glass-cylinder.glb",
+    "size": [
+      0.9999999999999999,
+      2.737656115207948,
+      1.0200523053658561
+    ],
+    "center": [
+      0,
+      1.368828057603974,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-vase-kraft-bucket",
+    "url": "models/fl-vase-kraft-bucket.glb",
+    "size": [
+      1,
+      0.9246805771126756,
+      0.9992678142720127
+    ],
+    "center": [
+      0,
+      0.4623402885563378,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-wrap-basket-rattan",
+    "url": "models/fl-wrap-basket-rattan.glb",
+    "size": [
+      1,
+      0.9858396729728757,
+      0.9594716807856142
+    ],
+    "center": [
+      0,
+      0.49291983648643783,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-wrap-hatbox-round",
+    "url": "models/fl-wrap-hatbox-round.glb",
+    "size": [
+      1,
+      0.5934631056513932,
+      0.6746423408575457
+    ],
+    "center": [
+      0,
+      0.2967315528256966,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-wrap-kraft-cone",
+    "url": "models/fl-wrap-kraft-cone.glb",
+    "size": [
+      1,
+      2.124279192397982,
+      1.032674654310462
+    ],
+    "center": [
+      0,
+      1.062139596198991,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "fl-wrap-matte-sleeve",
+    "url": "models/fl-wrap-matte-sleeve.glb",
+    "size": [
+      1,
+      1.333835704672801,
+      1.065985830863471
+    ],
+    "center": [
+      0,
+      0.6669178523364006,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-base-band-plain",
+    "url": "models/jw-base-band-plain.glb",
+    "size": [
+      0.9999999999999999,
+      1.0008552488613789,
+      0.26430244276831744
+    ],
+    "center": [
+      0,
+      0.5004276244306894,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-base-chain-link-cable",
+    "url": "models/jw-base-chain-link-cable.glb",
+    "size": [
+      0.9999999999999999,
+      1.7200527599202453,
+      0.2633073530960985
+    ],
+    "center": [
+      0,
+      0.8600263799601227,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-base-cocktail",
+    "url": "models/jw-base-cocktail.glb",
+    "size": [
+      1,
+      1.1229654344265787,
+      1.0224822101899702
+    ],
+    "center": [
+      0,
+      0.5614827172132894,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-base-cuff-bracelet",
+    "url": "models/jw-base-cuff-bracelet.glb",
+    "size": [
+      1.0000000000000002,
+      0.24148032683088125,
+      1.0087432027967713
+    ],
+    "center": [
+      0,
+      0.12074016341544062,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-base-drop-earring",
+    "url": "models/jw-base-drop-earring.glb",
+    "size": [
+      1,
+      1.8489450832774517,
+      0.15257898464298572
+    ],
+    "center": [
+      0,
+      0.9244725416387258,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-base-ear-cuff",
+    "url": "models/jw-base-ear-cuff.glb",
+    "size": [
+      1,
+      0.26411093368604693,
+      1.057443621587425
+    ],
+    "center": [
+      0,
+      0.13205546684302347,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-base-pendant",
+    "url": "models/jw-base-pendant.glb",
+    "size": [
+      1,
+      1.9395646372612783,
+      0.25523884112063655
+    ],
+    "center": [
+      0,
+      0.9697823186306391,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-base-signet",
+    "url": "models/jw-base-signet.glb",
+    "size": [
+      0.9999999999999999,
+      1.0225948751665113,
+      0.7391944444952258
+    ],
+    "center": [
+      0,
+      0.5112974375832556,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-base-solitaire",
+    "url": "models/jw-base-solitaire.glb",
+    "size": [
+      1,
+      1.2269070205710417,
+      0.3889993559138355
+    ],
+    "center": [
+      0,
+      0.6134535102855209,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-base-stacking-thin",
+    "url": "models/jw-base-stacking-thin.glb",
+    "size": [
+      1,
+      1.000610894149717,
+      0.1245917168204959
+    ],
+    "center": [
+      0,
+      0.5003054470748585,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-base-stud-earring",
+    "url": "models/jw-base-stud-earring.glb",
+    "size": [
+      1,
+      2.6194744236694603,
+      0.6920621604989426
+    ],
+    "center": [
+      0,
+      1.3097372118347301,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-part-bail-hinged",
+    "url": "models/jw-part-bail-hinged.glb",
+    "size": [
+      0.9999999999999999,
+      2.3349964807276042,
+      0.642557230389116
+    ],
+    "center": [
+      0,
+      1.1674982403638021,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-part-charm-tag",
+    "url": "models/jw-part-charm-tag.glb",
+    "size": [
+      1,
+      1.006512202335517,
+      0.07875916900730313
+    ],
+    "center": [
+      0,
+      0.5032561011677585,
+      6.938893903907228e-18
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-part-clasp-lobster",
+    "url": "models/jw-part-clasp-lobster.glb",
+    "size": [
+      1,
+      1.8628200667633852,
+      0.2419559394183028
+    ],
+    "center": [
+      0,
+      0.9314100333816926,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-part-ear-wire-french",
+    "url": "models/jw-part-ear-wire-french.glb",
+    "size": [
+      1.0000000000000002,
+      1.3487694548504159,
+      0.22474706249016227
+    ],
+    "center": [
+      0,
+      0.6743847274252079,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-part-jump-ring",
+    "url": "models/jw-part-jump-ring.glb",
+    "size": [
+      1,
+      1.0001222393927103,
+      0.11964731340913135
+    ],
+    "center": [
+      0,
+      0.5000611196963551,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-set-baguette",
+    "url": "models/jw-set-baguette.glb",
+    "size": [
+      1,
+      3.7452287192774927,
+      1.4142194610765555
+    ],
+    "center": [
+      0,
+      1.8726143596387463,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-set-bezel",
+    "url": "models/jw-set-bezel.glb",
+    "size": [
+      1,
+      1.178881304171512,
+      0.3874439953030103
+    ],
+    "center": [
+      0,
+      0.589440652085756,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-set-halo",
+    "url": "models/jw-set-halo.glb",
+    "size": [
+      1.0000000000000002,
+      1.2700882277411552,
+      0.5149426794640901
+    ],
+    "center": [
+      0,
+      0.6350441138705776,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-set-heart",
+    "url": "models/jw-set-heart.glb",
+    "size": [
+      1,
+      0.9658194914375788,
+      0.6868497963174884
+    ],
+    "center": [
+      0,
+      0.4829097457187894,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-set-marquise",
+    "url": "models/jw-set-marquise.glb",
+    "size": [
+      0.9999999999999998,
+      2.1342412026293074,
+      0.378818809611656
+    ],
+    "center": [
+      0,
+      1.0671206013146537,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-set-pave-band",
+    "url": "models/jw-set-pave-band.glb",
+    "size": [
+      1,
+      0.14514613562065873,
+      0.6330150281039497
+    ],
+    "center": [
+      0,
+      0.07257306781032936,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-set-pear",
+    "url": "models/jw-set-pear.glb",
+    "size": [
+      1,
+      1.6123907637106505,
+      0.25548691566419823
+    ],
+    "center": [
+      0,
+      0.8061953818553252,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-set-prong4",
+    "url": "models/jw-set-prong4.glb",
+    "size": [
+      1,
+      0.9084447277259979,
+      0.9980470715475256
+    ],
+    "center": [
+      0,
+      0.45422236386299897,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-set-prong6",
+    "url": "models/jw-set-prong6.glb",
+    "size": [
+      1.0000000000000002,
+      1.063622189926747,
+      1.063622189926747
+    ],
+    "center": [
+      0,
+      0.5318110949633735,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-stone-cabochon-oval",
+    "url": "models/jw-stone-cabochon-oval.glb",
+    "size": [
+      1,
+      0.40881685813105045,
+      1.2593491614478576
+    ],
+    "center": [
+      0,
+      0.20440842906552523,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-stone-round-brilliant",
+    "url": "models/jw-stone-round-brilliant.glb",
+    "size": [
+      1,
+      0.5805823216167888,
+      1.0007331935588832
+    ],
+    "center": [
+      0,
+      0.2902911608083944,
+      0
+    ],
+    "meshes": [
+      "node_0"
+    ]
+  },
+  {
+    "id": "jw-stone-diamond-01",
+    "url": "models/stones/jw-stone-diamond-01.glb",
+    "size": [
+      1,
+      1.3458884416331225,
+      0.4406884087735152
+    ],
+    "center": [
+      0,
+      0.6729442208165612,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-diamond-02",
+    "url": "models/stones/jw-stone-diamond-02.glb",
+    "size": [
+      1,
+      1.0846049452186288,
+      0.44053490450498156
+    ],
+    "center": [
+      -2.498001805406602e-16,
+      0.5423024726093144,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-diamond-03",
+    "url": "models/stones/jw-stone-diamond-03.glb",
+    "size": [
+      1,
+      1.045032690161059,
+      0.4159145271886462
+    ],
+    "center": [
+      0,
+      0.5225163450805295,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-diamond-04",
+    "url": "models/stones/jw-stone-diamond-04.glb",
+    "size": [
+      1,
+      1,
+      0.413251136814478
+    ],
+    "center": [
+      2.220446049250313e-16,
+      0.4999999999999999,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-diamond-05",
+    "url": "models/stones/jw-stone-diamond-05.glb",
+    "size": [
+      0.9999999999999999,
+      1,
+      0.4310739463484603
+    ],
+    "center": [
+      0,
+      0.5,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-diamond-06",
+    "url": "models/stones/jw-stone-diamond-06.glb",
+    "size": [
+      1.0000000000000002,
+      1.3318294516928832,
+      0.4614477909198066
+    ],
+    "center": [
+      0,
+      0.6659147258464416,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-diamond-07",
+    "url": "models/stones/jw-stone-diamond-07.glb",
+    "size": [
+      1,
+      1,
+      0.6944181646168401
+    ],
+    "center": [
+      0,
+      0.5,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-diamond-08",
+    "url": "models/stones/jw-stone-diamond-08.glb",
+    "size": [
+      1,
+      1,
+      0.5773491622669149
+    ],
+    "center": [
+      0,
+      0.5,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-diamond-09",
+    "url": "models/stones/jw-stone-diamond-09.glb",
+    "size": [
+      1.0000000000000002,
+      1.4742643750562405,
+      0.5050391433456313
+    ],
+    "center": [
+      0,
+      0.7371321875281203,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-diamond-10",
+    "url": "models/stones/jw-stone-diamond-10.glb",
+    "size": [
+      1.0000000000000004,
+      1.8414634146341473,
+      0.3506800044958977
+    ],
+    "center": [
+      0,
+      0.9207317073170737,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-diamond-11",
+    "url": "models/stones/jw-stone-diamond-11.glb",
+    "size": [
+      0.9999999999999997,
+      1.6095392474702814,
+      0.3617251203458099
+    ],
+    "center": [
+      0,
+      0.8047696237351407,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-diamond-12",
+    "url": "models/stones/jw-stone-diamond-12.glb",
+    "size": [
+      1,
+      0.9625232703634754,
+      0.2119205298013245
+    ],
+    "center": [
+      -1.1102230246251565e-16,
+      0.4812616351817377,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-01",
+    "url": "models/stones/jw-stone-gem-01.glb",
+    "size": [
+      1,
+      0.30959048662689237,
+      1.3298835179999189
+    ],
+    "center": [
+      0,
+      0.15479524331344585,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-02",
+    "url": "models/stones/jw-stone-gem-02.glb",
+    "size": [
+      1,
+      0.31304065304796336,
+      1.3307476749380662
+    ],
+    "center": [
+      0,
+      0.15652032652398162,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-03",
+    "url": "models/stones/jw-stone-gem-03.glb",
+    "size": [
+      0.9999999999999999,
+      0.31304065304796325,
+      1.330747674938066
+    ],
+    "center": [
+      0,
+      0.15652032652398162,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-04",
+    "url": "models/stones/jw-stone-gem-04.glb",
+    "size": [
+      0.9999999999999999,
+      0.31304065304796325,
+      1.330747674938066
+    ],
+    "center": [
+      0,
+      0.15652032652398162,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-05",
+    "url": "models/stones/jw-stone-gem-05.glb",
+    "size": [
+      0.9999999999999999,
+      0.31304065304796325,
+      1.330747674938066
+    ],
+    "center": [
+      0,
+      0.15652032652398162,
+      1.1102230246251565e-16
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-06",
+    "url": "models/stones/jw-stone-gem-06.glb",
+    "size": [
+      0.9999999999999999,
+      0.31304065304796325,
+      1.330747674938066
+    ],
+    "center": [
+      0,
+      0.15652032652398162,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-07",
+    "url": "models/stones/jw-stone-gem-07.glb",
+    "size": [
+      0.9999999999999999,
+      0.31304065304796325,
+      1.330747674938066
+    ],
+    "center": [
+      0,
+      0.15652032652398162,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-08",
+    "url": "models/stones/jw-stone-gem-08.glb",
+    "size": [
+      1,
+      0.31304065304796336,
+      1.3307476749380662
+    ],
+    "center": [
+      0,
+      0.15652032652398162,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-09",
+    "url": "models/stones/jw-stone-gem-09.glb",
+    "size": [
+      1,
+      0.2783593249305705,
+      1
+    ],
+    "center": [
+      0,
+      0.1391796624652848,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-10",
+    "url": "models/stones/jw-stone-gem-10.glb",
+    "size": [
+      1,
+      0.2783593249305705,
+      1
+    ],
+    "center": [
+      0,
+      0.1391796624652848,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-11",
+    "url": "models/stones/jw-stone-gem-11.glb",
+    "size": [
+      1,
+      0.2783593249305705,
+      1
+    ],
+    "center": [
+      0,
+      0.1391796624652848,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-12",
+    "url": "models/stones/jw-stone-gem-12.glb",
+    "size": [
+      1,
+      0.2783593249305705,
+      1
+    ],
+    "center": [
+      0,
+      0.1391796624652848,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-13",
+    "url": "models/stones/jw-stone-gem-13.glb",
+    "size": [
+      1,
+      0.2783593249305705,
+      1
+    ],
+    "center": [
+      0,
+      0.1391796624652848,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-14",
+    "url": "models/stones/jw-stone-gem-14.glb",
+    "size": [
+      1,
+      0.2783593249305705,
+      1
+    ],
+    "center": [
+      0,
+      0.1391796624652848,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-15",
+    "url": "models/stones/jw-stone-gem-15.glb",
+    "size": [
+      1,
+      0.2783593249305705,
+      1
+    ],
+    "center": [
+      0,
+      0.1391796624652848,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-16",
+    "url": "models/stones/jw-stone-gem-16.glb",
+    "size": [
+      1,
+      0.2783593249305705,
+      1
+    ],
+    "center": [
+      0,
+      0.1391796624652848,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-17",
+    "url": "models/stones/jw-stone-gem-17.glb",
+    "size": [
+      1,
+      0.6100650044251839,
+      1
+    ],
+    "center": [
+      0,
+      0.3050325022125917,
+      -4.440892098500626e-16
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-18",
+    "url": "models/stones/jw-stone-gem-18.glb",
+    "size": [
+      1,
+      0.6100650044251839,
+      1
+    ],
+    "center": [
+      0,
+      0.3050325022125917,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-19",
+    "url": "models/stones/jw-stone-gem-19.glb",
+    "size": [
+      1,
+      0.6100650044251839,
+      1
+    ],
+    "center": [
+      0,
+      0.3050325022125917,
+      1.1102230246251565e-16
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-20",
+    "url": "models/stones/jw-stone-gem-20.glb",
+    "size": [
+      1,
+      0.6100650044251839,
+      1
+    ],
+    "center": [
+      0,
+      0.3050325022125917,
+      1.1102230246251565e-16
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-21",
+    "url": "models/stones/jw-stone-gem-21.glb",
+    "size": [
+      1,
+      0.6100650044251839,
+      1
+    ],
+    "center": [
+      0,
+      0.3050325022125917,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-22",
+    "url": "models/stones/jw-stone-gem-22.glb",
+    "size": [
+      1,
+      0.6100650044251839,
+      1
+    ],
+    "center": [
+      0,
+      0.3050325022125917,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-23",
+    "url": "models/stones/jw-stone-gem-23.glb",
+    "size": [
+      1,
+      0.6100650044251839,
+      1
+    ],
+    "center": [
+      0,
+      0.3050325022125917,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-24",
+    "url": "models/stones/jw-stone-gem-24.glb",
+    "size": [
+      1,
+      0.6100650044251839,
+      1
+    ],
+    "center": [
+      0,
+      0.3050325022125917,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-25",
+    "url": "models/stones/jw-stone-gem-25.glb",
+    "size": [
+      0.9999999999999999,
+      0.6333835719668424,
+      1.3718077534957713
+    ],
+    "center": [
+      0,
+      0.31669178598342107,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-26",
+    "url": "models/stones/jw-stone-gem-26.glb",
+    "size": [
+      0.9999999999999999,
+      0.6333835719668424,
+      1.3718077534957713
+    ],
+    "center": [
+      0,
+      0.31669178598342107,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-27",
+    "url": "models/stones/jw-stone-gem-27.glb",
+    "size": [
+      1,
+      0.6333835719668426,
+      1.3718077534957716
+    ],
+    "center": [
+      0,
+      0.31669178598342107,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-28",
+    "url": "models/stones/jw-stone-gem-28.glb",
+    "size": [
+      1,
+      0.6333835719668426,
+      1.3718077534957716
+    ],
+    "center": [
+      0,
+      0.31669178598342107,
+      -1.1102230246251565e-16
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-29",
+    "url": "models/stones/jw-stone-gem-29.glb",
+    "size": [
+      1,
+      0.6333835719668426,
+      1.3718077534957716
+    ],
+    "center": [
+      0,
+      0.31669178598342107,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-30",
+    "url": "models/stones/jw-stone-gem-30.glb",
+    "size": [
+      0.9999999999999999,
+      0.6333835719668424,
+      1.3718077534957713
+    ],
+    "center": [
+      0,
+      0.31669178598342107,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-31",
+    "url": "models/stones/jw-stone-gem-31.glb",
+    "size": [
+      0.9999999999999999,
+      0.6333835719668424,
+      1.3718077534957713
+    ],
+    "center": [
+      0,
+      0.31669178598342107,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-32",
+    "url": "models/stones/jw-stone-gem-32.glb",
+    "size": [
+      0.9999999999999999,
+      0.6333835719668424,
+      1.3718077534957713
+    ],
+    "center": [
+      0,
+      0.31669178598342107,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-33",
+    "url": "models/stones/jw-stone-gem-33.glb",
+    "size": [
+      1,
+      0.6340450227557346,
+      1.0008552490912979
+    ],
+    "center": [
+      0,
+      0.3170225113778673,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-34",
+    "url": "models/stones/jw-stone-gem-34.glb",
+    "size": [
+      1,
+      0.6340450227557346,
+      1.0008552490912979
+    ],
+    "center": [
+      0,
+      0.3170225113778673,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-35",
+    "url": "models/stones/jw-stone-gem-35.glb",
+    "size": [
+      1,
+      0.6340450227557346,
+      1.0008552490912979
+    ],
+    "center": [
+      0,
+      0.3170225113778673,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-36",
+    "url": "models/stones/jw-stone-gem-36.glb",
+    "size": [
+      1,
+      0.6340450227557346,
+      1.0008552490912979
+    ],
+    "center": [
+      0,
+      0.3170225113778673,
+      -1.1102230246251565e-16
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-37",
+    "url": "models/stones/jw-stone-gem-37.glb",
+    "size": [
+      1,
+      0.6340450227557346,
+      1.0008552490912979
+    ],
+    "center": [
+      0,
+      0.3170225113778673,
+      1.1102230246251565e-16
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-38",
+    "url": "models/stones/jw-stone-gem-38.glb",
+    "size": [
+      1,
+      0.6340450227557346,
+      1.0008552490912979
+    ],
+    "center": [
+      0,
+      0.3170225113778673,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-39",
+    "url": "models/stones/jw-stone-gem-39.glb",
+    "size": [
+      1,
+      0.6340450227557346,
+      1.0008552490912979
+    ],
+    "center": [
+      0,
+      0.3170225113778673,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-40",
+    "url": "models/stones/jw-stone-gem-40.glb",
+    "size": [
+      1,
+      0.6340450227557346,
+      1.0008552490912979
+    ],
+    "center": [
+      0,
+      0.3170225113778673,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-41",
+    "url": "models/stones/jw-stone-gem-41.glb",
+    "size": [
+      1,
+      0.44299958052337773,
+      1.057306960085186
+    ],
+    "center": [
+      0,
+      0.22149979026168864,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-42",
+    "url": "models/stones/jw-stone-gem-42.glb",
+    "size": [
+      1,
+      0.44299958052337773,
+      1.057306960085186
+    ],
+    "center": [
+      0,
+      0.22149979026168864,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-43",
+    "url": "models/stones/jw-stone-gem-43.glb",
+    "size": [
+      1,
+      0.44299958052337773,
+      1.057306960085186
+    ],
+    "center": [
+      0,
+      0.22149979026168864,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-44",
+    "url": "models/stones/jw-stone-gem-44.glb",
+    "size": [
+      1,
+      0.44299958052337773,
+      1.057306960085186
+    ],
+    "center": [
+      0,
+      0.22149979026168864,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-45",
+    "url": "models/stones/jw-stone-gem-45.glb",
+    "size": [
+      1,
+      0.44299958052337773,
+      1.057306960085186
+    ],
+    "center": [
+      0,
+      0.22149979026168864,
+      1.1102230246251565e-16
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-46",
+    "url": "models/stones/jw-stone-gem-46.glb",
+    "size": [
+      1,
+      0.44299958052337773,
+      1.057306960085186
+    ],
+    "center": [
+      0,
+      0.22149979026168864,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-47",
+    "url": "models/stones/jw-stone-gem-47.glb",
+    "size": [
+      1,
+      0.44299958052337773,
+      1.057306960085186
+    ],
+    "center": [
+      0,
+      0.22149979026168864,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-48",
+    "url": "models/stones/jw-stone-gem-48.glb",
+    "size": [
+      1,
+      0.44299958052337773,
+      1.057306960085186
+    ],
+    "center": [
+      0,
+      0.22149979026168864,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-49",
+    "url": "models/stones/jw-stone-gem-49.glb",
+    "size": [
+      1.0000000000000002,
+      0.6099724480881661,
+      2.201935353806868
+    ],
+    "center": [
+      0,
+      0.30498622404408304,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-50",
+    "url": "models/stones/jw-stone-gem-50.glb",
+    "size": [
+      1.0000000000000002,
+      0.6099724480881661,
+      2.201935353806868
+    ],
+    "center": [
+      0,
+      0.30498622404408304,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-51",
+    "url": "models/stones/jw-stone-gem-51.glb",
+    "size": [
+      1.0000000000000002,
+      0.6099724480881661,
+      2.201935353806868
+    ],
+    "center": [
+      0,
+      0.30498622404408304,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-52",
+    "url": "models/stones/jw-stone-gem-52.glb",
+    "size": [
+      0.9999999999999999,
+      0.6099724480881661,
+      2.2019353538068676
+    ],
+    "center": [
+      5.551115123125783e-17,
+      0.30498622404408304,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-53",
+    "url": "models/stones/jw-stone-gem-53.glb",
+    "size": [
+      0.9999999999999999,
+      0.6099724480881661,
+      2.2019353538068676
+    ],
+    "center": [
+      5.551115123125783e-17,
+      0.30498622404408304,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-54",
+    "url": "models/stones/jw-stone-gem-54.glb",
+    "size": [
+      1.0000000000000002,
+      0.6099724480881661,
+      2.201935353806868
+    ],
+    "center": [
+      0,
+      0.30498622404408304,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-55",
+    "url": "models/stones/jw-stone-gem-55.glb",
+    "size": [
+      1.0000000000000002,
+      0.6099724480881661,
+      2.201935353806868
+    ],
+    "center": [
+      0,
+      0.30498622404408304,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-56",
+    "url": "models/stones/jw-stone-gem-56.glb",
+    "size": [
+      1.0000000000000002,
+      0.6099724480881661,
+      2.201935353806868
+    ],
+    "center": [
+      0,
+      0.30498622404408304,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-57",
+    "url": "models/stones/jw-stone-gem-57.glb",
+    "size": [
+      1.0000000000000002,
+      0.609773043075498,
+      1.517693376563224
+    ],
+    "center": [
+      0,
+      0.304886521537749,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-58",
+    "url": "models/stones/jw-stone-gem-58.glb",
+    "size": [
+      1.0000000000000002,
+      0.609773043075498,
+      1.517693376563224
+    ],
+    "center": [
+      0,
+      0.304886521537749,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-59",
+    "url": "models/stones/jw-stone-gem-59.glb",
+    "size": [
+      1.0000000000000002,
+      0.609773043075498,
+      1.517693376563224
+    ],
+    "center": [
+      0,
+      0.304886521537749,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-60",
+    "url": "models/stones/jw-stone-gem-60.glb",
+    "size": [
+      1,
+      0.609773043075498,
+      1.5176933765632237
+    ],
+    "center": [
+      0,
+      0.304886521537749,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-61",
+    "url": "models/stones/jw-stone-gem-61.glb",
+    "size": [
+      1,
+      0.609773043075498,
+      1.5176933765632237
+    ],
+    "center": [
+      0,
+      0.304886521537749,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-62",
+    "url": "models/stones/jw-stone-gem-62.glb",
+    "size": [
+      1.0000000000000002,
+      0.609773043075498,
+      1.517693376563224
+    ],
+    "center": [
+      0,
+      0.304886521537749,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-63",
+    "url": "models/stones/jw-stone-gem-63.glb",
+    "size": [
+      1.0000000000000002,
+      0.609773043075498,
+      1.517693376563224
+    ],
+    "center": [
+      0,
+      0.304886521537749,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-64",
+    "url": "models/stones/jw-stone-gem-64.glb",
+    "size": [
+      1.0000000000000002,
+      0.609773043075498,
+      1.517693376563224
+    ],
+    "center": [
+      0,
+      0.304886521537749,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-65",
+    "url": "models/stones/jw-stone-gem-65.glb",
+    "size": [
+      1.0000000000000002,
+      0.6100120181196265,
+      1.514606637699917
+    ],
+    "center": [
+      0,
+      0.30500600905981345,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-66",
+    "url": "models/stones/jw-stone-gem-66.glb",
+    "size": [
+      1.0000000000000002,
+      0.6100120181196265,
+      1.514606637699917
+    ],
+    "center": [
+      0,
+      0.30500600905981345,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-67",
+    "url": "models/stones/jw-stone-gem-67.glb",
+    "size": [
+      1.0000000000000002,
+      0.6100120181196265,
+      1.514606637699917
+    ],
+    "center": [
+      0,
+      0.30500600905981345,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-68",
+    "url": "models/stones/jw-stone-gem-68.glb",
+    "size": [
+      1,
+      0.6100120181196265,
+      1.5146066376999168
+    ],
+    "center": [
+      0,
+      0.30500600905981345,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-69",
+    "url": "models/stones/jw-stone-gem-69.glb",
+    "size": [
+      1,
+      0.6100120181196265,
+      1.5146066376999168
+    ],
+    "center": [
+      0,
+      0.30500600905981345,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-70",
+    "url": "models/stones/jw-stone-gem-70.glb",
+    "size": [
+      1,
+      0.6100120181196265,
+      1.5146066376999168
+    ],
+    "center": [
+      0,
+      0.30500600905981345,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-71",
+    "url": "models/stones/jw-stone-gem-71.glb",
+    "size": [
+      1.0000000000000002,
+      0.6100120181196265,
+      1.514606637699917
+    ],
+    "center": [
+      0,
+      0.30500600905981345,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-72",
+    "url": "models/stones/jw-stone-gem-72.glb",
+    "size": [
+      1.0000000000000002,
+      0.6100120181196265,
+      1.514606637699917
+    ],
+    "center": [
+      0,
+      0.30500600905981345,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-73",
+    "url": "models/stones/jw-stone-gem-73.glb",
+    "size": [
+      0.9999999999999999,
+      0.6223944822534866,
+      0.9999999999999999
+    ],
+    "center": [
+      0,
+      0.3111972411267434,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-74",
+    "url": "models/stones/jw-stone-gem-74.glb",
+    "size": [
+      1,
+      0.6223944822534868,
+      1
+    ],
+    "center": [
+      0,
+      0.3111972411267434,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-75",
+    "url": "models/stones/jw-stone-gem-75.glb",
+    "size": [
+      1,
+      0.6223944822534868,
+      1
+    ],
+    "center": [
+      0,
+      0.3111972411267434,
+      -1.1102230246251565e-16
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-76",
+    "url": "models/stones/jw-stone-gem-76.glb",
+    "size": [
+      1,
+      0.6223944822534868,
+      1
+    ],
+    "center": [
+      0,
+      0.3111972411267434,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-77",
+    "url": "models/stones/jw-stone-gem-77.glb",
+    "size": [
+      0.9999999999999999,
+      0.6223944822534866,
+      0.9999999999999999
+    ],
+    "center": [
+      0,
+      0.3111972411267434,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-78",
+    "url": "models/stones/jw-stone-gem-78.glb",
+    "size": [
+      0.9999999999999999,
+      0.6223944822534866,
+      0.9999999999999999
+    ],
+    "center": [
+      0,
+      0.3111972411267434,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-79",
+    "url": "models/stones/jw-stone-gem-79.glb",
+    "size": [
+      0.9999999999999999,
+      0.6223944822534866,
+      0.9999999999999999
+    ],
+    "center": [
+      0,
+      0.3111972411267434,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-80",
+    "url": "models/stones/jw-stone-gem-80.glb",
+    "size": [
+      0.9999999999999999,
+      0.6223944822534866,
+      0.9999999999999999
+    ],
+    "center": [
+      0,
+      0.3111972411267434,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-81",
+    "url": "models/stones/jw-stone-gem-81.glb",
+    "size": [
+      1,
+      0.3579515976439711,
+      1
+    ],
+    "center": [
+      0,
+      0.17897579882198555,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-82",
+    "url": "models/stones/jw-stone-gem-82.glb",
+    "size": [
+      1,
+      0.3579515976439711,
+      1
+    ],
+    "center": [
+      0,
+      0.17897579882198555,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-83",
+    "url": "models/stones/jw-stone-gem-83.glb",
+    "size": [
+      1,
+      0.3579515976439711,
+      1
+    ],
+    "center": [
+      0,
+      0.17897579882198555,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-84",
+    "url": "models/stones/jw-stone-gem-84.glb",
+    "size": [
+      1,
+      0.3579515976439711,
+      1
+    ],
+    "center": [
+      0,
+      0.17897579882198555,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-85",
+    "url": "models/stones/jw-stone-gem-85.glb",
+    "size": [
+      1,
+      0.3579515976439711,
+      1
+    ],
+    "center": [
+      0,
+      0.17897579882198555,
+      1.1102230246251565e-16
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-86",
+    "url": "models/stones/jw-stone-gem-86.glb",
+    "size": [
+      1,
+      0.3579515976439711,
+      1
+    ],
+    "center": [
+      0,
+      0.17897579882198555,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-87",
+    "url": "models/stones/jw-stone-gem-87.glb",
+    "size": [
+      1,
+      0.3579515976439711,
+      1
+    ],
+    "center": [
+      0,
+      0.17897579882198555,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  },
+  {
+    "id": "jw-stone-gem-88",
+    "url": "models/stones/jw-stone-gem-88.glb",
+    "size": [
+      1,
+      0.3579515976439711,
+      1
+    ],
+    "center": [
+      0,
+      0.17897579882198555,
+      0
+    ],
+    "meshes": [
+      "mesh_0"
+    ]
+  }
+]

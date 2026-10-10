@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #f1f2f3;
+  color: #20252c;
+  font:
+    15px/1.6 Manrope,
+    system-ui,
+    sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+header,
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 5vw;
+  border-bottom: 1px solid #bdc2c8;
+  font-size: 12px;
+}
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+main {
+  padding: 45px 5vw;
+  max-width: 1600px;
+  margin: auto;
+}
+.intro {
+  position: relative;
+  border-bottom: 2px solid #20252c;
+  padding-bottom: 35px;
+  margin-bottom: 32px;
+}
+.intro span,
+legend,
+.caption {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: clamp(44px, 6vw, 88px);
+  line-height: 1;
+  letter-spacing: -4px;
+  margin: 24px 0;
+  font-weight: 800;
+}
+.intro p {
+  max-width: 380px;
+  color: #626b77;
+}
+.workspace {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 50px;
+}
+.look {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  min-height: 560px;
+}
+.look figure {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  background: #e1e4e8;
+}
+.look figure:first-child {
+  grid-row: span 2;
+}
+.look img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+.look figcaption {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  background: #f7f8f9e8;
+  padding: 10px;
+  font-size: 12px;
+}
+.caption {
+  display: flex;
+  justify-content: space-between;
+  margin: 18px 0;
+}
+.panel {
+  border-top: 2px solid #20252c;
+  padding-top: 20px;
+}
+.panel h2 {
+  font-size: 20px;
+  margin: 0 0 24px;
+}
+fieldset {
+  margin: 0 0 25px;
+  border: 0;
+  padding: 0;
+}
+legend {
+  margin-bottom: 12px;
+}
+fieldset div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  min-height: 44px;
+  border: 1px solid #bdc2c8;
+  background: none;
+  color: inherit;
+  padding: 10px 14px;
+  font-size: 12px;
+}
+button[aria-pressed="true"] {
+  background: #20252c;
+  color: #fff;
+  border-color: #20252c;
+}
+.total {
+  border-top: 1px solid #bdc2c8;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+.total strong {
+  font-size: 28px;
+}
+#summary,
+.note {
+  font-size: 12px;
+  color: #626b77;
+}
+#save {
+  width: 100%;
+  background: #20252c;
+  color: white;
+  font-size: 14px;
+  margin-top: 12px;
+  min-height: 52px;
+}
+footer {
+  border-top: 1px solid #bdc2c8;
+  border-bottom: 0;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #52709a;
+  outline-offset: 4px;
+}
+@media (max-width: 800px) {
+  .workspace {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .look {
+    min-height: 450px;
+  }
+  h1 {
+    letter-spacing: -2px;
+  }
+}
+@media (max-width: 450px) {
+  .look {
+    min-height: 350px;
+  }
+  h1 {
+    font-size: 42px;
+  }
+  main {
+    padding: 30px 18px;
+  }
+  .look figcaption {
+    font-size: 10px;
+    left: 8px;
+    right: 8px;
+    padding: 8px;
+  }
+}
+
+#add-capsule {
+  width: 100%;
+  background: #304bdf;
+  border-color: #304bdf;
+  color: white;
+  min-height: 52px;
+  margin-top: 16px;
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.availability {
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid #bdc2c8;
+}
+.availability small {
+  display: block;
+  color: #626b77;
+  font-size: 10px;
+  margin-top: 5px;
+}
+.look figcaption small {
+  display: block;
+  font-size: 9px;
+  margin-bottom: 5px;
+  color: #626b77;
+}
+.look figcaption span {
+  display: block;
+  margin-top: 6px;
+  font-weight: 600;
+}
+#save {
+  background: transparent;
+  color: #20252c;
+}
+.note a {
+  color: #304bdf;
+  text-decoration: underline;
+}
+
+.color-choice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.color-choice i {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #0002;
+  display: block;
+}
+.look img {
+  object-fit: contain;
+  background: #e8e9e1;
+}
+.availability b {
+  font-weight: 500;
+}
+
+@media (min-width: 801px) {
+  .workspace > section:first-child {
+    position: sticky;
+    top: 24px;
+    align-self: start;
+  }
+}

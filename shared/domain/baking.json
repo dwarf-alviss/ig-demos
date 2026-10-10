@@ -1,0 +1,2357 @@
+{
+  "components": [
+    {
+      "id": "vanilla-sponge",
+      "name": "Ванильный бисквит",
+      "role": "structure",
+      "material": "sponge",
+      "geometry": "porous-layer",
+      "sources": [
+        "cap-fraisier",
+        "kab-cupcakes",
+        "kab-doughnut",
+        "kab-lemon",
+        "mdc-fraisier",
+        "wil-mini",
+        "wil-stack"
+      ],
+      "thicknessCm": [
+        0.35,
+        2.1
+      ],
+      "dimensionBasis": "renderer range, selected by recipe",
+      "compatibleRecipes": [
+        "fraisier",
+        "lemon-cloud",
+        "vanilla-celebration",
+        "mini-buttercream",
+        "tiramisu-cupcake",
+        "vanilla-doughnut"
+      ],
+      "available": true
+    },
+    {
+      "id": "cocoa-sponge",
+      "name": "Шоколадный бисквит",
+      "role": "structure",
+      "material": "cocoa-sponge",
+      "geometry": "porous-layer",
+      "sources": [
+        "kab-forest",
+        "laf-love"
+      ],
+      "thicknessCm": [
+        0.35,
+        2.1
+      ],
+      "dimensionBasis": "renderer range, selected by recipe",
+      "compatibleRecipes": [
+        "chocolate-strawberry-heart",
+        "black-forest"
+      ],
+      "available": true
+    },
+    {
+      "id": "almond-joconde",
+      "name": "Миндальный Joconde",
+      "role": "structure",
+      "material": "joconde",
+      "geometry": "porous-layer",
+      "sources": [
+        "mdc-opera"
+      ],
+      "thicknessCm": [
+        0.35,
+        2.1
+      ],
+      "dimensionBasis": "renderer range, selected by recipe",
+      "compatibleRecipes": [
+        "opera"
+      ],
+      "available": true
+    },
+    {
+      "id": "hazelnut-biscuit",
+      "name": "Фундучный бисквит",
+      "role": "structure",
+      "material": "joconde",
+      "geometry": "porous-layer",
+      "sources": [
+        "cal-hazel"
+      ],
+      "thicknessCm": [
+        0.35,
+        2.1
+      ],
+      "dimensionBasis": "renderer range, selected by recipe",
+      "compatibleRecipes": [
+        "hazelnut-entremet"
+      ],
+      "available": true
+    },
+    {
+      "id": "breton-sable",
+      "name": "Бретонское песочное тесто",
+      "role": "structure",
+      "material": "sable",
+      "geometry": "porous-layer",
+      "sources": [
+        "cal-charm",
+        "cal-cheese",
+        "kab-cookie"
+      ],
+      "thicknessCm": [
+        0.35,
+        2.1
+      ],
+      "dimensionBasis": "renderer range, selected by recipe",
+      "compatibleRecipes": [
+        "caramel-cheesecake",
+        "raspberry-cremeux",
+        "iced-cookie-round",
+        "iced-cookie-heart"
+      ],
+      "available": true
+    },
+    {
+      "id": "chocolate-sable",
+      "name": "Шоколадное песочное тесто",
+      "role": "structure",
+      "material": "cocoa-sponge",
+      "geometry": "porous-layer",
+      "sources": [
+        "cal-rasp"
+      ],
+      "thicknessCm": [
+        0.35,
+        2.1
+      ],
+      "dimensionBasis": "renderer range, selected by recipe",
+      "compatibleRecipes": [
+        "raspberry-chocolate"
+      ],
+      "available": true
+    },
+    {
+      "id": "choux-shell",
+      "name": "Заварная оболочка",
+      "role": "structure",
+      "material": "choux",
+      "geometry": "choux-shell",
+      "sources": [
+        "cal-paris",
+        "kab-choux"
+      ],
+      "thicknessCm": [
+        0.35,
+        2.1
+      ],
+      "dimensionBasis": "renderer range, selected by recipe",
+      "compatibleRecipes": [
+        "vanilla-eclair",
+        "cream-puff",
+        "paris-brest"
+      ],
+      "available": true
+    },
+    {
+      "id": "ladyfinger",
+      "name": "Савоярди",
+      "role": "structure",
+      "material": "sponge",
+      "geometry": "ladyfinger",
+      "sources": [
+        "kab-tiramisu"
+      ],
+      "thicknessCm": [
+        0.35,
+        2.1
+      ],
+      "dimensionBasis": "renderer range, selected by recipe",
+      "compatibleRecipes": [
+        "tiramisu"
+      ],
+      "available": true
+    },
+    {
+      "id": "almond-shell",
+      "name": "Миндальная оболочка макарона",
+      "role": "structure",
+      "material": "joconde",
+      "geometry": "almond-shell",
+      "sources": [
+        "lad-macaron"
+      ],
+      "thicknessCm": [
+        0.35,
+        2.1
+      ],
+      "dimensionBasis": "renderer range, selected by recipe",
+      "compatibleRecipes": [
+        "macaron-chocolate",
+        "macaron-raspberry",
+        "macaron-pistachio",
+        "macaron-vanilla",
+        "macaron-caramel"
+      ],
+      "available": true
+    },
+    {
+      "id": "vanilla-pastry-cream",
+      "name": "Ванильный заварной крем",
+      "role": "cream",
+      "material": "custard",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "kab-choux",
+        "kab-lemon",
+        "lad-macaron"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [
+        "lemon-cloud",
+        "vanilla-eclair",
+        "macaron-vanilla"
+      ],
+      "available": true
+    },
+    {
+      "id": "mousseline",
+      "name": "Крем-муслин",
+      "role": "cream",
+      "material": "cream",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "cap-fraisier",
+        "mdc-fraisier"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [
+        "fraisier"
+      ],
+      "available": true
+    },
+    {
+      "id": "diplomat",
+      "name": "Крем-дипломат",
+      "role": "cream",
+      "material": "cream",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "kab-choux",
+        "mdc-fraisier",
+        "kab-tiramisu",
+        "cal-hazel",
+        "cal-charm",
+        "lad-macaron",
+        "kab-lemon"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [],
+      "available": false
+    },
+    {
+      "id": "chantilly",
+      "name": "Шантильи",
+      "role": "cream",
+      "material": "cream",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "kab-choux",
+        "kab-forest"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [
+        "black-forest",
+        "cream-puff"
+      ],
+      "available": true
+    },
+    {
+      "id": "mascarpone",
+      "name": "Крем маскарпоне",
+      "role": "cream",
+      "material": "cream",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "kab-cupcakes",
+        "kab-tiramisu"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [
+        "tiramisu",
+        "tiramisu-cupcake"
+      ],
+      "available": true
+    },
+    {
+      "id": "vanilla-buttercream",
+      "name": "Ванильный масляный крем",
+      "role": "cream",
+      "material": "cream",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "wil-mini",
+        "wil-stack"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [
+        "vanilla-celebration",
+        "mini-buttercream"
+      ],
+      "available": true
+    },
+    {
+      "id": "coffee-buttercream",
+      "name": "Кофейный масляный крем",
+      "role": "cream",
+      "material": "cream",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "mdc-opera"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [
+        "opera"
+      ],
+      "available": true
+    },
+    {
+      "id": "pistachio-buttercream",
+      "name": "Фисташковый масляный крем",
+      "role": "cream",
+      "material": "cream",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "lad-macaron"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [
+        "macaron-pistachio"
+      ],
+      "available": true
+    },
+    {
+      "id": "dark-ganache",
+      "name": "Тёмный ганаш",
+      "role": "cream",
+      "material": "ganache",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "lad-macaron",
+        "mdc-opera"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [
+        "opera",
+        "macaron-chocolate"
+      ],
+      "available": true
+    },
+    {
+      "id": "milk-ganache",
+      "name": "Молочный ганаш",
+      "role": "cream",
+      "material": "milk-chocolate",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "kab-choux",
+        "mdc-fraisier",
+        "kab-tiramisu",
+        "cal-hazel",
+        "cal-charm",
+        "lad-macaron",
+        "kab-lemon"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [],
+      "available": false
+    },
+    {
+      "id": "vanilla-cremeux",
+      "name": "Ванильный кремё",
+      "role": "cream",
+      "material": "custard",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "laf-love"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [
+        "chocolate-strawberry-heart"
+      ],
+      "available": true
+    },
+    {
+      "id": "raspberry-cremeux",
+      "name": "Малиново-шоколадный кремё",
+      "role": "cream",
+      "material": "confit",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "cal-charm"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [
+        "raspberry-cremeux"
+      ],
+      "available": true
+    },
+    {
+      "id": "chocolate-mousse",
+      "name": "Шоколадный мусс",
+      "role": "cream",
+      "material": "mousse",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "cal-rasp",
+        "laf-love"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [
+        "raspberry-chocolate",
+        "chocolate-strawberry-heart"
+      ],
+      "available": true
+    },
+    {
+      "id": "gianduja-mousse",
+      "name": "Мусс джандуйя",
+      "role": "cream",
+      "material": "mousse",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "cal-hazel"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [
+        "hazelnut-entremet"
+      ],
+      "available": true
+    },
+    {
+      "id": "caramel-cheese",
+      "name": "Карамельный сырный слой",
+      "role": "cream",
+      "material": "cheesecake",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "cal-cheese"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [
+        "caramel-cheesecake"
+      ],
+      "available": true
+    },
+    {
+      "id": "lemon-cream",
+      "name": "Лимонный сливочный крем",
+      "role": "cream",
+      "material": "cream",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "kab-lemon"
+      ],
+      "thicknessCm": [
+        0.25,
+        2.8
+      ],
+      "dimensionBasis": "renderer range, not copied recipe yield",
+      "compatibleRecipes": [
+        "lemon-cloud"
+      ],
+      "available": true
+    },
+    {
+      "id": "strawberry-confit",
+      "name": "Клубничное конфи",
+      "role": "insert",
+      "material": "confit",
+      "geometry": "thin-insert",
+      "sources": [
+        "laf-love"
+      ],
+      "thicknessCm": [
+        0.08,
+        0.55
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "chocolate-strawberry-heart"
+      ],
+      "available": true
+    },
+    {
+      "id": "raspberry-confit",
+      "name": "Малиновое конфи",
+      "role": "insert",
+      "material": "confit",
+      "geometry": "thin-insert",
+      "sources": [
+        "cal-paris",
+        "lad-macaron"
+      ],
+      "thicknessCm": [
+        0.08,
+        0.55
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "paris-brest",
+        "macaron-raspberry"
+      ],
+      "available": true
+    },
+    {
+      "id": "cherry-compote",
+      "name": "Вишнёвая начинка",
+      "role": "insert",
+      "material": "confit",
+      "geometry": "thin-insert",
+      "sources": [
+        "kab-forest"
+      ],
+      "thicknessCm": [
+        0.08,
+        0.55
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "black-forest"
+      ],
+      "available": true
+    },
+    {
+      "id": "lemon-curd",
+      "name": "Лимонный курд",
+      "role": "insert",
+      "material": "lemon-curd",
+      "geometry": "thin-insert",
+      "sources": [
+        "kab-lemon"
+      ],
+      "thicknessCm": [
+        0.08,
+        0.55
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "lemon-cloud"
+      ],
+      "available": true
+    },
+    {
+      "id": "salted-caramel",
+      "name": "Солёная карамель",
+      "role": "insert",
+      "material": "caramel",
+      "geometry": "thin-insert",
+      "sources": [
+        "cal-cheese",
+        "lad-macaron"
+      ],
+      "thicknessCm": [
+        0.08,
+        0.55
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "caramel-cheesecake",
+        "macaron-caramel"
+      ],
+      "available": true
+    },
+    {
+      "id": "hazelnut-praline",
+      "name": "Фундучное пралине",
+      "role": "insert",
+      "material": "nut",
+      "geometry": "thin-insert",
+      "sources": [
+        "laf-love",
+        "cal-hazel",
+        "cal-paris",
+        "kab-forest",
+        "mdc-opera",
+        "kab-lemon"
+      ],
+      "thicknessCm": [
+        0.08,
+        0.55
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [],
+      "available": false
+    },
+    {
+      "id": "pistachio-praline",
+      "name": "Фисташковое пралине",
+      "role": "insert",
+      "material": "nut",
+      "geometry": "thin-insert",
+      "sources": [
+        "cal-paris"
+      ],
+      "thicknessCm": [
+        0.08,
+        0.55
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "paris-brest"
+      ],
+      "available": true
+    },
+    {
+      "id": "chocolate-crunch",
+      "name": "Шоколадный хрустящий слой",
+      "role": "insert",
+      "material": "dark-chocolate",
+      "geometry": "thin-insert",
+      "sources": [
+        "cal-hazel"
+      ],
+      "thicknessCm": [
+        0.08,
+        0.55
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "hazelnut-entremet"
+      ],
+      "available": true
+    },
+    {
+      "id": "coffee-syrup",
+      "name": "Кофейная пропитка",
+      "role": "insert",
+      "material": "caramel",
+      "geometry": "thin-insert",
+      "sources": [
+        "kab-cupcakes",
+        "kab-tiramisu",
+        "mdc-opera"
+      ],
+      "thicknessCm": [
+        0.08,
+        0.55
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "opera",
+        "tiramisu",
+        "tiramisu-cupcake"
+      ],
+      "available": true
+    },
+    {
+      "id": "cream-coat",
+      "name": "Сливочное покрытие",
+      "role": "finish",
+      "material": "cream",
+      "geometry": "conformal-shell",
+      "sources": [
+        "cal-paris",
+        "kab-forest",
+        "kab-lemon",
+        "wil-mini",
+        "wil-stack"
+      ],
+      "thicknessCm": [
+        0.015,
+        0.3
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "black-forest",
+        "lemon-cloud",
+        "vanilla-celebration",
+        "mini-buttercream",
+        "paris-brest"
+      ],
+      "available": true
+    },
+    {
+      "id": "ganache-coat",
+      "name": "Ганаш",
+      "role": "finish",
+      "material": "ganache",
+      "geometry": "conformal-shell",
+      "sources": [
+        "cal-rasp",
+        "kab-choux",
+        "mdc-opera"
+      ],
+      "thicknessCm": [
+        0.015,
+        0.3
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "opera",
+        "raspberry-chocolate",
+        "vanilla-eclair",
+        "cream-puff"
+      ],
+      "available": true
+    },
+    {
+      "id": "dark-mirror",
+      "name": "Тёмная зеркальная глазурь",
+      "role": "finish",
+      "material": "mirror-glaze",
+      "geometry": "conformal-shell",
+      "sources": [
+        "cal-charm",
+        "laf-love"
+      ],
+      "thicknessCm": [
+        0.015,
+        0.3
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "raspberry-cremeux",
+        "chocolate-strawberry-heart"
+      ],
+      "available": true
+    },
+    {
+      "id": "caramel-glaze",
+      "name": "Карамельная глазурь",
+      "role": "finish",
+      "material": "caramel",
+      "geometry": "conformal-shell",
+      "sources": [
+        "cal-cheese"
+      ],
+      "thicknessCm": [
+        0.015,
+        0.3
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "caramel-cheesecake"
+      ],
+      "available": true
+    },
+    {
+      "id": "praline-glaze",
+      "name": "Глазурь пралине",
+      "role": "finish",
+      "material": "caramel",
+      "geometry": "conformal-shell",
+      "sources": [
+        "cal-hazel"
+      ],
+      "thicknessCm": [
+        0.015,
+        0.3
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "hazelnut-entremet"
+      ],
+      "available": true
+    },
+    {
+      "id": "chocolate-velvet",
+      "name": "Шоколадный велюр",
+      "role": "finish",
+      "material": "velvet",
+      "geometry": "conformal-shell",
+      "sources": [
+        "cal-hazel"
+      ],
+      "thicknessCm": [
+        0.015,
+        0.3
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "hazelnut-entremet"
+      ],
+      "available": true
+    },
+    {
+      "id": "almond-paste",
+      "name": "Миндальная паста",
+      "role": "finish",
+      "material": "fondant",
+      "geometry": "conformal-shell",
+      "sources": [
+        "cap-fraisier",
+        "mdc-fraisier"
+      ],
+      "thicknessCm": [
+        0.015,
+        0.3
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "fraisier"
+      ],
+      "available": true
+    },
+    {
+      "id": "sugar-fondant",
+      "name": "Сахарная мастика",
+      "role": "finish",
+      "material": "fondant",
+      "geometry": "conformal-shell",
+      "sources": [
+        "cal-cheese",
+        "cal-hazel",
+        "mdc-fraisier",
+        "kab-tiramisu",
+        "wil-stack"
+      ],
+      "thicknessCm": [
+        0.015,
+        0.3
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [],
+      "available": false
+    },
+    {
+      "id": "cocoa-dust",
+      "name": "Какао",
+      "role": "finish",
+      "material": "cocoa-sponge",
+      "geometry": "conformal-shell",
+      "sources": [
+        "kab-cupcakes",
+        "kab-tiramisu"
+      ],
+      "thicknessCm": [
+        0.015,
+        0.3
+      ],
+      "dimensionBasis": "renderer range",
+      "compatibleRecipes": [
+        "tiramisu",
+        "tiramisu-cupcake"
+      ],
+      "available": true
+    },
+    {
+      "id": "strawberry",
+      "name": "Клубника",
+      "role": "decor",
+      "material": "strawberry",
+      "geometry": "native-mesh",
+      "sources": [
+        "cap-fraisier",
+        "laf-love",
+        "mdc-fraisier",
+        "wil-mini",
+        "wil-stack"
+      ],
+      "sizeCm": 3.8,
+      "asset": "bk-berry-strawberry",
+      "dimensionBasis": "visually calibrated natural size; not a manufacturer tolerance",
+      "compatibleRecipes": [
+        "fraisier",
+        "chocolate-strawberry-heart",
+        "vanilla-celebration",
+        "mini-buttercream"
+      ],
+      "available": true
+    },
+    {
+      "id": "blueberry",
+      "name": "Голубика",
+      "role": "decor",
+      "material": "blueberry",
+      "geometry": "native-mesh",
+      "sources": [
+        "wil-mini",
+        "wil-stack"
+      ],
+      "sizeCm": 1.05,
+      "asset": "bk-berry-blueberry",
+      "dimensionBasis": "visually calibrated natural size; not a manufacturer tolerance",
+      "compatibleRecipes": [
+        "vanilla-celebration"
+      ],
+      "available": true
+    },
+    {
+      "id": "raspberry",
+      "name": "Малина",
+      "role": "decor",
+      "material": "raspberry",
+      "geometry": "native-mesh",
+      "sources": [
+        "cal-charm",
+        "cal-paris",
+        "cal-rasp",
+        "wil-mini",
+        "wil-stack"
+      ],
+      "sizeCm": 1.9,
+      "asset": "bk-berry-raspberry",
+      "dimensionBasis": "visually calibrated natural size; not a manufacturer tolerance",
+      "compatibleRecipes": [
+        "raspberry-chocolate",
+        "raspberry-cremeux",
+        "vanilla-celebration",
+        "paris-brest"
+      ],
+      "available": true
+    },
+    {
+      "id": "blackberry",
+      "name": "Ежевика",
+      "role": "decor",
+      "material": "raspberry",
+      "geometry": "native-mesh",
+      "sources": [
+        "cal-rasp",
+        "cal-charm",
+        "kab-forest"
+      ],
+      "sizeCm": 2.3,
+      "asset": "bk-berry-blackberry",
+      "dimensionBasis": "visually calibrated natural size; not a manufacturer tolerance",
+      "compatibleRecipes": [],
+      "available": false
+    },
+    {
+      "id": "cherry",
+      "name": "Вишня",
+      "role": "decor",
+      "material": "cherry",
+      "geometry": "native-mesh",
+      "sources": [
+        "kab-forest"
+      ],
+      "sizeCm": 4.1,
+      "asset": "bk-berry-cherry",
+      "dimensionBasis": "renderer calibration: whole source cherry including stalk, fruit body about 2.3 cm",
+      "compatibleRecipes": [
+        "black-forest"
+      ],
+      "available": true
+    },
+    {
+      "id": "macaron",
+      "name": "Макарон",
+      "role": "decor",
+      "material": "joconde",
+      "geometry": "native-mesh",
+      "sources": [
+        "cal-rasp",
+        "wil-mini",
+        "wil-stack"
+      ],
+      "sizeCm": 4.2,
+      "asset": "bk-decor-macaron",
+      "dimensionBasis": "visually calibrated natural size; not a manufacturer tolerance",
+      "compatibleRecipes": [
+        "raspberry-chocolate",
+        "vanilla-celebration"
+      ],
+      "available": true
+    },
+    {
+      "id": "cream-rosette",
+      "name": "Кремовая розетка",
+      "role": "decor",
+      "material": "cream",
+      "geometry": "native-mesh",
+      "sources": [
+        "kab-forest",
+        "wil-mini",
+        "wil-stack"
+      ],
+      "sizeCm": 3,
+      "asset": "bk-decor-cream-rosette",
+      "dimensionBasis": "visually calibrated natural size; not a manufacturer tolerance",
+      "compatibleRecipes": [
+        "black-forest",
+        "vanilla-celebration",
+        "mini-buttercream"
+      ],
+      "available": true
+    },
+    {
+      "id": "meringue",
+      "name": "Меренга",
+      "role": "decor",
+      "material": "cream",
+      "geometry": "native-mesh",
+      "sources": [
+        "kab-lemon",
+        "wil-mini",
+        "wil-stack"
+      ],
+      "sizeCm": 2.8,
+      "asset": "bk-decor-meringue-kiss",
+      "dimensionBasis": "visually calibrated natural size; not a manufacturer tolerance",
+      "compatibleRecipes": [
+        "lemon-cloud",
+        "vanilla-celebration",
+        "mini-buttercream"
+      ],
+      "available": true
+    },
+    {
+      "id": "truffle",
+      "name": "Трюфель",
+      "role": "decor",
+      "material": "dark-chocolate",
+      "geometry": "native-mesh",
+      "sources": [
+        "cal-rasp",
+        "cal-charm",
+        "kab-forest"
+      ],
+      "sizeCm": 2.7,
+      "asset": "bk-decor-truffle-ball",
+      "dimensionBasis": "visually calibrated natural size; not a manufacturer tolerance",
+      "compatibleRecipes": [],
+      "available": false
+    },
+    {
+      "id": "crumb",
+      "name": "Крошка",
+      "role": "decor",
+      "material": "sable",
+      "geometry": "native-mesh",
+      "sources": [
+        "cal-cheese",
+        "cal-hazel"
+      ],
+      "sizeCm": 0.45,
+      "asset": "bk-decor-crumble-cluster",
+      "dimensionBasis": "visually calibrated natural size; not a manufacturer tolerance",
+      "compatibleRecipes": [
+        "caramel-cheesecake",
+        "hazelnut-entremet"
+      ],
+      "available": true
+    },
+    {
+      "id": "chocolate-shard",
+      "name": "Шоколадная пластинка",
+      "role": "decor",
+      "material": "dark-chocolate",
+      "geometry": "native-mesh",
+      "sources": [
+        "cal-hazel",
+        "cal-rasp",
+        "mdc-opera"
+      ],
+      "sizeCm": 4.5,
+      "asset": "bk-decor-chocolate-shard",
+      "dimensionBasis": "visually calibrated natural size; not a manufacturer tolerance",
+      "compatibleRecipes": [
+        "opera",
+        "hazelnut-entremet",
+        "raspberry-chocolate"
+      ],
+      "available": true
+    },
+    {
+      "id": "wafer",
+      "name": "Вафельная трубочка",
+      "role": "decor",
+      "material": "sable",
+      "geometry": "native-mesh",
+      "sources": [
+        "cal-rasp",
+        "cal-charm",
+        "kab-forest"
+      ],
+      "sizeCm": 7.5,
+      "asset": "bk-decor-wafer-roll",
+      "dimensionBasis": "visually calibrated natural size; not a manufacturer tolerance",
+      "compatibleRecipes": [],
+      "available": false
+    },
+    {
+      "id": "pistachio-kernel",
+      "name": "Фисташка",
+      "role": "decor",
+      "material": "nut",
+      "geometry": "split-kernel",
+      "sources": [
+        "cal-charm",
+        "cal-cheese",
+        "cal-paris",
+        "cap-fraisier",
+        "mdc-fraisier"
+      ],
+      "dimensionBasis": "renderer calibration",
+      "compatibleRecipes": [
+        "fraisier",
+        "caramel-cheesecake",
+        "raspberry-cremeux",
+        "paris-brest"
+      ],
+      "available": true
+    },
+    {
+      "id": "hazelnut",
+      "name": "Фундук",
+      "role": "decor",
+      "material": "nut",
+      "geometry": "ribbed-nut",
+      "sources": [
+        "cal-cheese",
+        "cal-hazel"
+      ],
+      "dimensionBasis": "renderer calibration",
+      "compatibleRecipes": [
+        "caramel-cheesecake",
+        "hazelnut-entremet"
+      ],
+      "available": true
+    },
+    {
+      "id": "almond-flake",
+      "name": "Миндальный лепесток",
+      "role": "decor",
+      "material": "nut",
+      "geometry": "curved-flake",
+      "sources": [
+        "cal-paris"
+      ],
+      "dimensionBasis": "renderer calibration",
+      "compatibleRecipes": [
+        "paris-brest"
+      ],
+      "available": true
+    },
+    {
+      "id": "chocolate-curl",
+      "name": "Шоколадная стружка",
+      "role": "decor",
+      "material": "dark-chocolate",
+      "geometry": "rolled-thin-shell",
+      "sources": [
+        "cal-charm",
+        "cal-cheese",
+        "kab-choux",
+        "kab-forest",
+        "kab-tiramisu",
+        "laf-love",
+        "mdc-opera"
+      ],
+      "dimensionBasis": "renderer calibration",
+      "compatibleRecipes": [
+        "opera",
+        "caramel-cheesecake",
+        "raspberry-cremeux",
+        "chocolate-strawberry-heart",
+        "black-forest",
+        "tiramisu",
+        "vanilla-eclair",
+        "cream-puff"
+      ],
+      "available": true
+    },
+    {
+      "id": "chocolate-pearl",
+      "name": "Шоколадная жемчужина",
+      "role": "decor",
+      "material": "dark-chocolate",
+      "geometry": "small-coated-core",
+      "sources": [
+        "cal-hazel",
+        "kab-choux",
+        "mdc-opera"
+      ],
+      "dimensionBasis": "renderer calibration",
+      "compatibleRecipes": [
+        "opera",
+        "hazelnut-entremet",
+        "vanilla-eclair",
+        "cream-puff"
+      ],
+      "available": true
+    },
+    {
+      "id": "piped-shell",
+      "name": "Кремовая ракушка",
+      "role": "decor",
+      "material": "cream",
+      "geometry": "star-nozzle-sweep",
+      "sources": [
+        "wil-mini",
+        "wil-stack"
+      ],
+      "dimensionBasis": "renderer calibration",
+      "compatibleRecipes": [
+        "vanilla-celebration",
+        "mini-buttercream"
+      ],
+      "available": true
+    },
+    {
+      "id": "piped-rope",
+      "name": "Кремовый канат",
+      "role": "decor",
+      "material": "cream",
+      "geometry": "twisted-nozzle-sweep",
+      "sources": [
+        "wil-mini",
+        "wil-stack"
+      ],
+      "dimensionBasis": "renderer calibration",
+      "compatibleRecipes": [
+        "vanilla-celebration"
+      ],
+      "available": true
+    },
+    {
+      "id": "cream-dollop",
+      "name": "Кремовая капля",
+      "role": "decor",
+      "material": "cream",
+      "geometry": "tapered-nozzle-sweep",
+      "sources": [
+        "kab-lemon"
+      ],
+      "dimensionBasis": "renderer calibration",
+      "compatibleRecipes": [
+        "lemon-cloud"
+      ],
+      "available": true
+    },
+    {
+      "id": "strawberry-half",
+      "name": "Половинка клубники",
+      "role": "decor",
+      "material": "strawberry",
+      "geometry": "cut-fruit",
+      "sources": [
+        "cap-fraisier",
+        "laf-love",
+        "mdc-fraisier"
+      ],
+      "dimensionBasis": "renderer calibration",
+      "compatibleRecipes": [
+        "fraisier",
+        "chocolate-strawberry-heart"
+      ],
+      "available": true
+    },
+    {
+      "id": "lemon-slice",
+      "name": "Лимонный срез",
+      "role": "decor",
+      "material": "lemon-curd",
+      "geometry": "citrus-segments",
+      "sources": [
+        "kab-lemon"
+      ],
+      "dimensionBasis": "renderer calibration",
+      "compatibleRecipes": [
+        "lemon-cloud"
+      ],
+      "available": true
+    },
+    {
+      "id": "gold-leaf",
+      "name": "Пищевое сусальное золото",
+      "role": "decor",
+      "material": "yellow-gold",
+      "geometry": "native-mesh",
+      "sources": [
+        "mdc-opera"
+      ],
+      "asset": "bk-decor-gold-flake",
+      "sizeCm": 0.7,
+      "compatibleRecipes": [
+        "opera"
+      ],
+      "available": true
+    },
+    {
+      "id": "sugar-icing",
+      "name": "Сахарная глазурь",
+      "role": "finish",
+      "material": "cream",
+      "geometry": "thin-icing",
+      "sources": [
+        "kab-cookie",
+        "kab-doughnut"
+      ],
+      "compatibleRecipes": [
+        "vanilla-doughnut",
+        "iced-cookie-round",
+        "iced-cookie-heart"
+      ],
+      "available": true
+    },
+    {
+      "id": "brownie-crumb",
+      "name": "Шоколадный брауни",
+      "role": "structure",
+      "material": "cocoa-sponge",
+      "geometry": "dense-crumb",
+      "sources": [
+        "kab-brownie"
+      ],
+      "compatibleRecipes": [
+        "fudge-brownie"
+      ],
+      "available": true
+    },
+    {
+      "id": "sugar-pearl",
+      "name": "Сахарная жемчужина",
+      "role": "decor",
+      "material": "fondant",
+      "geometry": "coated-core",
+      "sources": [
+        "kab-cookie",
+        "kab-doughnut"
+      ],
+      "asset": "bk-decor-sprinkle-ball",
+      "sizeCm": 0.35,
+      "compatibleRecipes": [
+        "vanilla-doughnut",
+        "iced-cookie-round",
+        "iced-cookie-heart"
+      ],
+      "available": true
+    },
+    {
+      "id": "ruby-cream",
+      "name": "Рубиновый крем",
+      "role": "cream",
+      "material": "cream",
+      "geometry": "emulsion-layer",
+      "sources": [
+        "cal-paris"
+      ],
+      "compatibleRecipes": [
+        "paris-brest"
+      ],
+      "available": true
+    }
+  ],
+  "recipes": [
+    {
+      "id": "fraisier",
+      "name": "Фрезье",
+      "type": "fraisier",
+      "shape": "round",
+      "diameterCm": 20,
+      "heightCm": 4.5,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "vanilla-sponge",
+          "thicknessCm": 0.8
+        },
+        {
+          "component": "mousseline",
+          "thicknessCm": 2.8
+        },
+        {
+          "component": "vanilla-sponge",
+          "thicknessCm": 0.8
+        }
+      ],
+      "cover": "almond-paste",
+      "compatibleDecor": [
+        "strawberry",
+        "strawberry-half",
+        "pistachio-kernel"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "mdc-fraisier",
+        "cap-fraisier"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present",
+      "publishedDimensions": {
+        "diameterCm": 20,
+        "heightCm": 4.5
+      },
+      "edgeFruit": "strawberry-half",
+      "finishColor": "#dfb5b4"
+    },
+    {
+      "id": "opera",
+      "name": "Опера",
+      "type": "opera",
+      "shape": "rectangle",
+      "diameterCm": 18,
+      "heightCm": 3.2,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "almond-joconde",
+          "thicknessCm": 0.55
+        },
+        {
+          "component": "coffee-buttercream",
+          "thicknessCm": 0.5
+        },
+        {
+          "component": "almond-joconde",
+          "thicknessCm": 0.55
+        },
+        {
+          "component": "dark-ganache",
+          "thicknessCm": 0.45
+        },
+        {
+          "component": "almond-joconde",
+          "thicknessCm": 0.55
+        },
+        {
+          "component": "coffee-buttercream",
+          "thicknessCm": 0.5
+        }
+      ],
+      "cover": "ganache-coat",
+      "compatibleDecor": [
+        "chocolate-shard",
+        "chocolate-curl",
+        "chocolate-pearl",
+        "gold-leaf"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "mdc-opera"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present",
+      "soak": "coffee-syrup",
+      "defaultDecor": [
+        "gold-leaf",
+        "chocolate-pearl"
+      ]
+    },
+    {
+      "id": "caramel-cheesecake",
+      "name": "Карамельный чизкейк",
+      "type": "cheesecake",
+      "shape": "round",
+      "diameterCm": 20,
+      "heightCm": 5.2,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "breton-sable",
+          "thicknessCm": 0.4
+        },
+        {
+          "component": "caramel-cheese",
+          "thicknessCm": 4.4
+        },
+        {
+          "component": "salted-caramel",
+          "thicknessCm": 0.3
+        }
+      ],
+      "cover": "caramel-glaze",
+      "compatibleDecor": [
+        "hazelnut",
+        "pistachio-kernel",
+        "chocolate-curl",
+        "crumb"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "cal-cheese"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present",
+      "publishedDimensions": {
+        "baseThicknessCm": 0.4
+      }
+    },
+    {
+      "id": "hazelnut-entremet",
+      "name": "Фундук и джандуйя",
+      "type": "entremet",
+      "shape": "round",
+      "diameterCm": 21,
+      "heightCm": 5,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "chocolate-crunch",
+          "thicknessCm": 0.35
+        },
+        {
+          "component": "gianduja-mousse",
+          "thicknessCm": 1.6
+        },
+        {
+          "component": "hazelnut-biscuit",
+          "thicknessCm": 0.7
+        },
+        {
+          "component": "gianduja-mousse",
+          "thicknessCm": 2.25
+        }
+      ],
+      "cover": "praline-glaze",
+      "compatibleDecor": [
+        "hazelnut",
+        "chocolate-shard",
+        "chocolate-pearl",
+        "crumb"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "cal-hazel"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present",
+      "publishedDimensions": {
+        "mouldDiameterCm": 21
+      },
+      "compatibleCovers": [
+        "praline-glaze",
+        "chocolate-velvet"
+      ]
+    },
+    {
+      "id": "raspberry-chocolate",
+      "name": "Шоколад и малина",
+      "type": "entremet",
+      "shape": "round",
+      "diameterCm": 20,
+      "heightCm": 4.5,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "chocolate-sable",
+          "thicknessCm": 0.4
+        },
+        {
+          "component": "chocolate-mousse",
+          "thicknessCm": 3.8
+        }
+      ],
+      "cover": "ganache-coat",
+      "compatibleDecor": [
+        "raspberry",
+        "macaron",
+        "chocolate-shard"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "cal-rasp"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present"
+    },
+    {
+      "id": "raspberry-cremeux",
+      "name": "Малиновый кремё",
+      "type": "tart",
+      "shape": "round",
+      "diameterCm": 20,
+      "heightCm": 3,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "breton-sable",
+          "thicknessCm": 0.4
+        },
+        {
+          "component": "raspberry-cremeux",
+          "thicknessCm": 2.1
+        },
+        {
+          "component": "breton-sable",
+          "thicknessCm": 0.3
+        }
+      ],
+      "cover": "dark-mirror",
+      "compatibleDecor": [
+        "raspberry",
+        "pistachio-kernel",
+        "chocolate-curl"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "cal-charm"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present"
+    },
+    {
+      "id": "chocolate-strawberry-heart",
+      "name": "Шоколад, клубника и ваниль",
+      "type": "entremet",
+      "shape": "heart",
+      "diameterCm": 14,
+      "heightCm": 5,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "cocoa-sponge",
+          "thicknessCm": 0.6
+        },
+        {
+          "component": "vanilla-cremeux",
+          "thicknessCm": 0.9
+        },
+        {
+          "component": "strawberry-confit",
+          "thicknessCm": 0.4
+        },
+        {
+          "component": "cocoa-sponge",
+          "thicknessCm": 0.6
+        },
+        {
+          "component": "chocolate-mousse",
+          "thicknessCm": 2.4
+        }
+      ],
+      "cover": "dark-mirror",
+      "compatibleDecor": [
+        "strawberry",
+        "strawberry-half",
+        "chocolate-curl"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "laf-love"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present",
+      "publishedDimensions": {
+        "diameterCm": 14,
+        "heightCm": 5
+      },
+      "finishColor": "#bb1738"
+    },
+    {
+      "id": "black-forest",
+      "name": "Шварцвальд",
+      "type": "sponge",
+      "shape": "round",
+      "diameterCm": 20,
+      "heightCm": 7,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "cocoa-sponge",
+          "thicknessCm": 1.5
+        },
+        {
+          "component": "chantilly",
+          "thicknessCm": 0.6
+        },
+        {
+          "component": "cherry-compote",
+          "thicknessCm": 0.3
+        },
+        {
+          "component": "cocoa-sponge",
+          "thicknessCm": 1.5
+        },
+        {
+          "component": "chantilly",
+          "thicknessCm": 0.6
+        },
+        {
+          "component": "cherry-compote",
+          "thicknessCm": 0.3
+        },
+        {
+          "component": "cocoa-sponge",
+          "thicknessCm": 1.5
+        }
+      ],
+      "cover": "cream-coat",
+      "compatibleDecor": [
+        "cherry",
+        "chocolate-curl",
+        "cream-rosette"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "kab-forest"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present"
+    },
+    {
+      "id": "lemon-cloud",
+      "name": "Лимонное облако",
+      "type": "sponge",
+      "shape": "round",
+      "diameterCm": 22.86,
+      "heightCm": 6,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "vanilla-sponge",
+          "thicknessCm": 2
+        },
+        {
+          "component": "vanilla-pastry-cream",
+          "thicknessCm": 0.4
+        },
+        {
+          "component": "lemon-curd",
+          "thicknessCm": 0.3
+        },
+        {
+          "component": "vanilla-sponge",
+          "thicknessCm": 2
+        },
+        {
+          "component": "lemon-cream",
+          "thicknessCm": 0.8
+        }
+      ],
+      "cover": "cream-coat",
+      "compatibleDecor": [
+        "lemon-slice",
+        "cream-dollop",
+        "meringue"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "kab-lemon"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present",
+      "publishedDimensions": {
+        "roundPanDiameterCm": 22.86
+      }
+    },
+    {
+      "id": "tiramisu",
+      "name": "Тирамису",
+      "type": "tiramisu",
+      "shape": "rectangle",
+      "diameterCm": 20,
+      "heightCm": 5,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "ladyfinger",
+          "thicknessCm": 1
+        },
+        {
+          "component": "mascarpone",
+          "thicknessCm": 1.3
+        },
+        {
+          "component": "ladyfinger",
+          "thicknessCm": 1
+        },
+        {
+          "component": "mascarpone",
+          "thicknessCm": 1.3
+        }
+      ],
+      "cover": "cocoa-dust",
+      "compatibleDecor": [
+        "chocolate-curl"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "kab-tiramisu"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present",
+      "soak": "coffee-syrup"
+    },
+    {
+      "id": "vanilla-celebration",
+      "name": "Ванильный праздничный",
+      "type": "sponge",
+      "shape": "round",
+      "diameterCm": 20,
+      "heightCm": 7,
+      "maxTiers": 3,
+      "layers": [
+        {
+          "component": "vanilla-sponge",
+          "thicknessCm": 1.5
+        },
+        {
+          "component": "vanilla-buttercream",
+          "thicknessCm": 0.6
+        },
+        {
+          "component": "vanilla-sponge",
+          "thicknessCm": 1.5
+        },
+        {
+          "component": "vanilla-buttercream",
+          "thicknessCm": 0.6
+        },
+        {
+          "component": "vanilla-sponge",
+          "thicknessCm": 1.5
+        }
+      ],
+      "cover": "cream-coat",
+      "compatibleDecor": [
+        "strawberry",
+        "raspberry",
+        "blueberry",
+        "cream-rosette",
+        "macaron",
+        "meringue",
+        "piped-shell",
+        "piped-rope"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "wil-mini",
+        "wil-stack"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present",
+      "supportSystem": "boards-and-dowels"
+    },
+    {
+      "id": "mini-buttercream",
+      "name": "Мини-торт с кремом",
+      "type": "mini",
+      "shape": "round",
+      "diameterCm": 10,
+      "heightCm": 4,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "vanilla-sponge",
+          "thicknessCm": 1.2
+        },
+        {
+          "component": "vanilla-buttercream",
+          "thicknessCm": 0.6
+        },
+        {
+          "component": "vanilla-sponge",
+          "thicknessCm": 1.2
+        }
+      ],
+      "cover": "cream-coat",
+      "compatibleDecor": [
+        "cream-rosette",
+        "piped-shell",
+        "meringue",
+        "strawberry"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "wil-mini"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present"
+    },
+    {
+      "id": "vanilla-eclair",
+      "name": "Эклер с ванильным кремом",
+      "type": "eclair",
+      "shape": "round",
+      "diameterCm": 12,
+      "heightCm": 3,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "choux-shell",
+          "thicknessCm": 1
+        },
+        {
+          "component": "vanilla-pastry-cream",
+          "thicknessCm": 1
+        }
+      ],
+      "cover": "ganache-coat",
+      "compatibleDecor": [
+        "chocolate-pearl",
+        "chocolate-curl"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "kab-choux"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present",
+      "nativeBase": "bk-pastry-eclair"
+    },
+    {
+      "id": "cream-puff",
+      "name": "Профитроль",
+      "type": "profiterole",
+      "shape": "round",
+      "diameterCm": 4.5,
+      "heightCm": 4,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "choux-shell",
+          "thicknessCm": 1
+        },
+        {
+          "component": "chantilly",
+          "thicknessCm": 1
+        }
+      ],
+      "cover": "ganache-coat",
+      "compatibleDecor": [
+        "chocolate-pearl",
+        "chocolate-curl"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "kab-choux"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present",
+      "nativeBase": "bk-pastry-profiterole"
+    },
+    {
+      "id": "paris-brest",
+      "name": "Пари-Брест: малина и фисташка",
+      "type": "paris-brest",
+      "shape": "round",
+      "diameterCm": 9,
+      "heightCm": 4,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "choux-shell",
+          "thicknessCm": 1
+        },
+        {
+          "component": "pistachio-praline",
+          "thicknessCm": 0.4
+        },
+        {
+          "component": "ruby-cream",
+          "thicknessCm": 1
+        },
+        {
+          "component": "raspberry-confit",
+          "thicknessCm": 0.3
+        }
+      ],
+      "cover": "cream-coat",
+      "compatibleDecor": [
+        "raspberry",
+        "pistachio-kernel",
+        "almond-flake"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "cal-paris"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present"
+    },
+    {
+      "id": "macaron-chocolate",
+      "name": "Макарон · Шоколадный",
+      "type": "macaron",
+      "shape": "round",
+      "diameterCm": 4.2,
+      "heightCm": 2.05,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "almond-shell",
+          "thicknessCm": 0.8
+        },
+        {
+          "component": "dark-ganache",
+          "thicknessCm": 0.45
+        },
+        {
+          "component": "almond-shell",
+          "thicknessCm": 0.8
+        }
+      ],
+      "cover": null,
+      "compatibleDecor": [],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "lad-macaron"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present"
+    },
+    {
+      "id": "macaron-raspberry",
+      "name": "Макарон · Малиновый",
+      "type": "macaron",
+      "shape": "round",
+      "diameterCm": 4.2,
+      "heightCm": 2.05,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "almond-shell",
+          "thicknessCm": 0.8
+        },
+        {
+          "component": "raspberry-confit",
+          "thicknessCm": 0.45
+        },
+        {
+          "component": "almond-shell",
+          "thicknessCm": 0.8
+        }
+      ],
+      "cover": null,
+      "compatibleDecor": [],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "lad-macaron"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present"
+    },
+    {
+      "id": "macaron-pistachio",
+      "name": "Макарон · Фисташковый",
+      "type": "macaron",
+      "shape": "round",
+      "diameterCm": 4.2,
+      "heightCm": 2.05,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "almond-shell",
+          "thicknessCm": 0.8
+        },
+        {
+          "component": "pistachio-buttercream",
+          "thicknessCm": 0.45
+        },
+        {
+          "component": "almond-shell",
+          "thicknessCm": 0.8
+        }
+      ],
+      "cover": null,
+      "compatibleDecor": [],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "lad-macaron"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present"
+    },
+    {
+      "id": "macaron-vanilla",
+      "name": "Макарон · Ванильный",
+      "type": "macaron",
+      "shape": "round",
+      "diameterCm": 4.2,
+      "heightCm": 2.05,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "almond-shell",
+          "thicknessCm": 0.8
+        },
+        {
+          "component": "vanilla-pastry-cream",
+          "thicknessCm": 0.45
+        },
+        {
+          "component": "almond-shell",
+          "thicknessCm": 0.8
+        }
+      ],
+      "cover": null,
+      "compatibleDecor": [],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "lad-macaron"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present"
+    },
+    {
+      "id": "macaron-caramel",
+      "name": "Макарон · Карамельный",
+      "type": "macaron",
+      "shape": "round",
+      "diameterCm": 4.2,
+      "heightCm": 2.05,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "almond-shell",
+          "thicknessCm": 0.8
+        },
+        {
+          "component": "salted-caramel",
+          "thicknessCm": 0.45
+        },
+        {
+          "component": "almond-shell",
+          "thicknessCm": 0.8
+        }
+      ],
+      "cover": null,
+      "compatibleDecor": [],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "lad-macaron"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present"
+    },
+    {
+      "id": "tiramisu-cupcake",
+      "name": "Капкейк тирамису",
+      "type": "cupcake",
+      "shape": "round",
+      "diameterCm": 7.5,
+      "heightCm": 5.5,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "vanilla-sponge",
+          "thicknessCm": 3
+        },
+        {
+          "component": "mascarpone",
+          "thicknessCm": 2
+        }
+      ],
+      "cover": "cocoa-dust",
+      "compatibleDecor": [],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "kab-cupcakes"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present",
+      "nativeBase": "bk-pastry-cupcake",
+      "soak": "coffee-syrup"
+    },
+    {
+      "id": "vanilla-doughnut",
+      "name": "Пончик с сахарной глазурью",
+      "type": "donut",
+      "shape": "round",
+      "diameterCm": 8,
+      "heightCm": 2.5,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "vanilla-sponge",
+          "thicknessCm": 2
+        }
+      ],
+      "cover": "sugar-icing",
+      "compatibleDecor": [
+        "sugar-pearl"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "kab-doughnut"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present",
+      "nativeBase": "bk-pastry-donut"
+    },
+    {
+      "id": "iced-cookie-round",
+      "name": "Сахарное печенье · круг",
+      "type": "cookie",
+      "shape": "round",
+      "diameterCm": 6.5,
+      "heightCm": 0.9,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "breton-sable",
+          "thicknessCm": 0.7
+        }
+      ],
+      "cover": "sugar-icing",
+      "compatibleDecor": [
+        "sugar-pearl"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "kab-cookie"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present",
+      "nativeBase": "bk-pastry-cookie-round"
+    },
+    {
+      "id": "iced-cookie-heart",
+      "name": "Сахарное печенье · сердце",
+      "type": "cookie",
+      "shape": "heart",
+      "diameterCm": 6.5,
+      "heightCm": 0.9,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "breton-sable",
+          "thicknessCm": 0.7
+        }
+      ],
+      "cover": "sugar-icing",
+      "compatibleDecor": [
+        "sugar-pearl"
+      ],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "kab-cookie"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present",
+      "nativeBase": "bk-pastry-cookie-heart"
+    },
+    {
+      "id": "fudge-brownie",
+      "name": "Шоколадный брауни",
+      "type": "brownie",
+      "shape": "rectangle",
+      "diameterCm": 5.08,
+      "heightCm": 2.5,
+      "maxTiers": 1,
+      "layers": [
+        {
+          "component": "brownie-crumb",
+          "thicknessCm": 2.5
+        }
+      ],
+      "cover": null,
+      "compatibleDecor": [],
+      "incompatible": [
+        "non-edible-live-flowers",
+        "loose-metal-jewelry"
+      ],
+      "sources": [
+        "kab-brownie"
+      ],
+      "dimensions": "renderer calibration unless publishedDimensions is present",
+      "nativeBase": "bk-pastry-brownie-bite",
+      "publishedDimensions": {
+        "portionCm": 5.08
+      }
+    }
+  ]
+}

@@ -1,0 +1,2677 @@
+[
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-berry-blackberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blackberry": 14,
+        "bk-decor-caramel-spiral": 2
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 4 изделий / verified pair bk-berry-blackberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 12,
+        "bk-decor-caramel-spiral": 2
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 4 изделий / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-raspberry": 14,
+        "bk-decor-caramel-spiral": 2
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 4 изделий / verified pair bk-berry-raspberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 2,
+        "bk-decor-cream-rosette": 12
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 2,
+        "bk-decor-meringue-kiss": 12
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 2,
+        "bk-decor-truffle-ball": 14
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-berry-blackberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blackberry": 14,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 6 изделий / verified pair bk-berry-blackberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 12,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 6 изделий / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-raspberry": 14,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 6 изделий / verified pair bk-berry-raspberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-cream-rosette": 10
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-crumble-cluster": 12
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-meringue-kiss": 12
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-brownie-bite",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-truffle-ball": 12
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-brownie-bite / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 11,
+        "bk-decor-caramel-spiral": 5
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / 4 изделий / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 5,
+        "bk-decor-cream-rosette": 10
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 5,
+        "bk-decor-meringue-kiss": 11
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 5,
+        "bk-decor-truffle-ball": 12
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-berry-blackberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blackberry": 14,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / 6 изделий / verified pair bk-berry-blackberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 14,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / 6 изделий / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-raspberry": 14,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / 6 изделий / verified pair bk-berry-raspberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-cream-rosette": 13
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-crumble-cluster": 14
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-meringue-kiss": 14
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-heart",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-truffle-ball": 14
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-heart / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-round",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 14,
+        "bk-decor-caramel-spiral": 5
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-round / 4 изделий / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 5,
+        "bk-decor-cream-rosette": 11
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-round / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-macaron"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 5,
+        "bk-decor-macaron": 6
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-round / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-macaron / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 5,
+        "bk-decor-meringue-kiss": 14
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-round / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 5,
+        "bk-decor-truffle-ball": 14
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-round / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-round",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 14,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-round / 6 изделий / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-cream-rosette": 14
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-round / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-crumble-cluster": 14
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-round / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-meringue-kiss": 14
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-round / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cookie-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-truffle-ball": 14
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cookie-round / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-berry-blackberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blackberry": 14,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 4 изделий / verified pair bk-berry-blackberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 11,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 4 изделий / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-raspberry": 14,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 4 изделий / verified pair bk-berry-raspberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 3,
+        "bk-decor-cream-rosette": 10
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 3,
+        "bk-decor-meringue-kiss": 11
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 3,
+        "bk-decor-truffle-ball": 13
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-berry-blackberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blackberry": 14,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 6 изделий / verified pair bk-berry-blackberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 12,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 6 изделий / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-raspberry": 14,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 6 изделий / verified pair bk-berry-raspberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-cream-rosette": 11
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-crumble-cluster": 12
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-meringue-kiss": 12
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-cupcake",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-truffle-ball": 12
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-cupcake / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-donut",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 8,
+        "bk-decor-caramel-spiral": 5
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-donut / 4 изделий / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-donut",
+      "decor": [
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-raspberry": 14,
+        "bk-decor-caramel-spiral": 5
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-donut / 4 изделий / verified pair bk-berry-raspberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-donut",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 5,
+        "bk-decor-cream-rosette": 7
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-donut / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-donut",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 5,
+        "bk-decor-meringue-kiss": 7
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-donut / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-donut",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 5,
+        "bk-decor-truffle-ball": 9
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-donut / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-donut",
+      "decor": [
+        "bk-berry-blackberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blackberry": 14,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-donut / 6 изделий / verified pair bk-berry-blackberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-donut",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 6,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-donut / 6 изделий / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-donut",
+      "decor": [
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-raspberry": 14,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-donut / 6 изделий / verified pair bk-berry-raspberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-donut",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-cream-rosette": 6
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-donut / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-donut",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-crumble-cluster": 9
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-donut / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-donut",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-meringue-kiss": 6
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-donut / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-donut",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-truffle-ball": 6
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-donut / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 9,
+        "bk-decor-caramel-spiral": 2
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / 4 изделий / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-decor-caramel-spiral": 2
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / 4 изделий / verified pair bk-berry-strawberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 2,
+        "bk-decor-cream-rosette": 4
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 2,
+        "bk-decor-meringue-kiss": 9
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 2,
+        "bk-decor-truffle-ball": 10
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 14,
+        "bk-decor-caramel-spiral": 2
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / 6 изделий / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 2,
+        "bk-decor-cream-rosette": 6
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 2,
+        "bk-decor-meringue-kiss": 14
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-eclair",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 2,
+        "bk-decor-truffle-ball": 14
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-eclair / 6 изделий / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-profiterole",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 7,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-profiterole / 4 изделий / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-profiterole",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-cream-rosette": 4
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-profiterole / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-profiterole",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-crumble-cluster": 14
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-profiterole / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-profiterole",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-meringue-kiss": 5
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-profiterole / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-pastry-profiterole",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-truffle-ball": 9
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-pastry-profiterole / 4 изделий / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-macaron"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 6,
+        "bk-decor-macaron": 1
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 1 яруса / verified pair bk-decor-caramel-spiral+bk-decor-macaron / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-berry-blackberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blackberry": 12,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 2 яруса / verified pair bk-berry-blackberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 14,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 2 яруса / verified pair bk-berry-blueberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 4,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 2 яруса / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-raspberry": 10,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 2 яруса / verified pair bk-berry-raspberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-decor-caramel-spiral": 3
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 2 яруса / verified pair bk-berry-strawberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-chocolate-shard"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 3,
+        "bk-decor-chocolate-shard": 8
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 2 яруса / verified pair bk-decor-caramel-spiral+bk-decor-chocolate-shard / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 3,
+        "bk-decor-cream-rosette": 4
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 2 яруса / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-macaron"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 3,
+        "bk-decor-macaron": 1
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 2 яруса / verified pair bk-decor-caramel-spiral+bk-decor-macaron / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 3,
+        "bk-decor-meringue-kiss": 4
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 2 яруса / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 3,
+        "bk-decor-truffle-ball": 6
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 2 яруса / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-wafer-roll"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 3,
+        "bk-decor-wafer-roll": 4
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 2 яруса / verified pair bk-decor-caramel-spiral+bk-decor-wafer-roll / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-berry-blackberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blackberry": 9,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 3 яруса / verified pair bk-berry-blackberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-berry-blueberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-blueberry": 14,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 3 яруса / verified pair bk-berry-blueberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 4,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 3 яруса / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-berry-raspberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-raspberry": 8,
+        "bk-decor-caramel-spiral": 1
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 3 яруса / verified pair bk-berry-raspberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-chocolate-shard"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-chocolate-shard": 6
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 3 яруса / verified pair bk-decor-caramel-spiral+bk-decor-chocolate-shard / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-cream-rosette": 4
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 3 яруса / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-crumble-cluster"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-crumble-cluster": 6
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 3 яруса / verified pair bk-decor-caramel-spiral+bk-decor-crumble-cluster / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-meringue-kiss": 4
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 3 яруса / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-truffle-ball": 4
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 3 яруса / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-hex",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-wafer-roll"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 1,
+        "bk-decor-wafer-roll": 4
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-hex / 3 яруса / verified pair bk-decor-caramel-spiral+bk-decor-wafer-roll / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 3,
+        "bk-decor-caramel-spiral": 8
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / 1 яруса / verified pair bk-berry-strawberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-macaron"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 8,
+        "bk-decor-macaron": 2
+      },
+      "topper": null,
+      "tiers": 1,
+      "pieces": 1,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / 1 яруса / verified pair bk-decor-caramel-spiral+bk-decor-macaron / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-cherry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-cherry": 6,
+        "bk-decor-caramel-spiral": 4
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / 2 яруса / verified pair bk-berry-cherry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 2,
+        "bk-decor-caramel-spiral": 4
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / 2 яруса / verified pair bk-berry-strawberry+bk-decor-caramel-spiral / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-chocolate-shard"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 4,
+        "bk-decor-chocolate-shard": 11
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / 2 яруса / verified pair bk-decor-caramel-spiral+bk-decor-chocolate-shard / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-cream-rosette"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 4,
+        "bk-decor-cream-rosette": 4
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / 2 яруса / verified pair bk-decor-caramel-spiral+bk-decor-cream-rosette / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-macaron"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 4,
+        "bk-decor-macaron": 2
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / 2 яруса / verified pair bk-decor-caramel-spiral+bk-decor-macaron / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-meringue-kiss"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 4,
+        "bk-decor-meringue-kiss": 6
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / 2 яруса / verified pair bk-decor-caramel-spiral+bk-decor-meringue-kiss / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 4,
+        "bk-decor-truffle-ball": 6
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / 2 яруса / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-wafer-roll"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 4,
+        "bk-decor-wafer-roll": 5
+      },
+      "topper": null,
+      "tiers": 2,
+      "pieces": 4,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / 2 яруса / verified pair bk-decor-caramel-spiral+bk-decor-wafer-roll / requested 14"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-berry-strawberry",
+        "bk-decor-caramel-spiral"
+      ],
+      "counts": {
+        "bk-berry-strawberry": 1,
+        "bk-decor-caramel-spiral": 2
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / 3 яруса / verified pair bk-berry-strawberry+bk-decor-caramel-spiral / requested 2"
+  },
+  {
+    "kind": "cakes",
+    "state": {
+      "version": 2,
+      "base": "bk-struct-tier-round",
+      "decor": [
+        "bk-decor-caramel-spiral",
+        "bk-decor-truffle-ball"
+      ],
+      "counts": {
+        "bk-decor-caramel-spiral": 3,
+        "bk-decor-truffle-ball": 2
+      },
+      "topper": null,
+      "tiers": 3,
+      "pieces": 6,
+      "filling": "vanilla",
+      "palette": 0,
+      "layout": "crescent",
+      "pattern": null,
+      "finish": "polished",
+      "bouquetSize": 19
+    },
+    "label": "bk-struct-tier-round / 3 яруса / verified pair bk-decor-caramel-spiral+bk-decor-truffle-ball / requested 14"
+  }
+]

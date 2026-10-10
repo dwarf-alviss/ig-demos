@@ -1,0 +1,38 @@
+[
+  {
+    "kind": "cakes",
+    "fit": {
+      "outer": 2545,
+      "inner": 2536.6875
+    },
+    "overflow": false,
+    "faq": true
+  },
+  {
+    "kind": "flowers",
+    "fit": {
+      "outer": 2279,
+      "inner": 2270.71875
+    },
+    "overflow": false,
+    "faq": true
+  },
+  {
+    "kind": "jewelry",
+    "fit": {
+      "outer": 2244,
+      "inner": 2235.40625
+    },
+    "overflow": false,
+    "faq": true
+  },
+  {
+    "kind": "fashion",
+    "fit": {
+      "outer": 1951,
+      "inner": 1942.734375
+    },
+    "overflow": false,
+    "faq": true
+  }
+]
