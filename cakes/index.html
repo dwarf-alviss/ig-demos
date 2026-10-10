@@ -3,195 +3,142 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Мельница — Мастерская праздника</title>
     <meta
       name="description"
-      content="Большой праздник или вечер для двоих. Начните с любимой начинки — и придумайте торт, который будет только вашим."
+      content="Сценарий начинается с события. Выбор повода меняет стартовый рецепт; торт и короткий маршрут сборки стоят на первом экране."
     />
-    <meta name="theme-color" content="#f6f2e9" />
-    <title>Мельница — Сливочное ателье</title>
     <link rel="stylesheet" href="assets/fonts.css" />
-    <link rel="stylesheet" href="../shared/showcase.css" />
-    <script src="../shared/showcase.js" defer></script>
+    <link rel="stylesheet" href="../shared/concepts.css" />
+    <script src="../shared/concepts.js" defer></script>
   </head>
-  <body data-brand="cakes" data-concept="a">
+  <body data-brand="cakes" data-concept="a" data-architecture="cakes-a">
     <a class="skip" href="#main">Перейти к содержимому</a>
-    <aside class="concept-bar" aria-label="Варианты дизайна">
-      <a href="../directions.html">Все 12 направлений ↗</a>
+    <aside class="concept-bar">
+      <a href="../directions.html">12 самостоятельных концепций ↗</a>
       <div>
-        <a aria-current="page" href="index.html">A · Сливочное ателье</a
-        ><a href="concept-b.html">B · Праздник в цвете</a
-        ><a href="concept-c.html">C · Dessert gallery</a>
+        <a aria-current="page" href="index.html">A · Мастерская праздника</a
+        ><a href="concept-b.html">B · Дегустационное меню</a
+        ><a href="concept-c.html">C · Праздничный плакат</a>
       </div>
     </aside>
     <header class="site-header">
-      <a class="wordmark" href="index.html"
-        >Мельница<small>Кондитерская мастерская</small></a
-      >
-      <nav aria-label="Главная навигация">
-        <a href="#collection">Коллекция</a><a href="#create">Мастерская</a
+      <a class="wordmark" href="index.html">Мельница</a>
+      <nav aria-label="Основная навигация">
+        <a href="catalog.html">Каталог</a><a href="#create">Конструктор</a
         ><a href="cart.html">Корзина ↗</a>
       </nav>
     </header>
     <main id="main">
-      <section class="opening">
-        <div class="opening-copy">
-          <span class="eyebrow">Кондитерская мастерская / Минск</span>
-          <h1>Вкус, который<br />остаётся в памяти.</h1>
+      <span class="eyebrow">Мельница / мастерская праздника</span>
+      <section class="cake-occasion">
+        <div class="occasion-copy">
+          <h1>Какой у вас<br /><em>повод?</em></h1>
           <p>
-            Большой праздник или вечер для двоих. Начните с любимой начинки — и
-            придумайте торт, который будет только вашим.
+            Начнём с события. А вкус, форму и последнюю ягоду вы выберете сами.
           </p>
-          <div class="hero-actions">
-            <a class="primary" href="#create"
-              >Придумать свой торт<span>↗</span></a
-            ><a class="text-link" href="catalog.html">Смотреть коллекцию →</a>
-          </div>
-          <div class="edition">
-            <span>Индивидуальность в деталях</span><span>Коллекция / 01</span>
+          <div class="occasion-choices">
+            <button
+              class="choice"
+              data-choice
+              data-pattern="vanilla-celebration"
+              data-preview="../shared/domain-thumbnails/cakes-vanilla-celebration.jpg"
+              data-title="День рождения"
+              data-description="Ванильный торт для общего стола"
+            >
+              <span>День рождения</span
+              ><small>Ванильный торт для общего стола</small><b>↗</b></button
+            ><button
+              class="choice"
+              data-choice
+              data-pattern="chocolate-strawberry-heart"
+              data-preview="../shared/domain-thumbnails/cakes-chocolate-strawberry-heart.jpg"
+              data-title="Вечер для двоих"
+              data-description="Шоколад, клубника и небольшая форма"
+            >
+              <span>Вечер для двоих</span
+              ><small>Шоколад, клубника и небольшая форма</small
+              ><b>↗</b></button
+            ><button
+              class="choice"
+              data-choice
+              data-pattern="fraisier"
+              data-preview="../shared/domain-thumbnails/cakes-fraisier.jpg"
+              data-title="Просто хочется"
+              data-description="Клубника и нежный крем"
+            >
+              <span>Просто хочется</span><small>Клубника и нежный крем</small
+              ><b>↗</b>
+            </button>
           </div>
         </div>
-        <figure class="opening-image">
-          <img
-            src="assets/img/berry.jpg"
-            alt="Мельница: Бенто и небольшие торты"
-            fetchpriority="high"
-          />
-          <figcaption>
-            <span>Мельница / личный выбор</span><span>01—04</span>
-          </figcaption>
-        </figure>
-        <span class="hero-index" aria-hidden="true">✳</span>
-      </section>
-      <div class="brand-strip">
-        <span>От рецепта до последней ягоды</span
-        ><a href="#create">Начать с себя ↗</a>
-      </div>
-      <section id="collection" class="collection-section">
-        <div class="section-title">
-          <div>
-            <span class="eyebrow">Выбор мастерской / 01</span>
-            <h2>Найдите своё.</h2>
-          </div>
-          <a class="text-link" href="catalog.html">Вся коллекция ↗</a>
-        </div>
-        <div class="piece-grid">
-          <a class="piece" href="catalog.html"
-            ><figure>
-              <img
-                src="assets/img/bento.jpg"
-                alt="Маленький повод"
-                loading="lazy"
-              /><span>01</span>
-            </figure>
-            <div>
-              <h3>Маленький повод</h3>
-              <p>Бенто и небольшие торты</p>
-              <span aria-hidden="true">↗</span>
-            </div></a
-          ><a class="piece" href="catalog.html"
-            ><figure>
-              <img
-                src="assets/img/wedding.jpg"
-                alt="Большой день"
-                loading="lazy"
-              /><span>02</span>
-            </figure>
-            <div>
-              <h3>Большой день</h3>
-              <p>Ярусные композиции</p>
-              <span aria-hidden="true">↗</span>
-            </div></a
-          ><a class="piece" href="catalog.html"
-            ><figure>
-              <img
-                src="assets/img/chocolate.jpg"
-                alt="Шоколадный акцент"
-                loading="lazy"
-              /><span>03</span>
-            </figure>
-            <div>
-              <h3>Шоколадный акцент</h3>
-              <p>Насыщенные вкусы</p>
-              <span aria-hidden="true">↗</span>
-            </div></a
-          >
-        </div>
-      </section>
-      <section class="story">
-        <figure>
-          <img
-            src="assets/img/about.jpg"
-            alt="Кондитерская мастерская: материалы и мастерская"
+        <div class="cake-stage">
+          <span class="stamp">ВЫ ПРИДУМАЛИ<br />МЫ СОБРАЛИ</span
+          ><img
+            class="selection-image"
+            src="../shared/domain-thumbnails/cakes-vanilla-celebration.jpg"
+            alt="Ванильный торт"
             loading="lazy"
           />
-        </figure>
-        <div>
-          <span class="eyebrow">Внимание к деталям / 02</span>
-          <h2>Важен вкус.<br />И всё вокруг него.</h2>
-          <p>
-            Выбирайте готовую композицию или начните с чистого листа. В
-            мастерской можно менять детали, сравнивать варианты и сохранять свой
-            замысел.
-          </p>
-          <a class="text-link" href="#create">Войти в мастерскую →</a>
+          <div class="selection-caption">
+            <h3 data-selection-title>День рождения</h3>
+            <p data-selection-description>Ванильный торт для общего стола</p>
+          </div>
         </div>
       </section>
-      <section id="create" class="create-section">
-        <div class="section-title">
-          <div>
-            <span class="eyebrow">Ваша личная мастерская / 03</span>
-            <h2>Придумать свой торт.</h2>
-          </div>
-          <p>
-            Меняйте детали и вращайте композицию в 3D.<br />Сохраняйте вариант и
-            возвращайтесь к нему.
-          </p>
-        </div>
-        <ol class="steps">
-          <li><span>01</span>Выберите рецепт</li>
-          <li><span>02</span>Добавьте свой характер</li>
-          <li><span>03</span>Рассмотрите со всех сторон</li>
+      <section class="numbered-path">
+        <h2>Три шага<br />до вашего торта.</h2>
+        <ol>
+          <li>
+            <b>01</b>
+            <h3>Вкус</h3>
+            <p>Выберите рецепт, который хочется попробовать.</p>
+          </li>
+          <li>
+            <b>02</b>
+            <h3>Характер</h3>
+            <p>Добавьте ярусы и совместимые украшения.</p>
+          </li>
+          <li>
+            <b>03</b>
+            <h3>Последняя деталь</h3>
+            <p>Рассмотрите композицию и сохраните вариант.</p>
+          </li>
         </ol>
+      </section>
+      <section
+        id="create"
+        class="studio-section"
+        data-initial-pattern="vanilla-celebration"
+      >
+        <div class="studio-heading">
+          <span class="eyebrow">Мастерская / рабочий инструмент</span>
+          <h2>Теперь сделайте его своим.</h2>
+          <a href="studio.html">Открыть отдельно ↗</a>
+        </div>
         <div class="studio-mount">
           <div class="studio-placeholder">
-            <span class="eyebrow">Интерактивная студия</span>
-            <h3>Теперь — ваша очередь.</h3>
             <p>
-              Конструктор откроется прямо здесь.<br />Ваши сохранённые варианты
-              останутся доступны.
+              Выбранная композиция откроется в 3D. Меняйте детали, вращайте
+              модель и сохраняйте вариант.
             </p>
             <button class="primary" data-load-studio>
-              Открыть конструктор <span>↗</span></button
-            ><a class="text-link" href="studio.html">Открыть на весь экран →</a>
+              Войти в конструктор <span>↗</span>
+            </button>
           </div>
           <iframe
-            title="Придумать свой торт: интерактивный конструктор"
+            title="Теперь сделайте его своим."
             data-src="studio.html"
             hidden
           ></iframe>
         </div>
-        <div class="studio-bottom">
-          <span>Ракурсы · сохранение · экспорт композиции</span
-          ><a href="studio.html">Полноэкранная мастерская ↗</a>
-        </div>
-      </section>
-      <section class="closing">
-        <span class="eyebrow">Начните с того, что нравится</span>
-        <h2>Повод найдётся.</h2>
-        <a class="primary" href="catalog.html"
-          >Посмотреть коллекцию <span>↗</span></a
-        >
       </section>
     </main>
     <footer>
-      <a class="wordmark" href="index.html">Мельница</a>
-      <div>
-        <a href="catalog.html">Каталог</a><a href="studio.html">Конструктор</a
-        ><a href="cart.html">Корзина</a>
-      </div>
+      <a class="wordmark" href="index.html">Мельница</a
+      ><a href="../directions.html">Сравнить концепции ↗</a>
       <p>
-        Портфолио · демонстрационный магазин<br />Оформление реального заказа
-        недоступно
+        Демонстрационный магазин · реальное оформление заказа не подключено.
       </p>
     </footer>
   </body>
