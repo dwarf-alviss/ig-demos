@@ -8,7 +8,9 @@ await mkdir(folder, { recursive: true });
 const results = [];
 try {
   for (const kind of ["cakes", "flowers", "jewelry", "fashion"])
-    for (const v of ["a", "b", "c"]) {
+    for (const v of process.env.REVIEW_RECOMMENDED_ONLY
+      ? ["a"]
+      : ["a", "b", "c"]) {
       const page = await browser.newPage({
           viewport: { width: 1440, height: 1050 },
         }),
@@ -47,9 +49,19 @@ try {
         await page.setViewportSize({ width: 1440, height: 1050 });
         await page.locator("[data-load-studio]").click();
         const frame = page.frameLocator(".studio-mount iframe");
-        if (kind !== "fashion")
+        if (kind !== "fashion") {
           await frame.locator("#viewer canvas").waitFor({ timeout: 90000 });
-        else await frame.locator("h1").waitFor({ timeout: 30000 });
+          await page
+            .frames()
+            .find((f) => f.url().endsWith("/studio.html"))
+            .waitForFunction(() => window.studioReview?.ready(), null, {
+              timeout: 90000,
+            });
+        } else
+          await frame
+            .locator("#choices button")
+            .first()
+            .waitFor({ timeout: 30000 });
         assert.equal(
           await page.locator(".studio-placeholder").isVisible(),
           false,
@@ -76,7 +88,7 @@ try {
   await page.close();
   await writeFile(
     `${folder}/validation.json`,
-    JSON.stringify({ base, results, concepts: 12 }, null, 2) + "\n",
+    JSON.stringify({ base, results, concepts: results.length }, null, 2) + "\n",
   );
 } finally {
   await close();

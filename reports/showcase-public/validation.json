@@ -1,0 +1,38 @@
+{
+  "base": "https://dwarf-alviss.github.io/ig-demos",
+  "results": [
+    {
+      "kind": "cakes",
+      "variant": "a",
+      "path": "cakes/index.html",
+      "desktop": true,
+      "mobile": true,
+      "embedded": true
+    },
+    {
+      "kind": "flowers",
+      "variant": "a",
+      "path": "flowers/index.html",
+      "desktop": true,
+      "mobile": true,
+      "embedded": true
+    },
+    {
+      "kind": "jewelry",
+      "variant": "a",
+      "path": "jewelry/index.html",
+      "desktop": true,
+      "mobile": true,
+      "embedded": true
+    },
+    {
+      "kind": "fashion",
+      "variant": "a",
+      "path": "fashion/index.html",
+      "desktop": true,
+      "mobile": true,
+      "embedded": true
+    }
+  ],
+  "concepts": 4
+}
